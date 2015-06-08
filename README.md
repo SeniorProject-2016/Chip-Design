@@ -19,4 +19,21 @@ Senior Project 2015-2016
 	1. Dr. Orlando Hernandez  
 	2. Dr. Larry Pearlstein  
 
-### File Hierarchy:	
+### File Hierarchy:
+
+* rtl (Register-level Level)
+	* chip.v (top level)
+	* i2c_slave.v
+	* i2s_in.v
+	* i2s_out.v
+	* filter.v
+	* register.v
+* reg 
+* synth (Synthesis)
+* dv (Design Verification)
+	* testbenches
+	* stimulus
+* scripts
+* utils (Utilities)
+* docs (Documents)
+* core (CORE 9 Files)
