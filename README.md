@@ -22,12 +22,12 @@ Senior Project 2015-2016
 ### File Hierarchy:
 
 * rtl (Register-level Level)
-	* chip.v (top level)
-	* i2c_slave.v
-	* i2s_in.v
-	* i2s_out.v
-	* filter.v
-	* register.v
+	* chip.v (top level) - Kevin Cao
+	* i2c_slave.v - Whitley Forman
+	* i2s_in.v - Zachary Nelson
+	* i2s_out.v - Zachary Nelson
+	* filter.v - Dhruvit Naik
+	* register.v - Julie Swift
 * reg 
 * synth (Synthesis)
 * dv (Design Verification)
