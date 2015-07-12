@@ -12,7 +12,7 @@ Senior Project 2015-2016
 	1. Kevin Cao  
 	2. Whitley Forman  
 	3. Dhruvit Naik  
-	4. Zachary Nelson
+	4. Zachary Nelson (Team Leader)   
 	5. Juliann Swift   
 
 **Advisors:**  
