@@ -4,9 +4,9 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   17:50:44 09/19/2015
+// Create Date:   21:47:46 09/23/2015
 // Design Name:   i2si_deserializer
-// Module Name:   C:/Users/kevin/Documents/GitHub/Chip-Design/proj_asic/rtl/deserializer/i2si_deserializer/i2si_testbench2.v
+// Module Name:   C:/Users/kevin/Documents/GitHub/Chip-Design/proj_asic/rtl/deserializer/i2si_deserializer/random_test.v
 // Project Name:  i2si_deserializer
 // Target Device:  
 // Tool versions:  
@@ -22,7 +22,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module i2si_testbench2;
+module random_test;
 
 	// Inputs
 	reg clk;
@@ -30,12 +30,14 @@ module i2si_testbench2;
 	reg i2si_sck;
 	reg i2si_ws;
 	reg i2si_sd;
-	reg i2si_en;
+	reg rf_i2si_en;
+	reg i2si_sckdl;
 
 	// Outputs
 	wire [15:0] i2si_lft;
 	wire [15:0] i2si_rgt;
 	wire i2si_xfc;
+	wire i2si_sck_transition;
 
 	// Instantiate the Unit Under Test (UUT)
 	i2si_deserializer uut (
@@ -44,10 +46,14 @@ module i2si_testbench2;
 		.i2si_sck(i2si_sck), 
 		.i2si_ws(i2si_ws), 
 		.i2si_sd(i2si_sd), 
+		.rf_i2si_en(rf_i2si_en), 
 		.i2si_lft(i2si_lft), 
-		.i2si_rgt(i2si_rgt)
+		.i2si_rgt(i2si_rgt), 
+		.i2si_xfc(i2si_xfc), 
+		.i2si_sck_transition(i2si_sck_transition), 
+		.i2si_sckdl(i2si_sckdl)
 	);
-	
+
 	initial
 	begin
 		clk = 0;
@@ -55,6 +61,7 @@ module i2si_testbench2;
 		i2si_sck = 0;
 		i2si_ws = 0;
 		i2si_sd = 0;
+		i2si_sckdl = 0;
 	end
 	
 	always
@@ -68,18 +75,17 @@ module i2si_testbench2;
 	forever
 		#312.5 i2si_sck = ~i2si_sck;
 	end
-	
+	  
 	always
 	begin
 	#50
 	forever
 		#312.5 i2si_sckdl = ~i2si_sckdl;
 	end
-  
 	
 	initial
 	begin
-	#250 i2si_sd = 1;
+	#312.5 i2si_sd = 1;
 	#625 i2si_sd = 0;
 	#625 i2si_sd = 1;
 	#625 i2si_sd = 0;
@@ -95,12 +101,12 @@ module i2si_testbench2;
 	#625 i2si_sd = 0;
 	#625 i2si_sd = 1;
 	#625 i2si_sd = 0;
-	#625 i2si_sd = 1;
+	rst = 1;
 	end
 	
 	initial
 	begin
-	#250 i2si_ws = 0;
+	#312.5 i2si_ws = 0;
 	#10000 i2si_ws = 1;
 	#10000 i2si_ws = 0;
 	#10000 i2si_ws = 1;
