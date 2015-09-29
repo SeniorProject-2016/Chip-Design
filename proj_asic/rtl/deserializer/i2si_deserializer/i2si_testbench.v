@@ -31,13 +31,14 @@ module i2si_testbench;
 	reg i2si_sckdl;
 	reg i2si_ws;
 	reg i2si_sd;
-	reg i2si_en;
+	reg rf_i2si_en;
 	
 	// Outputs
 	wire [15:0] i2si_lft;
 	wire [15:0] i2si_rgt;
 	wire i2si_xfc;
 	wire i2si_sck_transition;
+	wire delayed_signal;
 
 	// Instantiate the Unit Under Test (UUT)
 	i2si_deserializer uut (
@@ -49,7 +50,8 @@ module i2si_testbench;
 		.i2si_lft(i2si_lft), 
 		.i2si_rgt(i2si_rgt),
 		.i2si_sck_transition(i2si_sck_transition),
-		.i2si_sckdl(i2si_sckdl)
+		.i2si_sckdl(i2si_sckdl),
+		.delayed_signal(delayed_signal)
 	);
 	
 	initial
@@ -60,6 +62,7 @@ module i2si_testbench;
 		i2si_ws = 0;
 		i2si_sd = 0;
 		i2si_sckdl = 0;
+		rf_i2si_en = 1;
 	end
 	
 	always
@@ -76,7 +79,7 @@ module i2si_testbench;
 	  
 	always
 	begin
-	#50
+	#5
 	forever
 		#312.5 i2si_sckdl = ~i2si_sckdl;
 	end
@@ -84,7 +87,7 @@ module i2si_testbench;
 	initial
 	begin
 	#312.5 i2si_sd = 1;
-	#625 i2si_sd = 0;
+	#625 i2si_sd = 1;
 	#625 i2si_sd = 1;
 	#625 i2si_sd = 0;
 	#625 i2si_sd = 1;
