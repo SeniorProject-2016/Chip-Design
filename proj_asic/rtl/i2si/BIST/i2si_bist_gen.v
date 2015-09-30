@@ -8,7 +8,7 @@ module i2si_bist_gen(clk,rst,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si
     input [7:0] rf_bist_inc; // increment signal by this much
     output[11:0] i2si_bist_out_data; // output signal
 	 reg [11:0] i2si_bist_out_data; // output signal
-	 reg[11:0] counter=12'b0; // counter
+	 reg counter=12'b0; // counter
 	
 
 	always@(posedge clk) begin // at every postive edge of the clock
@@ -18,10 +18,8 @@ module i2si_bist_gen(clk,rst,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si
 		end
 		else if(i2si_bist_out_data>=rf_bist_up_limit) begin // if signal exceeds the limit
 			i2si_bist_out_data=rf_bist_start_val; // signal goes back to start value
-			counter=12'b1; // counter gets reset to 1
 		end
 		else // if the signal is within normal range
 			i2si_bist_out_data=i2si_bist_out_data+rf_bist_inc; // increment the signal
-			counter=counter+1'b1; // increment counter
 	end
 endmodule
