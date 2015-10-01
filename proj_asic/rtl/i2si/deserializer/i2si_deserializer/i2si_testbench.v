@@ -24,52 +24,57 @@
 
 module i2si_testbench;
 
-	// Inputs
+	// UUT Inputs
 	reg clk;
-	reg rst;
 	reg i2si_sck;
-	reg i2si_sckdl;
 	reg i2si_ws;
 	reg i2si_sd;
 	reg rf_i2si_en;
+	reg rst;
+	//wire rst;
 	
-	// Outputs
+	// UUT Outputs
 	wire [15:0] i2si_lft;
 	wire [15:0] i2si_rgt;
 	wire i2si_xfc;
-	wire i2si_sck_transition;
-	wire delayed_signal;
+	
+	reg [31:0] count;
 
 	// Instantiate the Unit Under Test (UUT)
 	i2si_deserializer uut (
 		.clk(clk), 
 		.rst(rst), 
+		.rf_i2si_en(rf_i2si_en),
+		.i2si_xfc(i2si_xfc),
 		.i2si_sck(i2si_sck), 
 		.i2si_ws(i2si_ws), 
 		.i2si_sd(i2si_sd), 
 		.i2si_lft(i2si_lft), 
-		.i2si_rgt(i2si_rgt),
-		.i2si_sck_transition(i2si_sck_transition),
-		.i2si_sckdl(i2si_sckdl),
-		.delayed_signal(delayed_signal)
+		.i2si_rgt(i2si_rgt)
 	);
 	
 	initial
 	begin
+		rst = 1;
 		clk = 0;
-		rst = 0;
 		i2si_sck = 0;
 		i2si_ws = 0;
 		i2si_sd = 0;
-		i2si_sckdl = 0;
 		rf_i2si_en = 1;
+		#300 rst = 0;
 	end
 	
 	always
 	begin
+		count = 0;
 	forever
-		#5 clk = ~clk;
+		begin
+			#5 clk = ~clk;
+			count = count + 1;
+		end
 	end
+
+//	assign rst = (count < 5);
 	
 	always
 	begin
@@ -77,14 +82,8 @@ module i2si_testbench;
 		#312.5 i2si_sck = ~i2si_sck;
 	end
 	  
-	always
-	begin
-	#5
-	forever
-		#312.5 i2si_sckdl = ~i2si_sckdl;
-	end
 	
-	initial
+	always
 	begin
 	#312.5 i2si_sd = 1;
 	#625 i2si_sd = 1;
@@ -102,20 +101,19 @@ module i2si_testbench;
 	#625 i2si_sd = 0;
 	#625 i2si_sd = 1;
 	#625 i2si_sd = 0;
-	rst = 1;
 	end
 	
-	initial
+	always
 	begin
 	#312.5 i2si_ws = 0;
 	#10000 i2si_ws = 1;
-	#10000 i2si_ws = 0;
+	/*#10000 i2si_ws = 0;
 	#10000 i2si_ws = 1;
 	#10000 i2si_ws = 1;
 	#10000 i2si_ws = 1;
 	#10000 i2si_ws = 1;
 	#10000 i2si_ws = 0;
-	#10000 i2si_ws = 1;
+	#10000 i2si_ws = 1;*/
 	end
 	
 endmodule
