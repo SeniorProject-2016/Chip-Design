@@ -55,13 +55,13 @@ module i2si_testbench;
 	
 	initial
 	begin
-		rst = 1;
+		rst = 0;
 		clk = 0;
 		i2si_sck = 0;
 		i2si_ws = 0;
 		i2si_sd = 0;
 		rf_i2si_en = 1;
-		#300 rst = 0;
+		#300 rst = 1;
 	end
 	
 	always
@@ -86,7 +86,7 @@ module i2si_testbench;
 	always
 	begin
 	#312.5 i2si_sd = 1;
-	#625 i2si_sd = 1;
+	#625 i2si_sd = 0;
 	#625 i2si_sd = 1;
 	#625 i2si_sd = 0;
 	#625 i2si_sd = 1;
