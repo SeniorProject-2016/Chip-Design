@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.09 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: i2si_deserializer.prj
 
@@ -122,28 +122,30 @@ Synthesizing Unit <i2si_deserializer>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\deserializer\i2si_deserializer\i2si_deserializer.v".
         S0 = 1'b0
         S1 = 1'b1
-    Found 4-bit register for signal <ws<3:0>>.
     Found 4-bit register for signal <sd>.
+    Found 5-bit register for signal <ws>.
     Found 16-bit register for signal <i2si_lft>.
     Found 16-bit register for signal <i2si_rgt>.
-    Found 2-bit register for signal <sck<1:0>>.
-    Found 1-bit register for signal <i2si_sck_transition>.
-    Found 1-bit register for signal <i2si_ws_transition>.
+    Found 3-bit register for signal <sck>.
     Found 1-bit register for signal <state>.
     Found 1-bit register for signal <in_left>.
     Summary:
 	inferred  46 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <i2si_deserializer> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 9
- 1-bit register                                        : 4
+# Registers                                            : 7
+ 1-bit register                                        : 2
  16-bit register                                       : 2
- 2-bit register                                        : 1
- 4-bit register                                        : 2
+ 3-bit register                                        : 1
+ 4-bit register                                        : 1
+ 5-bit register                                        : 1
+# Multiplexers                                         : 2
+ 1-bit 2-to-1 multiplexer                              : 2
 
 =========================================================================
 
@@ -158,6 +160,8 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Registers                                            : 46
  Flip-Flops                                            : 46
+# Multiplexers                                         : 2
+ 1-bit 2-to-1 multiplexer                              : 2
 
 =========================================================================
 
@@ -175,16 +179,17 @@ Final Macro Processing ...
 
 Processing Unit <i2si_deserializer> :
 	Found 4-bit shift register for signal <sd_3>.
+	Found 4-bit shift register for signal <ws_3>.
 Unit <i2si_deserializer> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 42
- Flip-Flops                                            : 42
-# Shift Registers                                      : 1
- 4-bit shift register                                  : 1
+# Registers                                            : 38
+ Flip-Flops                                            : 38
+# Shift Registers                                      : 2
+ 4-bit shift register                                  : 2
 
 =========================================================================
 
@@ -207,18 +212,19 @@ Top Level Output File Name         : i2si_deserializer.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 11
+# BELS                             : 10
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 3
-#      LUT3                        : 5
+#      LUT2                        : 2
+#      LUT3                        : 1
+#      LUT5                        : 4
 #      VCC                         : 1
-# FlipFlops/Latches                : 47
-#      FDC                         : 10
-#      FDCE                        : 36
-#      FDE                         : 1
-# Shift Registers                  : 1
-#      SRLC16E                     : 1
+# FlipFlops/Latches                : 45
+#      FDC                         : 6
+#      FDCE                        : 37
+#      FDE                         : 2
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 37
@@ -232,17 +238,17 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              47  out of  126800     0%  
+ Number of Slice Registers:              45  out of  126800     0%  
  Number of Slice LUTs:                   10  out of  63400     0%  
-    Number used as Logic:                 9  out of  63400     0%  
-    Number used as Memory:                1  out of  19000     0%  
-       Number used as SRL:                1
+    Number used as Logic:                 8  out of  63400     0%  
+    Number used as Memory:                2  out of  19000     0%  
+       Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     50
-   Number with an unused Flip Flop:       3  out of     50     6%  
-   Number with an unused LUT:            40  out of     50    80%  
-   Number of fully used LUT-FF pairs:     7  out of     50    14%  
+ Number of LUT Flip Flop pairs used:     48
+   Number with an unused Flip Flop:       3  out of     48     6%  
+   Number with an unused LUT:            38  out of     48    79%  
+   Number of fully used LUT-FF pairs:     7  out of     48    14%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -273,7 +279,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 48    |
+clk                                | BUFGP                  | 47    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -284,8 +290,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 1.422ns (Maximum Frequency: 703.235MHz)
-   Minimum input arrival time before clock: 1.131ns
+   Minimum period: 1.467ns (Maximum Frequency: 681.663MHz)
+   Minimum input arrival time before clock: 1.243ns
    Maximum output required time after clock: 0.645ns
    Maximum combinational path delay: No path found
 
@@ -295,10 +301,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 1.422ns (frequency: 703.235MHz)
-  Total number of paths / destination ports: 148 / 76
+  Clock period: 1.467ns (frequency: 681.663MHz)
+  Total number of paths / destination ports: 180 / 75
 -------------------------------------------------------------------------
-Delay:               1.422ns (Levels of Logic = 1)
+Delay:               1.467ns (Levels of Logic = 1)
   Source:            state (FF)
   Destination:       i2si_lft_0 (FF)
   Source Clock:      clk rising
@@ -308,32 +314,32 @@ Delay:               1.422ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              3   0.361   0.521  state (state)
-     LUT3:I0->O           16   0.097   0.348  _n0056_inv1 (_n0056_inv)
+     FDC:C->Q              3   0.361   0.566  state (state)
+     LUT5:I1->O           16   0.097   0.348  _n0057_inv1 (_n0057_inv)
      FDCE:CE                   0.095          i2si_lft_0
     ----------------------------------------
-    Total                      1.422ns (0.553ns logic, 0.869ns route)
-                                       (38.9% logic, 61.1% route)
+    Total                      1.467ns (0.553ns logic, 0.914ns route)
+                                       (37.7% logic, 62.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 50 / 50
+  Total number of paths / destination ports: 81 / 80
 -------------------------------------------------------------------------
-Offset:              1.131ns (Levels of Logic = 2)
+Offset:              1.243ns (Levels of Logic = 2)
   Source:            rst (PAD)
-  Destination:       sck_0 (FF)
+  Destination:       i2si_lft_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: rst to sck_0
+  Data Path: rst to i2si_lft_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.279  rst_IBUF (rst_IBUF)
-     INV:I->O             46   0.113   0.388  rst_inv1_INV_0 (rst_inv)
-     FDC:CLR                   0.349          sck_0
+     IBUF:I->O             5   0.001   0.702  rst_IBUF (rst_IBUF)
+     LUT5:I0->O           16   0.097   0.348  _n0057_inv1 (_n0057_inv)
+     FDCE:CE                   0.095          i2si_lft_0
     ----------------------------------------
-    Total                      1.131ns (0.463ns logic, 0.668ns route)
-                                       (41.0% logic, 59.0% route)
+    Total                      1.243ns (0.193ns logic, 1.050ns route)
+                                       (15.5% logic, 84.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -364,18 +370,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.422|         |         |         |
+clk            |    1.467|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.56 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.48 secs
  
 --> 
 
-Total memory usage is 446564 kilobytes
+Total memory usage is 427748 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

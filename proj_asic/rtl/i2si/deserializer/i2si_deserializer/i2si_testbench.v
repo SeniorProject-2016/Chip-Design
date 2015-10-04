@@ -103,17 +103,17 @@ module i2si_testbench;
 	#625 i2si_sd = 0;
 	end
 	
-	always
+	initial
 	begin
-	#312.5 i2si_ws = 0;
-	#10000 i2si_ws = 1;
-	/*#10000 i2si_ws = 0;
-	#10000 i2si_ws = 1;
-	#10000 i2si_ws = 1;
-	#10000 i2si_ws = 1;
+	#312.5 i2si_ws = 1;
+	#10000 i2si_ws = 0;
 	#10000 i2si_ws = 1;
 	#10000 i2si_ws = 0;
-	#10000 i2si_ws = 1;*/
+	#10000 i2si_ws = 1;
+	#10000 i2si_ws = 0;
+	#10000 i2si_ws = 1;
+	#10000 i2si_ws = 0;
+	#10000 i2si_ws = 1;
 	end
 	
 endmodule

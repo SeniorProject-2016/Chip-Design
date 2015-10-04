@@ -44,18 +44,20 @@ reg [15:0] 					i2si_lft;
 reg [15:0]					i2si_rgt;
 //Defines which state the deserializer is in. Active or Idle.
 reg 							state;
-//sck transitions from 0 -> 1
-reg 							i2si_sck_transition;
-//Check if ws goes from 1 -> 0 when en = 1
-reg							i2si_ws_transition;
-//Defines when the deserializer should read in the left channel
-reg							in_left;
 //Delayed signals of i2si_sck
 reg [2:0]					sck;
 //Delayed signals of i2si_ws
 reg [4:0]               ws;
 //Delayed signals of i2si_sd
 reg [3:0]					sd;
+
+
+//sck transitions from 0 -> 1
+wire 							i2si_sck_transition;
+//Check if ws goes from 1 -> 0 when en = 1
+wire							i2si_ws_transition;
+//Defines when the deserializer should read in the left channel
+wire							in_left;
 
 
 //Represents idle state
@@ -79,18 +81,11 @@ begin
   end
 end
 
+
 //Defines when sck_transition is high or low. Helps define when the deserialzer should read in the left channel and output it to i2si_lft
-always @(posedge clk or negedge rst)
-begin
-	if(!rst)
-		i2si_sck_transition <= 1'b0;
-	//using wrong bits of sck to turn on i2si_sck_transition at right time
-	//when using correct bits, transition is 1 clock cycle late
-	else if(sck[1] && !sck[2])
-		i2si_sck_transition <= 1'b1;
-	else
-		i2si_sck_transition <= 1'b0;
-end
+assign i2si_sck_transition =  (!rst) 				  ? 1'b0:
+										(sck[1] && !sck[2]) ? 1'b1:
+																    1'b0;
 
 //Delay i2si_sd by 4 clock cycles
 //sd[3] is synchronized signal
@@ -123,15 +118,10 @@ end
 
 //ws_transition becomes high when ws goes from 1 -> 0
 //used to define active state
-always @(posedge clk or negedge rst)
-begin
-	if(!rst)
-		i2si_ws_transition <= 1'b0;
-	else if(ws[3] && !ws[4] && i2si_sck_transition)
-		i2si_ws_transition <= 1'b1;
-	else
-		i2si_ws_transition <= 1'b0;
-end
+//Currently cannot trigger i2si_ws_transition. Unsure how to, using inputs in test bench
+assign i2si_ws_transition =   (!rst) 				                         ? 1'b0:
+										(ws[3] && !ws[4] && i2si_sck_transition)   ? 1'b1:
+																                           1'b0;
 
 //Defining when deserializer is in the idle or active state
 always @(posedge clk or negedge rst)
@@ -147,7 +137,7 @@ end
 
 //Sets in_left as high when ws is low and sck_transition is high
 //Tells deserializer to start reading in data from left or right channel
-always @(posedge clk or negedge rst)
+/*always @(posedge clk or negedge rst)
 begin
 	if(!rst)
 		in_left <= 1'b0;
@@ -155,8 +145,15 @@ begin
 		in_left <= 1'b1;
 	else if (ws[3] && i2si_sck_transition)
 		in_left <= 1'b0;
-end
+end*/
 
+assign in_left =  			(!rst) 				  				   ? 1'b0:
+									(!ws[3] && i2si_sck_transition)  ? 1'b1:
+									(ws[3] && i2si_sck_transition)	? 1'b0:
+																				  in_left;
+
+//Appears to work if all variables have correct values
+//As of right now state and in_left are incorrect
 always @(posedge clk or negedge rst)
 begin
 	if(!rst)
@@ -166,16 +163,13 @@ begin
 	end		
 	else if(state == S1)
 	begin					
-		//Storing serial data into parallel
-		//Currently does not store data into the right channel nor at the right time
 		if(i2si_sck_transition)
 		begin
 			if (in_left)
 			begin
 				i2si_lft[15:1] <= i2si_lft[14:0];
 				i2si_lft[0] <= sd[3];
-			end
-				
+			end	
 			else
 			begin
 				i2si_rgt[15:1] <= i2si_rgt[14:0];
