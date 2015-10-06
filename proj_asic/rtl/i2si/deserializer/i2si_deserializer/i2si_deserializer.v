@@ -50,15 +50,16 @@ reg [2:0]					sck;
 reg [4:0]               ws;
 //Delayed signals of i2si_sd
 reg [3:0]					sd;
+//Defines when the deserializer should read in the left channel
+reg							in_left;
+reg							in_left_delay;
 
 
+wire							i2si_xfc;
 //sck transitions from 0 -> 1
 wire 							i2si_sck_transition;
 //Check if ws goes from 1 -> 0 when en = 1
 wire							i2si_ws_transition;
-//Defines when the deserializer should read in the left channel
-wire							in_left;
-
 
 //Represents idle state
 parameter S0 = 1'b0;
@@ -118,9 +119,10 @@ end
 
 //ws_transition becomes high when ws goes from 1 -> 0
 //used to define active state
-//Currently cannot trigger i2si_ws_transition. Unsure how to, using inputs in test bench
+//Currently trigger i2si_ws_transition with clk instead of i2si_sck_transition. Perhaps ok?
 assign i2si_ws_transition =   (!rst) 				                         ? 1'b0:
-										(ws[3] && !ws[4] && i2si_sck_transition)   ? 1'b1:
+										//(ws[3] && !ws[4] && i2si_sck_transition)   ? 1'b1:
+										(ws[3] && !ws[4] && clk)						 ? 1'b1:
 																                           1'b0;
 
 //Defining when deserializer is in the idle or active state
@@ -137,7 +139,7 @@ end
 
 //Sets in_left as high when ws is low and sck_transition is high
 //Tells deserializer to start reading in data from left or right channel
-/*always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst)
 begin
 	if(!rst)
 		in_left <= 1'b0;
@@ -145,15 +147,29 @@ begin
 		in_left <= 1'b1;
 	else if (ws[3] && i2si_sck_transition)
 		in_left <= 1'b0;
-end*/
+end
 
-assign in_left =  			(!rst) 				  				   ? 1'b0:
-									(!ws[3] && i2si_sck_transition)  ? 1'b1:
-									(ws[3] && i2si_sck_transition)	? 1'b0:
-																				  in_left;
+//Used to help trigger i2si_xfc
+//Using clk like i2si_ws_transition to trigger i2si_xfc. Method OK?																									  
+always @(posedge clk or negedge rst)
+begin
+	if(!rst)
+		in_left_delay <= 1'b0;
+	else
+	begin
+		in_left_delay <= in_left;
+	end
+end
+
+//Triggers i2si_xfc when ws[3] goes from high to low
+//In other words when the system is done reading in the right channel
+//and begins reading in the left channel, trigger xfc.																									
+assign i2si_xfc =   				(!rst) 				                         	? 1'b0:
+										(in_left && !in_left_delay && clk)				? 1'b1:
+																                             1'b0;
+																									
 
 //Appears to work if all variables have correct values
-//As of right now state and in_left are incorrect
 always @(posedge clk or negedge rst)
 begin
 	if(!rst)
