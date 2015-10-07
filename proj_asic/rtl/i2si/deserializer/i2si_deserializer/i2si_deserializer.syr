@@ -122,31 +122,33 @@ Synthesizing Unit <i2si_deserializer>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\deserializer\i2si_deserializer\i2si_deserializer.v".
         S0 = 1'b0
         S1 = 1'b1
-    Found 4-bit register for signal <sd>.
-    Found 5-bit register for signal <ws>.
+    Found 4-bit register for signal <sd_vec>.
+    Found 5-bit register for signal <ws_vec>.
     Found 16-bit register for signal <i2si_lft>.
     Found 16-bit register for signal <i2si_rgt>.
-    Found 3-bit register for signal <sck>.
+    Found 3-bit register for signal <sck_vec>.
+    Found 1-bit register for signal <armed1>.
+    Found 1-bit register for signal <armed2>.
     Found 1-bit register for signal <state>.
     Found 1-bit register for signal <in_left>.
     Found 1-bit register for signal <in_left_delay>.
+    Found 1-bit register for signal <i2si_xfc>.
+    Found 2-bit register for signal <rst_vec>.
     Summary:
-	inferred  47 D-type flip-flop(s).
-	inferred   3 Multiplexer(s).
+	inferred  52 D-type flip-flop(s).
 Unit <i2si_deserializer> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 8
- 1-bit register                                        : 3
+# Registers                                            : 12
+ 1-bit register                                        : 6
  16-bit register                                       : 2
+ 2-bit register                                        : 1
  3-bit register                                        : 1
  4-bit register                                        : 1
  5-bit register                                        : 1
-# Multiplexers                                         : 3
- 1-bit 2-to-1 multiplexer                              : 3
 
 =========================================================================
 
@@ -159,10 +161,8 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 47
- Flip-Flops                                            : 47
-# Multiplexers                                         : 3
- 1-bit 2-to-1 multiplexer                              : 3
+# Registers                                            : 52
+ Flip-Flops                                            : 52
 
 =========================================================================
 
@@ -179,16 +179,16 @@ Found area constraint ratio of 100 (+ 5) on block i2si_deserializer, actual rati
 Final Macro Processing ...
 
 Processing Unit <i2si_deserializer> :
-	Found 4-bit shift register for signal <sd_3>.
-	Found 4-bit shift register for signal <ws_3>.
+	Found 4-bit shift register for signal <sd_vec_3>.
+	Found 4-bit shift register for signal <ws_vec_3>.
 Unit <i2si_deserializer> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 39
- Flip-Flops                                            : 39
+# Registers                                            : 44
+ Flip-Flops                                            : 44
 # Shift Registers                                      : 2
  4-bit shift register                                  : 2
 
@@ -213,25 +213,26 @@ Top Level Output File Name         : i2si_deserializer.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 11
+# BELS                             : 13
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 2
+#      LUT2                        : 3
 #      LUT3                        : 1
-#      LUT4                        : 1
-#      LUT5                        : 3
+#      LUT4                        : 3
+#      LUT5                        : 2
 #      LUT6                        : 1
 #      VCC                         : 1
-# FlipFlops/Latches                : 46
-#      FDC                         : 7
+# FlipFlops/Latches                : 51
+#      FD                          : 2
+#      FDC                         : 10
 #      FDCE                        : 37
 #      FDE                         : 2
 # Shift Registers                  : 2
 #      SRLC16E                     : 2
 # Clock Buffers                    : 1
-#      BUFG                        : 1
-# IO Buffers                       : 39
-#      IBUF                        : 6
+#      BUFGP                       : 1
+# IO Buffers                       : 38
+#      IBUF                        : 5
 #      OBUF                        : 33
 
 Device utilization summary:
@@ -241,18 +242,18 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              46  out of  126800     0%  
- Number of Slice LUTs:                   11  out of  63400     0%  
-    Number used as Logic:                 9  out of  63400     0%  
+ Number of Slice Registers:              51  out of  126800     0%  
+ Number of Slice LUTs:                   13  out of  63400     0%  
+    Number used as Logic:                11  out of  63400     0%  
     Number used as Memory:                2  out of  19000     0%  
        Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     49
-   Number with an unused Flip Flop:       3  out of     49     6%  
-   Number with an unused LUT:            38  out of     49    77%  
-   Number of fully used LUT-FF pairs:     8  out of     49    16%  
-   Number of unique control sets:         5
+ Number of LUT Flip Flop pairs used:     54
+   Number with an unused Flip Flop:       3  out of     54     5%  
+   Number with an unused LUT:            41  out of     54    75%  
+   Number of fully used LUT-FF pairs:    10  out of     54    18%  
+   Number of unique control sets:         6
 
 IO Utilization: 
  Number of IOs:                          39
@@ -282,7 +283,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | IBUF+BUFG              | 48    |
+clk                                | BUFGP                  | 53    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -293,10 +294,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 1.565ns (Maximum Frequency: 639.100MHz)
-   Minimum input arrival time before clock: 1.247ns
-   Maximum output required time after clock: 1.140ns
-   Maximum combinational path delay: 0.957ns
+   Minimum period: 1.518ns (Maximum Frequency: 658.979MHz)
+   Minimum input arrival time before clock: 1.135ns
+   Maximum output required time after clock: 0.645ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
@@ -304,85 +305,65 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 1.565ns (frequency: 639.100MHz)
-  Total number of paths / destination ports: 181 / 76
+  Clock period: 1.518ns (frequency: 658.979MHz)
+  Total number of paths / destination ports: 196 / 80
 -------------------------------------------------------------------------
-Delay:               1.565ns (Levels of Logic = 2)
-  Source:            in_left (FF)
+Delay:               1.518ns (Levels of Logic = 2)
+  Source:            sck_vec_2 (FF)
   Destination:       in_left (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: in_left to in_left
+  Data Path: sck_vec_2 to in_left
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              6   0.361   0.706  in_left (in_left)
-     LUT5:I0->O            1   0.097   0.295  in_left_dpot (in_left_dpot)
-     LUT3:I2->O            1   0.097   0.000  in_left_rstpot (in_left_rstpot)
+     FDC:C->Q              5   0.361   0.575  sck_vec_2 (sck_vec_2)
+     LUT4:I0->O            1   0.097   0.379  in_left_dpot (in_left_dpot)
+     LUT3:I1->O            1   0.097   0.000  in_left_rstpot (in_left_rstpot)
      FDC:D                     0.008          in_left
     ----------------------------------------
-    Total                      1.565ns (0.563ns logic, 1.002ns route)
-                                       (36.0% logic, 64.0% route)
+    Total                      1.518ns (0.563ns logic, 0.954ns route)
+                                       (37.1% logic, 62.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 83 / 81
+  Total number of paths / destination ports: 52 / 52
 -------------------------------------------------------------------------
-Offset:              1.247ns (Levels of Logic = 2)
+Offset:              1.135ns (Levels of Logic = 2)
   Source:            rst (PAD)
-  Destination:       i2si_rgt_0 (FF)
+  Destination:       sck_vec_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: rst to i2si_rgt_0
+  Data Path: rst to sck_vec_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             6   0.001   0.706  rst_IBUF (rst_IBUF)
-     LUT5:I0->O           16   0.097   0.348  _n0070_inv1 (_n0070_inv)
-     FDCE:CE                   0.095          i2si_rgt_0
+     IBUF:I->O             2   0.001   0.284  rst_IBUF (rst_IBUF)
+     INV:I->O             47   0.113   0.388  rst_inv1_INV_0 (rst_inv)
+     FDC:CLR                   0.349          sck_vec_0
     ----------------------------------------
-    Total                      1.247ns (0.193ns logic, 1.054ns route)
-                                       (15.5% logic, 84.5% route)
+    Total                      1.135ns (0.463ns logic, 0.672ns route)
+                                       (40.8% logic, 59.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 34 / 33
+  Total number of paths / destination ports: 33 / 33
 -------------------------------------------------------------------------
-Offset:              1.140ns (Levels of Logic = 2)
-  Source:            in_left (FF)
-  Destination:       i2si_xfc (PAD)
+Offset:              0.645ns (Levels of Logic = 1)
+  Source:            i2si_lft_14 (FF)
+  Destination:       i2si_lft<14> (PAD)
   Source Clock:      clk rising
 
-  Data Path: in_left to i2si_xfc
+  Data Path: i2si_lft_14 to i2si_lft<14>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              6   0.361   0.402  in_left (in_left)
-     LUT4:I2->O            1   0.097   0.279  Mmux_i2si_xfc11 (i2si_xfc_OBUF)
-     OBUF:I->O                 0.000          i2si_xfc_OBUF (i2si_xfc)
+     FDCE:C->Q             2   0.361   0.283  i2si_lft_14 (i2si_lft_14)
+     OBUF:I->O                 0.000          i2si_lft_14_OBUF (i2si_lft<14>)
     ----------------------------------------
-    Total                      1.140ns (0.458ns logic, 0.682ns route)
-                                       (40.2% logic, 59.8% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 2 / 1
--------------------------------------------------------------------------
-Delay:               0.957ns (Levels of Logic = 3)
-  Source:            rst (PAD)
-  Destination:       i2si_xfc (PAD)
-
-  Data Path: rst to i2si_xfc
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             6   0.001   0.579  rst_IBUF (rst_IBUF)
-     LUT4:I0->O            1   0.097   0.279  Mmux_i2si_xfc11 (i2si_xfc_OBUF)
-     OBUF:I->O                 0.000          i2si_xfc_OBUF (i2si_xfc)
-    ----------------------------------------
-    Total                      0.957ns (0.098ns logic, 0.859ns route)
-                                       (10.2% logic, 89.8% route)
+    Total                      0.645ns (0.361ns logic, 0.283ns route)
+                                       (56.0% logic, 44.0% route)
 
 =========================================================================
 
@@ -394,18 +375,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.565|         |         |         |
+clk            |    1.518|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.15 secs
+Total CPU time to Xst completion: 9.14 secs
  
 --> 
 
-Total memory usage is 427748 kilobytes
+Total memory usage is 427172 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

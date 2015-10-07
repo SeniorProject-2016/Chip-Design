@@ -32,6 +32,7 @@ module i2si_deserializer_testbench;
 	reg i2si_sd;
 	reg rf_i2si_en;
 	
+	reg [31:0] count;
 	reg[0:10][0:1][15:0]		test_data;
 
 	// Outputs
@@ -52,7 +53,25 @@ module i2si_deserializer_testbench;
 		.i2si_xfc(i2si_xfc)
 	);
 
-	initial begin
+//	assign rst = (count < 5);
+	
+	always
+	begin
+//		count = 0;
+	forever
+		begin
+			#5 clk = ~clk;
+//			count = count + 1;
+		end
+	end
+	
+	always
+	begin
+	forever
+		#312.5 i2si_sck = ~i2si_sck;
+	end
+	
+		initial begin
 		// Initialize Inputs
 		clk = 0;
 		rst = 0;
@@ -61,6 +80,7 @@ module i2si_deserializer_testbench;
 		i2si_sd = 0;
 		rf_i2si_en = 0;
 
+		test_data = 0;
 		// Wait 100 ns for global reset to finish
 		#100;
         
@@ -68,21 +88,17 @@ module i2si_deserializer_testbench;
 
 	end
 	
-	
-	always
+	initial
 	begin
-		count = 0;
-	forever
+	for(integer entry = 0; entry < 11; entry = entry+1)
+	begin
+		for(integer channel = 0; channel < 2; channel= channel+1)
 		begin
-			#5 clk = ~clk;
-			count = count + 1;
+			for(integer data = 0; data < 16; data = data + 1)
+			begin
+			end
 		end
 	end
-	
-	always
-	begin
-	forever
-		#312.5 i2si_sck = ~i2si_sck;
 	end
       
 endmodule

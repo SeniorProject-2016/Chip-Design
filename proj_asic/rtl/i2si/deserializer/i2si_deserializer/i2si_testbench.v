@@ -38,7 +38,6 @@ module i2si_testbench;
 	wire [15:0] i2si_rgt;
 	wire i2si_xfc;
 	
-	reg [31:0] count;
 
 	// Instantiate the Unit Under Test (UUT)
 	i2si_deserializer uut (
@@ -66,15 +65,12 @@ module i2si_testbench;
 	
 	always
 	begin
-		count = 0;
 	forever
 		begin
 			#5 clk = ~clk;
-			count = count + 1;
 		end
 	end
 
-//	assign rst = (count < 5);
 	
 	always
 	begin
