@@ -44,7 +44,7 @@ module i2si_deserializer_testbench;
     reg [31:0] count;
     /*reg [15:0] test_data[10:0] =  {
                                           16'hAAAA, 16'hFFFF, 16'h1478, 16'hA3B9, 16'hCDD7, 16'hBABA, 16'h4444, 16'hAAAA, 16'h7398, 16'hFFDD, 16'h1111
-                                          //{16'h5982, 16'h0001, 16'hFFFF, 16'h1478, 16'hA3B9, 16'hCDD7, 16'hBABA, 16'h4444, 16'hAAAA, 16'h7398, 16'hFFDD}
+                                          //{16'h5982, 16'h0001, 16'hFFFF, 16'h1478, 16'hA3B9, 16'hCDD7, 16'hBABA, 16'h4444, 16'hAAAA, 16'h7398, 16'hFDDD}
                                         };*/
     reg [15:0] test = 16'hAAAA;
     reg [15:0] test2 = 16'hFF00;
