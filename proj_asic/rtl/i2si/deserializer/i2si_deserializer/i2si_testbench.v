@@ -52,18 +52,7 @@ module i2si_testbench;
 		.i2si_rgt(i2si_rgt)
 	);
 	
-	initial
-	begin
-		rst = 0;
-		clk = 0;
-		i2si_sck = 0;
-		i2si_ws = 0;
-		i2si_sd = 0;
-		rf_i2si_en = 1;
-		#300 rst = 1;
-	end
-	
-	always
+    always
 	begin
 	forever
 		begin
@@ -77,11 +66,24 @@ module i2si_testbench;
 	forever
 		#312.5 i2si_sck = ~i2si_sck;
 	end
+    
+	initial
+	begin
+		rst = 0;
+		clk = 0;
+        i2si_sck = 0;
+        rf_i2si_en = 1;
+        #625 rst = 1;
+		//i2si_ws = 1;
+		//i2si_sd = 0;
+		//rf_i2si_en = 1;
+		//#625 rst = 1;
+	end
 	  
 	
-	always
+	initial
 	begin
-	#312.5 i2si_sd = 1;
+	/*i2si_sd = 1;
 	#625 i2si_sd = 0;
 	#625 i2si_sd = 1;
 	#625 i2si_sd = 0;
@@ -96,12 +98,32 @@ module i2si_testbench;
 	#625 i2si_sd = 1;
 	#625 i2si_sd = 0;
 	#625 i2si_sd = 1;
-	#625 i2si_sd = 0;
+	#625 i2si_sd = 0;*/
+    
+    i2si_sd = 0;
+    
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 0;
+    #625 i2si_sd = 0;
+    #625 i2si_sd = 0;
+    
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
+    #625 i2si_sd = 1;
 	end
 	
 	initial
 	begin
-	#312.5 i2si_ws = 1;
+    i2si_ws = 1;
+    
 	#10000 i2si_ws = 0;
 	#10000 i2si_ws = 1;
 	#10000 i2si_ws = 0;

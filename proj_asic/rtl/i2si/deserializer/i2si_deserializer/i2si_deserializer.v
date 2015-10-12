@@ -85,7 +85,7 @@ always @(posedge clk or negedge rst)
 begin
     if(!rst)
         sd_vec <= 3'b000;
-    else
+    else if(sck_transition)
 	begin
         sd_vec[0] <= i2si_sd;
         sd_vec[3:1] <= sd_vec[2:0];
@@ -116,8 +116,7 @@ assign ws_delay = ws_vec[4];
 
 //ws_transition becomes high when ws goes from 1 -> 0
 //used to help define active state
-//Currently trigger ws_transition with clk instead of sck_transition. Perhaps ok?
-assign ws_transition = ws && !ws_delay;
+assign ws_transition = !ws && ws_delay;
 
 //Used to help define active state when rst goes from low to high
 always @(posedge clk)
@@ -127,11 +126,12 @@ begin
 end
 
 //Intermediate step to help define active state
+//checks if rst goesa from high to low
 always @(posedge clk or negedge rst)
 begin
     if(!rst)
         armed1 <= 1'b0;
-    else if(!rst_vec[1] && rst_vec[0])                  //checks if rst goesa from high to low
+    else if(!rst_vec[1] && rst_vec[0])
         armed1 <= 1'b1;
     else if(ws_transition)
         armed1 <= 1'b0;
