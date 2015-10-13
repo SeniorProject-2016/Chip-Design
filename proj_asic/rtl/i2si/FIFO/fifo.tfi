@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+fifo instance_name (
+    .clk(clk), 
+    .rst(rst), 
+    .fifo_inp_data(fifo_inp_data), 
+    .fifo_out_data(fifo_out_data), 
+    .fifo_inp_rts(fifo_inp_rts), 
+    .fifo_out_rtr(fifo_out_rtr), 
+    .fifo_out_rts(fifo_out_rts), 
+    .fifo_inp_rtr(fifo_inp_rtr), 
+    .fifo_counter(fifo_counter)
+    );
+
+
