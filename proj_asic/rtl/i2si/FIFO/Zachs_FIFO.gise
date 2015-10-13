@@ -84,7 +84,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1436291629" xil_pn:in_ck="-478430205163486577" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1436291629">
+    <transform xil_pn:end_ts="1444776980" xil_pn:in_ck="-478430205163486577" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1444776980">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fifo.v"/>
@@ -102,13 +102,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1436291629" xil_pn:in_ck="-478430205163486577" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1436291629">
+    <transform xil_pn:end_ts="1444776980" xil_pn:in_ck="-478430205163486577" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1444776980">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fifo.v"/>
       <outfile xil_pn:name="fifo_test.v"/>
     </transform>
-    <transform xil_pn:end_ts="1436291638" xil_pn:in_ck="-478430205163486577" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6780522974961272117" xil_pn:start_ts="1436291629">
+    <transform xil_pn:end_ts="1444776988" xil_pn:in_ck="-478430205163486577" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6780522974961272117" xil_pn:start_ts="1444776980">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -120,9 +120,11 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1444756752" xil_pn:in_ck="-2121159678976797934" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8895389776559631096" xil_pn:start_ts="1444756751">
+    <transform xil_pn:end_ts="1444776988" xil_pn:in_ck="-2121159678976797934" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8895389776559631096" xil_pn:start_ts="1444776988">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fifo_test_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
@@ -158,6 +160,10 @@
     <transform xil_pn:end_ts="1442412362" xil_pn:in_ck="4120119880" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="8565965385058753673" xil_pn:start_ts="1442412348">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="fifo.lso"/>
       <outfile xil_pn:name="fifo.ngc"/>
@@ -180,6 +186,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>

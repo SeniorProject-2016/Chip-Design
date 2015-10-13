@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Zachary/Zachs_FIFO/fifo_test.v";
+static const char *ng0 = "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/FIFO/fifo_test.v";
 static const char *ng1 = "---Cannot push: Buffer Full---";
 static const char *ng2 = "Pushed ";
 static int ng3[] = {1, 0};
@@ -1984,11 +1984,11 @@ LAB11:    t6 = (t0 + 5736U);
 }
 
 
-extern void work_m_00000000002812909766_0516081855_init()
+extern void work_m_00000000001015267146_0516081855_init()
 {
 	static char *pe[] = {(void *)Initial_14_0,(void *)Always_68_1,(void *)Forked_26_2,(void *)Forked_27_3};
 	static char *se[] = {(void *)sp_push,(void *)sp_pop};
-	xsi_register_didat("work_m_00000000002812909766_0516081855", "isim/fifo_test_isim_beh.exe.sim/work/m_00000000002812909766_0516081855.didat");
+	xsi_register_didat("work_m_00000000001015267146_0516081855", "isim/fifo_test_isim_beh.exe.sim/work/m_00000000001015267146_0516081855.didat");
 	xsi_register_executes(pe);
 	xsi_register_subprogram_executes(se);
 }
