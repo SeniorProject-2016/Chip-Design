@@ -60,6 +60,10 @@
     <transform xil_pn:end_ts="1444685051" xil_pn:in_ck="-4811472156609117185" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1444685051">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="i2si_deserializer.v"/>
       <outfile xil_pn:name="i2si_deserializer_testbench.v"/>
       <outfile xil_pn:name="i2si_testbench.v"/>
@@ -80,6 +84,11 @@
     <transform xil_pn:end_ts="1444685051" xil_pn:in_ck="-4811472156609117185" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1444685051">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="i2si_deserializer.v"/>
       <outfile xil_pn:name="i2si_deserializer_testbench.v"/>
       <outfile xil_pn:name="i2si_testbench.v"/>
@@ -88,8 +97,13 @@
     <transform xil_pn:end_ts="1444685064" xil_pn:in_ck="-4811472156609117185" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4004607756252424425" xil_pn:start_ts="1444685058">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="i2si_testbench_beh.prj"/>
       <outfile xil_pn:name="i2si_testbench_isim_beh.exe"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
@@ -97,6 +111,8 @@
     <transform xil_pn:end_ts="1444685065" xil_pn:in_ck="-5786972969960677646" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3318339212360683652" xil_pn:start_ts="1444685064">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="i2si_testbench_isim_beh.wdb"/>
