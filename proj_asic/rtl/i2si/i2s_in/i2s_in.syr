@@ -1,0 +1,312 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: i2s_in.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "i2s_in.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "i2s_in"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : i2s_in
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2si_mux.v" into library work
+Parsing module <i2si_mux>.
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" into library work
+Parsing module <fifo>.
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\deserializer\i2si_deserializer\i2si_deserializer.v" into library work
+Parsing module <i2si_deserializer>.
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\BIST\i2si_bist_gen.v" into library work
+Parsing module <i2si_bist_gen>.
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" into library work
+Parsing module <i2s_in>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <i2s_in>.
+
+Elaborating module <i2si_deserializer>.
+
+Elaborating module <i2si_bist_gen>.
+WARNING:HDLCompiler:189 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 72: Size mismatch in connection of port <i2si_bist_out_data>. Formal port size is 12-bit while actual signal size is 1-bit.
+
+Elaborating module <i2si_mux>.
+WARNING:HDLCompiler:97 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2si_mux.v" Line 17: mux_out was previously declared with a different range
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2si_mux.v" Line 29: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:189 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 77: Size mismatch in connection of port <in_0>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 78: Size mismatch in connection of port <in_1>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 79: Size mismatch in connection of port <mux_out>. Formal port size is 16-bit while actual signal size is 1-bit.
+
+Elaborating module <fifo>.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" Line 36: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" Line 38: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" Line 73: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" Line 76: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:189 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 85: Size mismatch in connection of port <i2si_fifo_inp_data>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 88: Size mismatch in connection of port <i2si_fifo_out_data>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 95: Assignment to ro_fifo_overrun ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 51: Net <i2si_fifo_out_rtr> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <i2s_in>.
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v".
+WARNING:Xst:647 - Input <i2si_fifo_inp_rtr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" line 54: Output port <i2si_lft> of the instance <Deserializer> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" line 82: Output port <fifo_counter> of the instance <Fifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" line 82: Output port <i2si_fifo_inp_rtr> of the instance <Fifo> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <i2si_fifo_out_rtr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <i2s_in> synthesized.
+
+Synthesizing Unit <i2si_deserializer>.
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\deserializer\i2si_deserializer\i2si_deserializer.v".
+        S0 = 1'b0
+        S1 = 1'b1
+    Found 4-bit register for signal <sd_vec>.
+    Found 5-bit register for signal <ws_vec>.
+    Found 16-bit register for signal <i2si_lft>.
+    Found 16-bit register for signal <i2si_rgt>.
+    Found 3-bit register for signal <sck_vec>.
+    Found 1-bit register for signal <armed1>.
+    Found 1-bit register for signal <armed2>.
+    Found 1-bit register for signal <state>.
+    Found 1-bit register for signal <in_left>.
+    Found 1-bit register for signal <in_left_delay>.
+    Found 1-bit register for signal <i2si_xfc>.
+    Found 2-bit register for signal <rst_vec>.
+    Summary:
+	inferred  52 D-type flip-flop(s).
+Unit <i2si_deserializer> synthesized.
+
+Synthesizing Unit <i2si_bist_gen>.
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\BIST\i2si_bist_gen.v".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <counter>.
+    Found 12-bit register for signal <i2si_bist_out_data>.
+    Found 1-bit adder for signal <counter_PWR_3_o_add_2_OUT<0>> created at line 17.
+    Found 12-bit adder for signal <i2si_bist_out_data[11]_GND_3_o_add_4_OUT> created at line 23.
+    Found 12-bit comparator lessequal for signal <n0002> created at line 19
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  13 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <i2si_bist_gen> synthesized.
+
+Synthesizing Unit <i2si_mux>.
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2si_mux.v".
+WARNING:Xst:647 - Input <in_1<31:12>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <i2si_mux> synthesized.
+
+Synthesizing Unit <fifo>.
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v".
+    Found 8-bit register for signal <i2si_fifo_out_data>.
+    Found 4-bit register for signal <fifo_counter>.
+    Found 4-bit adder for signal <fifo_counter[3]_GND_9_o_add_2_OUT> created at line 36.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  12 D-type flip-flop(s).
+Unit <fifo> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 1-bit adder                                           : 1
+ 12-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 16
+ 1-bit register                                        : 7
+ 12-bit register                                       : 1
+ 16-bit register                                       : 2
+ 2-bit register                                        : 1
+ 3-bit register                                        : 1
+ 4-bit register                                        : 2
+ 5-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 12-bit comparator lessequal                           : 1
+# Multiplexers                                         : 3
+ 12-bit 2-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <Bist> is unconnected in block <i2s_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <Mux> is unconnected in block <i2s_in>.
+   It will be removed from the design.
+WARNING:Xst:1710 - FF/Latch <i2si_fifo_out_data_0> (without init value) has a constant value of 0 in block <Fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ws_vec_4> of sequential type is unconnected in block <Deserializer>.
+WARNING:Xst:2677 - Node <i2si_fifo_out_data_1> of sequential type is unconnected in block <Fifo>.
+WARNING:Xst:2677 - Node <i2si_fifo_out_data_2> of sequential type is unconnected in block <Fifo>.
+WARNING:Xst:2677 - Node <i2si_fifo_out_data_3> of sequential type is unconnected in block <Fifo>.
+WARNING:Xst:2677 - Node <i2si_fifo_out_data_4> of sequential type is unconnected in block <Fifo>.
+WARNING:Xst:2677 - Node <i2si_fifo_out_data_5> of sequential type is unconnected in block <Fifo>.
+WARNING:Xst:2677 - Node <i2si_fifo_out_data_6> of sequential type is unconnected in block <Fifo>.
+WARNING:Xst:2677 - Node <i2si_fifo_out_data_7> of sequential type is unconnected in block <Fifo>.
+
+Synthesizing (advanced) Unit <fifo>.
+The following registers are absorbed into counter <fifo_counter>: 1 register on signal <fifo_counter>.
+Unit <fifo> synthesized (advanced).
+
+Synthesizing (advanced) Unit <i2si_bist_gen>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <i2si_bist_gen> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 12-bit adder                                          : 1
+# Counters                                             : 2
+ 1-bit up counter                                      : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 72
+ Flip-Flops                                            : 72
+# Comparators                                          : 1
+ 12-bit comparator lessequal                           : 1
+# Multiplexers                                         : 3
+ 12-bit 2-to-1 multiplexer                             : 2
+ 16-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <i2si_fifo_out_data_0> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_fifo_out_data_1> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_fifo_out_data_2> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_fifo_out_data_3> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_fifo_out_data_4> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_fifo_out_data_5> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_fifo_out_data_6> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_fifo_out_data_7> (without init value) has a constant value of 0 in block <fifo>. This FF/Latch will be trimmed during the optimization process.
+
+ERROR:Xst:528 - Multi-source in Unit <i2s_in> on signal <i2si_fifo_inp_rtr>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <i2si_fifo_inp_rtr>
+   Signal <Fifo/i2si_fifo_inp_rtr> is assigned to logic
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.97 secs
+ 
+--> 
+
+Total memory usage is 430116 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :   37 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+
