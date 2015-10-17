@@ -5,129 +5,13 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 72: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">i2si_bist_out_data</arg>&gt;. Formal port size is <arg fmt="%d" index="2">12</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 88: &lt;<arg fmt="%s" index="1">FIFO_WIDTH</arg>&gt; is not declared.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="97" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2si_mux.v" Line 17: <arg fmt="%s" index="1">mux_out</arg> was previously declared with a different range
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 107: &lt;<arg fmt="%s" index="1">trig_i2si_fifo_overrun_clr</arg>&gt; is not declared.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2si_mux.v" Line 29: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">12</arg>-bit target.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 77: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">in_0</arg>&gt;. Formal port size is <arg fmt="%d" index="2">12</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 78: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">in_1</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 79: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">mux_out</arg>&gt;. Formal port size is <arg fmt="%d" index="2">16</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" Line 36: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" Line 38: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" Line 73: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\FIFO\fifo.v" Line 76: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 85: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">i2si_fifo_inp_data</arg>&gt;. Formal port size is <arg fmt="%d" index="2">8</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 88: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">i2si_fifo_out_data</arg>&gt;. Formal port size is <arg fmt="%d" index="2">8</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 95: Assignment to <arg fmt="%s" index="1">ro_fifo_overrun</arg> ignored, since the identifier is never used
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v" Line 51: Net &lt;<arg fmt="%s" index="1">i2si_fifo_out_rtr</arg>&gt; does not have a driver.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">i2si_fifo_inp_rtr</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v</arg>&quot; line <arg fmt="%s" index="2">54</arg>: Output port &lt;<arg fmt="%s" index="3">i2si_lft</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Deserializer</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v</arg>&quot; line <arg fmt="%s" index="2">82</arg>: Output port &lt;<arg fmt="%s" index="3">fifo_counter</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Fifo</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v\i2s_in.v</arg>&quot; line <arg fmt="%s" index="2">82</arg>: Output port &lt;<arg fmt="%s" index="3">i2si_fifo_inp_rtr</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Fifo</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">i2si_fifo_out_rtr</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">rst</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">in_1&lt;31:12&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">Bist</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">i2s_in</arg>&gt;.
-It will be removed from the design.
-</msg>
-
-<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">Mux</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">i2s_in</arg>&gt;.
-It will be removed from the design.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ws_vec_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Deserializer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Fifo</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_fifo_out_data_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="error" file="Xst" num="528" delta="new" >Multi-source in Unit &lt;<arg fmt="%s" index="1">i2s_in</arg>&gt; on signal &lt;<arg fmt="%s" index="2">i2si_fifo_inp_rtr</arg>&gt;; this signal is connected to multiple drivers.
+<msg type="error" file="HDLCompiler" num="598" delta="old" >"C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 21: Module &lt;<arg fmt="%s" index="1">i2s_in</arg>&gt; ignored due to previous errors.
 </msg>
 
 </messages>

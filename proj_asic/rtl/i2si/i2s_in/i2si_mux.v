@@ -7,26 +7,32 @@
 //
 //Description: Multiplexer that selects either the 12 bit (BIST) or 32 bit bus (Deserializer) input
 //////////////////////////////////////////////////////////////////////////////////
-module i2si_mux(in_0, in_1, sel, mux_out);
+module i2si_mux(in_0_dat, in_0_xfc, in_1_dat, in_1_xfc, sel, mux_dat, mux_xfc);
     
-input [11:0]                in_0;               //mux first input: Deserializer output
-input [31:0]                in_1;               //mux second input: BIST output
+input [11:0]                in_0_dat;               //mux first input: Deserializer output
+input                       in_0_xfc;
+input [31:0]                in_1_dat;               //mux second input: BIST output
+input                       in_1_xfc;
 input                       sel;                //select input
-output [31:0]               mux_out;            //mux output
+output [31:0]               mux_dat;            //mux output
+output                      mux_xfc;
     
-reg [15:0] mux_out;
+reg [31:0] mux_dat;
+reg        mux_xfc;
 
-always @ (sel or in_0 or in_1)
+always @ (sel or in_0_dat or in_0_xfc or in_1_dat or in_1_xfc)
 begin
     
     if (sel == 1'b0)
     begin
-        mux_out = in_0;
+        mux_dat <= in_0_dat;
+        mux_xfc <= in_0_xfc;
     end
     
     else
     begin
-        mux_out [11:0] = in_1;
+        mux_dat <= in_1_dat;
+        mux_xfc <= in_1_xfc;
     end
     
 end 
