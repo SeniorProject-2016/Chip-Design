@@ -22,7 +22,7 @@ module i2s_in(              clk, rst,
                             i2si_sck, i2si_ws, i2si_sd, rf_i2si_en,
                             rf_bist_start_val, rf_bist_inc, rf_bist_up_limit,
                             rf_bist_en,
-                            i2si_fifo_inp_rtr, i2si_fifo_out_data, i2si_fifo_out_rts, ro_fifo_overrun
+                            i2si_rtr, i2si_data, i2si_rts, ro_fifo_overrun
     );
 
 input                       clk;                                //Master clock
@@ -40,13 +40,14 @@ input                       rf_bist_en;                         //Mux: Enabled b
 output                      ro_fifo_overrun;                    //FIFO: Input audio FIFO overrun - The FIFO buffer is full and no more can be added to the buffer
 
                                                                                                       
-input                       i2si_fifo_inp_rtr;                  //FIFO: Data input to be pushed to buffer
-output                      i2si_fifo_out_data;                 //FIFO: Output Data
-output                      i2si_fifo_out_rts;                  //FIFO: Output FIFO asserts ready to send
+input                       i2si_rtr;                           //FIFO: Data input to be pushed to buffer
+output                      i2si_data;                          //FIFO: Output Data
+output                      i2si_rts;                           //FIFO: Output FIFO asserts ready to send
 
 wire [31:0]                 deserializer_data;                  //Wire connecting lft and rgt deserializer channels to mux. Connects to mux_in_0
-wire                        deserializer_xfc;                   //Wire output of i2si_xfc connecting to or gate, i2si_fifo_inp_rtr, and input for BIST
-wire                        bist_out_to_mux_in_1;               //Wire connecting bist_out_data to Mux input in_1
+wire                        deserializer_xfc;                   //Wire output of i2si_xfc connecting to or gate, i2si_fifo_inp_rtr, and input for BIST'
+wire [31:0]                 bist_data;
+wire                        bist_xfc;
 wire                        mux_out_to_fifo_inp_data;           //Wire connecting mux_out to fifo_inp_data
 wire                        i2si_fifo_out_rtr;                  //Wire connecting fifo_out_rtr to not gate
 
@@ -79,22 +80,21 @@ i2si_mux Mux(
     .sel                    (rf_bist_en),                       
     .in_0_dat               (deserializer_data),             
     .in_0_xfc               (deserializer_xfc),             
-    .in_1_dat               (bist_mux_port1_dat),                
-    .in_1_xfc               (bist_mux_port1_xfc),                
+    .in_1_dat               (bist_data),                
+    .in_1_xfc               (bist_xfc),                
     .mux_dat                (mux_dat),
     .mux_xfc                (mux_xfc)
 );
 
-fifo #(FIFO_WIDTH, FIFO_DEPTH)
-    Fifo(
+fifo #(Width, Depth) i2si_FIFO(
     .clk                    (clk),
     .rst                    (rst),
     .fifo_inp_data          (mux_out_to_fifo_inp_data),
     .fifo_inp_rts           (xfc_out),
-    .fifo_inp_rtr           (i2si_fifo_inp_rtr),
-    .fifo_out_data          (i2si_fifo_out_data),
-    .fifo_out_rtr           (i2si_fifo_out_rtr),
-    .fifo_out_rts           (i2si_fifo_out_rts)
+    .fifo_inp_rtr           (i2si_rtr),
+    .fifo_out_data          (i2si_data),
+    .fifo_out_rtr           (i2si_rtr),
+    .fifo_out_rts           (i2si_rts)
 );
  
 
