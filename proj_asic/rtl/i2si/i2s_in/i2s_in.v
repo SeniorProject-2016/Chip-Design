@@ -1,23 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    20:42:42 10/14/2015 
-// Design Name: 
-// Module Name:    i2s_in 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module i2s_in(              clk, rst,
                             i2si_sck, i2si_ws, i2si_sd, rf_i2si_en,
                             rf_bist_start_val, rf_bist_inc, rf_bist_up_limit,

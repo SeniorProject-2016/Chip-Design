@@ -8,7 +8,7 @@ module bist_test;
 	reg [11:0] rf_bist_up_limit;
 
 	// Outputs
-	wire [11:0] i2si_bist_out_data;
+	wire [31:0] i2si_bist_out_data;
 
 	// Instantiate the Unit Under Test (UUT)
 	i2si_bist_gen uut (

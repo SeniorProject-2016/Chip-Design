@@ -2,9 +2,9 @@
 
 module fifo_test();
 reg clk, rst, fifo_inp_rts, fifo_out_rtr ; // clock, reset, write enabled, read enabled
-reg[7:0] fifo_inp_data; // buffer input
-reg[7:0] tempdata; // temporary data
-wire [7:0] fifo_out_data; // buffer output
+reg[15:0] fifo_inp_data; // buffer input
+reg[15:0] tempdata; // temporary data
+wire [15:0] fifo_out_data; // buffer output
 wire [`BUF_WIDTH :0] fifo_counter; // the number of elements in the buffer
 
 fifo ff( .clk(clk), .rst(rst), .fifo_inp_data(fifo_inp_data), .fifo_out_data(fifo_out_data), 
