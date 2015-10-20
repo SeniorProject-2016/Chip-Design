@@ -1,0 +1,15 @@
+[Inputs]
+clk
+rst
+fifo_inp_rts
+fifo_out_rtr
+=fifo_inp_data[7:0]=
+[Outputs]
+fifo_out_rts
+fifo_inp_rtr
+=fifo_out_data[7:0]=
+=fifo_counter[3:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel fifo
+

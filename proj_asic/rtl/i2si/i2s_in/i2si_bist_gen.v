@@ -24,4 +24,5 @@ module i2si_bist_gen(clk,rst,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si
         else // if the signal is within normal range
             i2si_bist_out_data<=i2si_bist_out_data+rf_bist_inc; // increment the signal
     end
+    
 endmodule
