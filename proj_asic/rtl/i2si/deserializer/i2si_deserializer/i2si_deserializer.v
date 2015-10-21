@@ -9,14 +9,14 @@
 //
 //              Deserializer needs to first be resetted in order to function properly, initializing all values to 0.
 //              Once all values are initialized to 0, certain conditions must be met for the deserializer to become active.
-//              To become active, rst first needs to go from high to low, and then ws needs to go from high to low. 
+//              To become active, rst_n first needs to go from high to low, and then ws needs to go from high to low. 
 //              Then when sck_transition high, the deserializer becomes active.
 //////////////////////////////////////////////////////////////////////////////////
 
-module i2si_deserializer(clk, rst, i2si_sck, i2si_ws, i2si_sd, rf_i2si_en, i2si_lft, i2si_rgt, i2si_xfc);
+module i2si_deserializer(clk, rst_n, i2si_sck, i2si_ws, i2si_sd, rf_i2si_en, i2si_lft, i2si_rgt, i2si_xfc);
 
 input                           clk;                        //Master clock
-input                           rst;                        //Reset
+input                           rst_n;                        //Reset
 input                           i2si_sck;                   //Digital audio bit clock
 input                           i2si_ws;                    //Word select: defines if left or right channel is being read from. 0 = Left Channel, 1 = Right Channel
 input                           i2si_sd;                    //Digital audio serial data
@@ -29,7 +29,7 @@ output                          i2si_xfc;                   //Transfer Complete
 reg [15:0]                      i2si_lft;
 reg [15:0]                      i2si_rgt;
 reg                             i2si_xfc;
-reg [1:0]                       rst_vec;                    //Used to check when rst goes from low to high and to trigger armed1
+reg [1:0]                       rst_vec;                    //Used to check when rst_n goes from low to high and to trigger armed1
 reg                             armed1;                     //First signal that helps define idle and active state
 reg                             armed2;                     //Second signal that helps define idle and active state
 reg                             state;                      //Defines which state the deserializer is in. Active or Idle.
@@ -56,9 +56,9 @@ parameter                       S1 = 1'b1;                  //Represents active 
 //Synchronize clk and sck
 //sck[1] = sck synchronized with clk
 //sck[2] = sck delay signal to help create sck_transition
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if (!rst)
+    if (!rst_n)
         sck_vec <= 3'b000;
     else
     begin
@@ -76,9 +76,9 @@ assign sck_transition = sck && !sck_delay;
 
 //Delay i2si_sd by 4 clock cycles
 //sd[3] is synchronized signal
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
         sd_vec <= 3'b000;
     else if(sck_transition)
 	begin
@@ -94,9 +94,9 @@ assign sd = sd_vec[3];
 //ws has additional delay to define the active state
 //ws[3] is synchronized
 //ws[4] is delayed ws signal
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
         ws_vec <= 4'b0000;
     else
     begin
@@ -113,18 +113,18 @@ assign ws_delay = ws_vec[4];
 //used to help define active state
 assign ws_transition = !ws && ws_delay;
 
-//Used to help define active state when rst goes from low to high
+//Used to help define active state when rst_n goes from low to high
 always @(posedge clk)
 begin
-    rst_vec[0] <= rst;
+    rst_vec[0] <= rst_n;
     rst_vec[1] <= rst_vec[0];
 end
 
 //Intermediate step to help define active state
-//checks if rst goes from high to low
-always @(posedge clk or negedge rst)
+//checks if rst_n goes from high to low
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
         armed1 <= 1'b0;
     else if(!rst_vec[1] && rst_vec[0])
         armed1 <= 1'b1;
@@ -133,9 +133,9 @@ begin
 end
 
 //Intermediate step to help define active state
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
         armed2 <= 1'b0;
     else if(armed1 && ws_transition)
         armed2 <= 1'b1;
@@ -144,9 +144,9 @@ begin
 end
 
 //Defines when deserializer is in the idle or active state
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
         state <= S0;
     else if(!rf_i2si_en)
         state <= S0;
@@ -156,9 +156,9 @@ end
 
 
 //Tells deserializer when to start reading in data from left channel
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
         in_left <= 1'b0;
     else if (!ws && sck_transition)
         in_left <= 1'b1;
@@ -167,9 +167,9 @@ begin
 end
 
 //Used to help trigger i2si_xfc																						  
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
         in_left_delay <= 1'b0;
     else
     begin
@@ -183,9 +183,9 @@ end
 assign pre_xfc = in_left && !in_left_delay;
 
 //synchronizing xfc with master clock
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
         i2si_xfc <= 1'b0;
     else
         i2si_xfc <= pre_xfc;
@@ -194,9 +194,9 @@ end
 
 //Store data into either the left or right channel when
 //the deserializer is active and when sck_transition is high
-always @(posedge clk or negedge rst)
+always @(posedge clk or negedge rst_n)
 begin
-    if(!rst)
+    if(!rst_n)
     begin
         i2si_lft[15:0] <= 16'b0;
         i2si_rgt[15:0] <= 16'b0;
