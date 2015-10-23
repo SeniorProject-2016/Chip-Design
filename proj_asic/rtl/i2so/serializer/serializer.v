@@ -34,11 +34,12 @@ output              i2so_ws;                            //Word Select
 output              i2so_en;
 output              rtr;                                //Ready to receive
 
+reg                 i2so_sd;
+reg                 i2so_ws;
+reg                 rtr;
 reg [15:0]          lft_data;                           //Captures the data of
 reg [15:0]          rgt_data;                           //Captures the data of
-reg                 i2so_sd;
 reg                 LR;                                 //Left Right Counter: keeps track of which parallel digital audio to read from
-reg                 rtr;
 reg                 LR_delay;                           //Delayed signal of LR
 reg [3:0]           bit_count;                          //Bit Counter: keeps track of which bit to read in
 
@@ -88,6 +89,19 @@ begin
         bit_count <= 4'd15;
     else if(i2si_sck_transition)
         bit_count <= bit_count - 4'd1;
+end
+
+//Changes ws when lft or rgt channel data is on 14th bit
+always @(posedge clk or negedge rst_n)
+begin
+    if(!rst_n)
+        i2so_ws <= 0;
+    else if(bit_count == 14 && LR == 1'b0)
+        i2so_ws <= 1;
+    else if(bit_count == 14 && LR == 1'b1)
+        i2so_ws <= 0;
+    else
+        i2so_ws <= i2so_ws;
 end
 
 //Store data from i2so_lft or i2so_rgt into i2so_sd
