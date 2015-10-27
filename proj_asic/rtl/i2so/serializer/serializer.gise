@@ -23,6 +23,10 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="serializer.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="serializer.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="serializer.ngc"/>
@@ -33,12 +37,82 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="serializer.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="serializer_envsettings.html"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="serializer_summary.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="serializer_test2_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="serializer_test2_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="serializer_test2_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="serializer_test2_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="serializer_test_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="serializer_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1445911855" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1445911855">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445917899" xil_pn:in_ck="-4730467978357214422" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1445917899">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="serializer.v"/>
+      <outfile xil_pn:name="serializer_test.v"/>
+      <outfile xil_pn:name="serializer_test2.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1445912578" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="3481043027471872098" xil_pn:start_ts="1445912578">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445912578" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-8280854405946221184" xil_pn:start_ts="1445912578">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445911855" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="452260463646271351" xil_pn:start_ts="1445911855">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445917899" xil_pn:in_ck="-4730467978357214422" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1445917899">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="serializer.v"/>
+      <outfile xil_pn:name="serializer_test.v"/>
+      <outfile xil_pn:name="serializer_test2.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1445917901" xil_pn:in_ck="-4730467978357214422" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1077013027289976013" xil_pn:start_ts="1445917899">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="serializer_test2_beh.prj"/>
+      <outfile xil_pn:name="serializer_test2_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1445917902" xil_pn:in_ck="-4891412006973268126" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6964320381888364022" xil_pn:start_ts="1445917901">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="serializer_test2_isim_beh.wdb"/>
+    </transform>
     <transform xil_pn:end_ts="1445585412" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1445585412">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -67,9 +141,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1445585664" xil_pn:in_ck="5972474586442194718" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="8704968263568413076" xil_pn:start_ts="1445585652">
+    <transform xil_pn:end_ts="1445916921" xil_pn:in_ck="5972474586442194718" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="8704968263568413076" xil_pn:start_ts="1445916909">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="serializer.lso"/>
       <outfile xil_pn:name="serializer.ngc"/>
@@ -78,6 +156,8 @@
       <outfile xil_pn:name="serializer.stx"/>
       <outfile xil_pn:name="serializer.syr"/>
       <outfile xil_pn:name="serializer.xst"/>
+      <outfile xil_pn:name="serializer_test2_beh.prj"/>
+      <outfile xil_pn:name="serializer_test2_stx_beh.prj"/>
       <outfile xil_pn:name="serializer_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
