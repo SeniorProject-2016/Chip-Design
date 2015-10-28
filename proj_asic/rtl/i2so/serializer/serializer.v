@@ -42,8 +42,8 @@ reg                 state;                              //state of the serialize
 reg                 i2so_sd;
 reg                 i2so_ws;
 reg                 rtr;
-reg [15:0]          lft_data;                           //Captures the data of
-reg [15:0]          rgt_data;                           //Captures the data of
+reg [15:0]          lft_data;                           //Captures the data of i2so_lft
+reg [15:0]          rgt_data;                           //Captures the data of i2so_rgt
 reg                 LR;                                 //Left Right Counter: keeps track of which parallel digital audio to read from
 reg                 LR_delay;                           //Delayed signal of LR
 reg                 rts_delay;                          //Delay signal of ready to send
@@ -54,6 +54,8 @@ wire                rts_transition;                     //High when rts goes fro
 
 parameter           s0 = 0;                             //value of idle state
 parameter           s1 = 1;                             //value of active state
+
+reg                 begin_bit_count;                    //Informs the serializer when the bit count should begin
 
 input               i2si_sck;
 reg [2:0]           sck_vec;
@@ -88,11 +90,23 @@ assign i2si_sck_transition = sck && !i2si_sck_delay;
 
 
 
+always @(posedge clk or negedge rst_n)
+begin
+    if(!rst_n)
+        begin_bit_count <= 1'b0;
+    else if(state && LR == 1'b0 && i2si_sck_transition)
+        begin_bit_count <= 1'b1;
+end
+
+
+
+
+
 
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        rts_delay <= 0;
+        rts_delay <= 1'b0;
     else
         rts_delay <= rts;
 end
@@ -113,7 +127,7 @@ end
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        LR <= 0;
+        LR <= 1'b0;
     else if(bit_count == 0 && i2si_sck_transition)
         LR <= ~LR;
 end
@@ -122,7 +136,7 @@ end
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        LR_delay <= 0;
+        LR_delay <= 1'b0;
     else
         LR_delay <= LR;
 end
@@ -155,7 +169,7 @@ always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         bit_count <= 4'd15;
-    else if(i2si_sck_transition)
+    else if(i2si_sck_transition && begin_bit_count)
     begin
         bit_count <= bit_count - 4'd1;
     end
@@ -165,25 +179,25 @@ end
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        i2so_ws <= 0;
+        i2so_ws <= 1'b0;
     else if (state)
     begin
-        if(bit_count == 1 && LR == 1'b0 && i2si_sck_transition)
-            i2so_ws <= 1;
-        else if(bit_count == 1 && LR == 1'b1 && i2si_sck_transition)
-            i2so_ws <= 0;
+        if(bit_count == 4'd1 && LR == 1'b0 && i2si_sck_transition)
+            i2so_ws <= 1'b1;
+        else if(bit_count == 4'd1 && LR == 1'b1 && i2si_sck_transition)
+            i2so_ws <= 1'b0;
         else
             i2so_ws <= i2so_ws;
     end
     else
-        i2so_ws <= 0;
+        i2so_ws <= 1'b0;
 end
 
 //Store data from i2so_lft or i2so_rgt into i2so_sd
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        i2so_sd <= 0;
+        i2so_sd <= 1'b0;
     else if(state && i2si_sck_transition)
     begin
         if(LR == 1'b0)

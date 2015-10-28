@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: serializer.prj
 
@@ -122,8 +122,9 @@ Synthesizing Unit <serializer>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\serializer\serializer.v".
         s0 = 0
         s1 = 1
-    Found 4-bit register for signal <bit_count2>.
+    Found 4-bit register for signal <bit_count>.
     Found 3-bit register for signal <sck_vec>.
+    Found 1-bit register for signal <begin_bit_count>.
     Found 1-bit register for signal <rts_delay>.
     Found 1-bit register for signal <state>.
     Found 1-bit register for signal <LR>.
@@ -133,13 +134,12 @@ Synthesizing Unit <serializer>.
     Found 1-bit register for signal <i2so_sd>.
     Found 16-bit register for signal <lft_data>.
     Found 16-bit register for signal <rgt_data>.
-    Found 4-bit register for signal <bit_count>.
-    Found 4-bit subtractor for signal <bit_count2[3]_GND_1_o_sub_11_OUT> created at line 161.
-    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_21_o> created at line 193.
-    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_22_o> created at line 198.
+    Found 4-bit subtractor for signal <bit_count[3]_GND_1_o_sub_12_OUT> created at line 174.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_19_o> created at line 205.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_20_o> created at line 210.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  50 D-type flip-flop(s).
+	inferred  47 D-type flip-flop(s).
 	inferred   5 Multiplexer(s).
 Unit <serializer> synthesized.
 
@@ -150,10 +150,10 @@ Macro Statistics
 # Adders/Subtractors                                   : 1
  4-bit subtractor                                      : 1
 # Registers                                            : 12
- 1-bit register                                        : 7
+ 1-bit register                                        : 8
  16-bit register                                       : 2
  3-bit register                                        : 1
- 4-bit register                                        : 2
+ 4-bit register                                        : 1
 # Multiplexers                                         : 5
  1-bit 16-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 3
@@ -166,7 +166,7 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <serializer>.
-The following registers are absorbed into counter <bit_count2>: 1 register on signal <bit_count2>.
+The following registers are absorbed into counter <bit_count>: 1 register on signal <bit_count>.
 Unit <serializer> synthesized (advanced).
 
 =========================================================================
@@ -175,8 +175,8 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 1
  4-bit down counter                                    : 1
-# Registers                                            : 46
- Flip-Flops                                            : 46
+# Registers                                            : 43
+ Flip-Flops                                            : 43
 # Multiplexers                                         : 5
  1-bit 16-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 3
@@ -199,8 +199,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 50
- Flip-Flops                                            : 50
+# Registers                                            : 47
+ Flip-Flops                                            : 47
 
 =========================================================================
 
@@ -223,19 +223,19 @@ Top Level Output File Name         : serializer.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 28
+# BELS                             : 30
 #      INV                         : 2
 #      LUT2                        : 2
-#      LUT3                        : 4
-#      LUT4                        : 3
-#      LUT5                        : 1
+#      LUT3                        : 6
+#      LUT4                        : 2
+#      LUT5                        : 2
 #      LUT6                        : 10
 #      MUXF7                       : 4
 #      MUXF8                       : 2
-# FlipFlops/Latches                : 50
-#      FDC                         : 9
+# FlipFlops/Latches                : 47
+#      FDC                         : 10
 #      FDCE                        : 1
-#      FDE                         : 36
+#      FDE                         : 32
 #      FDPE                        : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -250,15 +250,15 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              50  out of  126800     0%  
- Number of Slice LUTs:                   22  out of  63400     0%  
-    Number used as Logic:                22  out of  63400     0%  
+ Number of Slice Registers:              47  out of  126800     0%  
+ Number of Slice LUTs:                   24  out of  63400     0%  
+    Number used as Logic:                24  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     53
-   Number with an unused Flip Flop:       3  out of     53     5%  
-   Number with an unused LUT:            31  out of     53    58%  
-   Number of fully used LUT-FF pairs:    19  out of     53    35%  
+ Number of LUT Flip Flop pairs used:     51
+   Number with an unused Flip Flop:       4  out of     51     7%  
+   Number with an unused LUT:            27  out of     51    52%  
+   Number of fully used LUT-FF pairs:    20  out of     51    39%  
    Number of unique control sets:         4
 
 IO Utilization: 
@@ -289,7 +289,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 50    |
+clk                                | BUFGP                  | 47    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -301,8 +301,8 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 2.133ns (Maximum Frequency: 468.911MHz)
-   Minimum input arrival time before clock: 1.145ns
-   Maximum output required time after clock: 0.645ns
+   Minimum input arrival time before clock: 1.140ns
+   Maximum output required time after clock: 0.650ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -312,23 +312,23 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 2.133ns (frequency: 468.911MHz)
-  Total number of paths / destination ports: 209 / 57
+  Total number of paths / destination ports: 206 / 50
 -------------------------------------------------------------------------
 Delay:               2.133ns (Levels of Logic = 4)
-  Source:            lft_data_4 (FF)
+  Source:            rgt_data_4 (FF)
   Destination:       i2so_sd (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: lft_data_4 to i2so_sd
+  Data Path: rgt_data_4 to i2so_sd
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              1   0.361   0.693  lft_data_4 (lft_data_4)
-     LUT6:I0->O            1   0.097   0.000  Mmux_bit_count[3]_lft_data[15]_Mux_21_o_51 (Mmux_bit_count[3]_lft_data[15]_Mux_21_o_51)
-     MUXF7:I1->O           1   0.279   0.000  Mmux_bit_count[3]_lft_data[15]_Mux_21_o_4_f7 (Mmux_bit_count[3]_lft_data[15]_Mux_21_o_4_f7)
-     MUXF8:I0->O           1   0.218   0.379  Mmux_bit_count[3]_lft_data[15]_Mux_21_o_2_f8 (bit_count[3]_lft_data[15]_Mux_21_o)
-     LUT5:I3->O            1   0.097   0.000  i2so_sd_dpot (i2so_sd_dpot)
+     FDE:C->Q              1   0.361   0.693  rgt_data_4 (rgt_data_4)
+     LUT6:I0->O            1   0.097   0.000  Mmux_bit_count[3]_rgt_data[15]_Mux_20_o_51 (Mmux_bit_count[3]_rgt_data[15]_Mux_20_o_51)
+     MUXF7:I1->O           1   0.279   0.000  Mmux_bit_count[3]_rgt_data[15]_Mux_20_o_4_f7 (Mmux_bit_count[3]_rgt_data[15]_Mux_20_o_4_f7)
+     MUXF8:I0->O           1   0.218   0.379  Mmux_bit_count[3]_rgt_data[15]_Mux_20_o_2_f8 (bit_count[3]_rgt_data[15]_Mux_20_o)
+     LUT3:I1->O            1   0.097   0.000  Mmux_bit_count[3]_bit_count[3]_MUX_43_o11 (bit_count[3]_bit_count[3]_MUX_43_o)
      FDCE:D                    0.008          i2so_sd
     ----------------------------------------
     Total                      2.133ns (1.060ns logic, 1.073ns route)
@@ -336,9 +336,9 @@ Delay:               2.133ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 85 / 85
+  Total number of paths / destination ports: 82 / 82
 -------------------------------------------------------------------------
-Offset:              1.145ns (Levels of Logic = 2)
+Offset:              1.140ns (Levels of Logic = 2)
   Source:            rst_n (PAD)
   Destination:       lft_data_0 (FF)
   Destination Clock: clk rising
@@ -347,31 +347,31 @@ Offset:              1.145ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   0.001   0.566  rst_n_IBUF (rst_n_IBUF)
-     LUT4:I0->O           32   0.097   0.386  _n0097_inv1 (_n0097_inv)
+     IBUF:I->O             2   0.001   0.561  rst_n_IBUF (rst_n_IBUF)
+     LUT4:I0->O           32   0.097   0.386  _n0094_inv1 (_n0094_inv)
      FDE:CE                    0.095          lft_data_0
     ----------------------------------------
-    Total                      1.145ns (0.193ns logic, 0.952ns route)
+    Total                      1.140ns (0.193ns logic, 0.947ns route)
                                        (16.9% logic, 83.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
-Offset:              0.645ns (Levels of Logic = 1)
-  Source:            i2so_sd (FF)
-  Destination:       i2so_sd (PAD)
+Offset:              0.650ns (Levels of Logic = 1)
+  Source:            i2so_ws (FF)
+  Destination:       i2so_ws (PAD)
   Source Clock:      clk rising
 
-  Data Path: i2so_sd to i2so_sd
+  Data Path: i2so_ws to i2so_ws
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.361   0.283  i2so_sd (i2so_sd_OBUF)
-     OBUF:I->O                 0.000          i2so_sd_OBUF (i2so_sd)
+     FDC:C->Q              3   0.361   0.289  i2so_ws (i2so_ws_OBUF)
+     OBUF:I->O                 0.000          i2so_ws_OBUF (i2so_ws)
     ----------------------------------------
-    Total                      0.645ns (0.361ns logic, 0.283ns route)
-                                       (56.0% logic, 44.0% route)
+    Total                      0.650ns (0.361ns logic, 0.289ns route)
+                                       (55.5% logic, 44.5% route)
 
 =========================================================================
 
@@ -389,12 +389,12 @@ clk            |    2.133|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.22 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.80 secs
  
 --> 
 
-Total memory usage is 446244 kilobytes
+Total memory usage is 427300 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
