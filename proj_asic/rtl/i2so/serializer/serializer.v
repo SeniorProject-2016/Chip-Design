@@ -56,6 +56,8 @@ parameter           s0 = 0;                             //value of idle state
 parameter           s1 = 1;                             //value of active state
 
 reg                 begin_bit_count;                    //Informs the serializer when the bit count should begin
+reg                 first_rts_transition;
+reg [3:0]           bit_count2;
 
 input               i2si_sck;
 reg [2:0]           sck_vec;
@@ -90,19 +92,34 @@ assign i2si_sck_transition = sck && !i2si_sck_delay;
 
 
 
+
+//Attempt to create 1st rts_transition signal
+always @(posedge clk or negedge rst_n)
+begin
+    if(!rst_n)
+        first_rts_transition <= 0;
+    else if(!first_rts_transition && rts_transition)
+        first_rts_transition <= 1'b1;
+    else
+        first_rts_transition <= 1'b0;
+end
+//End of attempt to create first_rts_transition signal
+
+
+
+//Used to tell the serializer to begin the bit counter
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         begin_bit_count <= 1'b0;
-    else if(state && LR == 1'b0 && i2si_sck_transition)
+    else if(first_rts_transition)
         begin_bit_count <= 1'b1;
 end
 
 
 
 
-
-
+//Helps create rts_transition signal to define when the serializer is in the active state
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
@@ -112,6 +129,8 @@ begin
 end
 
 assign rts_transition = rts && !rts_delay;
+
+
 
 //Defining when the serializer is active or idle
 //Begins in the idle state and becomes active when rts goes from low to high
@@ -144,6 +163,30 @@ end
 //Creates a pulse when LR goes from high to low
 assign LR_transition = !LR && LR_delay;
 
+//Capture data in i2so_lft or i2so_rgt during first rts_transition or during LR_transition
+always @(posedge clk or negedge rst_n)
+begin
+    if(!rst_n)
+    begin
+        lft_data <= 0;
+        rgt_data <= 0;
+    end
+    
+    else if(state)
+    begin
+        if(first_rts_transition)
+        begin
+            lft_data <= i2so_lft;
+            rgt_data <= i2so_rgt;
+        end
+        else if(LR_transition)
+        begin
+            lft_data <= i2so_lft;
+            rgt_data <= i2so_rgt;
+        end
+    end
+end
+
 //ready to receive when LR goes from high to low
 always @(posedge clk or negedge rst_n)
 begin
@@ -154,8 +197,6 @@ begin
         if(LR_transition)
         begin
             rtr <= 1'b1;
-            lft_data <= i2so_lft;
-            rgt_data <= i2so_rgt;
         end
         else
             rtr <= 1'b0;
@@ -193,6 +234,15 @@ begin
         i2so_ws <= 1'b0;
 end
 
+//attempt to give bitcount correct value to fix timing diagram with sd
+always @(posedge clk or negedge rst_n)
+begin
+    if(!rst_n)
+        bit_count2 <= 0;
+    else
+        bit_count2 <= bit_count;
+end
+
 //Store data from i2so_lft or i2so_rgt into i2so_sd
 always @(posedge clk or negedge rst_n)
 begin
@@ -202,12 +252,12 @@ begin
     begin
         if(LR == 1'b0)
         begin
-            i2so_sd <= lft_data[bit_count];
+            i2so_sd <= lft_data[bit_count2];
         end
         
         else
         begin
-            i2so_sd <= rgt_data[bit_count];
+            i2so_sd <= rgt_data[bit_count2];
         end
     end
 end
