@@ -31,13 +31,16 @@ module serializer_test2;
 	reg i2si_sck_transition;
 	reg [15:0] i2so_lft;
 	reg [15:0] i2so_rgt;
+    
+    
 	reg i2si_sck;
+    reg [2:0] sck_vec;
+    reg sck;
+    reg i2si_sck_delay;
 
 	// Outputs
-	wire i2so_sck;
 	wire i2so_sd;
 	wire i2so_ws;
-	wire i2so_en;
 	wire rtr;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -45,38 +48,14 @@ module serializer_test2;
 		.clk(clk), 
 		.rst_n(rst_n), 
 		.rts(rts), 
-		//.i2si_sck_transition(i2si_sck_transition), 
-		.i2so_sck(i2so_sck), 
+		.i2si_sck_transition(i2si_sck_transition), 
 		.i2so_sd(i2so_sd), 
 		.i2so_ws(i2so_ws), 
-		.i2so_en(i2so_en), 
 		.i2so_lft(i2so_lft), 
 		.i2so_rgt(i2so_rgt), 
-		.rtr(rtr), 
-		.i2si_sck(i2si_sck)
-	);
+		.rtr(rtr)
+        );
 
-initial begin
-		// Initialize Inputs
-		clk = 0;
-        i2si_sck = 0;
-		rst_n = 0;
-		rts = 0;
-		//i2si_sck_transition = 0;
-		i2so_lft = 0;
-		i2so_rgt = 0;
-        
-		
-		#694
-		rst_n = 1;
-        rts = 1;
-        i2so_lft = 16'hAAAA;
-		i2so_rgt = 16'hFF00;
-        
-		
-
-end
-    
 always
 begin
     forever
@@ -92,7 +71,44 @@ begin
         #312.5 i2si_sck = ~i2si_sck;
     end
 end
-    
-      
+
+
+always @(posedge clk or negedge rst_n)
+begin
+    if (!rst_n)
+        sck_vec <= 3'b000;
+    else
+    begin
+        sck_vec[0] <= i2si_sck;
+        sck_vec[2:1] <= sck_vec[1:0];
+    end
+end
+
+always @(*)
+begin
+    sck <= sck_vec[1];
+    i2si_sck_delay <= sck_vec[2];
+    i2si_sck_transition = sck && !i2si_sck_delay;
+end
+
+
+initial begin
+		// Initialize Inputs
+		clk = 0;
+        rst_n = 0;
+        i2si_sck = 0;
+        i2si_sck_transition = 0;
+		rts = 0;
+		i2so_lft = 0;
+		i2so_rgt = 0;
+        
+		
+		#694
+		rst_n = 1;
+        rts = 1;
+        i2so_lft = 16'hAAAA;
+		i2so_rgt = 16'hFF00;
+end
+          
 endmodule
 

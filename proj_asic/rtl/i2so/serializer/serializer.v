@@ -18,30 +18,23 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module serializer(clk, rst_n, rts, i2so_sck, i2so_sd, i2so_ws, i2so_en, i2so_lft, i2so_rgt, rtr, i2si_sck
+module serializer(clk, rst_n, rts, i2so_sd, i2so_ws, i2so_lft, i2so_rgt, rtr, i2si_sck_transition
     );
-    
-    //removed 'i2si_sck_transition' temporarily
 
 input               clk;                                //Master Clock
 input               rst_n;                              //Reset
 input               rts;                                //ready to send
+input               i2si_sck_transition;                //Pulse when sck transitions from low to high
 input [15:0]        i2so_lft;                           //Left parallel digital audio data
 input [15:0]        i2so_rgt;                           //Right parallel digital audio data
 
-//Should be an input
-wire                i2si_sck_transition;                //Pulse when sck transitions from low to high
-
-output              i2so_sck;
-output              i2so_sd;                            //Serial data
-output              i2so_ws;                            //Word Select
-output              i2so_en;
+output              i2so_sd;                            //i2s output serial data
+output              i2so_ws;                            //i2s output word Select
 output              rtr;                                //Ready to receive
 
-reg                 state;                              //state of the serializer: active or idle. 0 = idle. 1 = active
-reg                 i2so_sd;
-reg                 i2so_ws;
-reg                 rtr;
+reg                 serializer_active;
+reg                 i2so_sd;                            //i2s output serial data
+reg                 i2so_ws;                            //i2s output word select
 reg [15:0]          lft_data;                           //Captures the data of i2so_lft
 reg [15:0]          rgt_data;                           //Captures the data of i2so_rgt
 reg                 LR;                                 //Left Right Counter: keeps track of which parallel digital audio to read from
@@ -49,74 +42,9 @@ reg                 LR_delay;                           //Delayed signal of LR
 reg                 rts_delay;                          //Delay signal of ready to send
 reg [3:0]           bit_count;                          //Bit Counter: keeps track of which bit to read in
 
+wire                rtr;                                //Ready to read
 wire                LR_transition;                      //High when LR goes from high to low
 wire                rts_transition;                     //High when rts goes from low to high
-
-parameter           s0 = 0;                             //value of idle state
-parameter           s1 = 1;                             //value of active state
-
-reg                 begin_bit_count;                    //Informs the serializer when the bit count should begin
-reg                 first_rts_transition;
-reg [3:0]           bit_count2;
-
-input               i2si_sck;
-reg [2:0]           sck_vec;
-wire                sck;
-wire                i2si_sck_delay;
-
-//Comment Begin: Using temporarily until i figure out proper input for sck_transition
-//Temporarily have sck input until sck_transition is inputted correctly in test bench
-
-//Synchronize clk and sck
-//sck[1] = sck synchronized with clk
-//sck[2] = sck delay signal to help create sck_transition
-always @(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-        sck_vec <= 3'b000;
-    else
-    begin
-        sck_vec[0] <= i2si_sck;
-        sck_vec[2:1] <= sck_vec[1:0];
-    end
-end
-
-//Re-assigning sck to be more readable
-assign sck = sck_vec[1];
-assign i2si_sck_delay = sck_vec[2];
-
-//Defines when sck_transition is high or low. Helps define when the deserialzer should read in the left channel and output it to i2si_lft
-assign i2si_sck_transition = sck && !i2si_sck_delay;
-
-//Comment End
-
-
-
-
-//Attempt to create 1st rts_transition signal
-always @(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)
-        first_rts_transition <= 0;
-    else if(!first_rts_transition && rts_transition)
-        first_rts_transition <= 1'b1;
-    else
-        first_rts_transition <= 1'b0;
-end
-//End of attempt to create first_rts_transition signal
-
-
-
-//Used to tell the serializer to begin the bit counter
-always @(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)
-        begin_bit_count <= 1'b0;
-    else if(first_rts_transition)
-        begin_bit_count <= 1'b1;
-end
-
-
 
 
 //Helps create rts_transition signal to define when the serializer is in the active state
@@ -131,23 +59,22 @@ end
 assign rts_transition = rts && !rts_delay;
 
 
-
-//Defining when the serializer is active or idle
-//Begins in the idle state and becomes active when rts goes from low to high
+//Serializer becomes active when rts_transitions from low to high
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        state <= s0;
+        serializer_active <= 0;
     else if(rts_transition)
-        state <= s1;
+        serializer_active <= 1'b1;
 end
+
 
 //Tells the serializer to read from i2so_lft or i2so_rgt
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        LR <= 1'b0;
-    else if(bit_count == 0 && i2si_sck_transition)
+        LR <= 1'b1;
+    else if(bit_count == 0 && i2si_sck_transition && serializer_active)
         LR <= ~LR;
 end
 
@@ -161,7 +88,11 @@ begin
 end
 
 //Creates a pulse when LR goes from high to low
+//helps define rtr
+//Perphaps remove later. Looks like it is no longer needed
 assign LR_transition = !LR && LR_delay;
+
+assign rtr = i2si_sck_transition && serializer_active && (bit_count == 0) && LR;
 
 //Capture data in i2so_lft or i2so_rgt during first rts_transition or during LR_transition
 always @(posedge clk or negedge rst_n)
@@ -172,92 +103,53 @@ begin
         rgt_data <= 0;
     end
     
-    else if(state)
+    else if(serializer_active && rtr)
     begin
-        if(first_rts_transition)
-        begin
-            lft_data <= i2so_lft;
-            rgt_data <= i2so_rgt;
-        end
-        else if(LR_transition)
-        begin
-            lft_data <= i2so_lft;
-            rgt_data <= i2so_rgt;
-        end
+        lft_data <= i2so_lft;
+        rgt_data <= i2so_rgt;
     end
 end
 
-//ready to receive when LR goes from high to low
-always @(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)
-        rtr <= 1'b0;
-    else if(state)
-    begin
-        if(LR_transition)
-        begin
-            rtr <= 1'b1;
-        end
-        else
-            rtr <= 1'b0;
-    end
-    else
-        rtr <= 1'b0;
-end
 
-//Changes which bit of the channel to read from to store in i2so_sd
+//Keeps track of which bit of the channel to read from to store in i2so_sd
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
+        bit_count <= 4'd0;
+    else if(rtr)
         bit_count <= 4'd15;
-    else if(i2si_sck_transition && begin_bit_count)
-    begin
-        bit_count <= bit_count - 4'd1;
-    end
+    else if(i2si_sck_transition && serializer_active)
+		  bit_count <= bit_count - 4'd1;
 end
 
-//Changes ws when lft or rgt channel data is on 14th bit
+
+//Change ws when channel is on 15th bit or bit [1]
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         i2so_ws <= 1'b0;
-    else if (state)
+    else if (serializer_active && bit_count == 4'd1 && i2si_sck_transition)
     begin
-        if(bit_count == 4'd1 && LR == 1'b0 && i2si_sck_transition)
-            i2so_ws <= 1'b1;
-        else if(bit_count == 4'd1 && LR == 1'b1 && i2si_sck_transition)
-            i2so_ws <= 1'b0;
-        else
-            i2so_ws <= i2so_ws;
+        i2so_ws <= ~i2so_ws;
     end
-    else
-        i2so_ws <= 1'b0;
 end
 
-//attempt to give bitcount correct value to fix timing diagram with sd
-always @(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)
-        bit_count2 <= 0;
-    else
-        bit_count2 <= bit_count;
-end
 
-//Store data from i2so_lft or i2so_rgt into i2so_sd
+//Store bit data from i2so_lft or i2so_rgt into i2so_sd
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         i2so_sd <= 1'b0;
-    else if(state && i2si_sck_transition)
+    else if(serializer_active)
     begin
         if(LR == 1'b0)
         begin
-            i2so_sd <= lft_data[bit_count2];
+            i2so_sd <= lft_data[bit_count];
         end
         
         else
         begin
-            i2so_sd <= rgt_data[bit_count2];
+            i2so_sd <= rgt_data[bit_count];
         end
     end
 end
