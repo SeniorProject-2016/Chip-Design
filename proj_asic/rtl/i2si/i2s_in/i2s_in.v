@@ -26,6 +26,11 @@ input                       i2si_rtr;                           //FIFO: Data inp
 output                      i2si_data;                          //FIFO: Output Data
 output                      i2si_rts;                           //FIFO: Output FIFO asserts ready to send
 
+wire                        sck;                                //Wire connecting sck synchronizer to sck deserializer
+wire                        sck_transition;                     //
+wire                        ws;                                 //Wire connecting ws syncrhonizer to ws deserializer
+wire                        sd;                                 //Wire connecting sd syncrhonizer to sd deserializer
+
 wire [31:0]                 deserializer_data;                  //Wire connecting lft and rgt deserializer channels to mux. Connects to mux_in_0
 wire                        deserializer_xfc;                   //Wire output of i2si_xfc connecting to or gate, i2si_fifo_inp_rtr, and input for BIST'
 wire [31:0]                 bist_data;
@@ -35,13 +40,24 @@ wire                        i2si_fifo_out_rtr;                  //Wire connectin
 
 reg                         ro_fifo_overrun;
 
+synchronizer Synchronizer(
+    .clk                    (clk),
+    .rst                    (rst),
+    ._sck                   (i2si_sck),
+    ._ws                    (i2si_ws),
+    ._sd                    (i2si_sd),
+    .sck_transition         (sck_transition),
+    .sck                    (sck),
+    .ws                     (ws),
+    .sd                     (sd)
+);
 
 i2si_deserializer Deserializer(
     .clk                    (clk),
     .rst                    (rst),
-    .i2si_sck               (i2si_sck),
-    .i2si_ws                (i2si_ws),
-    .i2si_sd                (i2si_sd),
+    .i2si_sck               (sck),
+    .i2si_ws                (ws),
+    .i2si_sd                (sd),
     .rf_i2si_en             (rf_i2si_en),
     .i2si_lft               (deserializer_data [31:16]),        
     .i2si_rgt               (deserializer_data [15:0]),         

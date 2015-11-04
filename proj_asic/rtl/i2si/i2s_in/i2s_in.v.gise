@@ -35,6 +35,7 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="i2s_in.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="i2s_in.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="i2s_in.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="i2s_in_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="i2s_in_envsettings.html"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="i2s_in_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="i2s_in_xst.xrpt"/>
@@ -59,6 +60,11 @@
     <transform xil_pn:end_ts="1446601441" xil_pn:in_ck="4280542876849220141" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1446601441">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../deserializer/i2si_deserializer/i2si_deserializer.v"/>
       <outfile xil_pn:name="bist_test.v"/>
       <outfile xil_pn:name="deserializer_test.v"/>
@@ -83,6 +89,11 @@
     <transform xil_pn:end_ts="1446601441" xil_pn:in_ck="4280542876849220141" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1446601441">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../deserializer/i2si_deserializer/i2si_deserializer.v"/>
       <outfile xil_pn:name="bist_test.v"/>
       <outfile xil_pn:name="deserializer_test.v"/>
@@ -95,8 +106,11 @@
     <transform xil_pn:end_ts="1446602482" xil_pn:in_ck="4280542876849220141" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="16215094272299693" xil_pn:start_ts="1446602479">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="i2si_deserializer_testbench_beh.prj"/>
@@ -144,15 +158,21 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1445118696" xil_pn:in_ck="-1403397035517816075" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2460161871431328194" xil_pn:start_ts="1445118683">
+    <transform xil_pn:end_ts="1446679887" xil_pn:in_ck="-1435030633509725187" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2460161871431328194" xil_pn:start_ts="1446679877">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="i2s_in.lso"/>
+      <outfile xil_pn:name="i2s_in.ngr"/>
+      <outfile xil_pn:name="i2s_in.prj"/>
+      <outfile xil_pn:name="i2s_in.syr"/>
+      <outfile xil_pn:name="i2s_in.xst"/>
+      <outfile xil_pn:name="i2s_in_beh.prj"/>
+      <outfile xil_pn:name="i2s_in_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
     </transform>
     <transform xil_pn:end_ts="1444869855" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5069202361546421734" xil_pn:start_ts="1444869855">
       <status xil_pn:value="SuccessfullyRun"/>
