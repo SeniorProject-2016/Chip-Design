@@ -9,7 +9,7 @@ module i2si_deserializer_testbench;
     reg [15:0] test_data [`N-1:0] [0:1]; // [Bits Per Word] test_data [# of entities in test] [Left/Right]
 
     // Outputs
-    wire [15:0] i2si_lft; // left audio data
+    wire [15:0] i2si_lft; // left audio dataF
     wire [15:0] i2si_rgt; // right audio data
     wire i2si_xfc; // transfer complete
     wire rst_n; // reset not
