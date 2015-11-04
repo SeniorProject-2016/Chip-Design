@@ -1,15 +1,16 @@
 `timescale 1ns / 1ps
 
 // Creates a saw-tooth wave based on the bist register values
-module i2si_bist_gen(clk,rst,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si_bist_out_data);
+module i2si_bist_gen(clk,rst,i2si_sck,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si_bist_out_data);
 
-    input clk,rst; // clock, reset
+    input clk,rst,i2si_sck; // clock, reset, serial clock
     input [11:0] rf_bist_start_val; // start value
     input [11:0] rf_bist_up_limit; // upper limit
     input [7:0] rf_bist_inc; // increment signal by this much
-    
+
     output[31:0] i2si_bist_out_data; // output signal
-    
+
+    reg sck_d1; // serial clock delay
     reg [31:0] i2si_bist_out_data; // output signal
     reg counter=12'b0; // counter
 
@@ -24,5 +25,5 @@ module i2si_bist_gen(clk,rst,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si
         else // if the signal is within normal range
             i2si_bist_out_data<=i2si_bist_out_data+rf_bist_inc; // increment the signal
     end
-    
+
 endmodule

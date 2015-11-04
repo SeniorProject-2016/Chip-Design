@@ -1,15 +1,15 @@
 `define BUF_WIDTH 3 // set the buffer width equal to 3
+`define DATA_SIZE 32 // no. of bits for fifo data
 
 module fifo_test();
 reg clk, rst, fifo_inp_rts, fifo_out_rtr ; // clock, reset, write enabled, read enabled
-reg[15:0] fifo_inp_data; // buffer input
-reg[15:0] tempdata; // temporary data
-wire [15:0] fifo_out_data; // buffer output
-wire [`BUF_WIDTH :0] fifo_counter; // the number of elements in the buffer
+reg[`DATA_SIZE-1:0] fifo_inp_data; // buffer input
+reg[`DATA_SIZE-1:0] tempdata; // temporary data
+wire [`DATA_SIZE-1:0] fifo_out_data; // buffer output
 
 fifo ff( .clk(clk), .rst(rst), .fifo_inp_data(fifo_inp_data), .fifo_out_data(fifo_out_data), 
          .fifo_inp_rts(fifo_inp_rts), .fifo_out_rtr(fifo_out_rtr), .fifo_out_rts(fifo_out_rts), 
-         .fifo_inp_rtr(fifo_inp_rtr), .fifo_counter(fifo_counter) );
+         .fifo_inp_rtr(fifo_inp_rtr));
 
 initial
 begin

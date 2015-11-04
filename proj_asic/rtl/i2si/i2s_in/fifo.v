@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 `define BUF_WIDTH 3                   //  no. of bits to be used in pointer
 `define BUF_SIZE ( 1<<`BUF_WIDTH )    // number of elements allowed in buffer = 2^Buffer Width
-`define DATA_SIZE 16                  // no. of bits for fifo data
+`define DATA_SIZE 32                  // no. of bits for fifo data
 
-module fifo(clk,rst,fifo_inp_data,fifo_out_data,fifo_inp_rts,fifo_out_rtr,fifo_out_rts,fifo_inp_rtr,fifo_counter);
+module fifo(clk,rst,fifo_inp_data,fifo_out_data,fifo_inp_rts,fifo_out_rtr,fifo_out_rts,fifo_inp_rtr);
 
 input                 rst, clk;       // reset, clock
 input                 fifo_inp_rts;   // write client asserts read to send 
@@ -13,7 +13,6 @@ input [`DATA_SIZE-1:0] fifo_inp_data;  // data input to be pushed to buffer
 output[`DATA_SIZE-1:0] fifo_out_data;  // port to output the data using pop.
 output                fifo_out_rts;   // output FIFO asserts read to send 
 output                fifo_inp_rtr;   // output FIFO asserts read to recieve
-output[`BUF_WIDTH :0] fifo_counter;   // number of elements in the buffer  
 
 reg[`DATA_SIZE-1:0]    fifo_out_data;  
 reg                   fifo_out_rts;
