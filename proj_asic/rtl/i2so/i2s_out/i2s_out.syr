@@ -12,7 +12,7 @@ Total CPU time to Xst completion: 0.09 secs
 Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
---> Reading design: i2s_in.prj
+--> Reading design: i2s_out.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -40,16 +40,16 @@ TABLE OF CONTENTS
 *                      Synthesis Options Summary                        *
 =========================================================================
 ---- Source Parameters
-Input File Name                    : "i2s_in.prj"
+Input File Name                    : "i2s_out.prj"
 Ignore Synthesis Constraint File   : NO
 
 ---- Target Parameters
-Output File Name                   : "i2s_in"
+Output File Name                   : "i2s_out"
 Output Format                      : NGC
 Target Device                      : xc7a100t-3-csg324
 
 ---- Source Options
-Top Module Name                    : i2s_in
+Top Module Name                    : i2s_out
 Automatic FSM Extraction           : YES
 FSM Encoding Algorithm             : Auto
 Safe Implementation                : No
@@ -105,27 +105,20 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\synchronizer.v" into library work
-Parsing module <synchronizer>.
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_mux.v" into library work
-Parsing module <i2si_mux>.
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v" into library work
-Parsing module <i2si_bist_gen>.
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\serializer.v" into library work
+Parsing module <serializer>.
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v" into library work
 Parsing module <fifo>.
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\deserializer\i2si_deserializer\i2si_deserializer.v" into library work
-Parsing module <i2si_deserializer>.
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" into library work
-Parsing module <i2s_in>.
-ERROR:HDLCompiler:69 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 87: <Width> is not declared.
-ERROR:HDLCompiler:69 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 105: <trig_i2si_fifo_overrun_clr> is not declared.
-ERROR:HDLCompiler:598 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 3: Module <i2s_in> ignored due to previous errors.
-Verilog file C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v ignored due to errors
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v" into library work
+Parsing module <i2s_out>.
+ERROR:HDLCompiler:69 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v" Line 54: <Width> is not declared.
+ERROR:HDLCompiler:598 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v" Line 21: Module <i2s_out> ignored due to previous errors.
+Verilog file C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v ignored due to errors
 --> 
 
-Total memory usage is 236776 kilobytes
+Total memory usage is 237096 kilobytes
 
-Number of errors   :    3 (   0 filtered)
+Number of errors   :    2 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

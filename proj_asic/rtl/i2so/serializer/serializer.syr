@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: serializer.prj
@@ -113,7 +113,6 @@ Parsing module <serializer>.
 =========================================================================
 
 Elaborating module <serializer>.
-WARNING:HDLCompiler:1127 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\serializer\serializer.v" Line 93: Assignment to LR_transition ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -128,10 +127,10 @@ Synthesizing Unit <serializer>.
     Found 1-bit register for signal <serializer_active>.
     Found 1-bit register for signal <i2so_ws>.
     Found 1-bit register for signal <i2so_sd>.
-    Found 1-bit register for signal <rts_delay>.
-    Found 4-bit subtractor for signal <bit_count[3]_GND_1_o_sub_7_OUT> created at line 122.
-    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_12_o> created at line 147.
-    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_13_o> created at line 152.
+    Found 1-bit register for signal <filt_i2so_rts_delay>.
+    Found 4-bit subtractor for signal <bit_count[3]_GND_1_o_sub_7_OUT> created at line 107.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_12_o> created at line 132.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_13_o> created at line 137.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  41 D-type flip-flop(s).
@@ -332,17 +331,17 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 113 / 113
 -------------------------------------------------------------------------
 Offset:              1.365ns (Levels of Logic = 3)
-  Source:            i2si_sck_transition (PAD)
+  Source:            sck_transition (PAD)
   Destination:       lft_data_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: i2si_sck_transition to lft_data_0
+  Data Path: sck_transition to lft_data_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.001   0.393  i2si_sck_transition_IBUF (i2si_sck_transition_IBUF)
-     LUT2:I0->O            1   0.097   0.295  rtr_SW0 (N01)
-     LUT6:I5->O           33   0.097   0.386  rtr (rtr_OBUF)
+     IBUF:I->O             4   0.001   0.393  sck_transition_IBUF (sck_transition_IBUF)
+     LUT2:I0->O            1   0.097   0.295  filt_i2so_rtr_SW0 (N01)
+     LUT6:I5->O           33   0.097   0.386  filt_i2so_rtr (filt_i2so_rtr_OBUF)
      FDCE:CE                   0.095          lft_data_0
     ----------------------------------------
     Total                      1.365ns (0.290ns logic, 1.075ns route)
@@ -354,17 +353,17 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
 -------------------------------------------------------------------------
 Offset:              1.569ns (Levels of Logic = 3)
   Source:            bit_count_2 (FF)
-  Destination:       rtr (PAD)
+  Destination:       filt_i2so_rtr (PAD)
   Source Clock:      clk rising
 
-  Data Path: bit_count_2 to rtr
+  Data Path: bit_count_2 to filt_i2so_rtr
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDCE:C->Q             9   0.361   0.332  bit_count_2 (bit_count_2)
-     LUT2:I1->O            1   0.097   0.295  rtr_SW0 (N01)
-     LUT6:I5->O           33   0.097   0.386  rtr (rtr_OBUF)
-     OBUF:I->O                 0.000          rtr_OBUF (rtr)
+     LUT2:I1->O            1   0.097   0.295  filt_i2so_rtr_SW0 (N01)
+     LUT6:I5->O           33   0.097   0.386  filt_i2so_rtr (filt_i2so_rtr_OBUF)
+     OBUF:I->O                 0.000          filt_i2so_rtr_OBUF (filt_i2so_rtr)
     ----------------------------------------
     Total                      1.569ns (0.555ns logic, 1.014ns route)
                                        (35.4% logic, 64.6% route)
@@ -374,17 +373,17 @@ Timing constraint: Default path analysis
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Delay:               1.270ns (Levels of Logic = 4)
-  Source:            i2si_sck_transition (PAD)
-  Destination:       rtr (PAD)
+  Source:            sck_transition (PAD)
+  Destination:       filt_i2so_rtr (PAD)
 
-  Data Path: i2si_sck_transition to rtr
+  Data Path: sck_transition to filt_i2so_rtr
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.001   0.393  i2si_sck_transition_IBUF (i2si_sck_transition_IBUF)
-     LUT2:I0->O            1   0.097   0.295  rtr_SW0 (N01)
-     LUT6:I5->O           33   0.097   0.386  rtr (rtr_OBUF)
-     OBUF:I->O                 0.000          rtr_OBUF (rtr)
+     IBUF:I->O             4   0.001   0.393  sck_transition_IBUF (sck_transition_IBUF)
+     LUT2:I0->O            1   0.097   0.295  filt_i2so_rtr_SW0 (N01)
+     LUT6:I5->O           33   0.097   0.386  filt_i2so_rtr (filt_i2so_rtr_OBUF)
+     OBUF:I->O                 0.000          filt_i2so_rtr_OBUF (filt_i2so_rtr)
     ----------------------------------------
     Total                      1.270ns (0.195ns logic, 1.075ns route)
                                        (15.4% logic, 84.6% route)
@@ -405,14 +404,14 @@ clk            |    2.133|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.92 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.81 secs
  
 --> 
 
-Total memory usage is 428004 kilobytes
+Total memory usage is 427364 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

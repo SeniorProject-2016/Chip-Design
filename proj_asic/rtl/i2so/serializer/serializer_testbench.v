@@ -37,14 +37,9 @@ module serializer_testbench;
     reg [2:0]               sck_vec;
     reg                     sck;
     reg                     sck_delay;
-    reg                     tb_rts_delay;
-    reg                     tb_rts_transition;
-    reg                     tb_serializer_active;
     reg [31:0]              count;
-    reg [31:0]              bit_count;
     reg [31:0]              word_count;                         // word counter
-    reg                     LR;                                 //Keeps track of what channel to read from. 0 = left channel, 1 = right channel
-    reg [15:0]              test_data [9:0] [1:0];              // [Bits Per Word] test_data [# of entities in test] [Left/Right]
+    reg [15:0]              test_data [0:9] [0:1];              // [Bits Per Word] test_data [# of entities in test] [Left/Right]
 
 	// Outputs
 	wire i2so_sd;
@@ -103,31 +98,12 @@ begin
     sck <= sck_vec[1];
     sck_delay <= sck_vec[2];
     i2si_sck_transition <= sck && !sck_delay;
-    tb_rts_transition <= rts && !tb_rts_delay;
     
-    //assign i2si_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt]; // assign serial data from the test_data
-    i2so_lft = test_data [0][0];
-    i2so_rgt = test_data [0][1];
-end
-
-//Helps create rts_transition signal to define when the serializer is in the active state
-always @(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)
-        tb_rts_delay <= 1'b0;
-    else
-        tb_rts_delay <= rts;
-end
-
-
-
-//Serializer becomes active when rts_transitions from low to high
-always @(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)
-        tb_serializer_active <= 0;
-    else if(tb_rts_transition)
-        tb_serializer_active <= 1'b1;
+    if(word_count >= 0 && word_count <= 9)
+    begin
+        i2so_lft = test_data [word_count][0];
+        i2so_rgt = test_data [word_count][1];
+    end
 end
 
 
@@ -135,13 +111,15 @@ always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         begin
-            word_count <= 0;
-            bit_count <= 4'd0;
-            LR <= 1'b0;
+            word_count <= -1;
+        end
+    else if(rtr)
+        begin
+            word_count <= word_count + 1;
         end
 end
 
-	initial begin
+initial begin
 		// Initialize Inputs
 		clk = 0;
 		rst_n = 0;
@@ -156,11 +134,11 @@ end
         test_data [0] [0] = 16'h0000;
         test_data [0] [1] = 16'hFFFF;
         test_data [1] [0] = 16'hFF00;
-        test_data [1] [1] = 16'hAAAA;
-        test_data [2] [0] = 16'hCDD7;
-        test_data [2] [1] = 16'hBABA;
-        test_data [3] [0] = 16'h4444;
-        test_data [3] [1] = 16'hAAAA;
+        test_data [1] [1] = 16'h00FF;
+        test_data [2] [0] = 16'hAAAA;
+        test_data [2] [1] = 16'h5555;
+        test_data [3] [0] = 16'hBABA;
+        test_data [3] [1] = 16'h4444;
         test_data [4] [0] = 16'h7398;
         test_data [4] [1] = 16'hFFDD;
         test_data [5] [0] = 16'h1111;
@@ -177,8 +155,7 @@ end
         #694
         rts = 1;
 
-
-	end
+end
       
 endmodule
 
