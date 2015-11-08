@@ -14,10 +14,12 @@ module i2si_bist_gen(clk,rst,i2si_sck,rf_bist_start_val,rf_bist_inc,rf_bist_up_l
     reg sck_d1; // serial clock delay
     reg [31:0] i2si_bist_out_data; // output signal
     reg counter=12'b0; // counter
+    reg [31:0] sck_cnt=0;
     
     wire sck; //Synchronized sck signal with clk
     wire sck_delay;//Delayed signal of sck
     wire sck_transition; //sck transitions from 0 -> 1. Helps tell the deserializer when to perform certain actions
+    
 
 
     //Synchronize clk and sck
@@ -43,17 +45,22 @@ module i2si_bist_gen(clk,rst,i2si_sck,rf_bist_start_val,rf_bist_inc,rf_bist_up_l
 
     always@(posedge clk) 
     begin // at every postive edge of the clock
-        if(sck_transition)
+        if(sck_transition) 
+            sck_cnt=sck_cnt+1;
+        if(sck_cnt==32'd15)
         begin
-            if(counter==12'b0) begin // if counter is just starting
+            if(counter==12'b0) 
+            begin // if counter is just starting
                 i2si_bist_out_data<=rf_bist_start_val; // output signal = start value
                 counter<=counter+1'b1; // increment counter
             end
-            else if(i2si_bist_out_data>=rf_bist_up_limit) begin // if signal exceeds the limit
+            else if(i2si_bist_out_data>=rf_bist_up_limit) 
+            begin // if signal exceeds the limit
                 i2si_bist_out_data<=rf_bist_start_val; // signal goes back to start value
             end
             else // if the signal is within normal range
                 i2si_bist_out_data<=i2si_bist_out_data+rf_bist_inc; // increment the signal
+            sck_cnt=0;    
         end
     end
 

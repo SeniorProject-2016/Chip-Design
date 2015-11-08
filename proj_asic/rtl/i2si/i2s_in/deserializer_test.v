@@ -85,7 +85,7 @@ module i2si_deserializer_testbench;
 
     assign rst_n = !(count < 20); // turn on reset not after 10 clock cycles
     assign rst = ~rst_n; // reset is the opposite of reset not
-    assign i2si_ws = ~lr_cnt; 
+    assign i2si_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1)|((bit_cnt==16'd15)&(lr_cnt==0)); 
     assign i2si_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt]; // assign serial data from the test_data
 
     always @ (posedge clk or negedge rst)
