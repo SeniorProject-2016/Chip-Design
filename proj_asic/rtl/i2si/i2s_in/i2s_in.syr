@@ -117,15 +117,35 @@ Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rt
 Parsing module <i2si_deserializer>.
 Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" into library work
 Parsing module <i2s_in>.
-ERROR:HDLCompiler:69 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 87: <Width> is not declared.
-ERROR:HDLCompiler:69 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 105: <trig_i2si_fifo_overrun_clr> is not declared.
-ERROR:HDLCompiler:598 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 3: Module <i2s_in> ignored due to previous errors.
-Verilog file C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v ignored due to errors
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:25 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 76: Module <i2si_bist_gen> does not have a port named <i2si_bist_out_xfc>.
+WARNING:HDLCompiler:1016 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 69: Port i2si_sck is not connected to this instance
+
+Elaborating module <i2s_in>.
+
+Elaborating module <synchronizer>.
+WARNING:HDLCompiler:1127 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 51: Assignment to sck_transition ignored, since the identifier is never used
+
+Elaborating module <i2si_deserializer>.
+
+Elaborating module <i2si_bist_gen>.
+WARNING:HDLCompiler:462 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v" Line 30: if-condition does not match any sensitivity list edge
+WARNING:HDLCompiler:91 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v" Line 34: Signal <i2si_sck> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+ERROR:HDLCompiler:1128 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v" Line 34: Assignment under multiple single edges is not supported for synthesis
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:1128"
+Module i2si_bist_gen remains a blackbox, due to errors in its contents
+WARNING:HDLCompiler:1499 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v" Line 4: Empty module <i2si_bist_gen> remains a black box.
+ERROR:HDLCompiler:267 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 76: Cannot find port i2si_bist_out_xfc on this module
+Module i2s_in remains a blackbox, due to errors in its contents
+WARNING:HDLCompiler:1499 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" Line 3: Empty module <i2s_in> remains a black box.
 --> 
 
-Total memory usage is 236776 kilobytes
+Total memory usage is 237544 kilobytes
 
-Number of errors   :    3 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

@@ -7,9 +7,9 @@
 //
 //Description: The deserializer takes in serial data and converts it to parallel data that is outputted to the mux and fifo sub-blocks.
 //
-//              Deserializer needs to first be resetted in order to function properly, initializing all values to 0.
+//              Deserializer needs to first_n be resetted in order to function properly, initializing all values to 0.
 //              Once all values are initialized to 0, certain conditions must be met for the deserializer to become active.
-//              To become active, rst_n first needs to go from high to low, and then ws needs to go from high to low. 
+//              To become active, rst_n first_n needs to go from high to low, and then ws needs to go from high to low. 
 //              Then when sck_transition high, the deserializer becomes active.
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -29,8 +29,8 @@ output                          i2si_xfc;                   //Transfer Complete
 reg [15:0]                      i2si_lft;
 reg [15:0]                      i2si_rgt;
 reg                             i2si_xfc;
-reg [1:0]                       rst_vec;                    //Used to check when rst_n goes from low to high and to trigger armed1
-reg                             armed1;                     //First signal that helps define idle and active state
+reg [1:0]                       rst_n_vec;                    //Used to check when rst_n goes from low to high and to trigger armed1
+reg                             armed1;                     //First_n signal that helps define idle and active state
 reg                             armed2;                     //Second signal that helps define idle and active state
 reg                             state;                      //Defines which state the deserializer is in. Active or Idle.
 reg [2:0]                       sck_vec;                    //Delayed signals of i2si_sck
@@ -98,7 +98,7 @@ always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         ws_vec <= 4'b0000;
-    else
+    else if(sck_transition)
     begin
         ws_vec[0] <= i2si_ws;
         ws_vec[4:1] <= ws_vec[3:0];
@@ -116,8 +116,8 @@ assign ws_transition = !ws && ws_delay;
 //Used to help define active state when rst_n goes from low to high
 always @(posedge clk)
 begin
-    rst_vec[0] <= rst_n;
-    rst_vec[1] <= rst_vec[0];
+    rst_n_vec[0] <= rst_n;
+    rst_n_vec[1] <= rst_n_vec[0];
 end
 
 //Intermediate step to help define active state
@@ -126,7 +126,7 @@ always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         armed1 <= 1'b0;
-    else if(!rst_vec[1] && rst_vec[0])
+    else if(!rst_n_vec[1] && rst_n_vec[0])
         armed1 <= 1'b1;
     else if(ws_transition)
         armed1 <= 1'b0;
@@ -159,10 +159,10 @@ end
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        in_left <= 1'b0;
-    else if (!ws && sck_transition)
         in_left <= 1'b1;
-    else if (ws && sck_transition)
+    else if (!ws && sck_transition && state)
+        in_left <= 1'b1;
+    else if (ws && sck_transition && state)
         in_left <= 1'b0;
 end
 

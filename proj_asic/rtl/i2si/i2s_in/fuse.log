@@ -1,18 +1,19 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/bist_test_isim_beh.exe -prj C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/bist_test_beh.prj work.bist_test work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/kevin/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/i2si_deserializer_testbench_isim_beh.exe -prj C:/Users/kevin/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/i2si_deserializer_testbench_beh.prj work.i2si_deserializer_testbench work.glbl 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 8
-Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Number of CPUs detected in this system: 6
+Turning on mult-threading, number of parallel sub-compilation jobs: 12 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/i2si_bist_gen.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/bist_test.v" into library work
+Analyzing Verilog file "C:/Users/kevin/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/../deserializer/i2si_deserializer/i2si_deserializer.v" into library work
+Analyzing Verilog file "C:/Users/kevin/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/deserializer_test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Compiling module i2si_bist_gen
-Compiling module bist_test
+Compiling module i2si_deserializer
+Compiling module i2si_deserializer_testbench
 Compiling module glbl
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 3 Verilog Units
-Built simulation executable C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/bist_test_isim_beh.exe
-Fuse Memory Usage: 26940 KB
-Fuse CPU Usage: 453 ms
+Built simulation executable C:/Users/kevin/Documents/GitHub/Chip-Design/proj_asic/rtl/i2si/i2s_in/i2si_deserializer_testbench_isim_beh.exe
+Fuse Memory Usage: 28444 KB
+Fuse CPU Usage: 468 ms
