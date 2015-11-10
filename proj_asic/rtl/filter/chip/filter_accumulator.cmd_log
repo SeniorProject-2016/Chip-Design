@@ -1,0 +1,3 @@
+vhdtdtfi -lib work {C:/Users/Dhruvit/Dropbox/TCNJ/Senior Project/rtl/chip/filter_accumulator.v} -lang verilog -prj chip -o filter_accumulator.spl -module filter_accumulator -template F:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e filter_accumulator.spl {C:/Users/Dhruvit/Dropbox/TCNJ/Senior Project/rtl/chip/filter_accumulator.sym} 
+vhdtdtfi -lang verilog -prj chip -o "C:/Users/Dhruvit/Dropbox/TCNJ/Senior Project/rtl/chip/filter_accumulator.tfi" -lib work "C:/Users/Dhruvit/Dropbox/TCNJ/Senior Project/rtl/chip//filter_accumulator.v" -module filter_accumulator -template F:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

@@ -1,0 +1,629 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Reading design: filter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "filter.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "filter"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : filter
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "filter_storage.v" in library work
+Compiling verilog file "filter_stm.v" in library work
+Module <filter_storage> compiled
+WARNING:HDLCompilers:299 - "filter_stm.v" line 168 Too many digits specified in binary constant
+Compiling verilog file "filter_barrel_shifter.v" in library work
+Module <filter_stm> compiled
+Compiling verilog file "filter_accumulator.v" in library work
+Module <filter_barrel_shifter> compiled
+Compiling verilog file "filter.v" in library work
+Module <filter_accumulator> compiled
+Module <filter> compiled
+WARNING:HDLCompilers:258 - "filter_storage.v" line 23 Range on redeclaration of 'rddata' overrides range on output declaration at "filter_storage.v" line 14 
+No errors in compilation
+Analysis of file <"filter.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <filter> in library <work>.
+
+Analyzing hierarchy for module <filter_stm> in library <work> with parameters.
+	IDLE = "0001"
+	IDLE_ID = "00000000000000000000000000000000"
+	MULTIPLY = "1000"
+	MULTIPLY_1ST = "0100"
+	MULTIPLY_1ST_ID = "00000000000000000000000000000010"
+	MULTIPLY_ID = "00000000000000000000000000000011"
+	PTR = "00000000000000000000000000000101"
+	TRANSFER = "0010"
+	TRANSFER_ID = "00000000000000000000000000000001"
+	WIDTH = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <filter_accumulator> in library <work>.
+
+Analyzing hierarchy for module <filter_barrel_shifter> in library <work>.
+
+Analyzing hierarchy for module <filter_storage> in library <work> with parameters.
+	DEPTH = "00000000000000000000000000001011"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <filter>.
+Module <filter> is correct for synthesis.
+ 
+Analyzing module <filter_stm> in library <work>.
+	IDLE = 4'b0001
+	IDLE_ID = 32'sb00000000000000000000000000000000
+	MULTIPLY = 4'b1000
+	MULTIPLY_1ST = 4'b0100
+	MULTIPLY_1ST_ID = 32'sb00000000000000000000000000000010
+	MULTIPLY_ID = 32'sb00000000000000000000000000000011
+	PTR = 32'sb00000000000000000000000000000101
+	TRANSFER = 4'b0010
+	TRANSFER_ID = 32'sb00000000000000000000000000000001
+	WIDTH = 32'sb00000000000000000000000000010000
+Module <filter_stm> is correct for synthesis.
+ 
+Analyzing module <filter_storage> in library <work>.
+	DEPTH = 32'sb00000000000000000000000000001011
+INFO:Xst:1607 - Contents of array <ram> may be accessed with an index that does not cover the full array size.
+INFO:Xst:1607 - Contents of array <ram> may be accessed with an index that does not cover the full array size.
+Module <filter_storage> is correct for synthesis.
+ 
+Analyzing module <filter_accumulator> in library <work>.
+Module <filter_accumulator> is correct for synthesis.
+ 
+Analyzing module <filter_barrel_shifter> in library <work>.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 79: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 80: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 81: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 82: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 83: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 84: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 85: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 86: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 87: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 88: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 89: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 90: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 91: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 92: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 93: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 94: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 95: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 96: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 97: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 98: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 99: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 100: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 101: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 102: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 103: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 104: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 105: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 106: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 107: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 108: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "filter_barrel_shifter.v" line 109: Size mismatch between case item and case selector.
+Module <filter_barrel_shifter> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <filter_accumulator>.
+    Related source file is "filter_accumulator.v".
+    Found 41-bit up accumulator for signal <tmp>.
+    Summary:
+	inferred   1 Accumulator(s).
+Unit <filter_accumulator> synthesized.
+
+
+Synthesizing Unit <filter_barrel_shifter>.
+    Related source file is "filter_barrel_shifter.v".
+Unit <filter_barrel_shifter> synthesized.
+
+
+Synthesizing Unit <filter_storage>.
+    Related source file is "filter_storage.v".
+WARNING:Xst:647 - Input <wrdata<31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 64x31-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 31-bit register for signal <rddata>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  31 D-type flip-flop(s).
+Unit <filter_storage> synthesized.
+
+
+Synthesizing Unit <filter_stm>.
+    Related source file is "filter_stm.v".
+WARNING:Xst:646 - Signal <x_unit<31>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <filter_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rstb                      (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <do_multiply_1st>.
+    Found 1-bit register for signal <rtr>.
+    Found 6-bit register for signal <rd_addr>.
+    Found 1-bit register for signal <do_multiply>.
+    Found 1-bit register for signal <do_transfer>.
+    Found 6-bit register for signal <wr_addr>.
+    Found 1-bit register for signal <arr_x_re>.
+    Found 6-bit register for signal <filter_count>.
+    Found 6-bit adder for signal <filter_count_nxt$addsub0000> created at line 165.
+    Found 1-bit register for signal <filter_need_new>.
+    Found 1-bit register for signal <filter_running>.
+    Found 1-bit register for signal <filter_running_1st>.
+    Found 6-bit adder for signal <rd_addr_nxt$share0000> created at line 74.
+    Found 6-bit adder for signal <wr_addr_nxt$addsub0000> created at line 102.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  26 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+Unit <filter_stm> synthesized.
+
+
+Synthesizing Unit <filter>.
+    Related source file is "filter.v".
+WARNING:Xst:647 - Input <aud_out_rtr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1306 - Output <aud_out_rts> is never assigned.
+WARNING:Xst:646 - Signal <wr_addr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <sel_shift> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <rd_addr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <do_transfer> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <do_multiply_1st> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <do_multiply> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <filter> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 64x31-bit dual-port RAM                               : 1
+# Adders/Subtractors                                   : 3
+ 6-bit adder                                           : 3
+# Accumulators                                         : 1
+ 41-bit up accumulator                                 : 1
+# Registers                                            : 12
+ 1-bit register                                        : 8
+ 31-bit register                                       : 1
+ 6-bit register                                        : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <filter_stm_0/filter_state/FSM> on signal <filter_state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 00
+ 0010  | 01
+ 0100  | 11
+ 1000  | 10
+-------------------
+WARNING:Xst:1290 - Hierarchical block <filter_storage_0> is unconnected in block <filter_stm_0>.
+   It will be removed from the design.
+
+Synthesizing (advanced) Unit <filter_storage>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <rddata>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 31-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <wren>          | high     |
+    |     addrA          | connected to signal <wrptr>         |          |
+    |     diA            | connected to signal <wrdata>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 64-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <rden>          | high     |
+    |     addrB          | connected to signal <rdptr>         |          |
+    |     doB            | connected to signal <rddata>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <filter_storage> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 1
+ 64x31-bit dual-port block RAM                         : 1
+# Adders/Subtractors                                   : 3
+ 6-bit adder                                           : 3
+# Accumulators                                         : 1
+ 41-bit up accumulator                                 : 1
+# Registers                                            : 26
+ Flip-Flops                                            : 26
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_1> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_2> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_3> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_4> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_5> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_6> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_7> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_8> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_9> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_10> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_11> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_12> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_13> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_14> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_15> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_16> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_17> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_18> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_19> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_20> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_21> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_22> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_23> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_24> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_25> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_26> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_27> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_28> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_29> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_30> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_31> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_32> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_33> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_34> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_35> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_36> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_37> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_38> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_39> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_accumulator_0/tmp_40> of sequential type is unconnected in block <filter>.
+
+Optimizing unit <filter> ...
+
+Optimizing unit <filter_stm> ...
+WARNING:Xst:2677 - Node <filter_stm_0/filter_storage_0/Mram_ram> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/arr_x_re> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/rd_addr_5> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/rd_addr_4> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/rd_addr_3> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/rd_addr_2> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/rd_addr_1> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/rd_addr_0> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/wr_addr_5> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/wr_addr_4> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/wr_addr_3> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/wr_addr_2> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/wr_addr_1> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/wr_addr_0> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/do_multiply> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/do_multiply_1st> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <filter_stm_0/do_transfer> of sequential type is unconnected in block <filter>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block filter, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 13
+ Flip-Flops                                            : 13
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : filter.ngr
+Top Level Output File Name         : filter
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 70
+
+Cell Usage :
+# BELS                             : 25
+#      GND                         : 1
+#      LUT1                        : 1
+#      LUT2                        : 1
+#      LUT2_L                      : 2
+#      LUT3                        : 5
+#      LUT3_L                      : 2
+#      LUT4                        : 9
+#      LUT4_D                      : 1
+#      LUT4_L                      : 1
+#      MUXF5                       : 1
+#      XORCY                       : 1
+# FlipFlops/Latches                : 13
+#      FDC                         : 13
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 35
+#      IBUF                        : 2
+#      OBUF                        : 33
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       13  out of   4656     0%  
+ Number of Slice Flip Flops:             13  out of   9312     0%  
+ Number of 4 input LUTs:                 22  out of   9312     0%  
+ Number of IOs:                          70
+ Number of bonded IOBs:                  36  out of    232    15%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 13    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | IBUF                   | 13    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 4.456ns (Maximum Frequency: 224.417MHz)
+   Minimum input arrival time before clock: 3.648ns
+   Maximum output required time after clock: 4.450ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.456ns (frequency: 224.417MHz)
+  Total number of paths / destination ports: 77 / 13
+-------------------------------------------------------------------------
+Delay:               4.456ns (Levels of Logic = 3)
+  Source:            filter_stm_0/filter_state_FSM_FFd1 (FF)
+  Destination:       filter_stm_0/filter_need_new (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: filter_stm_0/filter_state_FSM_FFd1 to filter_stm_0/filter_need_new
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             10   0.591   0.886  filter_stm_0/filter_state_FSM_FFd1 (filter_stm_0/filter_state_FSM_FFd1)
+     LUT4_D:I3->LO         1   0.704   0.135  filter_stm_0/filter_count_nxt<2>_SW0 (N16)
+     LUT3:I2->O            1   0.704   0.424  filter_stm_0/filter_need_new_nxt30 (filter_stm_0/filter_need_new_nxt30)
+     LUT4:I3->O            1   0.704   0.000  filter_stm_0/filter_need_new_nxt42 (filter_stm_0/filter_need_new_nxt)
+     FDC:D                     0.308          filter_stm_0/filter_need_new
+    ----------------------------------------
+    Total                      4.456ns (3.011ns logic, 1.445ns route)
+                                       (67.6% logic, 32.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              3.648ns (Levels of Logic = 3)
+  Source:            aud_in_rts (PAD)
+  Destination:       filter_stm_0/filter_running_1st (FF)
+  Destination Clock: clk rising
+
+  Data Path: aud_in_rts to filter_stm_0/filter_running_1st
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.218   0.610  aud_in_rts_IBUF (aud_in_rts_IBUF)
+     LUT2_L:I1->LO         1   0.704   0.104  filter_stm_0/filter_xfc1 (filter_stm_0/filter_xfc)
+     LUT4:I3->O            1   0.704   0.000  filter_stm_0/filter_running_1st_nxt1 (filter_stm_0/filter_running_1st_nxt)
+     FDC:D                     0.308          filter_stm_0/filter_running_1st
+    ----------------------------------------
+    Total                      3.648ns (2.934ns logic, 0.714ns route)
+                                       (80.4% logic, 19.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              4.450ns (Levels of Logic = 1)
+  Source:            filter_stm_0/rtr (FF)
+  Destination:       aud_in_rtr (PAD)
+  Source Clock:      clk rising
+
+  Data Path: filter_stm_0/rtr to aud_in_rtr
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              4   0.591   0.587  filter_stm_0/rtr (filter_stm_0/rtr)
+     OBUF:I->O                 3.272          aud_in_rtr_OBUF (aud_in_rtr)
+    ----------------------------------------
+    Total                      4.450ns (3.863ns logic, 0.587ns route)
+                                       (86.8% logic, 13.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.03 secs
+ 
+--> 
+
+Total memory usage is 275480 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  111 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+
