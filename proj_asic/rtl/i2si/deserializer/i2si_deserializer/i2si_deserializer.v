@@ -2,21 +2,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2si_deserializer
 // Create Date:             9/13/2015 
-// Last Modification:       10/14/2015
+// Last Modification:       11/9/2015
 // Author:                  Kevin Cao
 //
 //Description: The deserializer takes in serial data and converts it to parallel data that is outputted to the mux and fifo sub-blocks.
 //
-//              Deserializer needs to first_n be resetted in order to function properly, initializing all values to 0.
+//              Deserializer needs to first be resetted in order to function properly, initializing all values to 0.
 //              Once all values are initialized to 0, certain conditions must be met for the deserializer to become active.
-//              To become active, rst_n first_n needs to go from high to low, and then ws needs to go from high to low. 
+//              To become active, rst_n first needs to go from high to low, and then ws needs to go from high to low. 
 //              Then when sck_transition high, the deserializer becomes active.
 //////////////////////////////////////////////////////////////////////////////////
 
 module i2si_deserializer(clk, rst_n, i2si_sck, i2si_ws, i2si_sd, rf_i2si_en, i2si_lft, i2si_rgt, i2si_xfc);
 
 input                           clk;                        //Master clock
-input                           rst_n;                        //Reset
+input                           rst_n;                      //Reset
 input                           i2si_sck;                   //Digital audio bit clock
 input                           i2si_ws;                    //Word select: defines if left or right channel is being read from. 0 = Left Channel, 1 = Right Channel
 input                           i2si_sd;                    //Digital audio serial data
@@ -29,10 +29,10 @@ output                          i2si_xfc;                   //Transfer Complete
 reg [15:0]                      i2si_lft;
 reg [15:0]                      i2si_rgt;
 reg                             i2si_xfc;
-reg [1:0]                       rst_n_vec;                    //Used to check when rst_n goes from low to high and to trigger armed1
-reg                             armed1;                     //First_n signal that helps define idle and active state
-reg                             armed2;                     //Second signal that helps define idle and active state
-reg                             state;                      //Defines which state the deserializer is in. Active or Idle.
+reg [1:0]                       rst_n_vec;                  //Used to check when rst_n goes from low to high and to trigger armed1
+reg                             armed1;                     //First signal that helps define idle and active
+reg                             armed2;                     //Second signal that helps define idle and active
+reg                             active;                     //Defines if the deserializer is active or not
 reg [2:0]                       sck_vec;                    //Delayed signals of i2si_sck
 reg [4:0]                       ws_vec;                     //Delayed signals of i2si_ws
 reg [3:0]                       sd_vec;                     //Delayed signals of i2si_sd
@@ -47,9 +47,6 @@ wire                            ws_delay;                   //Delayed signal of 
 wire                            ws_transition;              //Check if ws goes from 1 -> 0 when en = 1
 wire                            sd;                         //Synchronized sd with clk
 wire                            pre_xfc;                    //Unsynchronized transfer complete signal
-
-parameter                       S0 = 1'b0;                  //Represents idle state
-parameter                       S1 = 1'b1;                  //Represents active state
 
 
 
@@ -91,7 +88,7 @@ end
 assign sd = sd_vec[3];
 
 //delay ws signal by 4 clock cycles
-//ws has additional delay to define the active state
+//ws has additional delay to define the deserializer as active
 //ws[3] is synchronized
 //ws[4] is delayed ws signal
 always @(posedge clk or negedge rst_n)
@@ -110,17 +107,17 @@ assign ws = ws_vec[3];
 assign ws_delay = ws_vec[4];
 
 //ws_transition becomes high when ws goes from 1 -> 0
-//used to help define active state
+//used to help define if deserializer is active
 assign ws_transition = !ws && ws_delay;
 
-//Used to help define active state when rst_n goes from low to high
+//Used to help define active when rst_n goes from low to high
 always @(posedge clk)
 begin
     rst_n_vec[0] <= rst_n;
     rst_n_vec[1] <= rst_n_vec[0];
 end
 
-//Intermediate step to help define active state
+//Intermediate step to help define active
 //checks if rst_n goes from high to low
 always @(posedge clk or negedge rst_n)
 begin
@@ -132,7 +129,7 @@ begin
         armed1 <= 1'b0;
 end
 
-//Intermediate step to help define active state
+//Intermediate step to help define active
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
@@ -143,15 +140,15 @@ begin
         armed2 <= 1'b0;
 end
 
-//Defines when deserializer is in the idle or active state
+//Defines when deserializer is idle or active
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        state <= S0;
+        active <= 1'b0;
     else if(!rf_i2si_en)
-        state <= S0;
+        active <= 1'b0;
     else if(armed2 && sck_transition)
-        state <= S1;
+        active <= 1'b1;
 end
 
 
@@ -160,9 +157,9 @@ always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         in_left <= 1'b1;
-    else if (!ws && sck_transition && state)
+    else if (!ws && sck_transition && active)
         in_left <= 1'b1;
-    else if (ws && sck_transition && state)
+    else if (ws && sck_transition && active)
         in_left <= 1'b0;
 end
 
@@ -201,7 +198,7 @@ begin
         i2si_lft[15:0] <= 16'b0;
         i2si_rgt[15:0] <= 16'b0;
     end		
-    else if(state == S1)
+    else if(active)
     begin					
         if(sck_transition)
         begin

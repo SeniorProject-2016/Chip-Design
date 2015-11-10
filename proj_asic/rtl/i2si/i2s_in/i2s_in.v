@@ -1,4 +1,11 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             i2si.v
+// Create Date:             10/13/2015 
+// Last Modification:       11/9/2015
+// Author:                  Kevin Cao
+//
+//////////////////////////////////////////////////////////////////////////////////
 
 module i2s_in(              clk, rst,
                             i2si_sck, i2si_ws, i2si_sd, rf_i2si_en,
@@ -37,8 +44,7 @@ wire [31:0]                 bist_data;
 wire                        bist_xfc;
 wire [31:0]                 mux_data;
 wire                        mux_xfc;
-//wire                        fifo_inp_data;           //Wire connecting mux_out to fifo_inp_data
-wire                        fifo_out_rtr;                  //Wire connecting fifo_out_rtr to not gate
+wire                        fifo_out_rtr;                       //Wire connecting fifo_out_rtr to not gate
 
 reg                         ro_fifo_overrun;
 
@@ -78,15 +84,15 @@ i2si_bist_gen Bist(
                                                                 
 i2si_mux Mux(                                                   
     .sel                    (rf_bist_en),                       
-    .in_0_dat               (deserializer_data),             
+    .in_0_data              (deserializer_data),             
     .in_0_xfc               (deserializer_xfc),             
-    .in_1_dat               (bist_data),                
+    .in_1_data              (bist_data),                
     .in_1_xfc               (bist_xfc),                
-    .mux_dat                (mux_data),
+    .mux_data               (mux_data),
     .mux_xfc                (mux_xfc)
 );
 
-fifo #(3, 32) i2si_FIFO(
+fifo #(3, 32) i2si_Fifo(
     .clk                    (clk),
     .rst                    (rst),
     .fifo_inp_data          (mux_data),

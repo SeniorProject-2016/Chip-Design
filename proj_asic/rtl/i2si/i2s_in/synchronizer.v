@@ -1,46 +1,38 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    17:27:06 10/20/2015 
-// Design Name: 
-// Module Name:    Synchronizer 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
 //
-// Dependencies: 
+// Module Name:             synchronizer.v
+// Create Date:             10/20/2015 
+// Last Modification:       11/9/2015
+// Author:                  Kevin Cao
 //
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
+//Description: Delays and synchronizes the sck, sd, and ws signals
 //
 //////////////////////////////////////////////////////////////////////////////////
+
 module synchronizer(clk, rst, _sck, sck, sck_transition, _sd, sd, _ws, ws
     );
     
 input               clk;                        //Master clock
 input               rst;                        //Reset
-input               _sck;                       //Unsynchronized sck
-input               _sd;                        //Non-delayed serial data signal
-input               _ws;                        //Non-delayed word select signal
+input               _sck;                       //Non-delayed and non-synchronized sck signal
+input               _sd;                        //Non-delayed and non-synchronized serial data signal
+input               _ws;                        //Non-delayed and non-synchronized word select signal
+                                                    
+output              sck;                        //Delayed and Synchronized sck
+output              sck_transition;             //Signal that represents when sck goes from low to high. Helps define when particular actions should occur
+output              sd;                         //Delayed and Synchrnoized serial data signal
+output              ws;                         //Delayed and Synchronized word select signal
+                                                    
+reg [2:0]           sck_vec;                        
+reg [3:0]           sd_vec;                         
+reg [3:0]           ws_vec;                         
+                                                
+wire                sck_delay;                  //Delayed sck signal that helps define sck_transition
 
-output              sck;                   //Synchronized sck
-output              sck_transition;
-output              sd;                    //Delayed serial data signal
-output              ws;                    //Delayed word select signal
-
-reg [2:0]           sck_vec;
-reg [3:0]           sd_vec;
-reg [3:0]           ws_vec;
-                    
-wire                sck_delay;            //Delayed sck signal
 
 
-
-//Synchronize clk and sck
+//Delay sck by 2 clk cycles and synchronize with clk
 //sck[1] = sck synchronized with clk
 //sck[2] = sck delay signal to help create sck_transition
 always @(posedge clk or negedge rst)
@@ -58,11 +50,12 @@ end
 assign sck = sck_vec[1];
 assign sck_delay = sck_vec[2];
 
-//Defines when sck_transition is high or low. Helps define when certain actions should occur
+//Defines sck_transition as high when sck transitions from low to high
+//helps define when particular actions should occur
 assign sck_transition = sck && !sck_delay;
 
-//Delay sd by 4 clock cycles
-//sd[3] is synchronized signal
+//Delay and synchronize sd by 4 clock cycles
+//sd[3] is the synchronized signal
 always @(posedge clk or negedge rst)
 begin
     if(!rst)
@@ -78,8 +71,8 @@ end
 assign sd = sd_vec[3];
 
 
-//Delay ws signal by 4 clock cycles
-//ws[3] is synchronized
+//Delay and synchronize ws signal by 4 clock cycles
+//ws[3] is the synchronized signal
 always @(posedge clk or negedge rst)
 begin
     if(!rst)
