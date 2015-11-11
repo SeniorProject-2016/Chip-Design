@@ -1,31 +1,30 @@
 `timescale 1ns / 1ps
+`define BUF_WIDTH 3                   //  no. of bits to be used in pointer
+`define BUF_SIZE ( 1<<`BUF_WIDTH )    // number of elements allowed in buffer = 2^Buffer Width
+`define DATA_SIZE 32                  // no. of bits for fifo data
 
 module fifo(clk,rst,fifo_inp_data,fifo_out_data,fifo_inp_rts,fifo_out_rtr,fifo_out_rts,fifo_inp_rtr);
 
-parameter BUF_WIDTH = 3;                                  //  no. of bits to be used in pointer
-parameter BUF_SIZE = ( 1<<BUF_WIDTH );                   // number of elements allowed in buffer = 2^Buffer Width
-parameter DATA_SIZE = 32;                                 // no. of bits for fifo data
-
 input                 rst, clk;       // reset, clock
 input                 fifo_inp_rts;   // write client asserts read to send 
-output                fifo_inp_rtr;
-input [DATA_SIZE-1:0] fifo_inp_data;  // data input to be pushed to buffer
+input                 fifo_out_rtr;   // read client asserts ready to recieve
+input [`DATA_SIZE-1:0] fifo_inp_data;  // data input to be pushed to buffer
 
-output[DATA_SIZE-1:0] fifo_out_data;  // port to output the data using pop.
-output                fifo_out_rts;   // output FIFO asserts read to send
-input                 fifo_out_rtr; 
+output[`DATA_SIZE-1:0] fifo_out_data;  // port to output the data using pop.
+output                fifo_out_rts;   // output FIFO asserts read to send 
+output                fifo_inp_rtr;   // output FIFO asserts read to recieve
 
-reg[DATA_SIZE-1:0]    fifo_out_data;  
+reg[`DATA_SIZE-1:0]    fifo_out_data;  
 reg                   fifo_out_rts;
 reg                   fifo_inp_rtr;
-reg[BUF_WIDTH :0]    fifo_counter;					 
-reg[BUF_WIDTH -1:0]  rd_ptr, wr_ptr;             // pointer to read and write addresses  
-reg[7:0]              buf_mem[BUF_SIZE -1 : 0];  // buffer memory
+reg[`BUF_WIDTH :0]    fifo_counter;					 
+reg[`BUF_WIDTH -1:0]  rd_ptr, wr_ptr;             // pointer to read and write addresses  
+reg[7:0]              buf_mem[`BUF_SIZE -1 : 0];  // buffer memory
 
 always @(fifo_counter) // every time the number of elements in the buffer changes
 begin
    fifo_out_rts = (fifo_counter!=0); // output FIFO is ready to send if the buffer is not empty
-   fifo_inp_rtr = (fifo_counter!= BUF_SIZE); // output FIFO is ready to recieve if the buffer is not full
+   fifo_inp_rtr = (fifo_counter!= `BUF_SIZE); // output FIFO is ready to recieve if the buffer is not full
 end
 
 always @(posedge clk or posedge rst) // update counter based on state of fifo

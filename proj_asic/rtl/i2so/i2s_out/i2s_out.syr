@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: i2s_out.prj
 
@@ -111,14 +111,422 @@ Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rt
 Parsing module <fifo>.
 Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v" into library work
 Parsing module <i2s_out>.
-ERROR:HDLCompiler:69 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v" Line 54: <Width> is not declared.
-ERROR:HDLCompiler:598 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v" Line 21: Module <i2s_out> ignored due to previous errors.
-Verilog file C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v ignored due to errors
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <i2s_out>.
+
+Elaborating module <serializer>.
+
+Elaborating module <fifo(BUF_WIDTH=3,BUF_SIZE=8,DATA_SIZE=32)>.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v" Line 39: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v" Line 41: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v" Line 62: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v" Line 77: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v" Line 81: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:189 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v" Line 61: Size mismatch in connection of port <fifo_inp_data>. Formal port size is 32-bit while actual signal size is 1-bit.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <i2s_out>.
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v".
+    Found 1-bit register for signal <ro_fifo_overrun>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <i2s_out> synthesized.
+
+Synthesizing Unit <serializer>.
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\serializer.v".
+    Found 1-bit register for signal <LR>.
+    Found 16-bit register for signal <lft_data>.
+    Found 16-bit register for signal <rgt_data>.
+    Found 4-bit register for signal <bit_count>.
+    Found 1-bit register for signal <serializer_active>.
+    Found 1-bit register for signal <i2so_ws>.
+    Found 1-bit register for signal <i2so_sd>.
+    Found 1-bit register for signal <filt_i2so_rts_delay>.
+    Found 4-bit subtractor for signal <bit_count[3]_GND_2_o_sub_7_OUT> created at line 107.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_12_o> created at line 132.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_13_o> created at line 137.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <serializer> synthesized.
+
+Synthesizing Unit <fifo>.
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v".
+        BUF_WIDTH = 3
+        BUF_SIZE = 8
+        DATA_SIZE = 32
+WARNING:Xst:647 - Input <fifo_inp_data<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <fifo_out_data>.
+    Found 3-bit register for signal <wr_ptr>.
+    Found 3-bit register for signal <rd_ptr>.
+    Found 4-bit register for signal <fifo_counter>.
+    Found 4-bit adder for signal <fifo_counter[3]_GND_4_o_add_2_OUT> created at line 39.
+    Found 3-bit adder for signal <wr_ptr[2]_GND_4_o_add_15_OUT> created at line 77.
+    Found 3-bit adder for signal <rd_ptr[2]_GND_4_o_add_17_OUT> created at line 81.
+    Found 4-bit subtractor for signal <GND_4_o_GND_4_o_sub_4_OUT<3:0>> created at line 41.
+    Found 8x8-bit dual-port RAM <Mram_buf_mem> for signal <buf_mem>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  42 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <fifo> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8x8-bit dual-port RAM                                 : 1
+# Adders/Subtractors                                   : 4
+ 3-bit adder                                           : 2
+ 4-bit addsub                                          : 1
+ 4-bit subtractor                                      : 1
+# Registers                                            : 13
+ 1-bit register                                        : 6
+ 16-bit register                                       : 2
+ 3-bit register                                        : 2
+ 32-bit register                                       : 1
+ 4-bit register                                        : 2
+# Multiplexers                                         : 5
+ 1-bit 16-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <fifo_out_data_8> in Unit <i2so_Fifo> is equivalent to the following 23 FFs/Latches, which will be removed : <fifo_out_data_9> <fifo_out_data_10> <fifo_out_data_11> <fifo_out_data_12> <fifo_out_data_13> <fifo_out_data_14> <fifo_out_data_15> <fifo_out_data_16> <fifo_out_data_17> <fifo_out_data_18> <fifo_out_data_19> <fifo_out_data_20> <fifo_out_data_21> <fifo_out_data_22> <fifo_out_data_23> <fifo_out_data_24> <fifo_out_data_25> <fifo_out_data_26> <fifo_out_data_27> <fifo_out_data_28> <fifo_out_data_29> <fifo_out_data_30> <fifo_out_data_31> 
+WARNING:Xst:1710 - FF/Latch <fifo_out_data_8> (without init value) has a constant value of 0 in block <i2so_Fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rgt_data_15> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rgt_data_14> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rgt_data_13> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rgt_data_12> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rgt_data_11> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rgt_data_10> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rgt_data_9> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <rgt_data_8> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_15> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_14> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_13> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_12> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_11> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_10> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_9> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_8> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_7> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_6> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_5> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_4> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_3> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_2> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_1> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <lft_data_0> (without init value) has a constant value of 0 in block <Serializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <fifo_out_data<31:8>> (without init value) have a constant value of 0 in block <fifo>.
+
+Synthesizing (advanced) Unit <fifo>.
+The following registers are absorbed into counter <wr_ptr>: 1 register on signal <wr_ptr>.
+The following registers are absorbed into counter <rd_ptr>: 1 register on signal <rd_ptr>.
+The following registers are absorbed into counter <fifo_counter>: 1 register on signal <fifo_counter>.
+INFO:Xst:3217 - HDL ADVISOR - Register <rgt_data> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_buf_mem> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <wr_ptr>        |          |
+    |     diA            | connected to signal <_n0074>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     addrB          | connected to signal <rd_ptr>        |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <fifo> synthesized (advanced).
+
+Synthesizing (advanced) Unit <serializer>.
+The following registers are absorbed into counter <bit_count>: 1 register on signal <bit_count>.
+Unit <serializer> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8x8-bit dual-port distributed RAM                     : 1
+# Counters                                             : 4
+ 3-bit up counter                                      : 2
+ 4-bit down counter                                    : 1
+ 4-bit updown counter                                  : 1
+# Registers                                            : 46
+ Flip-Flops                                            : 46
+# Multiplexers                                         : 4
+ 1-bit 16-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <i2s_out> ...
+
+Optimizing unit <serializer> ...
+
+Optimizing unit <fifo> ...
+WARNING:Xst:1710 - FF/Latch <Serializer/lft_data_0> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_1> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_2> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_3> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_4> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_5> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_6> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_7> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_8> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_9> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_10> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_11> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_12> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_13> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_14> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/lft_data_15> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/rgt_data_8> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/rgt_data_9> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/rgt_data_10> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/rgt_data_11> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/rgt_data_12> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/rgt_data_13> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/rgt_data_14> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Serializer/rgt_data_15> (without init value) has a constant value of 0 in block <i2s_out>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block i2s_out, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 36
+ Flip-Flops                                            : 36
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : i2s_out.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 60
+#      GND                         : 1
+#      INV                         : 3
+#      LUT2                        : 5
+#      LUT3                        : 10
+#      LUT4                        : 7
+#      LUT5                        : 7
+#      LUT6                        : 26
+#      MUXF7                       : 1
+# FlipFlops/Latches                : 36
+#      FDC                         : 6
+#      FDCE                        : 29
+#      FDP                         : 1
+# RAMS                             : 8
+#      RAM32X1D                    : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 9
+#      IBUF                        : 5
+#      OBUF                        : 4
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              36  out of  126800     0%  
+ Number of Slice LUTs:                   74  out of  63400     0%  
+    Number used as Logic:                58  out of  63400     0%  
+    Number used as Memory:               16  out of  19000     0%  
+       Number used as RAM:               16
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     74
+   Number with an unused Flip Flop:      38  out of     74    51%  
+   Number with an unused LUT:             0  out of     74     0%  
+   Number of fully used LUT-FF pairs:    36  out of     74    48%  
+   Number of unique control sets:         7
+
+IO Utilization: 
+ Number of IOs:                          10
+ Number of bonded IOBs:                  10  out of    210     4%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 44    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.048ns (Maximum Frequency: 488.281MHz)
+   Minimum input arrival time before clock: 1.543ns
+   Maximum output required time after clock: 1.427ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.048ns (frequency: 488.281MHz)
+  Total number of paths / destination ports: 515 / 129
+-------------------------------------------------------------------------
+Delay:               2.048ns (Levels of Logic = 2)
+  Source:            Serializer/serializer_active (FF)
+  Destination:       i2so_Fifo/fifo_counter_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Serializer/serializer_active to i2so_Fifo/fifo_counter_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   0.361   0.593  Serializer/serializer_active (Serializer/serializer_active)
+     LUT4:I0->O            2   0.097   0.515  Serializer/filt_i2so_rtr_SW1 (N2)
+     LUT6:I3->O            3   0.097   0.289  i2so_Fifo/_n0072_inv1 (i2so_Fifo/_n0072_inv)
+     FDCE:CE                   0.095          i2so_Fifo/fifo_counter_1
+    ----------------------------------------
+    Total                      2.048ns (0.650ns logic, 1.398ns route)
+                                       (31.7% logic, 68.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 94 / 88
+-------------------------------------------------------------------------
+Offset:              1.543ns (Levels of Logic = 3)
+  Source:            sck_transition (PAD)
+  Destination:       i2so_Fifo/fifo_counter_3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: sck_transition to i2so_Fifo/fifo_counter_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.393  sck_transition_IBUF (sck_transition_IBUF)
+     LUT2:I0->O            4   0.097   0.570  Serializer/filt_i2so_rtr_SW0 (N01)
+     LUT6:I2->O            3   0.097   0.289  i2so_Fifo/_n0072_inv1 (i2so_Fifo/_n0072_inv)
+     FDCE:CE                   0.095          i2so_Fifo/fifo_counter_1
+    ----------------------------------------
+    Total                      1.543ns (0.290ns logic, 1.253ns route)
+                                       (18.8% logic, 81.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 7 / 4
+-------------------------------------------------------------------------
+Offset:              1.427ns (Levels of Logic = 2)
+  Source:            i2so_Fifo/fifo_counter_0 (FF)
+  Destination:       filt_rtr (PAD)
+  Source Clock:      clk rising
+
+  Data Path: i2so_Fifo/fifo_counter_0 to filt_rtr
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             25   0.361   0.662  i2so_Fifo/fifo_counter_0 (i2so_Fifo/fifo_counter_0)
+     LUT4:I0->O            7   0.097   0.307  i2so_Fifo/fifo_inp_rtr1 (filt_rtr_OBUF)
+     OBUF:I->O                 0.000          filt_rtr_OBUF (filt_rtr)
+    ----------------------------------------
+    Total                      1.427ns (0.458ns logic, 0.969ns route)
+                                       (32.1% logic, 67.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.048|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.99 secs
+ 
 --> 
 
-Total memory usage is 237096 kilobytes
+Total memory usage is 430308 kilobytes
 
-Number of errors   :    2 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   57 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 
