@@ -1,27 +1,24 @@
 ISim log file
-Running: E:\chip\chip\filter_tf_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/chip/chip/filter_tf_isim_beh.wdb 
+Running: E:\chip\chip\filter_stm_tf_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/chip/chip/filter_stm_tf_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
-WARNING: File "E:/chip/chip/filter_stm.v" Line 47.  For instance filter_stm_0/filter_storage_0/, width 31 of formal port rddata is not equal to width 32 of actual signal x_unit.
-WARNING: File "E:/chip/chip/filter.v" Line 35.  For instance uut/filter_stm_0/, width 6 of formal port wr_addr is not equal to width 1 of actual signal wr_addr.
-WARNING: File "E:/chip/chip/filter.v" Line 36.  For instance uut/filter_stm_0/, width 6 of formal port rd_addr is not equal to width 1 of actual signal rd_addr.
-WARNING: File "E:/chip/chip/filter.v" Line 19.  For instance uut/filter_stm_0/, width 32 of formal port aud_out is not equal to width 1 of actual signal aud_out_multiply.
-WARNING: File "E:/chip/chip/filter.v" Line 17.  For instance uut/filter_accumulator_0/, width 32 of formal port D is not equal to width 1 of actual signal aud_in_acc.
-WARNING: File "E:/chip/chip/filter.v" Line 18.  For instance uut/filter_accumulator_0/, width 41 of formal port Q is not equal to width 1 of actual signal aud_out_acc.
-WARNING: File "E:/chip/chip/filter.v" Line 18.  For instance uut/filter_barrel_shifter_0/, width 32 of formal port input_signal is not equal to width 1 of actual signal aud_out_acc.
-WARNING: File "E:/chip/chip/filter.v" Line 52.  For instance uut/filter_barrel_shifter_0/, width 6 of formal port sel_shift is not equal to width 1 of actual signal sel_shift.
-WARNING: File "E:/chip/chip/filter.v" Line 16.  For instance uut/filter_barrel_shifter_0/, width 32 of formal port output_signal is not equal to width 1 of actual signal output_signal.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 1.00us
-# run 1.00us
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
 # run 1.00us
 # run 1.00us
 # run 1.00us

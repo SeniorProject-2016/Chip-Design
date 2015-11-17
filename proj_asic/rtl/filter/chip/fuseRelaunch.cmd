@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "E:/chip/chip/filter_tf_isim_beh.exe" -prj "E:/chip/chip/filter_tf_beh.prj" "work.filter_tf" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "E:/chip/chip/filter_stm_tf_isim_beh.exe" -prj "E:/chip/chip/filter_stm_tf_beh.prj" "work.filter_stm_tf" "work.glbl" 

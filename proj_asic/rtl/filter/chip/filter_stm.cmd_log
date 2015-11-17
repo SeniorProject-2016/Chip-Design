@@ -1,2 +1,4 @@
 xst -intstyle ise -ifn "E:/chip/chip/filter_stm.xst" -ofn "E:/chip/chip/filter_stm.syr" 
 xst -intstyle ise -ifn "E:/chip/chip/filter_stm.xst" -ofn "E:/chip/chip/filter_stm.syr" 
+vhdtdtfi -lang verilog -prj chip -o E:/chip/chip/filter_stm.tfi -lib work E:/chip/chip//filter_stm.v -module filter_stm -template F:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj chip -o E:/chip/chip/filter_stm.tfi -lib work E:/chip/chip//filter_stm.v -module filter_stm -template F:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

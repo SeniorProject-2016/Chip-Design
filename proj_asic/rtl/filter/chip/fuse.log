@@ -1,38 +1,22 @@
-Running: F:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o E:/chip/chip/filter_tf_isim_beh.exe -prj E:/chip/chip/filter_tf_beh.prj work.filter_tf work.glbl 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "E:/chip/chip/filter_stm_tf_isim_beh.exe" -prj "E:/chip/chip/filter_stm_tf_beh.prj" "work.filter_stm_tf" "work.glbl" 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
 Analyzing Verilog file "E:/chip/chip/filter_storage.v" into library work
 Analyzing Verilog file "E:/chip/chip/filter_stm.v" into library work
-WARNING:HDLCompiler:568 - "E:/chip/chip/filter_stm.v" Line 168: Constant value is truncated to fit in <1> bits.
-Analyzing Verilog file "E:/chip/chip/filter_barrel_shifter.v" into library work
-Analyzing Verilog file "E:/chip/chip/filter_accumulator.v" into library work
-Analyzing Verilog file "E:/chip/chip/filter.v" into library work
-Analyzing Verilog file "E:/chip/chip/filter_tf.v" into library work
+WARNING:HDLCompiler:568 - "E:/chip/chip/filter_stm.v" Line 189: Constant value is truncated to fit in <1> bits.
+Analyzing Verilog file "E:/chip/chip/filter_stm_tf.v" into library work
 Analyzing Verilog file "F:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter.v" Line 35: Size mismatch in connection of port <wr_addr>. Formal port size is 6-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter.v" Line 36: Size mismatch in connection of port <rd_addr>. Formal port size is 6-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter.v" Line 37: Size mismatch in connection of port <aud_out>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:97 - "E:/chip/chip/filter_storage.v" Line 23: rddata was previously declared with a different range
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter_stm.v" Line 234: Size mismatch in connection of port <rddata>. Formal port size is 31-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter.v" Line 43: Size mismatch in connection of port <D>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter.v" Line 44: Size mismatch in connection of port <Q>. Formal port size is 41-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter.v" Line 51: Size mismatch in connection of port <input_signal>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter.v" Line 52: Size mismatch in connection of port <sel_shift>. Formal port size is 6-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "E:/chip/chip/filter.v" Line 53: Size mismatch in connection of port <output_signal>. Formal port size is 32-bit while actual signal size is 1-bit.
 Completed static elaboration
 Compiling module filter_storage
 Compiling module filter_stm
-Compiling module filter_accumulator
-Compiling module filter_barrel_shifter
-Compiling module filter
-Compiling module filter_tf
+Compiling module filter_stm_tf
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 7 Verilog Units
-Built simulation executable E:/chip/chip/filter_tf_isim_beh.exe
-Fuse Memory Usage: 29032 KB
-Fuse CPU Usage: 436 ms
+Compiled 4 Verilog Units
+Built simulation executable E:/chip/chip/filter_stm_tf_isim_beh.exe
+Fuse Memory Usage: 28444 KB
+Fuse CPU Usage: 420 ms

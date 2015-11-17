@@ -27,24 +27,27 @@ module filter_storage_tf;
 	// Inputs
 	reg clk;
 	reg wren;
-	reg [2:0] wrptr;
-	reg [15:0] wrdata;
+	reg [9:0] wrptr;
+	reg [31:0] wrdata;
 	reg rden;
-	reg [2:0] rdptr;
+	reg [9:0] rdptr;
 
 	// Outputs
-	wire [15:0] rddata;
+	wire [31:0] rddata;
 
 	// Instantiate the Unit Under Test (UUT)
-	filter_storage uut (
-		.clk(clk), 
-		.wren(wren), 
-		.wrptr(wrptr), 
-		.wrdata(wrdata), 
-		.rden(rden), 
-		.rdptr(rdptr), 
-		.rddata(rddata)
-	);
+		filter_storage instance_name (
+    .clk(clk), 
+    .wren(wren), 
+    .wrptr(wrptr), 
+    .wrdata(wrdata), 
+    .rden(rden), 
+    .rdptr(rdptr), 
+    .rddata(rddata)
+    );
+
+
+
 
 	initial begin
 		// Initialize Inputs
@@ -54,32 +57,41 @@ module filter_storage_tf;
 		wrdata = 0;
 		rden = 0;
 		rdptr = 0;
-		wren = 1;
+		wren = 0;
 		// Wait 100 ns for global reset to finish
 		#100;
 		
+		wren = 1; 
+		wrdata = 1;
+		wrptr = 1; 
+		#15; wren = 0;
+		#25; 
+		wren = 1; 
+		wrdata = 2;
+		wrptr = 2; 
+		#15; wren = 0;
+		#25;
+		wren = 1; 
 		wrdata = 3;
-		
-		#20
-		wrptr = wrptr + 1'b1;
-		wrdata = 3;
-		
-		#20
-		wrptr = wrptr + 1'b1;
+		wrptr = 3; 
+		#15; wren = 0;
+		#25; 
+		wren = 1; 
 		wrdata = 4;
-		#20
-		wrptr = wrptr + 1'b1;
+		wrptr = 4; 
+		#15; wren = 0;
+		#25;
+		wren = 1; 
 		wrdata = 5;
-		#20
-		wrptr = wrptr + 1'b1;
-		wrdata = 6;
-	//	#20
-	//	rden  = 1;
-	//	#20
-	//	rdptr = rdptr + 1'b1;
-	
-		
-		// Add stimulus here
+		wrptr = 5; 
+		#15; wren = 0;
+		#25;
+		rden = 1; 
+		#20; rdptr = 1;
+		#20; rdptr = 2;
+		#20; rdptr = 3;
+		#20; rdptr = 4;
+		#20; rdptr = 5;
 
 	end
 	

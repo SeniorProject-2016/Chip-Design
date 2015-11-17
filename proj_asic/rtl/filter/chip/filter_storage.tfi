@@ -1,0 +1,15 @@
+
+
+
+// Instantiate the module
+filter_storage instance_name (
+    .clk(clk), 
+    .wren(wren), 
+    .wrptr(wrptr), 
+    .wrdata(wrdata), 
+    .rden(rden), 
+    .rdptr(rdptr), 
+    .rddata(rddata)
+    );
+
+

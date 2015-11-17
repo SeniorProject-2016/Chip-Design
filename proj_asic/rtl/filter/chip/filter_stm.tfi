@@ -1,0 +1,20 @@
+
+
+
+// Instantiate the module
+filter_stm instance_name (
+    .clk(clk), 
+    .rstb(rstb), 
+    .rts(rts), 
+    .rtr(rtr), 
+    .do_transfer(do_transfer), 
+    .do_multiply_1st(do_multiply_1st), 
+    .do_multiply(do_multiply), 
+    .wr_addr(wr_addr), 
+    .rd_addr(rd_addr), 
+    .aud_in(aud_in), 
+    .aud_out(aud_out), 
+    .rf_filter_coeff(rf_filter_coeff)
+    );
+
+

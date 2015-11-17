@@ -29,15 +29,17 @@ module filter_stm_tf;
 	reg rstb;
 	reg rts;
 	reg [15:0] aud_in;
+	reg [15:0] rf_filter_coeff;
 
 	// Outputs
 	wire rtr;
 	wire do_transfer;
 	wire do_multiply_1st;
 	wire do_multiply;
-	wire [3:0] wr_addr;
-	wire [3:0] rd_addr;
+	//wire [3:0] wr_addr;
+	//wire [3:0] rd_addr;
 	wire [15:0] aud_out;
+
 
 	// Instantiate the Unit Under Test (UUT)
 	filter_stm uut (
@@ -47,11 +49,10 @@ module filter_stm_tf;
 		.rtr(rtr), 
 		.do_transfer(do_transfer), 
 		.do_multiply_1st(do_multiply_1st), 
-		.do_multiply(do_multiply), 
-		.wr_addr(wr_addr), 
-		.rd_addr(rd_addr), 
+		.do_multiply(do_multiply),  
 		.aud_in(aud_in), 
-		.aud_out(aud_out)
+		.aud_out(aud_out),
+		.rf_filter_coeff(rf_filter_coeff)
 	);
 
 	initial begin
@@ -60,11 +61,13 @@ module filter_stm_tf;
 		rstb = 0;
 		rts = 0;
 		aud_in = 0;
-
+		#100;
+		rstb = 1;
+		aud_in =1;
+		rf_filter_coeff =1;
 		// Wait 100 ns for global reset to finish
 		#100;
 		aud_in = 4 ;
-      rstb = 1;
 		rts = 1;
 		#100;
 		aud_in = 9 ;
