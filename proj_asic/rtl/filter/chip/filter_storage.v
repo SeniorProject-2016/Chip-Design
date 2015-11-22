@@ -7,13 +7,13 @@ module filter_storage
 
 input										clk;
 input										wren;
-input		[3:0]							wrptr;
+input		[2:0]							wrptr;
 input		[15:0]						wrdata;
 input										rden;
-input		[3:0]							rdptr;
+input		[2:0]							rdptr;
 output	[15:0]						rddata;
 
-localparam	DEPTH = 15; //2^9 = 512
+localparam	DEPTH = 7; //2^9 = 512
 localparam	WIDTH = 15; 
 
 reg	[WIDTH:0] ram [DEPTH:0];

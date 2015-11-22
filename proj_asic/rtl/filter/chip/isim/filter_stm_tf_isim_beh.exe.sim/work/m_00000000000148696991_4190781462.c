@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "E:/chip/chip/filter_storage.v";
+static const char *ng0 = "F:/GIT/Chip-Design/proj_asic/rtl/filter/chip/filter_storage.v";
 
 
 
@@ -104,7 +104,7 @@ LAB6:    xsi_set_current_line(25, ng0);
     t20 = *((char **)t19);
     t21 = (t0 + 1640U);
     t22 = *((char **)t21);
-    xsi_vlog_generic_convert_array_indices(t13, t14, t17, t20, 2, 1, t22, 4, 2);
+    xsi_vlog_generic_convert_array_indices(t13, t14, t17, t20, 2, 1, t22, 3, 2);
     t21 = (t13 + 4);
     t23 = *((unsigned int *)t21);
     t24 = (!(t23));
@@ -195,7 +195,7 @@ LAB6:    xsi_set_current_line(32, ng0);
     t20 = *((char **)t19);
     t21 = (t0 + 2120U);
     t22 = *((char **)t21);
-    xsi_vlog_generic_get_array_select_value(t14, 16, t13, t17, t20, 2, 1, t22, 4, 2);
+    xsi_vlog_generic_get_array_select_value(t14, 16, t13, t17, t20, 2, 1, t22, 3, 2);
     t21 = (t0 + 2520);
     xsi_vlogvar_assign_value(t21, t14, 0, 0, 16);
     goto LAB8;

@@ -50,6 +50,7 @@
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="filter.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="filter.xst"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="filter_accumulator.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="filter_accumulator.tfi"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_accumulator_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_barrel_shifter_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_barrel_shifter_tf_isim_beh.exe"/>
@@ -75,7 +76,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="filter_stm.xst"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="filter_stm_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="filter_stm_summary.html"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="filter_stm_tf_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="filter_stm_tf_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_stm_tf_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="filter_stm_tf_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="filter_stm_tf_stx_beh.prj"/>
@@ -86,6 +87,7 @@
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="filter_storage.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="filter_storage.tfi"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="filter_storage.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_storage_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_storage_tf_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="filter_storage_tf_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="filter_summary.html"/>
@@ -108,9 +110,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1447733123" xil_pn:in_ck="1855807346446436291" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1447733123">
+    <transform xil_pn:end_ts="1448230860" xil_pn:in_ck="1855807346446436291" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1448230859">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="filter.v"/>
       <outfile xil_pn:name="filter_accumulator.v"/>
       <outfile xil_pn:name="filter_accumulator_tf.v"/>
@@ -122,11 +128,11 @@
       <outfile xil_pn:name="filter_storage_tf.v"/>
       <outfile xil_pn:name="filter_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1447724181" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8576426041712880919" xil_pn:start_ts="1447724181">
+    <transform xil_pn:end_ts="1448136983" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8576426041712880919" xil_pn:start_ts="1448136983">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1447724181" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="6019167555166456683" xil_pn:start_ts="1447724181">
+    <transform xil_pn:end_ts="1448136983" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="6019167555166456683" xil_pn:start_ts="1448136983">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -134,9 +140,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1447733123" xil_pn:in_ck="1855807346446436291" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1447733123">
+    <transform xil_pn:end_ts="1448230860" xil_pn:in_ck="1855807346446436291" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1448230860">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="filter.v"/>
       <outfile xil_pn:name="filter_accumulator.v"/>
       <outfile xil_pn:name="filter_accumulator_tf.v"/>
@@ -148,10 +159,13 @@
       <outfile xil_pn:name="filter_storage_tf.v"/>
       <outfile xil_pn:name="filter_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1447733128" xil_pn:in_ck="1855807346446436291" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5223597314936794675" xil_pn:start_ts="1447733123">
+    <transform xil_pn:end_ts="1448230864" xil_pn:in_ck="1855807346446436291" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5223597314936794675" xil_pn:start_ts="1448230860">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="filter_stm_tf_beh.prj"/>
       <outfile xil_pn:name="filter_stm_tf_isim_beh.exe"/>
@@ -160,9 +174,10 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1447733128" xil_pn:in_ck="-8634977994116738274" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6223635622781878058" xil_pn:start_ts="1447733128">
+    <transform xil_pn:end_ts="1448230865" xil_pn:in_ck="-666498489512315225" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6223635622781878058" xil_pn:start_ts="1448230864">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="filter_stm_tf_isim_beh.wdb"/>
@@ -205,6 +220,7 @@
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="filter.lso"/>
@@ -215,7 +231,6 @@
       <outfile xil_pn:name="filter.xst"/>
       <outfile xil_pn:name="filter_stm.ngr"/>
       <outfile xil_pn:name="filter_stm.prj"/>
-      <outfile xil_pn:name="filter_stm_tf_beh.prj"/>
       <outfile xil_pn:name="filter_stm_tf_stx_beh.prj"/>
       <outfile xil_pn:name="filter_storage.prj"/>
       <outfile xil_pn:name="filter_storage_tf_stx_beh.prj"/>
