@@ -26,6 +26,7 @@ module filter_storage_tf;
 
 	// Inputs
 	reg clk;
+	reg rstb;
 	reg wren;
 	reg [9:0] wrptr;
 	reg [31:0] wrdata;
@@ -36,8 +37,9 @@ module filter_storage_tf;
 	wire [31:0] rddata;
 
 	// Instantiate the Unit Under Test (UUT)
-		filter_storage instance_name (
+	filter_storage instance_name (
     .clk(clk), 
+    .rstb(rstb), 
     .wren(wren), 
     .wrptr(wrptr), 
     .wrdata(wrdata), 
@@ -45,6 +47,7 @@ module filter_storage_tf;
     .rdptr(rdptr), 
     .rddata(rddata)
     );
+
 
 
 
@@ -58,40 +61,11 @@ module filter_storage_tf;
 		rden = 0;
 		rdptr = 0;
 		wren = 0;
+		rstb = 0;
 		// Wait 100 ns for global reset to finish
 		#100;
-		
-		wren = 1; 
-		wrdata = 1;
-		wrptr = 1; 
-		#15; wren = 0;
-		#25; 
-		wren = 1; 
-		wrdata = 2;
-		wrptr = 2; 
-		#15; wren = 0;
-		#25;
-		wren = 1; 
-		wrdata = 3;
-		wrptr = 3; 
-		#15; wren = 0;
-		#25; 
-		wren = 1; 
-		wrdata = 4;
-		wrptr = 4; 
-		#15; wren = 0;
-		#25;
-		wren = 1; 
-		wrdata = 5;
-		wrptr = 5; 
-		#15; wren = 0;
-		#25;
-		rden = 1; 
-		#20; rdptr = 1;
-		#20; rdptr = 2;
-		#20; rdptr = 3;
-		#20; rdptr = 4;
-		#20; rdptr = 5;
+		rstb = 1;
+
 
 	end
 	
