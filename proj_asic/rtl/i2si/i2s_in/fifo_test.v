@@ -2,31 +2,31 @@
 `define DATA_SIZE 32 // no. of bits for fifo data
 
 module fifo_test();
-reg clk, rst, fifo_inp_rts, fifo_out_rtr ; // clock, reset, write enabled, read enabled
+reg clk, rst_n, fifo_inp_rts, fifo_out_rtr ; // clock, reset, write enabled, read enabled
 reg[`DATA_SIZE-1:0] fifo_inp_data; // buffer input
 reg[`DATA_SIZE-1:0] tempdata; // temporary data
 wire [`DATA_SIZE-1:0] fifo_out_data; // buffer output
 
-fifo ff( .clk(clk), .rst(rst), .fifo_inp_data(fifo_inp_data), .fifo_out_data(fifo_out_data), 
+fifo ff( .clk(clk), .rst_n(rst_n), .fifo_inp_data(fifo_inp_data), .fifo_out_data(fifo_out_data), 
          .fifo_inp_rts(fifo_inp_rts), .fifo_out_rtr(fifo_out_rtr), .fifo_out_rts(fifo_out_rts), 
          .fifo_inp_rtr(fifo_inp_rtr));
 
 initial
 begin
    clk = 0; // clock starts at false
-   rst = 1; // reset starts at true
+   rst_n = 0; // reset starts at true
    fifo_out_rtr = 0; // read enabled starts at false
    fifo_inp_rts= 0; // write enabled starts at false
    tempdata = 0; // temporary data starts at zero
    fifo_inp_data = 0; // buffer input is intially zero
-	#15 rst = 0; // after 15ns change the reset to false
+    #15 rst_n = 1; // after 15ns change the reset to false
   
    push(1); // push the value of 1
    fork // push the value of 2 and pop at the same time
-		push(2);
-		pop(tempdata);
+        push(2);
+        pop(tempdata);
    join
-	
+    
         push(10); // push the value of 10
         push(20); // push the value of 20
         push(30); // push the value of 30
@@ -47,7 +47,7 @@ begin
         pop(tempdata); // pop
         pop(tempdata); // pop
         pop(tempdata); // pop
-		  push(140); // push the value of 140
+          push(140); // push the value of 140
         pop(tempdata); // pop
         push(tempdata); // push the data that was just popped
         pop(tempdata); // pop
@@ -87,13 +87,13 @@ output [7:0] data; // the data to be popped
    if( !fifo_out_rts ) // if the buffer is empty display a warning
          $display("---Cannot Pop: Buffer Empty---");
    else // if buffer is not empty 
-		begin
-		   fifo_out_rtr = 1; // read is enabled
+        begin
+           fifo_out_rtr = 1; // read is enabled
          @(posedge clk); // checks if clock is at postive edge
          #1 fifo_out_rtr = 0; // set read enabled qual to zero then
          data = fifo_out_data; // the data is set as the output of the buffer
          $display("-------------------------------Poped ", data); // display that the data was pushed
-		end
+        end
 endtask
 
 endmodule

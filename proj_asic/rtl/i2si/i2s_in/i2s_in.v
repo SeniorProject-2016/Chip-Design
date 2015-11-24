@@ -7,7 +7,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module i2s_in(              clk, rst,
+module i2s_in(              clk, rst_n,
                             inp_sck, inp_ws, inp_sd, rf_i2si_en,
                             rf_bist_start_val, rf_bist_inc, rf_bist_up_limit,
                             rf_mux_en,
@@ -16,7 +16,7 @@ module i2s_in(              clk, rst,
     );
 
 input                       clk;                                //Master clock
-input                       rst;                                //Reset
+input                       rst_n;                              //Reset
                                                                     
 input                       inp_sck;                            //Deserializer: Digital audio bit clock
 input                       inp_ws;                             //Deserializer: Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
@@ -59,7 +59,7 @@ reg                         ro_fifo_overrun;
                                                                 
 synchronizer Synchronizer(                                      
     .clk                    (clk),                              
-    .rst                    (rst),                              
+    .rst_n                  (rst_n),                              
     ._sck                   (inp_sck),                          
     ._ws                    (inp_ws),                               
     ._sd                    (inp_sd),                               
@@ -71,19 +71,19 @@ synchronizer Synchronizer(
 
 i2si_deserializer Deserializer(
     .clk                    (clk),
-    .rst_n                  (rst),
+    .rst_n                  (rst_n),
     .sck_transition         (sck_transition),
-    .i2si_ws                (sync_ws),
-    .i2si_sd                (sync_sd),
+    .in_ws                  (sync_ws),
+    .in_sd                  (sync_sd),
     .rf_i2si_en             (rf_i2si_en),
-    .i2si_lft               (deserializer_data [31:16]),        
-    .i2si_rgt               (deserializer_data [15:0]),         
-    .i2si_xfc               (deserializer_xfc)                           
+    .out_lft                (deserializer_data [31:16]),        
+    .out_rgt                (deserializer_data [15:0]),         
+    .out_xfc                (deserializer_xfc)                           
 );                                                        
                                                                 
 i2si_bist_gen Bist(                                             
     .clk                    (clk),                              
-    .rst                    (rst),
+    .rst_n                  (rst_n),
     .sck_transition         (sck_transition),
     .rf_bist_start_val      (rf_bist_start_val),                
     .rf_bist_up_limit       (rf_bist_up_limit),                 
@@ -104,7 +104,7 @@ i2si_mux Mux(
 
 fifo #(3, 8, 32) i2si_Fifo(
     .clk                    (clk),
-    .rst                    (rst),
+    .rst_n                  (rst_n),
     .fifo_inp_data          (fifo_data),
     .fifo_inp_rts           (fifo_xfc),
     .fifo_inp_rtr           (fifo_rtr),
@@ -114,11 +114,11 @@ fifo #(3, 8, 32) i2si_Fifo(
 );
  
 
-always @ (posedge clk or negedge rst)
+always @ (posedge clk or negedge rst_n)
 begin
-    if (!rst)
+    if (!rst_n)
         ro_fifo_overrun <= 0;
-    else if (~fifo_rtr | deserializer_xfc)
+    else if (~fifo_rtr & deserializer_xfc)
         ro_fifo_overrun <= 1;
     else if (trig_i2si_fifo_overrun_clr)
         ro_fifo_overrun <= 0;

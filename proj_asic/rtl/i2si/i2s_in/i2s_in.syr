@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: i2s_in.prj
 
@@ -133,11 +133,6 @@ Elaborating module <i2si_bist_gen>.
 Elaborating module <i2si_mux>.
 
 Elaborating module <fifo(BUF_WIDTH=3,BUF_SIZE=8,DATA_SIZE=32)>.
-WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v" Line 38: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v" Line 40: Result of 32-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v" Line 61: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v" Line 76: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v" Line 80: Result of 4-bit expression is truncated to fit in 3-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -162,13 +157,13 @@ Unit <synchronizer> synthesized.
 Synthesizing Unit <i2si_deserializer>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_deserializer.v".
     Found 1-bit register for signal <in_left>.
-    Found 16-bit register for signal <i2si_lft>.
-    Found 16-bit register for signal <i2si_rgt>.
+    Found 16-bit register for signal <out_lft>.
+    Found 16-bit register for signal <out_rgt>.
     Found 1-bit register for signal <armed1>.
     Found 1-bit register for signal <armed2>.
     Found 1-bit register for signal <active>.
     Found 1-bit register for signal <in_left_delay>.
-    Found 1-bit register for signal <i2si_xfc>.
+    Found 1-bit register for signal <out_xfc>.
     Found 1-bit register for signal <ws_d>.
     Found 2-bit register for signal <rst_n_vec>.
     Summary:
@@ -177,20 +172,19 @@ Unit <i2si_deserializer> synthesized.
 
 Synthesizing Unit <i2si_bist_gen>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v".
-WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <i2si_bist_out_xfc> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 4-bit register for signal <sck_count>.
     Found 32-bit register for signal <i2si_bist_out_data>.
-    Found 1-bit register for signal <counter>.
-    Found 32-bit register for signal <sck_cnt>.
-    Found 32-bit adder for signal <sck_cnt[31]_GND_5_o_add_1_OUT> created at line 27.
-    Found 1-bit adder for signal <counter_PWR_4_o_add_5_OUT<0>> created at line 33.
-    Found 32-bit adder for signal <i2si_bist_out_data[31]_GND_5_o_add_7_OUT> created at line 40.
-    Found 32-bit comparator lessequal for signal <n0005> created at line 35
+    Found 12-bit register for signal <counter>.
+    Found 1-bit register for signal <i2si_bist_out_xfc>.
+    Found 12-bit adder for signal <counter[11]_GND_5_o_add_2_OUT> created at line 37.
+    Found 32-bit adder for signal <i2si_bist_out_data[31]_GND_5_o_add_4_OUT> created at line 47.
+    Found 4-bit adder for signal <sck_count[3]_GND_5_o_add_14_OUT> created at line 70.
+    Found 32-bit comparator lessequal for signal <n0005> created at line 39
     Summary:
 	inferred   3 Adder/Subtractor(s).
-	inferred  65 D-type flip-flop(s).
+	inferred  49 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred   3 Multiplexer(s).
+	inferred   2 Multiplexer(s).
 Unit <i2si_bist_gen> synthesized.
 
 Synthesizing Unit <i2si_mux>.
@@ -204,16 +198,15 @@ Synthesizing Unit <fifo>.
         BUF_WIDTH = 3
         BUF_SIZE = 8
         DATA_SIZE = 32
-WARNING:Xst:647 - Input <fifo_inp_data<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32-bit register for signal <fifo_out_data>.
     Found 3-bit register for signal <wr_ptr>.
     Found 3-bit register for signal <rd_ptr>.
     Found 4-bit register for signal <fifo_counter>.
-    Found 4-bit adder for signal <fifo_counter[3]_GND_7_o_add_2_OUT> created at line 38.
-    Found 3-bit adder for signal <wr_ptr[2]_GND_7_o_add_15_OUT> created at line 76.
-    Found 3-bit adder for signal <rd_ptr[2]_GND_7_o_add_17_OUT> created at line 80.
-    Found 4-bit subtractor for signal <GND_7_o_GND_7_o_sub_4_OUT<3:0>> created at line 40.
-    Found 8x8-bit dual-port RAM <Mram_buf_mem> for signal <buf_mem>.
+    Found 4-bit subtractor for signal <fifo_counter[3]_GND_8_o_sub_4_OUT> created at line 54.
+    Found 4-bit adder for signal <fifo_counter[3]_GND_8_o_add_2_OUT> created at line 50.
+    Found 3-bit adder for signal <wr_ptr[2]_GND_8_o_add_15_OUT> created at line 98.
+    Found 3-bit adder for signal <rd_ptr[2]_GND_8_o_add_17_OUT> created at line 103.
+    Found 8x32-bit dual-port RAM <Mram_buf_mem> for signal <buf_mem>.
     Summary:
 	inferred   1 RAM(s).
 	inferred   3 Adder/Subtractor(s).
@@ -226,25 +219,26 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 8x8-bit dual-port RAM                                 : 1
+ 8x32-bit dual-port RAM                                : 1
 # Adders/Subtractors                                   : 6
- 1-bit adder                                           : 1
+ 12-bit adder                                          : 1
  3-bit adder                                           : 2
- 32-bit adder                                          : 2
+ 32-bit adder                                          : 1
+ 4-bit adder                                           : 1
  4-bit addsub                                          : 1
-# Registers                                            : 21
+# Registers                                            : 22
  1-bit register                                        : 9
+ 12-bit register                                       : 1
  16-bit register                                       : 2
  2-bit register                                        : 1
  3-bit register                                        : 3
- 32-bit register                                       : 3
- 4-bit register                                        : 3
+ 32-bit register                                       : 2
+ 4-bit register                                        : 4
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 6
+# Multiplexers                                         : 5
  1-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 4
- 8-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -252,9 +246,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <fifo_out_data_8> in Unit <i2si_Fifo> is equivalent to the following 23 FFs/Latches, which will be removed : <fifo_out_data_9> <fifo_out_data_10> <fifo_out_data_11> <fifo_out_data_12> <fifo_out_data_13> <fifo_out_data_14> <fifo_out_data_15> <fifo_out_data_16> <fifo_out_data_17> <fifo_out_data_18> <fifo_out_data_19> <fifo_out_data_20> <fifo_out_data_21> <fifo_out_data_22> <fifo_out_data_23> <fifo_out_data_24> <fifo_out_data_25> <fifo_out_data_26> <fifo_out_data_27> <fifo_out_data_28> <fifo_out_data_29> <fifo_out_data_30> <fifo_out_data_31> 
-WARNING:Xst:1710 - FF/Latch <fifo_out_data_8> (without init value) has a constant value of 0 in block <i2si_Fifo>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2404 -  FFs/Latches <fifo_out_data<31:8>> (without init value) have a constant value of 0 in block <fifo>.
 
 Synthesizing (advanced) Unit <fifo>.
 The following registers are absorbed into counter <wr_ptr>: 1 register on signal <wr_ptr>.
@@ -265,22 +256,22 @@ INFO:Xst:3217 - HDL ADVISOR - Register <fifo_out_data> currently described with 
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     aspect ratio   | 8-word x 32-bit                     |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to internal node          | high     |
     |     addrA          | connected to signal <wr_ptr>        |          |
-    |     diA            | connected to signal <_n0074>        |          |
+    |     diA            | connected to signal <_n0072>        |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     aspect ratio   | 8-word x 32-bit                     |          |
     |     addrB          | connected to signal <rd_ptr>        |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 Unit <fifo> synthesized (advanced).
 
 Synthesizing (advanced) Unit <i2si_bist_gen>.
-The following registers are absorbed into counter <sck_cnt>: 1 register on signal <sck_cnt>.
+The following registers are absorbed into counter <sck_count>: 1 register on signal <sck_count>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
 Unit <i2si_bist_gen> synthesized (advanced).
 
@@ -289,22 +280,21 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 8x8-bit dual-port distributed RAM                     : 1
-# Adders/Subtractors                                   : 2
- 32-bit adder                                          : 2
+ 8x32-bit dual-port distributed RAM                    : 1
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
 # Counters                                             : 5
- 1-bit up counter                                      : 1
+ 12-bit up counter                                     : 1
  3-bit up counter                                      : 2
- 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
  4-bit updown counter                                  : 1
-# Registers                                            : 93
- Flip-Flops                                            : 93
+# Registers                                            : 118
+ Flip-Flops                                            : 118
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 6
+# Multiplexers                                         : 5
  1-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 4
- 8-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -321,77 +311,36 @@ Optimizing unit <synchronizer> ...
 Optimizing unit <i2si_deserializer> ...
 
 Optimizing unit <fifo> ...
-WARNING:Xst:2677 - Node <Deserializer/i2si_rgt_15> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_rgt_14> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_rgt_13> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_rgt_12> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_rgt_11> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_rgt_10> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_rgt_9> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_rgt_8> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_15> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_14> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_13> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_12> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_11> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_10> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_9> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_8> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_7> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_6> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_5> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_4> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_3> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_2> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_1> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:2677 - Node <Deserializer/i2si_lft_0> of sequential type is unconnected in block <i2s_in>.
-WARNING:Xst:1293 - FF/Latch <Bist/sck_cnt_7> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_6> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_5> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_4> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_31> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_30> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_29> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_28> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_27> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_26> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_25> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_24> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_23> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_22> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_21> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_20> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_19> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_18> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_17> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_16> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_15> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Bist/i2si_bist_out_data_13> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_14> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_13> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_31> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_30> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_29> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_28> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_27> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_26> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_25> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_24> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_23> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_22> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_21> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_20> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_19> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_18> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_17> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_16> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_15> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_14> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_13> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_12> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_11> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_10> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_9> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Bist/sck_cnt_8> has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_15> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_16> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_17> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_18> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_19> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_20> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_21> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_22> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_23> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_24> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_25> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_26> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_27> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_28> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_29> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_30> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/i2si_bist_out_data_31> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_1> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_2> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_3> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_4> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_5> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_6> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_7> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_8> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_9> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_10> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Bist/counter_11> (without init value) has a constant value of 0 in block <i2s_in>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -408,8 +357,8 @@ Unit <i2s_in> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 61
- Flip-Flops                                            : 61
+# Registers                                            : 110
+ Flip-Flops                                            : 110
 # Shift Registers                                      : 1
  4-bit shift register                                  : 1
 
@@ -434,26 +383,27 @@ Top Level Output File Name         : i2s_in.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 147
+# BELS                             : 148
 #      GND                         : 1
-#      INV                         : 5
-#      LUT1                        : 12
-#      LUT2                        : 18
-#      LUT3                        : 4
-#      LUT4                        : 27
-#      LUT5                        : 15
-#      LUT6                        : 13
-#      MUXCY                       : 29
+#      INV                         : 6
+#      LUT1                        : 5
+#      LUT2                        : 14
+#      LUT3                        : 5
+#      LUT4                        : 33
+#      LUT5                        : 22
+#      LUT6                        : 24
+#      MUXCY                       : 23
 #      VCC                         : 1
-#      XORCY                       : 22
-# FlipFlops/Latches                : 66
-#      FD                          : 7
-#      FDC                         : 9
-#      FDCE                        : 35
-#      FDE                         : 14
+#      XORCY                       : 14
+# FlipFlops/Latches                : 115
+#      FD                          : 2
+#      FDC                         : 11
+#      FDCE                        : 96
+#      FDE                         : 1
 #      FDP                         : 1
-# RAMS                             : 8
-#      RAM32X1D                    : 8
+#      FDPE                        : 4
+# RAMS                             : 32
+#      RAM32X1D                    : 32
 # Shift Registers                  : 1
 #      SRLC16E                     : 1
 # Clock Buffers                    : 1
@@ -469,19 +419,19 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              66  out of  126800     0%  
- Number of Slice LUTs:                  111  out of  63400     0%  
-    Number used as Logic:                94  out of  63400     0%  
-    Number used as Memory:               17  out of  19000     0%  
-       Number used as RAM:               16
+ Number of Slice Registers:             115  out of  126800     0%  
+ Number of Slice LUTs:                  174  out of  63400     0%  
+    Number used as Logic:               109  out of  63400     0%  
+    Number used as Memory:               65  out of  19000     0%  
+       Number used as RAM:               64
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    131
-   Number with an unused Flip Flop:      65  out of    131    49%  
-   Number with an unused LUT:            20  out of    131    15%  
-   Number of fully used LUT-FF pairs:    46  out of    131    35%  
-   Number of unique control sets:        10
+ Number of LUT Flip Flop pairs used:    218
+   Number with an unused Flip Flop:     103  out of    218    47%  
+   Number with an unused LUT:            44  out of    218    20%  
+   Number of fully used LUT-FF pairs:    71  out of    218    32%  
+   Number of unique control sets:        11
 
 IO Utilization: 
  Number of IOs:                          76
@@ -511,7 +461,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 75    |
+clk                                | BUFGP                  | 148   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -522,9 +472,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.593ns (Maximum Frequency: 385.683MHz)
-   Minimum input arrival time before clock: 1.938ns
-   Maximum output required time after clock: 1.335ns
+   Minimum period: 2.308ns (Maximum Frequency: 433.219MHz)
+   Minimum input arrival time before clock: 1.854ns
+   Maximum output required time after clock: 1.331ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -533,34 +483,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.593ns (frequency: 385.683MHz)
-  Total number of paths / destination ports: 1364 / 170
+  Clock period: 2.308ns (frequency: 433.219MHz)
+  Total number of paths / destination ports: 2000 / 463
 -------------------------------------------------------------------------
-Delay:               2.593ns (Levels of Logic = 4)
-  Source:            Bist/sck_cnt_0 (FF)
-  Destination:       Bist/i2si_bist_out_data_12 (FF)
+Delay:               2.308ns (Levels of Logic = 3)
+  Source:            i2si_Fifo/fifo_counter_3 (FF)
+  Destination:       i2si_Fifo/fifo_counter_3 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: Bist/sck_cnt_0 to Bist/i2si_bist_out_data_12
+  Data Path: i2si_Fifo/fifo_counter_3 to i2si_Fifo/fifo_counter_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.361   0.289  Bist/sck_cnt_0 (Bist/sck_cnt_0)
-     INV:I->O              1   0.113   0.000  Bist/Madd_sck_cnt[31]_GND_5_o_add_1_OUT_lut<0>_INV_0 (Bist/Madd_sck_cnt[31]_GND_5_o_add_1_OUT_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  Bist/Madd_sck_cnt[31]_GND_5_o_add_1_OUT_cy<0> (Bist/Madd_sck_cnt[31]_GND_5_o_add_1_OUT_cy<0>)
-     XORCY:CI->O           6   0.370   0.579  Bist/Madd_sck_cnt[31]_GND_5_o_add_1_OUT_xor<1> (Bist/sck_cnt[31]_GND_5_o_add_1_OUT<1>)
-     LUT6:I2->O           13   0.097   0.335  Bist/sck_cnt[31]_GND_5_o_equal_4_o<31>3 (Bist/sck_cnt[31]_GND_5_o_equal_4_o)
-     FDE:CE                    0.095          Bist/i2si_bist_out_data_0
+     FDCE:C->Q             5   0.361   0.575  i2si_Fifo/fifo_counter_3 (i2si_Fifo/fifo_counter_3)
+     LUT4:I0->O           24   0.097   0.398  i2si_Fifo/fifo_inp_rtr1 (fifo_rtr)
+     LUT4:I3->O            1   0.097   0.295  i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_19_o1_1 (i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_19_o1)
+     LUT6:I5->O            4   0.097   0.293  i2si_Fifo/_n0070_inv1 (i2si_Fifo/_n0070_inv)
+     FDCE:CE                   0.095          i2si_Fifo/fifo_counter_0
     ----------------------------------------
-    Total                      2.593ns (1.389ns logic, 1.204ns route)
-                                       (53.6% logic, 46.4% route)
+    Total                      2.308ns (0.747ns logic, 1.561ns route)
+                                       (32.4% logic, 67.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 503 / 101
+  Total number of paths / destination ports: 673 / 241
 -------------------------------------------------------------------------
-Offset:              1.938ns (Levels of Logic = 16)
+Offset:              1.854ns (Levels of Logic = 16)
   Source:            rf_bist_inc<0> (PAD)
   Destination:       Bist/i2si_bist_out_data_12 (FF)
   Destination Clock: clk rising
@@ -570,31 +519,31 @@ Offset:              1.938ns (Levels of Logic = 16)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             1   0.001   0.379  rf_bist_inc_0_IBUF (rf_bist_inc_0_IBUF)
-     LUT2:I0->O            1   0.097   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_lut<0> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<0> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<1> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<2> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<3> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<4> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<5> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<6> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<7> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<8> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<9> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<10> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<10>)
-     MUXCY:CI->O           0   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<11> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_cy<11>)
-     XORCY:CI->O           1   0.370   0.379  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_7_OUT_xor<12> (Bist/i2si_bist_out_data[31]_GND_5_o_add_7_OUT<12>)
-     LUT3:I1->O            1   0.097   0.000  Bist/Mmux_i2si_bist_out_data[31]_GND_5_o_mux_9_OUT41 (Bist/i2si_bist_out_data[31]_GND_5_o_mux_9_OUT<12>)
-     FDE:D                     0.008          Bist/i2si_bist_out_data_12
+     LUT2:I0->O            1   0.097   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_lut<0> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<0> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<1> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<2> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<3> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<4> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<5> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<6> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<7> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<8> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<9> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<10> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<10>)
+     MUXCY:CI->O           0   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<11> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_cy<11>)
+     XORCY:CI->O           1   0.370   0.295  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_4_OUT_xor<12> (Bist/i2si_bist_out_data[31]_GND_5_o_add_4_OUT<12>)
+     LUT3:I2->O            1   0.097   0.000  Bist/Mmux_i2si_bist_out_data[31]_GND_5_o_mux_6_OUT41 (Bist/i2si_bist_out_data[31]_GND_5_o_mux_6_OUT<12>)
+     FDCE:D                    0.008          Bist/i2si_bist_out_data_12
     ----------------------------------------
-    Total                      1.938ns (1.179ns logic, 0.759ns route)
-                                       (60.8% logic, 39.2% route)
+    Total                      1.854ns (1.179ns logic, 0.675ns route)
+                                       (63.6% logic, 36.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 14 / 11
+  Total number of paths / destination ports: 38 / 35
 -------------------------------------------------------------------------
-Offset:              1.335ns (Levels of Logic = 2)
+Offset:              1.331ns (Levels of Logic = 2)
   Source:            i2si_Fifo/fifo_counter_0 (FF)
   Destination:       i2si_rts (PAD)
   Source Clock:      clk rising
@@ -603,12 +552,12 @@ Offset:              1.335ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            10   0.361   0.598  i2si_Fifo/fifo_counter_0 (i2si_Fifo/fifo_counter_0)
+     FDCE:C->Q             9   0.361   0.593  i2si_Fifo/fifo_counter_0 (i2si_Fifo/fifo_counter_0)
      LUT4:I0->O            1   0.097   0.279  i2si_Fifo/fifo_out_rts1 (i2si_rts_OBUF)
      OBUF:I->O                 0.000          i2si_rts_OBUF (i2si_rts)
     ----------------------------------------
-    Total                      1.335ns (0.458ns logic, 0.877ns route)
-                                       (34.3% logic, 65.7% route)
+    Total                      1.331ns (0.458ns logic, 0.873ns route)
+                                       (34.4% logic, 65.6% route)
 
 =========================================================================
 
@@ -620,20 +569,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.593|         |         |         |
+clk            |    2.308|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.91 secs
+Total CPU time to Xst completion: 9.99 secs
  
 --> 
 
-Total memory usage is 448868 kilobytes
+Total memory usage is 432356 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   81 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :   30 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

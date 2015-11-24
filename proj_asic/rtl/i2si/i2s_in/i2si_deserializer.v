@@ -13,29 +13,29 @@
 //              Then when sck_transition high, the deserializer becomes active.
 //////////////////////////////////////////////////////////////////////////////////
 
-module i2si_deserializer(clk, rst_n, sck_transition, i2si_ws, i2si_sd, rf_i2si_en, i2si_lft, i2si_rgt, i2si_xfc);
+module i2si_deserializer(clk, rst_n, sck_transition, in_ws, in_sd, rf_i2si_en, out_lft, out_rgt, out_xfc);
 
 input                           clk;                        //Master clock
 input                           rst_n;                      //Reset
 input                           sck_transition;             //Sck transitions from 0 -> 1. Helps tell the deserializer when to perform certain actions
-input                           i2si_ws;                    //Word select: defines if left or right channel is being read from. 0 = Left Channel, 1 = Right Channel
-input                           i2si_sd;                    //Digital audio serial data
+input                           in_ws;                      //Word select: defines if left or right channel is being read from. 0 = Left Channel, 1 = Right Channel
+input                           in_sd;                      //Digital audio serial data
 input                           rf_i2si_en;                 //Enabled bit that helps define if the deserializer is active or idle
-output [15:0]                   i2si_lft;                   //Parallel output data of left channel
-output [15:0]                   i2si_rgt;                   //Parallel output data of right channel
-output                          i2si_xfc;                   //Transfer Complete
-
-
-reg [15:0]                      i2si_lft;
-reg [15:0]                      i2si_rgt;
-reg                             i2si_xfc;
+output [15:0]                   out_lft;                    //Parallel output data of left channel
+output [15:0]                   out_rgt;                    //Parallel output data of right channel
+output                          out_xfc;                    //Transfer Complete
+                                                                
+                                                                
+reg [15:0]                      out_lft;                        
+reg [15:0]                      out_rgt;                        
+reg                             out_xfc;                        
 reg [1:0]                       rst_n_vec;                  //Used to check when rst_n goes from low to high and to trigger armed1
 reg                             armed1;                     //First signal that helps define idle and active
 reg                             armed2;                     //Second signal that helps define idle and active
 reg                             active;                     //Defines if the deserializer is active or not
-reg                             ws_d;                       //Delayed signal of i2si_ws
+reg                             ws_d;                       //Delayed signal of in_ws
 reg                             in_left;                    //Defines when the deserializer should read in the left channel
-reg                             in_left_delay;              //Delayed signal to help define pre_xfc and i2si_xfc
+reg                             in_left_delay;              //Delayed signal to help define pre_xfc and out_xfc
 
 wire                            ws_delay;                   //Delayed signal of ws
 wire                            ws_transition;              //Check if ws goes from 1 -> 0 when en = 1
@@ -51,7 +51,7 @@ begin
     if(!rst_n)
         ws_d <= 1'b0;
     else if(sck_transition)
-        ws_d <= i2si_ws;
+        ws_d <= in_ws;
 end
 
 //Re-assigning ws to be more readable
@@ -59,7 +59,7 @@ assign ws_delay = ws_d;
 
 //ws_transition becomes high when ws goes from 1 -> 0
 //used to help define if deserializer is active
-assign ws_transition = !i2si_ws && ws_delay;
+assign ws_transition = !in_ws && ws_delay;
 
 //Used to help define active when rst_n goes from low to high
 always @(posedge clk)
@@ -108,13 +108,13 @@ always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
         in_left <= 1'b1;
-    else if (!i2si_ws && sck_transition && active)
+    else if (!in_ws && sck_transition && active)
         in_left <= 1'b1;
-    else if (i2si_ws && sck_transition && active)
+    else if (in_ws && sck_transition && active)
         in_left <= 1'b0;
 end
 
-//Used to help trigger i2si_xfc																						  
+//Used to help trigger out_xfc																						  
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
@@ -125,7 +125,7 @@ begin
     end
 end
 
-//Triggers i2si_xfc when ws[3] goes from high to low
+//Triggers out_xfc when ws[3] goes from high to low
 //In other words when the system is done reading in the right channel
 //and begins reading in the left channel, trigger xfc.																									
 assign pre_xfc = in_left && !in_left_delay;
@@ -134,9 +134,9 @@ assign pre_xfc = in_left && !in_left_delay;
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        i2si_xfc <= 1'b0;
+        out_xfc <= 1'b0;
     else
-        i2si_xfc <= pre_xfc;
+        out_xfc <= pre_xfc;
 end
 																									
 
@@ -146,8 +146,8 @@ always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
     begin
-        i2si_lft[15:0] <= 16'b0;
-        i2si_rgt[15:0] <= 16'b0;
+        out_lft[15:0] <= 16'b0;
+        out_rgt[15:0] <= 16'b0;
     end		
     else if(active)
     begin					
@@ -155,13 +155,13 @@ begin
         begin
             if (in_left)
             begin
-                i2si_lft[15:1] <= i2si_lft[14:0];
-                i2si_lft[0] <= i2si_sd;
+                out_lft[15:1] <= out_lft[14:0];
+                out_lft[0] <= in_sd;
             end	
             else
             begin
-                i2si_rgt[15:1] <= i2si_rgt[14:0];
-                i2si_rgt[0] <= i2si_sd;
+                out_rgt[15:1] <= out_rgt[14:0];
+                out_rgt[0] <= in_sd;
             end
         end
     end

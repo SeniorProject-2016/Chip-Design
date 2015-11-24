@@ -2,19 +2,19 @@
 
 module i2si_deserializer_testbench;
 
-    // Inputs
+   // Inputs
     reg clk; // master clock
-    reg i2si_sck; // serial clock
+    reg sck_transition;
     reg rf_i2si_en; // i2si enable
     reg [15:0] test_data [`N-1:0] [0:1]; // [Bits Per Word] test_data [# of entities in test] [Left/Right]
 
     // Outputs
-    wire [15:0] i2si_lft; // left audio dataF
-    wire [15:0] i2si_rgt; // right audio data
-    wire i2si_xfc; // transfer complete
+    wire [15:0] out_lft; // left audio dataF
+    wire [15:0] out_rgt; // right audio data
+    wire out_xfc; // transfer complete
     wire rst_n; // reset not
-    wire i2si_sd; // serial data
-    wire i2si_ws; // word select
+    wire in_sd; // serial data
+    wire in_ws; // word select
 
     // Internal Variables
     reg sck_d1; // serial clock delay
@@ -30,19 +30,18 @@ module i2si_deserializer_testbench;
     i2si_deserializer uut (
         .clk(clk), 
         .rst_n(rst_n), 
-        .i2si_sck(i2si_sck), 
-        .i2si_ws(i2si_ws), 
-        .i2si_sd(i2si_sd), 
+        .sck_transition(sck_transition), 
+        .in_ws(in_ws), 
+        .in_sd(in_sd), 
         .rf_i2si_en(rf_i2si_en), 
-        .i2si_lft(i2si_lft), 
-        .i2si_rgt(i2si_rgt), 
-        .i2si_xfc(i2si_xfc)
+        .out_lft(out_lft), 
+        .out_rgt(out_rgt), 
+        .out_xfc(out_xfc)
     );
 
     initial begin
         // Initialize Inputs
         clk = 0;
-        i2si_sck = 0;
         rf_i2si_en = 0;
 
         // Test Data
@@ -84,13 +83,12 @@ module i2si_deserializer_testbench;
     end
 
     assign rst_n = !(count < 20); // turn on reset not after 10 clock cycles
-    assign rst = ~rst_n; // reset is the opposite of reset not
-    assign i2si_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1)|((bit_cnt==16'd15)&(lr_cnt==0)); 
-    assign i2si_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt]; // assign serial data from the test_data
+    assign in_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1)|((bit_cnt==16'd15)&(lr_cnt==0)); 
+    assign in_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt]; // assign serial data from the test_data
 
-    always @ (posedge clk or negedge rst)
+    always @ (posedge clk or negedge rst_n)
     begin
-        if(rst!=0)
+        if(!rst_n)
         begin
             sck_cnt<=0;     // counts master clock cycles, causes sck to toggle each time it hits cyc_per_half_sck
             bit_cnt<=0;     // count number of bits

@@ -7,7 +7,6 @@ parameter BUF_SIZE = ( 1<<BUF_WIDTH );                   // number of elements a
 parameter DATA_SIZE = 32;                                 // no. of bits for fifo data
 
 input                 rst, clk;       // reset, clock
-
 input                 fifo_inp_rts;   // write client asserts read to send 
 output                fifo_inp_rtr;
 input [DATA_SIZE-1:0] fifo_inp_data;  // data input to be pushed to buffer
@@ -16,12 +15,12 @@ output[DATA_SIZE-1:0] fifo_out_data;  // port to output the data using pop.
 output                fifo_out_rts;   // output FIFO asserts read to send
 input                 fifo_out_rtr; 
 
-reg[DATA_SIZE-1:0]    fifo_out_data;  
-reg                   fifo_out_rts;
-reg                   fifo_inp_rtr;
-reg[BUF_WIDTH :0]    fifo_counter;					 
-reg[BUF_WIDTH -1:0]  rd_ptr, wr_ptr;             // pointer to read and write addresses  
-reg[7:0]              buf_mem[BUF_SIZE -1 : 0];  // buffer memory
+reg[DATA_SIZE-1:0]    	fifo_out_data;  
+reg                   	fifo_out_rts;
+reg                   	fifo_inp_rtr;
+reg[BUF_WIDTH :0]    	fifo_counter;					 
+reg[BUF_WIDTH -1:0]  	rd_ptr, wr_ptr;             	// pointer to read and write addresses  
+reg[DATA_SIZE-1:0]      buf_mem[BUF_SIZE -1 : 0];  	// buffer memory
 
 always @(fifo_counter) // every time the number of elements in the buffer changes
 begin
@@ -36,9 +35,9 @@ begin
    else if( (fifo_inp_rtr && fifo_inp_rts) && (fifo_out_rts && fifo_out_rtr ) ) // if both read and write occur
        fifo_counter <= fifo_counter; // don't change counter
    else if( fifo_inp_rtr && fifo_inp_rts ) // write enabled and buffer is not full
-       fifo_counter <= fifo_counter + 1; // counter increased by 1
+       fifo_counter <= (fifo_counter + 1'b1);// & (BUF_SIZE-1'b1); // counter increased by 1
    else if( fifo_out_rts && fifo_out_rtr ) // read enabled and buffer is not empty
-       fifo_counter <= fifo_counter - 1; // counter decreased by 1
+       fifo_counter <= (fifo_counter - 1'b1);// & (BUF_SIZE-1'b1); // counter decreased by 1
    else // if none of these are true
       fifo_counter <= fifo_counter; // don't change counter
 end
@@ -74,11 +73,11 @@ begin
    else // if reset is false
    begin
       if( fifo_inp_rtr && fifo_inp_rts )   
-          wr_ptr <= wr_ptr + 1; // if buffer is not full and write is enabled then the write pointer is increased by one
+          wr_ptr <= wr_ptr + 1'b1; // if buffer is not full and write is enabled then the write pointer is increased by one
       else  
           wr_ptr <= wr_ptr; // if not the write pointer stays the same
       if( fifo_out_rts && fifo_out_rtr )   
-          rd_ptr <= rd_ptr + 1; // if buffer is not empty and read is enabled then the read pointer is increased by one
+          rd_ptr <= rd_ptr + 1'b1; // if buffer is not empty and read is enabled then the read pointer is increased by one
       else 
           rd_ptr <= rd_ptr; // if not the read pointer stays the same
    end   

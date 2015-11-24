@@ -104,7 +104,7 @@ begin
     else if(filt_i2so_rtr)
         bit_count <= 4'd15;
     else if(sck_transition && serializer_active)
-		  bit_count <= bit_count - 4'd1;
+          bit_count <= bit_count - 4'd1;
 end
 
 
