@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Julie/Desktop/Senior Project/trig_generator/trig_generator.v";
+static const char *ng0 = "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/trig_generator/trig_generator.v";
 static int ng1[] = {0, 0};
 static unsigned int ng2[] = {12U, 0U};
 static int ng3[] = {1, 0};
@@ -205,15 +205,15 @@ LAB10:    t21 = *((unsigned int *)t4);
 
 LAB13:    xsi_set_current_line(40, ng0);
 
-LAB16:    xsi_set_current_line(41, ng0);
+LAB16:    xsi_set_current_line(42, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 2088);
     xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 1, 0LL);
-    xsi_set_current_line(42, ng0);
+    xsi_set_current_line(43, ng0);
     t2 = ((char*)((ng1)));
     t3 = (t0 + 2248);
     xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 1, 0LL);
-    xsi_set_current_line(43, ng0);
+    xsi_set_current_line(45, ng0);
     t2 = (t0 + 1048U);
     t3 = *((char **)t2);
     t2 = ((char*)((ng2)));
@@ -409,9 +409,9 @@ LAB36:    t70 = *((unsigned int *)t58);
     *((unsigned int *)t58) = (t89 & t85);
     goto LAB38;
 
-LAB39:    xsi_set_current_line(44, ng0);
+LAB39:    xsi_set_current_line(46, ng0);
 
-LAB42:    xsi_set_current_line(45, ng0);
+LAB42:    xsi_set_current_line(48, ng0);
     t96 = (t0 + 1208U);
     t97 = *((char **)t96);
     memset(t98, 0, 8);
@@ -435,7 +435,7 @@ LAB42:    xsi_set_current_line(45, ng0);
         goto LAB43;
 
 LAB44:
-LAB45:    xsi_set_current_line(47, ng0);
+LAB45:    xsi_set_current_line(51, ng0);
     t2 = (t0 + 1208U);
     t3 = *((char **)t2);
     memset(t4, 0, 8);
@@ -461,13 +461,13 @@ LAB45:    xsi_set_current_line(47, ng0);
 LAB47:
 LAB48:    goto LAB41;
 
-LAB43:    xsi_set_current_line(46, ng0);
+LAB43:    xsi_set_current_line(49, ng0);
     t112 = ((char*)((ng3)));
     t113 = (t0 + 2088);
     xsi_vlogvar_wait_assign_value(t113, t112, 0, 0, 1, 0LL);
     goto LAB45;
 
-LAB46:    xsi_set_current_line(48, ng0);
+LAB46:    xsi_set_current_line(52, ng0);
     t12 = ((char*)((ng3)));
     t13 = (t0 + 2248);
     xsi_vlogvar_wait_assign_value(t13, t12, 0, 0, 1, 0LL);

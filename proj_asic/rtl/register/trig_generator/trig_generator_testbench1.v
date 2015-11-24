@@ -52,6 +52,7 @@ module trig_generator_testbench1;
 			count = 0;
 			clk = 0;
 		end
+	// Generates a clock with a clock cycle of 10 ns
 	forever
 		begin
 			#5 clk = ~clk;
@@ -64,7 +65,7 @@ module trig_generator_testbench1;
 
 	initial begin
 		// Initialize Inputs
-		address = 12'h0c;
+		address = 12'h00c;
 
 		// Wait 100 ns for global reset to finish
 		#1000;
@@ -72,12 +73,17 @@ module trig_generator_testbench1;
 	 
 always @(posedge clk or negedge rst_n)
 	begin
+		// initializing xfc and wdata to 0
 		if (~rst_n)
 		begin
 			wdata <= 0;
 			xfc <= 0;
 		end
-		else if (wdata < 12'h20) //hex 20 12 bits of data
+		/* 
+		if wdata is 12 bits of data and less than the hex value 20 wdata is
+		and file transfer is set to 1 - complete
+		*/
+		else if (wdata < 12'h020) 
 		begin
 			wdata <= wdata + 1;
 			xfc <= 1;
