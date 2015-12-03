@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: i2s_in.prj
 
@@ -132,7 +132,7 @@ Elaborating module <i2si_bist_gen>.
 
 Elaborating module <i2si_mux>.
 
-Elaborating module <fifo(BUF_WIDTH=3,BUF_SIZE=8,DATA_SIZE=32)>.
+Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -141,8 +141,9 @@ Elaborating module <fifo(BUF_WIDTH=3,BUF_SIZE=8,DATA_SIZE=32)>.
 Synthesizing Unit <i2s_in>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v".
     Found 1-bit register for signal <ro_fifo_overrun>.
+    Found 1-bit register for signal <ro_fifo_underrun>.
     Summary:
-	inferred   1 D-type flip-flop(s).
+	inferred   2 D-type flip-flop(s).
 Unit <i2s_in> synthesized.
 
 Synthesizing Unit <synchronizer>.
@@ -172,11 +173,10 @@ Unit <i2si_deserializer> synthesized.
 
 Synthesizing Unit <i2si_bist_gen>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v".
-    Found 4-bit register for signal <sck_count>.
+    Found 5-bit register for signal <sck_count>.
     Found 32-bit register for signal <i2si_bist_out_data>.
     Found 1-bit register for signal <bist_active>.
-    Found 1-bit register for signal <i2si_bist_out_xfc>.
-    Found 4-bit adder for signal <sck_count[3]_GND_5_o_add_0_OUT> created at line 29.
+    Found 5-bit adder for signal <sck_count[4]_GND_5_o_add_0_OUT> created at line 29.
     Found 32-bit adder for signal <i2si_bist_out_data[31]_GND_5_o_add_6_OUT> created at line 61.
     Found 32-bit comparator lessequal for signal <n0010> created at line 55
     Summary:
@@ -194,9 +194,8 @@ Unit <i2si_mux> synthesized.
 
 Synthesizing Unit <fifo>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v".
-        BUF_WIDTH = 3
-        BUF_SIZE = 8
         DATA_SIZE = 32
+        BUF_WIDTH = 3
     Found 32-bit register for signal <fifo_out_data>.
     Found 3-bit register for signal <wr_ptr>.
     Found 3-bit register for signal <rd_ptr>.
@@ -222,15 +221,16 @@ Macro Statistics
 # Adders/Subtractors                                   : 5
  3-bit adder                                           : 2
  32-bit adder                                          : 1
- 4-bit adder                                           : 1
  4-bit addsub                                          : 1
+ 5-bit adder                                           : 1
 # Registers                                            : 22
  1-bit register                                        : 10
  16-bit register                                       : 2
  2-bit register                                        : 1
  3-bit register                                        : 3
  32-bit register                                       : 2
- 4-bit register                                        : 4
+ 4-bit register                                        : 3
+ 5-bit register                                        : 1
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
 # Multiplexers                                         : 5
@@ -281,8 +281,8 @@ Macro Statistics
  32-bit adder                                          : 1
 # Counters                                             : 4
  3-bit up counter                                      : 2
- 4-bit up counter                                      : 1
  4-bit updown counter                                  : 1
+ 5-bit up counter                                      : 1
 # Registers                                            : 119
  Flip-Flops                                            : 119
 # Comparators                                          : 1
@@ -341,8 +341,8 @@ Unit <i2s_in> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 110
- Flip-Flops                                            : 110
+# Registers                                            : 111
+ Flip-Flops                                            : 111
 # Shift Registers                                      : 1
  4-bit shift register                                  : 1
 
@@ -367,34 +367,34 @@ Top Level Output File Name         : i2s_in.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 145
+# BELS                             : 144
 #      GND                         : 1
 #      INV                         : 5
 #      LUT1                        : 5
-#      LUT2                        : 14
-#      LUT3                        : 4
-#      LUT4                        : 33
-#      LUT5                        : 22
-#      LUT6                        : 24
-#      MUXCY                       : 23
+#      LUT2                        : 15
+#      LUT3                        : 6
+#      LUT4                        : 49
+#      LUT5                        : 21
+#      LUT6                        : 6
+#      MUXCY                       : 22
 #      VCC                         : 1
 #      XORCY                       : 13
-# FlipFlops/Latches                : 115
+# FlipFlops/Latches                : 116
 #      FD                          : 2
 #      FDC                         : 11
 #      FDCE                        : 96
 #      FDE                         : 1
 #      FDP                         : 1
-#      FDPE                        : 4
+#      FDPE                        : 5
 # RAMS                             : 32
 #      RAM32X1D                    : 32
 # Shift Registers                  : 1
 #      SRLC16E                     : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 75
-#      IBUF                        : 40
-#      OBUF                        : 35
+# IO Buffers                       : 77
+#      IBUF                        : 41
+#      OBUF                        : 36
 
 Device utilization summary:
 ---------------------------
@@ -403,7 +403,7 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             115  out of  126800     0%  
+ Number of Slice Registers:             116  out of  126800     0%  
  Number of Slice LUTs:                  172  out of  63400     0%  
     Number used as Logic:               107  out of  63400     0%  
     Number used as Memory:               65  out of  19000     0%  
@@ -412,14 +412,14 @@ Slice Logic Utilization:
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:    216
-   Number with an unused Flip Flop:     101  out of    216    46%  
+   Number with an unused Flip Flop:     100  out of    216    46%  
    Number with an unused LUT:            44  out of    216    20%  
-   Number of fully used LUT-FF pairs:    71  out of    216    32%  
+   Number of fully used LUT-FF pairs:    72  out of    216    33%  
    Number of unique control sets:        11
 
 IO Utilization: 
- Number of IOs:                          76
- Number of bonded IOBs:                  76  out of    210    36%  
+ Number of IOs:                          78
+ Number of bonded IOBs:                  78  out of    210    37%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -445,7 +445,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 148   |
+clk                                | BUFGP                  | 149   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -456,9 +456,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.308ns (Maximum Frequency: 433.219MHz)
-   Minimum input arrival time before clock: 1.854ns
-   Maximum output required time after clock: 1.331ns
+   Minimum period: 2.356ns (Maximum Frequency: 424.412MHz)
+   Minimum input arrival time before clock: 1.938ns
+   Maximum output required time after clock: 1.330ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -467,33 +467,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.308ns (frequency: 433.219MHz)
-  Total number of paths / destination ports: 1998 / 463
+  Clock period: 2.356ns (frequency: 424.412MHz)
+  Total number of paths / destination ports: 2492 / 465
 -------------------------------------------------------------------------
-Delay:               2.308ns (Levels of Logic = 3)
-  Source:            i2si_Fifo/fifo_counter_3 (FF)
+Delay:               2.356ns (Levels of Logic = 3)
+  Source:            Bist/sck_count_0 (FF)
   Destination:       i2si_Fifo/fifo_counter_3 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: i2si_Fifo/fifo_counter_3 to i2si_Fifo/fifo_counter_3
+  Data Path: Bist/sck_count_0 to i2si_Fifo/fifo_counter_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             5   0.361   0.575  i2si_Fifo/fifo_counter_3 (i2si_Fifo/fifo_counter_3)
-     LUT4:I0->O           24   0.097   0.398  i2si_Fifo/fifo_inp_rtr1 (fifo_rtr)
-     LUT4:I3->O            1   0.097   0.295  i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_20_o1_1 (i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_20_o1)
+     FDPE:C->Q             6   0.361   0.706  Bist/sck_count_0 (Bist/sck_count_0)
+     LUT6:I1->O            5   0.097   0.314  Bist/_n004631 (Bist/_n0046_bdd0)
+     LUT6:I5->O            1   0.097   0.295  i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1_1 (i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1)
      LUT6:I5->O            4   0.097   0.293  i2si_Fifo/_n0070_inv1 (i2si_Fifo/_n0070_inv)
      FDCE:CE                   0.095          i2si_Fifo/fifo_counter_0
     ----------------------------------------
-    Total                      2.308ns (0.747ns logic, 1.561ns route)
-                                       (32.4% logic, 67.6% route)
+    Total                      2.356ns (0.747ns logic, 1.609ns route)
+                                       (31.7% logic, 68.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 673 / 241
+  Total number of paths / destination ports: 667 / 242
 -------------------------------------------------------------------------
-Offset:              1.854ns (Levels of Logic = 16)
+Offset:              1.938ns (Levels of Logic = 16)
   Source:            rf_bist_inc<0> (PAD)
   Destination:       Bist/i2si_bist_out_data_12 (FF)
   Destination Clock: clk rising
@@ -516,18 +516,18 @@ Offset:              1.854ns (Levels of Logic = 16)
      MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_6_OUT_cy<9> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_6_OUT_cy<9>)
      MUXCY:CI->O           1   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_6_OUT_cy<10> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_6_OUT_cy<10>)
      MUXCY:CI->O           0   0.023   0.000  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_6_OUT_cy<11> (Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_6_OUT_cy<11>)
-     XORCY:CI->O           1   0.370   0.295  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_6_OUT_xor<12> (Bist/i2si_bist_out_data[31]_GND_5_o_add_6_OUT<12>)
-     LUT3:I2->O            1   0.097   0.000  Bist/Mmux_i2si_bist_out_data[31]_GND_5_o_mux_8_OUT41 (Bist/i2si_bist_out_data[31]_GND_5_o_mux_8_OUT<12>)
+     XORCY:CI->O           1   0.370   0.379  Bist/Madd_i2si_bist_out_data[31]_GND_5_o_add_6_OUT_xor<12> (Bist/i2si_bist_out_data[31]_GND_5_o_add_6_OUT<12>)
+     LUT3:I1->O            1   0.097   0.000  Bist/Mmux_i2si_bist_out_data[31]_GND_5_o_mux_8_OUT41 (Bist/i2si_bist_out_data[31]_GND_5_o_mux_8_OUT<12>)
      FDCE:D                    0.008          Bist/i2si_bist_out_data_12
     ----------------------------------------
-    Total                      1.854ns (1.179ns logic, 0.675ns route)
-                                       (63.6% logic, 36.4% route)
+    Total                      1.938ns (1.179ns logic, 0.759ns route)
+                                       (60.8% logic, 39.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 38 / 35
+  Total number of paths / destination ports: 39 / 36
 -------------------------------------------------------------------------
-Offset:              1.331ns (Levels of Logic = 2)
+Offset:              1.330ns (Levels of Logic = 2)
   Source:            i2si_Fifo/fifo_counter_0 (FF)
   Destination:       i2si_rts (PAD)
   Source Clock:      clk rising
@@ -536,11 +536,11 @@ Offset:              1.331ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             9   0.361   0.593  i2si_Fifo/fifo_counter_0 (i2si_Fifo/fifo_counter_0)
-     LUT4:I0->O            1   0.097   0.279  i2si_Fifo/fifo_out_rts1 (i2si_rts_OBUF)
+     FDCE:C->Q             8   0.361   0.589  i2si_Fifo/fifo_counter_0 (i2si_Fifo/fifo_counter_0)
+     LUT4:I0->O            2   0.097   0.283  i2si_Fifo/fifo_out_rts1 (i2si_rts_OBUF)
      OBUF:I->O                 0.000          i2si_rts_OBUF (i2si_rts)
     ----------------------------------------
-    Total                      1.331ns (0.458ns logic, 0.873ns route)
+    Total                      1.330ns (0.458ns logic, 0.872ns route)
                                        (34.4% logic, 65.6% route)
 
 =========================================================================
@@ -553,18 +553,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.308|         |         |         |
+clk            |    2.356|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.01 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.78 secs
  
 --> 
 
-Total memory usage is 431076 kilobytes
+Total memory usage is 449380 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   19 (   0 filtered)

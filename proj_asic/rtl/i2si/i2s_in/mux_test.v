@@ -4,15 +4,15 @@
 module mux_test;
 
 	// Inputs
-	reg [31:0] in_0_data;
-	reg in_0_xfc;
-	reg [31:0] in_1_data;
-	reg in_1_xfc;
-	reg sel;
-
-	// Outputs
-	wire [31:0] mux_data;
-	wire mux_xfc;
+	reg [31:0]                          in_0_data;
+	reg                                 in_0_xfc;
+	reg [31:0]                          in_1_data;
+	reg                                 in_1_xfc;
+	reg                                 sel;
+                                                        
+	// Outputs                                  
+	wire [31:0]                         mux_data;
+	wire                                mux_xfc;
 
 	// Instantiate the Unit Under Test (UUT)
 	i2si_mux uut (

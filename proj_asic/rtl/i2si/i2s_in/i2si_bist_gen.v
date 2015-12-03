@@ -14,17 +14,17 @@ module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_b
     output              i2si_bist_out_xfc;                            //Transfer Complete
                                                                         
     reg [31:0]          i2si_bist_out_data;                             
-    reg                 i2si_bist_out_xfc;                              
+    wire                i2si_bist_out_xfc;                              
     reg                 bist_active;                                  //Defines if BIST generator is active
-    reg [3:0]           sck_count;     
+    reg [4:0]           sck_count;                                    //Serial clock counter
                                                                                     
               
 
-
+    //serial clock counter. Helps define when bist_out_data when sck_count reaches 31
     always @(posedge clk or negedge rst_n)
     begin
         if(!rst_n)
-            sck_count <= 4'd15;
+            sck_count <= 5'd31;
         else if(sck_transition)
            sck_count <= sck_count + 1'b1;
     end
@@ -34,7 +34,7 @@ module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_b
     begin
         if(!rst_n)
             bist_active <= 1'b0;
-        else if(sck_count == 4'd15 && sck_transition)
+        else if(sck_count == 5'd31 && sck_transition)
         begin
             if(!bist_active)
                 bist_active <= 1'b1;
@@ -46,7 +46,7 @@ module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_b
     begin
         if(!rst_n)
             i2si_bist_out_data <= 32'b0;
-        else if (sck_count == 4'd15 && sck_transition)
+        else if (sck_count == 5'd31 && sck_transition)
         begin
             //If bist_active is just starting  
             if(!bist_active)                                                                       
@@ -60,20 +60,9 @@ module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_b
             else                                   
                 i2si_bist_out_data <= i2si_bist_out_data + rf_bist_inc;            
         end
-        else
-            i2si_bist_out_data <= i2si_bist_out_data;
     end
     
-    //define xfc as high at the peak of each sawtooth
-    always @(posedge clk or negedge rst_n)
-    begin
-        if(!rst_n)
-            i2si_bist_out_xfc <= 0;
-        else if(sck_count == 4'd15 && i2si_bist_out_data >= rf_bist_up_limit)
-            i2si_bist_out_xfc <= 1;
-        else
-            i2si_bist_out_xfc <= 0;
-    end
+    //define xfc signal as high after bist_out_data increments
+    assign i2si_bist_out_xfc = bist_active && sck_count == 5'd31 && sck_transition;
     
-
 endmodule

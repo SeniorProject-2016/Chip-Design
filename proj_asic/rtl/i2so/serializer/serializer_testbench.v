@@ -13,13 +13,15 @@ module serializer_testbench;
     reg sck_d1; // serial clock delay
     reg [31:0] sck_cnt; // serial clock counter
     reg [31:0] cyc_per_half_sck = 40; // about (100 MHz / 1.44 MHz)/2
+    
 
     
     
     reg                     sck;
     reg [31:0]              count;
+    reg                     LR_count;
     reg [31:0]              word_count;                         // word counter
-    reg [15:0]              test_data [0:9] [0:1];              // [Bits Per Word] test_data [# of entities in test] [Left/Right]
+    reg [15:0]              test_data [0:9] [0:1];              // test_data [# of entities in test] [Left/Right]
 
     // Outputs
     wire i2so_sd;
@@ -49,6 +51,7 @@ initial begin
         sck_transition = 0;
         
         sck = 0;
+        LR_count = 0;
 
         // Test Data
         test_data [0] [0] = 16'h0000;
@@ -56,9 +59,9 @@ initial begin
         test_data [1] [0] = 16'hFF00;
         test_data [1] [1] = 16'h00FF;
         test_data [2] [0] = 16'hAAAA;
-        test_data [2] [1] = 16'h5555;
-        test_data [3] [0] = 16'hBABA;
-        test_data [3] [1] = 16'h4444;
+        test_data [2] [1] = 16'hCCCC;
+        test_data [3] [0] = 16'h1111;
+        test_data [3] [1] = 16'h3333;
         test_data [4] [0] = 16'h7398;
         test_data [4] [1] = 16'hFFDD;
         test_data [5] [0] = 16'h1111;
@@ -107,13 +110,18 @@ end
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
-        begin
-            word_count <= -1;
-        end
-    else if(filt_i2so_rtr)
-        begin
-            word_count <= word_count + 1;
-        end
+    begin
+        word_count <= -1;
+    end
+    else if(!LR_count)
+    begin
+        LR_count <= 1'b1;
+    end
+    else if(filt_i2so_rtr && LR_count)
+    begin
+        word_count <= word_count + 1;
+        LR_count <= 1'b0;
+    end
 end
 
 
@@ -140,7 +148,7 @@ end
         
             sck_d1<=sck;           // generate 1 cycle delay of sck
             
-            if(filt_i2so_rtr)      // on a positive transition of sck...
+            if(filt_i2so_rtr)      
                 word_count<=word_count+1;   // words in the testbench array          
         end
         

@@ -43,6 +43,7 @@ module synchronizer_testbench;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
+        _sd = 0;
 
 
         // Test Data
@@ -83,9 +84,8 @@ module synchronizer_testbench;
         end
     end
 
-   // assign rst_n = !(count < 20); // turn on reset not after 10 clock cycles
-   // assign in_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1)|((bit_cnt==16'd15)&(lr_cnt==0)); 
-   // assign in_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt]; // assign serial data from the test_data
+
+    
     
     always @(*)
     begin

@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
-
+`define BUF_SIZE (1 << BUF_WIDTH)                                                                 //Number of elements allowed in buffer = 2^Buffer Width
+                                                                                                                    
 module fifo(clk,rst_n,fifo_inp_data,fifo_out_data,fifo_inp_rts,fifo_out_rtr,fifo_out_rts,fifo_inp_rtr);
-
-parameter                       BUF_WIDTH = 3;                                                    //Number of bits to be used in pointer
-parameter                       BUF_SIZE = (1 << BUF_WIDTH);                                      //Number of elements allowed in buffer = 2^Buffer Width
+                                                                                                                
 parameter                       DATA_SIZE = 32;                                                   //Number of bits for fifo data
+parameter                       BUF_WIDTH = 3;                                                    //Number of bits to be used in pointer
                                                                             
 input                           clk;                                                              //Master clock
 input                           rst_n;                                                            //Reset
@@ -25,7 +25,7 @@ reg [DATA_SIZE - 1:0]           fifo_out_data;
 reg [BUF_WIDTH:0]               fifo_counter;                                                                   
 reg [BUF_WIDTH - 1:0]           rd_ptr;                                                           //Pointer to read
 reg [BUF_WIDTH - 1:0]           wr_ptr;                                                           //Write addresses  
-reg [DATA_SIZE - 1:0]           buf_mem[BUF_SIZE - 1:0];                                          //Buffer memory
+reg [DATA_SIZE - 1:0]           buf_mem[`BUF_SIZE - 1:0];                                         //Buffer memory
 
 always @(fifo_counter)
 begin
@@ -33,7 +33,7 @@ begin
    fifo_out_rts = (fifo_counter != 0);
    
    //Output FIFO is ready to recieve if the buffer is not full
-   fifo_inp_rtr = (fifo_counter != BUF_SIZE); 
+   fifo_inp_rtr = (fifo_counter != `BUF_SIZE); 
 end
 
 //Update counter based on state of fifo
@@ -47,11 +47,11 @@ begin
    //write enabled and buffer is not full
    else if(fifo_inp_rtr && fifo_inp_rts) 
        //counter increased by 1
-       fifo_counter <= (fifo_counter + 1'b1);// & (BUF_SIZE-1'b1); 
+       fifo_counter <= (fifo_counter + 1'b1);
    //read enabled and buffer is not empty
    else if(fifo_out_rts && fifo_out_rtr)
        //counter decreased by 1
-       fifo_counter <= (fifo_counter - 1'b1);// & (BUF_SIZE-1'b1);
+       fifo_counter <= (fifo_counter - 1'b1);
    else
       fifo_counter <= fifo_counter;
 end

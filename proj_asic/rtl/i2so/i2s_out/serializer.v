@@ -58,7 +58,7 @@ end
 assign filt_i2so_rts_transition = filt_i2so_rts && !filt_i2so_rts_delay;
 
 
-//Serializer becomes active when filt_i2so_rts_transitions from low to high
+//Serializer becomes active when filt_i2so_rts transitions from low to high
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
