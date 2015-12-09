@@ -40,18 +40,26 @@ module filter_barrel_shifter_tf;
 
 	initial begin
 		// Initialize Inputs
-		input_signal = 0;
+		input_signal = 32'hABCD1234;
 		sel_shift = 0;
-
 		// Wait 100 ns for global reset to finish
-		#100;
-       input_signal = 1;
-		 #100;
-		 
-			sel_shift = 1;
-			#100;
-			sel_shift = 3;
-		  #100 $finish;
+			#50;
+			sel_shift = 4;
+			#50;
+			sel_shift = 8;
+			#50;
+			sel_shift = 12;
+			#50;
+			sel_shift = 16;
+			#50;
+			sel_shift = 20;
+			#50;
+			sel_shift = 24;
+			#50;
+			sel_shift = 28;
+			#50;
+			sel_shift = 32;
+		   #50 $finish;
 		  
 		  
 		// Add stimulus here

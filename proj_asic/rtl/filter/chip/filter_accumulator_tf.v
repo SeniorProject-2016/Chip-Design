@@ -27,40 +27,55 @@ module filter_accumulator_tf;
 	// Inputs
 	reg clk;
 	reg rstb;
-	reg [3:0] D;
-
+	reg enable;
+	reg load;
+	reg [15:0] D;
 	// Outputs
-	wire [3:0] Q;
+	wire [19:0] Q;
 
 	// Instantiate the Unit Under Test (UUT)
 	filter_accumulator uut (
-		.clk(clk), 
-		.rstb(rstb), 
-		.D(D), 
-		.Q(Q)
-	);
+    .clk(clk), 
+    .rstb(rstb), 
+    .enable(enable), 
+    .load(load), 
+    .D(D), 
+    .Q(Q)
+    );
+
 
 	initial begin
 		// Initialize Inputs
 		clk = 0;
 		rstb = 0;
-		D = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      rstb = 1; 
-		D = 1;
+		enable = 0;
+		load = 0;
+		
+		#100; 
+		rstb = 1;
+		D = 16'h000A;
+		enable = 1;
+		load = 1;
+		#10; 
+		load = 0;
+		D = 16'hFFFF; 
 		#10;
-		D = 2;
+		D = 16'h0334; 
 		#10;
-		D =0;
+		D = 16'hFFFF; 
+		#10;
+		D = 16'hAA44; 
 		#100;
-		rstb = 0;
-		
-		
-		
-		// Add stimulus here
-
+		enable = 0; 
+		#100; 
+		enable = 1; 
+		load = 1; 
+		D = 16'h0000;
+		#100; 
+		load=0;
+		D = 16'h0001;
+		#100;
+		rstb = 0; 
 	end
 	
 	always

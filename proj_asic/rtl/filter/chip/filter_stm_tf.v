@@ -28,7 +28,7 @@ module filter_stm_tf;
 	reg clk;
 	reg rstb;
 	reg filter_aud_in_rts;
-	reg [15:0] filter_aud_in;
+	reg [31:0] filter_aud_in;
 	reg [15:0] rf_filter_coeff;
 
 	// Outputs
@@ -36,7 +36,7 @@ module filter_stm_tf;
 	wire do_transfer;
 	wire do_multiply_1st;
 	wire do_multiply;
-	wire [15:0] filter_aud_out;
+	wire [39:0] filter_aud_out;
 
 	// Instantiate the Unit Under Test (UUT)
 	filter_stm uut (
@@ -57,13 +57,32 @@ module filter_stm_tf;
 		clk = 0;
 		rstb = 0;
 		filter_aud_in_rts = 0;
-		filter_aud_in = 0;
+		filter_aud_in = 7;
 		rf_filter_coeff = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
       rstb = 1;
 		filter_aud_in_rts = 1;
+		rf_filter_coeff = 1; 
+		#100;
+		filter_aud_in = 13; 
+		#100;
+		filter_aud_in = 3;
+		#100;
+		filter_aud_in = 5;
+		#100;
+		filter_aud_in = 8;
+		#100;
+		filter_aud_in = 18;
+		#100;
+		filter_aud_in = 4;
+		#100;
+		filter_aud_in = 7;
+		#100;
+		filter_aud_in = 2;
+		#100;
+		filter_aud_in = 1;
 		// Add stimulus here
 
 	end

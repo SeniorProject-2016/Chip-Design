@@ -657,10 +657,10 @@ assign ram[510] = {rf_filter_coeff510_b, rf_filter_coeff510_a};
 assign ram[511] = {rf_filter_coeff511_b, rf_filter_coeff511_a};
 
 
-always @(*)
+always @(posedge clk)
 	begin
 			if(rden)
-				rddata = ram[rdptr];
+				rddata <= ram[rdptr];
 	end
 	
 endmodule

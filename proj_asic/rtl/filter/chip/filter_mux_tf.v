@@ -1054,7 +1054,7 @@ module filter_mux_tf;
 	reg [7:0] rf_filter_coeff511_b;
 
 	// Outputs
-	wire [31:0] rddata;
+	wire [15:0] rddata;
 
 	// Instantiate the Unit Under Test (UUT)
 	filter_mux uut (
@@ -2093,25 +2093,25 @@ module filter_mux_tf;
 		clk = 0;
 		rden = 0;
 		rdptr = 0;
-		rf_filter_coeff0_a = 4;
-		rf_filter_coeff0_b = 0;
-		rf_filter_coeff1_a = 5;
-		rf_filter_coeff1_b = 2;
-		rf_filter_coeff2_a = 0;
-		rf_filter_coeff2_b = 0;
-		rf_filter_coeff3_a = 5;
-		rf_filter_coeff3_b = 0;
-		rf_filter_coeff4_a = 7;
-		rf_filter_coeff4_b = 0;
-		rf_filter_coeff5_a = 12;
-		rf_filter_coeff5_b = 0;
-		rf_filter_coeff6_a = 0;
-		rf_filter_coeff6_b = 4;
-		rf_filter_coeff7_a = 0;
-		rf_filter_coeff7_b = 0;
-		rf_filter_coeff8_a = 0;
-		rf_filter_coeff8_b = 0;
-		rf_filter_coeff9_a = 5;
+		rf_filter_coeff0_a = 8'h00;
+		rf_filter_coeff0_b = 8'h08;
+		rf_filter_coeff1_a = 8'h01;
+		rf_filter_coeff1_b = 8'h07;
+		rf_filter_coeff2_a = 8'h02;
+		rf_filter_coeff2_b = 8'h06;
+		rf_filter_coeff3_a = 8'h03;
+		rf_filter_coeff3_b = 8'h05;
+		rf_filter_coeff4_a = 8'h04;
+		rf_filter_coeff4_b = 8'h04;
+		rf_filter_coeff5_a = 8'h05;
+		rf_filter_coeff5_b = 8'h03;
+		rf_filter_coeff6_a = 8'h06;
+		rf_filter_coeff6_b = 8'h02;
+		rf_filter_coeff7_a = 8'h07;
+		rf_filter_coeff7_b = 8'h01;
+		rf_filter_coeff8_a = 8'h08;
+		rf_filter_coeff8_b = 8'h00;
+		rf_filter_coeff9_a = 0;
 		rf_filter_coeff9_b = 0;
 		rf_filter_coeff10_a = 0;
 		rf_filter_coeff10_b = 0;
@@ -3108,21 +3108,43 @@ module filter_mux_tf;
 		rf_filter_coeff506_a = 0;
 		rf_filter_coeff506_b = 0;
 		rf_filter_coeff507_a = 0;
-		rf_filter_coeff507_b = 6;
-		rf_filter_coeff508_a = 15;
+		rf_filter_coeff507_b = 0;
+		rf_filter_coeff508_a = 0;
 		rf_filter_coeff508_b = 0;
-		rf_filter_coeff509_a = 1;
-		rf_filter_coeff509_b = 2;
+		rf_filter_coeff509_a = 0;
+		rf_filter_coeff509_b = 0;
 		rf_filter_coeff510_a = 0;
 		rf_filter_coeff510_b = 0;
-		rf_filter_coeff511_a = 4;
+		rf_filter_coeff511_a = 0;
 		rf_filter_coeff511_b = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
         
 		// Add stimulus here
-
+		rden = 1;
+		rdptr = 0;
+		#100;
+		rdptr = 1;
+		#100;
+		rdptr = 2;
+		#100;
+		rdptr = 3;
+		#100;
+		rdptr = 4;
+		#100;
+		rdptr = 5;
+		#100;
+		rdptr = 6;
+		#100;
+		rdptr = 7;
+		#100;
+		rdptr = 8;
+	end
+	
+		always
+	begin
+		forever #5 clk = ~clk;
 	end
       
 endmodule

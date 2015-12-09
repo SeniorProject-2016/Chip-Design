@@ -5,17 +5,17 @@ module filter_storage
 					
 ( clk, rstb, wren, wrptr, wrdata, rden, rdptr, rddata);
 
-input										clk;
-input										rstb;
-input										wren;
-input		[8:0]							wrptr;
-input		[15:0]						wrdata;
-input										rden;
-input		[8:0]							rdptr;
-output	[15:0]						rddata;
+input								clk;
+input								rstb;
+input								wren;
+input		[8:0]					wrptr;
+input		[31:0]					wrdata;
+input								rden;
+input		[8:0]					rdptr;
+output		[31:0]					rddata;
 
 localparam	DEPTH = 511; //2^9 <= 16'b0; 512
-localparam	WIDTH = 15; 
+localparam	WIDTH = 31; 
 
 reg	[WIDTH:0] ram [DEPTH:0];
 reg	[WIDTH:0] rddata;	
