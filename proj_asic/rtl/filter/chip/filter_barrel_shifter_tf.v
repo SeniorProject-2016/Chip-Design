@@ -1,35 +1,13 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   19:24:54 11/10/2015
-// Design Name:   filter_barrel_shifter
-// Module Name:   E:/chip/chip/filter_barrel_shifter_tf.v
-// Project Name:  chip
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: filter_barrel_shifter
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
-
 module filter_barrel_shifter_tf;
 
 	// Inputs
-	reg [31:0] input_signal;
-	reg [5:0] sel_shift;
+	reg [39:0] input_signal;
+	reg [2:0] sel_shift;
 
 	// Outputs
-	wire [31:0] output_signal;
+	wire [39:0] output_signal;
 
 	// Instantiate the Unit Under Test (UUT)
 	filter_barrel_shifter uut (
@@ -40,25 +18,25 @@ module filter_barrel_shifter_tf;
 
 	initial begin
 		// Initialize Inputs
-		input_signal = 32'hABCD1234;
+		input_signal = 40'b0000000000000000000000000000111111111111;
 		sel_shift = 0;
 		// Wait 100 ns for global reset to finish
 			#50;
-			sel_shift = 4;
+			sel_shift = 3'b000;
 			#50;
-			sel_shift = 8;
+			sel_shift = 3'b001;
 			#50;
-			sel_shift = 12;
+			sel_shift = 3'b010;
 			#50;
-			sel_shift = 16;
+			sel_shift = 3'b011;
 			#50;
-			sel_shift = 20;
+			sel_shift = 3'b100;
 			#50;
-			sel_shift = 24;
+			sel_shift = 3'b101;
 			#50;
-			sel_shift = 28;
+			sel_shift = 3'b110;
 			#50;
-			sel_shift = 32;
+			sel_shift = 3'b111;
 		   #50 $finish;
 		  
 		  
