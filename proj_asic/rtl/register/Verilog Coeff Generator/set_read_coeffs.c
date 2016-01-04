@@ -7,7 +7,7 @@ int main(void)
 
 // Creating and opening file
     FILE *fp;
-        fp = fopen("filter_coeffs_set.txt", "w");
+        fp = fopen("filter_coeffs_read.txt", "w");
     
     if (fp == NULL)
     {
@@ -23,7 +23,7 @@ hex addresses starting from 0x0404 and ending at 0x07FF.
     int coeffNum = -1;
     char * ab;
     int abToggle = 0;
-    char pointer[] = " <= wdata[7:0];";
+    char pointer[] = "rdata[7:0] => ";
     int address = 0x03FF;
     for (i=0; i<1024; i++) {
         if (abToggle % 2 == 0) {
@@ -34,7 +34,7 @@ hex addresses starting from 0x0404 and ending at 0x07FF.
         }
         address = address + 0x1;
         abToggle = abToggle + 1;
-        fprintf(fp, "\t\t\t\t11'h%x:\n\t\t\t\t\t%s%d%s%s\n", address, name, coeffNum, ab, pointer);
+        fprintf(fp, "\t\t\t\t11'h%x:\n\t\t\t\t\t%s%s%d%s;\n", address, pointer, name, coeffNum, ab);
     }
     return 0;
 }

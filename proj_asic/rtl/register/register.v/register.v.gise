@@ -31,13 +31,28 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="register.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="register.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="register_envsettings.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="register_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="register_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="register_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1451895035" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1451895034">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1451895035" xil_pn:in_ck="5437486437920809" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1451895035">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="register.v"/>
+    </transform>
     <transform xil_pn:end_ts="1447214841" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1447214841">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -66,14 +81,17 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1447742233" xil_pn:in_ck="5437486437920809" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="8680966053623711583" xil_pn:start_ts="1447742210">
+    <transform xil_pn:end_ts="1451895213" xil_pn:in_ck="5437486437920809" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="8680966053623711583" xil_pn:start_ts="1451895203">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="register.lso"/>
       <outfile xil_pn:name="register.prj"/>
       <outfile xil_pn:name="register.syr"/>
       <outfile xil_pn:name="register.xst"/>
+      <outfile xil_pn:name="register_stx_beh.prj"/>
       <outfile xil_pn:name="register_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
