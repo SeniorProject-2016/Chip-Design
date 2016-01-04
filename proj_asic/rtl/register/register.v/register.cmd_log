@@ -13,3 +13,10 @@ spl2sym -intstyle ise -family artix7 register.spl C:/Users/Julie/Desktop/Chip-De
 vhdtdtfi -lib work C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.v -lang verilog -prj register.v -o register.spl -module register -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
 spl2sym -intstyle ise -family artix7 register.spl C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.sym 
 xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.xst" -ofn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.syr" 
+xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.xst" -ofn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.syr" 
+xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.xst" -ofn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.syr" 
+xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.xst" -ofn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.syr" 
+xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.xst" -ofn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.syr" 
+xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.xst" -ofn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/register/register.v/register.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 register.ngc register.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o register_map.ncd register.ngd register.pcf 

@@ -23,7 +23,7 @@ hex addresses starting from 0x0404 and ending at 0x07FF.
     int coeffNum = -1;
     char * ab;
     int abToggle = 0;
-    char pointer[] = "rdata[7:0] => ";
+    char pointer[] = "rdata[7:0] = ";
     int address = 0x03FF;
     for (i=0; i<1024; i++) {
         if (abToggle % 2 == 0) {

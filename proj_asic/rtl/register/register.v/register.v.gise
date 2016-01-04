@@ -22,20 +22,34 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="register.v.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="register.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="register.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="register.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="register.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="register.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="register.ngr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="register.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="register.spl"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="register.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="register.sym" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="register.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="register.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="register_envsettings.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="register_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="register_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="register_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="register_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="register_ngdbuild.xrpt"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="register_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="register_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="register_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
@@ -81,14 +95,16 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1451895213" xil_pn:in_ck="5437486437920809" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="8680966053623711583" xil_pn:start_ts="1451895203">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1451898923" xil_pn:in_ck="5437486437920809" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="8680966053623711583" xil_pn:start_ts="1451898815">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="register.lso"/>
+      <outfile xil_pn:name="register.ngc"/>
+      <outfile xil_pn:name="register.ngr"/>
       <outfile xil_pn:name="register.prj"/>
+      <outfile xil_pn:name="register.stx"/>
       <outfile xil_pn:name="register.syr"/>
       <outfile xil_pn:name="register.xst"/>
       <outfile xil_pn:name="register_stx_beh.prj"/>
@@ -99,6 +115,25 @@
     <transform xil_pn:end_ts="1447214853" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4784894133870792199" xil_pn:start_ts="1447214853">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1451898942" xil_pn:in_ck="5921422730895755787" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="7076517445630173907" xil_pn:start_ts="1451898923">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="register.bld"/>
+      <outfile xil_pn:name="register.ngd"/>
+      <outfile xil_pn:name="register_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1451898996" xil_pn:in_ck="5921422730895755788" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1451898942">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="register_map.map"/>
+      <outfile xil_pn:name="register_map.mrp"/>
+      <outfile xil_pn:name="register_map.ngm"/>
+      <outfile xil_pn:name="register_map.xrpt"/>
     </transform>
   </transforms>
 
