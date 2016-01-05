@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: i2s_in.prj
 
@@ -141,15 +141,14 @@ Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
 Synthesizing Unit <i2s_in>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v".
     Found 1-bit register for signal <ro_fifo_overrun>.
-    Found 1-bit register for signal <ro_fifo_underrun>.
     Summary:
-	inferred   2 D-type flip-flop(s).
+	inferred   1 D-type flip-flop(s).
 Unit <i2s_in> synthesized.
 
 Synthesizing Unit <synchronizer>.
     Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\synchronizer.v".
-    Found 4-bit register for signal <sd_vec>.
     Found 4-bit register for signal <ws_vec>.
+    Found 4-bit register for signal <sd_vec>.
     Found 3-bit register for signal <sck_vec>.
     Summary:
 	inferred  11 D-type flip-flop(s).
@@ -223,8 +222,8 @@ Macro Statistics
  32-bit adder                                          : 1
  4-bit addsub                                          : 1
  5-bit adder                                           : 1
-# Registers                                            : 22
- 1-bit register                                        : 10
+# Registers                                            : 21
+ 1-bit register                                        : 9
  16-bit register                                       : 2
  2-bit register                                        : 1
  3-bit register                                        : 3
@@ -283,8 +282,8 @@ Macro Statistics
  3-bit up counter                                      : 2
  4-bit updown counter                                  : 1
  5-bit up counter                                      : 1
-# Registers                                            : 119
- Flip-Flops                                            : 119
+# Registers                                            : 118
+ Flip-Flops                                            : 118
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
 # Multiplexers                                         : 5
@@ -333,18 +332,18 @@ Found area constraint ratio of 100 (+ 5) on block i2s_in, actual ratio is 0.
 Final Macro Processing ...
 
 Processing Unit <i2s_in> :
+	Found 4-bit shift register for signal <Synchronizer/sd_vec_3>.
 	Found 4-bit shift register for signal <Synchronizer/ws_vec_3>.
-INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <Synchronizer/sd_vec_3> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
 Unit <i2s_in> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 111
- Flip-Flops                                            : 111
-# Shift Registers                                      : 1
- 4-bit shift register                                  : 1
+# Registers                                            : 106
+ Flip-Flops                                            : 106
+# Shift Registers                                      : 2
+ 4-bit shift register                                  : 2
 
 =========================================================================
 
@@ -371,30 +370,30 @@ Primitive and Black Box Usage:
 #      GND                         : 1
 #      INV                         : 5
 #      LUT1                        : 5
-#      LUT2                        : 15
+#      LUT2                        : 16
 #      LUT3                        : 6
-#      LUT4                        : 49
+#      LUT4                        : 48
 #      LUT5                        : 21
 #      LUT6                        : 6
 #      MUXCY                       : 22
 #      VCC                         : 1
 #      XORCY                       : 13
-# FlipFlops/Latches                : 116
+# FlipFlops/Latches                : 113
 #      FD                          : 2
-#      FDC                         : 11
-#      FDCE                        : 96
-#      FDE                         : 1
+#      FDC                         : 10
+#      FDCE                        : 93
+#      FDE                         : 2
 #      FDP                         : 1
 #      FDPE                        : 5
 # RAMS                             : 32
 #      RAM32X1D                    : 32
-# Shift Registers                  : 1
-#      SRLC16E                     : 1
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 77
-#      IBUF                        : 41
-#      OBUF                        : 36
+# IO Buffers                       : 75
+#      IBUF                        : 40
+#      OBUF                        : 35
 
 Device utilization summary:
 ---------------------------
@@ -403,23 +402,23 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             116  out of  126800     0%  
- Number of Slice LUTs:                  172  out of  63400     0%  
+ Number of Slice Registers:             113  out of  126800     0%  
+ Number of Slice LUTs:                  173  out of  63400     0%  
     Number used as Logic:               107  out of  63400     0%  
-    Number used as Memory:               65  out of  19000     0%  
+    Number used as Memory:               66  out of  19000     0%  
        Number used as RAM:               64
-       Number used as SRL:                1
+       Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    216
-   Number with an unused Flip Flop:     100  out of    216    46%  
-   Number with an unused LUT:            44  out of    216    20%  
-   Number of fully used LUT-FF pairs:    72  out of    216    33%  
+ Number of LUT Flip Flop pairs used:    212
+   Number with an unused Flip Flop:      99  out of    212    46%  
+   Number with an unused LUT:            39  out of    212    18%  
+   Number of fully used LUT-FF pairs:    74  out of    212    34%  
    Number of unique control sets:        11
 
 IO Utilization: 
- Number of IOs:                          78
- Number of bonded IOBs:                  78  out of    210    37%  
+ Number of IOs:                          76
+ Number of bonded IOBs:                  76  out of    210    36%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -445,7 +444,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 149   |
+clk                                | BUFGP                  | 147   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -458,7 +457,7 @@ Speed Grade: -3
 
    Minimum period: 2.356ns (Maximum Frequency: 424.412MHz)
    Minimum input arrival time before clock: 1.938ns
-   Maximum output required time after clock: 1.330ns
+   Maximum output required time after clock: 1.326ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -468,7 +467,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 2.356ns (frequency: 424.412MHz)
-  Total number of paths / destination ports: 2492 / 465
+  Total number of paths / destination ports: 2479 / 459
 -------------------------------------------------------------------------
 Delay:               2.356ns (Levels of Logic = 3)
   Source:            Bist/sck_count_0 (FF)
@@ -491,7 +490,7 @@ Delay:               2.356ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 667 / 242
+  Total number of paths / destination ports: 661 / 237
 -------------------------------------------------------------------------
 Offset:              1.938ns (Levels of Logic = 16)
   Source:            rf_bist_inc<0> (PAD)
@@ -525,9 +524,9 @@ Offset:              1.938ns (Levels of Logic = 16)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 39 / 36
+  Total number of paths / destination ports: 38 / 35
 -------------------------------------------------------------------------
-Offset:              1.330ns (Levels of Logic = 2)
+Offset:              1.326ns (Levels of Logic = 2)
   Source:            i2si_Fifo/fifo_counter_0 (FF)
   Destination:       i2si_rts (PAD)
   Source Clock:      clk rising
@@ -537,11 +536,11 @@ Offset:              1.330ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDCE:C->Q             8   0.361   0.589  i2si_Fifo/fifo_counter_0 (i2si_Fifo/fifo_counter_0)
-     LUT4:I0->O            2   0.097   0.283  i2si_Fifo/fifo_out_rts1 (i2si_rts_OBUF)
+     LUT4:I0->O            1   0.097   0.279  i2si_Fifo/fifo_out_rts1 (i2si_rts_OBUF)
      OBUF:I->O                 0.000          i2si_rts_OBUF (i2si_rts)
     ----------------------------------------
-    Total                      1.330ns (0.458ns logic, 0.872ns route)
-                                       (34.4% logic, 65.6% route)
+    Total                      1.326ns (0.458ns logic, 0.868ns route)
+                                       (34.5% logic, 65.5% route)
 
 =========================================================================
 
@@ -559,14 +558,14 @@ clk            |    2.356|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.78 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.37 secs
  
 --> 
 
-Total memory usage is 449380 kilobytes
+Total memory usage is 432036 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   19 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

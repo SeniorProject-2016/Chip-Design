@@ -3,11 +3,11 @@ module serializer_testbench;
 
     // Inputs
     reg clk;
-    reg rst_n;
+    wire rst_n;
     reg filt_i2so_rts;
     reg [15:0] filt_i2so_lft;
     reg [15:0] filt_i2so_rgt;
-    reg sck_transition;
+    wire sck_transition;
     
     // Internal Variables
     reg sck_d1; // serial clock delay
@@ -94,11 +94,7 @@ end
 
 
 always @(*)
-begin
-    rst_n = !(count < 20); // turn on reset after 10 clock cycles
-
-      sck_transition <= sck & ~sck_d1;
-    
+begin    
     if(word_count >= 0 && word_count <= 9)
     begin
         filt_i2so_lft = test_data [word_count][0];
@@ -153,6 +149,10 @@ end
         end
         
     end
+    
+    
+    assign rst_n = !(count < 20); // turn on reset after 10 clock cycles
+    assign sck_transition = sck & ~sck_d1;
       
 endmodule
 

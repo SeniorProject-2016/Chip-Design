@@ -45,7 +45,7 @@ module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_b
     always @(posedge clk or negedge rst_n)
     begin
         if(!rst_n)
-            i2si_bist_out_data <= 32'b0;
+            i2si_bist_out_data <= 32'd0;
         else if (sck_count == 5'd31 && sck_transition)
         begin
             //If bist_active is just starting  

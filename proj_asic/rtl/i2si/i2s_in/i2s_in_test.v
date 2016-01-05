@@ -12,30 +12,37 @@
 
 module i2s_in_test;
 
+    reg [3:0]                       check_count1 = 0;
+    reg [3:0]                       check_count2 = 0;
+    reg                             check_done = 0;
+    reg [31:0]                      check_run_count = 0;
+    reg                             match;
+    reg                             match_found = 0;
+    reg                             begin_comparison = 0;
+    reg [31:0]                      word;
+
 	// Inputs
 	reg                             clk;
-	reg                             rst_n;
+	wire                            rst_n;
                                                 
 	reg                             inp_sck;
-	reg                             inp_ws;
-	reg                             inp_sd;
+	wire                            inp_ws;
+	wire                            inp_sd;
     
-	reg                             rf_i2si_en;
+	wire                            rf_i2si_en;
 	reg [11:0]                      rf_bist_start_val;
 	reg [7:0]                       rf_bist_inc;
 	reg [11:0]                      rf_bist_up_limit;
 	reg                             rf_mux_en;
     
-	reg                             i2si_rtr;
+    wire                            i2si_rtr;
     
-	reg                             trig_fifo_overrun_clr;
-    reg                             trig_fifo_underrun_clr;
+    reg                             trig_fifo_overrun_clr;
 
 	// Outputs
 	wire [31:0]                     i2si_data;
 	wire                            i2si_rts;
 	wire                            ro_fifo_overrun;
-    wire                            ro_fifo_underrun;
 	wire                            sync_sck;
     
     
@@ -67,31 +74,24 @@ module i2s_in_test;
 		.i2si_rts(i2si_rts),                                                                                
 		.ro_fifo_overrun(ro_fifo_overrun),                                                                          
 		.trig_fifo_overrun_clr(trig_fifo_overrun_clr),                                                                      
-        .ro_fifo_underrun(ro_fifo_underrun),                                                        
-        .trig_fifo_underrun_clr(trig_fifo_underrun_clr),                                                
 		.sync_sck(sync_sck)                                                                     
 	);                                                                              
                                                                                                                 
 	initial begin                                                               
 		clk = 0;                                                                                        
-		inp_sck = 0;                                                                        
-		inp_ws = 0;                                                                                                 
-		inp_sd = 0;                                                                             
-		rf_i2si_en = 0;                                                                                         
+		inp_sck = 0;                                                                                                                                                               
         rf_bist_start_val = 12'h001;                                                                                                
         rf_bist_inc = 12'h001;                                                                                              
         rf_bist_up_limit = 12'h019;                                                                                                 
-		rf_mux_en = 0;                                                                                                  
-		i2si_rtr = 0;                                                                                   
+		rf_mux_en = 0;                                                                                                                                                                                   
 		trig_fifo_overrun_clr = 0;                                                                                                  
-        trig_fifo_underrun_clr = 0;                                                                         
                                                                                                                                                 
                                                                                                                                             
         // Test Data                                                                                                            
         test_data [0] [0] = 16'hAAAA;                                                                                   
         test_data [0] [1] = 16'hFFFF;                                                                                           
-        test_data [1] [0] = 16'h1478;                                                                           
-        test_data [1] [1] = 16'hA3B9;                                                                                                       
+        test_data [1] [0] = 16'hAAAA;                                                                           
+        test_data [1] [1] = 16'hCCCC;                                                                                                       
         test_data [2] [0] = 16'hCDD7;                                                                                                   
         test_data [2] [1] = 16'hBABA;                                                                                                   
         test_data [3] [0] = 16'h4444;                                                                                   
@@ -121,15 +121,7 @@ module i2s_in_test;
             count = count + 1;                                                                                  
         end                                                                                                                 
     end                                                                                                                 
-                                                                                                    
-    always @(*)                                                                                             
-    begin                                                                                                               
-        rst_n <= !(count < 20);                                                                                             
-        rf_i2si_en <= !(count < 20);                                                                                                
-        i2si_rtr <= i2si_rts;                                                                                                   
-        inp_ws <= ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1) | ((bit_cnt==16'd15)&(lr_cnt==0));                                  
-        inp_sd <= test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];                                                         
-    end                                                                                                                             
+                                                                                                                                                                                                                                                                                                                   	 
                                                                                                                                 
                                                                                                                         
     always @ (posedge clk or negedge rst_n)                                                                             
@@ -172,11 +164,87 @@ module i2s_in_test;
                 else                                                                                                                
                     bit_cnt<=bit_cnt+1;                                                              // increment bit counter
             end
-                                                                                                                        
         end                                                                                                         
-                                                                                                                
-    end                                                                                         
-                                                                                                        
+    end
+
+    assign rst_n = !(count < 20);                                                                                             
+    assign rf_i2si_en = !(count < 20);                                                                                                
+    assign i2si_rtr = i2si_rts;                                                                                                   
+    assign inp_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1) | ((bit_cnt==16'd15)&(lr_cnt==0));                                  
+    assign inp_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];
+
+/*
+    //Checks if the data was properly deserialized
+    always @(posedge clk)
+    begin
+        if(i2si_rts && i2si_rtr)
+        begin
+            for(check_count1 = 0; check_count1 < `N; check_count1 = check_count1 + 1)
+            begin
+                word = {test_data [check_count1] [0], test_data [check_count1] [1]};
+                if(word == i2si_data)
+                begin
+                    $display ("word: %h", word, "       ---      i2si_data: %h", i2si_data, "       --- Pass");
+                    $display ("check_count1: %d", check_count1);
+                    $display ("count: %d", count);
+                end
+            end
+        end
+    end
+*/
+
+
+
+    //Checks if the data was properly deserialized
+    always @(posedge clk)
+    begin
+        if(i2si_rts && i2si_rtr)
+        begin
+            if(!match_found)
+            begin
+                for(check_count1 = 0; check_count1 < `N; check_count1 = check_count1 + 1)
+                begin
+                    word = {test_data [check_count1] [0], test_data [check_count1] [1]};
+                    if(word == i2si_data)
+                    begin
+                        $display ("match found");
+                        $display ("count: %d", count);
+                        match_found = 1;
+                        begin_comparison = 1;
+                        check_count2 = check_count1;
+                    end
+                end
+            end
+            //Stop checking. No matches found.
+            else if(count > 20000 && !begin_comparison)
+            begin
+                match_found = 1;
+            end
+            
+            
+            
+            if(begin_comparison)
+            begin
+                word = {test_data [check_count2] [0], test_data [check_count2] [1]};
+                if(word == i2si_data)
+                begin
+                    $display ("word: %h", word, "       ---      i2si_data: %h", i2si_data, "       --- Pass");
+                    $display ("check_count2: %d", check_count2);
+                end
+                else if(i2si_data === 32'hxxxxxxxx)
+                begin
+                    $display ("End of Comparison");
+                    begin_comparison = 0;
+                end
+                else
+                begin
+                    $display ("word: %h", word, "       ---      i2si_data: %h", i2si_data, "       --- Fail");
+                    $display ("check_count2: %d", check_count2);
+                end
+                check_count2 = check_count2 + 1;
+            end
+        end
+    end
                                                                                                                         
 endmodule                                                                                               
                                                                                             

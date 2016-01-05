@@ -5,10 +5,10 @@ module synchronizer_testbench;
 
 	// Inputs
 	reg clk;
-	reg rst_n;
+	wire rst_n;
 	reg _sck;
-	reg _sd;
-	reg _ws;
+	wire _sd;
+	wire _ws;
 
 	// Outputs
 	wire sck;
@@ -43,7 +43,7 @@ module synchronizer_testbench;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-        _sd = 0;
+
 
 
         // Test Data
@@ -84,15 +84,10 @@ module synchronizer_testbench;
         end
     end
 
-
     
-    
-    always @(*)
-    begin
-        rst_n <= !(count < 20);
-        _ws <= ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1)|((bit_cnt==16'd15)&(lr_cnt==0));
-        _sd <= test_data [word_cnt][lr_cnt][bit_tc-bit_cnt]; // assign serial data from the test_data
-    end
+    assign rst_n = !(count < 20);
+    assign _ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1)|((bit_cnt==16'd15)&(lr_cnt==0));
+    assign _sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt]; // assign serial data from the test_data
 
     always @ (posedge clk or negedge rst_n)
     begin

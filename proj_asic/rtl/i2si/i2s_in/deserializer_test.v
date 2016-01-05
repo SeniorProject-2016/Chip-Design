@@ -3,28 +3,29 @@
 module i2si_deserializer_testbench;
 
    // Inputs
-    reg clk; // master clock
-    reg sck_transition;
-    reg rf_i2si_en; // i2si enable
-    reg [15:0] test_data [`N-1:0] [0:1]; // [Bits Per Word] test_data [# of entities in test] [Left/Right]
-
+    reg                 clk;                                                                        // master clock
+    wire                sck_transition;                                                             // sck level to pulse converter
+    reg                 rf_i2si_en;                                                                 // i2si enable
+    reg [15:0]          test_data [`N-1:0] [0:1];                                                   // [Bits Per Word] test_data [# of entities in test] [Left/Right]
+                                                                                                                
     // Outputs
-    wire [15:0] out_lft; // left audio dataF
-    wire [15:0] out_rgt; // right audio data
-    wire out_xfc; // transfer complete
-    wire rst_n; // reset not
-    wire in_sd; // serial data
-    wire in_ws; // word select
+    wire [15:0]         out_lft;                                                                    // left audio dataF
+    wire [15:0]         out_rgt;                                                                    // right audio data
+    wire                out_xfc;                                                                    // transfer complete
+    wire                rst_n;                                                                      // reset
+    wire                in_sd;                                                                      // serial data
+    wire                in_ws;                                                                      // word select
 
     // Internal Variables
-    reg sck_d1; // serial clock delay
-    reg [31:0] count; // clock counter
-    reg [31:0] sck_cnt; // serial clock counter
-    reg [31:0] bit_cnt; // bit number counter
-    reg lr_cnt; // left right counter
-    reg [31:0] word_cnt; // word counter
-    reg [31:0] cyc_per_half_sck = 40; // about (100 MHz / 1.44 MHz)/2
-    reg [31:0] bit_tc =  15; // number of bits in a word
+    reg                 i2si_sck;                                                                   
+    reg                 sck_d1;                                                                     // serial clock delay
+    reg [31:0]          count;                                                                      // clock counter
+    reg [31:0]          sck_cnt;                                                                    // serial clock counter
+    reg [31:0]          bit_cnt;                                                                    // bit number counter
+    reg                 lr_cnt;                                                                     // left right counter
+    reg [31:0]          word_cnt;                                                                   // word counter
+    reg [31:0]          cyc_per_half_sck = 40;                                                      // about (100 MHz / 1.44 MHz)/2
+    reg [31:0]          bit_tc =  15;                                                               // number of bits in a word
 
     // Instantiate the Unit Under Test (UUT)
     i2si_deserializer uut (
@@ -69,66 +70,65 @@ module i2si_deserializer_testbench;
         test_data [10] [1] = 16'hABCD;
 
         #694
-        rf_i2si_en = 1; // enable i2si after 694ns
+        rf_i2si_en = 1;                                                                             // enable i2si after 694ns
     end
 
     always
     begin
-        count = 0; // set clock counter to zero
+        count = 0;                                                                                  // set clock counter to zero
     forever
         begin
-            #5 clk = ~clk; // 100 MHz clock
-            count = count + 1; // increment clock counter
-        end
-    end
-
-    assign rst_n = !(count < 20); // turn on reset not after 10 clock cycles
+            #5 clk = ~clk;                                                                          // 100 MHz clock
+            count = count + 1;                                                                      // increment clock counter
+        end                                                                                         
+    end                                                                                             
+                                                                                                                    
+    assign rst_n = !(count < 20);                                                                   // turn on reset not after 10 clock cycles
+    assign sck_transition = i2si_sck & ~sck_d1;
     assign in_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1)|((bit_cnt==16'd15)&(lr_cnt==0)); 
-    assign in_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt]; // assign serial data from the test_data
+    assign in_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];                                    // assign serial data from the test_data
 
     always @ (posedge clk or negedge rst_n)
     begin
         if(!rst_n)
         begin
-            sck_cnt<=0;     // counts master clock cycles, causes sck to toggle each time it hits cyc_per_half_sck
-            bit_cnt<=0;     // count number of bits
-            word_cnt<=0;    // count the word number
-            lr_cnt <= 0;    // left=0 and right=1
-            i2si_sck<=0;    // serial clock
-            sck_d1<=0;      // serial clock delayed by one clock cycle
+            sck_cnt<=0;                                                                             // counts master clock cycles, causes sck to toggle each time it hits cyc_per_half_sck
+            bit_cnt<=0;                                                                             // count number of bits
+            word_cnt<=0;                                                                            // count the word number
+            lr_cnt <= 0;                                                                            // left=0 and right=1
+            i2si_sck<=0;                                                                            // serial clock
+            sck_d1<=0;                                                                              // serial clock delayed by one clock cycle
         end
         else
         begin
         
-            if (sck_cnt == cyc_per_half_sck-1) // cyc_per_half_sck ~ (100 MHz/1.44 MHz)/2
+            if (sck_cnt == cyc_per_half_sck-1)                                                      // cyc_per_half_sck ~ (100 MHz/1.44 MHz)/2
             begin
-                sck_cnt <= 0;   // reset serial clock counter
-                i2si_sck <= ~i2si_sck; // toggle serial clock
+                sck_cnt <= 0;                                                                       // reset serial clock counter
+                i2si_sck <= ~i2si_sck;                                                              // toggle serial clock
             end
             else
-                sck_cnt <= sck_cnt + 1; // increment serial clock counter
+                sck_cnt <= sck_cnt + 1;                                                             // increment serial clock counter
         
-            sck_d1<=i2si_sck;           // generate 1 cycle delay of i2si_sck
-            if(i2si_sck & ~sck_d1)      // on a positive transition of sck...
+            sck_d1<=i2si_sck;                                                                       // generate 1 cycle delay of i2si_sck
+            if(i2si_sck & ~sck_d1)                                                                  // on a positive transition of sck...
             
             begin
-                if (bit_cnt==bit_tc)    // bit_tc = 15
+                if (bit_cnt==bit_tc)                                                                // bit_tc = 15
                 begin
-                    if (lr_cnt == 1) // if right
-                    begin
-                        word_cnt<=word_cnt+1;   // words in the testbench array
-                        lr_cnt<=0; // set to left 
+                    if (lr_cnt == 1)                                                                // if right
+                    begin                                                                                   
+                        word_cnt<=word_cnt+1;                                                       // words in the testbench array
+                        lr_cnt<=0;                                                                  // set to left 
                     end
                     else
-                        lr_cnt<=1; // set to right
-                    bit_cnt<=0; // reset bit counter
+                        lr_cnt<=1;                                                                  // set to right
+                    bit_cnt<=0;                                                                     // reset bit counter
                 end
                 else
-                    bit_cnt<=bit_cnt+1; // increment bit counter
-            end
-            
+                    bit_cnt<=bit_cnt+1;                                                             // increment bit counter
+            end 
         end
-        
     end
 
 endmodule

@@ -14,14 +14,13 @@ module i2s_out_test;
 
 	// Inputs
 	reg                         clk;
-	reg                         rst_n;
-	reg                         sck_transition;
+	wire                        rst_n;
+	wire                        sck_transition;
     
 	reg                         filt_rts;
 	reg                         [31:0] filt_data;
     
 	reg                         trig_fifo_underrun;
-	reg                         trig_fifo_overrun;
     
 
 	// Outputs
@@ -29,14 +28,13 @@ module i2s_out_test;
 	wire                        i2so_ws;
 	wire                        i2so_sd;
 	wire                        ro_fifo_underrun;
-	wire                        ro_fifo_overrun;
     
     
     // Internal Variables
     reg                         sck_d1;                                 // serial clock delay
     reg [31:0]                  sck_cnt;                                // serial clock counter
     reg [31:0]                  cyc_per_half_sck = 40;                  // about (100 MHz / 1.44 MHz)/2
-                                                                        
+                                                                                    
     reg                         sck;                                                            
     reg [31:0]                  count;                                          
     reg                         LR_count;                                   
@@ -56,20 +54,15 @@ module i2s_out_test;
 		.i2so_ws(i2so_ws), 
 		.i2so_sd(i2so_sd), 
 		.ro_fifo_underrun(ro_fifo_underrun), 
-		.trig_fifo_underrun(trig_fifo_underrun), 
-		.ro_fifo_overrun(ro_fifo_overrun), 
-		.trig_fifo_overrun(trig_fifo_overrun)
+		.trig_fifo_underrun(trig_fifo_underrun)
 	);
 
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		rst_n = 0;
-		sck_transition = 0;
 		filt_rts = 0;
 		filt_data = 0;
 		trig_fifo_underrun = 0;
-		trig_fifo_overrun = 0;
         
         //Internal variables
         LR_count = 0;
@@ -102,23 +95,18 @@ module i2s_out_test;
         #200;
 
 
-	end
-    
-    always @(*)
-    begin
-        rst_n = !(count < 20);                                          // turn on reset after 10 clock cycles
-        sck_transition <= sck & ~sck_d1;                                    
-    end                                                                                     
+	end                                                                       
+                                                                                                                                               
                                                                                         
     always                                                                                  
     begin                                                                               
-    count = 0;                                                                              
+        count = 0;                                                                              
     forever                                                                                                 
-    begin                                                                                   
-        #5 clk = ~clk;                                                              
-        count = count + 1;                                              // increment clock counter
-    end                                                                     
-end                                                                                 
+        begin                                                                                   
+            #5 clk = ~clk;                                                              
+            count = count + 1;                                          // increment clock counter
+        end                                                                                     
+    end                                                                         
                                                                                 
                                                                                         
                                                                                                 
@@ -148,41 +136,41 @@ end
         
     end
     
-/*    
-always @(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)
+    /*    
+    always @(posedge clk or negedge rst_n)
     begin
-        word_count <= -1;
-    end
-    else if(!LR_count)
-    begin
-        LR_count <= 1'b1;
-    end
-    else if(filt_i2so_rtr && LR_count)
-    begin
-        word_count <= word_count + 1;
-        LR_count <= 1'b0;
-    end
-end
-*/
-                                                                                                                        
-
-task queue;                                                             // define the queue task
-input[31:0] data;                                                       // the data to be queueed
-   if( !filt_rtr )                                                      // if buffer is full display warning
-            $display("---Cannot queue: Buffer Full---");                
-        else                                                            // if buffer is not full
+        if(!rst_n)
         begin
-           $display("Queued ",data );                                   // display that the data was queueed
-           filt_data = data;                                            // the input to the buffer is set as the data
-           filt_rts = 1;                                                // write is enabled
-           @(posedge clk);                                              // checks if clock is at postive edge
-           #1 filt_rts = 0;                                             // set write enabled equal to zero then
+            word_count <= -1;
         end
-endtask
+        else if(!LR_count)
+        begin
+            LR_count <= 1'b1;
+        end
+        else if(filt_i2so_rtr && LR_count)
+        begin
+            word_count <= word_count + 1;
+            LR_count <= 1'b0;
+        end
+    end
+    */
 
-
-      
+    assign rst_n = !(count < 20);                                           // turn on reset after 10 clock cycles
+    assign sck_transition = sck & ~sck_d1;    
+                                                                                                                        
+    task queue;                                                             // define the queue task
+    input[31:0] data;                                                       // the data to be queueed
+       if( !filt_rtr )                                                      // if buffer is full display warning
+                $display("---Cannot queue: Buffer Full---");                
+            else                                                            // if buffer is not full
+            begin
+               $display("Queued ",data );                                   // display that the data was queueed
+               filt_data = data;                                            // the input to the buffer is set as the data
+               filt_rts = 1;                                                // write is enabled
+               @(posedge clk);                                              // checks if clock is at postive edge
+               #1 filt_rts = 0;                                             // set write enabled equal to zero then
+            end
+    endtask
+                                                                                                                    
 endmodule
 
