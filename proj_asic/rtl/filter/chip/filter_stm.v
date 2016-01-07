@@ -67,7 +67,7 @@ wire signed [31:0]		accumulator_in_right;
 wire signed [39:0]		accumulator_out_right;
 wire signed [39:0]		accumulator_out;
 //***********************************************************************************
-assign rf_filter_coeff 			= h_unit;
+assign h_unit 						= rf_filter_coeff;
 assign x_unit_left 				= x_unit[31:16];
 assign x_unit_right				= x_unit[15:0];
 assign filter_xfc_in 			= filter_aud_in_rtr && filter_aud_in_rts; 
@@ -94,7 +94,7 @@ always@(*)
 		mux_rdptr_nxt				= mux_rdptr;
 		mux_re_nxt					= mux_re;
 //***********************************************************************************
-		multiply_1st_check_nxt	= multiply_1st_check;		
+		
 		filter_running_1st_nxt	= filter_running_1st;
 		filter_running_nxt		= filter_running;
 		filter_need_new_nxt		= filter_need_new;
@@ -231,7 +231,7 @@ always@(posedge clk or negedge rstb)
 			filter_aud_in_rtr			<= 1'b0;
 			accumulator_enable		<= 1'b0;
 			accumulator_load			<= 1'b0;
-			multiply_1st_check		<= 1'b0;
+			
 		end
 	else
 		begin
@@ -245,7 +245,7 @@ always@(posedge clk or negedge rstb)
 			arr_we_x						<= arr_we_x_nxt;
 			mux_rdptr					<= mux_rdptr_nxt;	
 			mux_re						<= mux_re_nxt;
-			multiply_1st_check		<= multiply_1st_check_nxt;
+			
 			filter_running 			<= filter_running_nxt;
 			filter_running_1st 		<= filter_running_1st_nxt;
 			filter_need_new			<= filter_need_new_nxt;

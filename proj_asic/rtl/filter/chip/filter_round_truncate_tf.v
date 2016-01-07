@@ -40,9 +40,15 @@ module filter_round_truncate_tf;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-        
+      acc_in = 40'h12D8A2034B; 
+		
 		// Add stimulus here
 
+	end
+	
+	always
+	begin
+		forever #5 clk = ~clk;
 	end
       
 endmodule
