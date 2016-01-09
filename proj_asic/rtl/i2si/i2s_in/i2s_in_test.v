@@ -4,22 +4,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 // Create Date:   15:51:28 11/27/2015
-// Last Edit:     12/2/15
+// Last Edit:     1/7/16
 // Design Name:   i2s_in
 // Project Name:  i2s_in
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
 module i2s_in_test;
-
-    reg [3:0]                       check_count1 = 0;
-    reg [3:0]                       check_count2 = 0;
-    reg                             check_done = 0;
-    reg [31:0]                      check_run_count = 0;
-    reg                             match;
-    reg                             match_found = 0;
-    reg                             begin_comparison = 0;
-    reg [31:0]                      word;
 
 	// Inputs
 	reg                             clk;
@@ -56,6 +47,17 @@ module i2s_in_test;
     reg [31:0]                      word_cnt;                                                        // word counter
     reg [31:0]                      cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
     reg [31:0]                      bit_tc =  15;                                                    // number of bits in a word
+    
+    
+    reg [3:0]                       check_count1 = 0;
+    reg [3:0]                       check_count2 = 0;
+    reg                             check_done = 0;
+    reg [31:0]                      check_run_count = 0;
+    reg                             match;
+    reg                             match_found = 0;
+    reg                             begin_comparison = 0;
+    reg [31:0]                      word;
+    reg                             test_failed = 1;
                                                                                                                             
 	// Instantiate the Unit Under Test (UUT)                                                            
 	i2s_in uut (                                                                        
@@ -109,13 +111,16 @@ module i2s_in_test;
         test_data [9] [0] = 16'h99C5;                                                                           
         test_data [9] [1] = 16'h7435;                                                                                               
         test_data [10] [0] = 16'h69D9;                                                              
-        test_data [10] [1] = 16'hABCD;                                                                                              
+        test_data [10] [1] = 16'hABCD;
+
 	end                                                                                                                             
+
+    
                                                                                                                                         
     always                                                                                                                              
     begin                                                                                               
         count = 0;                                                                                                      
-    forever                                                                                                 
+        forever                                                                                                 
         begin                                                                                                           
             #5 clk = ~clk;                                                                           // 100 MHz clock
             count = count + 1;                                                                                  
@@ -166,6 +171,7 @@ module i2s_in_test;
             end
         end                                                                                                         
     end
+    
 
     assign rst_n = !(count < 20);                                                                                             
     assign rf_i2si_en = !(count < 20);                                                                                                
@@ -173,33 +179,13 @@ module i2s_in_test;
     assign inp_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1) | ((bit_cnt==16'd15)&(lr_cnt==0));                                  
     assign inp_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];
 
-/*
-    //Checks if the data was properly deserialized
-    always @(posedge clk)
-    begin
-        if(i2si_rts && i2si_rtr)
-        begin
-            for(check_count1 = 0; check_count1 < `N; check_count1 = check_count1 + 1)
-            begin
-                word = {test_data [check_count1] [0], test_data [check_count1] [1]};
-                if(word == i2si_data)
-                begin
-                    $display ("word: %h", word, "       ---      i2si_data: %h", i2si_data, "       --- Pass");
-                    $display ("check_count1: %d", check_count1);
-                    $display ("count: %d", count);
-                end
-            end
-        end
-    end
-*/
-
-
 
     //Checks if the data was properly deserialized
     always @(posedge clk)
     begin
-        if(i2si_rts && i2si_rtr)
+        if(i2si_rts && i2si_rtr && !rf_mux_en)
         begin
+            //Find the first input word that matches the output word
             if(!match_found)
             begin
                 for(check_count1 = 0; check_count1 < `N; check_count1 = check_count1 + 1)
@@ -207,39 +193,44 @@ module i2s_in_test;
                     word = {test_data [check_count1] [0], test_data [check_count1] [1]};
                     if(word == i2si_data)
                     begin
-                        $display ("match found");
-                        $display ("count: %d", count);
                         match_found = 1;
                         begin_comparison = 1;
+                        test_failed = 0;
                         check_count2 = check_count1;
                     end
                 end
             end
-            //Stop checking. No matches found.
-            else if(count > 20000 && !begin_comparison)
+            //Stop checking. No input words matched output words
+            if(count > 20000 && !begin_comparison && test_failed)
             begin
                 match_found = 1;
+                test_failed = 0;
+                $display ("No matches found. Test failed");
             end
             
             
-            
+            //After finding first input word that matches, begin comparing rest of the inputted words
             if(begin_comparison)
             begin
                 word = {test_data [check_count2] [0], test_data [check_count2] [1]};
+                //If word inputted and outputted match
                 if(word == i2si_data)
                 begin
-                    $display ("word: %h", word, "       ---      i2si_data: %h", i2si_data, "       --- Pass");
-                    $display ("check_count2: %d", check_count2);
+                    $display ("word: %h", word,
+                        "       ---      i2si_data: %h",
+                        i2si_data, "       --- Pass");
                 end
+                //End of comparison test. No more words were inputted.
                 else if(i2si_data === 32'hxxxxxxxx)
                 begin
-                    $display ("End of Comparison");
                     begin_comparison = 0;
                 end
+                //If words do not match
                 else
                 begin
-                    $display ("word: %h", word, "       ---      i2si_data: %h", i2si_data, "       --- Fail");
-                    $display ("check_count2: %d", check_count2);
+                    $display ("word: %h", word,
+                        "       ---      i2si_data: %h",
+                        i2si_data, "       --- Fail");
                 end
                 check_count2 = check_count2 + 1;
             end

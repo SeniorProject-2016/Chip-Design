@@ -309,9 +309,9 @@ Primitive and Black Box Usage:
 #      RAM32X1D                    : 32
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 40
-#      IBUF                        : 36
-#      OBUF                        : 4
+# IO Buffers                       : 42
+#      IBUF                        : 37
+#      OBUF                        : 5
 
 Device utilization summary:
 ---------------------------
@@ -334,8 +334,8 @@ Slice Logic Distribution:
    Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                          41
- Number of bonded IOBs:                  41  out of    210    19%  
+ Number of IOs:                          43
+ Number of bonded IOBs:                  43  out of    210    20%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -375,7 +375,7 @@ Speed Grade: -3
    Minimum period: 2.133ns (Maximum Frequency: 468.911MHz)
    Minimum input arrival time before clock: 1.754ns
    Maximum output required time after clock: 1.509ns
-   Maximum combinational path delay: No path found
+   Maximum combinational path delay: 0.280ns
 
 Timing Details:
 ---------------
@@ -448,6 +448,24 @@ Offset:              1.509ns (Levels of Logic = 2)
                                        (30.3% logic, 69.7% route)
 
 =========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               0.280ns (Levels of Logic = 2)
+  Source:            sck_inp (PAD)
+  Destination:       i2so_sck (PAD)
+
+  Data Path: sck_inp to i2so_sck
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.279  sck_inp_IBUF (i2so_sck_OBUF)
+     OBUF:I->O                 0.000          i2so_sck_OBUF (i2so_sck)
+    ----------------------------------------
+    Total                      0.280ns (0.001ns logic, 0.279ns route)
+                                       (0.4% logic, 99.6% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
@@ -463,12 +481,12 @@ clk            |    2.133|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.02 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.10 secs
  
 --> 
 
-Total memory usage is 448356 kilobytes
+Total memory usage is 430628 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

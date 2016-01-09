@@ -8,23 +8,22 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module i2s_out(                 clk, rst_n,
-                                //sck_in, sck_out,
-                                sck_transition,
+                                sck_inp, sck_transition,
                                 filt_rts, filt_data, filt_rtr,
-                                i2so_ws, i2so_sd,
+                                i2so_ws, i2so_sd, i2so_sck,
                                 trig_fifo_underrun,
                                 ro_fifo_underrun
     );
 
     input                       clk;                                 //Master clock
     input                       rst_n;                               //Reset
-    
+                                                                        
+    input                       sck_inp;
     input                       sck_transition;                      //Serial clock level to pulse converter
-    //input                       sck_in;
-    //output                      sck_out;
-                                                
-    output                      i2so_ws;                            //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
-    output                      i2so_sd;                            //Digital audio serial data                                                                            
+                                                                            
+    output                      i2so_sck;                               
+    output                      i2so_ws;                             //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
+    output                      i2so_sd;                             //Digital audio serial data                                                                            
                                                                                                           
     input                       filt_rts;                            //Ready to send handshake signal between Filter and I2S_OUT Block
     output                      filt_rtr;                            //Ready to read handshake signal between Filter and I2S_OUT Block
@@ -32,9 +31,9 @@ module i2s_out(                 clk, rst_n,
                                                                         
     input                       trig_fifo_underrun;                  //Signal to reset ro_fifo_underrun
                                                                         
-    output                      ro_fifo_underrun;                     //The FIFO buffer is not full and no more data is available
+    output                      ro_fifo_underrun;                    //The FIFO buffer is not full and no more data is available
                                                                         
-    wire                        sck_out;                               //Wire connecting sck synchronizer to sck deserializer  NOT NEEDED???
+    wire                        sck_out;                             //Wire connecting sck synchronizer to sck deserializer  NOT NEEDED???
     wire                        sck_transition;                      //Wire connecting sck_transition signal to other blocks
     wire                        fifo_rts;                            //Ready to send handshake signal between FIFO and Serializer   
     wire                        fifo_rtr;                            //Ready to read handshake signal between FIFO and Serializer   
@@ -68,7 +67,7 @@ module i2s_out(                 clk, rst_n,
     );
                                                                                         
                            
- //   assign sck_out = sck_in;
+    assign i2so_sck = sck_inp;
                            
     //Define underrun signal
     always @ (posedge clk or negedge rst_n)
