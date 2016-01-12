@@ -24,8 +24,8 @@ module i2s_in(              clk, rst_n,
     input                       inp_sd;                             //Digital audio serial data
                                                                     
     input                       rf_i2si_en;                         //Enable bit for Deserializer. 0 = inactive, 1 = active
-    input [11:0]                rf_bist_start_val;                  //Bist start value
-    input [11:0]                rf_bist_up_limit;                   //Bist upper limit
+    input [31:0]                rf_bist_start_val;                  //Bist start value
+    input [31:0]                rf_bist_up_limit;                   //Bist upper limit
     input [7:0]                 rf_bist_inc;                        //Bist increment signal by this much
     input                       rf_mux_en;                          //Mux select bit for BIST or Deserializer data/xfc signals
                                                                                                           

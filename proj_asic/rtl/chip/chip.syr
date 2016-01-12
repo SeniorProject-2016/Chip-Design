@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: chip.prj
 
@@ -144,7 +144,6 @@ Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
 
 Synthesizing Unit <chip>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v".
-WARNING:Xst:653 - Signal <trig_fifo_overrun_clr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <chip> synthesized.
@@ -186,9 +185,9 @@ Synthesizing Unit <i2si_bist_gen>.
     Found 5-bit register for signal <sck_count>.
     Found 32-bit register for signal <i2si_bist_out_data>.
     Found 1-bit register for signal <bist_active>.
-    Found 5-bit adder for signal <sck_count[4]_GND_6_o_add_0_OUT> created at line 29.
-    Found 32-bit adder for signal <i2si_bist_out_data[31]_GND_6_o_add_6_OUT> created at line 61.
-    Found 32-bit comparator lessequal for signal <n0010> created at line 55
+    Found 5-bit adder for signal <sck_count[4]_GND_6_o_add_0_OUT> created at line 35.
+    Found 32-bit adder for signal <i2si_bist_out_data[31]_GND_6_o_add_6_OUT> created at line 67.
+    Found 32-bit comparator lessequal for signal <n0010> created at line 61
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  38 D-type flip-flop(s).
@@ -318,25 +317,6 @@ Optimizing unit <synchronizer> ...
 Optimizing unit <i2si_deserializer> ...
 
 Optimizing unit <fifo> ...
-WARNING:Xst:1710 - FF/Latch <I2S_Input/Bist/i2si_bist_out_data_13> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_14> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_15> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_16> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_17> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_18> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_19> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_20> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_21> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_22> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_23> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_24> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_25> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_26> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_27> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_28> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_29> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_30> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_31> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -353,8 +333,8 @@ Unit <chip> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 106
- Flip-Flops                                            : 106
+# Registers                                            : 125
+ Flip-Flops                                            : 125
 # Shift Registers                                      : 2
  4-bit shift register                                  : 2
 
@@ -379,22 +359,22 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 144
+# BELS                             : 246
 #      GND                         : 1
 #      INV                         : 5
-#      LUT1                        : 5
+#      LUT1                        : 24
 #      LUT2                        : 16
-#      LUT3                        : 6
-#      LUT4                        : 47
-#      LUT5                        : 21
-#      LUT6                        : 7
-#      MUXCY                       : 22
+#      LUT3                        : 5
+#      LUT4                        : 71
+#      LUT5                        : 38
+#      LUT6                        : 6
+#      MUXCY                       : 47
 #      VCC                         : 1
-#      XORCY                       : 13
-# FlipFlops/Latches                : 113
+#      XORCY                       : 32
+# FlipFlops/Latches                : 132
 #      FD                          : 2
 #      FDC                         : 10
-#      FDCE                        : 93
+#      FDCE                        : 112
 #      FDE                         : 2
 #      FDP                         : 1
 #      FDPE                        : 5
@@ -404,9 +384,9 @@ Primitive and Black Box Usage:
 #      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 75
-#      IBUF                        : 39
-#      OBUF                        : 36
+# IO Buffers                       : 115
+#      IBUF                        : 80
+#      OBUF                        : 35
 
 Device utilization summary:
 ---------------------------
@@ -415,23 +395,23 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             113  out of  126800     0%  
- Number of Slice LUTs:                  173  out of  63400     0%  
-    Number used as Logic:               107  out of  63400     0%  
+ Number of Slice Registers:             132  out of  126800     0%  
+ Number of Slice LUTs:                  231  out of  63400     0%  
+    Number used as Logic:               165  out of  63400     0%  
     Number used as Memory:               66  out of  19000     0%  
        Number used as RAM:               64
        Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    212
-   Number with an unused Flip Flop:      99  out of    212    46%  
-   Number with an unused LUT:            39  out of    212    18%  
-   Number of fully used LUT-FF pairs:    74  out of    212    34%  
+ Number of LUT Flip Flop pairs used:    270
+   Number with an unused Flip Flop:     138  out of    270    51%  
+   Number with an unused LUT:            39  out of    270    14%  
+   Number of fully used LUT-FF pairs:    93  out of    270    34%  
    Number of unique control sets:        11
 
 IO Utilization: 
- Number of IOs:                          79
- Number of bonded IOBs:                  76  out of    210    36%  
+ Number of IOs:                         119
+ Number of bonded IOBs:                 116  out of    210    55%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -457,7 +437,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 147   |
+clk                                | BUFGP                  | 166   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -468,9 +448,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.356ns (Maximum Frequency: 424.412MHz)
-   Minimum input arrival time before clock: 1.938ns
-   Maximum output required time after clock: 1.331ns
+   Minimum period: 2.581ns (Maximum Frequency: 387.507MHz)
+   Minimum input arrival time before clock: 2.291ns
+   Maximum output required time after clock: 1.326ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -479,38 +459,69 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.356ns (frequency: 424.412MHz)
-  Total number of paths / destination ports: 2479 / 459
+  Clock period: 2.581ns (frequency: 387.507MHz)
+  Total number of paths / destination ports: 4949 / 497
 -------------------------------------------------------------------------
-Delay:               2.356ns (Levels of Logic = 3)
-  Source:            I2S_Input/Bist/sck_count_0 (FF)
-  Destination:       I2S_Input/i2si_Fifo/fifo_counter_3 (FF)
+Delay:               2.581ns (Levels of Logic = 34)
+  Source:            I2S_Input/Bist/i2si_bist_out_data_0 (FF)
+  Destination:       I2S_Input/Bist/i2si_bist_out_data_31 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: I2S_Input/Bist/sck_count_0 to I2S_Input/i2si_Fifo/fifo_counter_3
+  Data Path: I2S_Input/Bist/i2si_bist_out_data_0 to I2S_Input/Bist/i2si_bist_out_data_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDPE:C->Q             6   0.361   0.706  I2S_Input/Bist/sck_count_0 (I2S_Input/Bist/sck_count_0)
-     LUT6:I1->O            5   0.097   0.314  I2S_Input/Bist/_n004631 (I2S_Input/Bist/_n0046_bdd0)
-     LUT6:I5->O            1   0.097   0.295  I2S_Input/i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1_1 (I2S_Input/i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1)
-     LUT6:I5->O            4   0.097   0.293  I2S_Input/i2si_Fifo/_n0070_inv1 (I2S_Input/i2si_Fifo/_n0070_inv)
-     FDCE:CE                   0.095          I2S_Input/i2si_Fifo/fifo_counter_0
+     FDCE:C->Q             4   0.361   0.309  I2S_Input/Bist/i2si_bist_out_data_0 (I2S_Input/Bist/i2si_bist_out_data_0)
+     LUT2:I1->O            1   0.097   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<2> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<3> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<4> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<5> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<6> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<7> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<12> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<13> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<14> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<15> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<16> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<17> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<18> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<19> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<20> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<21> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<22> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<23> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<24> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<25> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<26> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<27> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<28> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<29> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<29>)
+     MUXCY:CI->O           0   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<30> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<30>)
+     XORCY:CI->O           1   0.370   0.295  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_xor<31> (I2S_Input/Bist/i2si_bist_out_data[31]_GND_6_o_add_6_OUT<31>)
+     LUT4:I3->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT251 (I2S_Input/Bist/i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT<31>)
+     FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_31
     ----------------------------------------
-    Total                      2.356ns (0.747ns logic, 1.609ns route)
-                                       (31.7% logic, 68.3% route)
+    Total                      2.581ns (1.976ns logic, 0.605ns route)
+                                       (76.6% logic, 23.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 660 / 236
+  Total number of paths / destination ports: 2588 / 275
 -------------------------------------------------------------------------
-Offset:              1.938ns (Levels of Logic = 16)
+Offset:              2.291ns (Levels of Logic = 35)
   Source:            rf_bist_inc<0> (PAD)
-  Destination:       I2S_Input/Bist/i2si_bist_out_data_12 (FF)
+  Destination:       I2S_Input/Bist/i2si_bist_out_data_31 (FF)
   Destination Clock: clk rising
 
-  Data Path: rf_bist_inc<0> to I2S_Input/Bist/i2si_bist_out_data_12
+  Data Path: rf_bist_inc<0> to I2S_Input/Bist/i2si_bist_out_data_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -527,19 +538,38 @@ Offset:              1.938ns (Levels of Logic = 16)
      MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8>)
      MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9>)
      MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10>)
-     MUXCY:CI->O           0   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11>)
-     XORCY:CI->O           1   0.370   0.379  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_xor<12> (I2S_Input/Bist/i2si_bist_out_data[31]_GND_6_o_add_6_OUT<12>)
-     LUT3:I1->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[31]_GND_6_o_mux_8_OUT41 (I2S_Input/Bist/i2si_bist_out_data[31]_GND_6_o_mux_8_OUT<12>)
-     FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_12
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<12> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<13> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<14> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<15> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<16> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<17> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<18> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<19> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<20> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<21> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<22> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<23> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<24> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<25> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<26> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<27> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<28> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<29> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<29>)
+     MUXCY:CI->O           0   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<30> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<30>)
+     XORCY:CI->O           1   0.370   0.295  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_xor<31> (I2S_Input/Bist/i2si_bist_out_data[31]_GND_6_o_add_6_OUT<31>)
+     LUT4:I3->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT251 (I2S_Input/Bist/i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT<31>)
+     FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_31
     ----------------------------------------
-    Total                      1.938ns (1.179ns logic, 0.759ns route)
-                                       (60.8% logic, 39.2% route)
+    Total                      2.291ns (1.616ns logic, 0.675ns route)
+                                       (70.5% logic, 29.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 38 / 35
 -------------------------------------------------------------------------
-Offset:              1.331ns (Levels of Logic = 2)
+Offset:              1.326ns (Levels of Logic = 2)
   Source:            I2S_Input/i2si_Fifo/fifo_counter_0 (FF)
   Destination:       filt_rts (PAD)
   Source Clock:      clk rising
@@ -548,12 +578,12 @@ Offset:              1.331ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             9   0.361   0.593  I2S_Input/i2si_Fifo/fifo_counter_0 (I2S_Input/i2si_Fifo/fifo_counter_0)
+     FDCE:C->Q             8   0.361   0.589  I2S_Input/i2si_Fifo/fifo_counter_0 (I2S_Input/i2si_Fifo/fifo_counter_0)
      LUT4:I0->O            1   0.097   0.279  I2S_Input/i2si_Fifo/fifo_out_rts1 (filt_rts_OBUF)
      OBUF:I->O                 0.000          filt_rts_OBUF (filt_rts)
     ----------------------------------------
-    Total                      1.331ns (0.458ns logic, 0.873ns route)
-                                       (34.4% logic, 65.6% route)
+    Total                      1.326ns (0.458ns logic, 0.868ns route)
+                                       (34.5% logic, 65.5% route)
 
 =========================================================================
 
@@ -565,20 +595,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.356|         |         |         |
+clk            |    2.581|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.67 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.53 secs
  
 --> 
 
-Total memory usage is 431156 kilobytes
+Total memory usage is 414416 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   20 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

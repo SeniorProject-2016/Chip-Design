@@ -28,9 +28,9 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,
     
     // FAKE INPUTS
     input rf_i2si_en;                   // enable bit for deserializer
-    input [11:0] rf_bist_start_val;     // BIST start value 
+    input [31:0] rf_bist_start_val;     // BIST start value 
     input [7:0] rf_bist_inc;            // BIST increment value
-    input [11:0] rf_bist_up_limit;      // BIST upper limit value
+    input [31:0] rf_bist_up_limit;      // BIST upper limit value
     input rf_mux_en;                    // multiplexer select bit
     input i2si_rtr;                     // I2S ready to receive
     
@@ -43,7 +43,7 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,
     output [31:0] filt_data;                 // I2S input output data
     
     // Inputs to Register Block
-    output trig_fifo_overrun_clr;            // signal to reset ro_fifo_overrun
+    input trig_fifo_overrun_clr;            // signal to reset ro_fifo_overrun
     output ro_fifo_overrun;                  // when the I2S input FIFO is full
 /*    wire trig_fifo_underrun;               // signal to reset ro_fifo_underrun
     wire ro_fifo_underrun;                 // FIFO buffer is not full and no more data is available*/
@@ -65,7 +65,7 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,
         .i2si_rtr                (i2si_rtr),                // input: ready to receive
         .i2si_data               (filt_data),               // output: audio data
         .i2si_rts                (filt_rts),                // output: ready to send
-        .trig_fifo_overrun_clr   (trig_fifo_overrun_clr),   // output: signal to reset ro_fifo_overrun
+        .trig_fifo_overrun_clr   (trig_fifo_overrun_clr),   // input: signal to reset ro_fifo_overrun
         .ro_fifo_overrun         (ro_fifo_overrun),         // output: when the I2S input FIFO is full
         .sync_sck                (sync_inp)                 // output: synchronized serial clock
         // sck_transition????

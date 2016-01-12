@@ -1,13 +1,19 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             i2si_bist_gen.v
+// Create Date:             10/13/2015 
+// Last Modification:       1/12/2016
+// Author:                  Zachary Nelson
+// Description: Creates a saw-tooth wave based on the bist register values
+//////////////////////////////////////////////////////////////////////////////////
 
-// Creates a saw-tooth wave based on the bist register values
 module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si_bist_out_data, i2si_bist_out_xfc);
 
     input               clk;                                          //Master Clock
     input               rst_n;                                        //Reset
     input               sck_transition;                               //Serial Clock Level to Pulse Converter
-    input [11:0]        rf_bist_start_val;                            //Start value
-    input [11:0]        rf_bist_up_limit;                             //Upper limit
+    input [31:0]        rf_bist_start_val;                            //Start value
+    input [31:0]        rf_bist_up_limit;                             //Upper limit
     input [7:0]         rf_bist_inc;                                  //Increment signal by this much
                                                                         
     output[31:0]        i2si_bist_out_data;                           //Output data
