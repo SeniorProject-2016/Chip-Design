@@ -7,7 +7,11 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module chip(clk,rst_n,inp_sck,inp_ws,inp_sd);
+module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,
+            rf_i2si_en,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,
+            rf_mux_en,i2si_rtr,
+            i2so_sck,i2so_ws,i2so_sd,
+            sync_inp,filt_rts,filt_data,trig_fifo_overrun_clr,ro_fifo_overrun);
 
     input clk;          // master clock
     input rst_n;        // reset
@@ -18,63 +22,71 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd);
     input inp_sd;       // I2S input serial data
     
     // I2S Output
-//    output i2so_sck;    // I2S output serial clock
-//    output i2so_ws;     // I2S output word select
-//    output i2so_sd;     // I2S output serial data
+    output i2so_sck;    // I2S output serial clock
+    output i2so_ws;     // I2S output word select
+    output i2so_sd;     // I2S output serial data
     
-    // Filter
-    
-    // Register
-    
-    // I2C
-//    input i2c_scl;   // 
-//    input i2c_sda;
-    
-
-    
-    
-    
-    // Inputs to I2S Input Block
-    wire rf_i2si_en = 1;                   // enable bit for deserializer
-    wire [11:0] rf_bist_start_val = 1;     // BIST start value 
-    wire [7:0] rf_bist_inc = 1;                  // BIST increment value
-    wire [11:0] rf_bist_up_limit = 100;           // BIST upper limit value
-    wire rf_mux_en = 1;                    // multiplexer select bit
-    wire i2si_rtr =1;                      // I2S ready to receive
+    // FAKE INPUTS
+    input rf_i2si_en;                   // enable bit for deserializer
+    input [11:0] rf_bist_start_val;     // BIST start value 
+    input [7:0] rf_bist_inc;            // BIST increment value
+    input [11:0] rf_bist_up_limit;      // BIST upper limit value
+    input rf_mux_en;                    // multiplexer select bit
+    input i2si_rtr;                     // I2S ready to receive
     
     // Inputs to I2S Output Block
-    wire sync_sck;
+    output sync_inp;                         // synchronized serial clock
+//??????wire sck_transition                  // serial clock transition
     
     // Inputs to Filter Block
-    wire i2si_rts;                  // I2S input ready to send
-    wire [31:0] i2si_data;                 // I2S input output data
+    output filt_rts;                         // I2S input ready to send
+    output [31:0] filt_data;                 // I2S input output data
     
     // Inputs to Register Block
-    wire trig_fifo_overrun_clr;     // signal to reset ro_fifo_overrun
-    wire ro_fifo_overrun;           // when the I2S input FIFO is full
+    output trig_fifo_overrun_clr;            // signal to reset ro_fifo_overrun
+    output ro_fifo_overrun;                  // when the I2S input FIFO is full
+/*    wire trig_fifo_underrun;               // signal to reset ro_fifo_underrun
+    wire ro_fifo_underrun;                 // FIFO buffer is not full and no more data is available*/
     
-    // Inputs to I2C Block
    
     
     
     i2s_in I2S_Input(
-        .clk                     (clk), 
-        .rst_n                   (rst_n), 
-        .inp_sck                 (inp_sck),
-        .inp_ws                  (inp_ws),
-        .inp_sd                  (inp_sd),
-        .rf_i2si_en              (rf_i2si_en),
-        .rf_bist_start_val       (rf_bist_start_val),
-        .rf_bist_inc             (rf_bist_inc),
-        .rf_bist_up_limit        (rf_bist_up_limit),
-        .rf_mux_en               (rf_bist_en),
-        .i2si_rtr                (i2si_rtr),
-        .i2si_data               (i2si_data),
-        .i2si_rts                (i2si_rts),
-        .trig_fifo_overrun_clr   (trig_fifo_overrun_clr),
-        .ro_fifo_overrun         (ro_fifo_overrun),
-        .sync_sck                (sync_sck)
+        .clk                     (clk),                     // input: master clock
+        .rst_n                   (rst_n),                   // input: reset
+        .inp_sck                 (inp_sck),                 // input: serial clock
+        .inp_ws                  (inp_ws),                  // input: word select
+        .inp_sd                  (inp_sd),                  // input: serial data
+        .rf_i2si_en              (rf_i2si_en),              // input: enable bit for deserializer
+        .rf_bist_start_val       (rf_bist_start_val),       // input: BIST start value
+        .rf_bist_inc             (rf_bist_inc),             // input: BIST increment value
+        .rf_bist_up_limit        (rf_bist_up_limit),        // input: BIST upper limit value
+        .rf_mux_en               (rf_mux_en),               // input: multiplexer select bit 
+        .i2si_rtr                (i2si_rtr),                // input: ready to receive
+        .i2si_data               (filt_data),               // output: audio data
+        .i2si_rts                (filt_rts),                // output: ready to send
+        .trig_fifo_overrun_clr   (trig_fifo_overrun_clr),   // output: signal to reset ro_fifo_overrun
+        .ro_fifo_overrun         (ro_fifo_overrun),         // output: when the I2S input FIFO is full
+        .sync_sck                (sync_inp)                 // output: synchronized serial clock
+        // sck_transition????
     );
+
+    
+    
+/*    i2s_out I2S_Output(
+        .clk                     (clk),                     // input: master clock
+        .rst_n                   (rst_n),                   // input: reset
+        .sck_inp                 (sync_inp),                // input: synchronized serial clock
+        .sck_transition          (sck_transition),          // input: serial clock transition
+        .filt_rts                (filt_rts),                // input: ready to send
+        .filt_data               (filt_data),               // input: audio data
+        .filt_rtr                (filt_rtr),                // output: read to receive
+        .i2so_ws                 (i2so_ws),                 // output: word select
+        .i2so_sd                 (i2so_sd),                 // output: serial data
+        .i2so_sck                (i2so_sck),                // output: serial clock
+        .trig_fifo_underrun      (trig_fifo_underrun),      // output: signal to reset ro_fifo_underrun
+        .ro_fifo_underrun        (ro_fifo_underrun)         // output: FIFO buffer is not full and no more data is available
+    );*/
     
     
 

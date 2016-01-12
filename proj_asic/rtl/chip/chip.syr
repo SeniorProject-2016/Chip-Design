@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: chip.prj
 
@@ -105,19 +105,19 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\synchronizer.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\synchronizer.v" into library work
 Parsing module <synchronizer>.
-Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_mux.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2si_mux.v" into library work
 Parsing module <i2si_mux>.
-Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_deserializer.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2si_deserializer.v" into library work
 Parsing module <i2si_deserializer>.
-Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_bist_gen.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2si_bist_gen.v" into library work
 Parsing module <i2si_bist_gen>.
-Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\fifo.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\fifo.v" into library work
 Parsing module <fifo>.
-Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2s_in.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2s_in.v" into library work
 Parsing module <i2s_in>.
-Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v" into library work
 Parsing module <chip>.
 
 =========================================================================
@@ -137,32 +137,27 @@ Elaborating module <i2si_bist_gen>.
 Elaborating module <i2si_mux>.
 
 Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
-WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 72: Assignment to i2si_data ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 73: Assignment to i2si_rts ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 75: Assignment to ro_fifo_overrun ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 76: Assignment to sync_sck ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 53: Net <trig_fifo_overrun_clr> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 70: Net <rf_bist_en> does not have a driver.
-WARNING:Xst:2972 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60. All outputs of instance <I2S_Input> of block <i2s_in> are unconnected in block <chip>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <chip>.
-    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v".
-INFO:Xst:3210 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60: Output port <i2si_data> of the instance <I2S_Input> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60: Output port <i2si_rts> of the instance <I2S_Input> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60: Output port <ro_fifo_overrun> of the instance <I2S_Input> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60: Output port <sync_sck> of the instance <I2S_Input> is unconnected or connected to loadless signal.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v".
 WARNING:Xst:653 - Signal <trig_fifo_overrun_clr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <rf_bist_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <chip> synthesized.
 
+Synthesizing Unit <i2s_in>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2s_in.v".
+    Found 1-bit register for signal <ro_fifo_overrun>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <i2s_in> synthesized.
+
 Synthesizing Unit <synchronizer>.
-    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\synchronizer.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\synchronizer.v".
     Found 4-bit register for signal <ws_vec>.
     Found 4-bit register for signal <sd_vec>.
     Found 3-bit register for signal <sck_vec>.
@@ -171,7 +166,7 @@ Synthesizing Unit <synchronizer>.
 Unit <synchronizer> synthesized.
 
 Synthesizing Unit <i2si_deserializer>.
-    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_deserializer.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2si_deserializer.v".
     Found 1-bit register for signal <in_left>.
     Found 16-bit register for signal <out_lft>.
     Found 16-bit register for signal <out_rgt>.
@@ -181,43 +176,77 @@ Synthesizing Unit <i2si_deserializer>.
     Found 1-bit register for signal <in_left_delay>.
     Found 1-bit register for signal <out_xfc>.
     Found 1-bit register for signal <ws_d>.
-    Found 1-bit register for signal <rst_n_vec<1>>.
-    Found 1-bit register for signal <rst_n_vec<0>>.
+    Found 2-bit register for signal <rst_n_vec>.
     Summary:
 	inferred  41 D-type flip-flop(s).
 Unit <i2si_deserializer> synthesized.
 
 Synthesizing Unit <i2si_bist_gen>.
-    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_bist_gen.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2si_bist_gen.v".
     Found 5-bit register for signal <sck_count>.
     Found 32-bit register for signal <i2si_bist_out_data>.
     Found 1-bit register for signal <bist_active>.
+    Found 5-bit adder for signal <sck_count[4]_GND_6_o_add_0_OUT> created at line 29.
+    Found 32-bit adder for signal <i2si_bist_out_data[31]_GND_6_o_add_6_OUT> created at line 61.
+    Found 32-bit comparator lessequal for signal <n0010> created at line 55
     Summary:
+	inferred   2 Adder/Subtractor(s).
 	inferred  38 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
 Unit <i2si_bist_gen> synthesized.
 
 Synthesizing Unit <i2si_mux>.
-    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_mux.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2si_mux.v".
     Summary:
-	no macro.
+	inferred   2 Multiplexer(s).
 Unit <i2si_mux> synthesized.
 
 Synthesizing Unit <fifo>.
-    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\fifo.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\fifo.v".
         DATA_SIZE = 32
         BUF_WIDTH = 3
     Found 32-bit register for signal <fifo_out_data>.
     Found 3-bit register for signal <wr_ptr>.
     Found 3-bit register for signal <rd_ptr>.
     Found 4-bit register for signal <fifo_counter>.
+    Found 4-bit subtractor for signal <fifo_counter[3]_GND_9_o_sub_4_OUT> created at line 54.
+    Found 4-bit adder for signal <fifo_counter[3]_GND_9_o_add_2_OUT> created at line 50.
+    Found 3-bit adder for signal <wr_ptr[2]_GND_9_o_add_15_OUT> created at line 98.
+    Found 3-bit adder for signal <rd_ptr[2]_GND_9_o_add_17_OUT> created at line 103.
+    Found 8x32-bit dual-port RAM <Mram_buf_mem> for signal <buf_mem>.
     Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
 	inferred  42 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <fifo> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# RAMs                                                 : 1
+ 8x32-bit dual-port RAM                                : 1
+# Adders/Subtractors                                   : 5
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 1
+ 4-bit addsub                                          : 1
+ 5-bit adder                                           : 1
+# Registers                                            : 21
+ 1-bit register                                        : 9
+ 16-bit register                                       : 2
+ 2-bit register                                        : 1
+ 3-bit register                                        : 3
+ 32-bit register                                       : 2
+ 4-bit register                                        : 3
+ 5-bit register                                        : 1
+# Comparators                                          : 1
+ 32-bit comparator lessequal                           : 1
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 4
+
 =========================================================================
 
 =========================================================================
@@ -225,10 +254,53 @@ Found no macro
 =========================================================================
 
 
+Synthesizing (advanced) Unit <fifo>.
+The following registers are absorbed into counter <wr_ptr>: 1 register on signal <wr_ptr>.
+The following registers are absorbed into counter <rd_ptr>: 1 register on signal <rd_ptr>.
+The following registers are absorbed into counter <fifo_counter>: 1 register on signal <fifo_counter>.
+INFO:Xst:3217 - HDL ADVISOR - Register <fifo_out_data> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_buf_mem> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 32-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <wr_ptr>        |          |
+    |     diA            | connected to signal <_n0072>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 32-bit                     |          |
+    |     addrB          | connected to signal <rd_ptr>        |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <fifo> synthesized (advanced).
+
+Synthesizing (advanced) Unit <i2si_bist_gen>.
+The following registers are absorbed into counter <sck_count>: 1 register on signal <sck_count>.
+Unit <i2si_bist_gen> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# RAMs                                                 : 1
+ 8x32-bit dual-port distributed RAM                    : 1
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 4
+ 3-bit up counter                                      : 2
+ 4-bit updown counter                                  : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 118
+ Flip-Flops                                            : 118
+# Comparators                                          : 1
+ 32-bit comparator lessequal                           : 1
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 4
+
 =========================================================================
 
 =========================================================================
@@ -237,16 +309,55 @@ Found no macro
 
 Optimizing unit <chip> ...
 
+Optimizing unit <i2s_in> ...
+
+Optimizing unit <i2si_bist_gen> ...
+
+Optimizing unit <synchronizer> ...
+
+Optimizing unit <i2si_deserializer> ...
+
+Optimizing unit <fifo> ...
+WARNING:Xst:1710 - FF/Latch <I2S_Input/Bist/i2si_bist_out_data_13> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_14> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_15> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_16> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_17> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_18> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_19> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_20> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_21> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_22> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_23> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_24> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_25> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_26> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_27> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_28> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_29> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_30> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/Bist/i2si_bist_out_data_31> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 0.
 
 Final Macro Processing ...
 
+Processing Unit <chip> :
+	Found 4-bit shift register for signal <I2S_Input/Synchronizer/sd_vec_3>.
+	Found 4-bit shift register for signal <I2S_Input/Synchronizer/ws_vec_3>.
+Unit <chip> processed.
+
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 106
+ Flip-Flops                                            : 106
+# Shift Registers                                      : 2
+ 4-bit shift register                                  : 2
+
 =========================================================================
 
 =========================================================================
@@ -268,6 +379,34 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
+# BELS                             : 144
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 5
+#      LUT2                        : 16
+#      LUT3                        : 6
+#      LUT4                        : 47
+#      LUT5                        : 21
+#      LUT6                        : 7
+#      MUXCY                       : 22
+#      VCC                         : 1
+#      XORCY                       : 13
+# FlipFlops/Latches                : 113
+#      FD                          : 2
+#      FDC                         : 10
+#      FDCE                        : 93
+#      FDE                         : 2
+#      FDP                         : 1
+#      FDPE                        : 5
+# RAMS                             : 32
+#      RAM32X1D                    : 32
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 75
+#      IBUF                        : 39
+#      OBUF                        : 36
 
 Device utilization summary:
 ---------------------------
@@ -276,19 +415,26 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
+ Number of Slice Registers:             113  out of  126800     0%  
+ Number of Slice LUTs:                  173  out of  63400     0%  
+    Number used as Logic:               107  out of  63400     0%  
+    Number used as Memory:               66  out of  19000     0%  
+       Number used as RAM:               64
+       Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:    212
+   Number with an unused Flip Flop:      99  out of    212    46%  
+   Number with an unused LUT:            39  out of    212    18%  
+   Number of fully used LUT-FF pairs:    74  out of    212    34%  
+   Number of unique control sets:        11
 
 IO Utilization: 
- Number of IOs:                           5
- Number of bonded IOBs:                   0  out of    210     0%  
+ Number of IOs:                          79
+ Number of bonded IOBs:                  76  out of    210    36%  
 
 Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
 
 ---------------------------
 Partition Resource Summary:
@@ -308,7 +454,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 147   |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -318,9 +468,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
+   Minimum period: 2.356ns (Maximum Frequency: 424.412MHz)
+   Minimum input arrival time before clock: 1.938ns
+   Maximum output required time after clock: 1.331ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -328,21 +478,107 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.356ns (frequency: 424.412MHz)
+  Total number of paths / destination ports: 2479 / 459
+-------------------------------------------------------------------------
+Delay:               2.356ns (Levels of Logic = 3)
+  Source:            I2S_Input/Bist/sck_count_0 (FF)
+  Destination:       I2S_Input/i2si_Fifo/fifo_counter_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: I2S_Input/Bist/sck_count_0 to I2S_Input/i2si_Fifo/fifo_counter_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q             6   0.361   0.706  I2S_Input/Bist/sck_count_0 (I2S_Input/Bist/sck_count_0)
+     LUT6:I1->O            5   0.097   0.314  I2S_Input/Bist/_n004631 (I2S_Input/Bist/_n0046_bdd0)
+     LUT6:I5->O            1   0.097   0.295  I2S_Input/i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1_1 (I2S_Input/i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1)
+     LUT6:I5->O            4   0.097   0.293  I2S_Input/i2si_Fifo/_n0070_inv1 (I2S_Input/i2si_Fifo/_n0070_inv)
+     FDCE:CE                   0.095          I2S_Input/i2si_Fifo/fifo_counter_0
+    ----------------------------------------
+    Total                      2.356ns (0.747ns logic, 1.609ns route)
+                                       (31.7% logic, 68.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 660 / 236
+-------------------------------------------------------------------------
+Offset:              1.938ns (Levels of Logic = 16)
+  Source:            rf_bist_inc<0> (PAD)
+  Destination:       I2S_Input/Bist/i2si_bist_out_data_12 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rf_bist_inc<0> to I2S_Input/Bist/i2si_bist_out_data_12
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.379  rf_bist_inc_0_IBUF (rf_bist_inc_0_IBUF)
+     LUT2:I0->O            1   0.097   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<2> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<3> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<4> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<5> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<6> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<7> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10>)
+     MUXCY:CI->O           0   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11>)
+     XORCY:CI->O           1   0.370   0.379  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_xor<12> (I2S_Input/Bist/i2si_bist_out_data[31]_GND_6_o_add_6_OUT<12>)
+     LUT3:I1->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[31]_GND_6_o_mux_8_OUT41 (I2S_Input/Bist/i2si_bist_out_data[31]_GND_6_o_mux_8_OUT<12>)
+     FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_12
+    ----------------------------------------
+    Total                      1.938ns (1.179ns logic, 0.759ns route)
+                                       (60.8% logic, 39.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 38 / 35
+-------------------------------------------------------------------------
+Offset:              1.331ns (Levels of Logic = 2)
+  Source:            I2S_Input/i2si_Fifo/fifo_counter_0 (FF)
+  Destination:       filt_rts (PAD)
+  Source Clock:      clk rising
+
+  Data Path: I2S_Input/i2si_Fifo/fifo_counter_0 to filt_rts
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             9   0.361   0.593  I2S_Input/i2si_Fifo/fifo_counter_0 (I2S_Input/i2si_Fifo/fifo_counter_0)
+     LUT4:I0->O            1   0.097   0.279  I2S_Input/i2si_Fifo/fifo_out_rts1 (filt_rts_OBUF)
+     OBUF:I->O                 0.000          filt_rts_OBUF (filt_rts)
+    ----------------------------------------
+    Total                      1.331ns (0.458ns logic, 0.873ns route)
+                                       (34.4% logic, 65.6% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.356|         |         |         |
+---------------+---------+---------+---------+---------+
+
 =========================================================================
 
 
-Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 11.89 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.67 secs
  
 --> 
 
-Total memory usage is 414448 kilobytes
+Total memory usage is 431156 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    9 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

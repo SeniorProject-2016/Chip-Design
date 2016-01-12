@@ -4,9 +4,9 @@ module bist_test;
     reg                     clk;
     wire                    rst_n;
     wire                    sck_transition;
-    reg [11:0]              rf_bist_start_val;
+    reg [31:0]              rf_bist_start_val;
     reg [7:0]               rf_bist_inc;
-    reg [11:0]              rf_bist_up_limit;
+    reg [31:0]              rf_bist_up_limit;
     
     // Internal Variables
     reg                     i2si_sck;
