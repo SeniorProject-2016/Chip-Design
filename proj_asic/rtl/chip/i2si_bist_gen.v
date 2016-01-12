@@ -1,72 +1,68 @@
 `timescale 1ns / 1ps
 
 // Creates a saw-tooth wave based on the bist register values
-module i2si_bist_gen(clk,rst,i2si_sck,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si_bist_out_data,i2si_bist_out_xfc);
+module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si_bist_out_data, i2si_bist_out_xfc);
 
-    input clk,rst,i2si_sck; // clock, reset, serial clock
-    input [11:0] rf_bist_start_val; // start value
-    input [11:0] rf_bist_up_limit; // upper limit
-    input [7:0] rf_bist_inc; // increment signal by this much
+    input               clk;                                          //Master Clock
+    input               rst_n;                                        //Reset
+    input               sck_transition;                               //Serial Clock Level to Pulse Converter
+    input [11:0]        rf_bist_start_val;                            //Start value
+    input [11:0]        rf_bist_up_limit;                             //Upper limit
+    input [7:0]         rf_bist_inc;                                  //Increment signal by this much
+                                                                        
+    output[31:0]        i2si_bist_out_data;                           //Output data
+    output              i2si_bist_out_xfc;                            //Transfer Complete
+                                                                        
+    reg [31:0]          i2si_bist_out_data;                             
+    wire                i2si_bist_out_xfc;                              
+    reg                 bist_active;                                  //Defines if BIST generator is active
+    reg [4:0]           sck_count;                                    //Serial clock counter
+                                                                                    
+              
 
-    output[31:0] i2si_bist_out_data; // output signal
-    output i2si_bist_out_xfc;
-    
-    reg [2:0]                       sck_vec;                    //Delayed signals of i2si_sck
-    reg sck_d1; // serial clock delay
-    reg [31:0] i2si_bist_out_data; // output signal
-    reg counter=12'b0; // counter
-    reg [31:0] sck_cnt=0;
-    reg i2si_bist_out_xfc;
-    
-    wire sck; //Synchronized sck signal with clk
-    wire sck_delay;//Delayed signal of sck
-    wire sck_transition; //sck transitions from 0 -> 1. Helps tell the deserializer when to perform certain actions
-    
-
-
-    //Synchronize clk and sck
-    //sck[1] = sck synchronized with clk
-    //sck[2] = sck delay signal to help create sck_transition
-    
-    // PROBLEM HERE
-    
- /*   always @(posedge clk or negedge rst)
+    //serial clock counter. Helps define when bist_out_data when sck_count reaches 31
+    always @(posedge clk or negedge rst_n)
     begin
-        if (rst)
-            sck_vec <= 3'b000;
-        else
-        begin
-            sck_vec[0] <= i2si_sck;
-            sck_vec[2:1] <= sck_vec[1:0];
-        end
-    end*/
-
-    //Re-assigning sck to be more readable
-    assign sck = sck_vec[1];
-    assign sck_delay = sck_vec[2];
-
-    //Defines when sck_transition is high or low. Helps define when the deserialzer should read in the left channel and output it to i2si_lft
-    assign sck_transition = sck && !sck_delay;
-
-    always@(posedge clk) 
-    begin // at every postive edge of the clock
-        if(sck_transition) 
-            sck_cnt=sck_cnt+1;
-        if(sck_cnt==32'd15)
-        begin
-            if(counter==12'b0) 
-            begin // if counter is just starting
-                i2si_bist_out_data<=rf_bist_start_val; // output signal = start value
-                counter<=counter+1'b1; // increment counter
-            end
-            else if(i2si_bist_out_data>=rf_bist_up_limit) 
-            begin // if signal exceeds the limit
-                i2si_bist_out_data<=rf_bist_start_val; // signal goes back to start value
-            end
-            else // if the signal is within normal range
-                i2si_bist_out_data<=i2si_bist_out_data+rf_bist_inc; // increment the signal
-            sck_cnt=0;    
-        end
+        if(!rst_n)
+            sck_count <= 5'd31;
+        else if(sck_transition)
+           sck_count <= sck_count + 1'b1;
     end
 
+    //defines if bist generator becomes active
+    always @(posedge clk or negedge rst_n)
+    begin
+        if(!rst_n)
+            bist_active <= 1'b0;
+        else if(sck_count == 5'd31 && sck_transition)
+        begin
+            if(!bist_active)
+                bist_active <= 1'b1;
+        end
+    end
+    
+    //increments bist_out_data from the start value to the upper limit and then resets to the start value again
+    always @(posedge clk or negedge rst_n)
+    begin
+        if(!rst_n)
+            i2si_bist_out_data <= 32'd0;
+        else if (sck_count == 5'd31 && sck_transition)
+        begin
+            //If bist_active is just starting  
+            if(!bist_active)                                                                       
+                //Output signal = start value
+                i2si_bist_out_data <= rf_bist_start_val;                
+            else if(i2si_bist_out_data >= rf_bist_up_limit)                                                                   
+                //Signal goes back to start value
+                i2si_bist_out_data <= rf_bist_start_val;
+            //If the signal is within normal range
+            //Increment the signal
+            else                                   
+                i2si_bist_out_data <= i2si_bist_out_data + rf_bist_inc;            
+        end
+    end
+    
+    //define xfc signal as high after bist_out_data increments
+    assign i2si_bist_out_xfc = bist_active && sck_count == 5'd31 && sck_transition;
+    
 endmodule

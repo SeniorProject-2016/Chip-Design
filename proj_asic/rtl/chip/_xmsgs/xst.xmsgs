@@ -5,55 +5,43 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompilers" num="299" delta="old" ><arg fmt="%s" index="1">&quot;filter_stm.v&quot; line 168 </arg>Too many digits specified in binary constant
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 72: Assignment to <arg fmt="%s" index="1">i2si_data</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">i2c.v</arg>&quot; line <arg fmt="%d" index="2">65</arg> <arg fmt="%s" index="3">expecting &apos;.&apos;, found &apos;)&apos;</arg>
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 73: Assignment to <arg fmt="%s" index="1">i2si_rts</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">filter.v</arg>&quot; line <arg fmt="%d" index="2">3</arg> <arg fmt="%s" index="3">expecting &apos;.&apos;, found &apos;rst&apos;</arg>
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 75: Assignment to <arg fmt="%s" index="1">ro_fifo_overrun</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">filter.v</arg>&quot; line <arg fmt="%d" index="2">3</arg> <arg fmt="%s" index="3">expecting &apos;.&apos;, found &apos;aud_in&apos;</arg>
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 76: Assignment to <arg fmt="%s" index="1">sync_sck</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">filter.v</arg>&quot; line <arg fmt="%d" index="2">3</arg> <arg fmt="%s" index="3">expecting &apos;.&apos;, found &apos;aud_in_rts&apos;</arg>
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 53: Net &lt;<arg fmt="%s" index="1">trig_fifo_overrun_clr</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">filter.v</arg>&quot; line <arg fmt="%d" index="2">3</arg> <arg fmt="%s" index="3">expecting &apos;.&apos;, found &apos;aud_in_rtr&apos;</arg>
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 70: Net &lt;<arg fmt="%s" index="1">rf_bist_en</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">filter.v</arg>&quot; line <arg fmt="%d" index="2">3</arg> <arg fmt="%s" index="3">expecting &apos;.&apos;, found &apos;aud_out&apos;</arg>
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v</arg>&quot; line <arg fmt="%d" index="2">60</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">I2S_Input</arg>&gt; of block &lt;<arg fmt="%s" index="4">i2s_in</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">chip</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">filter.v</arg>&quot; line <arg fmt="%d" index="2">3</arg> <arg fmt="%s" index="3">expecting &apos;.&apos;, found &apos;aud_out_rts&apos;</arg>
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v</arg>&quot; line <arg fmt="%s" index="2">60</arg>: Output port &lt;<arg fmt="%s" index="3">i2si_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">I2S_Input</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">filter.v</arg>&quot; line <arg fmt="%d" index="2">3</arg> <arg fmt="%s" index="3">expecting &apos;.&apos;, found &apos;aud_out_rtr&apos;</arg>
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v</arg>&quot; line <arg fmt="%s" index="2">60</arg>: Output port &lt;<arg fmt="%s" index="3">i2si_rts</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">I2S_Input</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="27" delta="new" ><arg fmt="%s" index="1">&quot;filter.v&quot; line 5 </arg>Illegal redeclaration of &apos;<arg fmt="%s" index="2">clk</arg>&apos;
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v</arg>&quot; line <arg fmt="%s" index="2">60</arg>: Output port &lt;<arg fmt="%s" index="3">ro_fifo_overrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">I2S_Input</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="27" delta="new" ><arg fmt="%s" index="1">&quot;filter.v&quot; line 6 </arg>Illegal redeclaration of &apos;<arg fmt="%s" index="2">rst</arg>&apos;
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v</arg>&quot; line <arg fmt="%s" index="2">60</arg>: Output port &lt;<arg fmt="%s" index="3">sync_sck</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">I2S_Input</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="207" delta="new" ><arg fmt="%s" index="1">&quot;filter.v&quot; line 7 </arg>Signal &apos;<arg fmt="%s" index="2">aud_in</arg>&apos; is not referenced in the module port list
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">trig_fifo_overrun_clr</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="207" delta="new" ><arg fmt="%s" index="1">&quot;filter.v&quot; line 9 </arg>Signal &apos;<arg fmt="%s" index="2">aud_in_rts</arg>&apos; is not referenced in the module port list
-</msg>
-
-<msg type="error" file="HDLCompilers" num="207" delta="new" ><arg fmt="%s" index="1">&quot;filter.v&quot; line 10 </arg>Signal &apos;<arg fmt="%s" index="2">aud_in_rtr</arg>&apos; is not referenced in the module port list
-</msg>
-
-<msg type="error" file="HDLCompilers" num="207" delta="new" ><arg fmt="%s" index="1">&quot;filter.v&quot; line 11 </arg>Signal &apos;<arg fmt="%s" index="2">aud_out</arg>&apos; is not referenced in the module port list
-</msg>
-
-<msg type="error" file="HDLCompilers" num="207" delta="new" ><arg fmt="%s" index="1">&quot;filter.v&quot; line 13 </arg>Signal &apos;<arg fmt="%s" index="2">aud_out_rts</arg>&apos; is not referenced in the module port list
-</msg>
-
-<msg type="error" file="HDLCompilers" num="207" delta="new" ><arg fmt="%s" index="1">&quot;filter.v&quot; line 14 </arg>Signal &apos;<arg fmt="%s" index="2">aud_out_rtr</arg>&apos; is not referenced in the module port list
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">rf_bist_en</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
 </messages>

@@ -3,32 +3,37 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: chip.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
-  2) HDL Compilation
-  3) Design Hierarchy Analysis
-  4) HDL Analysis
-  5) HDL Synthesis
-     5.1) HDL Synthesis Report
-  6) Advanced HDL Synthesis
-     6.1) Advanced HDL Synthesis Report
-  7) Low Level Synthesis
-  8) Partition Report
-  9) Final Report
-	9.1) Device utilization summary
-	9.2) Partition Resource Summary
-	9.3) TIMING REPORT
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
 
 
 =========================================================================
@@ -36,13 +41,12 @@ TABLE OF CONTENTS
 =========================================================================
 ---- Source Parameters
 Input File Name                    : "chip.prj"
-Input Format                       : mixed
 Ignore Synthesis Constraint File   : NO
 
 ---- Target Parameters
 Output File Name                   : "chip"
 Output Format                      : NGC
-Target Device                      : xc3s100e-5-vq100
+Target Device                      : xc7a100t-3-csg324
 
 ---- Source Options
 Top Module Name                    : chip
@@ -53,35 +57,32 @@ FSM Style                          : LUT
 RAM Extraction                     : Yes
 RAM Style                          : Auto
 ROM Extraction                     : Yes
-Mux Style                          : Auto
-Decoder Extraction                 : YES
-Priority Encoder Extraction        : Yes
 Shift Register Extraction          : YES
-Logical Shifter Extraction         : YES
-XOR Collapsing                     : YES
 ROM Style                          : Auto
-Mux Extraction                     : Yes
 Resource Sharing                   : YES
 Asynchronous To Synchronous        : NO
-Multiplier Style                   : Auto
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
 Automatic Register Balancing       : No
 
 ---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
 Add IO Buffers                     : YES
 Global Maximum Fanout              : 100000
-Add Generic Clock Buffer(BUFG)     : 24
+Add Generic Clock Buffer(BUFG)     : 32
 Register Duplication               : YES
-Slice Packing                      : YES
 Optimize Instantiated Primitives   : NO
-Use Clock Enable                   : Yes
-Use Synchronous Set                : Yes
-Use Synchronous Reset              : Yes
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
 Pack IO Registers into IOBs        : Auto
 Equivalent register Removal        : YES
 
 ---- General Options
 Optimization Goal                  : Speed
 Optimization Effort                : 1
+Power Reduction                    : NO
 Keep Hierarchy                     : No
 Netlist Hierarchy                  : As_Optimized
 RTL Output                         : Yes
@@ -94,7 +95,7 @@ Bus Delimiter                      : <>
 Case Specifier                     : Maintain
 Slice Utilization Ratio            : 100
 BRAM Utilization Ratio             : 100
-Verilog 2001                       : YES
+DSP48 Utilization Ratio            : 100
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
@@ -102,62 +103,246 @@ Slice Utilization Ratio Delta      : 5
 
 
 =========================================================================
-*                          HDL Compilation                              *
+*                          HDL Parsing                                  *
 =========================================================================
-Compiling verilog file "filter_storage.v" in library work
-Compiling verilog file "synchronizer.v" in library work
-Module <filter_storage> compiled
-Compiling verilog file "i2si_mux.v" in library work
-Module <synchronizer> compiled
-Compiling verilog file "i2si_deserializer.v" in library work
-Module <i2si_mux> compiled
-Compiling verilog file "i2si_bist_gen.v" in library work
-Module <i2si_deserializer> compiled
-Compiling verilog file "i2c_sequencer.v" in library work
-Module <i2si_bist_gen> compiled
-Compiling verilog file "filter_stm.v" in library work
-Module <i2c_sequencer> compiled
-WARNING:HDLCompilers:299 - "filter_stm.v" line 168 Too many digits specified in binary constant
-Compiling verilog file "filter_barrel_shifter.v" in library work
-Module <filter_stm> compiled
-Compiling verilog file "filter_accumulator.v" in library work
-Module <filter_barrel_shifter> compiled
-Compiling verilog file "fifo.v" in library work
-Module <filter_accumulator> compiled
-Compiling verilog file "register.v" in library work
-Module <fifo> compiled
-Compiling verilog file "i2so.v" in library work
-Module <register> compiled
-Compiling verilog file "i2si.v" in library work
-Module <i2so> compiled
-Compiling verilog file "i2c.v" in library work
-Module <i2si> compiled
-ERROR:HDLCompilers:26 - "i2c.v" line 65 expecting '.', found ')'
-Compiling verilog file "filter.v" in library work
-ERROR:HDLCompilers:26 - "filter.v" line 3 expecting '.', found 'rst'
-ERROR:HDLCompilers:26 - "filter.v" line 3 expecting '.', found 'aud_in'
-ERROR:HDLCompilers:26 - "filter.v" line 3 expecting '.', found 'aud_in_rts'
-ERROR:HDLCompilers:26 - "filter.v" line 3 expecting '.', found 'aud_in_rtr'
-ERROR:HDLCompilers:26 - "filter.v" line 3 expecting '.', found 'aud_out'
-ERROR:HDLCompilers:26 - "filter.v" line 3 expecting '.', found 'aud_out_rts'
-ERROR:HDLCompilers:26 - "filter.v" line 3 expecting '.', found 'aud_out_rtr'
-ERROR:HDLCompilers:27 - "filter.v" line 5 Illegal redeclaration of 'clk'
-ERROR:HDLCompilers:27 - "filter.v" line 6 Illegal redeclaration of 'rst'
-ERROR:HDLCompilers:207 - "filter.v" line 7 Signal 'aud_in' is not referenced in the module port list
-ERROR:HDLCompilers:207 - "filter.v" line 9 Signal 'aud_in_rts' is not referenced in the module port list
-ERROR:HDLCompilers:207 - "filter.v" line 10 Signal 'aud_in_rtr' is not referenced in the module port list
-ERROR:HDLCompilers:207 - "filter.v" line 11 Signal 'aud_out' is not referenced in the module port list
-ERROR:HDLCompilers:207 - "filter.v" line 13 Signal 'aud_out_rts' is not referenced in the module port list
-ERROR:HDLCompilers:207 - "filter.v" line 14 Signal 'aud_out_rtr' is not referenced in the module port list
-Compiling verilog file "chip.v" in library work
-Module <i2c> compiled
-Module <chip> compiled
-Analysis of file <"chip.prj"> failed.
+Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\synchronizer.v" into library work
+Parsing module <synchronizer>.
+Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_mux.v" into library work
+Parsing module <i2si_mux>.
+Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_deserializer.v" into library work
+Parsing module <i2si_deserializer>.
+Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_bist_gen.v" into library work
+Parsing module <i2si_bist_gen>.
+Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\fifo.v" into library work
+Parsing module <fifo>.
+Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2s_in.v" into library work
+Parsing module <i2s_in>.
+Analyzing Verilog file "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" into library work
+Parsing module <chip>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <chip>.
+
+Elaborating module <i2s_in>.
+
+Elaborating module <synchronizer>.
+
+Elaborating module <i2si_deserializer>.
+
+Elaborating module <i2si_bist_gen>.
+
+Elaborating module <i2si_mux>.
+
+Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 72: Assignment to i2si_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 73: Assignment to i2si_rts ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 75: Assignment to ro_fifo_overrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 76: Assignment to sync_sck ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 53: Net <trig_fifo_overrun_clr> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" Line 70: Net <rf_bist_en> does not have a driver.
+WARNING:Xst:2972 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60. All outputs of instance <I2S_Input> of block <i2s_in> are unconnected in block <chip>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <chip>.
+    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v".
+INFO:Xst:3210 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60: Output port <i2si_data> of the instance <I2S_Input> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60: Output port <i2si_rts> of the instance <I2S_Input> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60: Output port <ro_fifo_overrun> of the instance <I2S_Input> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\chip.v" line 60: Output port <sync_sck> of the instance <I2S_Input> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <trig_fifo_overrun_clr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <rf_bist_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <chip> synthesized.
+
+Synthesizing Unit <synchronizer>.
+    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\synchronizer.v".
+    Found 4-bit register for signal <ws_vec>.
+    Found 4-bit register for signal <sd_vec>.
+    Found 3-bit register for signal <sck_vec>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+Unit <synchronizer> synthesized.
+
+Synthesizing Unit <i2si_deserializer>.
+    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_deserializer.v".
+    Found 1-bit register for signal <in_left>.
+    Found 16-bit register for signal <out_lft>.
+    Found 16-bit register for signal <out_rgt>.
+    Found 1-bit register for signal <armed1>.
+    Found 1-bit register for signal <armed2>.
+    Found 1-bit register for signal <active>.
+    Found 1-bit register for signal <in_left_delay>.
+    Found 1-bit register for signal <out_xfc>.
+    Found 1-bit register for signal <ws_d>.
+    Found 1-bit register for signal <rst_n_vec<1>>.
+    Found 1-bit register for signal <rst_n_vec<0>>.
+    Summary:
+	inferred  41 D-type flip-flop(s).
+Unit <i2si_deserializer> synthesized.
+
+Synthesizing Unit <i2si_bist_gen>.
+    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_bist_gen.v".
+    Found 5-bit register for signal <sck_count>.
+    Found 32-bit register for signal <i2si_bist_out_data>.
+    Found 1-bit register for signal <bist_active>.
+    Summary:
+	inferred  38 D-type flip-flop(s).
+Unit <i2si_bist_gen> synthesized.
+
+Synthesizing Unit <i2si_mux>.
+    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\i2si_mux.v".
+    Summary:
+	no macro.
+Unit <i2si_mux> synthesized.
+
+Synthesizing Unit <fifo>.
+    Related source file is "C:\Users\Zachary\Desktop\Senior Project\SeniorProject\fifo.v".
+        DATA_SIZE = 32
+        BUF_WIDTH = 3
+    Found 32-bit register for signal <fifo_out_data>.
+    Found 3-bit register for signal <wr_ptr>.
+    Found 3-bit register for signal <rd_ptr>.
+    Found 4-bit register for signal <fifo_counter>.
+    Summary:
+	inferred  42 D-type flip-flop(s).
+Unit <fifo> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <chip> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : chip.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                           5
+ Number of bonded IOBs:                   0  out of    210     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.89 secs
+ 
 --> 
 
-Total memory usage is 284332 kilobytes
+Total memory usage is 414448 kilobytes
 
-Number of errors   :   16 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

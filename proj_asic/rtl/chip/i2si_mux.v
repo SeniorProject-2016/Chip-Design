@@ -10,29 +10,30 @@
 
 module i2si_mux(in_0_data, in_0_xfc, in_1_data, in_1_xfc, sel, mux_data, mux_xfc);
     
-input [31:0]                in_0_data;                  //First input data value
-input                       in_0_xfc;                   //First input xfc value
-input [31:0]                in_1_data;                  //Second input data value
-input                       in_1_xfc;                   //Second input xfc value
-input                       sel;                        //select input to select either input 0 or 1
+    input [31:0]                in_0_data;                  //First input data value
+    input                       in_0_xfc;                   //First input xfc value
+    input [31:0]                in_1_data;                  //Second input data value
+    input                       in_1_xfc;                   //Second input xfc value
+    input                       sel;                        //select input to select either input 0 or 1
 
-output [31:0]               mux_data;                   //mux data output value
-output                      mux_xfc;                    //mux xfc output value
+    output [31:0]               mux_data;                   //mux data output value
+    output                      mux_xfc;                    //mux xfc output value
+        
+    reg [31:0]                  mux_data;
+    reg                         mux_xfc;
+
+    always @ (sel or in_0_data or in_0_xfc or in_1_data or in_1_xfc)
+    begin
+        if (sel == 1'b0)
+        begin
+            mux_data <= in_0_data;
+            mux_xfc <= in_0_xfc;
+        end
+        else
+        begin
+            mux_data <= in_1_data;
+            mux_xfc <= in_1_xfc;
+        end
+    end 
     
-reg [31:0]                  mux_data;
-reg                         mux_xfc;
-
-always @ (sel or in_0_data or in_0_xfc or in_1_data or in_1_xfc)
-begin
-    if (sel == 1'b0)
-    begin
-        mux_data <= in_0_data;
-        mux_xfc <= in_0_xfc;
-    end
-    else
-    begin
-        mux_data <= in_1_data;
-        mux_xfc <= in_1_xfc;
-    end
-end 
 endmodule
