@@ -2,11 +2,14 @@
 `define N 11 // number of test elements
 
 ////////////////////////////////////////////////////////////////////////////////
+// Module Name:   i2s_in_test.v
+// Create Date:   11/27/2015
+// Last Edit:     1/10/16
+// Author:        Kevin Cao, Zachary Nelson
 //
-// Create Date:   15:51:28 11/27/2015
-// Last Edit:     1/7/16
-// Design Name:   i2s_in
-// Project Name:  i2s_in
+// Description: Verilog Test Fixture created by ISE for module: i2s_in
+//                  Tests the i2s_in with the deserializer content being outputted.
+//                  Outputs success or failure of test to i2s_in_test_output.txt
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -47,46 +50,49 @@ module i2s_in_test;
     reg [31:0]                      word_cnt;                                                        // word counter
     reg [31:0]                      cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
     reg [31:0]                      bit_tc =  15;                                                    // number of bits in a word
-    
-    
-    reg [3:0]                       check_count1 = 0;
-    reg [3:0]                       check_count2 = 0;
-    reg                             check_done = 0;
-    reg [31:0]                      check_run_count = 0;
-    reg                             match;
-    reg                             match_found = 0;
-    reg                             begin_comparison = 0;
-    reg [31:0]                      word;
-    reg                             test_failed = 1;
                                                                                                                             
-	// Instantiate the Unit Under Test (UUT)                                                            
-	i2s_in uut (                                                                        
-		.clk(clk),                                                                              
-		.rst_n(rst_n),                                                                              
-		.inp_sck(inp_sck),                                                                      
-		.inp_ws(inp_ws),                                                                        
-		.inp_sd(inp_sd),                                                                        
-		.rf_i2si_en(rf_i2si_en),                                                                        
-		.rf_bist_start_val(rf_bist_start_val),                                                                      
-		.rf_bist_inc(rf_bist_inc),                                                                          
-		.rf_bist_up_limit(rf_bist_up_limit),                                                        
-		.rf_mux_en(rf_mux_en),                                                                  
-		.i2si_rtr(i2si_rtr),                                                                        
-		.i2si_data(i2si_data),                                                                      
-		.i2si_rts(i2si_rts),                                                                                
+                                                                                                                            
+    reg [31:0]                      word;                                                            // Stores the expected word, to be compared with i2si_data    
+    reg [3:0]                       match_count = 0;                                                 // Counter to help find initial matching words for word and i2si_data    
+    reg [3:0]                       compare_count = 0;                                               // Counter to help compare word and i2si_data after intial match is found                    
+    reg                             match_found = 0;                                                 // Boolean that determines if intial match was found                   
+    reg                             begin_comparison = 0;                                            // Boolean that determines if to start comparing words after intial match is found
+    reg                             test_failed = 1;                                                 // Boolean that determines if no matches were found and the test failed                                
+                                                                                                            
+    integer                         out;                                                             // Helps create output text file
+                                                                                                                            
+	// Instantiate the Unit Under Test (UUT)                                                                    
+	i2s_in uut (                                                                                                                                
+		.clk(clk),                                                                                                                  
+		.rst_n(rst_n),                                                                                                              
+		.inp_sck(inp_sck),                                                                                                      
+		.inp_ws(inp_ws),                                                                                                            
+		.inp_sd(inp_sd),                                                                                                
+		.rf_i2si_en(rf_i2si_en),                                                                                    
+		.rf_bist_start_val(rf_bist_start_val),                                                                          
+		.rf_bist_inc(rf_bist_inc),                                                                                              
+		.rf_bist_up_limit(rf_bist_up_limit),                                                                                        
+		.rf_mux_en(rf_mux_en),                                                                                                  
+		.i2si_rtr(i2si_rtr),                                                                                                        
+		.i2si_data(i2si_data),                                                                                              
+		.i2si_rts(i2si_rts),                                                                                                
 		.ro_fifo_overrun(ro_fifo_overrun),                                                                          
-		.trig_fifo_overrun_clr(trig_fifo_overrun_clr),                                                                      
-		.sync_sck(sync_sck)                                                                     
-	);                                                                              
+		.trig_fifo_overrun_clr(trig_fifo_overrun_clr),                                                                          
+		.sync_sck(sync_sck)                                                                                                 
+	);                                                                                                                          
                                                                                                                 
-	initial begin                                                               
-		clk = 0;                                                                                        
-		inp_sck = 0;                                                                                                                                                               
-        rf_bist_start_val = 12'h001;                                                                                                
-        rf_bist_inc = 12'h001;                                                                                              
-        rf_bist_up_limit = 12'h019;                                                                                                 
-		rf_mux_en = 0;                                                                                                                                                                                   
-		trig_fifo_overrun_clr = 0;                                                                                                  
+	initial begin                                                                                                           
+		clk = 0;                                                                                                                                
+		inp_sck = 0;                                                                                                                                                                   
+        rf_bist_start_val = 12'd1;                                                                   // Set starting value to 1                                                                                                
+        rf_bist_inc = 12'd1;                                                                         // Set increment value to 1                      
+        rf_bist_up_limit = 12'd25;                                                                   // Set BIST upper limit to 25                              
+		rf_mux_en = 0;                                                                               // Disable multiplexer select bit, Output deserializer's contents                                                                                                          
+		trig_fifo_overrun_clr = 0;                                                                                      
+                                                                                                                                    
+                                                                                                                                
+        out = $fopen("i2s_in_test_output.txt");                                                     // Open i2si_in_test2_output.txt  
+        
                                                                                                                                                 
                                                                                                                                             
         // Test Data                                                                                                            
@@ -112,7 +118,7 @@ module i2s_in_test;
         test_data [9] [1] = 16'h7435;                                                                                               
         test_data [10] [0] = 16'h69D9;                                                              
         test_data [10] [1] = 16'hABCD;
-
+        
 	end                                                                                                                             
 
     
@@ -168,71 +174,74 @@ module i2s_in_test;
                 end                                                                                                         
                 else                                                                                                                
                     bit_cnt<=bit_cnt+1;                                                              // increment bit counter
-            end
-        end                                                                                                         
-    end
-    
-
-    assign rst_n = !(count < 20);                                                                                             
-    assign rf_i2si_en = !(count < 20);                                                                                                
+            end                                                                                                     
+        end                                                                                                             
+    end                                                                                                                             
+                                                                                                                                                                    
+                                                                                                                                                            
+    assign rst_n = !(count < 20);                                                                                               
+    assign rf_i2si_en = !(count < 20);                                                                                                        
     assign i2si_rtr = i2si_rts;                                                                                                   
     assign inp_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1) | ((bit_cnt==16'd15)&(lr_cnt==0));                                  
-    assign inp_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];
-
-
-    //Checks if the data was properly deserialized
-    always @(posedge clk)
-    begin
-        if(i2si_rts && i2si_rtr && !rf_mux_en)
-        begin
-            //Find the first input word that matches the output word
-            if(!match_found)
-            begin
-                for(check_count1 = 0; check_count1 < `N; check_count1 = check_count1 + 1)
-                begin
-                    word = {test_data [check_count1] [0], test_data [check_count1] [1]};
-                    if(word == i2si_data)
-                    begin
-                        match_found = 1;
-                        begin_comparison = 1;
-                        test_failed = 0;
-                        check_count2 = check_count1;
-                    end
-                end
-            end
-            //Stop checking. No input words matched output words
-            if(count > 20000 && !begin_comparison && test_failed)
+    assign inp_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];                                                                                               
+                                                                                                                                                    
+                                                                                                                                                        
+    //Checks if the data was properly deserialized                                                                                                          
+    always @(posedge clk)                                                                                                                               
+    begin                                                                                                                                       
+        if(i2si_rts && i2si_rtr)                                                                                                                                
+        begin                                                                                                                                       
+            //Find the first input word that matches the output word                                                                                                                    
+            if(!match_found)                                                                                                                                    
+            begin                                                                                                                                   
+                for(match_count = 0; match_count < `N; match_count = match_count + 1)                                                                                                       
+                begin                                                                                                                               
+                    word = {test_data [match_count] [0], test_data [match_count] [1]};                                                                
+                    if(word == i2si_data)                                                                                                       
+                    begin                                                                                                                   
+                        match_found = 1;                                                                                                                                
+                        begin_comparison = 1;                                                                                       
+                        test_failed = 0;                                                                                                    
+                        compare_count = match_count;                                                                                                
+                    end                                                                                                                                         
+                end                                                                                                                                 
+            end                                                                                                                                                 
+            //Stop checking. No input words matched output words                                                                    
+            if(count > 20000 && !begin_comparison && test_failed)                                       
             begin
                 match_found = 1;
                 test_failed = 0;
-                $display ("No matches found. Test failed");
+                $fdisplay(out, "No matches found. Test failed");
+                #1;
+                $fclose(out);
             end
             
             
             //After finding first input word that matches, begin comparing rest of the inputted words
             if(begin_comparison)
             begin
-                word = {test_data [check_count2] [0], test_data [check_count2] [1]};
+                word = {test_data [compare_count] [0], test_data [compare_count] [1]};
                 //If word inputted and outputted match
                 if(word == i2si_data)
                 begin
-                    $display ("word: %h", word,
+                    $fdisplay(out, "word: %h", word,
                         "       ---      i2si_data: %h",
-                        i2si_data, "       --- Pass");
+                        i2si_data, "       ---      Pass");
                 end
                 //End of comparison test. No more words were inputted.
                 else if(i2si_data === 32'hxxxxxxxx)
                 begin
                     begin_comparison = 0;
+                    $fclose(out);
                 end
                 //If words do not match
                 else
                 begin
-                    $display ("word: %h", word,
+                    $fdisplay(out, "word: %h", word,
                         "       ---      i2si_data: %h",
-                        i2si_data, "       --- Fail");
+                        i2si_data, "       ---      Fail");
                 end
-                check_count2 = check_count2 + 1;
+                compare_count = compare_count + 1;
             end
         end
     end

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: i2s_out.prj
 
@@ -105,11 +105,11 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\serializer.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\serializer.v" into library work
 Parsing module <serializer>.
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\fifo.v" into library work
 Parsing module <fifo>.
-Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out.v" into library work
 Parsing module <i2s_out>.
 
 =========================================================================
@@ -127,14 +127,14 @@ Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
 =========================================================================
 
 Synthesizing Unit <i2s_out>.
-    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\i2s_out.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out.v".
     Found 1-bit register for signal <ro_fifo_underrun>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <i2s_out> synthesized.
 
 Synthesizing Unit <serializer>.
-    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\serializer.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\serializer.v".
     Found 1-bit register for signal <LR>.
     Found 16-bit register for signal <lft_data>.
     Found 16-bit register for signal <rgt_data>.
@@ -153,7 +153,7 @@ Synthesizing Unit <serializer>.
 Unit <serializer> synthesized.
 
 Synthesizing Unit <fifo>.
-    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\i2s_out\fifo.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2so\fifo.v".
         DATA_SIZE = 32
         BUF_WIDTH = 3
     Found 32-bit register for signal <fifo_out_data>.
@@ -481,12 +481,12 @@ clk            |    2.133|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 12.10 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.48 secs
  
 --> 
 
-Total memory usage is 430628 kilobytes
+Total memory usage is 447524 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

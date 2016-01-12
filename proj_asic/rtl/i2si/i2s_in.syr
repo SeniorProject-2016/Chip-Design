@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: i2s_in.prj
 
@@ -105,17 +105,17 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\synchronizer.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\synchronizer.v" into library work
 Parsing module <synchronizer>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_mux.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2si_mux.v" into library work
 Parsing module <i2si_mux>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_deserializer.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2si_deserializer.v" into library work
 Parsing module <i2si_deserializer>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2si_bist_gen.v" into library work
 Parsing module <i2si_bist_gen>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\fifo.v" into library work
 Parsing module <fifo>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v" into library work
+Analyzing Verilog file "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v" into library work
 Parsing module <i2s_in>.
 
 =========================================================================
@@ -139,14 +139,14 @@ Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
 =========================================================================
 
 Synthesizing Unit <i2s_in>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2s_in.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in.v".
     Found 1-bit register for signal <ro_fifo_overrun>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <i2s_in> synthesized.
 
 Synthesizing Unit <synchronizer>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\synchronizer.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\synchronizer.v".
     Found 4-bit register for signal <ws_vec>.
     Found 4-bit register for signal <sd_vec>.
     Found 3-bit register for signal <sck_vec>.
@@ -155,7 +155,7 @@ Synthesizing Unit <synchronizer>.
 Unit <synchronizer> synthesized.
 
 Synthesizing Unit <i2si_deserializer>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_deserializer.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2si_deserializer.v".
     Found 1-bit register for signal <in_left>.
     Found 16-bit register for signal <out_lft>.
     Found 16-bit register for signal <out_rgt>.
@@ -171,7 +171,7 @@ Synthesizing Unit <i2si_deserializer>.
 Unit <i2si_deserializer> synthesized.
 
 Synthesizing Unit <i2si_bist_gen>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_bist_gen.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2si_bist_gen.v".
     Found 5-bit register for signal <sck_count>.
     Found 32-bit register for signal <i2si_bist_out_data>.
     Found 1-bit register for signal <bist_active>.
@@ -186,13 +186,13 @@ Synthesizing Unit <i2si_bist_gen>.
 Unit <i2si_bist_gen> synthesized.
 
 Synthesizing Unit <i2si_mux>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\i2si_mux.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2si_mux.v".
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <i2si_mux> synthesized.
 
 Synthesizing Unit <fifo>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\i2s_in\fifo.v".
+    Related source file is "C:\Users\kevin\Documents\GitHub\Chip-Design\proj_asic\rtl\i2si\fifo.v".
         DATA_SIZE = 32
         BUF_WIDTH = 3
     Found 32-bit register for signal <fifo_out_data>.
@@ -372,9 +372,9 @@ Primitive and Black Box Usage:
 #      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 115
+# IO Buffers                       : 116
 #      IBUF                        : 80
-#      OBUF                        : 35
+#      OBUF                        : 36
 
 Device utilization summary:
 ---------------------------
@@ -398,8 +398,8 @@ Slice Logic Distribution:
    Number of unique control sets:        11
 
 IO Utilization: 
- Number of IOs:                         116
- Number of bonded IOBs:                 116  out of    210    55%  
+ Number of IOs:                         117
+ Number of bonded IOBs:                 117  out of    210    55%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -555,7 +555,7 @@ Offset:              2.291ns (Levels of Logic = 35)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 38 / 35
+  Total number of paths / destination ports: 40 / 36
 -------------------------------------------------------------------------
 Offset:              1.326ns (Levels of Logic = 2)
   Source:            i2si_Fifo/fifo_counter_0 (FF)
@@ -589,12 +589,12 @@ clk            |    2.581|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.52 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.24 secs
  
 --> 
 
-Total memory usage is 415544 kilobytes
+Total memory usage is 448548 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
