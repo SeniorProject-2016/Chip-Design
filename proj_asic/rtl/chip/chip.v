@@ -94,5 +94,9 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,rf_bist_start_val,
         .trig_fifo_underrun      (trig_fifo_underrun),      // output: signal to reset ro_fifo_underrun
         .ro_fifo_underrun        (ro_fifo_underrun)         // output: FIFO buffer is not full and no more data is available
     );
+    
+    filter Filter(
+    
+    );
        
 endmodule

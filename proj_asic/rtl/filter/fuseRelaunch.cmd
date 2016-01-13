@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "Z:/Desktop/chip/filter_round_truncate_tf_isim_beh.exe" -prj "Z:/Desktop/chip/filter_round_truncate_tf_beh.prj" "work.filter_round_truncate_tf" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/filter/filter_tf_isim_beh.exe" -prj "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/filter/filter_tf_beh.prj" "work.filter_tf" "work.glbl" 

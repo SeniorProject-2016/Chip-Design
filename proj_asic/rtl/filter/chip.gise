@@ -53,7 +53,6 @@
     <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="filter_accumulator.tfi"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_accumulator_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_accumulator_tf_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="filter_accumulator_tf_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="filter_barrel_shifter.tfi"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_barrel_shifter_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_barrel_shifter_tf_isim_beh.exe"/>
@@ -105,9 +104,13 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="filter_storage_tf_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="filter_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="filter_summary.xml"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="filter_tf_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="filter_tf_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="filter_tf_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="filter_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="filter_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
@@ -120,13 +123,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1449851616" xil_pn:in_ck="-1132020776407713785" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1449851616">
+    <transform xil_pn:end_ts="1452648479" xil_pn:in_ck="-1132020776407713785" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1452648479">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="filter.v"/>
       <outfile xil_pn:name="filter_accumulator.v"/>
       <outfile xil_pn:name="filter_accumulator_tf.v"/>
@@ -142,11 +141,11 @@
       <outfile xil_pn:name="filter_storage_tf.v"/>
       <outfile xil_pn:name="filter_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1449848835" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-1108166863607948446" xil_pn:start_ts="1449848835">
+    <transform xil_pn:end_ts="1452648479" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4967982543113701558" xil_pn:start_ts="1452648479">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1449848835" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-6275182685310949340" xil_pn:start_ts="1449848835">
+    <transform xil_pn:end_ts="1452648479" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7904210634392658552" xil_pn:start_ts="1452648479">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -154,14 +153,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1449848809" xil_pn:in_ck="-1132020776407713785" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1449848809">
+    <transform xil_pn:end_ts="1452648479" xil_pn:in_ck="-1132020776407713785" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1452648479">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="filter.v"/>
       <outfile xil_pn:name="filter_accumulator.v"/>
       <outfile xil_pn:name="filter_accumulator_tf.v"/>
@@ -177,22 +171,19 @@
       <outfile xil_pn:name="filter_storage_tf.v"/>
       <outfile xil_pn:name="filter_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1449848838" xil_pn:in_ck="-1132020776407713785" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4024801347786822939" xil_pn:start_ts="1449848835">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1452648484" xil_pn:in_ck="-1132020776407713785" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7078757445878687571" xil_pn:start_ts="1452648479">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="filter_tf_beh.prj"/>
+      <outfile xil_pn:name="filter_tf_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1449848812" xil_pn:in_ck="5381122397846437126" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3859299235171221806" xil_pn:start_ts="1449848812">
-      <status xil_pn:value="AbortedRun"/>
+    <transform xil_pn:end_ts="1452648485" xil_pn:in_ck="5381122397846437126" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4578786648280157168" xil_pn:start_ts="1452648484">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutOfDateForced"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="filter_accumulator_tf_isim_beh.wdb"/>
+      <outfile xil_pn:name="filter_tf_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
     </transform>
     <transform xil_pn:end_ts="1447197918" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1447197918">
@@ -223,7 +214,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1452131331" xil_pn:in_ck="-2993664814659708068" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="562161666638994961" xil_pn:start_ts="1452131211">
+    <transform xil_pn:end_ts="1452648332" xil_pn:in_ck="-2993664814659708068" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="562161666638994961" xil_pn:start_ts="1452648170">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
