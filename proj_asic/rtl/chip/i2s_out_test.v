@@ -16,8 +16,8 @@ module i2s_out_test;
 	reg                         clk;
 	wire                        rst_n;
     
-    wire                        sck_inp;
-	wire                        sck_transition;
+    wire                        i2so_sync_sck;
+	wire                        i2so_sck_transition;
     
 	reg                         filt_rts;
 	reg [31:0]                  filt_data;
@@ -64,8 +64,8 @@ module i2s_out_test;
 	i2s_out uut (
 		.clk(clk), 
 		.rst_n(rst_n),
-        .sck_inp(sck_inp),
-		.sck_transition(sck_transition), 
+        .i2so_sync_sck(i2so_sync_sck),
+		.i2so_sck_transition(i2so_sck_transition), 
 		.filt_rts(filt_rts), 
 		.filt_data(filt_data), 
 		.filt_rtr(filt_rtr),
@@ -154,7 +154,7 @@ module i2s_out_test;
             ws_d1 <= 0;
             ws_d2 <= 0;
         end
-        else if(sck_transition)
+        else if(i2so_sck_transition)
         begin
             ws_d1 <= i2so_ws;                                                                   // generate 1 cycle delay of i2so_ws
             ws_d2 <= ws_d1;                                                                     // generate 2nd cycle delay of i2so_ws
@@ -182,8 +182,8 @@ module i2s_out_test;
     
 
     assign rst_n = !(count < 20);                                                                   // turn on reset after 10 clock cycles
-    assign sck_inp = sck;                                                                           // assign serial clock input value
-    assign sck_transition = sck & ~sck_d1;                                                          // level to pulse converter when sck goes from low to high
+    assign i2so_sync_sck = sck;                                                                     // assign serial clock input value
+    assign i2so_sck_transition = sck & ~sck_d1;                                                          // level to pulse converter when sck goes from low to high
     assign ws_transition = ~ws_d1 & ws_d2;                                                          // level to pulse converter when ws goes from high to low
                                                                                                 
                                                                                     
@@ -194,7 +194,7 @@ module i2s_out_test;
         begin                                                                                               
             word <= 32'b0;                                                                                      
         end                                                                                     
-        else if(sck_transition)                                                                     
+        else if(i2so_sck_transition)                                                                     
         begin                                                                               
             word[31:1] <= word[30:0];                                                                                       
             word[0] <= i2so_sd;                                                                     
@@ -205,7 +205,7 @@ module i2s_out_test;
     // Checking if data is properly serialized                                                              
     always @(posedge clk)                                                                               
     begin                                                                           
-        if(ws_transition && sck_transition)                                         
+        if(ws_transition && i2so_sck_transition)                                         
         begin
             // Find first input word that matches output word
             if(!match_found)                                                        

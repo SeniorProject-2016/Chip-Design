@@ -7,7 +7,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,i2so_sck,i2so_ws,i2so_sd,rf_filter_coeffs,
+module chip(clk,rst_n,i2si_sck,i2si_ws,i2si_sd,rf_i2si_en,i2so_sck,i2so_ws,i2so_sd,rf_filter_coeffs,
             i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,i2c_rdata,i2c_xfc_read);
             
     // CHIP INTERFACES
@@ -18,9 +18,9 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,i2so_sck,i2so_ws,i2so_sd,
     input rst_n;                        // reset
     
     // I2S Input
-    input inp_sck;                      // I2S input serial clock
-    input inp_ws;                       // I2S input word select
-    input inp_sd;                       // I2S input serial data
+    input i2si_sck;                     // I2S input serial clock
+    input i2si_ws;                      // I2S input word select
+    input i2si_sd;                      // I2S input serial data
       
     // I2S Output    
     output i2so_sck;                    // I2S output serial clock
@@ -46,8 +46,8 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,i2so_sck,i2so_ws,i2so_sd,
     wire trig_fifo_overrun_clr;         // signal to reset ro_fifo_overrun
         
     // Inputs to I2S Output Block
-    wire sck_inp;                       // synchronized serial clock
-    wire sck_transition;                // synchronized serial clock transition
+    wire i2si_sync_sck;                 // synchronized serial clock
+    wire i2si_sync_sck_transition;      // synchronized serial clock transition
     wire [31:0] filt_out_data;          // I2SO input data
     wire trig_fifo_underrun;            // signal to reset ro_fifo_underrun
     
@@ -80,9 +80,9 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,i2so_sck,i2so_ws,i2so_sd,
     i2s_in I2S_Input(
         .clk                     (clk),                     // input: master clock
         .rst_n                   (rst_n),                   // input: reset
-        .inp_sck                 (inp_sck),                 // input: serial clock
-        .inp_ws                  (inp_ws),                  // input: word select
-        .inp_sd                  (inp_sd),                  // input: serial data
+        .i2si_sck                (i2si_sck),                // input: serial clock
+        .i2si_ws                 (i2si_ws),                 // input: word select
+        .i2si_sd                 (i2si_sd),                 // input: serial data
         .rf_i2si_en              (rf_i2si_en),              // input: enable bit for deserializer
         .rf_bist_start_val       (rf_bist_start_val),       // input: BIST start value
         .rf_bist_inc             (rf_bist_inc),             // input: BIST increment value
@@ -93,15 +93,15 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,i2so_sck,i2so_ws,i2so_sd,
         .i2si_rts                (filt_rts),                // output: ready to send
         .trig_fifo_overrun_clr   (trig_fifo_overrun_clr),   // input: signal to reset ro_fifo_overrun
         .ro_fifo_overrun         (ro_fifo_overrun),         // output: when the I2S input FIFO is full
-        .sync_sck                (sck_inp),                 // output: synchronized serial clock
-        .sync_sck_transition     (sck_transition)           // output: synchronized serial clock transition
+        .i2si_sync_sck           (i2si_sync_sck),           // output: synchronized serial clock
+        .i2si_sync_sck_transition(i2si_sync_sck_transition)      // output: synchronized serial clock transition
     );
   
     i2s_out I2S_Output(
         .clk                     (clk),                     // input: master clock
         .rst_n                   (rst_n),                   // input: reset
-        .sck_inp                 (sck_inp),                 // input: synchronized serial clock
-        .sck_transition          (sck_transition),          // input: serial clock transition
+        .i2so_sync_sck           (i2si_sync_sck),           // input: synchronized serial clock
+        .i2so_sck_transition     (i2si_sync_sck_transition),// input: serial clock transition
         .filt_rts                (aud_out_rts),             // input: ready to send
         .filt_data               (filt_out_data),           // input: audio data
         .filt_rtr                (filt_rtr),                // output: ready to receive
