@@ -118,11 +118,11 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,rf_bist_start_val,
         .rf_filter_coeffs        (rf_filter_coeffs)         // input: filter coeffs
     );
     
-    /*register Register(
+    register Register(
         .clk                     (clk),                     // input: master clock
         .rst                     (rst_n),                   // input: reset
-        
-    );*/
+        .
+    );
     //---------------------------------------------------------------------------  
     //---------------------------------------------------------------------------
        
