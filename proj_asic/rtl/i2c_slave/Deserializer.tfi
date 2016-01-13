@@ -1,0 +1,20 @@
+
+
+
+// Instantiate the module
+Deserializer instance_name (
+    .Clock(Clock), 
+    .Reset(Reset), 
+    .i2c_sda_raw(i2c_sda_raw), 
+    .i2c_scl_raw(i2c_scl_raw), 
+    .i2c_addr_bits(i2c_addr_bits), 
+    .i2c_RW(i2c_RW), 
+    .i2c_addr(i2c_addr), 
+    .addr_ack(addr_ack), 
+    .slave_ack(slave_ack), 
+    .data_ack(data_ack), 
+    .serial_data(serial_data), 
+    .stop_out(stop_out)
+    );
+
+

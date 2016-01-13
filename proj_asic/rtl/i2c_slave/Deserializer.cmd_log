@@ -1,0 +1,3 @@
+vhdtdtfi -lib work {C:/Users/formanw2/Downloads/i2c_slave 11_4_15 (2)/i2c_slave 11_4_15/i2c_Top_Blcok/Deserializer.v} -lang verilog -prj i2c_Top_Blcok -o Deserializer.spl -module Deserializer -template C:/Xilinx/14.2/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 Deserializer.spl {C:/Users/formanw2/Downloads/i2c_slave 11_4_15 (2)/i2c_slave 11_4_15/i2c_Top_Blcok/Deserializer.sym} 
+vhdtdtfi -lang verilog -prj i2c_Top_Blcok -o C:/Users/formanw2/Downloads/i2c_Top_Blcok/i2c_Top_Blcok/Deserializer.tfi -lib work C:/Users/formanw2/Downloads/i2c_Top_Blcok/i2c_Top_Blcok//Deserializer.v -module Deserializer -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 
