@@ -18,7 +18,7 @@ module i2s_out(                 clk, rst_n,
     input                       clk;                                 //Master clock
     input                       rst_n;                               //Reset
                                                                         
-    input                       sck_inp;
+    input                       sck_inp;                             //Serial clock
     input                       sck_transition;                      //Serial clock level to pulse converter
                                                                             
     output                      i2so_sck;                               

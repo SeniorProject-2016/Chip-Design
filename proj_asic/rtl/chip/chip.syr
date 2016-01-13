@@ -107,6 +107,8 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\synchronizer.v" into library work
 Parsing module <synchronizer>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\serializer.v" into library work
+Parsing module <serializer>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2si_mux.v" into library work
 Parsing module <i2si_mux>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2si_deserializer.v" into library work
@@ -115,6 +117,8 @@ Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\
 Parsing module <i2si_bist_gen>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\fifo.v" into library work
 Parsing module <fifo>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2s_out.v" into library work
+Parsing module <i2s_out>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2s_in.v" into library work
 Parsing module <i2s_in>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v" into library work
@@ -137,6 +141,10 @@ Elaborating module <i2si_bist_gen>.
 Elaborating module <i2si_mux>.
 
 Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
+
+Elaborating module <i2s_out>.
+
+Elaborating module <serializer>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -209,10 +217,10 @@ Synthesizing Unit <fifo>.
     Found 3-bit register for signal <wr_ptr>.
     Found 3-bit register for signal <rd_ptr>.
     Found 4-bit register for signal <fifo_counter>.
-    Found 4-bit subtractor for signal <fifo_counter[3]_GND_9_o_sub_4_OUT> created at line 54.
-    Found 4-bit adder for signal <fifo_counter[3]_GND_9_o_add_2_OUT> created at line 50.
-    Found 3-bit adder for signal <wr_ptr[2]_GND_9_o_add_15_OUT> created at line 98.
-    Found 3-bit adder for signal <rd_ptr[2]_GND_9_o_add_17_OUT> created at line 103.
+    Found 4-bit subtractor for signal <fifo_counter[3]_GND_9_o_sub_4_OUT> created at line 61.
+    Found 4-bit adder for signal <fifo_counter[3]_GND_9_o_add_2_OUT> created at line 57.
+    Found 3-bit adder for signal <wr_ptr[2]_GND_9_o_add_15_OUT> created at line 105.
+    Found 3-bit adder for signal <rd_ptr[2]_GND_9_o_add_17_OUT> created at line 110.
     Found 8x32-bit dual-port RAM <Mram_buf_mem> for signal <buf_mem>.
     Summary:
 	inferred   1 RAM(s).
@@ -221,30 +229,59 @@ Synthesizing Unit <fifo>.
 	inferred   1 Multiplexer(s).
 Unit <fifo> synthesized.
 
+Synthesizing Unit <i2s_out>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2s_out.v".
+    Found 1-bit register for signal <ro_fifo_underrun>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <i2s_out> synthesized.
+
+Synthesizing Unit <serializer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\serializer.v".
+    Found 1-bit register for signal <LR>.
+    Found 16-bit register for signal <lft_data>.
+    Found 16-bit register for signal <rgt_data>.
+    Found 4-bit register for signal <bit_count>.
+    Found 1-bit register for signal <serializer_active>.
+    Found 1-bit register for signal <i2so_ws>.
+    Found 1-bit register for signal <i2so_sd>.
+    Found 1-bit register for signal <filt_i2so_rts_delay>.
+    Found 4-bit subtractor for signal <bit_count[3]_GND_11_o_sub_7_OUT> created at line 107.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_12_o> created at line 132.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_13_o> created at line 137.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <serializer> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
- 8x32-bit dual-port RAM                                : 1
-# Adders/Subtractors                                   : 5
- 3-bit adder                                           : 2
+# RAMs                                                 : 2
+ 8x32-bit dual-port RAM                                : 2
+# Adders/Subtractors                                   : 9
+ 3-bit adder                                           : 4
  32-bit adder                                          : 1
- 4-bit addsub                                          : 1
+ 4-bit addsub                                          : 2
+ 4-bit subtractor                                      : 1
  5-bit adder                                           : 1
-# Registers                                            : 21
- 1-bit register                                        : 9
- 16-bit register                                       : 2
+# Registers                                            : 34
+ 1-bit register                                        : 15
+ 16-bit register                                       : 4
  2-bit register                                        : 1
- 3-bit register                                        : 3
- 32-bit register                                       : 2
- 4-bit register                                        : 3
+ 3-bit register                                        : 5
+ 32-bit register                                       : 3
+ 4-bit register                                        : 5
  5-bit register                                        : 1
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 5
- 1-bit 2-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 4
+# Multiplexers                                         : 10
+ 1-bit 16-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 5
+ 4-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -280,25 +317,31 @@ Synthesizing (advanced) Unit <i2si_bist_gen>.
 The following registers are absorbed into counter <sck_count>: 1 register on signal <sck_count>.
 Unit <i2si_bist_gen> synthesized (advanced).
 
+Synthesizing (advanced) Unit <serializer>.
+The following registers are absorbed into counter <bit_count>: 1 register on signal <bit_count>.
+Unit <serializer> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
- 8x32-bit dual-port distributed RAM                    : 1
+# RAMs                                                 : 2
+ 8x32-bit dual-port distributed RAM                    : 2
 # Adders/Subtractors                                   : 1
  32-bit adder                                          : 1
-# Counters                                             : 4
- 3-bit up counter                                      : 2
- 4-bit updown counter                                  : 1
+# Counters                                             : 8
+ 3-bit up counter                                      : 4
+ 4-bit down counter                                    : 1
+ 4-bit updown counter                                  : 2
  5-bit up counter                                      : 1
-# Registers                                            : 118
- Flip-Flops                                            : 118
+# Registers                                            : 188
+ Flip-Flops                                            : 188
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 5
- 1-bit 2-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 4
+# Multiplexers                                         : 9
+ 1-bit 16-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 5
 
 =========================================================================
 
@@ -318,6 +361,8 @@ Optimizing unit <i2si_deserializer> ...
 
 Optimizing unit <fifo> ...
 
+Optimizing unit <serializer> ...
+
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 0.
@@ -333,8 +378,8 @@ Unit <chip> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 125
- Flip-Flops                                            : 125
+# Registers                                            : 209
+ Flip-Flops                                            : 209
 # Shift Registers                                      : 2
  4-bit shift register                                  : 2
 
@@ -359,34 +404,36 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 246
+# BELS                             : 355
 #      GND                         : 1
-#      INV                         : 5
+#      INV                         : 9
 #      LUT1                        : 24
-#      LUT2                        : 16
-#      LUT3                        : 5
-#      LUT4                        : 71
-#      LUT5                        : 38
-#      LUT6                        : 6
+#      LUT2                        : 20
+#      LUT3                        : 45
+#      LUT4                        : 108
+#      LUT5                        : 42
+#      LUT6                        : 20
 #      MUXCY                       : 47
+#      MUXF7                       : 4
+#      MUXF8                       : 2
 #      VCC                         : 1
 #      XORCY                       : 32
-# FlipFlops/Latches                : 132
+# FlipFlops/Latches                : 216
 #      FD                          : 2
-#      FDC                         : 10
-#      FDCE                        : 112
+#      FDC                         : 15
+#      FDCE                        : 190
 #      FDE                         : 2
-#      FDP                         : 1
+#      FDP                         : 2
 #      FDPE                        : 5
-# RAMS                             : 32
-#      RAM32X1D                    : 32
+# RAMS                             : 64
+#      RAM32X1D                    : 64
 # Shift Registers                  : 2
 #      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 115
-#      IBUF                        : 80
-#      OBUF                        : 35
+# IO Buffers                       : 87
+#      IBUF                        : 81
+#      OBUF                        : 6
 
 Device utilization summary:
 ---------------------------
@@ -395,23 +442,23 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             132  out of  126800     0%  
- Number of Slice LUTs:                  231  out of  63400     0%  
-    Number used as Logic:               165  out of  63400     0%  
-    Number used as Memory:               66  out of  19000     0%  
-       Number used as RAM:               64
+ Number of Slice Registers:             216  out of  126800     0%  
+ Number of Slice LUTs:                  398  out of  63400     0%  
+    Number used as Logic:               268  out of  63400     0%  
+    Number used as Memory:              130  out of  19000     0%  
+       Number used as RAM:              128
        Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    270
-   Number with an unused Flip Flop:     138  out of    270    51%  
-   Number with an unused LUT:            39  out of    270    14%  
-   Number of fully used LUT-FF pairs:    93  out of    270    34%  
-   Number of unique control sets:        11
+ Number of LUT Flip Flop pairs used:    452
+   Number with an unused Flip Flop:     236  out of    452    52%  
+   Number with an unused LUT:            54  out of    452    11%  
+   Number of fully used LUT-FF pairs:   162  out of    452    35%  
+   Number of unique control sets:        15
 
 IO Utilization: 
- Number of IOs:                         119
- Number of bonded IOBs:                 116  out of    210    55%  
+ Number of IOs:                          88
+ Number of bonded IOBs:                  88  out of    210    41%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -437,7 +484,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 166   |
+clk                                | BUFGP                  | 282   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -450,7 +497,7 @@ Speed Grade: -3
 
    Minimum period: 2.581ns (Maximum Frequency: 387.507MHz)
    Minimum input arrival time before clock: 2.291ns
-   Maximum output required time after clock: 1.326ns
+   Maximum output required time after clock: 1.433ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -460,7 +507,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 2.581ns (frequency: 387.507MHz)
-  Total number of paths / destination ports: 4949 / 497
+  Total number of paths / destination ports: 6951 / 915
 -------------------------------------------------------------------------
 Delay:               2.581ns (Levels of Logic = 34)
   Source:            I2S_Input/Bist/i2si_bist_out_data_0 (FF)
@@ -514,7 +561,7 @@ Delay:               2.581ns (Levels of Logic = 34)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 2588 / 275
+  Total number of paths / destination ports: 2673 / 360
 -------------------------------------------------------------------------
 Offset:              2.291ns (Levels of Logic = 35)
   Source:            rf_bist_inc<0> (PAD)
@@ -567,23 +614,23 @@ Offset:              2.291ns (Levels of Logic = 35)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 38 / 35
+  Total number of paths / destination ports: 9 / 6
 -------------------------------------------------------------------------
-Offset:              1.326ns (Levels of Logic = 2)
-  Source:            I2S_Input/i2si_Fifo/fifo_counter_0 (FF)
-  Destination:       filt_rts (PAD)
+Offset:              1.433ns (Levels of Logic = 2)
+  Source:            I2S_Output/i2so_Fifo/fifo_counter_3 (FF)
+  Destination:       filt_rtr (PAD)
   Source Clock:      clk rising
 
-  Data Path: I2S_Input/i2si_Fifo/fifo_counter_0 to filt_rts
+  Data Path: I2S_Output/i2so_Fifo/fifo_counter_3 to filt_rtr
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             8   0.361   0.589  I2S_Input/i2si_Fifo/fifo_counter_0 (I2S_Input/i2si_Fifo/fifo_counter_0)
-     LUT4:I0->O            1   0.097   0.279  I2S_Input/i2si_Fifo/fifo_out_rts1 (filt_rts_OBUF)
-     OBUF:I->O                 0.000          filt_rts_OBUF (filt_rts)
+     FDCE:C->Q             8   0.361   0.589  I2S_Output/i2so_Fifo/fifo_counter_3 (I2S_Output/i2so_Fifo/fifo_counter_3)
+     LUT4:I0->O           34   0.097   0.386  I2S_Output/i2so_Fifo/fifo_inp_rtr1 (filt_rtr_OBUF)
+     OBUF:I->O                 0.000          filt_rtr_OBUF (filt_rtr)
     ----------------------------------------
-    Total                      1.326ns (0.458ns logic, 0.868ns route)
-                                       (34.5% logic, 65.5% route)
+    Total                      1.433ns (0.458ns logic, 0.975ns route)
+                                       (32.0% logic, 68.0% route)
 
 =========================================================================
 
@@ -602,11 +649,11 @@ clk            |    2.581|         |         |         |
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.53 secs
+Total CPU time to Xst completion: 10.29 secs
  
 --> 
 
-Total memory usage is 414416 kilobytes
+Total memory usage is 415616 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

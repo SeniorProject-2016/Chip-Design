@@ -24,9 +24,9 @@ module i2s_in_test;
 	wire                            inp_sd;
     
 	wire                            rf_i2si_en;
-	reg [11:0]                      rf_bist_start_val;
+	reg [31:0]                      rf_bist_start_val;
 	reg [7:0]                       rf_bist_inc;
-	reg [11:0]                      rf_bist_up_limit;
+	reg [31:0]                      rf_bist_up_limit;
 	reg                             rf_mux_en;
     
     wire                            i2si_rtr;
@@ -78,7 +78,8 @@ module i2s_in_test;
 		.i2si_rts(i2si_rts),                                                                                                
 		.ro_fifo_overrun(ro_fifo_overrun),                                                                          
 		.trig_fifo_overrun_clr(trig_fifo_overrun_clr),                                                                          
-		.sync_sck(sync_sck)                                                                                                 
+		.sync_sck(sync_sck),    
+        .sync_sck_transition(sync_sck_transition)
 	);                                                                                                                          
                                                                                                                 
 	initial begin                                                                                                           
