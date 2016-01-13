@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Reading design: chip.prj
 
@@ -121,6 +121,8 @@ Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\
 Parsing module <i2s_out>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2s_in.v" into library work
 Parsing module <i2s_in>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" into library work
+Parsing module <filter>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v" into library work
 Parsing module <chip>.
 
@@ -145,6 +147,9 @@ Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
 Elaborating module <i2s_out>.
 
 Elaborating module <serializer>.
+
+Elaborating module <filter>.
+WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" Line 10: Empty module <filter> remains a black box.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -411,8 +416,8 @@ Primitive and Black Box Usage:
 #      LUT2                        : 20
 #      LUT3                        : 45
 #      LUT4                        : 108
-#      LUT5                        : 42
-#      LUT6                        : 20
+#      LUT5                        : 43
+#      LUT6                        : 19
 #      MUXCY                       : 47
 #      MUXF7                       : 4
 #      MUXF8                       : 2
@@ -431,9 +436,11 @@ Primitive and Black Box Usage:
 #      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 87
-#      IBUF                        : 81
-#      OBUF                        : 6
+# IO Buffers                       : 95
+#      IBUF                        : 90
+#      OBUF                        : 5
+# Others                           : 1
+#      filter                      : 1
 
 Device utilization summary:
 ---------------------------
@@ -457,8 +464,8 @@ Slice Logic Distribution:
    Number of unique control sets:        15
 
 IO Utilization: 
- Number of IOs:                          88
- Number of bonded IOBs:                  88  out of    210    41%  
+ Number of IOs:                          96
+ Number of bonded IOBs:                  96  out of    210    45%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -497,8 +504,8 @@ Speed Grade: -3
 
    Minimum period: 2.581ns (Maximum Frequency: 387.507MHz)
    Minimum input arrival time before clock: 2.291ns
-   Maximum output required time after clock: 1.433ns
-   Maximum combinational path delay: No path found
+   Maximum output required time after clock: 1.437ns
+   Maximum combinational path delay: 0.424ns
 
 Timing Details:
 ---------------
@@ -507,7 +514,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 2.581ns (frequency: 387.507MHz)
-  Total number of paths / destination ports: 6951 / 915
+  Total number of paths / destination ports: 6599 / 915
 -------------------------------------------------------------------------
 Delay:               2.581ns (Levels of Logic = 34)
   Source:            I2S_Input/Bist/i2si_bist_out_data_0 (FF)
@@ -561,7 +568,7 @@ Delay:               2.581ns (Levels of Logic = 34)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 2673 / 360
+  Total number of paths / destination ports: 2779 / 434
 -------------------------------------------------------------------------
 Offset:              2.291ns (Levels of Logic = 35)
   Source:            rf_bist_inc<0> (PAD)
@@ -614,23 +621,41 @@ Offset:              2.291ns (Levels of Logic = 35)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 9 / 6
+  Total number of paths / destination ports: 45 / 39
 -------------------------------------------------------------------------
-Offset:              1.433ns (Levels of Logic = 2)
+Offset:              1.437ns (Levels of Logic = 1)
   Source:            I2S_Output/i2so_Fifo/fifo_counter_3 (FF)
-  Destination:       filt_rtr (PAD)
+  Destination:       Filter:aud_out_rtr (PAD)
   Source Clock:      clk rising
 
-  Data Path: I2S_Output/i2so_Fifo/fifo_counter_3 to filt_rtr
+  Data Path: I2S_Output/i2so_Fifo/fifo_counter_3 to Filter:aud_out_rtr
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             8   0.361   0.589  I2S_Output/i2so_Fifo/fifo_counter_3 (I2S_Output/i2so_Fifo/fifo_counter_3)
-     LUT4:I0->O           34   0.097   0.386  I2S_Output/i2so_Fifo/fifo_inp_rtr1 (filt_rtr_OBUF)
-     OBUF:I->O                 0.000          filt_rtr_OBUF (filt_rtr)
+     FDCE:C->Q             9   0.361   0.593  I2S_Output/i2so_Fifo/fifo_counter_3 (I2S_Output/i2so_Fifo/fifo_counter_3)
+     LUT4:I0->O           32   0.097   0.386  I2S_Output/i2so_Fifo/fifo_inp_rtr1 (filt_rtr)
+    filter:aud_out_rtr         0.000          Filter
     ----------------------------------------
-    Total                      1.433ns (0.458ns logic, 0.975ns route)
-                                       (32.0% logic, 68.0% route)
+    Total                      1.437ns (0.458ns logic, 0.979ns route)
+                                       (31.9% logic, 68.1% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Delay:               0.424ns (Levels of Logic = 1)
+  Source:            clk (PAD)
+  Destination:       Filter:clk (PAD)
+
+  Data Path: clk to Filter:clk
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     BUFGP:I->O          282   0.000   0.424  clk_BUFGP (clk_BUFGP)
+    filter:clk                 0.000          Filter
+    ----------------------------------------
+    Total                      0.424ns (0.000ns logic, 0.424ns route)
+                                       (0.0% logic, 100.0% route)
 
 =========================================================================
 
@@ -648,14 +673,14 @@ clk            |    2.581|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.29 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.64 secs
  
 --> 
 
-Total memory usage is 415616 kilobytes
+Total memory usage is 415572 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 
