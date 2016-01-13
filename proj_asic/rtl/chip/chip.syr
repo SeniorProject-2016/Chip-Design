@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: chip.prj
 
@@ -123,6 +123,8 @@ Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\
 Parsing module <i2s_in>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" into library work
 Parsing module <filter>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip_reg.v" into library work
+Parsing module <chip_reg>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v" into library work
 Parsing module <chip>.
 
@@ -150,6 +152,9 @@ Elaborating module <serializer>.
 
 Elaborating module <filter>.
 WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" Line 10: Empty module <filter> remains a black box.
+
+Elaborating module <chip_reg>.
+WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip_reg.v" Line 10: Empty module <chip_reg> remains a black box.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -369,6 +374,15 @@ Optimizing unit <fifo> ...
 Optimizing unit <serializer> ...
 
 Mapping all equations...
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_rdata<7>> driven by black box <chip_reg>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_rdata<6>> driven by black box <chip_reg>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_rdata<5>> driven by black box <chip_reg>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_rdata<4>> driven by black box <chip_reg>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_rdata<3>> driven by black box <chip_reg>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_rdata<2>> driven by black box <chip_reg>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_rdata<1>> driven by black box <chip_reg>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_rdata<0>> driven by black box <chip_reg>. Possible simulation mismatch.
+WARNING:Xst:2036 - Inserting OBUF on port <i2c_xfc_read> driven by black box <chip_reg>. Possible simulation mismatch.
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 0.
 
@@ -436,10 +450,11 @@ Primitive and Black Box Usage:
 #      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 95
-#      IBUF                        : 90
-#      OBUF                        : 5
-# Others                           : 1
+# IO Buffers                       : 47
+#      IBUF                        : 35
+#      OBUF                        : 12
+# Others                           : 2
+#      chip_reg                    : 1
 #      filter                      : 1
 
 Device utilization summary:
@@ -464,8 +479,8 @@ Slice Logic Distribution:
    Number of unique control sets:        15
 
 IO Utilization: 
- Number of IOs:                          96
- Number of bonded IOBs:                  96  out of    210    45%  
+ Number of IOs:                          48
+ Number of bonded IOBs:                  48  out of    210    22%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -503,7 +518,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 2.581ns (Maximum Frequency: 387.507MHz)
-   Minimum input arrival time before clock: 2.291ns
+   Minimum input arrival time before clock: 2.290ns
    Maximum output required time after clock: 1.437ns
    Maximum combinational path delay: 0.424ns
 
@@ -570,16 +585,16 @@ Delay:               2.581ns (Levels of Logic = 34)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 2779 / 434
 -------------------------------------------------------------------------
-Offset:              2.291ns (Levels of Logic = 35)
-  Source:            rf_bist_inc<0> (PAD)
+Offset:              2.290ns (Levels of Logic = 34)
+  Source:            Register:rf_i2si_bist_incr<0> (PAD)
   Destination:       I2S_Input/Bist/i2si_bist_out_data_31 (FF)
   Destination Clock: clk rising
 
-  Data Path: rf_bist_inc<0> to I2S_Input/Bist/i2si_bist_out_data_31
+  Data Path: Register:rf_i2si_bist_incr<0> to I2S_Input/Bist/i2si_bist_out_data_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.379  rf_bist_inc_0_IBUF (rf_bist_inc_0_IBUF)
+    chip_reg:rf_i2si_bist_incr<0>    1   0.000   0.379  Register (rf_bist_inc<0>)
      LUT2:I0->O            1   0.097   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0>)
      MUXCY:S->O            1   0.353   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1>)
@@ -616,7 +631,7 @@ Offset:              2.291ns (Levels of Logic = 35)
      LUT4:I3->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT251 (I2S_Input/Bist/i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT<31>)
      FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_31
     ----------------------------------------
-    Total                      2.291ns (1.616ns logic, 0.675ns route)
+    Total                      2.290ns (1.615ns logic, 0.675ns route)
                                        (70.5% logic, 29.5% route)
 
 =========================================================================
@@ -641,7 +656,7 @@ Offset:              1.437ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 12 / 12
+  Total number of paths / destination ports: 45 / 45
 -------------------------------------------------------------------------
 Delay:               0.424ns (Levels of Logic = 1)
   Source:            clk (PAD)
@@ -673,14 +688,14 @@ clk            |    2.581|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.64 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.30 secs
  
 --> 
 
-Total memory usage is 415572 kilobytes
+Total memory usage is 415616 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :   11 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 
