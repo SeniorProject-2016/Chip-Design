@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Serializer(
-input i2c_scl,
+	 input i2c_scl,
 	 input i2c_sda,
     output reg i2c_sda_out,
 //	 input i2c_sda_in,
@@ -30,7 +30,7 @@ input i2c_scl,
     input reset,
     input [7:0] i2c_rdata,
     input i2c_xfc_read,
-	 input stop_in
+	 input stop_out
     );
 
 //Create SCL Pulse Signals, and states
@@ -40,7 +40,7 @@ wire i2c_scl_pos_pulse;
 wire i2c_scl_neg_pulse;
 reg Q_sda;
 reg Q_scl;
-reg sda_state;
+//reg sda_state;
 reg scl_state;
 
 always@(posedge Clock)
@@ -48,12 +48,12 @@ begin
 	Q_sda = !i2c_sda;
 	Q_scl = !i2c_scl;
 end
-assign i2c_sda_neg_pulse = !Q_sda && !i2c_sda;
+//assign i2c_sda_neg_pulse = !Q_sda && !i2c_sda;
 assign i2c_sda_pos_pulse = !Q_sda && i2c_sda;
 assign i2c_scl_neg_pulse = !Q_scl && !i2c_scl;
 assign i2c_scl_pos_pulse = !Q_scl && i2c_scl;
 
-always@(posedge i2c_sda_pos_pulse or posedge i2c_sda_neg_pulse)
+/*always@(posedge i2c_sda_pos_pulse or posedge i2c_sda_neg_pulse)
 begin
 	if (i2c_sda_pos_pulse)
 	begin
@@ -63,7 +63,7 @@ begin
     begin
 	sda_state <= 0;
 	end
-end
+end*/
 
 always@(posedge i2c_scl_pos_pulse or posedge i2c_scl_neg_pulse)
 begin
@@ -82,7 +82,7 @@ reg stop;
 	//initial stop = 0;
 always@(posedge Clock or negedge reset)
 begin
-	if (!reset | (!scl_state & i2c_sda_pos_pulse) | serialize_done | stop_in)
+	if (!reset | (!scl_state & i2c_sda_pos_pulse) | serialize_done | stop_out)
 	begin
 	stop <= 1;
 	end

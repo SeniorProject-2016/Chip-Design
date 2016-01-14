@@ -10,8 +10,8 @@ Deserializer instance_name (
     .i2c_addr_bits(i2c_addr_bits), 
     .i2c_RW(i2c_RW), 
     .i2c_addr(i2c_addr), 
-    .addr_ack(addr_ack), 
-    .slave_ack(slave_ack), 
+    .addr_xfc(addr_xfc), 
+    .i2c_ack(i2c_ack), 
     .data_ack(data_ack), 
     .serial_data(serial_data), 
     .stop_out(stop_out)

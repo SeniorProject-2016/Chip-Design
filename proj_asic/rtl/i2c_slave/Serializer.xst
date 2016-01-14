@@ -1,6 +1,9 @@
-set -tmpdir "H:/Senior Project/current 1-11-16/i2c_Top_Blcok_11-11-2015/i2c_Top_Blcok_11-11-2015/xst/projnav.tmp"
-set -xsthdpdir "H:/Senior Project/current 1-11-16/i2c_Top_Blcok_11-11-2015/i2c_Top_Blcok_11-11-2015/xst"
-run -compileonly yes
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn Serializer.prj
+-ofn Serializer
+-ofmt NGC
 -p xc7a100t-3-csg324
 -top Serializer
 -opt_mode Speed
@@ -47,4 +50,3 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn Serializer.prj

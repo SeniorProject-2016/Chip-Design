@@ -140,7 +140,7 @@ module chip(clk,rst_n,i2si_sck,i2si_ws,i2si_sd,i2so_sck,i2so_ws,i2so_sd,i2c_addr
         .i2c_rdata               (i2c_rdata),               // output: read return data
         .i2c_xfc_read            (i2c_xfc_read),            // output: read data transfer complete
         .rf_i2si_bist_en         (rf_mux_en),               // output: I2S input multiplexer select bit
-        .rf_filter_shift         (rf_filter_shift),         // output: number of bit postions to shift after filter accumulator
+        .rf_filter_shift         (rf_filter_shift),         // output: number of bit positions to shift after filter accumulator
         .rf_filter_clip_en       (rf_filter_clip_en),       // output: 0- no clipping 1- performs clipping
         .rf_i2si_bist_start_val  (rf_bist_start_val),       // output: BIST start value 
         .rf_i2si_bist_incr       (rf_bist_inc),             // output: BIST increment value

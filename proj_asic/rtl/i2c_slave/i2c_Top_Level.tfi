@@ -1,0 +1,20 @@
+
+
+
+// Instantiate the module
+i2c_Top_Level instance_name (
+    .i2c_addr_bits(i2c_addr_bits), 
+    .i2c_sda_in(i2c_sda_in), 
+    .i2c_scl(i2c_scl), 
+    .i2c_op(i2c_op), 
+    .i2c_xfc_write(i2c_xfc_write), 
+    .i2c_addr(i2c_addr), 
+    .i2c_wdata(i2c_wdata), 
+    .i2c_rdata(i2c_rdata), 
+    .i2c_xfc_read(i2c_xfc_read), 
+    .i2c_sda_out(i2c_sda_out), 
+    .clk(clk), 
+    .reset(reset)
+    );
+
+

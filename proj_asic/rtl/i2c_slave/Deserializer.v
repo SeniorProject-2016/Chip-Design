@@ -31,7 +31,7 @@ module Deserializer(
 	 //output reg serial_data_xfc,
 	 output reg addr_xfc,
 	 output reg i2c_ack,
-	 output reg data_ack,
+	 output reg data_xfc,
 	 output reg [7:0] serial_data,
 	 output reg stop_out
 	 );
@@ -281,19 +281,19 @@ begin
 	i2c_ack <= 0;
 	end
 	
-	else if(slave_ack | addr_ack | data_ack | addr_ack2)
+	else if(slave_ack | addr_ack | data_xfc | addr_ack2)
 	begin
 	i2c_ack <= 1;
 	end
 	
-	else if (!slave_ack & !addr_ack & !data_ack & !addr_ack2)
+	else if (!slave_ack & !addr_ack & !data_xfc & !addr_ack2)
 	begin
 	i2c_ack <= 0;
 	end
 end
 	
 //Deserialize burst address
-reg [10:0] burst_start_addr ;
+//reg [10:0] burst_start_addr ;
 reg [3:0] bit_counter_burst_addr;  
 reg got_addr;
 reg got_addr2;
@@ -304,7 +304,7 @@ begin
 	if (stop == 1)
 	begin
 	bit_counter_burst_addr  <= 0;
-	burst_start_addr <= 0;
+	//burst_start_addr <= 0;
 	i2c_addr <= 0;
 	got_addr <= 1'b0;
 	got_addr2 <= 1'b0;
@@ -459,8 +459,8 @@ end
 
 //Deserialize data
 
-//reg data_ack = 1'b0;		
-//		initial data_ack = 0;
+//reg data_xfc = 1'b0;		
+//		initial data_xfc = 0;
 reg [3:0] bit_counter_data;
 		//initial bit_counter_data = 0;//initialize bit counter to 0
 reg got_data;
@@ -471,11 +471,11 @@ begin
 	begin
 	serial_data <= 0;
 	bit_counter_data <= 0;
-	//data_ack <= 0;
+	//data_xfc <= 0;
 	got_data <= 0;
 	end 
 	
-	else if(data_ack)
+	else if(data_xfc)
 	begin
 	got_data <= 0;
 	bit_counter_data <= 4'b0000;
@@ -526,17 +526,17 @@ begin
 
 	if(stop)
 	begin
-	data_ack <= 0;
+	data_xfc <= 0;
 	end
 	
-	else if(data_ack & i2c_scl_neg_pulse)
+	else if(data_xfc & i2c_scl_neg_pulse)
 	begin
-	data_ack <= 0;
+	data_xfc <= 0;
 	end
 	
 	else if ((deserial_state == 2'b11) & i2c_scl_neg_pulse & got_data)
 	begin
-	data_ack <= 1;
+	data_xfc <= 1;
 	end
 end
 

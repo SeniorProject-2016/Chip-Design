@@ -26,11 +26,11 @@ module Sequencer(
     output reg [10:0] i2c_addr_out,
     input [7:0] i2c_data_in,
     output reg [7:0] i2c_data_out,
-    input i2c_addr_ack,
-    input i2c_data_ack,
+    input addr_xfc,
+    input data_xfc,
 	 output reg i2c_xfc,
 	 input reset,
-	 input stop
+	 input stop_out
     );
 //Create address incremental value register
 reg [10:0] addr_increment;
@@ -45,11 +45,11 @@ reg Q_addr;
 reg Q_data;
 always@(posedge Clock)
 begin
-	Q_addr <= !i2c_addr_ack;
-	Q_data <= !i2c_data_ack;
+	Q_addr <= !addr_xfc;
+	Q_data <= !data_xfc;
 end
-assign addr_ack_temp = Q_addr && i2c_addr_ack;
-assign data_ack_temp = Q_data && i2c_data_ack;
+assign addr_ack_temp = Q_addr && addr_xfc;
+assign data_ack_temp = Q_data && data_xfc;
 
 /*
 always@(posedge Clock)
@@ -68,7 +68,7 @@ reg stop_read;
 reg [10:0] i2c_addr_write;
 always@(posedge Clock or negedge reset)
 begin
-	if(stop | !reset | stop_read)
+	if(stop_out | !reset | stop_read)
 	begin
 		i2c_op <= 0;
 		i2c_addr_out <= 0;
