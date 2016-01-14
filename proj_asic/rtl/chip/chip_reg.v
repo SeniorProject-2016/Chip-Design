@@ -13,7 +13,7 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
            trig_fifo_overrun,
            ro_fifo_overrun,trig_fifo_underrun,ro_fifo_underrun,
            rf_i2si_bist_start_val,rf_i2si_bist_incr,
-           rf_i2si_bist_upper_limit);
+           rf_i2si_bist_upper_limit,rf_i2si_en,rf_filter_coeffs);
 
 
      // REGISTER INTERFACES
@@ -37,8 +37,10 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
      output reg rf_filter_shift;                 // number of bit postions to shift after filter accumulator
      output reg rf_filter_clip_en;               // 0- no clipping 1- performs clipping
      output reg [31:0] rf_i2si_bist_start_val;   // ?????? --> This should only be one value not part a and b - ZN 1/13/16
-     output reg [7:0] rf_i2si_bist_incr;        // BIST signal increment value
+     output reg [7:0] rf_i2si_bist_incr;         // BIST signal increment value
      output reg [31:0] rf_i2si_bist_upper_limit; // ?????? --> This should only be one value not part a and b - ZN 1/13/16
+     output reg rf_i2si_en;                      // enable bit for deserializer
+     output reg [7:0] rf_filter_coeffs;         // filter coeffs
      // Outputs (Triggers)
      output wire trig_fifo_overrun;              // signal to reset I2S input FIFO overrun
      output wire trig_fifo_underrun;             // signal to reset I2S output FIFO underrun     
