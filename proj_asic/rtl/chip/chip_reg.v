@@ -12,8 +12,9 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
            rf_filter_clip_en,
            trig_fifo_overrun,
            ro_fifo_overrun,trig_fifo_underrun,ro_fifo_underrun,
+           ro_filter_ovf_flag,
            rf_i2si_bist_start_val,rf_i2si_bist_incr,
-           rf_i2si_bist_upper_limit,rf_i2si_en,rf_filter_coeffs);
+           rf_i2si_bist_upper_limit,rf_i2si_en,rf_filter_coeffs,trig_filter_ovf_flag_clear);
 
 
      // REGISTER INTERFACES
@@ -22,13 +23,14 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
      // Inputs (General)
      input clk;                                  // master clock
      input rst;                                  // reset
-     input [11:0] i2c_addr;                      // register address
+     input [10:0] i2c_addr;                      // register address
      input [7:0] i2c_wdata;                      // data to be written for a write op
      input i2c_xfc_write;                        // write data transfer complete
      input i2c_op;                               // 1- write, 0- read
      // Inputs (RO Signals) 
      input ro_fifo_overrun;                      // I2S input audio FIFO overrun
      input ro_fifo_underrun;                     // I2S output audio FIFO underrun
+     input ro_filter_ovf_flag;                   // Filter Overflow Flag
      // Outputs (General)
      output reg [7:0] i2c_rdata;                 // read return data
      output reg i2c_xfc_read;                    // read data transfer complete
@@ -40,10 +42,11 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
      output reg [7:0] rf_i2si_bist_incr;         // BIST signal increment value
      output reg [31:0] rf_i2si_bist_upper_limit; // ?????? --> This should only be one value not part a and b - ZN 1/13/16
      output reg rf_i2si_en;                      // enable bit for deserializer
-     output reg [7:0] rf_filter_coeffs;         // filter coeffs
+     output reg [7:0] rf_filter_coeffs;          // filter coeffs
      // Outputs (Triggers)
      output wire trig_fifo_overrun;              // signal to reset I2S input FIFO overrun
-     output wire trig_fifo_underrun;             // signal to reset I2S output FIFO underrun     
+     output wire trig_fifo_underrun;             // signal to reset I2S output FIFO underrun  
+     output wire trig_filter_ovf_flag_clear;     // signal to reset filter overflow flag
      //---------------------------------------------------------------------------
      //--------------------------------------------------------------------------- 
      

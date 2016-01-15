@@ -1,0 +1,723 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
+ 
+--> Reading design: i2c.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "i2c.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "i2c"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : i2c
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\Serializer.v" into library work
+Parsing module <Serializer>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\Sequencer.v" into library work
+Parsing module <Sequencer>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\Deserializer.v" into library work
+Parsing module <Deserializer>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\i2c.v" into library work
+Parsing module <i2c>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\i2c_Top_Block.vf" into library work
+Parsing module <i2c_Top_Block>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <i2c>.
+
+Elaborating module <Deserializer>.
+
+Elaborating module <Sequencer>.
+WARNING:HDLCompiler:413 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\Sequencer.v" Line 128: Result of 12-bit expression is truncated to fit in 11-bit target.
+
+Elaborating module <Serializer>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <i2c>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\i2c.v".
+    Summary:
+	no macro.
+Unit <i2c> synthesized.
+
+Synthesizing Unit <Deserializer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\Deserializer.v".
+    Found 1-bit register for signal <stop>.
+    Found 1-bit register for signal <stop_out>.
+    Found 1-bit register for signal <i2c_scl>.
+    Found 1-bit register for signal <sda_p1>.
+    Found 1-bit register for signal <sda_p2>.
+    Found 1-bit register for signal <i2c_sda>.
+    Found 1-bit register for signal <Q_sda>.
+    Found 1-bit register for signal <Q_scl>.
+    Found 1-bit register for signal <scl_state>.
+    Found 2-bit register for signal <deserial_state>.
+    Found 1-bit register for signal <got_slave_addr>.
+    Found 8-bit register for signal <incoming_slave_addr>.
+    Found 4-bit register for signal <bit_counter_slave_addr>.
+    Found 1-bit register for signal <slave_ack>.
+    Found 1-bit register for signal <i2c_RW>.
+    Found 1-bit register for signal <slave_addr_stop>.
+    Found 1-bit register for signal <i2c_ack>.
+    Found 4-bit register for signal <bit_counter_burst_addr>.
+    Found 1-bit register for signal <i2c_addr<10>>.
+    Found 1-bit register for signal <i2c_addr<9>>.
+    Found 1-bit register for signal <i2c_addr<8>>.
+    Found 1-bit register for signal <i2c_addr<7>>.
+    Found 1-bit register for signal <i2c_addr<6>>.
+    Found 1-bit register for signal <i2c_addr<5>>.
+    Found 1-bit register for signal <i2c_addr<4>>.
+    Found 1-bit register for signal <i2c_addr<3>>.
+    Found 1-bit register for signal <i2c_addr<2>>.
+    Found 1-bit register for signal <i2c_addr<1>>.
+    Found 1-bit register for signal <i2c_addr<0>>.
+    Found 1-bit register for signal <got_addr>.
+    Found 1-bit register for signal <got_addr2>.
+    Found 1-bit register for signal <addr_ack>.
+    Found 1-bit register for signal <addr_xfc>.
+    Found 1-bit register for signal <addr_ack2>.
+    Found 8-bit register for signal <serial_data>.
+    Found 4-bit register for signal <bit_counter_data>.
+    Found 1-bit register for signal <got_data>.
+    Found 1-bit register for signal <data_xfc>.
+    Found 1-bit register for signal <scl_p1>.
+    Found 1-bit register for signal <sda_state>.
+    Found finite state machine <FSM_0> for signal <bit_counter_slave_addr>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 54                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 4                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <bit_counter_burst_addr>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 67                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 8                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_3> for signal <deserial_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <bit_counter_data>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 58                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_20_OUT> created at line 201.
+    Found 8-bit 8-to-1 multiplexer for signal <_n0408> created at line 487.
+    Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_28_o> created at line 263
+    Summary:
+	inferred  50 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  12 Multiplexer(s).
+	inferred   4 Finite State Machine(s).
+Unit <Deserializer> synthesized.
+
+Synthesizing Unit <Sequencer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\Sequencer.v".
+    Found 11-bit register for signal <i2c_addr_out>.
+    Found 11-bit register for signal <addr_increment>.
+    Found 11-bit register for signal <i2c_addr_write>.
+    Found 8-bit register for signal <i2c_data_out>.
+    Found 1-bit register for signal <i2c_op>.
+    Found 1-bit register for signal <i2c_xfc>.
+    Found 1-bit register for signal <stop_read>.
+    Found 1-bit register for signal <Q_data>.
+    Found 1-bit register for signal <xfc_ready>.
+    Found 1-bit register for signal <Q_addr>.
+    Found 11-bit adder for signal <i2c_addr_write[10]_addr_increment[10]_add_1_OUT> created at line 115.
+    Found 11-bit adder for signal <addr_increment[10]_GND_4_o_add_2_OUT> created at line 128.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  47 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <Sequencer> synthesized.
+
+Synthesizing Unit <Serializer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\i2c\Serializer.v".
+    Found 1-bit register for signal <stop>.
+    Found 1-bit register for signal <Q_scl>.
+    Found 8-bit register for signal <data_read>.
+    Found 1-bit register for signal <serialize_data_ready>.
+    Found 1-bit register for signal <i2c_sda_out>.
+    Found 1-bit register for signal <serialize_done>.
+    Found 4-bit register for signal <serialize_bit_counter>.
+    Found 1-bit register for signal <first_data_bit_ready>.
+    Found 1-bit register for signal <serialize_ack_done>.
+    Found 1-bit register for signal <Q_sda>.
+    Found 1-bit register for signal <scl_state>.
+    Found finite state machine <FSM_4> for signal <serialize_bit_counter>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 40                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit 8-to-1 multiplexer for signal <_n0121> created at line 158.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Serializer> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 11-bit adder                                          : 2
+# Registers                                            : 56
+ 1-bit register                                        : 49
+ 11-bit register                                       : 3
+ 8-bit register                                        : 4
+# Comparators                                          : 1
+ 7-bit comparator equal                                : 1
+# Multiplexers                                         : 26
+ 1-bit 2-to-1 multiplexer                              : 13
+ 1-bit 8-to-1 multiplexer                              : 1
+ 11-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 5
+ 8-bit 8-to-1 multiplexer                              : 1
+ 8-bit 9-to-1 multiplexer                              : 1
+# FSMs                                                 : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <stop_out> in Unit <i2c_top_deserializer> is equivalent to the following FF/Latch, which will be removed : <stop> 
+
+Synthesizing (advanced) Unit <Sequencer>.
+The following registers are absorbed into counter <addr_increment>: 1 register on signal <addr_increment>.
+Unit <Sequencer> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 11-bit adder                                          : 1
+# Counters                                             : 1
+ 11-bit up counter                                     : 1
+# Registers                                            : 103
+ Flip-Flops                                            : 103
+# Comparators                                          : 1
+ 7-bit comparator equal                                : 1
+# Multiplexers                                         : 25
+ 1-bit 2-to-1 multiplexer                              : 13
+ 1-bit 8-to-1 multiplexer                              : 1
+ 11-bit 2-to-1 multiplexer                             : 4
+ 8-bit 2-to-1 multiplexer                              : 5
+ 8-bit 8-to-1 multiplexer                              : 1
+ 8-bit 9-to-1 multiplexer                              : 1
+# FSMs                                                 : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <stop> in Unit <Deserializer> is equivalent to the following FF/Latch, which will be removed : <stop_out> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <i2c_top_deserializer/FSM_3> on signal <deserial_state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 11    | 01
+ 10    | 11
+ 01    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <i2c_top_deserializer/FSM_0> on signal <bit_counter_slave_addr[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <i2c_top_deserializer/FSM_1> on signal <bit_counter_burst_addr[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <i2c_top_deserializer/FSM_2> on signal <bit_counter_data[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 010
+ 0011  | 011
+ 0100  | 100
+ 0101  | 101
+ 0110  | 110
+ 0111  | 111
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <i2c_top_serializer/FSM_4> on signal <serialize_bit_counter[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 010
+ 0011  | 011
+ 0100  | 100
+ 0101  | 101
+ 0110  | 110
+ 0111  | 111
+-------------------
+
+Optimizing unit <i2c> ...
+
+Optimizing unit <Deserializer> ...
+
+Optimizing unit <Serializer> ...
+
+Optimizing unit <Sequencer> ...
+INFO:Xst:2261 - The FF/Latch <i2c_top_deserializer/bit_counter_slave_addr_FSM_FFd1> in Unit <i2c> is equivalent to the following FF/Latch, which will be removed : <i2c_top_deserializer/got_slave_addr> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block i2c, actual ratio is 0.
+FlipFlop i2c_top_deserializer/stop has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <i2c> :
+	Found 3-bit shift register for signal <i2c_top_deserializer/i2c_sda>.
+	Found 2-bit shift register for signal <i2c_top_deserializer/i2c_scl>.
+Unit <i2c> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 124
+ Flip-Flops                                            : 124
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 1
+ 3-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : i2c.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 232
+#      GND                         : 1
+#      INV                         : 7
+#      LUT2                        : 30
+#      LUT3                        : 43
+#      LUT4                        : 16
+#      LUT5                        : 8
+#      LUT6                        : 82
+#      MUXCY                       : 20
+#      MUXF7                       : 2
+#      VCC                         : 1
+#      XORCY                       : 22
+# FlipFlops/Latches                : 126
+#      FD                          : 16
+#      FDC                         : 3
+#      FDCE                        : 41
+#      FDE                         : 2
+#      FDP                         : 3
+#      FDPE                        : 3
+#      FDR                         : 42
+#      FDRE                        : 16
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 37
+#      IBUF                        : 15
+#      OBUF                        : 22
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             126  out of  126800     0%  
+ Number of Slice LUTs:                  188  out of  63400     0%  
+    Number used as Logic:               186  out of  63400     0%  
+    Number used as Memory:                2  out of  19000     0%  
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    201
+   Number with an unused Flip Flop:      75  out of    201    37%  
+   Number with an unused LUT:            13  out of    201     6%  
+   Number of fully used LUT-FF pairs:   113  out of    201    56%  
+   Number of unique control sets:        15
+
+IO Utilization: 
+ Number of IOs:                          38
+ Number of bonded IOBs:                  38  out of    210    18%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------------------------------+----------------------------------------+-------+
+Clock Signal                                                                     | Clock buffer(FF name)                  | Load  |
+---------------------------------------------------------------------------------+----------------------------------------+-------+
+clk                                                                              | BUFGP                                  | 125   |
+i2c_top_deserializer/i2c_scl_neg_pulse(i2c_top_deserializer/i2c_scl_neg_pulse1:O)| NONE(*)(i2c_top_deserializer/scl_state)| 1     |
+i2c_top_deserializer/i2c_sda_neg_pulse(i2c_top_deserializer/i2c_sda_neg_pulse1:O)| NONE(*)(i2c_top_deserializer/sda_state)| 1     |
+i2c_top_serializer/i2c_scl_neg_pulse(i2c_top_serializer/i2c_scl_neg_pulse1:O)    | NONE(*)(i2c_top_serializer/scl_state)  | 1     |
+---------------------------------------------------------------------------------+----------------------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.342ns (Maximum Frequency: 426.913MHz)
+   Minimum input arrival time before clock: 1.666ns
+   Maximum output required time after clock: 0.659ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.342ns (frequency: 426.913MHz)
+  Total number of paths / destination ports: 1710 / 220
+-------------------------------------------------------------------------
+Delay:               2.342ns (Levels of Logic = 3)
+  Source:            i2c_top_sequencer/Q_addr (FF)
+  Destination:       i2c_top_sequencer/i2c_addr_out_10 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: i2c_top_sequencer/Q_addr to i2c_top_sequencer/i2c_addr_out_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               7   0.361   0.407  i2c_top_sequencer/Q_addr (i2c_top_sequencer/Q_addr)
+     LUT2:I0->O            5   0.097   0.530  i2c_top_sequencer/_n0235_inv11 (i2c_top_sequencer/_n0235_inv1)
+     LUT6:I3->O            9   0.097   0.332  i2c_top_sequencer/_n0206_inv1 (i2c_top_sequencer/_n0206_inv)
+     LUT4:I3->O           11   0.097   0.326  i2c_top_sequencer/_n0153_inv1 (i2c_top_sequencer/_n0153_inv)
+     FDCE:CE                   0.095          i2c_top_sequencer/i2c_addr_out_0
+    ----------------------------------------
+    Total                      2.342ns (0.747ns logic, 1.595ns route)
+                                       (31.9% logic, 68.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 86 / 78
+-------------------------------------------------------------------------
+Offset:              1.666ns (Levels of Logic = 4)
+  Source:            i2c_addr_bits<2> (PAD)
+  Destination:       i2c_top_deserializer/slave_ack (FF)
+  Destination Clock: clk rising
+
+  Data Path: i2c_addr_bits<2> to i2c_top_deserializer/slave_ack
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.683  i2c_addr_bits_2_IBUF (i2c_addr_bits_2_IBUF)
+     LUT5:I0->O            2   0.097   0.383  i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o7_SW0 (N28)
+     LUT6:I4->O            2   0.097   0.299  i2c_top_deserializer/_n0436 (i2c_top_deserializer/_n0436)
+     LUT4:I3->O            1   0.097   0.000  i2c_top_deserializer/slave_ack_glue_set (i2c_top_deserializer/slave_ack_glue_set)
+     FDR:D                     0.008          i2c_top_deserializer/slave_ack
+    ----------------------------------------
+    Total                      1.666ns (0.300ns logic, 1.366ns route)
+                                       (18.0% logic, 82.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'i2c_top_serializer/i2c_scl_neg_pulse'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.050ns (Levels of Logic = 2)
+  Source:            i2c_scl (PAD)
+  Destination:       i2c_top_serializer/scl_state (FF)
+  Destination Clock: i2c_top_serializer/i2c_scl_neg_pulse rising
+
+  Data Path: i2c_scl to i2c_top_serializer/scl_state
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   0.001   0.323  i2c_scl_IBUF (i2c_scl_IBUF)
+     LUT2:I1->O            1   0.097   0.279  i2c_top_serializer/i2c_scl_pos_pulse1 (i2c_top_serializer/i2c_scl_pos_pulse)
+     FDPE:PRE                  0.349          i2c_top_serializer/scl_state
+    ----------------------------------------
+    Total                      1.050ns (0.447ns logic, 0.603ns route)
+                                       (42.6% logic, 57.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 22 / 22
+-------------------------------------------------------------------------
+Offset:              0.659ns (Levels of Logic = 1)
+  Source:            i2c_top_sequencer/i2c_xfc (FF)
+  Destination:       i2c_xfc_write (PAD)
+  Source Clock:      clk rising
+
+  Data Path: i2c_top_sequencer/i2c_xfc to i2c_xfc_write
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.361   0.298  i2c_top_sequencer/i2c_xfc (i2c_top_sequencer/i2c_xfc)
+     OBUF:I->O                 0.000          i2c_xfc_write_OBUF (i2c_xfc_write)
+    ----------------------------------------
+    Total                      0.659ns (0.361ns logic, 0.298ns route)
+                                       (54.8% logic, 45.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+--------------------------------------+---------+---------+---------+---------+
+                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------+---------+---------+---------+---------+
+clk                                   |    2.342|         |         |         |
+i2c_top_deserializer/i2c_scl_neg_pulse|    0.845|         |         |         |
+i2c_top_deserializer/i2c_sda_neg_pulse|    1.428|         |         |         |
+i2c_top_serializer/i2c_scl_neg_pulse  |    0.845|         |         |         |
+--------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2c_top_deserializer/i2c_scl_neg_pulse
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.563|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2c_top_deserializer/i2c_sda_neg_pulse
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.484|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock i2c_top_serializer/i2c_scl_neg_pulse
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.484|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.95 secs
+ 
+--> 
+
+Total memory usage is 414424 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/i2c/i2c_top_test_1_14_2016_isim_beh.exe" -prj "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/i2c/i2c_top_test_1_14_2016_beh.prj" "work.i2c_top_test_1_14_2016" "work.glbl" 
