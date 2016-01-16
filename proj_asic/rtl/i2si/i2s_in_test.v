@@ -57,7 +57,9 @@ module i2s_in_test;
     reg [3:0]                       compare_count = 0;                                               // Counter to help compare word and i2si_data after intial match is found                    
     reg                             match_found = 0;                                                 // Boolean that determines if intial match was found                   
     reg                             begin_comparison = 0;                                            // Boolean that determines if to start comparing words after intial match is found
-    reg                             test_failed = 1;                                                 // Boolean that determines if no matches were found and the test failed                                
+    reg                             test_failed = 1;                                                 // Boolean that determines if no matches were found and the test failed
+    reg                             skipped_two_cycles = 0;                                          // Boolean that determines if the first two transitions of i2si_rtr and i2si_rts was skipped
+    reg [1:0]                       cycle_count = 0;                                                 // Count to help keep track of how many i2si_rtr && i2si_rts transitions occurred
                                                                                                             
     integer                         out;                                                             // Helps create output text file
                                                                                                                             
@@ -94,9 +96,12 @@ module i2s_in_test;
                                                                                                                                 
         out = $fopen("i2s_in_test_output.txt");                                                     // Open i2si_in_test2_output.txt  
         
+        
+      
                                                                                                                                                 
                                                                                                                                             
-        // Test Data                                                                                                            
+        // Test Data
+        
         test_data [0] [0] = 16'hAAAA;                                                                                   
         test_data [0] [1] = 16'hFFFF;                                                                                           
         test_data [1] [0] = 16'hAAAA;                                                                           
@@ -109,16 +114,91 @@ module i2s_in_test;
         test_data [4] [1] = 16'hFFDD;                                                                               
         test_data [5] [0] = 16'h1111;                                                                           
         test_data [5] [1] = 16'h5982;                                                                               
-        test_data [6] [0] = 16'h0001;                                                                       
+        test_data [6] [0] = 16'hFFFF;                                                                       
         test_data [6] [1] = 16'hFFFF;                                                                               
         test_data [7] [0] = 16'h1478;                                                                               
         test_data [7] [1] = 16'hA3B9;                                                                                                   
-        test_data [8] [0] = 16'hF8D5;                                                                                   
-        test_data [8] [1] = 16'hD55A;                                                                                   
+        test_data [8] [0] = 16'h0000;                                                                                   
+        test_data [8] [1] = 16'h0000;                                                                                   
         test_data [9] [0] = 16'h99C5;                                                                           
         test_data [9] [1] = 16'h7435;                                                                                               
         test_data [10] [0] = 16'h69D9;                                                              
         test_data [10] [1] = 16'hABCD;
+        
+        /*
+        test_data [0] [0] = 16'hAAAA;                                                                                   
+        test_data [0] [1] = 16'hCCCC;                                                                                          
+        test_data [1] [0] = 16'hFFFF;                                                                           
+        test_data [1] [1] = 16'hFFFF;                                                                                                       
+        test_data [2] [0] = 16'hFFFF;                                                                                                   
+        test_data [2] [1] = 16'hFFFF;                                                                                                   
+        test_data [3] [0] = 16'hFFFF;                                                                                   
+        test_data [3] [1] = 16'hFFFF;                                                                               
+        test_data [4] [0] = 16'hFFFF;                                                                                           
+        test_data [4] [1] = 16'hFFFF;                                                                               
+        test_data [5] [0] = 16'hFFFF;                                                                           
+        test_data [5] [1] = 16'hFFFF;                                                                               
+        test_data [6] [0] = 16'hFFFF;                                                                       
+        test_data [6] [1] = 16'hFFFF;                                                                               
+        test_data [7] [0] = 16'hFFFF;                                                                               
+        test_data [7] [1] = 16'hFFFF;                                                                                                   
+        test_data [8] [0] = 16'hFFFF;                                                                                   
+        test_data [8] [1] = 16'hFFFF;                                                                                   
+        test_data [9] [0] = 16'hFFFF;                                                                           
+        test_data [9] [1] = 16'hFFFF;                                                                                               
+        test_data [10] [0] = 16'hFFFF;                                                              
+        test_data [10] [1] = 16'hFFFF;*/
+        
+        /*
+        test_data [0] [0] = 16'hAAAA;                                                                                   
+        test_data [0] [1] = 16'hCCCC;                                                                                          
+        test_data [1] [0] = 16'h0000;                                                                           
+        test_data [1] [1] = 16'h0000;                                                                                                       
+        test_data [2] [0] = 16'h0000;                                                                                                   
+        test_data [2] [1] = 16'h0000;                                                                                                   
+        test_data [3] [0] = 16'h0000;                                                                                   
+        test_data [3] [1] = 16'h0000;                                                                               
+        test_data [4] [0] = 16'h0000;                                                                                           
+        test_data [4] [1] = 16'h0000;                                                                               
+        test_data [5] [0] = 16'h0000;                                                                           
+        test_data [5] [1] = 16'h0000;                                                                               
+        test_data [6] [0] = 16'h0000;                                                                       
+        test_data [6] [1] = 16'h0000;                                                                               
+        test_data [7] [0] = 16'h0000;                                                                               
+        test_data [7] [1] = 16'h0000;                                                                                                   
+        test_data [8] [0] = 16'h0000;                                                                                   
+        test_data [8] [1] = 16'h0000;                                                                                   
+        test_data [9] [0] = 16'h0000;                                                                           
+        test_data [9] [1] = 16'h0000;                                                                                               
+        test_data [10] [0] = 16'h0000;                                                              
+        test_data [10] [1] = 16'h0000;*/
+        
+        /*
+        test_data [0] [0] = $random % 16;                                                                                   
+        test_data [0] [1] = $random % 16;                                                                                           
+        test_data [1] [0] = $random % 16;                                                                           
+        test_data [1] [1] = $random % 16;                                                                                                       
+        test_data [2] [0] = $random % 16;                                                                                                   
+        test_data [2] [1] = $random % 16;                                                                                                   
+        test_data [3] [0] = $random % 16;                                                                                   
+        test_data [3] [1] = $random % 16;                                                                               
+        test_data [4] [0] = $random % 16;                                                                                           
+        test_data [4] [1] = $random % 16;                                                                               
+        test_data [5] [0] = $random % 16;                                                                           
+        test_data [5] [1] = $random % 16;                                                                               
+        test_data [6] [0] = $random % 16;                                                                       
+        test_data [6] [1] = $random % 16;                                                                               
+        test_data [7] [0] = $random % 16;                                                                               
+        test_data [7] [1] = $random % 16;                                                                                                   
+        test_data [8] [0] = $random % 16;                                                                                   
+        test_data [8] [1] = $random % 16;                                                                                   
+        test_data [9] [0] = $random % 16;                                                                           
+        test_data [9] [1] = $random % 16;                                                                                               
+        test_data [10] [0] = $random % 16;                                                              
+        test_data [10] [1] = $random % 16;*/
+        
+       // #200000;
+      
         
 	end                                                                                                                             
 
@@ -186,63 +266,76 @@ module i2s_in_test;
     assign i2si_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1) | ((bit_cnt==16'd15)&(lr_cnt==0));                                  
     assign i2si_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];                                                                                               
                                                                                                                                                     
-                                                                                                                                                        
-    //Checks if the data was properly deserialized                                                                                                          
+    
+
+    
+    //Checks if the data was properly deserialized.
+    //First two rtr && rts cycles are skipped because if comparing 32'h00000000
+    //the reset value of 0 will match with one of the input words and match_count will be wrong
     always @(posedge clk)                                                                                                                               
-    begin                                                                                                                                       
-        if(i2si_rts && i2si_rtr)                                                                                                                                
-        begin                                                                                                                                       
-            //Find the first input word that matches the output word                                                                                                                    
-            if(!match_found)                                                                                                                                    
-            begin                                                                                                                                   
-                for(match_count = 0; match_count < `N; match_count = match_count + 1)                                                                                                       
-                begin                                                                                                                               
-                    word = {test_data [match_count] [0], test_data [match_count] [1]};                                                                
-                    if(word == i2si_data)                                                                                                       
-                    begin                                                                                                                   
-                        match_found = 1;                                                                                                                                
-                        begin_comparison = 1;                                                                                       
-                        test_failed = 0;                                                                                                    
-                        compare_count = match_count;                                                                                                
-                    end                                                                                                                                         
-                end                                                                                                                                 
-            end                                                                                                                                                 
-            //Stop checking. No input words matched output words                                                                    
-            if(count > 20000 && !begin_comparison && test_failed)                                       
+    begin
+        if(i2si_rts)                                                                                                                                
+        begin
+            if(!skipped_two_cycles)                                                                 
             begin
-                match_found = 1;
-                test_failed = 0;
-                $fdisplay(out, "No matches found. Test failed");
-                #1;
-                $fclose(out);
+                cycle_count = cycle_count + 1;
+                if(cycle_count == 2)
+                    skipped_two_cycles = 1;
             end
-            
-            
-            //After finding first input word that matches, begin comparing rest of the inputted words
-            if(begin_comparison)
+            else
             begin
-                word = {test_data [compare_count] [0], test_data [compare_count] [1]};
-                //If word inputted and outputted match
-                if(word == i2si_data)
+                //Find the first input word that matches the output word                                                                                                                    
+                if(!match_found)                                                                                                                                    
+                begin                                                                                                                                   
+                    for(match_count = 0; match_count < `N; match_count = match_count + 1)                                                                                                       
+                    begin                                                                                                                               
+                        word = {test_data [match_count] [0], test_data [match_count] [1]};                                                                
+                        if(word == i2si_data && !match_found)                                                                                                       
+                        begin
+                            match_found = 1;                                                                                                                                
+                            begin_comparison = 1;                                                                                       
+                            test_failed = 0;                                                                                                    
+                            compare_count = match_count;                                                                                                
+                        end                                                                                                                                         
+                    end                                                                                                                                 
+                end                                                                                                                                                 
+                //Stop checking. No input words matched output words                                                                    
+                if(count > 20000 && !begin_comparison && test_failed)                                       
                 begin
-                    $fdisplay(out, "word: %h", word,
-                        "       ---      i2si_data: %h",
-                        i2si_data, "       ---      Pass");
-                end
-                //End of comparison test. No more words were inputted.
-                else if(i2si_data === 32'hxxxxxxxx)
-                begin
-                    begin_comparison = 0;
+                    match_found = 1;
+                    test_failed = 0;
+                    $fdisplay(out, "No matches found. Test failed");
+                    #1;
                     $fclose(out);
                 end
-                //If words do not match
-                else
+                
+                
+                //After finding first input word that matches, begin comparing rest of the inputted words
+                if(begin_comparison)
                 begin
-                    $fdisplay(out, "word: %h", word,
-                        "       ---      i2si_data: %h",
-                        i2si_data, "       ---      Fail");
+                    word = {test_data [compare_count] [0], test_data [compare_count] [1]};
+                    //If word inputted and outputted match
+                    if(word == i2si_data)
+                    begin
+                        $fdisplay(out, "word: %h", word,
+                            "       ---      i2si_data: %h",
+                            i2si_data, "       ---      Pass");
+                    end
+                    //End of comparison test. No more words were inputted.
+                    else if(i2si_data === 32'hxxxxxxxx)
+                    begin
+                        begin_comparison = 0;
+                        $fclose(out);
+                    end
+                    //If words do not match
+                    else
+                    begin
+                        $fdisplay(out, "word: %h", word,
+                            "       ---      i2si_data: %h",
+                            i2si_data, "       ---      Fail");
+                    end
+                    compare_count = compare_count + 1;
                 end
-                compare_count = compare_count + 1;
             end
         end
     end
