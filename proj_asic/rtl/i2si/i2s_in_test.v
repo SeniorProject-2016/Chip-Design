@@ -8,8 +8,9 @@
 // Author:        Kevin Cao, Zachary Nelson
 //
 // Description: Verilog Test Fixture created by ISE for module: i2s_in
-//                  Tests the i2s_in with the deserializer content being outputted.
-//                  Outputs success or failure of test to i2s_in_test_output.txt
+//                  Creates N number 32 bit words specified by the programmer to be inputted.
+//                  Compares the inputted and outputted words.
+//                  Outputs the success and failure of the comparisons in i2s_in_test_output.txt
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -41,7 +42,6 @@ module i2s_in_test;
     
     
     // Internal Variables
-    reg [15:0]                      test_data [`N-1:0] [0:1];                                        // [Bits Per Word] test_data [# of entities in test] [Left/Right]
     reg                             sck_d1;                                                          // serial clock delay
     reg [31:0]                      count;                                                           // clock counter
     reg [31:0]                      sck_cnt;                                                         // serial clock counter
@@ -50,16 +50,21 @@ module i2s_in_test;
     reg [31:0]                      word_cnt;                                                        // word counter
     reg [31:0]                      cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
     reg [31:0]                      bit_tc =  15;                                                    // number of bits in a word
+                                                                                                                                
+                                                                                                                                
+    reg [15:0]                      test_data [`N-1:0] [0:1];                                        // [Bits Per Word] test_data [# of entities in test] [Left/Right]
                                                                                                                             
                                                                                                                             
-    reg [31:0]                      word;                                                            // Stores the expected word, to be compared with i2si_data    
-    reg [3:0]                       match_count = 0;                                                 // Counter to help find initial matching words for word and i2si_data    
-    reg [3:0]                       compare_count = 0;                                               // Counter to help compare word and i2si_data after intial match is found                    
+    integer                         match_count = 0;                                                 // Counter to help find initial matching words for word and i2si_data    
+    integer                         compare_count = 0;                                               // Counter to help compare word and i2si_data after intial match is found
+    integer                         pass_count = 0;                                                  // Counts number of successful comparisons
+    integer                         fail_count = 0;                                                  // Counts number of failed comparisons    
     reg                             match_found = 0;                                                 // Boolean that determines if intial match was found                   
     reg                             begin_comparison = 0;                                            // Boolean that determines if to start comparing words after intial match is found
     reg                             test_failed = 1;                                                 // Boolean that determines if no matches were found and the test failed
     reg                             skipped_two_cycles = 0;                                          // Boolean that determines if the first two transitions of i2si_rtr and i2si_rts was skipped
     reg [1:0]                       cycle_count = 0;                                                 // Count to help keep track of how many i2si_rtr && i2si_rts transitions occurred
+    reg [31:0]                      word;                                                            // Stores the expected word, to be compared with i2si_data    
                                                                                                             
     integer                         out;                                                             // Helps create output text file
                                                                                                                             
@@ -173,29 +178,6 @@ module i2s_in_test;
         test_data [10] [0] = 16'h0000;                                                              
         test_data [10] [1] = 16'h0000;*/
         
-        /*
-        test_data [0] [0] = $random % 16;                                                                                   
-        test_data [0] [1] = $random % 16;                                                                                           
-        test_data [1] [0] = $random % 16;                                                                           
-        test_data [1] [1] = $random % 16;                                                                                                       
-        test_data [2] [0] = $random % 16;                                                                                                   
-        test_data [2] [1] = $random % 16;                                                                                                   
-        test_data [3] [0] = $random % 16;                                                                                   
-        test_data [3] [1] = $random % 16;                                                                               
-        test_data [4] [0] = $random % 16;                                                                                           
-        test_data [4] [1] = $random % 16;                                                                               
-        test_data [5] [0] = $random % 16;                                                                           
-        test_data [5] [1] = $random % 16;                                                                               
-        test_data [6] [0] = $random % 16;                                                                       
-        test_data [6] [1] = $random % 16;                                                                               
-        test_data [7] [0] = $random % 16;                                                                               
-        test_data [7] [1] = $random % 16;                                                                                                   
-        test_data [8] [0] = $random % 16;                                                                                   
-        test_data [8] [1] = $random % 16;                                                                                   
-        test_data [9] [0] = $random % 16;                                                                           
-        test_data [9] [1] = $random % 16;                                                                                               
-        test_data [10] [0] = $random % 16;                                                              
-        test_data [10] [1] = $random % 16;*/
         
        // #200000;
       
@@ -305,8 +287,7 @@ module i2s_in_test;
                     match_found = 1;
                     test_failed = 0;
                     $fdisplay(out, "No matches found. Test failed");
-                    #1;
-                    $fclose(out);
+                    #1 $fclose(out);
                 end
                 
                 
@@ -317,6 +298,7 @@ module i2s_in_test;
                     //If word inputted and outputted match
                     if(word == i2si_data)
                     begin
+                        pass_count = pass_count + 1;                        
                         $fdisplay(out, "word: %h", word,
                             "       ---      i2si_data: %h",
                             i2si_data, "       ---      Pass");
@@ -325,11 +307,15 @@ module i2s_in_test;
                     else if(i2si_data === 32'hxxxxxxxx)
                     begin
                         begin_comparison = 0;
-                        $fclose(out);
+                        $fdisplay(out, "\nNumber of Comparisons:                    %d", pass_count + fail_count,
+                            "\nNumber of Successful Comparisons:         %d", pass_count,
+                            "\nNumber of Failed Comparisons:           %d", fail_count);  
+                        #1 $fclose(out);
                     end
                     //If words do not match
                     else
                     begin
+                        fail_count = fail_count + 1;
                         $fdisplay(out, "word: %h", word,
                             "       ---      i2si_data: %h",
                             i2si_data, "       ---      Fail");
