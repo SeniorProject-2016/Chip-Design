@@ -22,6 +22,7 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts, a
     input 	aud_out_rtr;                                 // ready to recieve (output)
     input	rf_filter_shift;                             // # of bits to shift after accumulator
     input	rf_filter_clip_en;                           // select bit (1- perform clipping, 0- no clipping)
-    input [7:0] rf_filter_coeffs;                         // filter coeffs 
+    input [7:0] rf_filter_coeffs;                         // filter coeffs
+
     
 endmodule

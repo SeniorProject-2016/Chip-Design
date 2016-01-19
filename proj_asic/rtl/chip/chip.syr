@@ -159,7 +159,6 @@ Elaborating module <i2s_out>.
 Elaborating module <serializer>.
 
 Elaborating module <filter>.
-WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" Line 10: Empty module <filter> remains a black box.
 
 Elaborating module <chip_reg>.
 WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip_reg.v" Line 10: Empty module <chip_reg> remains a black box.
@@ -281,6 +280,21 @@ Synthesizing Unit <serializer>.
 	inferred  41 D-type flip-flop(s).
 	inferred   4 Multiplexer(s).
 Unit <serializer> synthesized.
+
+Synthesizing Unit <filter>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v".
+WARNING:Xst:647 - Input <aud_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rf_filter_coeffs> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rstb> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <aud_in_rts> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <aud_out_rtr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <trig_filter_ovf_flag_clear> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rf_filter_shift> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rf_filter_clip_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <filter> synthesized.
 
 Synthesizing Unit <i2c>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2c.v".
@@ -652,31 +666,190 @@ Optimizing unit <i2si_deserializer> ...
 Optimizing unit <fifo> ...
 
 Optimizing unit <serializer> ...
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_31> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_30> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_29> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_28> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_27> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_26> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_25> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_24> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_23> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_22> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_21> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_20> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_19> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_18> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_17> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_16> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_15> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_14> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_13> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_12> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_11> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_10> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_9> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_8> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_7> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_6> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_5> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_4> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_3> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/i2si_bist_out_data_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/sd_vec_3> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/sd_vec_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/sd_vec_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/sd_vec_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_15> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_14> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_13> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_12> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_11> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_10> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_9> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_8> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_7> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_6> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_5> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_4> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_3> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_rgt_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_15> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_14> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_13> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_12> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_11> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_10> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_9> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_8> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_7> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_6> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_5> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_4> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_3> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_lft_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/rd_ptr_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/rd_ptr_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/rd_ptr_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/wr_ptr_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/wr_ptr_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/wr_ptr_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem32> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem31> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem30> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem29> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem28> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem27> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem25> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem24> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem26> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem23> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem22> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem20> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem19> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem21> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem18> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem17> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem15> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem14> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem16> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem13> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem12> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem10> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem9> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem11> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem8> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem7> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem5> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem4> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem6> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem3> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/Mram_buf_mem1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_31> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_30> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_29> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_28> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_27> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_26> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_25> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_24> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_23> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_22> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_21> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_20> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_19> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_18> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_17> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_16> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_15> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_14> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_13> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_12> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_11> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_10> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_9> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_8> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_7> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_6> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_5> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_4> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_3> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_out_data_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:1710 - FF/Latch <I2S_Input/ro_fifo_overrun> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/i2si_Fifo/fifo_counter_3> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/i2si_Fifo/fifo_counter_2> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <I2S_Input/i2si_Fifo/fifo_counter_1> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/sck_count_4> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/sck_count_3> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/sck_count_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/sck_count_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/sck_count_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Bist/bist_active> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/ws_vec_3> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/ws_vec_2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/ws_vec_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/ws_vec_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/in_left_delay> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/ws_d> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/active> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/armed1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/armed2> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/in_left> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/out_xfc> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/rst_n_vec_1> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/Deserializer/rst_n_vec_0> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <I2S_Input/i2si_Fifo/fifo_counter_0> of sequential type is unconnected in block <chip>.
 INFO:Xst:2261 - The FF/Latch <I2C/i2c_top_deserializer/bit_counter_slave_addr_FSM_FFd1> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <I2C/i2c_top_deserializer/got_slave_addr> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 0.
 
 Final Macro Processing ...
 
 Processing Unit <chip> :
 	Found 3-bit shift register for signal <I2C/i2c_top_deserializer/i2c_sda>.
 	Found 2-bit shift register for signal <I2C/i2c_top_deserializer/i2c_scl>.
-	Found 4-bit shift register for signal <I2S_Input/Synchronizer/sd_vec_3>.
-	Found 4-bit shift register for signal <I2S_Input/Synchronizer/ws_vec_3>.
 Unit <chip> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 332
- Flip-Flops                                            : 332
-# Shift Registers                                      : 4
+# Registers                                            : 210
+ Flip-Flops                                            : 210
+# Shift Registers                                      : 2
  2-bit shift register                                  : 1
  3-bit shift register                                  : 1
- 4-bit shift register                                  : 2
 
 =========================================================================
 
@@ -699,41 +872,39 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 580
+# BELS                             : 340
 #      GND                         : 1
-#      INV                         : 15
-#      LUT1                        : 24
-#      LUT2                        : 53
+#      INV                         : 11
+#      LUT2                        : 34
 #      LUT3                        : 82
-#      LUT4                        : 132
-#      LUT5                        : 53
-#      LUT6                        : 91
-#      MUXCY                       : 67
-#      MUXF7                       : 5
+#      LUT4                        : 23
+#      LUT5                        : 42
+#      LUT6                        : 96
+#      MUXCY                       : 20
+#      MUXF7                       : 6
 #      MUXF8                       : 2
 #      VCC                         : 1
-#      XORCY                       : 54
-# FlipFlops/Latches                : 341
-#      FD                          : 18
-#      FDC                         : 18
-#      FDCE                        : 231
-#      FDE                         : 4
-#      FDP                         : 4
-#      FDPE                        : 8
+#      XORCY                       : 22
+# FlipFlops/Latches                : 212
+#      FD                          : 16
+#      FDC                         : 11
+#      FDCE                        : 119
+#      FDE                         : 2
+#      FDP                         : 3
+#      FDPE                        : 3
 #      FDR                         : 42
 #      FDRE                        : 16
-# RAMS                             : 64
-#      RAM32X1D                    : 64
-# Shift Registers                  : 4
-#      SRLC16E                     : 4
+# RAMS                             : 32
+#      RAM32X1D                    : 32
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 13
-#      IBUF                        : 9
+# IO Buffers                       : 11
+#      IBUF                        : 7
 #      OBUF                        : 4
-# Others                           : 2
+# Others                           : 1
 #      chip_reg                    : 1
-#      filter                      : 1
 
 Device utilization summary:
 ---------------------------
@@ -742,23 +913,23 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             341  out of  126800     0%  
- Number of Slice LUTs:                  582  out of  63400     0%  
-    Number used as Logic:               450  out of  63400     0%  
-    Number used as Memory:              132  out of  19000     0%  
-       Number used as RAM:              128
-       Number used as SRL:                4
+ Number of Slice Registers:             212  out of  126800     0%  
+ Number of Slice LUTs:                  354  out of  63400     0%  
+    Number used as Logic:               288  out of  63400     0%  
+    Number used as Memory:               66  out of  19000     0%  
+       Number used as RAM:               64
+       Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    648
-   Number with an unused Flip Flop:     307  out of    648    47%  
-   Number with an unused LUT:            66  out of    648    10%  
-   Number of fully used LUT-FF pairs:   275  out of    648    42%  
-   Number of unique control sets:        27
+ Number of LUT Flip Flop pairs used:    383
+   Number with an unused Flip Flop:     171  out of    383    44%  
+   Number with an unused LUT:            29  out of    383     7%  
+   Number of fully used LUT-FF pairs:   183  out of    383    47%  
+   Number of unique control sets:        19
 
 IO Utilization: 
  Number of IOs:                          14
- Number of bonded IOBs:                  14  out of    210     6%  
+ Number of bonded IOBs:                  12  out of    210     5%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -784,7 +955,7 @@ Clock Information:
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
 Clock Signal                                                                             | Clock buffer(FF name)                      | Load  |
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
-clk                                                                                      | BUFGP                                      | 406   |
+clk                                                                                      | BUFGP                                      | 243   |
 I2C/i2c_top_deserializer/i2c_scl_neg_pulse(I2C/i2c_top_deserializer/i2c_scl_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/scl_state)| 1     |
 I2C/i2c_top_deserializer/i2c_sda_neg_pulse(I2C/i2c_top_deserializer/i2c_sda_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/sda_state)| 1     |
 I2C/i2c_top_serializer/i2c_scl_neg_pulse(I2C/i2c_top_serializer/i2c_scl_neg_pulse1:O)    | NONE(*)(I2C/i2c_top_serializer/scl_state)  | 1     |
@@ -802,10 +973,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.581ns (Maximum Frequency: 387.507MHz)
-   Minimum input arrival time before clock: 2.290ns
-   Maximum output required time after clock: 1.437ns
-   Maximum combinational path delay: 0.443ns
+   Minimum period: 2.342ns (Maximum Frequency: 427.040MHz)
+   Minimum input arrival time before clock: 1.584ns
+   Maximum output required time after clock: 0.654ns
+   Maximum combinational path delay: 0.418ns
 
 Timing Details:
 ---------------
@@ -813,117 +984,55 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.581ns (frequency: 387.507MHz)
-  Total number of paths / destination ports: 8327 / 1134
+  Clock period: 2.342ns (frequency: 427.040MHz)
+  Total number of paths / destination ports: 3357 / 639
 -------------------------------------------------------------------------
-Delay:               2.581ns (Levels of Logic = 34)
-  Source:            I2S_Input/Bist/i2si_bist_out_data_0 (FF)
-  Destination:       I2S_Input/Bist/i2si_bist_out_data_31 (FF)
+Delay:               2.342ns (Levels of Logic = 3)
+  Source:            I2C/i2c_top_sequencer/Q_addr (FF)
+  Destination:       I2C/i2c_top_sequencer/i2c_addr_out_10 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: I2S_Input/Bist/i2si_bist_out_data_0 to I2S_Input/Bist/i2si_bist_out_data_31
+  Data Path: I2C/i2c_top_sequencer/Q_addr to I2C/i2c_top_sequencer/i2c_addr_out_10
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             4   0.361   0.309  I2S_Input/Bist/i2si_bist_out_data_0 (I2S_Input/Bist/i2si_bist_out_data_0)
-     LUT2:I1->O            1   0.097   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<2> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<3> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<4> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<5> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<6> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<7> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<12> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<13> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<14> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<15> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<16> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<17> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<17>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<18> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<18>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<19> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<19>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<20> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<20>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<21> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<21>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<22> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<22>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<23> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<23>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<24> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<24>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<25> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<25>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<26> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<26>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<27> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<27>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<28> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<28>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<29> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<29>)
-     MUXCY:CI->O           0   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<30> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<30>)
-     XORCY:CI->O           1   0.370   0.295  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_xor<31> (I2S_Input/Bist/i2si_bist_out_data[31]_GND_6_o_add_6_OUT<31>)
-     LUT4:I3->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT251 (I2S_Input/Bist/i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT<31>)
-     FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_31
+     FD:C->Q               8   0.361   0.411  I2C/i2c_top_sequencer/Q_addr (I2C/i2c_top_sequencer/Q_addr)
+     LUT2:I0->O            4   0.097   0.525  I2C/i2c_top_sequencer/_n0235_inv11 (I2C/i2c_top_sequencer/_n0235_inv1)
+     LUT6:I3->O            9   0.097   0.332  I2C/i2c_top_sequencer/_n0206_inv1 (I2C/i2c_top_sequencer/_n0206_inv)
+     LUT4:I3->O           11   0.097   0.326  I2C/i2c_top_sequencer/_n0153_inv1 (I2C/i2c_top_sequencer/_n0153_inv)
+     FDCE:CE                   0.095          I2C/i2c_top_sequencer/i2c_addr_out_0
     ----------------------------------------
-    Total                      2.581ns (1.976ns logic, 0.605ns route)
-                                       (76.6% logic, 23.4% route)
+    Total                      2.342ns (0.747ns logic, 1.595ns route)
+                                       (31.9% logic, 68.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 2864 / 511
+  Total number of paths / destination ports: 174 / 166
 -------------------------------------------------------------------------
-Offset:              2.290ns (Levels of Logic = 34)
-  Source:            Register:rf_i2si_bist_incr<0> (PAD)
-  Destination:       I2S_Input/Bist/i2si_bist_out_data_31 (FF)
+Offset:              1.584ns (Levels of Logic = 4)
+  Source:            i2c_addr_bits<2> (PAD)
+  Destination:       I2C/i2c_top_deserializer/slave_addr_stop (FF)
   Destination Clock: clk rising
 
-  Data Path: Register:rf_i2si_bist_incr<0> to I2S_Input/Bist/i2si_bist_out_data_31
+  Data Path: i2c_addr_bits<2> to I2C/i2c_top_deserializer/slave_addr_stop
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    chip_reg:rf_i2si_bist_incr<0>    1   0.000   0.379  Register (rf_bist_inc<0>)
-     LUT2:I0->O            1   0.097   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<2> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<3> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<4> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<5> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<6> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<7> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<12> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<13> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<14> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<15> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<16> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<17> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<17>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<18> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<18>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<19> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<19>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<20> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<20>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<21> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<21>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<22> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<22>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<23> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<23>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<24> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<24>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<25> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<25>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<26> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<26>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<27> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<27>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<28> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<28>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<29> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<29>)
-     MUXCY:CI->O           0   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<30> (I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_cy<30>)
-     XORCY:CI->O           1   0.370   0.295  I2S_Input/Bist/Madd_i2si_bist_out_data[31]_GND_6_o_add_6_OUT_xor<31> (I2S_Input/Bist/i2si_bist_out_data[31]_GND_6_o_add_6_OUT<31>)
-     LUT4:I3->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT251 (I2S_Input/Bist/i2si_bist_out_data[31]_rf_bist_start_val[31]_mux_8_OUT<31>)
-     FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_31
+     IBUF:I->O             1   0.001   0.683  i2c_addr_bits_2_IBUF (i2c_addr_bits_2_IBUF)
+     LUT5:I0->O            1   0.097   0.295  I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o7_SW0 (N26)
+     LUT6:I5->O            3   0.097   0.305  I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o7 (I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o)
+     LUT6:I5->O            1   0.097   0.000  I2C/i2c_top_deserializer/i2c_RW_rstpot (I2C/i2c_top_deserializer/i2c_RW_rstpot)
+     FDR:D                     0.008          I2C/i2c_top_deserializer/i2c_RW
     ----------------------------------------
-    Total                      2.290ns (1.615ns logic, 0.675ns route)
-                                       (70.5% logic, 29.5% route)
+    Total                      1.584ns (0.300ns logic, 1.284ns route)
+                                       (18.9% logic, 81.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'I2C/i2c_top_serializer/i2c_scl_neg_pulse'
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              1.045ns (Levels of Logic = 2)
+Offset:              1.050ns (Levels of Logic = 2)
   Source:            i2c_scl (PAD)
   Destination:       I2C/i2c_top_serializer/scl_state (FF)
   Destination Clock: I2C/i2c_top_serializer/i2c_scl_neg_pulse rising
@@ -932,49 +1041,48 @@ Offset:              1.045ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             6   0.001   0.318  i2c_scl_IBUF (i2c_scl_IBUF)
+     IBUF:I->O             7   0.001   0.323  i2c_scl_IBUF (i2c_scl_IBUF)
      LUT2:I1->O            1   0.097   0.279  I2C/i2c_top_serializer/i2c_scl_pos_pulse1 (I2C/i2c_top_serializer/i2c_scl_pos_pulse)
      FDPE:PRE                  0.349          I2C/i2c_top_serializer/scl_state
     ----------------------------------------
-    Total                      1.045ns (0.447ns logic, 0.598ns route)
-                                       (42.8% logic, 57.2% route)
+    Total                      1.050ns (0.447ns logic, 0.603ns route)
+                                       (42.6% logic, 57.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 67 / 61
+  Total number of paths / destination ports: 26 / 26
 -------------------------------------------------------------------------
-Offset:              1.437ns (Levels of Logic = 1)
-  Source:            I2S_Output/i2so_Fifo/fifo_counter_3 (FF)
-  Destination:       Filter:aud_out_rtr (PAD)
+Offset:              0.654ns (Levels of Logic = 1)
+  Source:            I2S_Input/Synchronizer/sck_vec_1 (FF)
+  Destination:       i2so_sck (PAD)
   Source Clock:      clk rising
 
-  Data Path: I2S_Output/i2so_Fifo/fifo_counter_3 to Filter:aud_out_rtr
+  Data Path: I2S_Input/Synchronizer/sck_vec_1 to i2so_sck
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             9   0.361   0.593  I2S_Output/i2so_Fifo/fifo_counter_3 (I2S_Output/i2so_Fifo/fifo_counter_3)
-     LUT4:I0->O           32   0.097   0.386  I2S_Output/i2so_Fifo/fifo_inp_rtr1 (filt_rtr)
-    filter:aud_out_rtr         0.000          Filter
+     FDC:C->Q              4   0.361   0.293  I2S_Input/Synchronizer/sck_vec_1 (I2S_Input/Synchronizer/sck_vec_1)
+     OBUF:I->O                 0.000          i2so_sck_OBUF (i2so_sck)
     ----------------------------------------
-    Total                      1.437ns (0.458ns logic, 0.979ns route)
-                                       (31.9% logic, 68.1% route)
+    Total                      0.654ns (0.361ns logic, 0.293ns route)
+                                       (55.2% logic, 44.8% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 16 / 16
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Delay:               0.443ns (Levels of Logic = 1)
+Delay:               0.418ns (Levels of Logic = 1)
   Source:            clk (PAD)
-  Destination:       Filter:clk (PAD)
+  Destination:       Register:clk (PAD)
 
-  Data Path: clk to Filter:clk
+  Data Path: clk to Register:clk
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     BUFGP:I->O          406   0.000   0.443  clk_BUFGP (clk_BUFGP)
-    filter:clk                 0.000          Filter
+     BUFGP:I->O          243   0.000   0.418  clk_BUFGP (clk_BUFGP)
+    chip_reg:clk               0.000          Register
     ----------------------------------------
-    Total                      0.443ns (0.000ns logic, 0.443ns route)
+    Total                      0.418ns (0.000ns logic, 0.418ns route)
                                        (0.0% logic, 100.0% route)
 
 =========================================================================
@@ -987,7 +1095,7 @@ Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_scl_neg_pulse
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.553|         |         |         |
+clk            |    1.563|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_sda_neg_pulse
@@ -1003,7 +1111,7 @@ Clock to Setup on destination clock I2C/i2c_top_serializer/i2c_scl_neg_pulse
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.480|         |         |         |
+clk            |    1.484|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -1012,22 +1120,22 @@ Clock to Setup on destination clock clk
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
 I2C/i2c_top_deserializer/i2c_scl_neg_pulse|    0.845|         |         |         |
-I2C/i2c_top_deserializer/i2c_sda_neg_pulse|    1.480|         |         |         |
+I2C/i2c_top_deserializer/i2c_sda_neg_pulse|    1.428|         |         |         |
 I2C/i2c_top_serializer/i2c_scl_neg_pulse  |    0.845|         |         |         |
-clk                                       |    2.581|         |         |         |
+clk                                       |    2.342|         |         |         |
 ------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.66 secs
+Total CPU time to Xst completion: 11.28 secs
  
 --> 
 
-Total memory usage is 415572 kilobytes
+Total memory usage is 415628 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
+Number of warnings :  173 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 

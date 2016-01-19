@@ -22,10 +22,13 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="SeniorProject.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="bist_test_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="bist_test_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="bist_test_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="chip.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="chip.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="chip.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="chip.ngc"/>
@@ -35,6 +38,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="chip.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="chip.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="chip_envsettings.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="chip_ngdbuild.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="chip_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="chip_xst.xrpt"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="fifo_test_isim_beh.exe"/>
@@ -65,6 +69,7 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="synchronizer_testbench_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
@@ -76,6 +81,10 @@
     <transform xil_pn:end_ts="1453153582" xil_pn:in_ck="1850048082789423045" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1453153582">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Deserializer.v"/>
       <outfile xil_pn:name="I2C_Serializer.v"/>
       <outfile xil_pn:name="Sequencer.v"/>
@@ -115,6 +124,11 @@
     <transform xil_pn:end_ts="1453153583" xil_pn:in_ck="1850048082789423045" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1453153582">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Deserializer.v"/>
       <outfile xil_pn:name="I2C_Serializer.v"/>
       <outfile xil_pn:name="Sequencer.v"/>
@@ -142,7 +156,10 @@
     <transform xil_pn:end_ts="1453153589" xil_pn:in_ck="1850048082789423045" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3274212710597273825" xil_pn:start_ts="1453153583">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="bist_test_beh.prj"/>
       <outfile xil_pn:name="bist_test_isim_beh.exe"/>
@@ -154,6 +171,7 @@
     <transform xil_pn:end_ts="1453153589" xil_pn:in_ck="-529376563097746671" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-1370768198434606686" xil_pn:start_ts="1453153589">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="bist_test_isim_beh.wdb"/>
@@ -188,10 +206,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1452820732" xil_pn:in_ck="4411634681786239575" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-5875091489502267522" xil_pn:start_ts="1452820717">
+    <transform xil_pn:end_ts="1453230548" xil_pn:in_ck="4411634681786239575" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-5875091489502267522" xil_pn:start_ts="1453230534">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="chip.lso"/>
       <outfile xil_pn:name="chip.ngc"/>
@@ -205,10 +225,20 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1452122065" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="123229027435575910" xil_pn:start_ts="1452122065">
+    <transform xil_pn:end_ts="1453230218" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="123229027435575910" xil_pn:start_ts="1453230218">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
+    </transform>
+    <transform xil_pn:end_ts="1453230229" xil_pn:in_ck="-8965849305547621036" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-3808250951173586670" xil_pn:start_ts="1453230218">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="chip.bld"/>
+      <outfile xil_pn:name="chip_ngdbuild.xrpt"/>
     </transform>
   </transforms>
 
