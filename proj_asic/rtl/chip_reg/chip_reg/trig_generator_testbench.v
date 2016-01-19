@@ -25,7 +25,7 @@
 module trig_generator_testbench;
 
 	// Inputs
-	reg [11:0] address;
+	reg [10:0] address;
 	reg [7:0] wdata;
 	reg xfc;
 	reg clk;
@@ -77,7 +77,7 @@ always @(posedge clk or negedge rst_n)
 			address <= 0;
 			xfc <= 0;
 		end
-		else if (address < 12'h20) //hex 20 12 bits of data
+		else if (address < 11'h20) //hex 20 12 bits of data
 		begin
 			address <= address + 4;
 			xfc <= 1;

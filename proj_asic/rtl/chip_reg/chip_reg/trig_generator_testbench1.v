@@ -25,7 +25,7 @@
 module trig_generator_testbench1;
 
 	// Inputs
-	reg [11:0] address;
+	reg [10:0] address;
 	reg [7:0] wdata;
 	reg xfc;
 	reg clk;
@@ -83,7 +83,7 @@ always @(posedge clk or negedge rst_n)
 		if wdata is 12 bits of data and less than the hex value 20 wdata is
 		and file transfer is set to 1 - complete
 		*/
-		else if (wdata < 12'h020) 
+		else if (wdata < 11'h020) 
 		begin
 			wdata <= wdata + 1;
 			xfc <= 1;

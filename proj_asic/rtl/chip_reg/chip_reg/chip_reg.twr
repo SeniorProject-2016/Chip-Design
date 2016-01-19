@@ -1,0 +1,77 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml chip_reg.twx chip_reg.ncd -o chip_reg.twr chip_reg.pcf
+
+Design file:              chip_reg.ncd
+Physical constraint file: chip_reg.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+-------------+------------+------------+------------+------------+------------------+--------+
+             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source       | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+-------------+------------+------------+------------+------------+------------------+--------+
+i2c_addr<0>  |    0.891(R)|      FAST  |    1.038(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<1>  |    0.569(R)|      FAST  |    1.493(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<2>  |    0.560(R)|      FAST  |    1.516(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<3>  |    0.466(R)|      FAST  |    1.611(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<4>  |    0.634(R)|      FAST  |    1.393(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<5>  |    0.811(R)|      FAST  |    1.105(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<6>  |    0.843(R)|      FAST  |    1.048(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<7>  |    0.633(R)|      FAST  |    1.368(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<8>  |    0.714(R)|      FAST  |    1.255(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<9>  |    0.822(R)|      FAST  |    1.071(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<10> |    0.711(R)|      FAST  |    1.276(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_addr<11> |    0.370(R)|      FAST  |    1.730(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_wdata<0> |    0.380(R)|      FAST  |    1.469(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_wdata<2> |    0.305(R)|      FAST  |    1.594(R)|      SLOW  |clk_BUFGP         |   0.000|
+i2c_xfc_write|    0.715(R)|      FAST  |    1.270(R)|      SLOW  |clk_BUFGP         |   0.000|
+rst          |    0.035(R)|      FAST  |    1.726(R)|      SLOW  |clk_BUFGP         |   0.000|
+-------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                  |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination       |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------------+-----------------+------------+-----------------+------------+------------------+--------+
+trig_fifo_overrun |         6.397(R)|      SLOW  |         2.817(R)|      FAST  |clk_BUFGP         |   0.000|
+trig_fifo_underrun|         6.396(R)|      SLOW  |         2.816(R)|      FAST  |clk_BUFGP         |   0.000|
+------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+
+Analysis completed Wed Jan 13 22:31:09 2016 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 666 MB
+
+
+

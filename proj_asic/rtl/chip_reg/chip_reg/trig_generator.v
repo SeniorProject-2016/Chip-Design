@@ -13,7 +13,7 @@ module trig_generator(clk, rst, address, wdata, xfc, trig_i2si_fifo_overrun_clr,
     // Inputs
     input clk;                              // master clock
     input rst;                              // reset
-    input [11:0] address;                   // register address
+    input [10:0] address;                   // register address
     input [7:0] wdata;                      // data to be written for a write op
     input xfc;                              // transfer complete
     // Outputs
