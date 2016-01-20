@@ -1,20 +1,20 @@
 `timescale 1ns / 1ps
-`define N 11 // number of test elements
+`define N 101 // number of test elements
 
 ////////////////////////////////////////////////////////////////////////////////
-// Module Name:   i2s_in_test.v
-// Create Date:   11/27/2015
-// Last Edit:     1/10/16
-// Author:        Kevin Cao, Zachary Nelson
+// Module Name:   i2s_in_test3.v
+// Create Date:   01/16/2016
+// Last Edit:     1/18/16
+// Author:        Kevin Cao
 //
 // Description: Verilog Test Fixture created by ISE for module: i2s_in
-//                  Creates N number 32 bit words specified by the programmer to be inputted.
+//                  Creates N number random 32 bit words being inputted.
 //                  Compares the inputted and outputted words.
-//                  Outputs the success and failure of the comparisons in i2s_in_test_output.txt
+//                  Outputs the success and failure of the comparisons in i2s_in_test3_output.txt
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module i2s_in_test;
+module i2s_in_test3;
 
 	// Inputs
 	reg                             clk;
@@ -50,9 +50,11 @@ module i2s_in_test;
     reg [31:0]                      word_cnt;                                                        // word counter
     reg [31:0]                      cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
     reg [31:0]                      bit_tc =  15;                                                    // number of bits in a word
-                                                                                                                                
-                                                                                                                                
+    
+    
     reg [15:0]                      test_data [`N-1:0] [0:1];                                        // [Bits Per Word] test_data [# of entities in test] [Left/Right]
+    integer                         index1;                                                          // Counter to help create random 32 bit words
+    integer                         index2;                                                          // Counter to help create random 32 bit words
                                                                                                                             
                                                                                                                             
     integer                         match_count = 0;                                                 // Counter to help find initial matching words for word and i2si_data    
@@ -67,6 +69,8 @@ module i2s_in_test;
     reg [31:0]                      word;                                                            // Stores the expected word, to be compared with i2si_data    
                                                                                                             
     integer                         out;                                                             // Helps create output text file
+    
+
                                                                                                                             
 	// Instantiate the Unit Under Test (UUT)                                                                    
 	i2s_in uut (                                                                                                                                
@@ -99,88 +103,23 @@ module i2s_in_test;
 		trig_fifo_overrun_clr = 0;                                                                                      
                                                                                                                                     
                                                                                                                                 
-        out = $fopen("i2s_in_test_output.txt");                                                     // Open i2si_in_test2_output.txt  
+        out = $fopen("i2s_in_test3_output.txt");                                                     // Open i2si_in_test2_output.txt  
         
         
       
-                                                                                                                                                
+
+        for(index1 = 0; index1 < `N; index1 = index1 + 1)
+        begin
+            for(index2 = 0; index2 < 2; index2 = index2 + 1)
+            begin
+                test_data [index1] [index2] = $random;
+            end
+        end
                                                                                                                                             
-        // Test Data
-        
-        test_data [0] [0] = 16'hAAAA;                                                                                   
-        test_data [0] [1] = 16'hFFFF;                                                                                           
-        test_data [1] [0] = 16'hAAAA;                                                                           
-        test_data [1] [1] = 16'hCCCC;                                                                                                       
-        test_data [2] [0] = 16'hCDD7;                                                                                                   
-        test_data [2] [1] = 16'hBABA;                                                                                                   
-        test_data [3] [0] = 16'h4444;                                                                                   
-        test_data [3] [1] = 16'hAAAA;                                                                               
-        test_data [4] [0] = 16'h7398;                                                                                           
-        test_data [4] [1] = 16'hFFDD;                                                                               
-        test_data [5] [0] = 16'h1111;                                                                           
-        test_data [5] [1] = 16'h5982;                                                                               
-        test_data [6] [0] = 16'hFFFF;                                                                       
-        test_data [6] [1] = 16'hFFFF;                                                                               
-        test_data [7] [0] = 16'h1478;                                                                               
-        test_data [7] [1] = 16'hA3B9;                                                                                                   
-        test_data [8] [0] = 16'h0000;                                                                                   
-        test_data [8] [1] = 16'h0000;                                                                                   
-        test_data [9] [0] = 16'h99C5;                                                                           
-        test_data [9] [1] = 16'h7435;                                                                                               
-        test_data [10] [0] = 16'h69D9;                                                              
-        test_data [10] [1] = 16'hABCD;
-        
-        /*
-        test_data [0] [0] = 16'hAAAA;                                                                                   
-        test_data [0] [1] = 16'hCCCC;                                                                                          
-        test_data [1] [0] = 16'hFFFF;                                                                           
-        test_data [1] [1] = 16'hFFFF;                                                                                                       
-        test_data [2] [0] = 16'hFFFF;                                                                                                   
-        test_data [2] [1] = 16'hFFFF;                                                                                                   
-        test_data [3] [0] = 16'hFFFF;                                                                                   
-        test_data [3] [1] = 16'hFFFF;                                                                               
-        test_data [4] [0] = 16'hFFFF;                                                                                           
-        test_data [4] [1] = 16'hFFFF;                                                                               
-        test_data [5] [0] = 16'hFFFF;                                                                           
-        test_data [5] [1] = 16'hFFFF;                                                                               
-        test_data [6] [0] = 16'hFFFF;                                                                       
-        test_data [6] [1] = 16'hFFFF;                                                                               
-        test_data [7] [0] = 16'hFFFF;                                                                               
-        test_data [7] [1] = 16'hFFFF;                                                                                                   
-        test_data [8] [0] = 16'hFFFF;                                                                                   
-        test_data [8] [1] = 16'hFFFF;                                                                                   
-        test_data [9] [0] = 16'hFFFF;                                                                           
-        test_data [9] [1] = 16'hFFFF;                                                                                               
-        test_data [10] [0] = 16'hFFFF;                                                              
-        test_data [10] [1] = 16'hFFFF;*/
-        
-        /*
-        test_data [0] [0] = 16'hAAAA;                                                                                   
-        test_data [0] [1] = 16'hCCCC;                                                                                          
-        test_data [1] [0] = 16'h0000;                                                                           
-        test_data [1] [1] = 16'h0000;                                                                                                       
-        test_data [2] [0] = 16'h0000;                                                                                                   
-        test_data [2] [1] = 16'h0000;                                                                                                   
-        test_data [3] [0] = 16'h0000;                                                                                   
-        test_data [3] [1] = 16'h0000;                                                                               
-        test_data [4] [0] = 16'h0000;                                                                                           
-        test_data [4] [1] = 16'h0000;                                                                               
-        test_data [5] [0] = 16'h0000;                                                                           
-        test_data [5] [1] = 16'h0000;                                                                               
-        test_data [6] [0] = 16'h0000;                                                                       
-        test_data [6] [1] = 16'h0000;                                                                               
-        test_data [7] [0] = 16'h0000;                                                                               
-        test_data [7] [1] = 16'h0000;                                                                                                   
-        test_data [8] [0] = 16'h0000;                                                                                   
-        test_data [8] [1] = 16'h0000;                                                                                   
-        test_data [9] [0] = 16'h0000;                                                                           
-        test_data [9] [1] = 16'h0000;                                                                                               
-        test_data [10] [0] = 16'h0000;                                                              
-        test_data [10] [1] = 16'h0000;*/
-        
+       
         
        // #200000;
-      
+
         
 	end                                                                                                                             
 
@@ -229,10 +168,13 @@ module i2s_in_test;
                     if (lr_cnt == 1)                                                                 // if right
                     begin                                                                                                   
                         word_cnt<=word_cnt+1;                                                        // words in the testbench array
-                        lr_cnt<=0;                                                                   // set to left 
+                        lr_cnt<=0;                                                                   // set to left
                     end                                                                                                                 
-                    else                                                                                                    
+                    else
+                    begin
                         lr_cnt<=1;                                                                   // set to right
+
+                    end
                     bit_cnt<=0;                                                                      // reset bit counter
                 end                                                                                                         
                 else                                                                                                                
@@ -248,7 +190,6 @@ module i2s_in_test;
     assign i2si_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1) | ((bit_cnt==16'd15)&(lr_cnt==0));                                  
     assign i2si_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];                                                                                               
                                                                                                                                                     
-    
 
     
     //Checks if the data was properly deserialized.
@@ -309,13 +250,13 @@ module i2s_in_test;
                         begin_comparison = 0;
                         $fdisplay(out, "\nNumber of Comparisons:                    %d", pass_count + fail_count,
                             "\nNumber of Successful Comparisons:         %d", pass_count,
-                            "\nNumber of Failed Comparisons:           %d", fail_count);  
+                            "\nNumber of Failed Comparisons:           %d", fail_count);                       
                         #1 $fclose(out);
                     end
                     //If words do not match
                     else
                     begin
-                        fail_count = fail_count + 1;
+                        fail_count = fail_count + 1;                        
                         $fdisplay(out, "word: %h", word,
                             "       ---      i2si_data: %h",
                             i2si_data, "       ---      Fail");
@@ -326,5 +267,6 @@ module i2s_in_test;
         end
     end
                                                                                                                         
-endmodule                                                                                               
-                                                                                            
+      
+endmodule
+
