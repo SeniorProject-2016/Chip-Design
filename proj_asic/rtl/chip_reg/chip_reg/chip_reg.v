@@ -26,8 +26,8 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
      input i2c_op;                                  // 1- write, 0- read
      
      // Inputs (RO Signals)
-   //input ro_chip_id;                              // fixed chip ID
-   //input ro_revision_id;                          // fixed revision ID
+   //input ro_chip_id;                              // fixed chip ID  ---> Not sure if we need these - ZN 1/20/16
+   //input ro_revision_id;                          // fixed revision ID --> Not sure if we need these - ZN 1/20/16
      input ro_fifo_overrun;                         // I2S input audio FIFO overrun
      input ro_fifo_underrun;                        // I2S output audio FIFO underrun
      input ro_filter_ovf_flag;                      // filter overflow flag
@@ -67,18 +67,19 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
      // MODULE INSTANTIATION
      //---------------------------------------------------------------------------  
      //---------------------------------------------------------------------------
-/*     register Register(
+     register Register(
           .clk                        (clk),               // input: master clock
           .rst                        (rst),               // input: reset
           .addr                       (i2c_addr),          // input: register address
           .wdata                      (i2c_wdata),         // input: write data
-          .w_enable                   (w_enable),          // input: write enable
           .wxfc                       (i2c_xfc_write),     // input: write transfer complete
-           rxfc                       (????????????),      // input: ???????????????????????????
-          .ro_i2c_reg_indir_data      (????????????),      // input: ???????????????????????????
+          .
+          .w_enable                   (w_enable),          // input: write enable
+          
+          .rxfc                       (i2c_xfc_read),      // input: read transfer complete
           .ro_fifo_underrun           (ro_fifo_overrun),   // input: I2S input audio FIFO overrun
-          .rdata
-          .rf_soft_reset
+          .rdata                      (i2c_rdata),         // output: read data
+          .rf_soft_reset              (
           .rf_i2si_bist_en
           .rf_filter_shift
           .rf_filter_clip_en
