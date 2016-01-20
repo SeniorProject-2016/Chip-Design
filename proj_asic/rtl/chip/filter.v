@@ -7,6 +7,7 @@
 // Description: 
 //////////////////////////////////////////////////////////////////////////////////
 
+/*
 module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts, aud_out_rtr,
               trig_filter_ovf_flag_clear, ro_filter_ovf_flag, rf_filter_shift, rf_filter_clip_en, rf_filter_coeffs);
              
@@ -26,3 +27,5 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts, a
 
     
 endmodule
+/*
+

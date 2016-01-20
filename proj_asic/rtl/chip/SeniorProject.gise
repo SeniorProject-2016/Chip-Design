@@ -83,6 +83,10 @@
     <transform xil_pn:end_ts="1453250411" xil_pn:in_ck="-8016859705586081953" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1453250411">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Deserializer.v"/>
       <outfile xil_pn:name="I2C_Serializer.v"/>
       <outfile xil_pn:name="Sequencer.v"/>
@@ -125,6 +129,11 @@
     <transform xil_pn:end_ts="1453250411" xil_pn:in_ck="-8016859705586081953" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1453250411">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Deserializer.v"/>
       <outfile xil_pn:name="I2C_Serializer.v"/>
       <outfile xil_pn:name="Sequencer.v"/>
@@ -155,7 +164,10 @@
     <transform xil_pn:end_ts="1453250414" xil_pn:in_ck="-8016859705586081953" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-5162318317755442877" xil_pn:start_ts="1453250411">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="chip_test_beh.prj"/>
       <outfile xil_pn:name="chip_test_isim_beh.exe"/>
@@ -167,6 +179,7 @@
     <transform xil_pn:end_ts="1453250447" xil_pn:in_ck="-69460517624150264" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-597862981637923066" xil_pn:start_ts="1453250446">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="chip_test_isim_beh.wdb"/>
@@ -208,6 +221,7 @@
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="chip.lso"/>
