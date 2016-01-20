@@ -1,24 +1,15 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_test_isim_beh.exe -prj C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_test_beh.prj work.chip_test work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_in_test3_isim_beh.exe -prj C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_in_test3_beh.prj work.i2s_in_test3 work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
 Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/synchronizer.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/serializer.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/Sequencer.v" into library work
 Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2si_mux.v" into library work
 Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2si_deserializer.v" into library work
 Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2si_bist_gen.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/I2C_Serializer.v" into library work
 Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/fifo.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/Deserializer.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_out.v" into library work
 Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_in.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2c.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/filter.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_reg.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip.v" into library work
-Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_test.v" into library work
+Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_in_test3.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
@@ -28,20 +19,11 @@ Compiling module i2si_bist_gen
 Compiling module i2si_mux
 Compiling module fifo
 Compiling module i2s_in
-Compiling module serializer
-Compiling module i2s_out
-Compiling module filter
-Compiling module chip_reg
-Compiling module Deserializer
-Compiling module Sequencer
-Compiling module I2C_Serializer
-Compiling module i2c
-Compiling module chip
-Compiling module chip_test
+Compiling module i2s_in_test3
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
-Compiled 17 Verilog Units
-Built simulation executable C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_test_isim_beh.exe
-Fuse Memory Usage: 28928 KB
-Fuse CPU Usage: 687 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 Verilog Units
+Built simulation executable C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_in_test3_isim_beh.exe
+Fuse Memory Usage: 28336 KB
+Fuse CPU Usage: 452 ms

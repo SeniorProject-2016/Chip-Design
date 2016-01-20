@@ -298,6 +298,8 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,au
     rf_filter_coeff505_a, rf_filter_coeff505_b,rf_filter_coeff506_a, rf_filter_coeff506_b,rf_filter_coeff507_a, rf_filter_coeff507_b,rf_filter_coeff508_a, rf_filter_coeff508_b,
     rf_filter_coeff509_a, rf_filter_coeff509_b,rf_filter_coeff510_a, rf_filter_coeff510_b,rf_filter_coeff511_a, rf_filter_coeff511_b;
 
+   // assign aud_out=aud_in;
+
     /* wire 			do_transfer;
     wire 			do_multiply_1st;
     wire 			do_multiply;
