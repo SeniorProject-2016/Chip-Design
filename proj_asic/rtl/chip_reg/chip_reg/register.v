@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             register.v
-// Create Date:             ???????????????????
-// Last Modification:       1/13/2015
+// Create Date:             10/15/2015
+// Last Modification:       1/20/2016
 // Author:                  Julie Swift and Zachary Nelson
-// Description: ????????????
+// Description: Provides read and write status to control/status registers
 //////////////////////////////////////////////////////////////////////////////////
 
 module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_i2c_reg_indir_data, ro_fifo_underrun,
