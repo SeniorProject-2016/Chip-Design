@@ -7,7 +7,7 @@
 // Description: 
 //////////////////////////////////////////////////////////////////////////////////
 
-module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,aud_out_rtr, rf_filter_shift, rf_filter_clip_en, rf_filter_coeff0_a, rf_filter_coeff0_b,
+module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,aud_out_rtr, trig_filter_ovf_flag_clear, ro_filter_ovf_flag, rf_filter_shift, rf_filter_clip_en, rf_filter_coeff0_a, rf_filter_coeff0_b,
               rf_filter_coeff1_a, rf_filter_coeff1_b,rf_filter_coeff2_a, rf_filter_coeff2_b,rf_filter_coeff3_a, rf_filter_coeff3_b,rf_filter_coeff4_a, rf_filter_coeff4_b,
               rf_filter_coeff5_a, rf_filter_coeff5_b,rf_filter_coeff6_a, rf_filter_coeff6_b,rf_filter_coeff7_a, rf_filter_coeff7_b,rf_filter_coeff8_a, rf_filter_coeff8_b,
               rf_filter_coeff9_a,rf_filter_coeff9_b,rf_filter_coeff10_a, rf_filter_coeff10_b,rf_filter_coeff11_a, rf_filter_coeff11_b,rf_filter_coeff12_a, 
@@ -164,7 +164,9 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,au
     output 	[31:0] aud_out;                              // output parallel digital audio
     output 	aud_out_rts;                                 // ready to send (output)
     input 	aud_out_rtr;                                 // ready to recieve (output)
-    input	rf_filter_shift;                             // # of bits to shift after accumulator
+    input   trig_filter_ovf_flag_clear;
+    output  ro_filter_ovf_flag;
+    input	[2:0] rf_filter_shift;                             // # of bits to shift after accumulator
     input	rf_filter_clip_en;                           // select bit (1- perform clipping, 0- no clipping)
     input [7:0] rf_filter_coeff0_a, rf_filter_coeff0_b,  // filter coeffs 
     rf_filter_coeff1_a, rf_filter_coeff1_b,rf_filter_coeff2_a, rf_filter_coeff2_b,rf_filter_coeff3_a, rf_filter_coeff3_b,rf_filter_coeff4_a, rf_filter_coeff4_b,
@@ -296,7 +298,7 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,au
     rf_filter_coeff505_a, rf_filter_coeff505_b,rf_filter_coeff506_a, rf_filter_coeff506_b,rf_filter_coeff507_a, rf_filter_coeff507_b,rf_filter_coeff508_a, rf_filter_coeff508_b,
     rf_filter_coeff509_a, rf_filter_coeff509_b,rf_filter_coeff510_a, rf_filter_coeff510_b,rf_filter_coeff511_a, rf_filter_coeff511_b;
 
-    wire 			do_transfer;
+    /* wire 			do_transfer;
     wire 			do_multiply_1st;
     wire 			do_multiply;
     wire[15:0]		rf_filter_coeff;
@@ -305,10 +307,10 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,au
     wire 			output_signal; 
     wire[39:0]		convo_signal;
 
-    assign aud_out = convo_signal[39:8]; 
+    assign aud_out = convo_signal[39:8]; */
 
     //***********************************************************************************
-    filter_stm filter_stm_0 (
+    /* filter_stm filter_stm_0 (
         .clk(clk), 
         .rstb(rstb), 
         .filter_aud_in_rts(aud_in_rts), 
@@ -321,7 +323,7 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,au
         .rf_filter_coeff(rf_filter_coeff),
          .mux_re(mux_re),
          .mux_rdptr(mux_rdptr)
-        );
+        ); */
     //***********************************************************************************
     /*
     filter_barrel_shifter filter_barrel_shifter_0
@@ -330,7 +332,7 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,au
             .output_signal		(output_signal));
     */
     //***********************************************************************************
-    filter_mux filter_mux_0 (
+    /* filter_mux filter_mux_0 (
         .clk(clk), 
         .rden(mux_re), 
         .rdptr(mux_rdptr), 
@@ -1359,7 +1361,7 @@ module filter(clk, rstb, aud_in, aud_in_rts, aud_in_rtr, aud_out, aud_out_rts,au
         .rf_filter_coeff510_b(rf_filter_coeff510_b), 
         .rf_filter_coeff511_a(rf_filter_coeff511_a), 
         .rf_filter_coeff511_b(rf_filter_coeff511_b)
-        );
+        ); */
     //***********************************************************************************
 
 

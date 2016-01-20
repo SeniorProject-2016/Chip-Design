@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: chip.prj
 
@@ -163,6 +163,7 @@ WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_a
 
 Elaborating module <chip_reg>.
 WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip_reg.v" Line 10: Empty module <chip_reg> remains a black box.
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v" Line 1191: Assignment to rf_soft_reset ignored, since the identifier is never used
 
 Elaborating module <i2c>.
 
@@ -179,6 +180,7 @@ Elaborating module <I2C_Serializer>.
 
 Synthesizing Unit <chip>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v".
+INFO:Xst:3210 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip.v" line 1179: Output port <rf_soft_reset> of the instance <Register> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <chip> synthesized.
@@ -961,7 +963,7 @@ Offset:              1.437ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 16 / 16
+  Total number of paths / destination ports: 8202 / 8202
 -------------------------------------------------------------------------
 Delay:               0.443ns (Levels of Logic = 1)
   Source:            clk (PAD)
@@ -1020,14 +1022,14 @@ clk                                       |    2.581|         |         |       
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.92 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.40 secs
  
 --> 
 
-Total memory usage is 415636 kilobytes
+Total memory usage is 434380 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
-Number of infos    :    5 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

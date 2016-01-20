@@ -38,7 +38,7 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="chip_envsettings.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="chip_ngdbuild.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="chip_summary.html"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="chip_test_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="chip_test_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="chip_test_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="chip_test_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="chip_xst.xrpt"/>
@@ -214,15 +214,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1453248217" xil_pn:in_ck="4411634681786239575" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-5875091489502267522" xil_pn:start_ts="1453248202">
+    <transform xil_pn:end_ts="1453315026" xil_pn:in_ck="-1350047152336234966" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-5875091489502267522" xil_pn:start_ts="1453315006">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="chip.lso"/>
       <outfile xil_pn:name="chip.ngc"/>
@@ -231,6 +226,7 @@
       <outfile xil_pn:name="chip.stx"/>
       <outfile xil_pn:name="chip.syr"/>
       <outfile xil_pn:name="chip.xst"/>
+      <outfile xil_pn:name="chip_test_beh.prj"/>
       <outfile xil_pn:name="chip_xst.xrpt"/>
       <outfile xil_pn:name="i2s_in.ngr"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
@@ -244,7 +240,6 @@
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>

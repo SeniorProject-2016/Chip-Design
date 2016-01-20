@@ -175,6 +175,7 @@
     <transform xil_pn:end_ts="1452732363" xil_pn:in_ck="-1132020776407713785" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7078757445878687571" xil_pn:start_ts="1452732359">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="filter_tf_beh.prj"/>
@@ -187,6 +188,7 @@
     <transform xil_pn:end_ts="1452732626" xil_pn:in_ck="5381122397846437126" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4578786648280157168" xil_pn:start_ts="1452732626">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="filter_tf_isim_beh.wdb"/>
@@ -221,9 +223,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1452824467" xil_pn:in_ck="-2993664814659708068" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="562161666638994961" xil_pn:start_ts="1452824283">
+    <transform xil_pn:end_ts="1453315361" xil_pn:in_ck="-2993664814659708068" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="562161666638994961" xil_pn:start_ts="1453315353">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
@@ -238,7 +239,6 @@
       <outfile xil_pn:name="filter_round_truncate.prj"/>
       <outfile xil_pn:name="filter_round_truncate_tf_beh.prj"/>
       <outfile xil_pn:name="filter_round_truncate_tf_stx_beh.prj"/>
-      <outfile xil_pn:name="filter_stm.ngr"/>
       <outfile xil_pn:name="filter_stm.prj"/>
       <outfile xil_pn:name="filter_stm_tf_stx_beh.prj"/>
       <outfile xil_pn:name="filter_storage.prj"/>
