@@ -19,9 +19,9 @@ module i2s_in(              clk, rst_n,
     input                       clk;                                //Master clock
     input                       rst_n;                              //Reset
                                                                         
-    input                       inp_sck;                           //Digital audio bit clock
-    input                       inp_ws;                            //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
-    input                       inp_sd;                            //Digital audio serial data
+    input                       inp_sck;                            //Digital audio bit clock
+    input                       inp_ws;                             //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
+    input                       inp_sd;                             //Digital audio serial data
                                                                     
     input                       rf_i2si_en;                         //Enable bit for Deserializer. 0 = inactive, 1 = active
     input [11:0]                rf_bist_start_val;                  //Bist start value
@@ -33,8 +33,8 @@ module i2s_in(              clk, rst_n,
     output                      i2si_rts;                           //Ready to send handshake signal between I2S_IN and Filter Block
     output [31:0]               i2si_data;                          //Output audio data sent to Filter Block
 
-    output                      sync_sck;                      //Delayed and synchronized digital audio bit clock
-    output                      sync_sck_transition;           //Level to pulse converter of sync_sck;    
+    output                      sync_sck;                           //Delayed and synchronized digital audio bit clock
+    output                      sync_sck_transition;                //Level to pulse converter of sync_sck;    
 
 
     input                       trig_fifo_overrun_clr;              //Signal to reset ro_fifo_overrun
@@ -43,7 +43,7 @@ module i2s_in(              clk, rst_n,
                                                                                                                                                                         
                                                                                                                                                                 
                                                                                                                                                             
-    wire                        sync_sck_transition;           //Wire leading to level to pulse converter of serial clock
+    wire                        sync_sck_transition;                //Wire leading to level to pulse converter of serial clock
     wire                        sync_ws;                            //Wire connecting synchronizer output ws to deserializer input ws
     wire                        sync_sd;                            //Wire connecting synchronizer output sd to deserializer input sd
 

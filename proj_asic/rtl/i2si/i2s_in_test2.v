@@ -8,7 +8,7 @@
 // Author:        Kevin Cao
 //
 // Description: Verilog Test Fixture created by ISE for module: i2s_in
-//                  Tests the BIST Generator. Sawtooth wave starting value is 1 and upper limit value is 25
+//                  Tests the BIST Generator. Sawtooth wave starting value is 0x800 and upper limit value is 0x700
 //                  Outputs success or failure of test to i2s_in_test2_output.txt
 //
 // 
@@ -56,6 +56,8 @@ module i2s_in_test2;
     reg [1:0]                       cycles_complete = 0;                                             // Tracks the # of cycles the test succeeded    
     reg                             test_complete = 0;                                               // Boolean to help decide if to continue comparing word and i2si_data
     reg                             ignore_first_fail = 0;                                           // Boolean that ignores the first failure if word and i2si_data do not match
+    
+    reg   [15:0]                    ext_start_val;                                //16 bit sign extension of rf_bist_start_val   
                                                                                                         
     integer                         out;                                                             // Helps create output text file
 
@@ -76,7 +78,8 @@ module i2s_in_test2;
 		.i2si_rts(i2si_rts), 
 		.trig_fifo_overrun_clr(trig_fifo_overrun_clr), 
 		.ro_fifo_overrun(ro_fifo_overrun), 
-		.sync_sck(sync_sck)
+		.sync_sck(sync_sck),
+        .sync_sck_transition(sync_sck_transition)
 	);
 
 	initial begin                                                               
@@ -88,7 +91,10 @@ module i2s_in_test2;
 		rf_mux_en = 1;                                                                               // Enable multiplexer, Output BIST generator content                                                                                               
 		trig_fifo_overrun_clr = 0;
 
-        word = rf_bist_start_val;                                                                    // Set expected word to the starting value   
+
+        ext_start_val = {{4{rf_bist_start_val[11]}}, rf_bist_start_val};
+        
+        word = {~ext_start_val, ext_start_val};                                                                    // Set expected word to the starting value   
                                                                                                         
         out = $fopen("i2s_in_test2_output.txt");                                                    // Open i2si_in_test2_output.txt                                                       
                                                                                                                                                                                      
@@ -200,13 +206,13 @@ module i2s_in_test2;
                 begin
                     $fdisplay (out, "word == i2si_data        word: %d", word,
                     "        i2si_data: %d", i2si_data, "      ---     PASS");
-                    word = word + 1;
+                    word = word + rf_bist_inc;
                     // If upper limit is reached, reset word to beginning value
                     if(word > rf_bist_up_limit)
                     begin
                         cycles_complete = cycles_complete + 1;
                         $fdisplay(out, "\ncycles_complete: %d", cycles_complete, "\n");
-                        word = rf_bist_start_val;
+                        word = {~ext_start_val, ext_start_val};
                         // If 2 cycles of BIST succeeded end comparison
                         if(cycles_complete == 2)
                         begin

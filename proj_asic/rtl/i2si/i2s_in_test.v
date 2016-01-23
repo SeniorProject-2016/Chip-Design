@@ -25,9 +25,9 @@ module i2s_in_test;
 	wire                            inp_sd;
     
 	wire                            rf_i2si_en;
-	reg [31:0]                      rf_bist_start_val;
+	reg [11:0]                      rf_bist_start_val;
 	reg [7:0]                       rf_bist_inc;
-	reg [31:0]                      rf_bist_up_limit;
+	reg [11:0]                      rf_bist_up_limit;
 	reg                             rf_mux_en;
     
     wire                            i2si_rtr;

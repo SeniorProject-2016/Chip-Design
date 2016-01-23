@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: i2s_out.prj
 
@@ -452,14 +452,14 @@ Timing constraint: Default path analysis
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Delay:               0.280ns (Levels of Logic = 2)
-  Source:            sck_inp (PAD)
+  Source:            i2so_sync_sck (PAD)
   Destination:       i2so_sck (PAD)
 
-  Data Path: sck_inp to i2so_sck
+  Data Path: i2so_sync_sck to i2so_sck
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.279  sck_inp_IBUF (i2so_sck_OBUF)
+     IBUF:I->O             1   0.001   0.279  i2so_sync_sck_IBUF (i2so_sck_OBUF)
      OBUF:I->O                 0.000          i2so_sck_OBUF (i2so_sck)
     ----------------------------------------
     Total                      0.280ns (0.001ns logic, 0.279ns route)
@@ -482,7 +482,7 @@ clk            |    2.133|         |         |         |
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.48 secs
+Total CPU time to Xst completion: 10.10 secs
  
 --> 
 
