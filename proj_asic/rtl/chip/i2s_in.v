@@ -8,24 +8,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module i2s_in(              clk, rst_n,
-                            i2si_sck, i2si_ws, i2si_sd, 
+                            inp_sck, inp_ws, inp_sd, 
                             rf_i2si_en, rf_bist_start_val, rf_bist_inc, rf_bist_up_limit, rf_mux_en,
                             i2si_rtr, i2si_data, i2si_rts,
                             trig_fifo_overrun_clr,
                             ro_fifo_overrun,
-                            i2si_sync_sck, i2si_sync_sck_transition
+                            sync_sck, sync_sck_transition
     );
 
     input                       clk;                                //Master clock
     input                       rst_n;                              //Reset
                                                                         
-    input                       i2si_sck;                           //Digital audio bit clock
-    input                       i2si_ws;                            //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
-    input                       i2si_sd;                            //Digital audio serial data
+    input                       inp_sck;                            //Digital audio bit clock
+    input                       inp_ws;                             //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
+    input                       inp_sd;                             //Digital audio serial data
                                                                     
     input                       rf_i2si_en;                         //Enable bit for Deserializer. 0 = inactive, 1 = active
-    input [31:0]                rf_bist_start_val;                  //Bist start value
-    input [31:0]                rf_bist_up_limit;                   //Bist upper limit
+    input [11:0]                rf_bist_start_val;                  //Bist start value
+    input [11:0]                rf_bist_up_limit;                   //Bist upper limit
     input [7:0]                 rf_bist_inc;                        //Bist increment signal by this much
     input                       rf_mux_en;                          //Mux select bit for BIST or Deserializer data/xfc signals
                                                                                                           
@@ -33,8 +33,8 @@ module i2s_in(              clk, rst_n,
     output                      i2si_rts;                           //Ready to send handshake signal between I2S_IN and Filter Block
     output [31:0]               i2si_data;                          //Output audio data sent to Filter Block
 
-    output                      i2si_sync_sck;                      //Delayed and synchronized digital audio bit clock
-    output                      i2si_sync_sck_transition;           //Level to pulse converter of i2si_sync_sck;    
+    output                      sync_sck;                           //Delayed and synchronized digital audio bit clock
+    output                      sync_sck_transition;                //Level to pulse converter of sync_sck;    
 
 
     input                       trig_fifo_overrun_clr;              //Signal to reset ro_fifo_overrun
@@ -43,7 +43,7 @@ module i2s_in(              clk, rst_n,
                                                                                                                                                                         
                                                                                                                                                                 
                                                                                                                                                             
-    wire                        i2si_sync_sck_transition;           //Wire leading to level to pulse converter of serial clock
+    wire                        sync_sck_transition;                //Wire leading to level to pulse converter of serial clock
     wire                        sync_ws;                            //Wire connecting synchronizer output ws to deserializer input ws
     wire                        sync_sd;                            //Wire connecting synchronizer output sd to deserializer input sd
 
@@ -62,11 +62,11 @@ module i2s_in(              clk, rst_n,
     synchronizer Synchronizer(                                      
         .clk                    (clk),                              
         .rst_n                  (rst_n),                              
-        ._sck                   (i2si_sck),                          
-        ._ws                    (i2si_ws),                               
-        ._sd                    (i2si_sd),                               
-        .sck_transition         (i2si_sync_sck_transition),                       
-        .sck                    (i2si_sync_sck),                         
+        ._sck                   (inp_sck),                          
+        ._ws                    (inp_ws),                               
+        ._sd                    (inp_sd),                               
+        .sck_transition         (sync_sck_transition),                       
+        .sck                    (sync_sck),                         
         .ws                     (sync_ws),
         .sd                     (sync_sd)
     );
@@ -74,7 +74,7 @@ module i2s_in(              clk, rst_n,
     i2si_deserializer Deserializer(
         .clk                    (clk),
         .rst_n                  (rst_n),
-        .sck_transition         (i2si_sync_sck_transition),
+        .sck_transition         (sync_sck_transition),
         .in_ws                  (sync_ws),
         .in_sd                  (sync_sd),
         .rf_i2si_en             (rf_i2si_en),
@@ -86,7 +86,7 @@ module i2s_in(              clk, rst_n,
     i2si_bist_gen Bist(                                             
         .clk                    (clk),                              
         .rst_n                  (rst_n),
-        .sck_transition         (i2si_sync_sck_transition),
+        .sck_transition         (sync_sck_transition),
         .rf_bist_start_val      (rf_bist_start_val),                
         .rf_bist_up_limit       (rf_bist_up_limit),                 
         .rf_bist_inc            (rf_bist_inc),                      

@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             chip.v
 // Create Date:             12/20/2015
-// Last Modification:       1/20/2016
+// Last Modification:       1/23/2016
 // Author:                  Zachary Nelson
 //
 //////////////////////////////////////////////////////////////////////////////////
@@ -44,9 +44,9 @@ module chip(clk, rst_n,                                        // General
     //---------------------------------------------------------------------------  
     // Inputs to I2S Input Block
     wire rf_i2si_en;                        // enable bit for deserializer
-    wire [31:0] rf_bist_start_val;          // BIST start value
+    wire [11:0] rf_bist_start_val;          // BIST start value
     wire [7:0] rf_bist_inc;                 // BIST increment value
-    wire [31:0] rf_bist_up_limit;           // BIST upper limit
+    wire [11:0] rf_bist_up_limit;           // BIST upper limit
     wire rf_mux_en;                         // multiplexer select bit
     wire i2si_rtr;                          // I2S ready to receive
     wire trig_fifo_overrun_clr;             // signal to reset ro_fifo_overrun
@@ -88,10 +88,10 @@ module chip(clk, rst_n,                                        // General
     // INTERNAL VARIABLES
     //---------------------------------------------------------------------------  
     //---------------------------------------------------------------------------  
-    wire [15:0] rf_i2si_bist_start_val_a;    // BIST start value
-    wire [15:0] rf_i2si_bist_start_val_b;    // BIST start value  
-    wire [15:0] rf_bist_upper_limit_a;       // BIST upper limit value
-    wire [15:0] rf_bist_upper_limit_b;       // BIST upper limit value
+    wire [7:0] rf_i2si_bist_start_val_a;     // BIST start value
+    wire [3:0] rf_i2si_bist_start_val_b;     // BIST start value  
+    wire [7:0] rf_bist_upper_limit_a;        // BIST upper limit value
+    wire [3:0] rf_bist_upper_limit_b;        // BIST upper limit value
     
     assign rf_bist_start_val = {rf_i2si_bist_start_val_a,rf_i2si_bist_start_val_b};
     assign rf_bist_up_limit = {rf_bist_upper_limit_a,rf_bist_upper_limit_b};
@@ -105,9 +105,9 @@ module chip(clk, rst_n,                                        // General
     i2s_in I2S_Input(
         .clk                        (clk),                          // input: master clock
         .rst_n                      (rst_n),                        // input: reset not
-        .i2si_sck                   (i2si_sck),                     // input: serial clock
-        .i2si_ws                    (i2si_ws),                      // input: word select
-        .i2si_sd                    (i2si_sd),                      // input: serial data
+        .inp_sck                    (i2si_sck),                     // input: serial clock
+        .inp_ws                     (i2si_ws),                      // input: word select
+        .inp_sd                     (i2si_sd),                      // input: serial data
         .rf_i2si_en                 (rf_i2si_en),                   // input: enable bit for deserializer
         .rf_bist_start_val          (rf_bist_start_val),            // input: BIST start value
         .rf_bist_inc                (rf_bist_inc),                  // input: BIST increment value
@@ -118,8 +118,8 @@ module chip(clk, rst_n,                                        // General
         .i2si_rts                   (filt_rts),                     // output: ready to send
         .trig_fifo_overrun_clr      (trig_fifo_overrun_clr),        // input: signal to reset ro_fifo_overrun
         .ro_fifo_overrun            (ro_fifo_overrun),              // output: when the I2S input FIFO is full
-        .i2si_sync_sck              (i2si_sync_sck),                // output: synchronized serial clock
-        .i2si_sync_sck_transition   (i2si_sync_sck_transition)      // output: synchronized serial clock transition
+        .sync_sck                   (i2si_sync_sck),                // output: synchronized serial clock
+        .sync_sck_transition        (i2si_sync_sck_transition)      // output: synchronized serial clock transition
     );
   
     i2s_out I2S_Output(

@@ -277,9 +277,9 @@ LAB25:    xsi_set_current_line(127, ng0);
 }
 
 
-extern void work_m_00000000002293503006_0572304423_init()
+extern void work_m_00000000001551850882_0572304423_init()
 {
 	static char *pe[] = {(void *)Always_120_0};
-	xsi_register_didat("work_m_00000000002293503006_0572304423", "isim/chip_test_isim_beh.exe.sim/work/m_00000000002293503006_0572304423.didat");
+	xsi_register_didat("work_m_00000000001551850882_0572304423", "isim/chip_test_isim_beh.exe.sim/work/m_00000000001551850882_0572304423.didat");
 	xsi_register_executes(pe);
 }

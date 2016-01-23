@@ -1,5 +1,6 @@
 `define BUF_WIDTH 3 // set the buffer width equal to 3
 `define DATA_SIZE 32 // no. of bits for fifo data
+`define NUM_ELEMENTS 10
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -168,12 +169,16 @@ module i2s_out_test;
         begin
             word_count <= 0;
         end
-        else if(word_count > 15)
+        // If word count is greater than the number of elements being queued, stop queueing data
+        else if(word_count > `NUM_ELEMENTS-1)
         begin
             word_count <= word_count + 1;
-        end
-        else if(count % 1001 == 0)
-        begin
+        end        
+        // count % 2551 was determined by guess and check. Wanted to queue data slow enough so buffer doesn't
+        // become full. Also wanted to ensure every time ws_transition is high the variable word is the next queued word
+        // if using a number larger then 2551, word may not change its value to the next queued word when ws_transition is high
+        else if(count % 2551 == 0)                                                                  
+        begin                                                                                       
             queue(test_data [word_count]);                                                          //indicates when to queue more data
             word_count <= word_count + 1;                                                           //indicates which data to queue
             filt_data_list [word_count] <= filt_data;                                               //stores the word that is outputted by the fifo for comparison

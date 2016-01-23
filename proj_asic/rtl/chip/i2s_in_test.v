@@ -20,14 +20,14 @@ module i2s_in_test;
 	reg                             clk;
 	wire                            rst_n;
                                                 
-	reg                             i2si_sck;
-	wire                            i2si_ws;
-	wire                            i2si_sd;
+	reg                             inp_sck;
+	wire                            inp_ws;
+	wire                            inp_sd;
     
 	wire                            rf_i2si_en;
-	reg [31:0]                      rf_bist_start_val;
+	reg [11:0]                      rf_bist_start_val;
 	reg [7:0]                       rf_bist_inc;
-	reg [31:0]                      rf_bist_up_limit;
+	reg [11:0]                      rf_bist_up_limit;
 	reg                             rf_mux_en;
     
     wire                            i2si_rtr;
@@ -38,7 +38,7 @@ module i2s_in_test;
 	wire [31:0]                     i2si_data;
 	wire                            i2si_rts;
 	wire                            ro_fifo_overrun;
-	wire                            i2si_sync_sck;
+	wire                            sync_sck;
     
     
     // Internal Variables
@@ -72,9 +72,9 @@ module i2s_in_test;
 	i2s_in uut (                                                                                                                                
 		.clk(clk),                                                                                                                  
 		.rst_n(rst_n),                                                                                                              
-		.i2si_sck(i2si_sck),                                                                                                      
-		.i2si_ws(i2si_ws),                                                                                                            
-		.i2si_sd(i2si_sd),                                                                                                
+		.inp_sck(inp_sck),                                                                                                      
+		.inp_ws(inp_ws),                                                                                                            
+		.inp_sd(inp_sd),                                                                                                
 		.rf_i2si_en(rf_i2si_en),                                                                                    
 		.rf_bist_start_val(rf_bist_start_val),                                                                          
 		.rf_bist_inc(rf_bist_inc),                                                                                              
@@ -85,13 +85,13 @@ module i2s_in_test;
 		.i2si_rts(i2si_rts),                                                                                                
 		.ro_fifo_overrun(ro_fifo_overrun),                                                                          
 		.trig_fifo_overrun_clr(trig_fifo_overrun_clr),                                                                          
-		.i2si_sync_sck(i2si_sync_sck),  
-        .i2si_sync_sck_transition(i2si_sync_sck_transition)
+		.sync_sck(sync_sck),  
+        .sync_sck_transition(sync_sck_transition)
 	);                                                                                                                          
                                                                                                                 
 	initial begin                                                                                                           
 		clk = 0;                                                                                                                                
-		i2si_sck = 0;                                                                                                                                                                   
+		inp_sck = 0;                                                                                                                                                                   
         rf_bist_start_val = 12'd1;                                                                   // Set starting value to 1                                                                                                
         rf_bist_inc = 12'd1;                                                                         // Set increment value to 1                      
         rf_bist_up_limit = 12'd25;                                                                   // Set BIST upper limit to 25                              
@@ -206,7 +206,7 @@ module i2s_in_test;
             bit_cnt<=0;                                                                              // count number of bits
             word_cnt<=0;                                                                             // count the word number
             lr_cnt <= 0;                                                                             // left=0 and right=1
-            i2si_sck<=0;                                                                             // serial clock
+            inp_sck<=0;                                                                             // serial clock
             sck_d1<=0;                                                                               // serial clock delayed by one clock cycle
         end                                                                                                             
         else                                                                                                                
@@ -215,13 +215,13 @@ module i2s_in_test;
             if (sck_cnt == cyc_per_half_sck-1)                                                       // cyc_per_half_sck ~ (100 MHz/1.44 MHz)/2
             begin                                                                                       
                 sck_cnt <= 0;                                                                        // reset serial clock counter
-                i2si_sck <= ~i2si_sck;                                                               // toggle serial clock
+                inp_sck <= ~inp_sck;                                                               // toggle serial clock
             end                                                                                         
             else                                                                                        
                 sck_cnt <= sck_cnt + 1;                                                              // increment serial clock counter
                                                                                                         
-            sck_d1<=i2si_sck;                                                                        // generate 1 cycle delay of i2si_sck
-            if(i2si_sck & ~sck_d1)                                                                   // on a positive transition of sck...
+            sck_d1<=inp_sck;                                                                        // generate 1 cycle delay of inp_sck
+            if(inp_sck & ~sck_d1)                                                                   // on a positive transition of sck...
                                                                                                                    
             begin                                                                                                       
                 if (bit_cnt==bit_tc)                                                                 // bit_tc = 15
@@ -245,8 +245,8 @@ module i2s_in_test;
     assign rst_n = !(count < 20);                                                                                               
     assign rf_i2si_en = !(count < 20);                                                                                                        
     assign i2si_rtr = i2si_rts;                                                                                                   
-    assign i2si_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1) | ((bit_cnt==16'd15)&(lr_cnt==0));                                  
-    assign i2si_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];                                                                                               
+    assign inp_ws = ((0<=bit_cnt& bit_cnt<=16'd14)&lr_cnt==1) | ((bit_cnt==16'd15)&(lr_cnt==0));                                  
+    assign inp_sd = test_data [word_cnt][lr_cnt][bit_tc-bit_cnt];                                                                                               
                                                                                                                                                     
     
 
