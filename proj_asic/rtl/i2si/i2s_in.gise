@@ -68,6 +68,10 @@
     <transform xil_pn:end_ts="1453160130" xil_pn:in_ck="-1538695857796673918" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1453160130">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="bist_test.v"/>
       <outfile xil_pn:name="deserializer_test.v"/>
       <outfile xil_pn:name="fifo.v"/>
@@ -98,6 +102,11 @@
     <transform xil_pn:end_ts="1453160130" xil_pn:in_ck="-1538695857796673918" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1453160130">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="bist_test.v"/>
       <outfile xil_pn:name="deserializer_test.v"/>
       <outfile xil_pn:name="fifo.v"/>
@@ -116,7 +125,10 @@
     <transform xil_pn:end_ts="1453160133" xil_pn:in_ck="-1538695857796673918" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6480256146493782275" xil_pn:start_ts="1453160130">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="i2s_in_test_beh.prj"/>
@@ -128,6 +140,7 @@
     <transform xil_pn:end_ts="1453160134" xil_pn:in_ck="-575143976368398803" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5402740290025916038" xil_pn:start_ts="1453160133">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="i2s_in_test_isim_beh.wdb"/>
@@ -176,6 +189,7 @@
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>

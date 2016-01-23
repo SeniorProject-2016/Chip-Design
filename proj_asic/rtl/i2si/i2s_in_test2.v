@@ -82,9 +82,9 @@ module i2s_in_test2;
 	initial begin                                                               
 		clk = 0;                                                                                        
 		inp_sck = 0;                                                                                                                                                               
-        rf_bist_start_val = 12'd1;                                                                   // Set starting value to 1                                                                                                
-        rf_bist_inc = 12'd1;                                                                         // Set increment value to 1                      
-        rf_bist_up_limit = 12'd25;                                                                   // Set BIST upper limit to 25                              
+        rf_bist_start_val = 12'h800;                                                                   // Set starting value to 1                                                                                                
+        rf_bist_inc = 8'h80;                                                                         // Set increment value to 1                      
+        rf_bist_up_limit = 12'h700;                                                                   // Set BIST upper limit to 25                              
 		rf_mux_en = 1;                                                                               // Enable multiplexer, Output BIST generator content                                                                                               
 		trig_fifo_overrun_clr = 0;
 
