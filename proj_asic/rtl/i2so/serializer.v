@@ -21,29 +21,29 @@
 module serializer(clk, rst_n, filt_i2so_rts, i2so_sd, i2so_ws, filt_i2so_lft, filt_i2so_rgt, filt_i2so_rtr, sck_transition
     );
 
-    input               clk;                                //Master Clock
-    input               rst_n;                              //Reset
-    input               sck_transition;                     //Pulse when sck transitions from low to high
+    input                   clk;                                //Master Clock
+    input                   rst_n;                              //Reset
+    input                   sck_transition;                     //Pulse when sck transitions from low to high
                                                                 
-    input               filt_i2so_rts;                      //ready to send
-    output              filt_i2so_rtr;                      //Ready to receive
-    input [15:0]        filt_i2so_lft;                      //Left parallel digital audio data
-    input [15:0]        filt_i2so_rgt;                      //Right parallel digital audio data
+    input                   filt_i2so_rts;                      //ready to send
+    output                  filt_i2so_rtr;                      //Ready to receive
+    input   [15:0]          filt_i2so_lft;                      //Left parallel digital audio data
+    input   [15:0]          filt_i2so_rgt;                      //Right parallel digital audio data
 
-    output              i2so_sd;                            //i2s output serial data
-    output              i2so_ws;                            //i2s output word Select
+    output                  i2so_sd;                            //i2s output serial data
+    output                  i2so_ws;                            //i2s output word Select
 
-    reg                 serializer_active;
-    reg                 i2so_sd;                            //i2s output serial data
-    reg                 i2so_ws;                            //i2s output word select
-    reg                 filt_i2so_rts_delay;                //Delay signal of ready to send
-    reg [15:0]          lft_data;                           //Captures the data of filt_i2so_lft
-    reg [15:0]          rgt_data;                           //Captures the data of filt_i2so_rgt
-    reg                 LR;                                 //Left Right Counter: keeps track of which parallel digital audio to read from
-    reg [3:0]           bit_count;                          //Bit Counter: keeps track of which bit to read in
+    reg                     serializer_active;
+    reg                     i2so_sd;                            //i2s output serial data
+    reg                     i2so_ws;                            //i2s output word select
+    reg                     filt_i2so_rts_delay;                //Delay signal of ready to send
+    reg     [15:0]          lft_data;                           //Captures the data of filt_i2so_lft
+    reg     [15:0]          rgt_data;                           //Captures the data of filt_i2so_rgt
+    reg                     LR;                                 //Left Right Counter: keeps track of which parallel digital audio to read from
+    reg     [ 3:0]          bit_count;                          //Bit Counter: keeps track of which bit to read in
 
-    wire                filt_i2so_rtr;                      //Ready to read
-    wire                filt_i2so_rts_transition;           //High when filt_i2so_rts goes from low to high
+    wire                    filt_i2so_rtr;                      //Ready to read
+    wire                    filt_i2so_rts_transition;           //High when filt_i2so_rts goes from low to high
 
 
     //Helps create filt_i2so_rts_transition signal to define when the serializer is in the active state

@@ -1,5 +1,3 @@
-`define BUF_WIDTH 3 // set the buffer width equal to 3
-`define DATA_SIZE 32 // no. of bits for fifo data
 `define NUM_ELEMENTS 100 // no. of test elements
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -34,7 +32,7 @@ module i2s_out_test2;
 	wire                        i2so_sck_transition;
     
 	reg                         filt_rts;
-	reg [31:0]                  filt_data;
+	reg     [31:0]              filt_data;
     
 	reg                         trig_fifo_underrun;
     
@@ -47,29 +45,29 @@ module i2s_out_test2;
     
     
     // Internal Variables
+    parameter                   cyc_per_half_sck = 40;                                          // about (100 MHz / 1.44 MHz)/2
+    integer                     count = 0;                                                      // clock counter        
+    integer                     sck_cnt;                                                        // serial clock counter
+    reg                         sck;                                                            // serial clock                        
     reg                         sck_d1;                                                         // serial clock delay
-    reg [31:0]                  sck_cnt;                                                        // serial clock counter
-    reg [31:0]                  cyc_per_half_sck = 40;                                          // about (100 MHz / 1.44 MHz)/2
     reg                         ws_d1;                                                          // word select delay
     reg                         ws_d2;                                                          // word select delay by 2 clock cycles
     wire                        ws_transition;                                                  // level to pulse converter when ws_dl goes from low to high
                                                                                     
-    reg                         sck;                                                            // serial clock                        
-    integer                     count = 0;                                                      // clock counter        
-    reg [31:0]                  word_count;                                                     // word counter
-    reg [`DATA_SIZE-1:0]        test_data [0:`NUM_ELEMENTS-1];                                  // test_data [# of entities in test]
-    integer                     index;                                                          // index counter for test_data
-    
-    reg [`DATA_SIZE-1:0]        filt_data_list [0:`NUM_ELEMENTS-1];                             // stores values of filt_data
-    integer                     filt_data_count = 0;                                            // keeps track of which data word to output
-    reg [`DATA_SIZE-1:0]        word;                                                           // serial data rebuilt in parallel, for comparison
-    
-    reg                         match_found = 0;                                                // boolean value used to find the starting point of comparison
-    integer                     match_count;                                                    // counter that helps find the starting point for comparison
-    reg                         begin_comparison = 0;                                           // boolean value used to start the comparison loop
-    reg                         test_failed = 1;                                                // boolean that determines if no matches were found and the test failed  
-                                                                                                                                
     integer                     out;                                                            // Helps create output text file
+    integer                     word_count;                                                     // word counter. Counts number of words queued
+    integer                     test_count;                                                     // index counter for test_data
+    integer                     match_count;                                                    // counter that helps find the starting point for comparison
+    integer                     filt_data_count = 0;                                            // keeps track of which data word to output
+    integer                     pass_count =  0;                                                // counts number of comparisons that succeed
+    integer                     fail_count = 0;                                                 // counts number of comparisons that fail
+    reg     [31:0]              test_data       [0:`NUM_ELEMENTS-1];                            // test_data [# of entities in test]
+    reg     [31:0]              filt_data_list  [0:`NUM_ELEMENTS-1];                            // stores values of filt_data
+    reg     [31:0]              word;                                                           // serial data rebuilt in parallel, for comparison    
+    reg                         match_found = 0;                                                // boolean value used to find the starting point of comparison
+    reg                         begin_comparison = 0;                                           // boolean value used to start the comparison loop
+    reg                         comparison_failed = 1;                                          // boolean that determines if no matches were found and the comparison test failed  
+                                                                                                                                
 
 
                                                                                         
@@ -105,9 +103,9 @@ module i2s_out_test2;
                                                                                                                                     
                                                                                                                             
         //Internal variables                                                                                                    
-        for(index = 0; index < `NUM_ELEMENTS; index = index + 1)
+        for(test_count = 0; test_count < `NUM_ELEMENTS; test_count = test_count + 1)
         begin            
-            test_data [index] = $random;
+            test_data [test_count] = $random;
         end   
         
 	end                                                                                                                                             
@@ -223,19 +221,18 @@ module i2s_out_test2;
                     begin                                                               
                         match_found = 1;                                                            // ends loop to find matching words    
                         begin_comparison = 1;                                                       // booolean to begin comparison test
-                        test_failed = 0;                                                            // ensures failed message does not output
-                        filt_data_count = match_count;                                              // sets which index in the array the comparison test should begin
+                        comparison_failed = 0;                                                      // ensures failed message does not output
+                        filt_data_count = match_count;                                              // sets which test_count in the array the comparison test should begin
                     end
                 end
             end
             // No matches were found. End trying to find a match
-            if(count > 30000 && !begin_comparison && test_failed)
+            if(count > 30000 && !begin_comparison && comparison_failed)
             begin
                 match_found = 1;
-                test_failed = 0;
+                comparison_failed = 0;
                 $fdisplay (out, "No matches found. Comparison test failed");
-                #1;
-                $fclose(out);
+                #1 $fclose(out);
             end
             
             // Initial match found. Begin comparison test            
@@ -244,19 +241,24 @@ module i2s_out_test2;
                 // If words inputted and outputted match
                 if(word == filt_data_list[filt_data_count])
                 begin
+                    pass_count = pass_count + 1;
                     $fdisplay (out, "word: %h", word, "    ---     ",
                         "filt_data_list [%d", filt_data_count, "]: %h",
                         filt_data_list [filt_data_count], "     ---     Pass");
                 end
-                // End comparison test after 15 words
+                // End comparison test after comparing all the test elements
                 else if(filt_data_count > (`NUM_ELEMENTS-1))
                 begin
                     begin_comparison = 0;
+                    $fdisplay(out, "\nNumber of Comparisons:                    %d", pass_count + fail_count,
+                        "\nNumber of Successful Comparisons:         %d", pass_count,
+                        "\nNumber of Failed Comparisons:           %d", fail_count);                    
                     $fclose(out);
                 end
                 // If words inputted and outputted do not match
                 else
                 begin
+                    fail_count = fail_count + 1;
                     $fdisplay (out, "word: %h", word, "    ---     ",
                         "filt_data_list [%d", filt_data_count, "]: %h",
                         filt_data_list [filt_data_count], "     ---     Fail");

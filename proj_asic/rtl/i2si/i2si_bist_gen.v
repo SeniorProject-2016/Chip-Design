@@ -2,13 +2,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2si_bist_gen.v
 // Create Date:             10/13/2015 
-// Last Modification:       1/22/2016
+// Last Modification:       1/23/2016
 // Author:                  Kevin Cao, Zachary Nelson
 // Description: Creates a saw-tooth wave based on the bist register values
 //////////////////////////////////////////////////////////////////////////////////
 
 module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si_bist_out_data, i2si_bist_out_xfc);
 
+    //Ports
     input               clk;                                          //Master Clock
     input               rst_n;                                        //Reset
     input               sck_transition;                               //Serial Clock Level to Pulse Converter
@@ -93,8 +94,8 @@ module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_b
             //Increment the signal
             else
             begin
-                i2si_bist_out_data[15: 0] <=   i2si_bist_out_data[15:0] + {4'b0000, rf_bist_inc};   //{rf_bist_inc, 4'b0000};         
-                i2si_bist_out_data[31:16] <= ~(i2si_bist_out_data[15:0] + {4'b0000, rf_bist_inc});  //{rf_bist_inc, 4'b0000});          
+                i2si_bist_out_data[15: 0] <=   i2si_bist_out_data[15:0] + rf_bist_inc; //{4'b0000, rf_bist_inc};   //{rf_bist_inc, 4'b0000};         
+                i2si_bist_out_data[31:16] <= ~(i2si_bist_out_data[15:0] + rf_bist_inc); //{4'b0000, rf_bist_inc});  //{rf_bist_inc, 4'b0000});          
 
            end
         end

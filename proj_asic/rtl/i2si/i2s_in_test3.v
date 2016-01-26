@@ -25,9 +25,9 @@ module i2s_in_test3;
 	wire                            inp_sd;
     
 	wire                            rf_i2si_en;
-	reg [11:0]                      rf_bist_start_val;
-	reg [7:0]                       rf_bist_inc;
-	reg [11:0]                      rf_bist_up_limit;
+	reg     [11:0]                  rf_bist_start_val;
+	reg     [ 7:0]                  rf_bist_inc;
+	reg     [11:0]                  rf_bist_up_limit;
 	reg                             rf_mux_en;
     
     wire                            i2si_rtr;
@@ -35,7 +35,7 @@ module i2s_in_test3;
     reg                             trig_fifo_overrun_clr;
 
 	// Outputs
-	wire [31:0]                     i2si_data;
+	wire    [31:0]                  i2si_data;
 	wire                            i2si_rts;
 	wire                            ro_fifo_overrun;
 	wire                            sync_sck;
@@ -43,16 +43,16 @@ module i2s_in_test3;
     
     // Internal Variables
     reg                             sck_d1;                                                          // serial clock delay
-    reg [31:0]                      count;                                                           // clock counter
-    reg [31:0]                      sck_cnt;                                                         // serial clock counter
-    reg [31:0]                      bit_cnt;                                                         // bit number counter
-    reg                             lr_cnt;                                                          // left right counter
-    reg [31:0]                      word_cnt;                                                        // word counter
-    reg [31:0]                      cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
-    reg [31:0]                      bit_tc =  15;                                                    // number of bits in a word
+    integer                         count;                                                           // clock counter
+    integer                         sck_cnt;                                                         // serial clock counter
+    integer                         bit_cnt;                                                         // bit number counter
+    integer                         lr_cnt;                                                          // left right counter
+    integer                         word_cnt;                                                        // word counter
+    parameter                       cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
+    parameter                       bit_tc =  15;                                                    // number of bits in a word
     
     
-    reg [15:0]                      test_data [`N-1:0] [0:1];                                        // [Bits Per Word] test_data [# of entities in test] [Left/Right]
+    reg     [15:0]                  test_data [`N-1:0] [0:1];                                        // [Bits Per Word] test_data [# of entities in test] [Left/Right]
     integer                         index1;                                                          // Counter to help create random 32 bit words
     integer                         index2;                                                          // Counter to help create random 32 bit words
                                                                                                                             
@@ -61,12 +61,12 @@ module i2s_in_test3;
     integer                         compare_count = 0;                                               // Counter to help compare word and i2si_data after intial match is found
     integer                         pass_count = 0;                                                  // Counts number of successful comparisons
     integer                         fail_count = 0;                                                  // Counts number of failed comparisons    
+    integer                         cycle_count = 0;                                                 // Count to help keep track of how many i2si_rtr && i2si_rts transitions occurred    
     reg                             match_found = 0;                                                 // Boolean that determines if intial match was found                   
     reg                             begin_comparison = 0;                                            // Boolean that determines if to start comparing words after intial match is found
     reg                             test_failed = 1;                                                 // Boolean that determines if no matches were found and the test failed
     reg                             skipped_two_cycles = 0;                                          // Boolean that determines if the first two transitions of i2si_rtr and i2si_rts was skipped
-    reg [1:0]                       cycle_count = 0;                                                 // Count to help keep track of how many i2si_rtr && i2si_rts transitions occurred
-    reg [31:0]                      word;                                                            // Stores the expected word, to be compared with i2si_data    
+    reg     [31:0]                  word;                                                            // Stores the expected word, to be compared with i2si_data    
                                                                                                             
     integer                         out;                                                             // Helps create output text file
     
@@ -141,12 +141,12 @@ module i2s_in_test3;
     begin                                                                                                           
         if(!rst_n)                                                                                              
         begin                                                                                                   
-            sck_cnt<=0;                                                                              // counts master clock cycles, causes sck to toggle each time it hits cyc_per_half_sck
-            bit_cnt<=0;                                                                              // count number of bits
-            word_cnt<=0;                                                                             // count the word number
-            lr_cnt <= 0;                                                                             // left=0 and right=1
-            inp_sck<=0;                                                                             // serial clock
-            sck_d1<=0;                                                                               // serial clock delayed by one clock cycle
+            sck_cnt     <= 0;                                                                              // counts master clock cycles, causes sck to toggle each time it hits cyc_per_half_sck
+            bit_cnt     <= 0;                                                                              // count number of bits
+            word_cnt    <= 0;                                                                             // count the word number
+            lr_cnt      <= 0;                                                                             // left=0 and right=1
+            inp_sck     <= 0;                                                                             // serial clock
+            sck_d1      <= 0;                                                                               // serial clock delayed by one clock cycle
         end                                                                                                             
         else                                                                                                                
         begin                                                                                                                           

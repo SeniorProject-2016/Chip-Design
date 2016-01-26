@@ -27,7 +27,7 @@ module i2s_out(                 clk, rst_n,
                                                                                                           
     input                       filt_rts;                            //Ready to send handshake signal between Filter and I2S_OUT Block
     output                      filt_rtr;                            //Ready to read handshake signal between Filter and I2S_OUT Block
-    input [31:0]                filt_data;                           //Output audio data sent from Filter Block to I2S_OUT Block
+    input   [31:0]              filt_data;                           //Output audio data sent from Filter Block to I2S_OUT Block
                                                                         
     input                       trig_fifo_underrun;                  //Signal to reset ro_fifo_underrun
                                                                         
@@ -37,7 +37,7 @@ module i2s_out(                 clk, rst_n,
     wire                        i2so_sck_transition;                 //Wire connecting i2so_sck_transition signal to other blocks
     wire                        fifo_rts;                            //Ready to send handshake signal between FIFO and Serializer   
     wire                        fifo_rtr;                            //Ready to read handshake signal between FIFO and Serializer   
-    wire [31:0]                 fifo_data;                           //Wire connecting 32 bit audio data from FIFO to Serializer
+    wire    [31:0]              fifo_data;                           //Wire connecting 32 bit audio data from FIFO to Serializer
 
 
     reg                         ro_fifo_underrun;
@@ -47,7 +47,7 @@ module i2s_out(                 clk, rst_n,
         .rst_n                  (rst_n),
         .sck_transition         (i2so_sck_transition),
         .filt_i2so_lft          (fifo_data [31:16]),        
-        .filt_i2so_rgt          (fifo_data [15:0]),
+        .filt_i2so_rgt          (fifo_data [15: 0]),
         .filt_i2so_rts          (fifo_rts),
         .filt_i2so_rtr          (fifo_rtr),
         .i2so_ws                (i2so_ws),

@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2s_in.v
 // Create Date:             10/13/2015 
-// Last Modification:       12/1/2015
+// Last Modification:       1/23/2016
 // Author:                  Kevin Cao
 //
 //////////////////////////////////////////////////////////////////////////////////
@@ -11,11 +11,12 @@ module i2s_in(              clk, rst_n,
                             inp_sck, inp_ws, inp_sd, 
                             rf_i2si_en, rf_bist_start_val, rf_bist_inc, rf_bist_up_limit, rf_mux_en,
                             i2si_rtr, i2si_data, i2si_rts,
+                            sync_sck, sync_sck_transition,
                             trig_fifo_overrun_clr,
-                            ro_fifo_overrun,
-                            sync_sck, sync_sck_transition
+                            ro_fifo_overrun
     );
 
+    //Ports
     input                       clk;                                //Master clock
     input                       rst_n;                              //Reset
                                                                         
@@ -24,36 +25,36 @@ module i2s_in(              clk, rst_n,
     input                       inp_sd;                             //Digital audio serial data
                                                                     
     input                       rf_i2si_en;                         //Enable bit for Deserializer. 0 = inactive, 1 = active
-    input [11:0]                rf_bist_start_val;                  //Bist start value
-    input [11:0]                rf_bist_up_limit;                   //Bist upper limit
-    input [7:0]                 rf_bist_inc;                        //Bist increment signal by this much
+    input   [11:0]              rf_bist_start_val;                  //Bist start value
+    input   [11:0]              rf_bist_up_limit;                   //Bist upper limit
+    input   [ 7:0]              rf_bist_inc;                        //Bist increment signal by this much
     input                       rf_mux_en;                          //Mux select bit for BIST or Deserializer data/xfc signals
                                                                                                           
     input                       i2si_rtr;                           //Ready to read handshake signal between I2S_In and Filter Block
     output                      i2si_rts;                           //Ready to send handshake signal between I2S_IN and Filter Block
-    output [31:0]               i2si_data;                          //Output audio data sent to Filter Block
-
+    output  [31:0]              i2si_data;                          //Output audio data sent to Filter Block
+                
     output                      sync_sck;                           //Delayed and synchronized digital audio bit clock
     output                      sync_sck_transition;                //Level to pulse converter of sync_sck;    
-
-
+                                                                                                                                            
     input                       trig_fifo_overrun_clr;              //Signal to reset ro_fifo_overrun
-
+                                                                
     output                      ro_fifo_overrun;                    //The FIFO buffer is full and no more can be added to the buffer
                                                                                                                                                                         
                                                                                                                                                                 
-                                                                                                                                                            
+                                                                                                                                                                        
+    //Internal Variables                                                                                                                                                        
     wire                        sync_sck_transition;                //Wire leading to level to pulse converter of serial clock
     wire                        sync_ws;                            //Wire connecting synchronizer output ws to deserializer input ws
     wire                        sync_sd;                            //Wire connecting synchronizer output sd to deserializer input sd
-
-    wire [31:0]                 deserializer_data;                  //Wire connecting output audio data from deserializer to input of mux
+                
+    wire    [31:0]              deserializer_data;                  //Wire connecting output audio data from deserializer to input of mux
     wire                        deserializer_xfc;                   //Wire connecting output xfc signal from deserializer to input of mux
-
-    wire [31:0]                 bist_data;                          //Wire connecting BIST output data to input of mux
+                
+    wire    [31:0]              bist_data;                          //Wire connecting BIST output data to input of mux
     wire                        bist_xfc;                           //Wire connecting BIST xfc signal to input of mux
-
-    wire [31:0]                 fifo_data;                          //Wire connecting output data from mux to FIFO    
+                    
+    wire    [31:0]              fifo_data;                          //Wire connecting output data from mux to FIFO    
     wire                        fifo_xfc;                           //Wire connecting output xfc signal from mux to FIFO    
     wire                        fifo_rtr;                           //Wire connecting output rtr signal from FIFO to ovverun
                                                                     
@@ -79,7 +80,7 @@ module i2s_in(              clk, rst_n,
         .in_sd                  (sync_sd),
         .rf_i2si_en             (rf_i2si_en),
         .out_lft                (deserializer_data [31:16]),        
-        .out_rgt                (deserializer_data [15:0]),         
+        .out_rgt                (deserializer_data [15: 0]),         
         .out_xfc                (deserializer_xfc)                           
     );                                                        
                                                                     

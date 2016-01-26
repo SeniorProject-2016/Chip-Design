@@ -26,9 +26,9 @@ module i2s_in_test2;
 	wire                            inp_sd;
     
 	wire                            rf_i2si_en;
-	reg [11:0]                      rf_bist_start_val;
-	reg [7:0]                       rf_bist_inc;
-	reg [11:0]                      rf_bist_up_limit;
+	reg     [11:0]                  rf_bist_start_val;
+	reg     [ 7:0]                  rf_bist_inc;
+	reg     [11:0]                  rf_bist_up_limit;
 	reg                             rf_mux_en;
     
     wire                            i2si_rtr;
@@ -36,28 +36,29 @@ module i2s_in_test2;
     reg                             trig_fifo_overrun_clr;
 
 	// Outputs
-	wire [31:0]                     i2si_data;
+	wire    [31:0]                  i2si_data;
 	wire                            i2si_rts;
 	wire                            ro_fifo_overrun;
 	wire                            sync_sck;
     
     // Internal Variables
-    reg [15:0]                      test_data [`N-1:0] [0:1];                                        // [Bits Per Word] test_data [# of entities in test] [Left/Right]
+    reg     [15:0]                  test_data [`N-1:0] [0:1];                                        // [Bits Per Word] test_data [# of entities in test] [Left/Right]
     reg                             sck_d1;                                                          // serial clock delay
-    reg [31:0]                      count;                                                           // clock counter
-    reg [31:0]                      sck_cnt;                                                         // serial clock counter
-    reg [31:0]                      bit_cnt;                                                         // bit number counter
-    reg                             lr_cnt;                                                          // left right counter
-    reg [31:0]                      word_cnt;                                                        // word counter
-    reg [31:0]                      cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
-    reg [31:0]                      bit_tc =  15;                                                    // number of bits in a word
+    integer                         count;                                                           // clock counter
+    integer                         sck_cnt;                                                         // serial clock counter
+    integer                         bit_cnt;                                                         // bit number counter
+    integer                         lr_cnt;                                                          // left right counter
+    integer                         word_cnt;                                                        // word counter
+    parameter                       cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
+    parameter                       bit_tc =  15;                                                    // number of bits in a word
     
-    reg [31:0]                      word;                                                            // Stores the expected word, to be compared with i2si_data          
-    reg [1:0]                       cycles_complete = 0;                                             // Tracks the # of cycles the test succeeded    
+    reg     [31:0]                  word;                                                            // Stores the expected word, to be compared with i2si_data          
     reg                             test_complete = 0;                                               // Boolean to help decide if to continue comparing word and i2si_data
     reg                             ignore_first_fail = 0;                                           // Boolean that ignores the first failure if word and i2si_data do not match
+    integer                         cycles_complete = 0;                                             // Tracks the # of cycles the test succeeded    
+
     
-    reg   [15:0]                    ext_start_val;                                //16 bit sign extension of rf_bist_start_val   
+    reg     [15:0]                  ext_start_val;                                                   //16 bit sign extension of rf_bist_start_val   
                                                                                                         
     integer                         out;                                                             // Helps create output text file
 
@@ -102,26 +103,26 @@ module i2s_in_test2;
                                                                                                                                                                                      
         // Initialize Test Data
         // Not relevant to BIST testing
-        test_data [0] [0] = 16'hAAAA;                                                                                   
-        test_data [0] [1] = 16'hFFFF;                                                                                           
-        test_data [1] [0] = 16'hAAAA;                                                                           
-        test_data [1] [1] = 16'hCCCC;                                                                                                       
-        test_data [2] [0] = 16'hCDD7;                                                                                                   
-        test_data [2] [1] = 16'hBABA;                                                                                                   
-        test_data [3] [0] = 16'h4444;                                                                                   
-        test_data [3] [1] = 16'hAAAA;                                                                               
-        test_data [4] [0] = 16'h7398;                                                                                           
-        test_data [4] [1] = 16'hFFDD;                                                                               
-        test_data [5] [0] = 16'h1111;                                                                           
-        test_data [5] [1] = 16'h5982;                                                                               
-        test_data [6] [0] = 16'h0001;                                                                       
-        test_data [6] [1] = 16'hFFFF;                                                                               
-        test_data [7] [0] = 16'h1478;                                                                               
-        test_data [7] [1] = 16'hA3B9;                                                                                                   
-        test_data [8] [0] = 16'hF8D5;                                                                                   
-        test_data [8] [1] = 16'hD55A;                                                                                   
-        test_data [9] [0] = 16'h99C5;                                                                           
-        test_data [9] [1] = 16'h7435;                                                                                               
+        test_data [ 0] [0] = 16'hAAAA;                                                                                   
+        test_data [ 0] [1] = 16'hFFFF;                                                                                           
+        test_data [ 1] [0] = 16'hAAAA;                                                                           
+        test_data [ 1] [1] = 16'hCCCC;                                                                                                       
+        test_data [ 2] [0] = 16'hCDD7;                                                                                                   
+        test_data [ 2] [1] = 16'hBABA;                                                                                                   
+        test_data [ 3] [0] = 16'h4444;                                                                                   
+        test_data [ 3] [1] = 16'hAAAA;                                                                               
+        test_data [ 4] [0] = 16'h7398;                                                                                           
+        test_data [ 4] [1] = 16'hFFDD;                                                                               
+        test_data [ 5] [0] = 16'h1111;                                                                           
+        test_data [ 5] [1] = 16'h5982;                                                                               
+        test_data [ 6] [0] = 16'h0001;                                                                       
+        test_data [ 6] [1] = 16'hFFFF;                                                                               
+        test_data [ 7] [0] = 16'h1478;                                                                               
+        test_data [ 7] [1] = 16'hA3B9;                                                                                                   
+        test_data [ 8] [0] = 16'hF8D5;                                                                                   
+        test_data [ 8] [1] = 16'hD55A;                                                                                   
+        test_data [ 9] [0] = 16'h99C5;                                                                           
+        test_data [ 9] [1] = 16'h7435;                                                                                               
         test_data [10] [0] = 16'h69D9;                                                                      
         test_data [10] [1] = 16'hABCD;                                                                                      
                                                                                                                                                 
@@ -146,12 +147,12 @@ module i2s_in_test2;
     begin                                                                                                           
         if(!rst_n)                                                                                              
         begin                                                                                                   
-            sck_cnt<=0;                                                                              // counts master clock cycles, causes sck to toggle each time it hits cyc_per_half_sck
-            bit_cnt<=0;                                                                              // count number of bits
-            word_cnt<=0;                                                                             // count the word number
-            lr_cnt <= 0;                                                                             // left=0 and right=1
-            inp_sck<=0;                                                                              // serial clock
-            sck_d1<=0;                                                                               // serial clock delayed by one clock cycle
+            sck_cnt     <= 0;                                                                              // counts master clock cycles, causes sck to toggle each time it hits cyc_per_half_sck
+            bit_cnt     <= 0;                                                                              // count number of bits
+            word_cnt    <= 0;                                                                             // count the word number
+            lr_cnt      <= 0;                                                                             // left=0 and right=1
+            inp_sck     <= 0;                                                                              // serial clock
+            sck_d1      <= 0;                                                                               // serial clock delayed by one clock cycle
         end                                                                                                             
         else                                                                                                                
         begin                                                                                                                           
@@ -218,8 +219,7 @@ module i2s_in_test2;
                         begin
                             test_complete = 1;
                             $fdisplay(out, "TEST SUCCEEDED!!!");
-                            #1;
-                            $fclose(out);
+                            #1 $fclose(out);
                         end
                     end
                 end
@@ -235,8 +235,7 @@ module i2s_in_test2;
                     "        i2si_data: %d", i2si_data, "      ---     FAIL");
                     test_complete = 1;
                     $fdisplay (out, "TEST FAILED!!!");
-                    #1;
-                    $fclose(out);
+                    #1 $fclose(out);
                 end
             end                        
         end

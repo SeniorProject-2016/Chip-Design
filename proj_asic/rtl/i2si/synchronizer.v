@@ -13,6 +13,7 @@
 module synchronizer(clk, rst_n, _sck, sck, sck_transition, _sd, sd, _ws, ws
     );
     
+    //Ports
     input               clk;                        //Master clock
     input               rst_n;                      //Reset
     input               _sck;                       //Non-delayed and non-synchronized sck signal
@@ -23,10 +24,12 @@ module synchronizer(clk, rst_n, _sck, sck, sck_transition, _sd, sd, _ws, ws
     output              sck_transition;             //Signal that represents when sck goes from low to high. Helps define when particular actions should occur
     output              sd;                         //Delayed and Synchronized serial data signal
     output              ws;                         //Delayed and Synchronized word select signal
-                                                        
-    reg [2:0]           sck_vec;                        
-    reg [3:0]           sd_vec;                         
-    reg [3:0]           ws_vec;                         
+    
+
+    //Internal Variables
+    reg     [2:0]       sck_vec;                        
+    reg     [3:0]       sd_vec;                         
+    reg     [3:0]       ws_vec;                         
                                                     
     wire                sck_delay;                  //Delayed sck signal that helps define sck_transition
 
@@ -44,24 +47,25 @@ module synchronizer(clk, rst_n, _sck, sck, sck_transition, _sd, sd, _ws, ws
         if (!rst_n)
          begin
             sck_vec <= 3'b000;
-            ws_vec <= 4'b0000;
-            sd_vec <= 3'b000;
+            ws_vec  <= 4'b0000;
+            sd_vec  <= 3'b000;
         end
         else
         begin
-            sck_vec[0] <= _sck;
+            sck_vec[0]   <= _sck;
             sck_vec[2:1] <= sck_vec[1:0];
-            
-            ws_vec[0] <= _ws;
-            ws_vec[3:1] <= ws_vec[2:0];
-            
-            sd_vec[0] <= _sd;
-            sd_vec[3:1] <= sd_vec[2:0];
+                                
+            ws_vec[0]    <= _ws;
+            ws_vec[3:1]  <= ws_vec[2:0];
+                            
+            sd_vec[0]    <= _sd;
+            sd_vec[3:1]  <= sd_vec[2:0];
         end
     end
 
     //Re-assigning sck to be more readable
     assign sck = sck_vec[1];
+    
     //Create additional sck delay signal to detect rising edge
     assign sck_delay = sck_vec[2];
 

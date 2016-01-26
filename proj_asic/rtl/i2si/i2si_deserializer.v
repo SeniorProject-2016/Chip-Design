@@ -15,21 +15,22 @@
 
 module i2si_deserializer(clk, rst_n, sck_transition, in_ws, in_sd, rf_i2si_en, out_lft, out_rgt, out_xfc);
 
+    //Ports
     input                           clk;                        //Master clock
     input                           rst_n;                      //Reset
     input                           sck_transition;             //Sck transitions from 0 -> 1. Helps tell the deserializer when to perform certain actions
     input                           in_ws;                      //Word select: defines if left or right channel is being read from. 0 = Left Channel, 1 = Right Channel
     input                           in_sd;                      //Digital audio serial data
     input                           rf_i2si_en;                 //Enabled bit that helps define if the deserializer is active or idle
-    output [15:0]                   out_lft;                    //Parallel output data of left channel
-    output [15:0]                   out_rgt;                    //Parallel output data of right channel
+    output  [15:0]                  out_lft;                    //Parallel output data of left channel
+    output  [15:0]                  out_rgt;                    //Parallel output data of right channel
     output                          out_xfc;                    //Transfer Complete
                                                                     
-                                                                    
-    reg [15:0]                      out_lft;                        
-    reg [15:0]                      out_rgt;                        
+    //Internal Variables                                                                
+    reg     [15:0]                  out_lft;                        
+    reg     [15:0]                  out_rgt;                        
     reg                             out_xfc;                        
-    reg [1:0]                       rst_n_vec;                  //Used to check when rst_n goes from low to high and to trigger armed1
+    reg     [ 1:0]                  rst_n_vec;                  //Used to check when rst_n goes from low to high and to trigger armed1
     reg                             armed1;                     //First signal that helps define idle and active
     reg                             armed2;                     //Second signal that helps define idle and active
     reg                             active;                     //Defines if the deserializer is active or not
@@ -156,12 +157,12 @@ module i2si_deserializer(clk, rst_n, sck_transition, in_ws, in_sd, rf_i2si_en, o
                 if (in_left)
                 begin
                     out_lft[15:1] <= out_lft[14:0];
-                    out_lft[0] <= in_sd;
+                    out_lft[0]    <= in_sd;
                 end	
                 else
                 begin
                     out_rgt[15:1] <= out_rgt[14:0];
-                    out_rgt[0] <= in_sd;
+                    out_rgt[0]    <= in_sd;
                 end
             end
         end
