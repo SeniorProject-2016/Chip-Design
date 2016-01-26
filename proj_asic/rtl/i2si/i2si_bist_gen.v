@@ -28,17 +28,10 @@ module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_b
     //Internal Variables
     reg                 bist_active;                                  //Defines if BIST generator is active
     reg    [ 4:0]       sck_count;                                    //Serial clock counter                    
-    wire   [15:0]       ext_start_val;                                //16 bit sign extension of rf_bist_start_val    
-    wire   [15:0]       ext_up_limit;                                 //16 bit sign extension of rf_bist_up_limit
     
                                                                                                     
                                                                                                     
                                                                                                     
-    //sign extend rf_bist_start_val
-    assign ext_start_val = {{4{rf_bist_start_val[11]}}, rf_bist_start_val};
-                                                                            
-    //sign extend rf_bist_up_limit
-    assign ext_up_limit = {{4{rf_bist_up_limit[11]}}, rf_bist_up_limit};
                                                                                         
     //define xfc signal as high after bist_out_data increments
     assign i2si_bist_out_xfc = bist_active && sck_count == 5'd31 && sck_transition;
@@ -80,22 +73,22 @@ module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_b
             if(!bist_active)
 			begin
                 //Output signal = start value
-                i2si_bist_out_data[15: 0] <=  ext_start_val;                                        //{rf_bist_start_val, 4'b0000};
-                i2si_bist_out_data[31:16] <= ~ext_start_val;                                        //~{rf_bist_start_val, 4'b0000};
+                i2si_bist_out_data[15: 0] <=  {rf_bist_start_val, 4'b0000};
+                i2si_bist_out_data[31:16] <= ~{rf_bist_start_val, 4'b0000};
             end
-            else if($signed(i2si_bist_out_data[15:0]) >= $signed(ext_up_limit))                     //$signed({rf_bist_up_limit, 4'b0000}))
+            else if($signed(i2si_bist_out_data[15:0]) >= $signed({rf_bist_up_limit, 4'b0000}))               
             begin
                 //Signal goes back to start value
-                i2si_bist_out_data[15:0]  <=  ext_start_val;                                        //{rf_bist_start_val, 4'b0000};
-                i2si_bist_out_data[31:16] <= ~ext_start_val;                                        //~{rf_bist_start_val, 4'b0000};
+                i2si_bist_out_data[15:0]  <=  {rf_bist_start_val, 4'b0000};
+                i2si_bist_out_data[31:16] <= ~{rf_bist_start_val, 4'b0000};                     
 
             end
             //If the signal is within normal range
             //Increment the signal
             else
             begin
-                i2si_bist_out_data[15: 0] <=   i2si_bist_out_data[15:0] + rf_bist_inc; //{4'b0000, rf_bist_inc};   //{rf_bist_inc, 4'b0000};         
-                i2si_bist_out_data[31:16] <= ~(i2si_bist_out_data[15:0] + rf_bist_inc); //{4'b0000, rf_bist_inc});  //{rf_bist_inc, 4'b0000});          
+                i2si_bist_out_data[15: 0] <=   i2si_bist_out_data[15:0] + {rf_bist_inc, 4'b0000};        
+                i2si_bist_out_data[31:16] <= ~(i2si_bist_out_data[15:0] + {rf_bist_inc, 4'b0000});
 
            end
         end
