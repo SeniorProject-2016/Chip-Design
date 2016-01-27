@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: chip_reg.prj
 
@@ -105,6 +105,14 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\trig_generator.v" into library work
+Parsing module <trig_generator>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" into library work
+Parsing module <register>.
+WARNING:HDLCompiler:568 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 56: Constant value is truncated to fit in <8> bits.
+WARNING:HDLCompiler:568 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 57: Constant value is truncated to fit in <4> bits.
+WARNING:HDLCompiler:568 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 58: Constant value is truncated to fit in <4> bits.
+WARNING:HDLCompiler:568 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 59: Constant value is truncated to fit in <8> bits.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\chip_reg.v" into library work
 Parsing module <chip_reg>.
 
@@ -113,156 +121,27 @@ Parsing module <chip_reg>.
 =========================================================================
 
 Elaborating module <chip_reg>.
+
+Elaborating module <register>.
+WARNING:HDLCompiler:413 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 49: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 59: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 1091: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 1111: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\register.v" Line 3191: Result of 8-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <trig_generator>.
+ERROR:HDLCompiler:1401 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\chip_reg.v" Line 71: Signal trig_fifo_overrun in unit chip_reg is connected to following multiple drivers:
+Driver 0: Trig_Gen/trig_i2si_fifo_overrun_clr driven by output signal trig_i2si_fifo_overrun_clr of instance Flip-Flop (Trig_Gen).
+Driver 1: Register/trig_fifo_overrun driven by output signal trig_fifo_overrun of instance Flip-Flop (Register).
+Driver 0: Trig_Gen/trig_i2so_fifo_underrun_clr driven by output signal trig_i2so_fifo_underrun_clr of instance Flip-Flop (Trig_Gen).
+Driver 1: Register/trig_fifo_underrun driven by output signal trig_fifo_underrun of instance Flip-Flop (Register).
+Module chip_reg remains a blackbox, due to errors in its contents
 WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\chip_reg.v" Line 10: Empty module <chip_reg> remains a black box.
-
-=========================================================================
-*                           HDL Synthesis                               *
-=========================================================================
-
-Synthesizing Unit <chip_reg>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip_reg\chip_reg\chip_reg.v".
-WARNING:Xst:647 - Input <i2c_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <i2c_wdata> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <i2c_xfc_write> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <i2c_op> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <ro_fifo_overrun> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <ro_fifo_underrun> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <ro_filter_ovf_flag> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Summary:
-	no macro.
-Unit <chip_reg> synthesized.
-
-=========================================================================
-HDL Synthesis Report
-
-Found no macro
-=========================================================================
-
-=========================================================================
-*                       Advanced HDL Synthesis                          *
-=========================================================================
-
-
-=========================================================================
-Advanced HDL Synthesis Report
-
-Found no macro
-=========================================================================
-
-=========================================================================
-*                         Low Level Synthesis                           *
-=========================================================================
-
-Optimizing unit <chip_reg> ...
-
-Mapping all equations...
-Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block chip_reg, actual ratio is 0.
-
-Final Macro Processing ...
-
-=========================================================================
-Final Register Report
-
-Found no macro
-=========================================================================
-
-=========================================================================
-*                           Partition Report                            *
-=========================================================================
-
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-=========================================================================
-*                            Design Summary                             *
-=========================================================================
-
-Top Level Output File Name         : chip_reg.ngc
-
-Primitive and Black Box Usage:
-------------------------------
-
-Device utilization summary:
----------------------------
-
-Selected Device : 7a100tcsg324-3 
-
-
-Slice Logic Utilization: 
-
-Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
-
-IO Utilization: 
- Number of IOs:                        8309
- Number of bonded IOBs:                   0  out of    210     0%  
-
-Specific Feature Utilization:
-
----------------------------
-Partition Resource Summary:
----------------------------
-
-  No Partitions were found in this design.
-
----------------------------
-
-
-=========================================================================
-Timing Report
-
-NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
-      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
-      GENERATED AFTER PLACE-and-ROUTE.
-
-Clock Information:
-------------------
-No clock signals found in this design
-
-Asynchronous Control Signals Information:
-----------------------------------------
-No asynchronous control signals found in this design
-
-Timing Summary:
----------------
-Speed Grade: -3
-
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
-   Maximum combinational path delay: No path found
-
-Timing Details:
----------------
-All values displayed in nanoseconds (ns)
-
-=========================================================================
-
-Cross Clock Domains Report:
---------------------------
-
-=========================================================================
-
-
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.00 secs
- 
 --> 
 
-Total memory usage is 415572 kilobytes
+Total memory usage is 2302712 kilobytes
 
-Number of errors   :    0 (   0 filtered)
+Number of errors   :    1 (   0 filtered)
 Number of warnings :   10 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
