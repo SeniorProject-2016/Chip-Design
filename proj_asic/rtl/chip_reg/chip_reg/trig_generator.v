@@ -34,7 +34,7 @@ module trig_generator(clk, rst, address, wdata, xfc, trig_i2si_fifo_overrun_clr,
             trig_i2si_fifo_overrun_clr <= 0;
             trig_i2so_fifo_underrun_clr <= 0;
             // triggering when file transfer is complete and address being written to is 0x00c
-            if	(address == 12'h00c && xfc ==1)
+            if	(address == 11'h00c && xfc ==1)
                 begin
                     // if written to bit 0 of 0x00c, trig_i2si_fifo_overrun_clr is triggered
                     if (wdata[0])

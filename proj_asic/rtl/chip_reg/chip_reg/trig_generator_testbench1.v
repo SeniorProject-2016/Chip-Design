@@ -65,7 +65,7 @@ module trig_generator_testbench1;
 
 	initial begin
 		// Initialize Inputs
-		address = 12'h00c;
+		address = 11'h00c;
 
 		// Wait 100 ns for global reset to finish
 		#1000;
