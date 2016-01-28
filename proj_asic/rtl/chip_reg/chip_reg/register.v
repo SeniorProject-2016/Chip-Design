@@ -48,10 +48,12 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
             rf_i2si_bist_en <= 1'h1;
             rf_filter_shift <= 4'hf;
             rf_filter_clip_en <= 1'h1;
-            trig_fifo_overrun <= 1'h0; //NA?
-            //ro_fifo_overrun <= 1'h0; 
-            trig_fifo_underrun <= 1'h0; //NA?
-            //ro_fifo_underrun <= 1'h0;
+            //trig_fifo_overrun <= 1'h0; //NA?
+            ro_fifo_overrun <= 1'h0; 
+            //trig_fifo_underrun <= 1'h0; //NA?
+            ro_fifo_underrun <= 1'h0;
+				//trig_filter_ovf_flag_clear <= 1'h0;
+				ro_filter_ovf_flag <= 1'h0;
             rf_i2si_bist_incr <= 8'h010;
             rf_i2si_bist_start_val_a <= 8'h800;
             rf_i2si_bist_start_val_b <= 4'h800;
@@ -1091,25 +1093,21 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                         rf_filter_shift <= wdata[5:2];
                         rf_filter_clip_en <= wdata[6];
                         end
-                    11'h005: begin
-                        
-                        end
-
-                    11'h00c: begin
+                    11'h008: begin
                         trig_fifo_overrun <= wdata[0];
                         trig_fifo_underrun <= wdata[2];
-                        end
-                    11'h010:
+                        trig_filter_ovf_flag_clear <= wdata[4];
+								end
+                    11'h00c:
                         rf_i2si_bist_incr <= wdata[7:0];
-                    11'h011:
+                    11'h00d:
                         rf_i2si_bist_start_val_a <= wdata[7:0];
-                    11'h012: begin
+                    11'h00e:
                         rf_i2si_bist_start_val_b <= wdata[3:0];
-                        rf_i2si_bist_upper_limit_a <= wdata[7:4];
-                        end
-                    11'h013:
-                        rf_i2si_bist_upper_limit_b <= wdata[7:0];
-			
+                    11'h010:
+								rf_i2si_bist_upper_limit_a <= wdata[7:0];
+                    11'h011:
+                        rf_i2si_bist_upper_limit_b <= wdata[3:0];
                     11'h400:
                         rf_filter_coeff0_a <= wdata[7:0];
                     11'h401:
@@ -3171,31 +3169,24 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                         rdata[5:2] <= rf_filter_shift;
                         rdata[6] <= rf_filter_clip_en;
                         end
-                    11'h005: begin
-                        
-                        end
-
-                        
-                    11'h00c: begin
+                    11'h008: begin
                         rdata[0] <= trig_fifo_overrun;
                         rdata[1] <= ro_fifo_overrun;
                         rdata[2] <= trig_fifo_underrun;
                         rdata[3] <= ro_fifo_underrun;
+								rdata[4] <= trig_filter_ovf_flag_clear;
+								rdata[5] <= ro_filter_ovf_flag;
                         end
-                    11'h010:
+                    11'h00c:
                         rdata[7:0] <= rf_i2si_bist_incr;
-                    11'h011:
+                    11'h00d:
                         rdata[7:0] <= rf_i2si_bist_start_val_a;
-                    11'h012: begin
+                    11'h00e:
                         rdata[3:0] <= rf_i2si_bist_start_val_b;
-                        rdata[7:4] <= rf_i2si_bist_upper_limit_a;
-                        end
-                    11'h013:
-                        rdata[7:0] <= rf_i2si_bist_upper_limit_b;
-						  11'h014: begin
-								rdata[0] <= ro_filter_ovf_flag;
-								rdata[1] <= trig_filter_ovf_flag_clear;
-								end
+						  11'h010:
+                        rdata[7:0] <= rf_i2si_bist_upper_limit_a;
+                    11'h011:
+                        rdata[3:0] <= rf_i2si_bist_upper_limit_b;
                     11'h400:
                         rdata[7:0] <= rf_filter_coeff0_a;
                     11'h401:
