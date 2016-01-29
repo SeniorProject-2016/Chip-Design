@@ -16,6 +16,8 @@ Checking Constraint Associations...
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:478 - clock net Register/rst_inv_BUFG with clock driver
+   Register/rst_inv_BUFG drives no clock pins
 
 Partition Implementation Status
 -------------------------------
@@ -26,12 +28,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   0
+  Number of warnings:   1
 
-Total memory usage is 253368 kilobytes
+Total memory usage is 354204 kilobytes
 
 Writing NGD file "chip_reg.ngd" ...
-Total REAL time to NGDBUILD completion:  10 sec
-Total CPU time to NGDBUILD completion:   8 sec
+Total REAL time to NGDBUILD completion:  36 sec
+Total CPU time to NGDBUILD completion:   34 sec
 
 Writing NGDBUILD log file "chip_reg.bld"...

@@ -83,9 +83,9 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
           .rf_i2si_bist_en            (rf_i2si_bist_en),            // output: 0- deserializer signal 1- BIST signal
           .rf_filter_shift            (rf_filter_shift),            // output: number of bit postions to shift after filter accumulator
           .rf_filter_clip_en          (rf_filter_clip_en),          // output: 0- no clipping 1- performs clipping
-          .trig_fifo_overrun          (trig_fifo_overrun),          // output: signal to reset I2S input FIFO overrun
-          .trig_fifo_underrun         (trig_fifo_underrun),         // output: signal to reset I2S output FIFO underrun
-          .trig_filter_ovf_flag_clear (trig_filter_ovf_flag_clear), // output: clear filter overfow flag 
+          //.trig_fifo_overrun          (trig_fifo_overrun),          // output: signal to reset I2S input FIFO overrun
+          //.trig_fifo_underrun         (trig_fifo_underrun),         // output: signal to reset I2S output FIFO underrun
+          //.trig_filter_ovf_flag_clear (trig_filter_ovf_flag_clear), // output: clear filter overfow flag 
           .rf_i2si_bist_start_val_a   (rf_i2si_bist_start_val_a),   // output: start value of BIST signal
           .rf_i2si_bist_start_val_b   (rf_i2si_bist_start_val_b),   // output: start value of BIST signal
           .rf_i2si_bist_incr          (rf_i2si_bist_incr),          // output: BIST signal increment value

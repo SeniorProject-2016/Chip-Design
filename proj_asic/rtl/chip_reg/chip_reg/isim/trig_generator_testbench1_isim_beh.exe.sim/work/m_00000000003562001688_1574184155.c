@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/reg/Zachs Version/trig_generator_testbench1.v";
+static const char *ng0 = "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/chip_reg/chip_reg/trig_generator_testbench1.v";
 static int ng1[] = {0, 0};
 static int ng2[] = {1, 0};
 static int ng3[] = {20, 0};
@@ -277,7 +277,7 @@ LAB2:    xsi_set_current_line(66, ng0);
 LAB4:    xsi_set_current_line(68, ng0);
     t2 = ((char*)((ng4)));
     t3 = (t0 + 1928);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 12);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 11);
     xsi_set_current_line(71, ng0);
     t2 = (t0 + 3792);
     xsi_process_wait(t2, 1000000LL);

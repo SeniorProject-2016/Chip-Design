@@ -48,12 +48,12 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
             rf_i2si_bist_en <= 1'h1;
             rf_filter_shift <= 4'hf;
             rf_filter_clip_en <= 1'h1;
-            //trig_fifo_overrun <= 1'h0; //NA?
-            ro_fifo_overrun <= 1'h0; 
-            //trig_fifo_underrun <= 1'h0; //NA?
-            ro_fifo_underrun <= 1'h0;
-				//trig_filter_ovf_flag_clear <= 1'h0;
-				ro_filter_ovf_flag <= 1'h0;
+            trig_fifo_overrun <= 1'h0; //NA?
+            //ro_fifo_overrun <= 1'h0; 
+            trig_fifo_underrun <= 1'h0; //NA?
+            //ro_fifo_underrun <= 1'h0;
+				trig_filter_ovf_flag_clear <= 1'h0;
+				//ro_filter_ovf_flag <= 1'h0;
             rf_i2si_bist_incr <= 8'h010;
             rf_i2si_bist_start_val_a <= 8'h800;
             rf_i2si_bist_start_val_b <= 4'h800;
@@ -1093,11 +1093,11 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                         rf_filter_shift <= wdata[5:2];
                         rf_filter_clip_en <= wdata[6];
                         end
-                    11'h008: begin
-                        trig_fifo_overrun <= wdata[0];
+                    /*11'h008: begin
+                        trig_fifo_overrun <= wdata[0];	///can this be taken out because it does the same thing as trig_generator
                         trig_fifo_underrun <= wdata[2];
                         trig_filter_ovf_flag_clear <= wdata[4];
-								end
+								end*/
                     11'h00c:
                         rf_i2si_bist_incr <= wdata[7:0];
                     11'h00d:
@@ -3170,11 +3170,11 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                         rdata[6] <= rf_filter_clip_en;
                         end
                     11'h008: begin
-                        rdata[0] <= trig_fifo_overrun;
+                        //rdata[0] <= trig_fifo_overrun;
                         rdata[1] <= ro_fifo_overrun;
-                        rdata[2] <= trig_fifo_underrun;
+                        //rdata[2] <= trig_fifo_underrun;
                         rdata[3] <= ro_fifo_underrun;
-								rdata[4] <= trig_filter_ovf_flag_clear;
+								//rdata[4] <= trig_filter_ovf_flag_clear;
 								rdata[5] <= ro_filter_ovf_flag;
                         end
                     11'h00c:
