@@ -29,22 +29,31 @@
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">stop</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Deserializer</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;stop_out&gt; </arg>
 </msg>
 
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_18</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_19</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2C/i2c_top_deserializer/bit_counter_slave_addr_FSM_FFd1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2C/i2c_top_deserializer/got_slave_addr&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_15&gt; &lt;I2S_Input/Bist/i2si_bist_out_data_14&gt; &lt;I2S_Input/Bist/i2si_bist_out_data_13&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="3203" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_16&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="3203" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_17&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="3203" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_18&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="3203" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_19&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="3203" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_20&gt; </arg>
@@ -71,7 +80,16 @@
 <msg type="info" file="Xst" num="3203" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_27&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="3203" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_29&gt; </arg>
+<msg type="info" file="Xst" num="3203" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_28&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="3203" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_29&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="3203" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_30&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="3203" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">I2S_Input/Bist/i2si_bist_out_data_15</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chip</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;I2S_Input/Bist/i2si_bist_out_data_31&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.

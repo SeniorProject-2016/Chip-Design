@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: chip.prj
 
@@ -221,9 +221,9 @@ Synthesizing Unit <i2si_bist_gen>.
     Found 5-bit register for signal <sck_count>.
     Found 32-bit register for signal <i2si_bist_out_data>.
     Found 1-bit register for signal <bist_active>.
-    Found 5-bit adder for signal <sck_count[4]_GND_6_o_add_3_OUT> created at line 53.
-    Found 16-bit adder for signal <i2si_bist_out_data[15]_GND_6_o_add_12_OUT> created at line 97.
-    Found 16-bit comparator lessequal for signal <n0014> created at line 85
+    Found 5-bit adder for signal <sck_count[4]_GND_6_o_add_1_OUT> created at line 47.
+    Found 16-bit adder for signal <i2si_bist_out_data[15]_GND_6_o_add_10_OUT> created at line 91.
+    Found 16-bit comparator lessequal for signal <n0012> created at line 79
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  38 D-type flip-flop(s).
@@ -633,6 +633,14 @@ Optimizing FSM <I2C/i2c_top_serializer/FSM_4> on signal <serialize_bit_counter[1
  0110  | 110
  0111  | 111
 -------------------
+WARNING:Xst:1710 - FF/Latch <i2si_bist_out_data_0> (without init value) has a constant value of 0 in block <i2si_bist_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_bist_out_data_1> (without init value) has a constant value of 0 in block <i2si_bist_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_bist_out_data_2> (without init value) has a constant value of 0 in block <i2si_bist_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_bist_out_data_3> (without init value) has a constant value of 0 in block <i2si_bist_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_bist_out_data_16> (without init value) has a constant value of 1 in block <i2si_bist_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_bist_out_data_17> (without init value) has a constant value of 1 in block <i2si_bist_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_bist_out_data_18> (without init value) has a constant value of 1 in block <i2si_bist_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2si_bist_out_data_19> (without init value) has a constant value of 1 in block <i2si_bist_gen>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <chip> ...
 
@@ -654,11 +662,6 @@ Optimizing unit <fifo> ...
 
 Optimizing unit <serializer> ...
 INFO:Xst:2261 - The FF/Latch <I2C/i2c_top_deserializer/bit_counter_slave_addr_FSM_FFd1> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <I2C/i2c_top_deserializer/got_slave_addr> 
-INFO:Xst:2261 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_12> in Unit <chip> is equivalent to the following 3 FFs/Latches, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_15> <I2S_Input/Bist/i2si_bist_out_data_14> <I2S_Input/Bist/i2si_bist_out_data_13> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_0> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_16> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_1> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_17> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_2> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_18> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_3> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_19> 
 INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_4> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_20> 
 INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_5> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_21> 
 INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_6> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_22> 
@@ -667,7 +670,10 @@ INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_8> in Unit <chip
 INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_9> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_25> 
 INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_10> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_26> 
 INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_11> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_27> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_12> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_29> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_12> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_28> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_13> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_29> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_14> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_30> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_15> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_31> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -688,8 +694,8 @@ Unit <chip> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 318
- Flip-Flops                                            : 318
+# Registers                                            : 314
+ Flip-Flops                                            : 314
 # Shift Registers                                      : 4
  2-bit shift register                                  : 1
  3-bit shift register                                  : 1
@@ -716,27 +722,27 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 490
+# BELS                             : 472
 #      GND                         : 1
 #      INV                         : 15
-#      LUT1                        : 8
-#      LUT2                        : 57
-#      LUT3                        : 80
-#      LUT4                        : 85
-#      LUT5                        : 56
-#      LUT6                        : 101
-#      MUXCY                       : 42
-#      MUXF7                       : 5
+#      LUT1                        : 4
+#      LUT2                        : 51
+#      LUT3                        : 84
+#      LUT4                        : 90
+#      LUT5                        : 45
+#      LUT6                        : 102
+#      MUXCY                       : 37
+#      MUXF7                       : 6
 #      MUXF8                       : 2
 #      VCC                         : 1
-#      XORCY                       : 37
-# FlipFlops/Latches                : 327
+#      XORCY                       : 34
+# FlipFlops/Latches                : 323
 #      FD                          : 18
 #      FDC                         : 18
-#      FDCE                        : 212
+#      FDCE                        : 211
 #      FDE                         : 4
 #      FDP                         : 5
-#      FDPE                        : 11
+#      FDPE                        : 8
 #      FDR                         : 43
 #      FDRE                        : 16
 # RAMS                             : 64
@@ -759,18 +765,18 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             327  out of  126800     0%  
- Number of Slice LUTs:                  534  out of  63400     0%  
-    Number used as Logic:               402  out of  63400     0%  
+ Number of Slice Registers:             323  out of  126800     0%  
+ Number of Slice LUTs:                  523  out of  63400     0%  
+    Number used as Logic:               391  out of  63400     0%  
     Number used as Memory:              132  out of  19000     0%  
        Number used as RAM:              128
        Number used as SRL:                4
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    602
-   Number with an unused Flip Flop:     275  out of    602    45%  
-   Number with an unused LUT:            68  out of    602    11%  
-   Number of fully used LUT-FF pairs:   259  out of    602    43%  
+ Number of LUT Flip Flop pairs used:    591
+   Number with an unused Flip Flop:     268  out of    591    45%  
+   Number with an unused LUT:            68  out of    591    11%  
+   Number of fully used LUT-FF pairs:   255  out of    591    43%  
    Number of unique control sets:        27
 
 IO Utilization: 
@@ -801,7 +807,7 @@ Clock Information:
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
 Clock Signal                                                                             | Clock buffer(FF name)                      | Load  |
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
-clk                                                                                      | BUFGP                                      | 392   |
+clk                                                                                      | BUFGP                                      | 388   |
 I2C/i2c_top_deserializer/i2c_scl_neg_pulse(I2C/i2c_top_deserializer/i2c_scl_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/scl_state)| 1     |
 I2C/i2c_top_deserializer/i2c_sda_neg_pulse(I2C/i2c_top_deserializer/i2c_sda_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/sda_state)| 1     |
 I2C/i2c_top_serializer/i2c_scl_neg_pulse(I2C/i2c_top_serializer/i2c_scl_neg_pulse1:O)    | NONE(*)(I2C/i2c_top_serializer/scl_state)  | 1     |
@@ -819,8 +825,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.337ns (Maximum Frequency: 427.808MHz)
-   Minimum input arrival time before clock: 1.975ns
+   Minimum period: 2.352ns (Maximum Frequency: 425.260MHz)
+   Minimum input arrival time before clock: 1.914ns
    Maximum output required time after clock: 1.437ns
    Maximum combinational path delay: 0.441ns
 
@@ -830,50 +836,60 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.337ns (frequency: 427.808MHz)
-  Total number of paths / destination ports: 6085 / 1105
+  Clock period: 2.352ns (frequency: 425.260MHz)
+  Total number of paths / destination ports: 5795 / 1097
 -------------------------------------------------------------------------
-Delay:               2.337ns (Levels of Logic = 3)
-  Source:            I2C/i2c_top_sequencer/Q_addr (FF)
-  Destination:       I2C/i2c_top_sequencer/i2c_addr_out_10 (FF)
+Delay:               2.352ns (Levels of Logic = 3)
+  Source:            I2S_Input/Bist/sck_count_4 (FF)
+  Destination:       I2S_Input/i2si_Fifo/fifo_counter_3 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: I2C/i2c_top_sequencer/Q_addr to I2C/i2c_top_sequencer/i2c_addr_out_10
+  Data Path: I2S_Input/Bist/sck_count_4 to I2S_Input/i2si_Fifo/fifo_counter_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               8   0.361   0.411  I2C/i2c_top_sequencer/Q_addr (I2C/i2c_top_sequencer/Q_addr)
-     LUT2:I0->O            3   0.097   0.521  I2C/i2c_top_sequencer/_n0235_inv11 (I2C/i2c_top_sequencer/_n0235_inv1)
-     LUT6:I3->O            9   0.097   0.332  I2C/i2c_top_sequencer/_n0206_inv1 (I2C/i2c_top_sequencer/_n0206_inv)
-     LUT4:I3->O           11   0.097   0.326  I2C/i2c_top_sequencer/_n0153_inv1 (I2C/i2c_top_sequencer/_n0153_inv)
-     FDCE:CE                   0.095          I2C/i2c_top_sequencer/i2c_addr_out_0
+     FDPE:C->Q             2   0.361   0.697  I2S_Input/Bist/sck_count_4 (I2S_Input/Bist/sck_count_4)
+     LUT6:I0->O            6   0.097   0.318  I2S_Input/Bist/_n005431 (I2S_Input/Bist/_n0054_bdd0)
+     LUT6:I5->O            1   0.097   0.295  I2S_Input/i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1_1 (I2S_Input/i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1)
+     LUT6:I5->O            4   0.097   0.293  I2S_Input/i2si_Fifo/_n0070_inv1 (I2S_Input/i2si_Fifo/_n0070_inv)
+     FDCE:CE                   0.095          I2S_Input/i2si_Fifo/fifo_counter_0
     ----------------------------------------
-    Total                      2.337ns (0.747ns logic, 1.590ns route)
-                                       (32.0% logic, 68.0% route)
+    Total                      2.352ns (0.747ns logic, 1.604ns route)
+                                       (31.8% logic, 68.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1073 / 480
+  Total number of paths / destination ports: 907 / 472
 -------------------------------------------------------------------------
-Offset:              1.975ns (Levels of Logic = 5)
-  Source:            i2c_addr_bits<2> (PAD)
-  Destination:       I2C/i2c_top_deserializer/slave_ack (FF)
+Offset:              1.914ns (Levels of Logic = 14)
+  Source:            Register:rf_i2si_bist_incr<0> (PAD)
+  Destination:       I2S_Input/Bist/i2si_bist_out_data_15 (FF)
   Destination Clock: clk rising
 
-  Data Path: i2c_addr_bits<2> to I2C/i2c_top_deserializer/slave_ack
+  Data Path: Register:rf_i2si_bist_incr<0> to I2S_Input/Bist/i2si_bist_out_data_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.683  i2c_addr_bits_2_IBUF (i2c_addr_bits_2_IBUF)
-     LUT5:I0->O            1   0.097   0.295  I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o7_SW0 (N26)
-     LUT6:I5->O            2   0.097   0.299  I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o7 (I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o)
-     LUT6:I5->O            2   0.097   0.299  I2C/i2c_top_deserializer/_n0436 (I2C/i2c_top_deserializer/_n0436)
-     LUT4:I3->O            1   0.097   0.000  I2C/i2c_top_deserializer/slave_ack_glue_set (I2C/i2c_top_deserializer/slave_ack_glue_set)
-     FDR:D                     0.008          I2C/i2c_top_deserializer/slave_ack
+    chip_reg:rf_i2si_bist_incr<0>    1   0.000   0.379  Register (rf_bist_inc<0>)
+     LUT2:I0->O            1   0.097   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_lut<4> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_lut<4>)
+     MUXCY:S->O            1   0.353   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<4> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<5> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<6> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<7> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<8> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<9> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<10> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<11> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<12> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<13> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<14> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<14>)
+     XORCY:CI->O           1   0.370   0.379  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_xor<15> (I2S_Input/Bist/i2si_bist_out_data[15]_GND_6_o_add_10_OUT<15>)
+     LUT4:I2->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[15]_rf_bist_start_val[11]_mux_13_OUT71 (I2S_Input/Bist/i2si_bist_out_data[15]_rf_bist_start_val[11]_mux_13_OUT<15>)
+     FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_15
     ----------------------------------------
-    Total                      1.975ns (0.397ns logic, 1.578ns route)
-                                       (20.1% logic, 79.9% route)
+    Total                      1.914ns (1.155ns logic, 0.759ns route)
+                                       (60.4% logic, 39.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'I2C/i2c_top_serializer/i2c_scl_neg_pulse'
@@ -927,7 +943,7 @@ Delay:               0.441ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     BUFGP:I->O          392   0.000   0.441  clk_BUFGP (clk_BUFGP)
+     BUFGP:I->O          388   0.000   0.441  clk_BUFGP (clk_BUFGP)
     filter:clk                 0.000          Filter
     ----------------------------------------
     Total                      0.441ns (0.000ns logic, 0.441ns route)
@@ -943,7 +959,7 @@ Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_scl_neg_pulse
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.553|         |         |         |
+clk            |    1.563|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_sda_neg_pulse
@@ -968,22 +984,22 @@ Clock to Setup on destination clock clk
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
 I2C/i2c_top_deserializer/i2c_scl_neg_pulse|    0.845|         |         |         |
-I2C/i2c_top_deserializer/i2c_sda_neg_pulse|    1.480|         |         |         |
+I2C/i2c_top_deserializer/i2c_sda_neg_pulse|    1.428|         |         |         |
 I2C/i2c_top_serializer/i2c_scl_neg_pulse  |    0.845|         |         |         |
-clk                                       |    2.337|         |         |         |
+clk                                       |    2.352|         |         |         |
 ------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 20.00 secs
-Total CPU time to Xst completion: 20.31 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.44 secs
  
 --> 
 
-Total memory usage is 433924 kilobytes
+Total memory usage is 430148 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    4 (   1 filtered)
-Number of infos    :   20 (   0 filtered)
+Number of warnings :   12 (   1 filtered)
+Number of infos    :   18 (   0 filtered)
 
