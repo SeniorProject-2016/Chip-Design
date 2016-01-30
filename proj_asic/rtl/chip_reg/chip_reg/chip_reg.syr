@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.33 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.33 secs
  
 --> Reading design: chip_reg.prj
 
@@ -46,7 +46,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "chip_reg"
 Output Format                      : NGC
-Target Device                      : xc7a100t-3-csg324
+Target Device                      : xc7a200t-3-fbg484
 
 ---- Source Options
 Top Module Name                    : chip_reg
@@ -1262,7 +1262,7 @@ Optimizing unit <register> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block chip_reg, actual ratio is 20.
+Found area constraint ratio of 100 (+ 5) on block chip_reg, actual ratio is 9.
 FlipFlop Register/rf_filter_shift_2 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop Register/rf_filter_shift_1 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop Register/rf_filter_shift_0 has been replicated 1 time(s) to handle iob=true attribute.
@@ -9546,13 +9546,13 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 7a100tcsg324-3 
+Selected Device : 7a200tfbg484-3 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            8237  out of  126800     6%  
- Number of Slice LUTs:                 3867  out of  63400     6%  
-    Number used as Logic:              3867  out of  63400     6%  
+ Number of Slice Registers:            8237  out of  269200     3%  
+ Number of Slice LUTs:                 3867  out of  134600     2%  
+    Number used as Logic:              3867  out of  134600     2%  
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:  11626
@@ -9563,7 +9563,7 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                        8268
- Number of bonded IOBs:                8266  out of    210   3936% (*) 
+ Number of bonded IOBs:                8266  out of    285   2900% (*) 
     IOB Flip Flops/Latches:            8232
 
 Specific Feature Utilization:
@@ -9699,12 +9699,12 @@ clk            |    3.914|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 83770.00 secs
-Total CPU time to Xst completion: 83770.31 secs
+Total REAL time to Xst completion: 242.00 secs
+Total CPU time to Xst completion: 242.64 secs
  
 --> 
 
-Total memory usage is 3448848 kilobytes
+Total memory usage is 3434204 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)

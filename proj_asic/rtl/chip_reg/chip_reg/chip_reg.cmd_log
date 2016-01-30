@@ -47,3 +47,7 @@ xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/chip_re
 xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/chip_reg/chip_reg/chip_reg.xst" -ofn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/chip_reg/chip_reg/chip_reg.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 chip_reg.ngc chip_reg.ngd  
 map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o chip_reg_map.ncd chip_reg.ngd chip_reg.pcf 
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o chip_reg_map.ncd chip_reg.ngd chip_reg.pcf 
+xst -intstyle ise -ifn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/chip_reg/chip_reg/chip_reg.xst" -ofn "C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/chip_reg/chip_reg/chip_reg.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a200t-fbg484-3 chip_reg.ngc chip_reg.ngd  
+map -intstyle ise -p xc7a200t-fbg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o chip_reg_map.ncd chip_reg.ngd chip_reg.pcf 

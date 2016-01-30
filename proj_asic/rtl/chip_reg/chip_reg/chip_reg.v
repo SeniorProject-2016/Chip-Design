@@ -1125,8 +1125,7 @@ module chip_reg(clk,rst,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
          .wdata                       (i2c_wdata),         // input: data to be written for a write op
          .xfc                         (i2c_xfc_write),     // input: transfer complete
          .trig_i2si_fifo_overrun_clr  (trig_fifo_overrun), // output: signal to reset I2S input FIFO overrun
-         .trig_i2so_fifo_underrun_clr (trig_fifo_underrun) // output: signal to reset I2S output FIFO underrun
-         
+         .trig_i2so_fifo_underrun_clr (trig_fifo_underrun) // output: signal to reset I2S output FIFO underrun   
      );
     //---------------------------------------------------------------------------  
     //---------------------------------------------------------------------------
