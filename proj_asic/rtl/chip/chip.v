@@ -1176,6 +1176,7 @@ module chip(clk, rst_n,                                        // General
         .rf_filter_coeff511_b(rf_filter_coeff511_b)
     );
     
+                
     chip_reg Register(
         .clk                        (clk),                          // input: master clock
         .rst                        (rst_n),                        // input: reset not
@@ -1188,7 +1189,6 @@ module chip(clk, rst_n,                                        // General
         .ro_filter_ovf_flag         (ro_filter_ovf_flag),           // input: filter overflow flag
         .i2c_rdata                  (i2c_rdata),                    // output: read return data
         .i2c_xfc_read               (i2c_xfc_read),                 // output: read data transfer complete
-        .rf_soft_reset              (rf_soft_reset),                // output: 0- normal operation 1- assert soft reset
         .rf_i2si_bist_en            (rf_mux_en),                    // output: I2S input multiplexer select bit
         .rf_filter_shift            (rf_filter_shift),              // output: number of bit positions to shift after filter accumulator
         .rf_filter_clip_en          (rf_filter_clip_en),            // output: 0- no clipping 1- performs clipping
