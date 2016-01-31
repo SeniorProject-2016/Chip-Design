@@ -4,9 +4,9 @@ module filter_accumulator(clk, rstb, enable,load, D, Q
     );
 input		signed clk, rstb,enable,load; 
 input 	signed [31:0] D; 
-output 	signed [40:0] Q; 
+output 	signed [39:0] Q; 
 
-reg 		signed [40:0] tmp;  
+reg 		signed [39:0] tmp;  
 
 assign	Q = tmp; 
 

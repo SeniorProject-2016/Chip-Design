@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 
-
 module filter_round_truncate(clk, rstb, final_state, acc_in, rf_sat, rf_shift, trig_filter_ovf_flag_clear, filter_out, overflow_flag
     );
 input clk, rstb; 
@@ -17,7 +16,7 @@ reg [27:0] acc_t;
 wire [4:0]  num_shift;
 reg signed [39:0] round;
 wire sign_bit; 
-wire [46:0] ext_acc_in;
+wire [46:0] ext_acc_in; //exact
 assign num_shift = rf_shift + 12; 
 
 assign sign_bit = acc_in[39];
@@ -28,13 +27,7 @@ assign ext_acc_in = {{7{sign_bit}}, acc_in};
 
 always@(posedge clk or negedge rstb)
 begin
-	round <= 40'd0;
-	round[num_shift-1] <= 1'b1;
-	
-	acc_r <= ext_acc_in + (1<<(num_shift-1));
-	
-	acc_t <= 28'd0;
-	acc_t <= acc_r[num_shift+:34];//pad
+
 	
 	if(!rstb)
 		begin
@@ -43,7 +36,15 @@ begin
 		overflow_flag <= 1'b0;
 		end
 	else
-		begin
+	begin
+		round <= 40'd0;
+	round[num_shift-1] <= 1'b1;
+	
+	acc_r <= ext_acc_in + (1<<(num_shift-1));
+	
+	acc_t <= 28'd0;
+	acc_t <= acc_r[num_shift+:34];//pad
+		
 		if (acc_t > (1<<15)-1)
 			begin 
 				overflow_flag <= 1; 
@@ -67,13 +68,5 @@ begin
 			overflow_flag <= 1'b0; 
 		end		
 end
-
-/*
-filter_barrel_shifter filter_barrel_shifter_0 (
-    .input_signal(acc_in), 
-    .sel_shift(rf_shift), 
-    .output_signal(shift_out)
-    );
-*/
 
 endmodule
