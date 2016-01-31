@@ -1,8 +1,23 @@
 ISim log file
-Running: C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2s_out_test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_out_test_isim_beh.wdb 
+Running: C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\chip_test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/I2S Subsystem/chip_test_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+----------------------------------------------------------------------
+INFO:Security:61 - The XILINXD_LICENSE_FILE environment variable is not set.
+INFO:Security:63 - The LM_LICENSE_FILE environment variable is not set.
+INFO:Security:68 - For more information or for assistance in obtaining 
+ a license, please run the Xilinx License Configuration Manager
+       (xlcm or "Manage Xilinx Licenses".)
+INFO:Security:68a - user is Zachary, on host ZACH.
+ERROR:Security:14 - No feature was available for 'ISIM'.
+
+No such feature exists.
+Feature:       ISIM
+License path:  C:/.Xilinx\Xilinx.lic;C:\Xilinx\14.7\ISE_DS\ISE\/coregen/core_licenses\Xilinx.lic;C:\Xilinx\14.7\ISE_DS\ISE\/coregen/core_licenses\XilinxFree.lic;C:\Xilinx\14.7\ISE_DS\EDK/data/core_licenses\Xilinx.lic;
+FLEXnet Licensing error:-5,357
+For further information, refer to the FLEXnet Licensing documentation,
+available at "www.flexerasoftware.com".
+----------------------------------------------------------------------
+WARNING: A full ISim License cannot be checked out due to the issues listed above. Please use Xilinx License Configuration Manager to fix these issues in order to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
 Time resolution is 1 ps
@@ -12,20 +27,4 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # run all
-Queued 4294967295
-Queued 2863311530
-Queued 4294901760
-Queued      65535
-Queued 3435973836
-Queued  858993459
-Queued  286331153
-Queued  572662306
-Queued 4008636142
-Queued 2290649224
-Queued 4198860987
-Queued 3443916714
-Queued 3979533926
-Queued   72796962
----Cannot queue: Buffer Full---
----Cannot queue: Buffer Full---
-Stopped at time : 5000745 ns : File "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_out.v" Line 77
+Stopped at time : 2234665 ns : File "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/I2S Subsystem/serializer.v" Line 125

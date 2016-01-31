@@ -2,13 +2,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             chip.v
 // Create Date:             12/20/2015
-// Last Modification:       1/12/2015
+// Last Modification:       1/30/2016
 // Author:                  Zachary Nelson
 //
 //////////////////////////////////////////////////////////////////////////////////
 
 module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,rf_bist_start_val,
-            rf_bist_inc,rf_bist_up_limit,rf_mux_en,i2si_rtr,i2so_sck,i2so_ws,
+            rf_bist_inc,rf_bist_up_limit,rf_mux_en,i2so_sck,i2so_ws,
             i2so_sd,trig_fifo_overrun_clr,ro_fifo_overrun,trig_fifo_underrun,
             ro_fifo_underrun,filt_rtr);
             
@@ -43,7 +43,7 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,rf_bist_start_val,
     input [7:0] rf_bist_inc;            // BIST increment value
     input [11:0] rf_bist_up_limit;      // BIST upper limit value
     input rf_mux_en;                    // multiplexer select bit
-    input i2si_rtr;                     // I2S ready to receive
+    wire  i2si_rtr;                     // I2S ready to receive
         
     // Inputs to I2S Output Block
     wire sck_inp;                       // synchronized serial clock
@@ -87,7 +87,7 @@ module chip(clk,rst_n,inp_sck,inp_ws,inp_sd,rf_i2si_en,rf_bist_start_val,
         .i2so_sck_transition     (sck_transition),          // input: serial clock transition
         .filt_rts                (filt_rts),                // input: ready to send
         .filt_data               (filt_data),               // input: audio data
-        .filt_rtr                (filt_rtr),                // output: read to receive
+        .filt_rtr                (i2si_rtr),                // output: read to receive
         .i2so_ws                 (i2so_ws),                 // output: word select
         .i2so_sd                 (i2so_sd),                 // output: serial data
         .i2so_sck                (i2so_sck),                // output: serial clock
