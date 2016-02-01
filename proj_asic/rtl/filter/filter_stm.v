@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-module filter_stm( clk, rstb, filter_aud_in_rts, filter_aud_in_rtr, filter_aud_out_rts, filter_aud_out_rtr, do_transfer, do_multiply_1st, do_multiply, filter_aud_in, filter_aud_out, rf_filter_coeff, rf_shift, rf_sat, mux_re, mux_rdptr
+module filter_stm( clk, rstb, filter_aud_in_rts, filter_aud_in_rtr, filter_aud_out_rts, filter_aud_out_rtr, do_transfer, do_multiply_1st, do_multiply, filter_aud_in, filter_aud_out, rf_filter_coeff, rf_shift,trig_filter_ovf_flag_clear, rf_sat,ro_filter_ovf_flag, mux_re, mux_rdptr
     );
 
 input			clk;					//Clock for State Machine
@@ -9,6 +9,8 @@ input 		rstb; 					//Active -low reset signal
 input			[31:0] filter_aud_in;
 input 		[15:0] rf_filter_coeff;
 input			[2:0]	 rf_shift;
+input			trig_filter_ovf_flag_clear;
+output		ro_filter_ovf_flag;
 input			rf_sat;
 input 		filter_aud_in_rts;		//Ready to Send
 output		filter_aud_in_rtr;		//Ready to Recieve
@@ -73,6 +75,10 @@ wire signed [39:0]		accumulator_out_right;
 wire signed [15:0]		filter_out_right;
 wire signed [15:0]		filter_out_left;
 //***********************************************************************************
+wire							ro_filter_ovf_flag;
+wire							ro_filter_ovf_flag_right;
+wire							ro_filter_ovf_flag_left;
+//***********************************************************************************
 assign h_unit 						= rf_filter_coeff;
 assign x_unit_left 				= x_unit[31:16];
 assign x_unit_right				= x_unit[15:0];
@@ -80,6 +86,7 @@ assign filter_xfc_in 			= filter_aud_in_rtr && filter_aud_in_rts;
 assign filter_aud_out 			= {filter_out_left,filter_out_right};
 assign accumulator_in_left 	= x_unit_left * h_unit;
 assign accumulator_in_right 	= x_unit_right * h_unit;
+assign ro_filter_ovf_flag		= ro_filter_ovf_flag_left || ro_filter_ovf_flag_right;
 
 //***********************************************************************************
 
@@ -294,24 +301,22 @@ always@(posedge clk or negedge rstb)
 	filter_round_truncate filter_round_truncate_left 
 					(.clk(clk), 
 					.rstb(rstb), 
-					.final_state(final_state), 
 					.acc_in(accumulator_out_left), 
 					.rf_sat(rf_sat), 
 					.rf_shift(rf_shift), 
 					.trig_filter_ovf_flag_clear(trig_filter_ovf_flag_clear), 
 					.filter_out(filter_out_left), 
-					.overflow_flag(overflow_flag_left));
+					.ro_filter_ovf_flag(ro_filter_ovf_flag_left));
 					
 	filter_round_truncate filter_round_truncate_right 
 					(.clk(clk), 
 					.rstb(rstb), 
-					.final_state(final_state), 
 					.acc_in(accumulator_out_right), 
 					.rf_sat(rf_sat), 
 					.rf_shift(rf_shift), 
 					.trig_filter_ovf_flag_clear(trig_filter_ovf_flag_clear), 
 					.filter_out(filter_out_right), 
-					.overflow_flag(overflow_flag_right));		
+					.ro_filter_ovf_flag(ro_filter_ovf_flag_right));		
 					
 					
 

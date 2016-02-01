@@ -9,10 +9,10 @@ input								clk;
 input								rstb;
 input								wren;
 input		[8:0]					wrptr;
-input		[31:0]					wrdata;
+input		[31:0]				wrdata;
 input								rden;
 input		[8:0]					rdptr;
-output		[31:0]					rddata;
+output	[31:0]				rddata;
 
 localparam	DEPTH = 511; //2^9 <= 16'b0; 512
 localparam	WIDTH = 31; 

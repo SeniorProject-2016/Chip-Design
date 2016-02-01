@@ -1,20 +1,19 @@
 `timescale 1ns / 1ps
 
-module filter_round_truncate(clk, rstb, final_state, acc_in, rf_sat, rf_shift, trig_filter_ovf_flag_clear, filter_out, overflow_flag
+module filter_round_truncate(clk, rstb, acc_in, rf_sat, rf_shift, trig_filter_ovf_flag_clear, filter_out, ro_filter_ovf_flag
     );
 input clk, rstb; 
-input final_state;
 input[39:0] acc_in; 
 input rf_sat;
 input[2:0] rf_shift;
 input trig_filter_ovf_flag_clear;
 output reg [15:0] filter_out;
-output reg overflow_flag; 
+output reg ro_filter_ovf_flag; 
 
 reg [46:0] acc_r;
 reg [27:0] acc_t;
 wire [4:0]  num_shift;
-reg signed [39:0] round;
+//reg signed [39:0] round;
 wire sign_bit; 
 wire [46:0] ext_acc_in; //exact
 assign num_shift = rf_shift + 12; 
@@ -32,13 +31,13 @@ begin
 	if(!rstb)
 		begin
 		filter_out <= 1'b0; 
-		//overflow_flag controlled by register??
-		overflow_flag <= 1'b0;
+		ro_filter_ovf_flag <= 1'b0;
 		end
 	else
+	
 	begin
-		round <= 40'd0;
-	round[num_shift-1] <= 1'b1;
+	//round <= 40'd0;
+	//round[num_shift-1] <= 1'b1;
 	
 	acc_r <= ext_acc_in + (1<<(num_shift-1));
 	
@@ -47,25 +46,27 @@ begin
 		
 		if (acc_t > (1<<15)-1)
 			begin 
-				overflow_flag <= 1; 
+				ro_filter_ovf_flag <= 1; 
 				if (rf_sat)
 					acc_r <= (1<<15)-1;
 				else
 					filter_out <= acc_t[15:0];
 			end
+			
 		else if (acc_t < -(1<<15)) 
 			begin
-				overflow_flag <= 1; 
+				ro_filter_ovf_flag <= 1; 
 				if (rf_sat) 
 					acc_r <= (1<<15)-1;
 				else
 					filter_out <= acc_t[15:0];
 			end
+			
 		else 
 				filter_out <= acc_t[15:0];
 
 		if (trig_filter_ovf_flag_clear)
-			overflow_flag <= 1'b0; 
+			ro_filter_ovf_flag <= 1'b0; 
 		end		
 end
 
