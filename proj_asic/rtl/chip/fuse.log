@@ -21,29 +21,6 @@ Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/
 Analyzing Verilog file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip.v" Line 112: Size mismatch in connection of port <rf_bist_start_val>. Formal port size is 12-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip.v" Line 114: Size mismatch in connection of port <rf_bist_up_limit>. Formal port size is 12-bit while actual signal size is 32-bit.
-Completed static elaboration
-Compiling module synchronizer
-Compiling module i2si_deserializer
-Compiling module i2si_bist_gen
-Compiling module i2si_mux
-Compiling module fifo
-Compiling module i2s_in
-Compiling module serializer
-Compiling module i2s_out
-Compiling module filter
-Compiling module chip_reg
-Compiling module Deserializer
-Compiling module Sequencer
-Compiling module I2C_Serializer
-Compiling module i2c
-Compiling module chip
-Compiling module chip_test
-Compiling module glbl
-Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
-Compiled 17 Verilog Units
-Built simulation executable C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_test_isim_beh.exe
-Fuse Memory Usage: 30412 KB
-Fuse CPU Usage: 1108 ms
+ERROR:HDLCompiler:1654 - "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_reg.v" Line 71: Instantiating <Register> from unknown module <register>
+ERROR:HDLCompiler:1654 - "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/chip_reg.v" Line 1121: Instantiating <Trig_Gen> from unknown module <trig_generator>
+ERROR:Simulator:778 - Static elaboration of top level Verilog design unit(s) in library work failed
