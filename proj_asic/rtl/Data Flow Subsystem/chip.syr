@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.31 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.32 secs
  
 --> Reading design: chip.prj
 
@@ -105,25 +105,35 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\synchronizer.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_storage.v" into library work
+Parsing module <filter_storage>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_round_truncate.v" into library work
+Parsing module <filter_round_truncate>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_accumulator.v" into library work
+Parsing module <filter_accumulator>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\synchronizer.v" into library work
 Parsing module <synchronizer>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\serializer.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\serializer.v" into library work
 Parsing module <serializer>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2si_mux.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2si_mux.v" into library work
 Parsing module <i2si_mux>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2si_deserializer.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2si_deserializer.v" into library work
 Parsing module <i2si_deserializer>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2si_bist_gen.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2si_bist_gen.v" into library work
 Parsing module <i2si_bist_gen>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\fifo.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_stm.v" into library work
+Parsing module <filter_stm>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_mux.v" into library work
+Parsing module <filter_mux>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\fifo.v" into library work
 Parsing module <fifo>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2s_out.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2s_out.v" into library work
 Parsing module <i2s_out>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2s_in.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2s_in.v" into library work
 Parsing module <i2s_in>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\filter.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter.v" into library work
 Parsing module <filter>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\chip.v" into library work
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\chip.v" into library work
 Parsing module <chip>.
 
 =========================================================================
@@ -145,7 +155,20 @@ Elaborating module <i2si_mux>.
 Elaborating module <fifo(DATA_SIZE=32,BUF_WIDTH=3)>.
 
 Elaborating module <filter>.
-WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\filter.v" Line 3: Empty module <filter> remains a black box.
+
+Elaborating module <filter_stm>.
+
+Elaborating module <filter_storage>.
+
+Elaborating module <filter_accumulator>.
+
+Elaborating module <filter_round_truncate>.
+WARNING:HDLCompiler:413 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_round_truncate.v" Line 45: Result of 34-bit expression is truncated to fit in 28-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter.v" Line 171: Assignment to do_transfer ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter.v" Line 172: Assignment to do_multiply_1st ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter.v" Line 173: Assignment to do_multiply ignored, since the identifier is never used
+
+Elaborating module <filter_mux>.
 
 Elaborating module <i2s_out>.
 
@@ -156,20 +179,20 @@ Elaborating module <serializer>.
 =========================================================================
 
 Synthesizing Unit <chip>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\chip.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\chip.v".
     Summary:
 	no macro.
 Unit <chip> synthesized.
 
 Synthesizing Unit <i2s_in>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2s_in.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2s_in.v".
     Found 1-bit register for signal <ro_fifo_overrun>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <i2s_in> synthesized.
 
 Synthesizing Unit <synchronizer>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\synchronizer.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\synchronizer.v".
     Found 4-bit register for signal <ws_vec>.
     Found 4-bit register for signal <sd_vec>.
     Found 3-bit register for signal <sck_vec>.
@@ -178,7 +201,7 @@ Synthesizing Unit <synchronizer>.
 Unit <synchronizer> synthesized.
 
 Synthesizing Unit <i2si_deserializer>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2si_deserializer.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2si_deserializer.v".
     Found 1-bit register for signal <in_left>.
     Found 16-bit register for signal <out_lft>.
     Found 16-bit register for signal <out_rgt>.
@@ -194,7 +217,7 @@ Synthesizing Unit <i2si_deserializer>.
 Unit <i2si_deserializer> synthesized.
 
 Synthesizing Unit <i2si_bist_gen>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2si_bist_gen.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2si_bist_gen.v".
     Found 5-bit register for signal <sck_count>.
     Found 32-bit register for signal <i2si_bist_out_data>.
     Found 1-bit register for signal <bist_active>.
@@ -209,13 +232,13 @@ Synthesizing Unit <i2si_bist_gen>.
 Unit <i2si_bist_gen> synthesized.
 
 Synthesizing Unit <i2si_mux>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2si_mux.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2si_mux.v".
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <i2si_mux> synthesized.
 
 Synthesizing Unit <fifo>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\fifo.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\fifo.v".
         DATA_SIZE = 32
         BUF_WIDTH = 3
     Found 32-bit register for signal <fifo_out_data>.
@@ -234,15 +257,119 @@ Synthesizing Unit <fifo>.
 	inferred   1 Multiplexer(s).
 Unit <fifo> synthesized.
 
+Synthesizing Unit <filter>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter.v".
+INFO:Xst:3210 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter.v" line 164: Output port <do_transfer> of the instance <filter_stm_0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter.v" line 164: Output port <do_multiply_1st> of the instance <filter_stm_0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter.v" line 164: Output port <do_multiply> of the instance <filter_stm_0> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <filter> synthesized.
+
+Synthesizing Unit <filter_stm>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_stm.v".
+WARNING:Xst:647 - Input <filter_aud_out_rtr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 9-bit register for signal <wr_addr_x>.
+    Found 9-bit register for signal <rd_addr_x>.
+    Found 9-bit register for signal <mux_rdptr>.
+    Found 9-bit register for signal <filter_count>.
+    Found 4-bit register for signal <filter_state>.
+    Found 1-bit register for signal <do_transfer>.
+    Found 1-bit register for signal <do_multiply_1st>.
+    Found 1-bit register for signal <do_multiply>.
+    Found 1-bit register for signal <arr_re_x>.
+    Found 1-bit register for signal <arr_we_x>.
+    Found 1-bit register for signal <mux_re>.
+    Found 1-bit register for signal <filter_running>.
+    Found 1-bit register for signal <filter_running_1st>.
+    Found 1-bit register for signal <filter_need_new>.
+    Found 1-bit register for signal <filter_aud_in_rtr>.
+    Found 1-bit register for signal <filter_aud_out_rts>.
+    Found 1-bit register for signal <accumulator_enable>.
+    Found 1-bit register for signal <accumulator_load>.
+    Found finite state machine <FSM_0> for signal <filter_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 6                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rstb (negative)                                |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 9-bit subtractor for signal <rd_addr_x[8]_GND_11_o_sub_11_OUT> created at line 180.
+    Found 9-bit adder for signal <wr_addr_x[8]_GND_11_o_add_7_OUT> created at line 150.
+    Found 9-bit adder for signal <mux_rdptr[8]_GND_11_o_add_11_OUT> created at line 181.
+    Found 9-bit adder for signal <filter_count[8]_GND_11_o_add_12_OUT> created at line 182.
+    Found 16x16-bit multiplier for signal <accumulator_in_left> created at line 87.
+    Found 16x16-bit multiplier for signal <accumulator_in_right> created at line 88.
+    Summary:
+	inferred   2 Multiplier(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  49 D-type flip-flop(s).
+	inferred  42 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <filter_stm> synthesized.
+
+Synthesizing Unit <filter_storage>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_storage.v".
+    Found 32-bit register for signal <rddata>.
+    Found 16384-bit register for signal <n0522[16383:0]>.
+    Found 32-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][31]_wide_mux_516_OUT> created at line 550.
+    Summary:
+	inferred 16416 D-type flip-flop(s).
+	inferred 513 Multiplexer(s).
+Unit <filter_storage> synthesized.
+
+Synthesizing Unit <filter_accumulator>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_accumulator.v".
+    Found 40-bit register for signal <tmp>.
+    Found 40-bit adder for signal <tmp[39]_D[31]_add_1_OUT> created at line 24.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <filter_accumulator> synthesized.
+
+Synthesizing Unit <filter_round_truncate>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_round_truncate.v".
+    Found 16-bit register for signal <filter_out>.
+    Found 1-bit register for signal <ro_filter_ovf_flag>.
+    Found 47-bit register for signal <acc_r>.
+    Found 28-bit register for signal <acc_t>.
+    Found 6-bit subtractor for signal <GND_15_o_GND_15_o_sub_3_OUT> created at line 42.
+    Found 5-bit adder for signal <n0042> created at line 19.
+    Found 47-bit adder for signal <ext_acc_in[46]_GND_15_o_add_4_OUT> created at line 42.
+    Found 47-bit shifter logical left for signal <n0047> created at line 42
+    Found 60-bit shifter logical right for signal <n0030> created at line 45
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  92 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <filter_round_truncate> synthesized.
+
+Synthesizing Unit <filter_mux>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\filter_mux.v".
+    Found 16-bit register for signal <rddata>.
+    Found 16-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][15]_wide_mux_513_OUT> created at line 663.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <filter_mux> synthesized.
+
 Synthesizing Unit <i2s_out>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\i2s_out.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\i2s_out.v".
     Found 1-bit register for signal <ro_fifo_underrun>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <i2s_out> synthesized.
 
 Synthesizing Unit <serializer>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\I2S Subsystem\serializer.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Data Flow Subsystem\serializer.v".
     Found 1-bit register for signal <LR>.
     Found 16-bit register for signal <lft_data>.
     Found 16-bit register for signal <rgt_data>.
@@ -251,7 +378,7 @@ Synthesizing Unit <serializer>.
     Found 1-bit register for signal <i2so_ws>.
     Found 1-bit register for signal <i2so_sd>.
     Found 1-bit register for signal <filt_i2so_rts_delay>.
-    Found 4-bit subtractor for signal <bit_count[3]_GND_12_o_sub_7_OUT> created at line 107.
+    Found 4-bit subtractor for signal <bit_count[3]_GND_20_o_sub_7_OUT> created at line 107.
     Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_12_o> created at line 132.
     Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_13_o> created at line 137.
     Summary:
@@ -266,27 +393,48 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 2
  8x32-bit dual-port RAM                                : 2
-# Adders/Subtractors                                   : 9
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 21
  16-bit adder                                          : 1
  3-bit adder                                           : 4
  4-bit addsub                                          : 2
  4-bit subtractor                                      : 1
- 5-bit adder                                           : 1
-# Registers                                            : 34
- 1-bit register                                        : 15
- 16-bit register                                       : 4
+ 40-bit adder                                          : 2
+ 47-bit adder                                          : 2
+ 5-bit adder                                           : 3
+ 6-bit subtractor                                      : 2
+ 9-bit adder                                           : 3
+ 9-bit subtractor                                      : 1
+# Registers                                            : 64
+ 1-bit register                                        : 30
+ 16-bit register                                       : 7
+ 16384-bit register                                    : 1
  2-bit register                                        : 1
+ 28-bit register                                       : 2
  3-bit register                                        : 5
- 32-bit register                                       : 3
+ 32-bit register                                       : 4
  4-bit register                                        : 5
+ 40-bit register                                       : 2
+ 47-bit register                                       : 2
  5-bit register                                        : 1
+ 9-bit register                                        : 4
 # Comparators                                          : 1
  16-bit comparator lessequal                           : 1
-# Multiplexers                                         : 10
+# Multiplexers                                         : 570
  1-bit 16-to-1 multiplexer                             : 2
- 1-bit 2-to-1 multiplexer                              : 2
- 32-bit 2-to-1 multiplexer                             : 5
+ 1-bit 2-to-1 multiplexer                              : 25
+ 16-bit 512-to-1 multiplexer                           : 1
+ 32-bit 2-to-1 multiplexer                             : 517
+ 32-bit 512-to-1 multiplexer                           : 1
  4-bit 2-to-1 multiplexer                              : 1
+ 40-bit 2-to-1 multiplexer                             : 2
+ 47-bit 2-to-1 multiplexer                             : 2
+ 9-bit 2-to-1 multiplexer                              : 19
+# Logic shifters                                       : 4
+ 47-bit shifter logical left                           : 2
+ 60-bit shifter logical right                          : 2
+# FSMs                                                 : 1
 
 =========================================================================
 
@@ -294,6 +442,30 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:2677 - Node <acc_t_16> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_17> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_18> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_19> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_20> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_21> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_22> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_23> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_24> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_25> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_26> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_27> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_16> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_17> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_18> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_19> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_20> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_21> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_22> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_23> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_24> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_25> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_26> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_27> of sequential type is unconnected in block <filter_round_truncate_right>.
 
 Synthesizing (advanced) Unit <fifo>.
 The following registers are absorbed into counter <wr_ptr>: 1 register on signal <wr_ptr>.
@@ -318,6 +490,10 @@ INFO:Xst:3217 - HDL ADVISOR - Register <fifo_out_data> currently described with 
     -----------------------------------------------------------------------
 Unit <fifo> synthesized (advanced).
 
+Synthesizing (advanced) Unit <filter_accumulator>.
+The following registers are absorbed into accumulator <tmp>: 1 register on signal <tmp>.
+Unit <filter_accumulator> synthesized (advanced).
+
 Synthesizing (advanced) Unit <i2si_bist_gen>.
 The following registers are absorbed into counter <sck_count>: 1 register on signal <sck_count>.
 Unit <i2si_bist_gen> synthesized (advanced).
@@ -325,6 +501,18 @@ Unit <i2si_bist_gen> synthesized (advanced).
 Synthesizing (advanced) Unit <serializer>.
 The following registers are absorbed into counter <bit_count>: 1 register on signal <bit_count>.
 Unit <serializer> synthesized (advanced).
+WARNING:Xst:2677 - Node <acc_t_16> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_17> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_18> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_19> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_20> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_21> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_22> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_23> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_24> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_25> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_26> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_27> of sequential type is unconnected in block <filter_round_truncate>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -332,27 +520,56 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 2
  8x32-bit dual-port distributed RAM                    : 2
-# Adders/Subtractors                                   : 1
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 11
  16-bit adder                                          : 1
+ 47-bit adder                                          : 2
+ 5-bit adder                                           : 2
+ 6-bit subtractor                                      : 2
+ 9-bit adder                                           : 3
+ 9-bit subtractor                                      : 1
 # Counters                                             : 8
  3-bit up counter                                      : 4
  4-bit down counter                                    : 1
  4-bit updown counter                                  : 2
  5-bit up counter                                      : 1
-# Registers                                            : 188
- Flip-Flops                                            : 188
+# Accumulators                                         : 2
+ 40-bit up loadable accumulator                        : 2
+# Registers                                            : 16829
+ Flip-Flops                                            : 16829
 # Comparators                                          : 1
  16-bit comparator lessequal                           : 1
-# Multiplexers                                         : 9
+# Multiplexers                                         : 16470
  1-bit 16-to-1 multiplexer                             : 2
- 1-bit 2-to-1 multiplexer                              : 2
+ 1-bit 2-to-1 multiplexer                              : 16409
+ 1-bit 512-to-1 multiplexer                            : 32
+ 16-bit 512-to-1 multiplexer                           : 1
  32-bit 2-to-1 multiplexer                             : 5
+ 47-bit 2-to-1 multiplexer                             : 2
+ 9-bit 2-to-1 multiplexer                              : 19
+# Logic shifters                                       : 4
+ 47-bit shifter logical left                           : 2
+ 60-bit shifter logical right                          : 2
+# FSMs                                                 : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Filter/filter_stm_0/FSM_0> on signal <filter_state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 00
+ 0010  | 01
+ 0100  | 11
+ 1000  | 10
+-------------------
+
+Optimizing unit <filter_mux> ...
 
 Optimizing unit <chip> ...
 
@@ -366,24 +583,53 @@ Optimizing unit <i2si_deserializer> ...
 
 Optimizing unit <fifo> ...
 
+Optimizing unit <filter_stm> ...
+
+Optimizing unit <filter_storage> ...
+
+Optimizing unit <filter_round_truncate> ...
+
 Optimizing unit <serializer> ...
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_4> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_20> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_5> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_21> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_6> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_22> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_7> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_23> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_8> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_24> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_9> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_25> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_10> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_26> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_11> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_27> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_12> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_28> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_13> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_29> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_14> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_30> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_15> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_31> 
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_39> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_38> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_37> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_36> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_35> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_39> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_38> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_37> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_36> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_35> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/do_multiply_1st> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/do_multiply> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/do_transfer> of sequential type is unconnected in block <chip>.
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_0> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_0> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_1> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_1> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_2> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_2> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_3> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_3> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_4> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_4> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_5> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_5> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_6> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_6> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_7> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_7> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_8> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_8> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/mux_re> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/arr_re_x> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_22> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_6> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_23> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_7> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_24> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_8> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_30> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_14> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_25> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_9> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_31> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_15> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_26> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_10> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_27> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_11> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_28> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_12> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_29> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_13> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_20> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_4> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_21> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_5> 
 
 Mapping all equations...
-WARNING:Xst:2036 - Inserting OBUF on port <ro_filter_ovf_flag> driven by black box <filter>. Possible simulation mismatch.
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 0.
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_round_truncate_right/ro_filter_ovf_flag> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/filter_round_truncate_left/ro_filter_ovf_flag> 
+Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 55.
 
 Final Macro Processing ...
 
@@ -396,8 +642,8 @@ Unit <chip> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 189
- Flip-Flops                                            : 189
+# Registers                                            : 16792
+ Flip-Flops                                            : 16792
 # Shift Registers                                      : 2
  4-bit shift register                                  : 2
 
@@ -422,38 +668,41 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 247
+# BELS                             : 25818
 #      GND                         : 1
-#      INV                         : 9
-#      LUT1                        : 4
-#      LUT2                        : 20
-#      LUT3                        : 44
-#      LUT4                        : 77
-#      LUT5                        : 35
-#      LUT6                        : 21
-#      MUXCY                       : 17
-#      MUXF7                       : 4
+#      INV                         : 25
+#      LUT1                        : 32
+#      LUT2                        : 23
+#      LUT3                        : 16537
+#      LUT4                        : 81
+#      LUT5                        : 72
+#      LUT6                        : 8734
+#      MUXCY                       : 130
+#      MUXF7                       : 52
 #      MUXF8                       : 2
 #      VCC                         : 1
-#      XORCY                       : 12
-# FlipFlops/Latches                : 196
+#      XORCY                       : 128
+# FlipFlops/Latches                : 16799
 #      FD                          : 2
-#      FDC                         : 15
-#      FDCE                        : 170
-#      FDE                         : 2
+#      FDC                         : 54
+#      FDCE                        : 16644
+#      FDE                         : 34
 #      FDP                         : 2
-#      FDPE                        : 5
+#      FDPE                        : 17
+#      FDRE                        : 40
+#      FDSE                        : 6
 # RAMS                             : 64
 #      RAM32X1D                    : 64
 # Shift Registers                  : 2
 #      SRLC16E                     : 2
-# Clock Buffers                    : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 51
-#      IBUF                        : 45
+# IO Buffers                       : 8243
+#      IBUF                        : 8237
 #      OBUF                        : 6
-# Others                           : 1
-#      filter                      : 1
+# DSPs                             : 2
+#      DSP48E1                     : 2
 
 Device utilization summary:
 ---------------------------
@@ -462,26 +711,30 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             196  out of  126800     0%  
- Number of Slice LUTs:                  340  out of  63400     0%  
-    Number used as Logic:               210  out of  63400     0%  
+ Number of Slice Registers:           16798  out of  126800    13%  
+ Number of Slice LUTs:                25634  out of  63400    40%  
+    Number used as Logic:             25504  out of  63400    40%  
     Number used as Memory:              130  out of  19000     0%  
        Number used as RAM:              128
        Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    394
-   Number with an unused Flip Flop:     198  out of    394    50%  
-   Number with an unused LUT:            54  out of    394    13%  
-   Number of fully used LUT-FF pairs:   142  out of    394    36%  
-   Number of unique control sets:        15
+ Number of LUT Flip Flop pairs used:  25723
+   Number with an unused Flip Flop:    8925  out of  25723    34%  
+   Number with an unused LUT:            89  out of  25723     0%  
+   Number of fully used LUT-FF pairs: 16709  out of  25723    64%  
+   Number of unique control sets:        21
 
 IO Utilization: 
- Number of IOs:                          52
- Number of bonded IOBs:                  52  out of    210    24%  
+ Number of IOs:                        8244
+ Number of bonded IOBs:                8244  out of    210   3925% (*) 
+    IOB Flip Flops/Latches:               1
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+ Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+ Number of DSP48E1s:                      2  out of    240     0%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
 
 ---------------------------
 Partition Resource Summary:
@@ -504,7 +757,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 262   |
+clk                                | BUFGP                  | 16867 |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -515,10 +768,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.360ns (Maximum Frequency: 423.657MHz)
-   Minimum input arrival time before clock: 1.915ns
-   Maximum output required time after clock: 1.437ns
-   Maximum combinational path delay: 0.421ns
+   Minimum period: 4.834ns (Maximum Frequency: 206.855MHz)
+   Minimum input arrival time before clock: 3.651ns
+   Maximum output required time after clock: 0.687ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
@@ -526,98 +779,103 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.360ns (frequency: 423.657MHz)
-  Total number of paths / destination ports: 4083 / 875
+  Clock period: 4.834ns (frequency: 206.855MHz)
+  Total number of paths / destination ports: 255545 / 34021
 -------------------------------------------------------------------------
-Delay:               2.360ns (Levels of Logic = 3)
-  Source:            I2S_Input/Bist/sck_count_0 (FF)
-  Destination:       I2S_Input/i2si_Fifo/fifo_counter_3 (FF)
+Delay:               4.834ns (Levels of Logic = 36)
+  Source:            Filter/filter_stm_0/Mmult_accumulator_in_right (DSP)
+  Destination:       Filter/filter_stm_0/filter_accumulator_right/tmp_34 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: I2S_Input/Bist/sck_count_0 to I2S_Input/i2si_Fifo/fifo_counter_3
+  Data Path: Filter/filter_stm_0/Mmult_accumulator_in_right to Filter/filter_stm_0/filter_accumulator_right/tmp_34
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDPE:C->Q             6   0.361   0.706  I2S_Input/Bist/sck_count_0 (I2S_Input/Bist/sck_count_0)
-     LUT6:I1->O            6   0.097   0.318  I2S_Input/Bist/_n005431 (I2S_Input/Bist/_n0054_bdd0)
-     LUT6:I5->O            1   0.097   0.295  I2S_Input/i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1_1 (I2S_Input/i2si_Fifo/fifo_inp_rts_fifo_inp_rtr_AND_21_o1)
-     LUT6:I5->O            4   0.097   0.293  I2S_Input/i2si_Fifo/_n0070_inv1 (I2S_Input/i2si_Fifo/_n0070_inv)
-     FDCE:CE                   0.095          I2S_Input/i2si_Fifo/fifo_counter_0
+     DSP48E1:CLK->P0       1   2.952   0.295  Filter/filter_stm_0/Mmult_accumulator_in_right (Filter/filter_stm_0/accumulator_in_right<0>)
+     LUT3:I2->O            1   0.097   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_lut<0> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<0> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<1> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<2> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<3> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<4> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<5> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<6> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<7> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<8> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<9> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<10> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<11> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<12> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<13> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<14> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<15> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<16> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<17> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<18> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<19> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<20> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<21> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<22> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<23> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<24> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<25> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<26> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<27> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<28> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<29> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<29>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<30> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<30>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<31> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<31>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<32> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<32>)
+     MUXCY:CI->O           0   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<33> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<33>)
+     XORCY:CI->O           1   0.370   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_xor<34> (Filter/filter_stm_0/Result<34>1)
+     FDCE:D                    0.008          Filter/filter_stm_0/filter_accumulator_right/tmp_34
     ----------------------------------------
-    Total                      2.360ns (0.747ns logic, 1.613ns route)
-                                       (31.6% logic, 68.4% route)
+    Total                      4.834ns (4.539ns logic, 0.295ns route)
+                                       (93.9% logic, 6.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 822 / 394
+  Total number of paths / destination ports: 27414 / 378
 -------------------------------------------------------------------------
-Offset:              1.915ns (Levels of Logic = 15)
-  Source:            rf_bist_inc<0> (PAD)
-  Destination:       I2S_Input/Bist/i2si_bist_out_data_15 (FF)
+Offset:              3.651ns (Levels of Logic = 6)
+  Source:            rf_filter_coeff424_b<7> (PAD)
+  Destination:       Filter/filter_stm_0/Mmult_accumulator_in_right (DSP)
   Destination Clock: clk rising
 
-  Data Path: rf_bist_inc<0> to I2S_Input/Bist/i2si_bist_out_data_15
+  Data Path: rf_filter_coeff424_b<7> to Filter/filter_stm_0/Mmult_accumulator_in_right
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.379  rf_bist_inc_0_IBUF (rf_bist_inc_0_IBUF)
-     LUT2:I0->O            1   0.097   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_lut<4> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_lut<4>)
-     MUXCY:S->O            1   0.353   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<4> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<5> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<6> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<7> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<8> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<9> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<10> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<11> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<12> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<13> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<13>)
-     MUXCY:CI->O           0   0.023   0.000  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<14> (I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_cy<14>)
-     XORCY:CI->O           1   0.370   0.379  I2S_Input/Bist/Madd_i2si_bist_out_data[15]_GND_6_o_add_10_OUT_xor<15> (I2S_Input/Bist/i2si_bist_out_data[15]_GND_6_o_add_10_OUT<15>)
-     LUT4:I2->O            1   0.097   0.000  I2S_Input/Bist/Mmux_i2si_bist_out_data[15]_rf_bist_start_val[11]_mux_13_OUT71 (I2S_Input/Bist/i2si_bist_out_data[15]_rf_bist_start_val[11]_mux_13_OUT<15>)
-     FDCE:D                    0.008          I2S_Input/Bist/i2si_bist_out_data_15
+     IBUF:I->O             1   0.001   0.693  rf_filter_coeff424_b_7_IBUF (rf_filter_coeff424_b_7_IBUF)
+     LUT6:I0->O            1   0.097   0.556  Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_18224 (Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_18224)
+     LUT6:I2->O            1   0.097   0.556  Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_1364 (Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_1364)
+     LUT6:I2->O            1   0.097   0.556  Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_819 (Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_819)
+     LUT6:I2->O            1   0.097   0.000  Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_36 (Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_36)
+     MUXF7:I1->O          20   0.279   0.367  Filter/filter_mux_0/Mmux_rdptr[8]_ram[511][15]_wide_mux_513_OUT_2_f7_5 (Filter/filter_mux_0/rdptr[8]_ram[511][15]_wide_mux_513_OUT<15>)
+     DSP48E1:A20               0.254          Filter/filter_stm_0/Mmult_accumulator_in_right
     ----------------------------------------
-    Total                      1.915ns (1.156ns logic, 0.759ns route)
-                                       (60.4% logic, 39.6% route)
+    Total                      3.651ns (0.922ns logic, 2.729ns route)
+                                       (25.3% logic, 74.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 45 / 39
+  Total number of paths / destination ports: 6 / 6
 -------------------------------------------------------------------------
-Offset:              1.437ns (Levels of Logic = 1)
-  Source:            I2S_Output/i2so_Fifo/fifo_counter_3 (FF)
-  Destination:       Filter:aud_out_rtr (PAD)
+Offset:              0.687ns (Levels of Logic = 1)
+  Source:            I2S_Input/Synchronizer/sck_vec_1 (FF)
+  Destination:       i2so_sck (PAD)
   Source Clock:      clk rising
 
-  Data Path: I2S_Output/i2so_Fifo/fifo_counter_3 to Filter:aud_out_rtr
+  Data Path: I2S_Input/Synchronizer/sck_vec_1 to i2so_sck
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             9   0.361   0.593  I2S_Output/i2so_Fifo/fifo_counter_3 (I2S_Output/i2so_Fifo/fifo_counter_3)
-     LUT4:I0->O           32   0.097   0.386  I2S_Output/i2so_Fifo/fifo_inp_rtr1 (filt_rtr)
-    filter:aud_out_rtr         0.000          Filter
+     FDC:C->Q             11   0.361   0.326  I2S_Input/Synchronizer/sck_vec_1 (I2S_Input/Synchronizer/sck_vec_1)
+     OBUF:I->O                 0.000          i2so_sck_OBUF (i2so_sck)
     ----------------------------------------
-    Total                      1.437ns (0.458ns logic, 0.979ns route)
-                                       (31.9% logic, 68.1% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 8 / 8
--------------------------------------------------------------------------
-Delay:               0.421ns (Levels of Logic = 1)
-  Source:            clk (PAD)
-  Destination:       Filter:clk (PAD)
-
-  Data Path: clk to Filter:clk
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     BUFGP:I->O          262   0.000   0.421  clk_BUFGP (clk_BUFGP)
-    filter:clk                 0.000          Filter
-    ----------------------------------------
-    Total                      0.421ns (0.000ns logic, 0.421ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      0.687ns (0.361ns logic, 0.326ns route)
+                                       (52.6% logic, 47.4% route)
 
 =========================================================================
 
@@ -629,20 +887,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.360|         |         |         |
+clk            |    4.834|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.16 secs
+Total REAL time to Xst completion: 156.00 secs
+Total CPU time to Xst completion: 155.77 secs
  
 --> 
 
-Total memory usage is 415584 kilobytes
+Total memory usage is 801392 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   10 (   8 filtered)
-Number of infos    :   13 (   0 filtered)
+Number of warnings :   63 (   8 filtered)
+Number of infos    :   27 (   0 filtered)
 
