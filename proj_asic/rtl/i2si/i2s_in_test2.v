@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 `define N 11 // number of test elements
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -7,8 +6,7 @@
 // Last Edit:     1/10/2016
 // Author:        Kevin Cao
 //
-// Description: Verilog Test Fixture created by ISE for module: i2s_in
-//                  Tests the BIST Generator. Sawtooth wave starting value is 0x800 and upper limit value is 0x700
+// Description      Tests the BIST Generator. Sawtooth wave starting value is 0x800 and upper limit value is 0x700
 //                  Outputs success or failure of test to i2s_in_test2_output.txt
 //
 // 

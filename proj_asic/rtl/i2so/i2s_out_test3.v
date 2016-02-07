@@ -1,4 +1,19 @@
-`define NUM_ELEMENTS 1000 // no. of test elements
+`timescale 1ns / 1ps
+`define NUM_ELEMENTS 500 // no. of test elements
+
+////////////////////////////////////////////////////////////////////////////////
+// Module Name:   i2s_out_test3.v
+// Create Date:   1/25/16
+// Last Edit:     1/27/16
+// Author:        Kevin Cao
+//
+// Description:     Creates NUM_ELEMENTS random 32 bits words that are fed into the FIFO
+//                  and outputted in serial form. Words are fed into the buffer
+//                  and causes it to become full and triggers the FIFO full message.
+//                  Creates i2s_out_test3_output.txt with the results of the comparison test
+//                  of the words queued into the FIFO and the words outputted by i2s_out.
+// 
+////////////////////////////////////////////////////////////////////////////////
 
 module i2s_out_test3;
 
@@ -219,9 +234,9 @@ module i2s_out_test3;
                 if(word == filt_data_list[filt_data_count])
                 begin
                     pass_count = pass_count + 1;
-                    $fdisplay (out, "word: %h", word, "    ---     ",
-                        "filt_data_list [%d", filt_data_count, "]: %h",
-                        filt_data_list [filt_data_count], "     ---     Pass");
+                    $fdisplay (out, "Input: %h", word, "    ---     ",
+                        "Output: %h", filt_data_list [filt_data_count],
+                        "     ---     Pass");
                 end
                 // End comparison test after 15 words
                 else if(filt_data_count > (`NUM_ELEMENTS-1))
@@ -236,9 +251,9 @@ module i2s_out_test3;
                 else
                 begin
                     fail_count = fail_count + 1;
-                    $fdisplay (out, "word: %h", word, "    ---     ",
-                        "filt_data_list [%d", filt_data_count, "]: %h",
-                        filt_data_list [filt_data_count], "     ---     Fail");
+                    $fdisplay (out, "Input: %h", word, "    ---     ",
+                        "Output: %h", filt_data_list [filt_data_count],
+                        "     ---     Fail");
                 end
                 filt_data_count = filt_data_count + 1;
             end

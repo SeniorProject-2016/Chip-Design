@@ -1,24 +1,18 @@
+`timescale 1ns / 1ps
 `define NUM_ELEMENTS 100 // no. of test elements
 
+
 ////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
+// Module Name:   i2s_out_test2.v
+// Create Date:   1/19/16
+// Last Edit:     1/27/16
+// Author:        Kevin Cao
 //
-// Create Date:   16:22:04 01/19/2016
-// Design Name:   i2s_out
-// Module Name:   C:/Users/kevin/Documents/GitHub/Chip-Design/proj_asic/rtl/i2so/i2s_out_test2.v
-// Project Name:  i2s_out
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: i2s_out
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Description:     Creates NUM_ELEMENTS random 32 bits words that are fed into the FIFO
+//                  and outputted in serial form. Words are fed into the buffer
+//                  wihtout causing it to become full and triggering the FIFO full message.
+//                  Creates i2s_out_test2_output.txt with the results of the comparison test
+//                  of the words queued into the FIFO and the words outputted by i2s_out.
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -242,9 +236,9 @@ module i2s_out_test2;
                 if(word == filt_data_list[filt_data_count])
                 begin
                     pass_count = pass_count + 1;
-                    $fdisplay (out, "word: %h", word, "    ---     ",
-                        "filt_data_list [%d", filt_data_count, "]: %h",
-                        filt_data_list [filt_data_count], "     ---     Pass");
+                    $fdisplay (out, "Input: %h", word, "    ---     ",
+                        "Output: %h", filt_data_list [filt_data_count],
+                        "     ---     Pass");
                 end
                 // End comparison test after comparing all the test elements
                 else if(filt_data_count > (`NUM_ELEMENTS-1))
@@ -259,9 +253,9 @@ module i2s_out_test2;
                 else
                 begin
                     fail_count = fail_count + 1;
-                    $fdisplay (out, "word: %h", word, "    ---     ",
-                        "filt_data_list [%d", filt_data_count, "]: %h",
-                        filt_data_list [filt_data_count], "     ---     Fail");
+                    $fdisplay (out, "Input: %h", word, "    ---     ",
+                        "Output: %h", filt_data_list [filt_data_count],
+                        "     ---     Fail");
                 end
                 filt_data_count = filt_data_count + 1;
             end

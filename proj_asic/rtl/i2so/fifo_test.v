@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 `define BUF_WIDTH 3 // set the buffer width equal to 3
 `define DATA_SIZE 32 // no. of bits for fifo data
 

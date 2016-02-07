@@ -1,11 +1,17 @@
+`timescale 1ns / 1ps
 `define NUM_ELEMENTS 16
 
 ////////////////////////////////////////////////////////////////////////////////
+// Module Name:   i2s_out_test2.v
+// Create Date:   11/27/15
+// Last Edit:     1/27/16
+// Author:        Kevin Cao
 //
-// Create Date:   18:00:14 11/27/2015
-// Last Edit:     12/2/15
-// Design Name:   i2s_out
-// Project Name:  i2s_in
+// Description:     Creates NUM_ELEMENTS 32 bits words specified by the user that are fed
+//                  into the FIFO and outputted in serial form. Words are fed into the buffer
+//                  wihtout causing it to become full and triggering the FIFO full message.
+//                  Creates i2s_out_test_output.txt with the results of the comparison test
+//                  of the words queued into the FIFO and the words outputted by i2s_out.
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -52,7 +58,8 @@ module i2s_out_test;
     reg     [31:0]              word;                                                           // serial data rebuilt in parallel, for comparison
     reg                         match_found = 0;                                                // boolean value used to find the starting point of comparison                                    
     reg                         begin_comparison = 0;                                           // boolean value used to start the comparison loop
-    reg                         comparison_failed = 1;                                          // boolean that determines if no matches were found and the comparison test failed  
+    reg                         comparison_failed = 1;                                          // boolean that determines if no matches were found and the comparison test failed
+
                                                                                                                                 
 
 
@@ -84,11 +91,11 @@ module i2s_out_test;
 		trig_fifo_underrun = 0;
                                                                                                                                     
                                                                                                                                 
-        out = $fopen("i2s_out_test_output.txt");                                                // Open i2si_in_test2_output.txt  
+        out = $fopen("i2s_out_test_output.txt");                                                // Open i2si_in_test_output.txt  
                                                                                                                 
                                                                                                                                     
                                                                                                                             
-        //Internal variables                                                                                                    
+        //Internal variables                                                                                              
         test_data [ 0] = 32'hFFFFFFFF;                                                                                   
         test_data [ 1] = 32'hAAAAAAAA;                                                                                       
         test_data [ 2] = 32'hFFFF0000;                                                                                   
@@ -99,12 +106,14 @@ module i2s_out_test;
         test_data [ 7] = 32'h22222222;                                                                                               
         test_data [ 8] = 32'hEEEEEEEE;                                                                                                   
         test_data [ 9] = 32'h88888888;                                                                                           
-        test_data [10] = 32'hFA4588BB;                                                                                                  
-        test_data [11] = 32'hCD45FFAA;                                                                                              
+        test_data [10] = 32'h00000000;                                                                                                  
+        test_data [11] = 32'hFFFFFFFF;                                                                                              
         test_data [12] = 32'hED32DE66;                                                                                                      
         test_data [13] = 32'h0456CB22;                                                                                          
         test_data [14] = 32'h5256AE55;                                                                                              
-        test_data [15] = 32'hE3FC48B4;                                                                                                  
+        test_data [15] = 32'hE3FC48B4;
+        
+
 	end                                                                                                                                             
                                                                                                                                                         
                                                                                                                             
@@ -213,7 +222,7 @@ module i2s_out_test;
             // Find first input word that matches output word
             if(!match_found)                                                        
             begin                                                                   
-                for(match_count = 0; match_count < 16; match_count = match_count + 1)
+                for(match_count = 0; match_count < `NUM_ELEMENTS; match_count = match_count + 1)
                 begin                                                                   
                     if(word == filt_data_list[match_count])                        
                     begin                                                               
@@ -241,12 +250,12 @@ module i2s_out_test;
                 if(word == filt_data_list[filt_data_count])
                 begin
                     pass_count = pass_count + 1;
-                    $fdisplay (out, "word: %h", word, "    ---     ",
-                        "filt_data_list [%d", filt_data_count, "]: %h",
-                        filt_data_list [filt_data_count], "     ---     Pass");
+                    $fdisplay (out, "Input: %h", word, "    ---     ",
+                        "Output: %h", filt_data_list [filt_data_count],
+                        "     ---     Pass");
                 end
                 // End comparison test after 15 words
-                else if(filt_data_count > 15)
+                else if(filt_data_count > (`NUM_ELEMENTS - 1))
                 begin
                     begin_comparison = 0;
                     $fdisplay(out, "\nNumber of Comparisons:                    %d", pass_count + fail_count,
@@ -258,9 +267,9 @@ module i2s_out_test;
                 else
                 begin
                     fail_count = fail_count + 1;                    
-                    $fdisplay (out, "word: %h", word, "    ---     ",
-                        "filt_data_list [%d", filt_data_count, "]: %h",
-                        filt_data_list [filt_data_count], "     ---     Fail");
+                    $fdisplay (out, "Input: %h", word, "    ---     ",
+                        "Output: %h", filt_data_list [filt_data_count],
+                        "     ---     Fail");
                 end
                 filt_data_count = filt_data_count + 1;
             end
@@ -278,7 +287,7 @@ module i2s_out_test;
                 $display("---Cannot queue: Buffer Full---");                
             else                                                                                    // if buffer is not full
             begin
-               $display("Queued ",data );                                                           // display that the data was queueed
+               $display("Queued %h",data );                                                           // display that the data was queueed
                filt_data = data;                                                                    // the input to the buffer is set as the data
                filt_rts = 1;                                                                        // write is enabled
                @(posedge clk);                                                                      // checks if clock is at postive edge
