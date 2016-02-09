@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Fri Jan 29 16:01:21 2016">
+  <application stringID="Map" timeStamp="Tue Feb 09 13:09:50 2016">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -66,16 +66,16 @@
       <item DEFAULT="None" label="-o" stringID="MAP_OUTFILE" value="chip_reg_map.ncd"/>
       <item DEFAULT="false" label="-w" stringID="MAP_OVERWRITE_OUTPUT" value="true"/>
       <item DEFAULT="off" label="-pr" stringID="MAP_PACK_INTERNAL" value="off"/>
-      <item DEFAULT="None" label="-p" stringID="MAP_PARTNAME" value="xc7a200t-fbg484-3"/>
+      <item DEFAULT="None" label="-p" stringID="MAP_PARTNAME" value="xc7a100t-csg324-3"/>
     </section>
     <task stringID="MAP_PACK_REPORT">
-      <item AVAILABLE="269200" dataType="int" label="Number of Slice Registers" stringID="MAP_SLICE_REGISTERS" value="8237">
+      <item AVAILABLE="126800" dataType="int" label="Number of Slice Registers" stringID="MAP_SLICE_REGISTERS" value="8237">
         <item dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="8237"/>
         <item dataType="int" stringID="MAP_NUM_SLICE_LATCH" value="0"/>
         <item dataType="int" stringID="MAP_NUM_SLICE_LATCHTHRU" value="0"/>
         <item dataType="int" stringID="MAP_NUM_SLICE_LATCHLOGIC" value="0"/>
       </item>
-      <item AVAILABLE="134600" dataType="int" label="Number of Slice LUTs" stringID="MAP_SLICE_LUTS" value="3704">
+      <item AVAILABLE="63400" dataType="int" label="Number of Slice LUTs" stringID="MAP_SLICE_LUTS" value="3704">
         <item dataType="int" label="Number using O5 output only" stringID="MAP_NUM_LOGIC_O5ONLY" value="0"/>
         <item dataType="int" label="Number using O6 output only" stringID="MAP_NUM_LOGIC_O6ONLY" value="3541"/>
         <item dataType="int" label="Number using O5 and O6" stringID="MAP_NUM_LOGIC_O5ANDO6" value="163"/>
@@ -98,43 +98,43 @@
         <item dataType="int" stringID="MAP_NUM_LUT_RT_DRIVES_CARRY4" value="0"/>
         <item dataType="int" stringID="MAP_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
       </item>
-      <item AVAILABLE="285" dataType="int" stringID="MAP_AGG_BONDED_IO" value="8266"/>
-      <item AVAILABLE="215" dataType="int" stringID="MAP_AGG_UNBONDED_IO" value="0"/>
+      <item AVAILABLE="210" dataType="int" stringID="MAP_AGG_BONDED_IO" value="8266"/>
+      <item AVAILABLE="90" dataType="int" stringID="MAP_AGG_UNBONDED_IO" value="0"/>
       <item AVAILABLE="0" dataType="int" label="IOB Flip Flops" stringID="MAP_NUM_IOB_FF" value="8232"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IOB_LATCH" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IOBM" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_BONDED_IOBM" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IOBS" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_BONDED_IOBS" value="0"/>
-      <item AVAILABLE="36" dataType="int" stringID="MAP_NUM_IPAD" value="0"/>
-      <item AVAILABLE="14" dataType="int" stringID="MAP_NUM_BONDED_IPAD" value="0"/>
-      <item AVAILABLE="8" dataType="int" stringID="MAP_NUM_BONDED_OPAD" value="0"/>
-      <item AVAILABLE="24" dataType="int" stringID="MAP_NUM_OPAD" value="0"/>
+      <item AVAILABLE="24" dataType="int" stringID="MAP_NUM_IPAD" value="0"/>
+      <item AVAILABLE="2" dataType="int" stringID="MAP_NUM_BONDED_IPAD" value="0"/>
+      <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_BONDED_OPAD" value="0"/>
+      <item AVAILABLE="16" dataType="int" stringID="MAP_NUM_OPAD" value="0"/>
     </task>
     <section stringID="MAP_RAM_FIFO_DATA">
       <item dataType="int" stringID="MAP_NUM_RAMB36E1" value="0"/>
       <item dataType="int" stringID="MAP_NUM_FIFO36E1" value="0"/>
-      <item dataType="int" stringID="MAP_AVAILABLE" value="730"/>
+      <item dataType="int" stringID="MAP_AVAILABLE" value="270"/>
       <item dataType="int" stringID="MAP_NUM_RAMB18E1" value="0"/>
       <item dataType="int" stringID="MAP_NUM_FIFO18E1" value="0"/>
     </section>
     <section stringID="MAP_IP_DATA">
-      <item dataType="int" stringID="MAP_AVAILABLE" value="500"/>
+      <item dataType="int" stringID="MAP_AVAILABLE" value="300"/>
       <item AVAILABLE="4" dataType="int" stringID="MAP_NUM_BSCAN" value="0"/>
-      <item AVAILABLE="120" dataType="int" stringID="MAP_NUM_BUFHCE" value="0"/>
+      <item AVAILABLE="96" dataType="int" stringID="MAP_NUM_BUFHCE" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_BUFO" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_BUFIODQS" value="0"/>
-      <item AVAILABLE="40" dataType="int" stringID="MAP_NUM_BUFR" value="0"/>
+      <item AVAILABLE="24" dataType="int" stringID="MAP_NUM_BUFR" value="0"/>
       <item AVAILABLE="1" dataType="int" stringID="MAP_NUM_CAPTURE" value="0"/>
       <item AVAILABLE="1" dataType="int" stringID="MAP_NUM_DNA_PORT" value="0"/>
-      <item AVAILABLE="740" dataType="int" stringID="MAP_NUM_DSP48E1" value="0"/>
+      <item AVAILABLE="240" dataType="int" stringID="MAP_NUM_DSP48E1" value="0"/>
       <item AVAILABLE="1" dataType="int" stringID="MAP_NUM_EFUSE_USR" value="0"/>
       <item AVAILABLE="1" dataType="int" stringID="MAP_NUM_FRAME_ECC" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_GTHE1_QUAD" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IBUFDS_GTHE1" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IBUFDS_GTXE1" value="0"/>
       <item AVAILABLE="2" dataType="int" stringID="MAP_NUM_ICAP" value="0"/>
-      <item AVAILABLE="10" dataType="int" stringID="MAP_NUM_IDELAYCTRL" value="0"/>
+      <item AVAILABLE="6" dataType="int" stringID="MAP_NUM_IDELAYCTRL" value="0"/>
       <item AVAILABLE="1" dataType="int" stringID="MAP_NUM_STARTUP" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_SYSMON" value="0"/>
       <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_TEMAC_SINGLE" value="0"/>

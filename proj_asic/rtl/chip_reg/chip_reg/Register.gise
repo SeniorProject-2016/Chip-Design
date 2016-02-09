@@ -72,9 +72,10 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="register.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="register.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="register.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="trig_generator_testbench1_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="register_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="register_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="register_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="trig_generator_testbench1_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="trig_generator_testbench1_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="trig_generator_testbench1_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="trig_generator_testbench_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -88,7 +89,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1454012075" xil_pn:in_ck="-1762657379439558723" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1454012075">
+    <transform xil_pn:end_ts="1454442029" xil_pn:in_ck="5900784785782629726" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1454442028">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -96,25 +97,25 @@
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="chip_reg.v"/>
+      <outfile xil_pn:name="reg_testbench.v"/>
       <outfile xil_pn:name="register.v"/>
       <outfile xil_pn:name="trig_generator.v"/>
       <outfile xil_pn:name="trig_generator_testbench.v"/>
       <outfile xil_pn:name="trig_generator_testbench1.v"/>
     </transform>
-    <transform xil_pn:end_ts="1452713133" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6515833917486391715" xil_pn:start_ts="1452713133">
+    <transform xil_pn:end_ts="1454442029" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4516669882250514268" xil_pn:start_ts="1454442029">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1452713133" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4501983288968345665" xil_pn:start_ts="1452713133">
+    <transform xil_pn:end_ts="1454442029" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-7441580351841582214" xil_pn:start_ts="1454442029">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1452713110" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="1757984713523548254" xil_pn:start_ts="1452713110">
+    <transform xil_pn:end_ts="1454442029" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="1757984713523548254" xil_pn:start_ts="1454442029">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
-    <transform xil_pn:end_ts="1454012081" xil_pn:in_ck="-1762657379439558723" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1454012081">
+    <transform xil_pn:end_ts="1454442029" xil_pn:in_ck="5900784785782629726" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1454442029">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -123,16 +124,16 @@
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="chip_reg.v"/>
+      <outfile xil_pn:name="reg_testbench.v"/>
       <outfile xil_pn:name="register.v"/>
       <outfile xil_pn:name="trig_generator.v"/>
       <outfile xil_pn:name="trig_generator_testbench.v"/>
       <outfile xil_pn:name="trig_generator_testbench1.v"/>
     </transform>
-    <transform xil_pn:end_ts="1454012089" xil_pn:in_ck="-1762657379439558723" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7223691198613914133" xil_pn:start_ts="1454012081">
+    <transform xil_pn:end_ts="1454442047" xil_pn:in_ck="5900784785782629726" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2569857067443769063" xil_pn:start_ts="1454442029">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
@@ -140,20 +141,19 @@
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="trig_generator_testbench1_beh.prj"/>
-      <outfile xil_pn:name="trig_generator_testbench1_isim_beh.exe"/>
+      <outfile xil_pn:name="register_beh.prj"/>
+      <outfile xil_pn:name="register_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1454012090" xil_pn:in_ck="3721943536591645925" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6009414415614568312" xil_pn:start_ts="1454012089">
+    <transform xil_pn:end_ts="1454442047" xil_pn:in_ck="4094886676125757721" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6045106958406113290" xil_pn:start_ts="1454442047">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="trig_generator_testbench1_isim_beh.wdb"/>
+      <outfile xil_pn:name="register_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1452705312" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1452705311">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -163,7 +163,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1454100853" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="8095329624867938968" xil_pn:start_ts="1454100853">
+    <transform xil_pn:end_ts="1454439981" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="1757984713523548254" xil_pn:start_ts="1454439981">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -175,15 +175,15 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1454100853" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="8680532996107490311" xil_pn:start_ts="1454100853">
+    <transform xil_pn:end_ts="1454439981" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3206529612922900429" xil_pn:start_ts="1454439981">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1454100853" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-5047673298073783006" xil_pn:start_ts="1454100853">
+    <transform xil_pn:end_ts="1454439981" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="7061725864291377896" xil_pn:start_ts="1454439981">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1454101100" xil_pn:in_ck="-8504589144280551602" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-4086695676716555563" xil_pn:start_ts="1454100853">
+    <transform xil_pn:end_ts="1455044695" xil_pn:in_ck="-8504589144280551602" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="7726012264917801499" xil_pn:start_ts="1455044381">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -205,7 +205,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1454101140" xil_pn:in_ck="5167987683009937863" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-3630479665020538999" xil_pn:start_ts="1454101100">
+    <transform xil_pn:end_ts="1455044744" xil_pn:in_ck="5167987683009937863" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="7353019982488437775" xil_pn:start_ts="1455044695">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -216,8 +216,8 @@
       <outfile xil_pn:name="chip_reg.ngd"/>
       <outfile xil_pn:name="chip_reg_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1454101284" xil_pn:in_ck="5167987683009937864" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="-5426047299686429305" xil_pn:start_ts="1454101140">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1455044817" xil_pn:in_ck="5167987683009937864" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1455044744">
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.33 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.33 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: chip_reg.prj
 
@@ -46,7 +46,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "chip_reg"
 Output Format                      : NGC
-Target Device                      : xc7a200t-3-fbg484
+Target Device                      : xc7a100t-3-csg324
 
 ---- Source Options
 Top Module Name                    : chip_reg
@@ -1177,26 +1177,12 @@ Synthesizing Unit <register>.
     Found 8-bit register for signal <rf_i2si_bist_upper_limit_a>.
     Found 1-bit register for signal <rf_filter_clip_en>.
     Found 1-bit register for signal <rf_i2si_bist_en>.
+    Found 8-bit register for signal <rdata>.
     Found 1-bit register for signal <rxfc>.
-    Found 1-bit register for signal <rdata<7>>.
-    Found 1-bit register for signal <rdata<6>>.
-    Found 1-bit register for signal <rdata<5>>.
-    Found 1-bit register for signal <rdata<4>>.
-    Found 1-bit register for signal <rdata<3>>.
-    Found 1-bit register for signal <rdata<2>>.
-    Found 1-bit register for signal <rdata<1>>.
-    Found 1-bit register for signal <rdata<0>>.
-    Found 1-bit 1039-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>> created at line 3162.
-    Found 1-bit 1042-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<6>> created at line 3162.
-    Found 1-bit 1044-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<5>> created at line 3162.
-    Found 1-bit 1042-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<4>> created at line 3162.
-    Found 1-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>> created at line 3162.
-    Found 1-bit 1043-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<2>> created at line 3162.
-    Found 1-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<1>> created at line 3162.
-    Found 1-bit 1040-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<0>> created at line 3162.
+    Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3094_OUT> created at line 3174.
     Summary:
 	inferred 8238 D-type flip-flop(s).
-	inferred   8 Multiplexer(s).
+	inferred   2 Multiplexer(s).
 Unit <register> synthesized.
 
 Synthesizing Unit <trig_generator>.
@@ -1219,14 +1205,10 @@ Macro Statistics
  3-bit register                                        : 1
  4-bit register                                        : 2
  8-bit register                                        : 1028
-# Multiplexers                                         : 10
- 1-bit 1039-to-1 multiplexer                           : 1
- 1-bit 1040-to-1 multiplexer                           : 1
- 1-bit 1042-to-1 multiplexer                           : 2
- 1-bit 1043-to-1 multiplexer                           : 1
- 1-bit 1044-to-1 multiplexer                           : 1
- 1-bit 1045-to-1 multiplexer                           : 2
+# Multiplexers                                         : 4
  1-bit 2-to-1 multiplexer                              : 2
+ 8-bit 1045-to-1 multiplexer                           : 1
+ 8-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -1241,14 +1223,10 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Registers                                            : 8240
  Flip-Flops                                            : 8240
-# Multiplexers                                         : 10
- 1-bit 1039-to-1 multiplexer                           : 1
- 1-bit 1040-to-1 multiplexer                           : 1
- 1-bit 1042-to-1 multiplexer                           : 2
- 1-bit 1043-to-1 multiplexer                           : 1
- 1-bit 1044-to-1 multiplexer                           : 1
- 1-bit 1045-to-1 multiplexer                           : 2
+# Multiplexers                                         : 11
+ 1-bit 1045-to-1 multiplexer                           : 8
  1-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -1262,7 +1240,7 @@ Optimizing unit <register> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block chip_reg, actual ratio is 9.
+Found area constraint ratio of 100 (+ 5) on block chip_reg, actual ratio is 20.
 FlipFlop Register/rf_filter_shift_2 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop Register/rf_filter_shift_1 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop Register/rf_filter_shift_0 has been replicated 1 time(s) to handle iob=true attribute.
@@ -9523,14 +9501,14 @@ Top Level Output File Name         : chip_reg.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3880
+# BELS                             : 3888
 #      INV                         : 1
-#      LUT2                        : 6
-#      LUT3                        : 43
-#      LUT4                        : 10
-#      LUT5                        : 280
-#      LUT6                        : 3527
-#      MUXF7                       : 13
+#      LUT2                        : 12
+#      LUT3                        : 45
+#      LUT4                        : 5
+#      LUT5                        : 279
+#      LUT6                        : 3532
+#      MUXF7                       : 14
 # FlipFlops/Latches                : 16469
 #      FD                          : 9
 #      FDC                         : 2
@@ -9546,24 +9524,24 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 7a200tfbg484-3 
+Selected Device : 7a100tcsg324-3 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            8237  out of  269200     3%  
- Number of Slice LUTs:                 3867  out of  134600     2%  
-    Number used as Logic:              3867  out of  134600     2%  
+ Number of Slice Registers:            8237  out of  126800     6%  
+ Number of Slice LUTs:                 3874  out of  63400     6%  
+    Number used as Logic:              3874  out of  63400     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  11626
-   Number with an unused Flip Flop:    3389  out of  11626    29%  
-   Number with an unused LUT:          7759  out of  11626    66%  
-   Number of fully used LUT-FF pairs:   478  out of  11626     4%  
+ Number of LUT Flip Flop pairs used:  11637
+   Number with an unused Flip Flop:    3400  out of  11637    29%  
+   Number with an unused LUT:          7763  out of  11637    66%  
+   Number of fully used LUT-FF pairs:   474  out of  11637     4%  
    Number of unique control sets:      1032
 
 IO Utilization: 
  Number of IOs:                        8268
- Number of bonded IOBs:                8266  out of    285   2900% (*) 
+ Number of bonded IOBs:                8266  out of    210   3936% (*) 
     IOB Flip Flops/Latches:            8232
 
 Specific Feature Utilization:
@@ -9605,7 +9583,7 @@ Speed Grade: -3
 
    Minimum period: 3.914ns (Maximum Frequency: 255.460MHz)
    Minimum input arrival time before clock: 3.922ns
-   Maximum output required time after clock: 0.663ns
+   Maximum output required time after clock: 0.659ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -9615,7 +9593,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 3.914ns (frequency: 255.460MHz)
-  Total number of paths / destination ports: 8261 / 8
+  Total number of paths / destination ports: 8259 / 8
 -------------------------------------------------------------------------
 Delay:               3.914ns (Levels of Logic = 6)
   Source:            Register/rf_filter_coeff341_a_7 (FF)
@@ -9628,12 +9606,12 @@ Delay:               3.914ns (Levels of Logic = 6)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDCE:C->Q             1   0.361   0.556  Register/rf_filter_coeff341_a_7 (Register/rf_filter_coeff341_a_7)
-     LUT6:I2->O            1   0.097   0.556  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_2349 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_2349)
-     LUT6:I2->O            1   0.097   0.556  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_1814 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_1814)
-     LUT6:I2->O            1   0.097   0.556  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_134 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_134)
-     LUT6:I2->O            1   0.097   0.556  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_81 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_81)
-     LUT6:I2->O            1   0.097   0.000  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_3 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_3)
-     MUXF7:I1->O           1   0.279   0.000  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_2_f7 (Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>)
+     LUT6:I2->O            1   0.097   0.556  Register/mux7_2349 (Register/mux7_2349)
+     LUT6:I2->O            1   0.097   0.556  Register/mux7_1814 (Register/mux7_1814)
+     LUT6:I2->O            1   0.097   0.556  Register/mux7_134 (Register/mux7_134)
+     LUT6:I2->O            1   0.097   0.556  Register/mux7_81 (Register/mux7_81)
+     LUT6:I2->O            1   0.097   0.000  Register/mux7_3 (Register/mux7_3)
+     MUXF7:I1->O           1   0.279   0.000  Register/mux7_2_f7 (Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3094_OUT<7>)
      FD:D                      0.008          Register/rdata_7
     ----------------------------------------
     Total                      3.914ns (1.133ns logic, 2.781ns route)
@@ -9641,7 +9619,7 @@ Delay:               3.914ns (Levels of Logic = 6)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 236059 / 32927
+  Total number of paths / destination ports: 236095 / 32927
 -------------------------------------------------------------------------
 Offset:              3.922ns (Levels of Logic = 7)
   Source:            i2c_addr<1> (PAD)
@@ -9652,14 +9630,14 @@ Offset:              3.922ns (Levels of Logic = 7)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O          2196   0.001   0.924  i2c_addr_1_IBUF (i2c_addr_1_IBUF)
-     LUT6:I0->O            1   0.097   0.556  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_2349 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_2349)
-     LUT6:I2->O            1   0.097   0.556  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_1814 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_1814)
-     LUT6:I2->O            1   0.097   0.556  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_134 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_134)
-     LUT6:I2->O            1   0.097   0.556  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_81 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_81)
-     LUT6:I2->O            1   0.097   0.000  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_3 (Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_3)
-     MUXF7:I1->O           1   0.279   0.000  Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>_2_f7 (Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<3>)
-     FD:D                      0.008          Register/rdata_3
+     IBUF:I->O          2197   0.001   0.924  i2c_addr_1_IBUF (i2c_addr_1_IBUF)
+     LUT6:I0->O            1   0.097   0.556  Register/mux1_2349 (Register/mux1_2349)
+     LUT6:I2->O            1   0.097   0.556  Register/mux1_1814 (Register/mux1_1814)
+     LUT6:I2->O            1   0.097   0.556  Register/mux1_134 (Register/mux1_134)
+     LUT6:I2->O            1   0.097   0.556  Register/mux1_81 (Register/mux1_81)
+     LUT6:I2->O            1   0.097   0.000  Register/mux1_3 (Register/mux1_3)
+     MUXF7:I1->O           1   0.279   0.000  Register/mux1_2_f7 (Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3094_OUT<1>)
+     FD:D                      0.008          Register/rdata_1
     ----------------------------------------
     Total                      3.922ns (0.773ns logic, 3.149ns route)
                                        (19.7% logic, 80.3% route)
@@ -9668,20 +9646,20 @@ Offset:              3.922ns (Levels of Logic = 7)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 8240 / 8240
 -------------------------------------------------------------------------
-Offset:              0.663ns (Levels of Logic = 1)
-  Source:            Register/rdata_2 (FF)
-  Destination:       i2c_rdata<2> (PAD)
+Offset:              0.659ns (Levels of Logic = 1)
+  Source:            Register/rdata_5 (FF)
+  Destination:       i2c_rdata<5> (PAD)
   Source Clock:      clk rising
 
-  Data Path: Register/rdata_2 to i2c_rdata<2>
+  Data Path: Register/rdata_5 to i2c_rdata<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               6   0.361   0.302  Register/rdata_2 (Register/rdata_2)
-     OBUF:I->O                 0.000          i2c_rdata_2_OBUF (i2c_rdata<2>)
+     FD:C->Q               5   0.361   0.298  Register/rdata_5 (Register/rdata_5)
+     OBUF:I->O                 0.000          i2c_rdata_5_OBUF (i2c_rdata<5>)
     ----------------------------------------
-    Total                      0.663ns (0.361ns logic, 0.302ns route)
-                                       (54.4% logic, 45.6% route)
+    Total                      0.659ns (0.361ns logic, 0.298ns route)
+                                       (54.8% logic, 45.2% route)
 
 =========================================================================
 
@@ -9699,12 +9677,12 @@ clk            |    3.914|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 242.00 secs
-Total CPU time to Xst completion: 242.64 secs
+Total REAL time to Xst completion: 311.00 secs
+Total CPU time to Xst completion: 310.97 secs
  
 --> 
 
-Total memory usage is 3434204 kilobytes
+Total memory usage is 3438236 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)

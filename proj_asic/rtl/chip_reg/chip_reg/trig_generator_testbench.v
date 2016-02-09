@@ -27,7 +27,7 @@ module trig_generator_testbench;
 	// Inputs
 	reg [10:0] address;
 	reg [7:0] wdata;
-	reg xfc;
+	reg wxfc;
 	reg clk;
 	reg [31:0] count;
 	
@@ -40,7 +40,7 @@ module trig_generator_testbench;
 	trig_generator uut (
 		.address(address), 
 		.wdata(wdata), 
-		.xfc(xfc), 
+		.wxfc(wxfc), 
 		.clk(clk), 
 		.rst(rst), 
 		.trig_i2si_fifo_overrun_clr(trig_i2si_fifo_overrun_clr), 

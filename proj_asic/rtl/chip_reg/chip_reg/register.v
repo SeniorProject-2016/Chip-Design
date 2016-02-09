@@ -1094,9 +1094,9 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                         rf_filter_clip_en <= wdata[6];
                         end
                     /*11'h008: begin
-                        trig_fifo_overrun <= wdata[0];	///can this be taken out because it does the same thing as trig_generator
-                        trig_fifo_underrun <= wdata[2];
-                        trig_filter_ovf_flag_clear <= wdata[4];
+								ro_fifo_overrun <= wdata [1];
+								ro_fifo_underrun <=  wdata[3];
+								ro_filter_ovf_flag <= wdata[5];
 								end*/
                     11'h00c:
                         rf_i2si_bist_incr <= wdata[7:0];
@@ -3161,20 +3161,28 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
             
     always @ (posedge clk)
             begin
-					rxfc <= wxfc;
+				if (~rst)
+					begin
+					rdata <= 8'b00000000;
+					end
+					
+					rxfc <= wxfc & ~w_enable; // should not assert rxfc for every transaction, only for an actual read
+					
                // Given the address, the signals are assigned to their correlated bits of data
-                case(addr)
+					if(wxfc & ~w_enable);
+					begin
+					case(addr)
                     11'h004: begin
                         rdata[1] <= rf_i2si_bist_en;
                         rdata[5:2] <= rf_filter_shift;
                         rdata[6] <= rf_filter_clip_en;
                         end
                     11'h008: begin
-                        //rdata[0] <= trig_fifo_overrun;
+                        rdata[0] <= trig_fifo_overrun;
                         rdata[1] <= ro_fifo_overrun;
-                        //rdata[2] <= trig_fifo_underrun;
+                        rdata[2] <= trig_fifo_underrun;
                         rdata[3] <= ro_fifo_underrun;
-								//rdata[4] <= trig_filter_ovf_flag_clear;
+								rdata[4] <= trig_filter_ovf_flag_clear;
 								rdata[5] <= ro_filter_ovf_flag;
                         end
                     11'h00c:
@@ -5236,5 +5244,6 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                     11'h7ff:
                         rdata[7:0] <= rf_filter_coeff511_b;
                 endcase
-            end
+					 end
+				end
 endmodule 
