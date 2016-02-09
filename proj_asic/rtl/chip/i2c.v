@@ -55,7 +55,7 @@ module i2c(
         .stop_out			(stop_out)			//internal input	*
         );
 
-    I2C_Serializer i2c_top_serializer (
+    Serializer i2c_top_serializer (
         .i2c_scl			(i2c_scl), 			//external input	*
         .i2c_sda			(i2c_sda_in), 		//external input	*
         .i2c_sda_out		(i2c_sda_out), 	    //external input	*

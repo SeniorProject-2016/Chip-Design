@@ -157,7 +157,7 @@ begin
 	if (!Reset || slave_addr_stop || (i2c_sda_pos_pulse && scl_state))
 	begin
 	stop <= 1;
-	stop_out <= 1;
+	//stop_out <= 1;
 	end
 	
 	//else if (stop || stop_out)
@@ -175,8 +175,14 @@ begin
 	else if (i2c_sda_neg_pulse && scl_state)
 	begin
 	stop <= 0;
-	stop_out <= 0;
+	//stop_out <= 0;
 	end
+	
+	else if (~i2c_RW & ~addr_ack2 & i2c_ack & (deserial_state == 2'b00))  //stop condition after read request
+	begin
+	stop <= 1;
+	end
+	
 end
 
 
@@ -451,6 +457,11 @@ begin
 	else if((deserial_state == 2'b10) & addr_ack2)
 	begin
 	addr_xfc <= 1;
+	end
+	
+	else if(~addr_ack2)
+	begin
+	addr_xfc <= 0;
 	end
 	
 	

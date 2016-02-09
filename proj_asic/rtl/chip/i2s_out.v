@@ -42,7 +42,7 @@ module i2s_out(                 clk, rst_n,
 
     reg                         ro_fifo_underrun;
 
-    serializer Serializer(
+    i2so_serializer Serializer(
         .clk                    (clk),
         .rst_n                  (rst_n),
         .sck_transition         (i2so_sck_transition),
