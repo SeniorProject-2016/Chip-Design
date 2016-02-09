@@ -10,8 +10,8 @@ input trig_filter_ovf_flag_clear;
 output reg [15:0] filter_out;
 output reg ro_filter_ovf_flag; 
 
-reg [46:0] acc_r;
-reg [27:0] acc_t;
+reg signed [46:0] acc_r;
+reg signed [27:0] acc_t;
 wire [4:0]  num_shift;
 //reg signed [39:0] round;
 wire sign_bit; 
@@ -39,13 +39,15 @@ begin
 	//round <= 40'd0;
 	//round[num_shift-1] <= 1'b1;
 	
+	//acc_r <= 47'd0;
 	acc_r <= ext_acc_in + (1<<(num_shift-1));
 	
-	acc_t <= 28'd0;
+	//acc_t <= 28'd0;
 	acc_t <= acc_r[num_shift+:34];//pad
 		
 		if (acc_t > (1<<15)-1)
 			begin 
+			$display ("acc_t > (1<<15)-1");
 				ro_filter_ovf_flag <= 1; 
 				if (rf_sat)
 					acc_r <= (1<<15)-1;
@@ -55,6 +57,7 @@ begin
 			
 		else if (acc_t < -(1<<15)) 
 			begin
+			$display ("acc_t < -(1<<15) = %d", -(1<<15));
 				ro_filter_ovf_flag <= 1; 
 				if (rf_sat) 
 					acc_r <= (1<<15)-1;
