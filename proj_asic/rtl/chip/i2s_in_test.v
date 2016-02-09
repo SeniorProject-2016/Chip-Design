@@ -1,14 +1,12 @@
-`timescale 1ns / 1ps
 `define N 11 // number of test elements
 
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   i2s_in_test.v
 // Create Date:   11/27/2015
-// Last Edit:     1/23/16
+// Last Edit:     1/27/16
 // Author:        Kevin Cao, Zachary Nelson
 //
-// Description: Verilog Test Fixture created by ISE for module: i2s_in
-//                  Creates N number 32 bit words specified by the programmer to be inputted.
+// Description:     Creates N number 32 bit words specified by the programmer to be inputted.
 //                  Compares the inputted and outputted words.
 //                  Outputs the success and failure of the comparisons in i2s_in_test_output.txt
 // 
@@ -48,7 +46,7 @@ module i2s_in_test;
     integer                         bit_cnt;                                                         // bit number counter
     integer                         lr_cnt;                                                          // left right counter
     integer                         word_cnt;                                                        // word counter
-    parameter                       cyc_per_half_sck = 40;                                           // about (100 MHz / 1.44 MHz)/2
+    parameter                       cyc_per_half_sck = 33;                                           // about (100 MHz / 1.536 MHz)/2
     parameter                       bit_tc =  15;                                                    // number of bits in a word
                                                                                                                                 
                                                                                                                                 
@@ -191,7 +189,7 @@ module i2s_in_test;
         count = 0;                                                                                                      
         forever                                                                                                 
         begin                                                                                                           
-            #5 clk = ~clk;                                                                           // 100 MHz clock
+            #5 clk = ~clk;                                                                           // 100 MHz clock rate (100MHz/10^9)/2
             count = count + 1;                                                                                  
         end                                                                                                                 
     end                                                                                                                 
@@ -299,8 +297,8 @@ module i2s_in_test;
                     if(word == i2si_data)
                     begin
                         pass_count = pass_count + 1;                        
-                        $fdisplay(out, "word: %h", word,
-                            "       ---      i2si_data: %h",
+                        $fdisplay(out, "Input: %h", word,
+                            "       ---      Output: %h",
                             i2si_data, "       ---      Pass");
                     end
                     //End of comparison test. No more words were inputted.
@@ -316,8 +314,8 @@ module i2s_in_test;
                     else
                     begin
                         fail_count = fail_count + 1;
-                        $fdisplay(out, "word: %h", word,
-                            "       ---      i2si_data: %h",
+                        $fdisplay(out, "Input: %h", word,
+                            "       ---      Output: %h",
                             i2si_data, "       ---      Fail");
                     end
                     compare_count = compare_count + 1;

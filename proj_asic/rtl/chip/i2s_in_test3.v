@@ -1,14 +1,12 @@
-`timescale 1ns / 1ps
 `define N 101 // number of test elements
 
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   i2s_in_test3.v
-// Create Date:   01/16/2016
-// Last Edit:     1/18/16
+// Create Date:   01/16/16
+// Last Edit:     1/27/16
 // Author:        Kevin Cao
 //
-// Description: Verilog Test Fixture created by ISE for module: i2s_in
-//                  Creates N number random 32 bit words being inputted.
+// Description:     Creates N number random 32 bit words being inputted.
 //                  Compares the inputted and outputted words.
 //                  Outputs the success and failure of the comparisons in i2s_in_test3_output.txt
 // 
@@ -240,8 +238,8 @@ module i2s_in_test3;
                     if(word == i2si_data)
                     begin
                         pass_count = pass_count + 1;                        
-                        $fdisplay(out, "word: %h", word,
-                            "       ---      i2si_data: %h",
+                        $fdisplay(out, "Input: %h", word,
+                            "       ---      Output: %h",
                             i2si_data, "       ---      Pass");
                     end
                     //End of comparison test. No more words were inputted.
@@ -257,8 +255,8 @@ module i2s_in_test3;
                     else
                     begin
                         fail_count = fail_count + 1;                        
-                        $fdisplay(out, "word: %h", word,
-                            "       ---      i2si_data: %h",
+                        $fdisplay(out, "Input: %h", word,
+                            "       ---      Output: %h",
                             i2si_data, "       ---      Fail");
                     end
                     compare_count = compare_count + 1;

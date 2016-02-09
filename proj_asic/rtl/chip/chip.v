@@ -140,10 +140,10 @@ module chip(clk, rst_n,                                        // General
     filter Filter(
         .clk                        (clk),                          // input: master clock
         .rstb                       (rst_n),                        // input: reset not
-        .aud_in                     (filt_input_data),              // input: input parallel digital audio
+        .filt_input_data            (filt_input_data),              // input: input parallel digital audio
         .aud_in_rts                 (filt_rts),                     // input: ready to send (for input FIFO)
         .aud_in_rtr                 (i2si_rtr),                     // output: ready to receive (for input FIFO)
-        .aud_out                    (filt_out_data),                // output: output parallel digital audio
+        .filt_out_data              (filt_out_data),                // output: output parallel digital audio
         .aud_out_rts                (aud_out_rts),                  // output: ready to send (for output FIFO)
         .aud_out_rtr                (filt_rtr),                     // input: ready to receive (for output FIFO)
         .trig_filter_ovf_flag_clear (trig_filter_ovf_flag_clear),   // input: signal to reset ro_filter_ovf_flag_clear

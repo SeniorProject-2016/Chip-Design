@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: chip.prj
 
@@ -105,6 +105,12 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_storage.v" into library work
+Parsing module <filter_storage>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_round_truncate.v" into library work
+Parsing module <filter_round_truncate>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_accumulator.v" into library work
+Parsing module <filter_accumulator>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\trig_generator.v" into library work
 Parsing module <trig_generator>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\synchronizer.v" into library work
@@ -127,6 +133,10 @@ Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\
 Parsing module <i2si_bist_gen>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\I2C_Serializer.v" into library work
 Parsing module <I2C_Serializer>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_stm.v" into library work
+Parsing module <filter_stm>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_mux.v" into library work
+Parsing module <filter_mux>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\fifo.v" into library work
 Parsing module <fifo>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\Deserializer.v" into library work
@@ -167,7 +177,19 @@ Elaborating module <i2s_out>.
 Elaborating module <serializer>.
 
 Elaborating module <filter>.
-WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" Line 10: Empty module <filter> remains a black box.
+
+Elaborating module <filter_stm>.
+
+Elaborating module <filter_storage>.
+
+Elaborating module <filter_accumulator>.
+
+Elaborating module <filter_round_truncate>.
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" Line 164: Assignment to do_transfer ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" Line 165: Assignment to do_multiply_1st ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" Line 166: Assignment to do_multiply ignored, since the identifier is never used
+
+Elaborating module <filter_mux>.
 WARNING:HDLCompiler:1016 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip_reg.v" Line 71: Port trig_fifo_overrun is not connected to this instance
 
 Elaborating module <chip_reg>.
@@ -292,6 +314,110 @@ Synthesizing Unit <serializer>.
 	inferred  41 D-type flip-flop(s).
 	inferred   4 Multiplexer(s).
 Unit <serializer> synthesized.
+
+Synthesizing Unit <filter>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v".
+INFO:Xst:3210 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" line 157: Output port <do_transfer> of the instance <filter_stm_0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" line 157: Output port <do_multiply_1st> of the instance <filter_stm_0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter.v" line 157: Output port <do_multiply> of the instance <filter_stm_0> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <filter> synthesized.
+
+Synthesizing Unit <filter_stm>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_stm.v".
+WARNING:Xst:647 - Input <filter_aud_out_rtr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 9-bit register for signal <wr_addr_x>.
+    Found 9-bit register for signal <rd_addr_x>.
+    Found 9-bit register for signal <mux_rdptr>.
+    Found 9-bit register for signal <filter_count>.
+    Found 4-bit register for signal <filter_state>.
+    Found 1-bit register for signal <do_transfer>.
+    Found 1-bit register for signal <do_multiply_1st>.
+    Found 1-bit register for signal <do_multiply>.
+    Found 1-bit register for signal <arr_re_x>.
+    Found 1-bit register for signal <arr_we_x>.
+    Found 1-bit register for signal <mux_re>.
+    Found 1-bit register for signal <filter_running>.
+    Found 1-bit register for signal <filter_running_1st>.
+    Found 1-bit register for signal <filter_need_new>.
+    Found 1-bit register for signal <filter_aud_in_rtr>.
+    Found 1-bit register for signal <filter_aud_out_rts>.
+    Found 1-bit register for signal <accumulator_enable>.
+    Found 1-bit register for signal <accumulator_load>.
+    Found finite state machine <FSM_0> for signal <filter_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 6                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rstb (negative)                                |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 9-bit subtractor for signal <rd_addr_x[8]_GND_14_o_sub_11_OUT> created at line 180.
+    Found 9-bit adder for signal <wr_addr_x[8]_GND_14_o_add_7_OUT> created at line 150.
+    Found 9-bit adder for signal <mux_rdptr[8]_GND_14_o_add_11_OUT> created at line 181.
+    Found 9-bit adder for signal <filter_count[8]_GND_14_o_add_12_OUT> created at line 182.
+    Found 16x16-bit multiplier for signal <accumulator_in_left> created at line 87.
+    Found 16x16-bit multiplier for signal <accumulator_in_right> created at line 88.
+    Summary:
+	inferred   2 Multiplier(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  49 D-type flip-flop(s).
+	inferred  42 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <filter_stm> synthesized.
+
+Synthesizing Unit <filter_storage>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_storage.v".
+    Found 32-bit register for signal <rddata>.
+    Found 16384-bit register for signal <n0522[16383:0]>.
+    Found 32-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][31]_wide_mux_516_OUT> created at line 550.
+    Summary:
+	inferred 16416 D-type flip-flop(s).
+	inferred 513 Multiplexer(s).
+Unit <filter_storage> synthesized.
+
+Synthesizing Unit <filter_accumulator>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_accumulator.v".
+    Found 40-bit register for signal <tmp>.
+    Found 40-bit adder for signal <tmp[39]_D[31]_add_1_OUT> created at line 24.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <filter_accumulator> synthesized.
+
+Synthesizing Unit <filter_round_truncate>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_round_truncate.v".
+    Found 16-bit register for signal <filter_out>.
+    Found 1-bit register for signal <ro_filter_ovf_flag>.
+    Found 47-bit register for signal <acc_r>.
+    Found 28-bit register for signal <acc_t>.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_3_OUT> created at line 42.
+    Found 5-bit adder for signal <n0042> created at line 19.
+    Found 47-bit adder for signal <ext_acc_in[46]_GND_18_o_add_4_OUT> created at line 42.
+    Found 47-bit shifter logical left for signal <n0047> created at line 42
+    Found 60-bit shifter logical right for signal <n0030> created at line 45
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  92 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <filter_round_truncate> synthesized.
+
+Synthesizing Unit <filter_mux>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\filter_mux.v".
+    Found 16-bit register for signal <rddata>.
+    Found 16-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][15]_wide_mux_513_OUT> created at line 663.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <filter_mux> synthesized.
 
 Synthesizing Unit <chip_reg>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\chip_reg.v".
@@ -1419,7 +1545,7 @@ Synthesizing Unit <Deserializer>.
     Found 1-bit register for signal <data_xfc>.
     Found 1-bit register for signal <scl_p1>.
     Found 1-bit register for signal <sda_state>.
-    Found finite state machine <FSM_0> for signal <bit_counter_slave_addr>.
+    Found finite state machine <FSM_1> for signal <bit_counter_slave_addr>.
     -----------------------------------------------------------------------
     | States             | 9                                              |
     | Transitions        | 54                                             |
@@ -1433,7 +1559,7 @@ Synthesizing Unit <Deserializer>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_1> for signal <bit_counter_burst_addr>.
+    Found finite state machine <FSM_2> for signal <bit_counter_burst_addr>.
     -----------------------------------------------------------------------
     | States             | 9                                              |
     | Transitions        | 67                                             |
@@ -1446,7 +1572,7 @@ Synthesizing Unit <Deserializer>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_3> for signal <deserial_state>.
+    Found finite state machine <FSM_4> for signal <deserial_state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
     | Transitions        | 10                                             |
@@ -1459,7 +1585,7 @@ Synthesizing Unit <Deserializer>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_2> for signal <bit_counter_data>.
+    Found finite state machine <FSM_3> for signal <bit_counter_data>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
     | Transitions        | 58                                             |
@@ -1495,7 +1621,7 @@ Synthesizing Unit <Sequencer>.
     Found 1-bit register for signal <xfc_ready>.
     Found 1-bit register for signal <Q_addr>.
     Found 11-bit adder for signal <i2c_addr_write[10]_addr_increment[10]_add_1_OUT> created at line 115.
-    Found 11-bit adder for signal <addr_increment[10]_GND_24_o_add_2_OUT> created at line 128.
+    Found 11-bit adder for signal <addr_increment[10]_GND_32_o_add_2_OUT> created at line 128.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  47 D-type flip-flop(s).
@@ -1515,7 +1641,7 @@ Synthesizing Unit <I2C_Serializer>.
     Found 1-bit register for signal <serialize_ack_done>.
     Found 1-bit register for signal <Q_sda>.
     Found 1-bit register for signal <scl_state>.
-    Found finite state machine <FSM_4> for signal <serialize_bit_counter>.
+    Found finite state machine <FSM_5> for signal <serialize_bit_counter>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
     | Transitions        | 40                                             |
@@ -1541,27 +1667,39 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 2
  8x32-bit dual-port RAM                                : 2
-# Adders/Subtractors                                   : 11
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 23
  11-bit adder                                          : 2
  16-bit adder                                          : 1
  3-bit adder                                           : 4
  4-bit addsub                                          : 2
  4-bit subtractor                                      : 1
- 5-bit adder                                           : 1
-# Registers                                            : 1126
- 1-bit register                                        : 69
+ 40-bit adder                                          : 2
+ 47-bit adder                                          : 2
+ 5-bit adder                                           : 3
+ 6-bit subtractor                                      : 2
+ 9-bit adder                                           : 3
+ 9-bit subtractor                                      : 1
+# Registers                                            : 1156
+ 1-bit register                                        : 84
  11-bit register                                       : 3
- 16-bit register                                       : 4
+ 16-bit register                                       : 7
+ 16384-bit register                                    : 1
  2-bit register                                        : 1
+ 28-bit register                                       : 2
  3-bit register                                        : 6
- 32-bit register                                       : 3
+ 32-bit register                                       : 4
  4-bit register                                        : 7
+ 40-bit register                                       : 2
+ 47-bit register                                       : 2
  5-bit register                                        : 1
  8-bit register                                        : 1032
+ 9-bit register                                        : 4
 # Comparators                                          : 2
  16-bit comparator lessequal                           : 1
  7-bit comparator equal                                : 1
-# Multiplexers                                         : 46
+# Multiplexers                                         : 606
  1-bit 1039-to-1 multiplexer                           : 1
  1-bit 1040-to-1 multiplexer                           : 1
  1-bit 1042-to-1 multiplexer                           : 2
@@ -1569,15 +1707,23 @@ Macro Statistics
  1-bit 1044-to-1 multiplexer                           : 1
  1-bit 1045-to-1 multiplexer                           : 2
  1-bit 16-to-1 multiplexer                             : 2
- 1-bit 2-to-1 multiplexer                              : 17
+ 1-bit 2-to-1 multiplexer                              : 40
  1-bit 8-to-1 multiplexer                              : 1
  11-bit 2-to-1 multiplexer                             : 5
- 32-bit 2-to-1 multiplexer                             : 5
+ 16-bit 512-to-1 multiplexer                           : 1
+ 32-bit 2-to-1 multiplexer                             : 517
+ 32-bit 512-to-1 multiplexer                           : 1
  4-bit 2-to-1 multiplexer                              : 1
+ 40-bit 2-to-1 multiplexer                             : 2
+ 47-bit 2-to-1 multiplexer                             : 2
  8-bit 2-to-1 multiplexer                              : 5
  8-bit 8-to-1 multiplexer                              : 1
  8-bit 9-to-1 multiplexer                              : 1
-# FSMs                                                 : 5
+ 9-bit 2-to-1 multiplexer                              : 19
+# Logic shifters                                       : 4
+ 47-bit shifter logical left                           : 2
+ 60-bit shifter logical right                          : 2
+# FSMs                                                 : 6
 
 =========================================================================
 
@@ -1590,6 +1736,30 @@ WARNING:Xst:1710 - FF/Latch <out_rgt_0> (without init value) has a constant valu
 WARNING:Xst:1710 - FF/Latch <out_lft_0> (without init value) has a constant value of 0 in block <Deserializer>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <in_left> (without init value) has a constant value of 1 in block <Deserializer>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <active> (without init value) has a constant value of 0 in block <Deserializer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <acc_t_16> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_17> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_18> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_19> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_20> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_21> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_22> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_23> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_24> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_25> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_26> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_27> of sequential type is unconnected in block <filter_round_truncate_left>.
+WARNING:Xst:2677 - Node <acc_t_16> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_17> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_18> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_19> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_20> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_21> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_22> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_23> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_24> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_25> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_26> of sequential type is unconnected in block <filter_round_truncate_right>.
+WARNING:Xst:2677 - Node <acc_t_27> of sequential type is unconnected in block <filter_round_truncate_right>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <ws_vec_0> is unconnected in block <Synchronizer>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <ws_vec_1> is unconnected in block <Synchronizer>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <ws_vec_2> is unconnected in block <Synchronizer>.
@@ -1626,6 +1796,10 @@ INFO:Xst:3217 - HDL ADVISOR - Register <fifo_out_data> currently described with 
     -----------------------------------------------------------------------
 Unit <fifo> synthesized (advanced).
 
+Synthesizing (advanced) Unit <filter_accumulator>.
+The following registers are absorbed into accumulator <tmp>: 1 register on signal <tmp>.
+Unit <filter_accumulator> synthesized (advanced).
+
 Synthesizing (advanced) Unit <i2si_bist_gen>.
 The following registers are absorbed into counter <sck_count>: 1 register on signal <sck_count>.
 Unit <i2si_bist_gen> synthesized (advanced).
@@ -1633,6 +1807,18 @@ Unit <i2si_bist_gen> synthesized (advanced).
 Synthesizing (advanced) Unit <serializer>.
 The following registers are absorbed into counter <bit_count>: 1 register on signal <bit_count>.
 Unit <serializer> synthesized (advanced).
+WARNING:Xst:2677 - Node <acc_t_16> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_17> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_18> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_19> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_20> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_21> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_22> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_23> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_24> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_25> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_26> of sequential type is unconnected in block <filter_round_truncate>.
+WARNING:Xst:2677 - Node <acc_t_27> of sequential type is unconnected in block <filter_round_truncate>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -1640,21 +1826,30 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 2
  8x32-bit dual-port distributed RAM                    : 2
-# Adders/Subtractors                                   : 2
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 12
  11-bit adder                                          : 1
  16-bit adder                                          : 1
+ 47-bit adder                                          : 2
+ 5-bit adder                                           : 2
+ 6-bit subtractor                                      : 2
+ 9-bit adder                                           : 3
+ 9-bit subtractor                                      : 1
 # Counters                                             : 9
  11-bit up counter                                     : 1
  3-bit up counter                                      : 4
  4-bit down counter                                    : 1
  4-bit updown counter                                  : 2
  5-bit up counter                                      : 1
-# Registers                                            : 8531
- Flip-Flops                                            : 8531
+# Accumulators                                         : 2
+ 40-bit up loadable accumulator                        : 2
+# Registers                                            : 25172
+ Flip-Flops                                            : 25172
 # Comparators                                          : 2
  16-bit comparator lessequal                           : 1
  7-bit comparator equal                                : 1
-# Multiplexers                                         : 44
+# Multiplexers                                         : 16505
  1-bit 1039-to-1 multiplexer                           : 1
  1-bit 1040-to-1 multiplexer                           : 1
  1-bit 1042-to-1 multiplexer                           : 2
@@ -1662,14 +1857,21 @@ Macro Statistics
  1-bit 1044-to-1 multiplexer                           : 1
  1-bit 1045-to-1 multiplexer                           : 2
  1-bit 16-to-1 multiplexer                             : 2
- 1-bit 2-to-1 multiplexer                              : 17
+ 1-bit 2-to-1 multiplexer                              : 16424
+ 1-bit 512-to-1 multiplexer                            : 32
  1-bit 8-to-1 multiplexer                              : 1
  11-bit 2-to-1 multiplexer                             : 4
+ 16-bit 512-to-1 multiplexer                           : 1
  32-bit 2-to-1 multiplexer                             : 5
+ 47-bit 2-to-1 multiplexer                             : 2
  8-bit 2-to-1 multiplexer                              : 5
  8-bit 8-to-1 multiplexer                              : 1
  8-bit 9-to-1 multiplexer                              : 1
-# FSMs                                                 : 5
+ 9-bit 2-to-1 multiplexer                              : 19
+# Logic shifters                                       : 4
+ 47-bit shifter logical left                           : 2
+ 60-bit shifter logical right                          : 2
+# FSMs                                                 : 6
 
 =========================================================================
 
@@ -1684,7 +1886,7 @@ WARNING:Xst:1898 - Due to constant pushing, FF/Latch <armed1> is unconnected in 
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <ws_d> is unconnected in block <i2si_deserializer>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <armed2> is unconnected in block <i2si_deserializer>.
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <I2C/i2c_top_deserializer/FSM_3> on signal <deserial_state[1:2]> with gray encoding.
+Optimizing FSM <I2C/i2c_top_deserializer/FSM_4> on signal <deserial_state[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1694,7 +1896,7 @@ Optimizing FSM <I2C/i2c_top_deserializer/FSM_3> on signal <deserial_state[1:2]> 
  01    | 10
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <I2C/i2c_top_deserializer/FSM_0> on signal <bit_counter_slave_addr[1:4]> with user encoding.
+Optimizing FSM <I2C/i2c_top_deserializer/FSM_1> on signal <bit_counter_slave_addr[1:4]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1709,7 +1911,7 @@ Optimizing FSM <I2C/i2c_top_deserializer/FSM_0> on signal <bit_counter_slave_add
  1000  | 1000
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <I2C/i2c_top_deserializer/FSM_1> on signal <bit_counter_burst_addr[1:4]> with user encoding.
+Optimizing FSM <I2C/i2c_top_deserializer/FSM_2> on signal <bit_counter_burst_addr[1:4]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1724,7 +1926,7 @@ Optimizing FSM <I2C/i2c_top_deserializer/FSM_1> on signal <bit_counter_burst_add
  1000  | 1000
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <I2C/i2c_top_deserializer/FSM_2> on signal <bit_counter_data[1:3]> with sequential encoding.
+Optimizing FSM <I2C/i2c_top_deserializer/FSM_3> on signal <bit_counter_data[1:3]> with sequential encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1738,7 +1940,7 @@ Optimizing FSM <I2C/i2c_top_deserializer/FSM_2> on signal <bit_counter_data[1:3]
  0111  | 111
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <I2C/i2c_top_serializer/FSM_4> on signal <serialize_bit_counter[1:3]> with sequential encoding.
+Optimizing FSM <I2C/i2c_top_serializer/FSM_5> on signal <serialize_bit_counter[1:3]> with sequential encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1751,6 +1953,18 @@ Optimizing FSM <I2C/i2c_top_serializer/FSM_4> on signal <serialize_bit_counter[1
  0110  | 110
  0111  | 111
 -------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Filter/filter_stm_0/FSM_0> on signal <filter_state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 00
+ 0010  | 01
+ 0100  | 11
+ 1000  | 10
+-------------------
+
+Optimizing unit <filter_mux> ...
 
 Optimizing unit <chip> ...
 
@@ -1770,6 +1984,12 @@ Optimizing unit <fifo> ...
 
 Optimizing unit <serializer> ...
 
+Optimizing unit <filter_stm> ...
+
+Optimizing unit <filter_storage> ...
+
+Optimizing unit <filter_round_truncate> ...
+
 Optimizing unit <register> ...
 WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/sd_vec_3> of sequential type is unconnected in block <chip>.
 WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/sd_vec_2> of sequential type is unconnected in block <chip>.
@@ -1779,24 +1999,46 @@ WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/ws_vec_3> of sequential type is 
 WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/ws_vec_2> of sequential type is unconnected in block <chip>.
 WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/ws_vec_1> of sequential type is unconnected in block <chip>.
 WARNING:Xst:2677 - Node <I2S_Input/Synchronizer/ws_vec_0> of sequential type is unconnected in block <chip>.
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_4> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_20> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_5> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_21> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_6> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_22> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_7> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_23> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_8> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_24> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_9> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_25> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_10> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_26> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_11> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_27> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_12> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_28> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_13> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_29> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_14> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_30> 
-INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_15> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_31> 
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_39> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_38> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_37> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_36> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_right/tmp_35> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_39> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_38> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_37> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_36> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/filter_accumulator_left/tmp_35> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/do_multiply_1st> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/do_multiply> of sequential type is unconnected in block <chip>.
+WARNING:Xst:2677 - Node <Filter/filter_stm_0/do_transfer> of sequential type is unconnected in block <chip>.
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_0> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_0> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_1> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_1> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_2> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_2> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_3> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_3> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_4> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_4> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_5> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_5> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_6> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_6> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_7> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_7> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/filter_count_8> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/mux_rdptr_8> 
+INFO:Xst:2261 - The FF/Latch <Filter/filter_stm_0/mux_re> in Unit <chip> is equivalent to the following FF/Latch, which will be removed : <Filter/filter_stm_0/arr_re_x> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_22> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_6> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_23> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_7> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_24> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_8> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_30> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_14> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_25> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_9> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_31> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_15> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_26> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_10> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_27> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_11> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_28> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_12> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_29> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_13> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_20> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_4> 
+INFO:Xst:3203 - The FF/Latch <I2S_Input/Bist/i2si_bist_out_data_21> in Unit <chip> is the opposite to the following FF/Latch, which will be removed : <I2S_Input/Bist/i2si_bist_out_data_5> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 21.
-FlipFlop I2C/i2c_top_sequencer/i2c_addr_out_0 has been replicated 7 time(s)
-FlipFlop I2C/i2c_top_sequencer/i2c_addr_out_1 has been replicated 7 time(s)
+INFO:Xst:2261 - The FF/Latch <I2S_Input/Deserializer/in_left_delay> in Unit <chip> is equivalent to the following 2 FFs/Latches, which will be removed : <Filter/filter_stm_0/filter_round_truncate_right/ro_filter_ovf_flag> <Filter/filter_stm_0/filter_round_truncate_left/ro_filter_ovf_flag> 
+Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 65.
 
 Final Macro Processing ...
 
@@ -1809,8 +2051,8 @@ Unit <chip> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 8528
- Flip-Flops                                            : 8528
+# Registers                                            : 25116
+ Flip-Flops                                            : 25116
 # Shift Registers                                      : 2
  2-bit shift register                                  : 1
  3-bit shift register                                  : 1
@@ -1836,29 +2078,30 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4301
+# BELS                             : 29908
 #      GND                         : 1
-#      INV                         : 16
-#      LUT1                        : 4
-#      LUT2                        : 58
-#      LUT3                        : 91
-#      LUT4                        : 129
-#      LUT5                        : 267
-#      LUT6                        : 3643
-#      MUXCY                       : 37
-#      MUXF7                       : 18
+#      INV                         : 31
+#      LUT1                        : 32
+#      LUT2                        : 59
+#      LUT3                        : 16617
+#      LUT4                        : 128
+#      LUT5                        : 340
+#      LUT6                        : 12329
+#      MUXCY                       : 150
+#      MUXF7                       : 68
 #      MUXF8                       : 2
 #      VCC                         : 1
-#      XORCY                       : 34
-# FlipFlops/Latches                : 8530
+#      XORCY                       : 150
+# FlipFlops/Latches                : 25118
 #      FD                          : 26
-#      FDC                         : 17
-#      FDCE                        : 8402
-#      FDE                         : 2
+#      FDC                         : 55
+#      FDCE                        : 24862
+#      FDE                         : 34
 #      FDP                         : 3
-#      FDPE                        : 22
+#      FDPE                        : 34
 #      FDR                         : 42
-#      FDRE                        : 16
+#      FDRE                        : 56
+#      FDSE                        : 6
 # RAMS                             : 64
 #      RAM32X1D                    : 64
 # Shift Registers                  : 2
@@ -1869,8 +2112,8 @@ Primitive and Black Box Usage:
 # IO Buffers                       : 11
 #      IBUF                        : 7
 #      OBUF                        : 4
-# Others                           : 1
-#      filter                      : 1
+# DSPs                             : 2
+#      DSP48E1                     : 2
 
 Device utilization summary:
 ---------------------------
@@ -1879,19 +2122,19 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            8530  out of  126800     6%  
- Number of Slice LUTs:                 4338  out of  63400     6%  
-    Number used as Logic:              4208  out of  63400     6%  
+ Number of Slice Registers:           25118  out of  126800    19%  
+ Number of Slice LUTs:                29666  out of  63400    46%  
+    Number used as Logic:             29536  out of  63400    46%  
     Number used as Memory:              130  out of  19000     0%  
        Number used as RAM:              128
        Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  12610
-   Number with an unused Flip Flop:    4080  out of  12610    32%  
-   Number with an unused LUT:          8272  out of  12610    65%  
-   Number of fully used LUT-FF pairs:   258  out of  12610     2%  
-   Number of unique control sets:      1055
+ Number of LUT Flip Flop pairs used:  37951
+   Number with an unused Flip Flop:   12833  out of  37951    33%  
+   Number with an unused LUT:          8285  out of  37951    21%  
+   Number of fully used LUT-FF pairs: 16833  out of  37951    44%  
+   Number of unique control sets:      1060
 
 IO Utilization: 
  Number of IOs:                          14
@@ -1899,6 +2142,7 @@ IO Utilization:
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+ Number of DSP48E1s:                      2  out of    240     0%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1921,7 +2165,7 @@ Clock Information:
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
 Clock Signal                                                                             | Clock buffer(FF name)                      | Load  |
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
-clk                                                                                      | BUFGP                                      | 8593  |
+clk                                                                                      | BUFGP                                      | 25183 |
 I2C/i2c_top_deserializer/i2c_scl_neg_pulse(I2C/i2c_top_deserializer/i2c_scl_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/scl_state)| 1     |
 I2C/i2c_top_deserializer/i2c_sda_neg_pulse(I2C/i2c_top_deserializer/i2c_sda_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/sda_state)| 1     |
 I2C/i2c_top_serializer/i2c_scl_neg_pulse(I2C/i2c_top_serializer/i2c_scl_neg_pulse1:O)    | NONE(*)(I2C/i2c_top_serializer/scl_state)  | 1     |
@@ -1939,10 +2183,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.051ns (Maximum Frequency: 246.822MHz)
-   Minimum input arrival time before clock: 2.668ns
-   Maximum output required time after clock: 1.437ns
-   Maximum combinational path delay: 0.706ns
+   Minimum period: 4.834ns (Maximum Frequency: 206.855MHz)
+   Minimum input arrival time before clock: 2.883ns
+   Maximum output required time after clock: 0.663ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
@@ -1950,36 +2194,66 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.051ns (frequency: 246.822MHz)
-  Total number of paths / destination ports: 135531 / 17530
+  Clock period: 4.834ns (frequency: 206.855MHz)
+  Total number of paths / destination ports: 413465 / 50726
 -------------------------------------------------------------------------
-Delay:               4.051ns (Levels of Logic = 6)
-  Source:            Register/Register/rf_filter_coeff340_a_7 (FF)
-  Destination:       Register/Register/rdata_7 (FF)
+Delay:               4.834ns (Levels of Logic = 36)
+  Source:            Filter/filter_stm_0/Mmult_accumulator_in_right (DSP)
+  Destination:       Filter/filter_stm_0/filter_accumulator_right/tmp_34 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: Register/Register/rf_filter_coeff340_a_7 to Register/Register/rdata_7
+  Data Path: Filter/filter_stm_0/Mmult_accumulator_in_right to Filter/filter_stm_0/filter_accumulator_right/tmp_34
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             1   0.361   0.693  Register/Register/rf_filter_coeff340_a_7 (Register/Register/rf_filter_coeff340_a_7)
-     LUT6:I0->O            1   0.097   0.556  Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_2349 (Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_2349)
-     LUT6:I2->O            1   0.097   0.556  Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_1814 (Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_1814)
-     LUT6:I2->O            1   0.097   0.556  Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_134 (Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_134)
-     LUT6:I2->O            1   0.097   0.556  Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_81 (Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_81)
-     LUT6:I2->O            1   0.097   0.000  Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_3 (Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_3)
-     MUXF7:I1->O           1   0.279   0.000  Register/Register/Mmux_addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>_2_f7 (Register/Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3093_OUT<7>)
-     FD:D                      0.008          Register/Register/rdata_7
+     DSP48E1:CLK->P0       1   2.952   0.295  Filter/filter_stm_0/Mmult_accumulator_in_right (Filter/filter_stm_0/accumulator_in_right<0>)
+     LUT3:I2->O            1   0.097   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_lut<0> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<0> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<1> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<2> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<3> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<4> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<5> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<6> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<7> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<8> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<9> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<10> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<11> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<12> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<13> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<14> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<15> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<16> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<17> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<18> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<19> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<20> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<21> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<22> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<23> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<24> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<25> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<26> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<27> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<28> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<29> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<29>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<30> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<30>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<31> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<31>)
+     MUXCY:CI->O           1   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<32> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<32>)
+     MUXCY:CI->O           0   0.023   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<33> (Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_cy<33>)
+     XORCY:CI->O           1   0.370   0.000  Filter/filter_stm_0/filter_accumulator_right/Maccum_tmp_xor<34> (Filter/filter_stm_0/Result<34>1)
+     FDCE:D                    0.008          Filter/filter_stm_0/filter_accumulator_right/tmp_34
     ----------------------------------------
-    Total                      4.051ns (1.133ns logic, 2.918ns route)
-                                       (28.0% logic, 72.0% route)
+    Total                      4.834ns (4.539ns logic, 0.295ns route)
+                                       (93.9% logic, 6.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 169 / 129
+  Total number of paths / destination ports: 145 / 139
 -------------------------------------------------------------------------
-Offset:              2.668ns (Levels of Logic = 5)
+Offset:              2.883ns (Levels of Logic = 6)
   Source:            i2c_addr_bits<2> (PAD)
   Destination:       I2C/i2c_top_deserializer/i2c_RW (FF)
   Destination Clock: clk rising
@@ -1990,13 +2264,14 @@ Offset:              2.668ns (Levels of Logic = 5)
     ----------------------------------------  ------------
      IBUF:I->O             1   0.001   0.511  i2c_addr_bits_2_IBUF (i2c_addr_bits_2_IBUF)
      LUT5:I2->O            1   0.097   0.683  I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o7_SW0 (N30)
-     LUT6:I1->O            2   0.097   0.561  I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o7 (I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o)
-     LUT6:I2->O            2   0.097   0.515  I2C/i2c_top_deserializer/_n0436 (I2C/i2c_top_deserializer/_n0436)
+     LUT6:I1->O            2   0.097   0.299  I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o7 (I2C/i2c_top_deserializer/incoming_slave_addr[7]_slave_addr[6]_equal_28_o)
+     LUT3:I2->O            1   0.097   0.379  I2C/i2c_top_deserializer/_n0436_SW1 (N1108)
+     LUT6:I4->O            2   0.097   0.515  I2C/i2c_top_deserializer/_n0436 (I2C/i2c_top_deserializer/_n0436)
      LUT3:I0->O            1   0.097   0.000  I2C/i2c_top_deserializer/i2c_RW_rstpot (I2C/i2c_top_deserializer/i2c_RW_rstpot)
      FDR:D                     0.008          I2C/i2c_top_deserializer/i2c_RW
     ----------------------------------------
-    Total                      2.668ns (0.397ns logic, 2.271ns route)
-                                       (14.9% logic, 85.1% route)
+    Total                      2.883ns (0.494ns logic, 2.389ns route)
+                                       (17.1% logic, 82.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'I2C/i2c_top_serializer/i2c_scl_neg_pulse'
@@ -2020,41 +2295,22 @@ Offset:              1.045ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 8240 / 8234
+  Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Offset:              1.437ns (Levels of Logic = 1)
-  Source:            I2S_Output/i2so_Fifo/fifo_counter_3 (FF)
-  Destination:       Filter:aud_out_rtr (PAD)
+Offset:              0.663ns (Levels of Logic = 1)
+  Source:            I2S_Input/Synchronizer/sck_vec_1 (FF)
+  Destination:       i2so_sck (PAD)
   Source Clock:      clk rising
 
-  Data Path: I2S_Output/i2so_Fifo/fifo_counter_3 to Filter:aud_out_rtr
+  Data Path: I2S_Input/Synchronizer/sck_vec_1 to i2so_sck
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             9   0.361   0.593  I2S_Output/i2so_Fifo/fifo_counter_3 (I2S_Output/i2so_Fifo/fifo_counter_3)
-     LUT4:I0->O           32   0.097   0.386  I2S_Output/i2so_Fifo/fifo_inp_rtr1 (filt_rtr)
-    filter:aud_out_rtr         0.000          Filter
+     FDC:C->Q              6   0.361   0.302  I2S_Input/Synchronizer/sck_vec_1 (I2S_Input/Synchronizer/sck_vec_1)
+     OBUF:I->O                 0.000          i2so_sck_OBUF (i2so_sck)
     ----------------------------------------
-    Total                      1.437ns (0.458ns logic, 0.979ns route)
-                                       (31.9% logic, 68.1% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 2 / 2
--------------------------------------------------------------------------
-Delay:               0.706ns (Levels of Logic = 1)
-  Source:            clk (PAD)
-  Destination:       Filter:clk (PAD)
-
-  Data Path: clk to Filter:clk
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     BUFGP:I->O         8593   0.000   0.706  clk_BUFGP (clk_BUFGP)
-    filter:clk                 0.000          Filter
-    ----------------------------------------
-    Total                      0.706ns (0.000ns logic, 0.706ns route)
-                                       (0.0% logic, 100.0% route)
+    Total                      0.663ns (0.361ns logic, 0.302ns route)
+                                       (54.4% logic, 45.6% route)
 
 =========================================================================
 
@@ -2066,7 +2322,7 @@ Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_scl_neg_pulse
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.553|         |         |         |
+clk            |    1.559|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_sda_neg_pulse
@@ -2093,20 +2349,20 @@ Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fa
 I2C/i2c_top_deserializer/i2c_scl_neg_pulse|    0.977|         |         |         |
 I2C/i2c_top_deserializer/i2c_sda_neg_pulse|    1.480|         |         |         |
 I2C/i2c_top_serializer/i2c_scl_neg_pulse  |    0.845|         |         |         |
-clk                                       |    4.051|         |         |         |
+clk                                       |    4.834|         |         |         |
 ------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 183.00 secs
-Total CPU time to Xst completion: 183.49 secs
+Total REAL time to Xst completion: 315.00 secs
+Total CPU time to Xst completion: 314.90 secs
  
 --> 
 
-Total memory usage is 3507012 kilobytes
+Total memory usage is 3698472 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  111 (  75 filtered)
-Number of infos    :   19 (   0 filtered)
+Number of warnings :  164 (  76 filtered)
+Number of infos    :   33 (   0 filtered)
 
