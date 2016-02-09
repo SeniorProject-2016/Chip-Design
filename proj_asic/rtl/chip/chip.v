@@ -53,7 +53,7 @@ module chip(clk, rst_n,                                        // General
         
     // Inputs to I2S Output Block
     wire i2si_sync_sck;                     // synchronized serial clock
-    wire i2si_sync_sck_transition;          // synchronized serial clock transition
+    wire i2si_sck_transition;               // synchronized serial clock transition
     wire [31:0] filt_out_data;              // I2SO input data
     wire trig_fifo_underrun;                // signal to reset ro_fifo_underrun
     
@@ -119,14 +119,14 @@ module chip(clk, rst_n,                                        // General
         .trig_fifo_overrun_clr      (trig_fifo_overrun_clr),        // input: signal to reset ro_fifo_overrun
         .ro_fifo_overrun            (ro_fifo_overrun),              // output: when the I2S input FIFO is full
         .sync_sck                   (i2si_sync_sck),                // output: synchronized serial clock
-        .sync_sck_transition        (i2si_sync_sck_transition)      // output: synchronized serial clock transition
+        .sync_sck_transition        (i2si_sck_transition)           // output: synchronized serial clock transition
     );
   
     i2s_out I2S_Output(
         .clk                        (clk),                          // input: master clock
         .rst_n                      (rst_n),                        // input: reset not
         .i2so_sync_sck              (i2si_sync_sck),                // input: synchronized serial clock
-        .i2so_sck_transition        (i2si_sync_sck_transition),     // input: serial clock transition
+        .i2so_sck_transition        (i2si_sck_transition),          // input: serial clock transition
         .filt_rts                   (aud_out_rts),                  // input: ready to send
         .filt_data                  (filt_out_data),                // input: audio data
         .filt_rtr                   (filt_rtr),                     // output: ready to receive
