@@ -38,9 +38,6 @@ localparam 	 	PTR				= 9,
 					TAPS				= 512;
 //***********************************************************************************
 reg	[3:0]			filter_state, filter_state_nxt;  		//Current State | State for next Clock Cycle
-//reg					do_transfer, do_transfer_nxt;				//Current Status | Status for next Clock Cycle				
-//reg					do_multiply_1st, do_multiply_1st_nxt; 	//Current Status | Status for next Clock Cycle
-//reg					do_multiply, do_multiply_nxt; 			//Current Status | Status for next Clock Cycle
 reg					filter_running_1st, filter_running_1st_nxt; 
 reg					filter_running, filter_running_nxt; 
 //***********************************************************************************
@@ -83,9 +80,6 @@ always@(*)
 	begin
 	
 		filter_state_nxt			= filter_state;
-		//do_transfer_nxt			= 1'b0;
-		//do_multiply_1st_nxt		= 1'b0;
-		//do_multiply_nxt			= 1'b0;
 //***********************************************************************************		
 		wr_addr_x_nxt				= wr_addr_x;
 		rd_addr_x_nxt				= rd_addr_x;
@@ -113,7 +107,6 @@ always@(*)
 			if(filter_xfc_in) 
 				begin
 						filter_state_nxt	= TRANSFER; 
-						//do_transfer_nxt	= 1'b1;
 						arr_we_x_nxt		= 1'b1;
 				end
 			else 
@@ -129,8 +122,6 @@ always@(*)
 			if(filter_running_1st) 
 				begin
 						filter_state_nxt		= MULTIPLY_1ST; 
-						//do_multiply_1st_nxt		= 1'b1;
-						//do_transfer_nxt			= 1'b0;
 						filter_running_1st_nxt	= 1'b0;
 						filter_running_nxt 		= 1'b1;
 						arr_re_x_nxt 			= 1'b1;
@@ -140,13 +131,13 @@ always@(*)
 				end
 			else
 				begin
-						//do_transfer_nxt	= 1'b1;
+						filter_aud_out_rts_nxt 		= 1'b0;
 						if(filter_xfc_in)
 							begin 
 								filter_aud_in_rtr_nxt 	= 1'b0;
 								arr_we_x_nxt			= 1'b1;
 								filter_running_1st_nxt	= 1'b1;
-								filter_aud_out_rts_nxt 		= 1'b0;
+			
 							end 
 				end
 		end
@@ -160,9 +151,7 @@ always@(*)
 
 			if(filter_running) 
 				begin
-						filter_state_nxt		= MULTIPLY;
-						//do_multiply_1st_nxt		= 1'b0;
-						//do_multiply_nxt			= 1'b1;		
+						filter_state_nxt		= MULTIPLY;	
 						filter_running_nxt		= 1'b0;
 						accumulator_load_nxt	= 1'b1;
 						accumulator_enable_nxt 	= 1'b1;
@@ -183,25 +172,23 @@ always@(*)
 		filter_state[MULTIPLY_ID]:begin
 			if(filter_need_new) 
 				begin
-						filter_state_nxt			= TRANSFER;
-						//do_multiply_nxt			= 1'b0;
-						//do_multiply_1st_nxt		= 1'b0;
-						//do_transfer_nxt			= 1'b1;
-						filter_need_new_nxt		= 1'b0;
-						filter_aud_in_rtr_nxt	= 1'b1;
-						accumulator_enable_nxt 	= 1'b0;
-						
+					accumulator_enable_nxt 	= 1'b0;
+					if	(filter_aud_out_rtr)
+						begin
+							filter_state_nxt			= TRANSFER;
+							filter_need_new_nxt		= 1'b0;
+							filter_aud_in_rtr_nxt	= 1'b1;
+						end
 				end
 			else	
 				begin
-						//do_multiply_nxt			= 1'b1; 
 						rd_addr_x_nxt			= rd_addr_x - 1'b1;
 						mux_rdptr_nxt			= mux_rdptr + 1'b1;
 						filter_count_nxt 		= filter_count + 1'b1;	
 						accumulator_load_nxt	= 1'b0;
 						if (filter_count == TAPS-1)
 							begin
-								rd_addr_x_nxt = rd_addr_x  ;
+								//rd_addr_x_nxt = rd_addr_x;
 								filter_need_new_nxt = 1'b1;
 								arr_re_x_nxt 		= 1'b0;
 								mux_re_nxt 		   = 1'b0;	
@@ -219,9 +206,6 @@ always@(posedge clk or negedge rstb)
 	if(!rstb)
 		begin
 			filter_state				<= IDLE;
-			//do_transfer					<= 1'b0;
-			//do_multiply_1st			<= 1'b0;
-			//do_multiply					<= 1'b0;
 			wr_addr_x					<= 1'b0;
 			rd_addr_x					<= 1'b0;
 			arr_re_x						<= 1'b0;
@@ -241,9 +225,6 @@ always@(posedge clk or negedge rstb)
 	else
 		begin
 			filter_state				<= filter_state_nxt;
-			//do_transfer					<= do_transfer_nxt;
-			//do_multiply_1st			<= do_multiply_1st_nxt;
-			//do_multiply					<= do_multiply_nxt;
 			wr_addr_x					<= wr_addr_x_nxt;
 			rd_addr_x					<= rd_addr_x_nxt;
 			arr_re_x						<= arr_re_x_nxt;
@@ -267,10 +248,10 @@ always@(posedge clk or negedge rstb)
 					(.clk		(clk), 
 					.rstb		(rstb),
 					.wren		(arr_we_x), 
-					.wrptr		(wr_addr_x), 
-					.wrdata		(filter_aud_in), 
+					.wrptr	(wr_addr_x), 
+					.wrdata	(filter_aud_in), 
 					.rden		(arr_re_x), 
-					.rdptr		(rd_addr_x), 
-					.rddata		(x_unit));	
+					.rdptr	(rd_addr_x), 
+					.rddata	(x_unit));	
 
 endmodule
