@@ -244,7 +244,7 @@ rf_filter_coeff509_a, rf_filter_coeff509_b,rf_filter_coeff510_a, rf_filter_coeff
         .ro_filter_ovf_flag         (ro_filter_ovf_flag),           // output: filter overflow flag
         .rf_filter_shift            (rf_filter_shift),              // input: # of bits to shift after accumulator
         .rf_filter_clip_en          (rf_filter_clip_en),             // input: select bit (1- perform clipping, 0- no clipping)
-		   .rf_filter_coeff0_a(rf_filter_coeff0_a), 
+		  .rf_filter_coeff0_a(rf_filter_coeff0_a), 
     .rf_filter_coeff0_b(rf_filter_coeff0_b), 
     .rf_filter_coeff1_a(rf_filter_coeff1_a), 
     .rf_filter_coeff1_b(rf_filter_coeff1_b), 

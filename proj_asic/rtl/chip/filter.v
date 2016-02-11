@@ -6,16 +6,21 @@ rf_filter_coeff0_a, rf_filter_coeff0_b,rf_filter_coeff1_a, rf_filter_coeff1_b,rf
 
 input 	clk;
 input 	rstb;
-input 	[31:0] filt_input_data;
+
 input 	aud_in_rts;
 output 	aud_in_rtr;
+
+input 	[31:0] filt_input_data;
 output 	[31:0] filt_out_data;
+
 output 	aud_out_rts;
 input 	aud_out_rtr;
+
 input 	trig_filter_ovf_flag_clear;
 output 	ro_filter_ovf_flag;
 input		[2:0] rf_filter_shift;
 input		rf_filter_clip_en;
+
 input 	[7:0] rf_filter_coeff0_a, rf_filter_coeff0_b,
 rf_filter_coeff1_a, rf_filter_coeff1_b,rf_filter_coeff2_a, rf_filter_coeff2_b,rf_filter_coeff3_a, rf_filter_coeff3_b,rf_filter_coeff4_a, rf_filter_coeff4_b,
 rf_filter_coeff5_a, rf_filter_coeff5_b,rf_filter_coeff6_a, rf_filter_coeff6_b,rf_filter_coeff7_a, rf_filter_coeff7_b,rf_filter_coeff8_a, rf_filter_coeff8_b,
@@ -153,32 +158,112 @@ wire[15:0]	rf_filter_coeff;
 wire[8:0]	mux_rdptr;			 
 wire			mux_re;
 
+wire signed		[31:0] accumulator_in_left;
+wire signed		[31:0] accumulator_in_right;
+wire				accumulator_load;
+wire				accumulator_enable;
+
+wire signed		[39:0] accumulator_out_left;
+wire signed		[39:0] accumulator_out_right;
+
+wire signed		[15:0] filter_out_left;
+wire signed		[15:0] filter_out_right;
+wire				ro_filter_ovf_flag_left;
+wire				ro_filter_ovf_flag_right;
+
+
+assign ro_filter_ovf_flag		= ro_filter_ovf_flag_left || ro_filter_ovf_flag_right;
+assign filt_out_data 			= {filter_out_left,filter_out_right};	
+
+
 //***********************************************************************************
-filter_stm filter_stm_0 (
+//				FILTER STM
+//***********************************************************************************
+filter_stm TOP_FILTER_STM (
     .clk(clk), 
     .rstb(rstb), 
     .filter_aud_in_rts(aud_in_rts), 
     .filter_aud_in_rtr(aud_in_rtr), 
-	 .filter_aud_out_rts(aud_out_rts), 
+    .filter_aud_out_rts(aud_out_rts), 
     .filter_aud_out_rtr(aud_out_rtr), 
-    .do_transfer(do_transfer), 
-    .do_multiply_1st(do_multiply_1st), 
-    .do_multiply(do_multiply), 
     .filter_aud_in(filt_input_data), 
-    .filter_aud_out(filt_out_data), 
-    .rf_filter_coeff(rf_filter_coeff),
-	 .rf_shift(rf_filter_shift), 
-    .rf_sat(rf_filter_clip_en),
-	 .trig_filter_ovf_flag_clear(trig_filter_ovf_flag_clear),
-	 .ro_filter_ovf_flag(ro_filter_ovf_flag),
-	 .mux_re(mux_re),
-	 .mux_rdptr(mux_rdptr)
+    .accumulator_load(accumulator_load), 
+    .accumulator_enable(accumulator_enable), 
+    .accumulator_in_left(accumulator_in_left), 
+    .accumulator_in_right(accumulator_in_right), 
+    .rf_filter_coeff(rf_filter_coeff), 
+    .mux_re(mux_re), 
+    .mux_rdptr(mux_rdptr)
     );
-	 	 
+
+//***********************************************************************************
+
+
+//***********************************************************************************
+//				FILTER ACCUMULATOR LEFT
+//***********************************************************************************
+filter_accumulator TOP_FILTER_ACCUMULATOR_LEFT (
+    .clk(clk), 
+    .rstb(rstb), 
+    .enable(accumulator_enable), 
+    .load(accumulator_load), 
+    .D(accumulator_in_left), 
+    .Q(accumulator_out_left)
+    );
+
 //***********************************************************************************
 
 //***********************************************************************************
-filter_mux filter_mux_0 (
+//				FILTER ACCUMULATOR RIGHT
+//***********************************************************************************
+filter_accumulator TOP_FILTER_ACCUMULATOR_RIGHT (
+    .clk(clk), 
+    .rstb(rstb), 
+    .enable(accumulator_enable), 
+    .load(accumulator_load), 
+    .D(accumulator_in_right), 
+    .Q(accumulator_out_right)
+    );
+
+//***********************************************************************************
+
+//***********************************************************************************
+//				FILTER ROUND TRUNCATE LEFT
+//***********************************************************************************
+filter_round_truncate TOP_FILTER_ROUND_TRUNCATE_LEFT (
+    .clk(clk), 
+    .rstb(rstb), 
+    .acc_in(accumulator_out_left), 
+    .rf_sat(rf_filter_clip_en), 
+    .rf_shift(rf_filter_shift), 
+    .trig_filter_ovf_flag_clear(trig_filter_ovf_flag_clear), 
+    .filter_out(filter_out_left), 
+    .ro_filter_ovf_flag(ro_filter_ovf_flag_left)
+    );
+
+//***********************************************************************************
+
+//***********************************************************************************
+//				FILTER ROUND TRUNCATE RIGHT
+//***********************************************************************************
+filter_round_truncate TOP_FILTER_ROUND_TRUNCATE_RIGHT (
+    .clk(clk), 
+    .rstb(rstb), 
+    .acc_in(accumulator_out_right), 
+    .rf_sat(rf_filter_clip_en), 
+    .rf_shift(rf_filter_shift), 
+    .trig_filter_ovf_flag_clear(trig_filter_ovf_flag_clear), 
+    .filter_out(filter_out_right), 
+    .ro_filter_ovf_flag(ro_filter_ovf_flag_right)
+    );
+
+//***********************************************************************************
+
+	 	 
+//***********************************************************************************
+//				FILTER MUX
+//***********************************************************************************
+filter_mux TOP_FILTER_MUX (
     .clk(clk), 
     .rden(mux_re), 
     .rdptr(mux_rdptr), 

@@ -3,8 +3,8 @@
 module filter_accumulator(clk, rstb, enable,load, D, Q
     );
 input		signed clk, rstb,enable,load; 
-input 	signed [31:0] D; 
-output 	signed [39:0] Q; 
+input 	signed [31:0] D;	// Input
+output 	signed [39:0] Q; 	// Output
 
 reg 		signed [39:0] tmp;  
 
