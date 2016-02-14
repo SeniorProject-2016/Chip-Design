@@ -25,8 +25,8 @@ and initializing all 512, 2 part coeffs to 0
     for (i=0; i<=511; i++)
     {
         y = y + 1;
-        fprintf (fp, "\t\trf_filter_coeff%d_a <= 8'h000;\n", y);
-        fprintf (fp, "\t\trf_filter_coeff%d_b <= 8'h000;\n", y);
+        fprintf (fp, "\t\t\trf_filter_coeff%d_a <= 8'h000;\n", y);
+        fprintf (fp, "\t\t\trf_filter_coeff%d_b <= 8'h000;\n", y);
     }
     return 0;
 }
