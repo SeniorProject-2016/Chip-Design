@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/register_testbench_isim_beh.exe" -prj "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/register_testbench_beh.prj" "work.register_testbench" "work.glbl" 
