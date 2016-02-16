@@ -45,6 +45,9 @@ begin
 	//acc_t <= 28'd0;
 	acc_t <= acc_r[num_shift+:34];//pad
 		
+        
+        if (trig_filter_ovf_flag_clear)
+			ro_filter_ovf_flag <= 1'b0; 	
 		if (acc_t > (1<<15)-1)
 			begin 
 			$display ("acc_t > (1<<15)-1");
@@ -68,9 +71,8 @@ begin
 		else 
 				filter_out <= acc_t[15:0];
 
-		if (trig_filter_ovf_flag_clear)
-			ro_filter_ovf_flag <= 1'b0; 
-		end		
+
+	end		
 end
 
 endmodule

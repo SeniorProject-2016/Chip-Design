@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Serializer(
 	 input i2c_scl,
-	 input i2c_sda,
+//	 input i2c_sda,
     output reg i2c_sda_out,
 //	 input i2c_sda_in,
 //    input data_ack,
