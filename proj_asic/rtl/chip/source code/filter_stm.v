@@ -188,7 +188,7 @@ always@(*)
 						accumulator_load_nxt	= 1'b0;
 						if (filter_count == TAPS-1)
 							begin
-								//rd_addr_x_nxt = rd_addr_x;
+								rd_addr_x_nxt = rd_addr_x;
 								filter_need_new_nxt = 1'b1;
 								arr_re_x_nxt 		= 1'b0;
 								mux_re_nxt 		   = 1'b0;	
