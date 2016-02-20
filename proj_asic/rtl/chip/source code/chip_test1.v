@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
-`define N 11 // number of test elements
+`define N 501 // number of test elements
 
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   chip_test1.v
 // Create Date:   2/14/2016
 // Last Edit:     2/14/16
-// Author:        Kevin Cao, 
+// Author:        Kevin Cao, Whitley Forman
 //
 // Description:     First attempt to create test bench for overall chip.
 //                      Attempting to just get a working simulation
@@ -51,7 +51,8 @@ module chip_test1;
     integer                         i2s_word_cnt;                                                       // word counter
     parameter                       i2s_cyc_per_half_sck = 33;                                          // about (100 MHz / 1.536 MHz)/2
     parameter                       i2s_bit_tc =  15;                                                   // number of bits in a word
-
+    integer                         index1;
+    integer                         index2;
     
     // I2C Internal Variables
 		reg [3:0] i2c_bit_count;
@@ -92,10 +93,17 @@ module chip_test1;
 		i2c_scl = 0;
 		i2c_sda_in = 0;
         
+        // Instantiate I2S Test Data: Method 1
+        for(index1 = 0; index1 < `N; index1 = index1 + 1)
+        begin
+            for(index2 = 0; index2 < 2; index2 = index2 + 1)
+            begin
+                i2s_test_data [index1] [index2] = $random;
+            end
+        end
         
-        
-        
-        // Instantiate I2S Test Data
+        /*
+        // Instantiate I2S Test Data: Method 2
         
         i2s_test_data [ 0] [0] = 16'hAAAA;                                                                                   
         i2s_test_data [ 0] [1] = 16'hFFFF;                                                                                           
@@ -119,6 +127,7 @@ module chip_test1;
         i2s_test_data [ 9] [1] = 16'h7435;                                                                                               
         i2s_test_data [10] [0] = 16'h69D9;                                                              
         i2s_test_data [10] [1] = 16'hABCD;
+        */
         
         // Instantiate I2C Test Data
         i2c_test_data[0] = 8'h0;
@@ -1232,20 +1241,13 @@ module chip_test1;
     // I2C TEST BENCH PORTION
     
     // From here onward I mostly copied and pasted from i2c_reg_test_automated.v found in the folder "Control Flow Subsystem"
-    // I have no idea if this will work with the I2S portion
-    
-    // Issues that I (Kevin) can identify.
-    // 1. Whitely and I (Kevin) define the reset signal differently. Whitely uses reset, I use rst_n
-    //      Whitely has reset as a reg, I have it as a wire
-    //      Whitely defines reset in intial block, I use an assign statement
-    // 2. Master clock has two different rates in Whitely's and my portion. Whitely uses #50, I use #5. Should not be a problem afaik
-    // 3. I have no idea if Whitely's portion will affect how my block functions, or vice versa (I believe my block will not change how Whitely's block functions). <<<<< BIGGEST ISSUE :)
+
     
     
     
     always @ (posedge clk or negedge rst_n)
     begin
-            i2c_count = i2c_count + 1;
+        i2c_count = i2c_count + 1;
         if(!rst_n)
         begin
         i2c_count <= 0;
