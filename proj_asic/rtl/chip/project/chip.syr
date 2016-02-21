@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: chip.prj
 
@@ -355,7 +355,7 @@ Synthesizing Unit <filter_stm>.
 	inferred   2 Multiplier(s).
 	inferred   4 Adder/Subtractor(s).
 	inferred  46 D-type flip-flop(s).
-	inferred  40 Multiplexer(s).
+	inferred  41 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <filter_stm> synthesized.
 
@@ -1461,10 +1461,10 @@ Unit <register> synthesized.
 Synthesizing Unit <trig_generator>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\trig_generator.v".
 WARNING:Xst:647 - Input <wdata<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <wdata<3:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <wdata<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wdata<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <trig_i2so_fifo_underrun_clr>.
     Found 1-bit register for signal <trig_i2si_fifo_overrun_clr>.
+    WARNING:Xst:2404 -  FFs/Latches <trig_filter_ovf_flag_clear<0:0>> (without init value) have a constant value of 1 in block <trig_generator>.
     Summary:
 	inferred   2 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
@@ -1572,7 +1572,7 @@ WARNING:Xst:653 - Signal <stop_out> is used but never assigned. This sourceless 
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_21_OUT> created at line 207.
-    Found 8-bit 8-to-1 multiplexer for signal <_n0411> created at line 498.
+    Found 8-bit 8-to-1 multiplexer for signal <_n0394> created at line 498.
     Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_29_o> created at line 269
     Summary:
 	inferred  49 D-type flip-flop(s).
@@ -1594,7 +1594,7 @@ Synthesizing Unit <Sequencer>.
     Found 1-bit register for signal <xfc_ready>.
     Found 1-bit register for signal <Q_addr>.
     Found 11-bit adder for signal <i2c_addr_write[10]_addr_increment[10]_add_1_OUT> created at line 115.
-    Found 11-bit adder for signal <addr_increment[10]_GND_32_o_add_2_OUT> created at line 128.
+    Found 11-bit adder for signal <addr_increment[10]_GND_33_o_add_2_OUT> created at line 128.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  47 D-type flip-flop(s).
@@ -1670,7 +1670,7 @@ Macro Statistics
  16-bit comparator lessequal                           : 1
  32-bit comparator greater                             : 4
  7-bit comparator equal                                : 1
-# Multiplexers                                         : 614
+# Multiplexers                                         : 615
  1-bit 16-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 49
  11-bit 2-to-1 multiplexer                             : 5
@@ -1684,7 +1684,7 @@ Macro Statistics
  8-bit 2-to-1 multiplexer                              : 7
  8-bit 8-to-1 multiplexer                              : 1
  8-bit 9-to-1 multiplexer                              : 1
- 9-bit 2-to-1 multiplexer                              : 18
+ 9-bit 2-to-1 multiplexer                              : 19
 # Logic shifters                                       : 4
  47-bit shifter logical left                           : 2
  60-bit shifter logical right                          : 2
@@ -1766,7 +1766,7 @@ Macro Statistics
  16-bit comparator lessequal                           : 1
  32-bit comparator greater                             : 4
  7-bit comparator equal                                : 1
-# Multiplexers                                         : 16520
+# Multiplexers                                         : 16521
  1-bit 1045-to-1 multiplexer                           : 8
  1-bit 16-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 16433
@@ -1778,7 +1778,7 @@ Macro Statistics
  8-bit 2-to-1 multiplexer                              : 7
  8-bit 8-to-1 multiplexer                              : 1
  8-bit 9-to-1 multiplexer                              : 1
- 9-bit 2-to-1 multiplexer                              : 18
+ 9-bit 2-to-1 multiplexer                              : 19
 # Logic shifters                                       : 4
  47-bit shifter logical left                           : 2
  60-bit shifter logical right                          : 2
@@ -1944,15 +1944,15 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 30186
+# BELS                             : 30189
 #      GND                         : 1
 #      INV                         : 15
 #      LUT1                        : 60
 #      LUT2                        : 138
 #      LUT3                        : 16616
-#      LUT4                        : 165
+#      LUT4                        : 169
 #      LUT5                        : 339
-#      LUT6                        : 12412
+#      LUT6                        : 12411
 #      MUXCY                       : 184
 #      MUXF7                       : 69
 #      MUXF8                       : 2
@@ -1988,17 +1988,17 @@ Selected Device : 7a100tcsg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:           25246  out of  126800    19%  
- Number of Slice LUTs:                29877  out of  63400    47%  
-    Number used as Logic:             29745  out of  63400    46%  
+ Number of Slice LUTs:                29880  out of  63400    47%  
+    Number used as Logic:             29748  out of  63400    46%  
     Number used as Memory:              132  out of  19000     0%  
        Number used as RAM:              128
        Number used as SRL:                4
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  38209
-   Number with an unused Flip Flop:   12963  out of  38209    33%  
-   Number with an unused LUT:          8332  out of  38209    21%  
-   Number of fully used LUT-FF pairs: 16914  out of  38209    44%  
+ Number of LUT Flip Flop pairs used:  38212
+   Number with an unused Flip Flop:   12966  out of  38212    33%  
+   Number with an unused LUT:          8332  out of  38212    21%  
+   Number of fully used LUT-FF pairs: 16914  out of  38212    44%  
    Number of unique control sets:      1062
 
 IO Utilization: 
@@ -2059,7 +2059,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 4.949ns (frequency: 202.049MHz)
-  Total number of paths / destination ports: 420990 / 50867
+  Total number of paths / destination ports: 421150 / 50867
 -------------------------------------------------------------------------
 Delay:               4.949ns (Levels of Logic = 41)
   Source:            Filter/TOP_FILTER_STM/Mmult_accumulator_in_right (DSP)
@@ -2197,12 +2197,12 @@ clk                                       |    4.949|         |         |       
 =========================================================================
 
 
-Total REAL time to Xst completion: 392.00 secs
-Total CPU time to Xst completion: 392.07 secs
+Total REAL time to Xst completion: 338.00 secs
+Total CPU time to Xst completion: 337.90 secs
  
 --> 
 
-Total memory usage is 3696036 kilobytes
+Total memory usage is 3696300 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   15 (  11 filtered)

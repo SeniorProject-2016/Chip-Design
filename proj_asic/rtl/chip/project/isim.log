@@ -1,5 +1,6 @@
 ISim log file
-Running: C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\i2s_in_test4_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/i2s_in_test4_isim_beh.wdb 
+Running: C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\chip_test1_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip_test1_isim_beh.wdb 
+INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
 ISim P.20131013 (signature 0x7708f090)
 ----------------------------------------------------------------------
 INFO:Security:61 - The XILINXD_LICENSE_FILE environment variable is not set.
@@ -27,4 +28,9 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # run all
-Stopped at time : 45442650 ns : File "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/fifo.v" Line 86
+Stopped at time : 1169675 ns : File "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/filter_accumulator.v" Line 19
+# restart
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Stopped at time : 1361585 ns : File "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/filter_round_truncate.v" Line 49
