@@ -12,7 +12,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module chip_test1;
+module chip_test_i2si_serial_enable;
 
 	// General Inputs
 	reg                     clk;

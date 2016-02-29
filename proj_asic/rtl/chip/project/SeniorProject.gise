@@ -64,9 +64,11 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="chip_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="chip_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="chip_summary.xml"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="chip_test1_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="chip_test1_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="chip_test1_isim_beh.wdb"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="chip_test_bist_enable_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="chip_test_i2si_serial_enable_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="chip_test_i2si_serial_enable_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="chip_test_i2si_serial_enable_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="chip_test_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="chip_test_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="chip_usage.xml"/>
@@ -118,7 +120,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1456785971" xil_pn:in_ck="7257701515271990" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1456785971">
+    <transform xil_pn:end_ts="1456786812" xil_pn:in_ck="-6422673768300315113" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1456786812">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Deserializer.v"/>
@@ -126,8 +128,6 @@
       <outfile xil_pn:name="bist_test.v"/>
       <outfile xil_pn:name="chip.v"/>
       <outfile xil_pn:name="chip_reg.v"/>
-      <outfile xil_pn:name="chip_test.v"/>
-      <outfile xil_pn:name="chip_test1.v"/>
       <outfile xil_pn:name="chip_test_bist_enable.v"/>
       <outfile xil_pn:name="chip_test_i2s_serial_enable.v"/>
       <outfile xil_pn:name="deserializer_test.v"/>
@@ -171,11 +171,11 @@
       <outfile xil_pn:name="trig_generator_testbench.v"/>
       <outfile xil_pn:name="trig_generator_testbench1.v"/>
     </transform>
-    <transform xil_pn:end_ts="1456079889" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6685647955089459829" xil_pn:start_ts="1456079889">
+    <transform xil_pn:end_ts="1456786841" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8265959558134516981" xil_pn:start_ts="1456786841">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1456079889" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7106277306228058153" xil_pn:start_ts="1456079889">
+    <transform xil_pn:end_ts="1456786841" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1755398274774199955" xil_pn:start_ts="1456786841">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -183,7 +183,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1456785971" xil_pn:in_ck="7257701515271990" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1456785971">
+    <transform xil_pn:end_ts="1456786812" xil_pn:in_ck="-6422673768300315113" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1456786812">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Deserializer.v"/>
@@ -191,8 +191,6 @@
       <outfile xil_pn:name="bist_test.v"/>
       <outfile xil_pn:name="chip.v"/>
       <outfile xil_pn:name="chip_reg.v"/>
-      <outfile xil_pn:name="chip_test.v"/>
-      <outfile xil_pn:name="chip_test1.v"/>
       <outfile xil_pn:name="chip_test_bist_enable.v"/>
       <outfile xil_pn:name="chip_test_i2s_serial_enable.v"/>
       <outfile xil_pn:name="deserializer_test.v"/>
@@ -236,24 +234,24 @@
       <outfile xil_pn:name="trig_generator_testbench.v"/>
       <outfile xil_pn:name="trig_generator_testbench1.v"/>
     </transform>
-    <transform xil_pn:end_ts="1456785986" xil_pn:in_ck="7257701515271990" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2547102185356087909" xil_pn:start_ts="1456785971">
+    <transform xil_pn:end_ts="1456786849" xil_pn:in_ck="-6422673768300315113" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6534700911048748537" xil_pn:start_ts="1456786841">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="chip_test1_beh.prj"/>
-      <outfile xil_pn:name="chip_test1_isim_beh.exe"/>
+      <outfile xil_pn:name="chip_test_i2si_serial_enable_beh.prj"/>
+      <outfile xil_pn:name="chip_test_i2si_serial_enable_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1456786035" xil_pn:in_ck="4007614749175331857" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="490849245265279144" xil_pn:start_ts="1456786035">
+    <transform xil_pn:end_ts="1456786865" xil_pn:in_ck="8256186921735916615" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="130042767734522940" xil_pn:start_ts="1456786865">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="chip_test1_isim_beh.wdb"/>
+      <outfile xil_pn:name="chip_test_i2si_serial_enable_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>
@@ -293,6 +291,7 @@
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="chip.lso"/>
       <outfile xil_pn:name="chip.ngc"/>
@@ -301,7 +300,6 @@
       <outfile xil_pn:name="chip.stx"/>
       <outfile xil_pn:name="chip.syr"/>
       <outfile xil_pn:name="chip.xst"/>
-      <outfile xil_pn:name="chip_test1_beh.prj"/>
       <outfile xil_pn:name="chip_test_stx_beh.prj"/>
       <outfile xil_pn:name="chip_xst.xrpt"/>
       <outfile xil_pn:name="i2s_in.ngr"/>

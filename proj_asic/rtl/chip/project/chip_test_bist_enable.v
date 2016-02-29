@@ -12,7 +12,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module chip_test1;
+module chip_test_bist_enable;
 
 	// General Inputs
 	reg                     clk;
