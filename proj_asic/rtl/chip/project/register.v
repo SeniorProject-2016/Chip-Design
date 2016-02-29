@@ -3173,7 +3173,7 @@ module register(rst, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
 					rxfc <= wxfc & ~w_enable; // should not assert rxfc for every transaction, only for an actual read
 					
                // Given the address, the signals are assigned to their correlated bits of data
-					if(wxfc & ~w_enable)
+					if(wxfc & ~w_enable);
 					begin
 					case(addr)
                     11'h004: begin

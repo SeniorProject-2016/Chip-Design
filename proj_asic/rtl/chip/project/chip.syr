@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: chip.prj
 
@@ -181,8 +181,8 @@ Elaborating module <filter_storage>.
 Elaborating module <filter_accumulator>.
 
 Elaborating module <filter_round_truncate>.
-"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" Line 53. $display acc_t > (1<<15)-1
-"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" Line 63. $display acc_t < -(1<<15) = -32768
+"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" Line 50. $display acc_t > (1<<15)-1
+"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" Line 60. $display acc_t < -(1<<15) = -32768
 
 Elaborating module <filter_mux>.
 
@@ -390,13 +390,13 @@ Synthesizing Unit <filter_round_truncate>.
     Found 47-bit adder for signal <ext_acc_in[46]_GND_19_o_add_4_OUT> created at line 43.
     Found 47-bit shifter logical left for signal <n0058> created at line 43
     Found 60-bit shifter logical right for signal <n0035> created at line 46
-    Found 32-bit comparator greater for signal <acc_t[27]_GND_19_o_LessThan_7_o> created at line 51
-    Found 32-bit comparator greater for signal <PWR_18_o_acc_t[27]_LessThan_10_o> created at line 61
+    Found 32-bit comparator greater for signal <acc_t[27]_GND_19_o_LessThan_7_o> created at line 48
+    Found 32-bit comparator greater for signal <PWR_18_o_acc_t[27]_LessThan_10_o> created at line 58
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  92 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-	inferred   5 Multiplexer(s).
+	inferred   4 Multiplexer(s).
 	inferred   2 Combinational logic shifter(s).
 Unit <filter_round_truncate> synthesized.
 
@@ -1455,16 +1455,16 @@ Synthesizing Unit <register>.
     Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT> created at line 3178.
     Summary:
 	inferred 8239 D-type flip-flop(s).
-	inferred   3 Multiplexer(s).
+	inferred   2 Multiplexer(s).
 Unit <register> synthesized.
 
 Synthesizing Unit <trig_generator>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\trig_generator.v".
 WARNING:Xst:647 - Input <wdata<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <wdata<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wdata<3:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wdata<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <trig_i2so_fifo_underrun_clr>.
     Found 1-bit register for signal <trig_i2si_fifo_overrun_clr>.
-    WARNING:Xst:2404 -  FFs/Latches <trig_filter_ovf_flag_clear<0:0>> (without init value) have a constant value of 1 in block <trig_generator>.
     Summary:
 	inferred   2 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
@@ -1572,7 +1572,7 @@ WARNING:Xst:653 - Signal <stop_out> is used but never assigned. This sourceless 
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_21_OUT> created at line 207.
-    Found 8-bit 8-to-1 multiplexer for signal <_n0394> created at line 498.
+    Found 8-bit 8-to-1 multiplexer for signal <_n0411> created at line 498.
     Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_29_o> created at line 269
     Summary:
 	inferred  49 D-type flip-flop(s).
@@ -1594,7 +1594,7 @@ Synthesizing Unit <Sequencer>.
     Found 1-bit register for signal <xfc_ready>.
     Found 1-bit register for signal <Q_addr>.
     Found 11-bit adder for signal <i2c_addr_write[10]_addr_increment[10]_add_1_OUT> created at line 115.
-    Found 11-bit adder for signal <addr_increment[10]_GND_33_o_add_2_OUT> created at line 128.
+    Found 11-bit adder for signal <addr_increment[10]_GND_32_o_add_2_OUT> created at line 128.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  47 D-type flip-flop(s).
@@ -1670,9 +1670,9 @@ Macro Statistics
  16-bit comparator lessequal                           : 1
  32-bit comparator greater                             : 4
  7-bit comparator equal                                : 1
-# Multiplexers                                         : 615
+# Multiplexers                                         : 612
  1-bit 16-to-1 multiplexer                             : 2
- 1-bit 2-to-1 multiplexer                              : 49
+ 1-bit 2-to-1 multiplexer                              : 47
  11-bit 2-to-1 multiplexer                             : 5
  16-bit 512-to-1 multiplexer                           : 1
  32-bit 2-to-1 multiplexer                             : 517
@@ -1681,7 +1681,7 @@ Macro Statistics
  40-bit 2-to-1 multiplexer                             : 2
  47-bit 2-to-1 multiplexer                             : 8
  8-bit 1045-to-1 multiplexer                           : 1
- 8-bit 2-to-1 multiplexer                              : 7
+ 8-bit 2-to-1 multiplexer                              : 6
  8-bit 8-to-1 multiplexer                              : 1
  8-bit 9-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 19
@@ -1696,6 +1696,8 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1710 - FF/Latch <ro_filter_ovf_flag> (without init value) has a constant value of 0 in block <TOP_FILTER_ROUND_TRUNCATE_LEFT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ro_filter_ovf_flag> (without init value) has a constant value of 0 in block <TOP_FILTER_ROUND_TRUNCATE_RIGHT>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <Sequencer>.
 The following registers are absorbed into counter <addr_increment>: 1 register on signal <addr_increment>.
@@ -1766,16 +1768,16 @@ Macro Statistics
  16-bit comparator lessequal                           : 1
  32-bit comparator greater                             : 4
  7-bit comparator equal                                : 1
-# Multiplexers                                         : 16521
+# Multiplexers                                         : 16518
  1-bit 1045-to-1 multiplexer                           : 8
  1-bit 16-to-1 multiplexer                             : 2
- 1-bit 2-to-1 multiplexer                              : 16433
+ 1-bit 2-to-1 multiplexer                              : 16431
  1-bit 512-to-1 multiplexer                            : 32
  11-bit 2-to-1 multiplexer                             : 4
  16-bit 512-to-1 multiplexer                           : 1
  32-bit 2-to-1 multiplexer                             : 5
  47-bit 2-to-1 multiplexer                             : 8
- 8-bit 2-to-1 multiplexer                              : 7
+ 8-bit 2-to-1 multiplexer                              : 6
  8-bit 8-to-1 multiplexer                              : 1
  8-bit 9-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 19
@@ -1898,6 +1900,7 @@ Optimizing unit <filter_storage> ...
 Optimizing unit <filter_round_truncate> ...
 
 Optimizing unit <register> ...
+WARNING:Xst:1710 - FF/Latch <Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/ro_filter_ovf_flag> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -1916,8 +1919,8 @@ Unit <chip> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 25237
- Flip-Flops                                            : 25237
+# Registers                                            : 25235
+ Flip-Flops                                            : 25235
 # Shift Registers                                      : 4
  2-bit shift register                                  : 1
  3-bit shift register                                  : 1
@@ -1944,23 +1947,23 @@ Top Level Output File Name         : chip.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 30189
+# BELS                             : 30179
 #      GND                         : 1
 #      INV                         : 15
 #      LUT1                        : 60
 #      LUT2                        : 138
-#      LUT3                        : 16616
+#      LUT3                        : 16612
 #      LUT4                        : 169
-#      LUT5                        : 339
-#      LUT6                        : 12411
+#      LUT5                        : 329
+#      LUT6                        : 12416
 #      MUXCY                       : 184
-#      MUXF7                       : 69
+#      MUXF7                       : 68
 #      MUXF8                       : 2
 #      VCC                         : 1
 #      XORCY                       : 184
-# FlipFlops/Latches                : 25246
+# FlipFlops/Latches                : 25244
 #      FD                          : 26
-#      FDC                         : 70
+#      FDC                         : 68
 #      FDCE                        : 24918
 #      FDE                         : 130
 #      FDP                         : 4
@@ -1987,18 +1990,18 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           25246  out of  126800    19%  
- Number of Slice LUTs:                29880  out of  63400    47%  
-    Number used as Logic:             29748  out of  63400    46%  
+ Number of Slice Registers:           25244  out of  126800    19%  
+ Number of Slice LUTs:                29871  out of  63400    47%  
+    Number used as Logic:             29739  out of  63400    46%  
     Number used as Memory:              132  out of  19000     0%  
        Number used as RAM:              128
        Number used as SRL:                4
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  38212
-   Number with an unused Flip Flop:   12966  out of  38212    33%  
-   Number with an unused LUT:          8332  out of  38212    21%  
-   Number of fully used LUT-FF pairs: 16914  out of  38212    44%  
+ Number of LUT Flip Flop pairs used:  38204
+   Number with an unused Flip Flop:   12960  out of  38204    33%  
+   Number with an unused LUT:          8333  out of  38204    21%  
+   Number of fully used LUT-FF pairs: 16911  out of  38204    44%  
    Number of unique control sets:      1062
 
 IO Utilization: 
@@ -2030,7 +2033,7 @@ Clock Information:
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
 Clock Signal                                                                             | Clock buffer(FF name)                      | Load  |
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
-clk                                                                                      | BUFGP                                      | 25314 |
+clk                                                                                      | BUFGP                                      | 25312 |
 I2C/i2c_top_deserializer/i2c_sda_neg_pulse(I2C/i2c_top_deserializer/i2c_sda_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/sda_state)| 1     |
 I2C/i2c_top_deserializer/i2c_scl_neg_pulse(I2C/i2c_top_deserializer/i2c_scl_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/scl_state)| 1     |
 -----------------------------------------------------------------------------------------+--------------------------------------------+-------+
@@ -2048,7 +2051,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 4.949ns (Maximum Frequency: 202.049MHz)
-   Minimum input arrival time before clock: 3.361ns
+   Minimum input arrival time before clock: 3.438ns
    Maximum output required time after clock: 0.687ns
    Maximum combinational path delay: No path found
 
@@ -2059,7 +2062,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 4.949ns (frequency: 202.049MHz)
-  Total number of paths / destination ports: 421150 / 50867
+  Total number of paths / destination ports: 421077 / 50865
 -------------------------------------------------------------------------
 Delay:               4.949ns (Levels of Logic = 41)
   Source:            Filter/TOP_FILTER_STM/Mmult_accumulator_in_right (DSP)
@@ -2120,29 +2123,29 @@ Delay:               4.949ns (Levels of Logic = 41)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 196 / 152
+  Total number of paths / destination ports: 187 / 152
 -------------------------------------------------------------------------
-Offset:              3.361ns (Levels of Logic = 8)
+Offset:              3.438ns (Levels of Logic = 8)
   Source:            rst_n (PAD)
-  Destination:       Register/Register/rdata_4 (FF)
+  Destination:       Register/Register/rdata_3 (FF)
   Destination Clock: clk rising
 
-  Data Path: rst_n to Register/Register/rdata_4
+  Data Path: rst_n to Register/Register/rdata_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           165   0.001   0.506  rst_n_IBUF (rst_n_IBUF)
-     LUT2:I0->O            3   0.097   0.703  Register/Register/Mmux_rdata[7]_GND_23_o_mux_3094_OUT51 (Register/Register/rdata[7]_GND_23_o_mux_3094_OUT<4>)
-     LUT6:I0->O            1   0.097   0.000  Register/Register/mux4_152 (Register/Register/mux4_152)
-     MUXF7:I1->O           1   0.279   0.511  Register/Register/mux4_14_f7 (Register/Register/mux4_14_f7)
-     LUT6:I3->O            1   0.097   0.295  Register/Register/addr<6>1 (Register/Register/addr<6>11)
-     LUT6:I5->O            1   0.097   0.000  Register/Register/mux4_4 (Register/Register/mux4_4)
-     MUXF7:I0->O           1   0.277   0.295  Register/Register/mux4_2_f7 (Register/Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT<4>)
-     LUT5:I4->O            1   0.097   0.000  Register/Register/Mmux_rdata[7]_addr[10]_mux_3096_OUT51 (Register/Register/rdata[7]_addr[10]_mux_3096_OUT<4>)
-     FD:D                      0.008          Register/Register/rdata_4
+     IBUF:I->O           155   0.001   0.505  rst_n_IBUF (rst_n_IBUF)
+     LUT2:I0->O            2   0.097   0.516  Register/Register/Mmux_rdata[7]_GND_23_o_mux_3094_OUT11 (Register/Register/rdata[7]_GND_23_o_mux_3094_OUT<0>)
+     LUT6:I3->O            1   0.097   0.000  Register/Register/mux_1916 (Register/Register/mux_1916)
+     MUXF7:I1->O           1   0.279   0.379  Register/Register/mux_18_f7 (Register/Register/mux_18_f7)
+     LUT5:I3->O            1   0.097   0.693  Register/Register/addr<7>12 (Register/Register/addr<7>15)
+     LUT6:I0->O            1   0.097   0.295  Register/Register/addr<7>13 (Register/Register/addr<7>11)
+     LUT5:I4->O            1   0.097   0.000  Register/Register/mux_4 (Register/Register/mux_4)
+     MUXF7:I0->O           1   0.277   0.000  Register/Register/mux_2_f7 (Register/Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT<0>)
+     FD:D                      0.008          Register/Register/rdata_0
     ----------------------------------------
-    Total                      3.361ns (1.050ns logic, 2.311ns route)
-                                       (31.2% logic, 68.8% route)
+    Total                      3.438ns (1.050ns logic, 2.388ns route)
+                                       (30.5% logic, 69.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -2197,14 +2200,14 @@ clk                                       |    4.949|         |         |       
 =========================================================================
 
 
-Total REAL time to Xst completion: 338.00 secs
-Total CPU time to Xst completion: 337.90 secs
+Total REAL time to Xst completion: 317.00 secs
+Total CPU time to Xst completion: 317.23 secs
  
 --> 
 
-Total memory usage is 3696300 kilobytes
+Total memory usage is 3700088 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   15 (  11 filtered)
+Number of warnings :   19 (  12 filtered)
 Number of infos    :    2 (   0 filtered)
 

@@ -27,7 +27,6 @@ module trig_generator(clk, rst, address, wdata, xfc, trig_i2si_fifo_overrun_clr,
         begin
             trig_i2si_fifo_overrun_clr <= 0;
             trig_i2so_fifo_underrun_clr <= 0;
-            trig_filter_ovf_flag_clear <= 1;
         end
         
         else
@@ -35,7 +34,6 @@ module trig_generator(clk, rst, address, wdata, xfc, trig_i2si_fifo_overrun_clr,
             // initializing trigger bits to zero	
             trig_i2si_fifo_overrun_clr <= 0;
             trig_i2so_fifo_underrun_clr <= 0;
-            trig_filter_ovf_flag_clear <= 1;
             // triggering when file transfer is complete and address being written to is 0x00c
             if	(address == 11'h008 && xfc ==1)
                 begin

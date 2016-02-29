@@ -63,8 +63,8 @@ module i2c(
         .Clock				(clk), 				//external input	*
         .reset				(reset), 			//external input	*
         .i2c_rdata			(i2c_rdata), 		//external input	*
-        .i2c_xfc_read		(i2c_xfc_read), 	//external input 	*
-        .stop_out			(stop_out)			//internal input	*
+        .i2c_xfc_read		(i2c_xfc_read) 	//external input 	*
+        //.stop_out			(stop_out)			//internal input	*
         );
 	 
 endmodule
