@@ -1,0 +1,1883 @@
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_metadata
+  19              		.global	cy_meta_flashprotect
+  20              		.global	cy_meta_wonvl
+  21              		.global	cy_meta_custnvl
+  22              		.global	cy_meta_configecc
+  23              		.section	.cyconfigecc,"a",%progbits
+  24              		.align	2
+  25              		.type	cy_meta_configecc, %object
+  26              		.size	cy_meta_configecc, 1300
+  27              	cy_meta_configecc:
+  28 0000 03       		.byte	3
+  29 0001 52       		.byte	82
+  30 0002 00       		.byte	0
+  31 0003 40       		.byte	64
+  32 0004 01       		.byte	1
+  33 0005 5A       		.byte	90
+  34 0006 00       		.byte	0
+  35 0007 40       		.byte	64
+  36 0008 02       		.byte	2
+  37 0009 64       		.byte	100
+  38 000a 00       		.byte	0
+  39 000b 40       		.byte	64
+  40 000c 22       		.byte	34
+  41 000d 00       		.byte	0
+  42 000e 01       		.byte	1
+  43 000f 40       		.byte	64
+  44 0010 39       		.byte	57
+  45 0011 01       		.byte	1
+  46 0012 01       		.byte	1
+  47 0013 40       		.byte	64
+  48 0014 66       		.byte	102
+  49 0015 02       		.byte	2
+  50 0016 01       		.byte	1
+  51 0017 40       		.byte	64
+  52 0018 4C       		.byte	76
+  53 0019 03       		.byte	3
+  54 001a 01       		.byte	1
+  55 001b 40       		.byte	64
+  56 001c 1A       		.byte	26
+  57 001d 04       		.byte	4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 2
+
+
+  58 001e 01       		.byte	1
+  59 001f 40       		.byte	64
+  60 0020 44       		.byte	68
+  61 0021 05       		.byte	5
+  62 0022 01       		.byte	1
+  63 0023 40       		.byte	64
+  64 0024 03       		.byte	3
+  65 0025 07       		.byte	7
+  66 0026 01       		.byte	1
+  67 0027 40       		.byte	64
+  68 0028 01       		.byte	1
+  69 0029 09       		.byte	9
+  70 002a 01       		.byte	1
+  71 002b 40       		.byte	64
+  72 002c 02       		.byte	2
+  73 002d 0B       		.byte	11
+  74 002e 01       		.byte	1
+  75 002f 40       		.byte	64
+  76 0030 02       		.byte	2
+  77 0031 15       		.byte	21
+  78 0032 01       		.byte	1
+  79 0033 40       		.byte	64
+  80 0034 02       		.byte	2
+  81 0035 1B       		.byte	27
+  82 0036 01       		.byte	1
+  83 0037 40       		.byte	64
+  84 0038 0B       		.byte	11
+  85 0039 40       		.byte	64
+  86 003a 01       		.byte	1
+  87 003b 40       		.byte	64
+  88 003c 09       		.byte	9
+  89 003d 41       		.byte	65
+  90 003e 01       		.byte	1
+  91 003f 40       		.byte	64
+  92 0040 04       		.byte	4
+  93 0041 42       		.byte	66
+  94 0042 01       		.byte	1
+  95 0043 40       		.byte	64
+  96 0044 02       		.byte	2
+  97 0045 43       		.byte	67
+  98 0046 01       		.byte	1
+  99 0047 40       		.byte	64
+ 100 0048 02       		.byte	2
+ 101 0049 44       		.byte	68
+ 102 004a 01       		.byte	1
+ 103 004b 40       		.byte	64
+ 104 004c 03       		.byte	3
+ 105 004d 45       		.byte	69
+ 106 004e 01       		.byte	1
+ 107 004f 40       		.byte	64
+ 108 0050 07       		.byte	7
+ 109 0051 46       		.byte	70
+ 110 0052 01       		.byte	1
+ 111 0053 40       		.byte	64
+ 112 0054 05       		.byte	5
+ 113 0055 47       		.byte	71
+ 114 0056 01       		.byte	1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 3
+
+
+ 115 0057 40       		.byte	64
+ 116 0058 03       		.byte	3
+ 117 0059 48       		.byte	72
+ 118 005a 01       		.byte	1
+ 119 005b 40       		.byte	64
+ 120 005c 06       		.byte	6
+ 121 005d 49       		.byte	73
+ 122 005e 01       		.byte	1
+ 123 005f 40       		.byte	64
+ 124 0060 03       		.byte	3
+ 125 0061 4C       		.byte	76
+ 126 0062 01       		.byte	1
+ 127 0063 40       		.byte	64
+ 128 0064 07       		.byte	7
+ 129 0065 4D       		.byte	77
+ 130 0066 01       		.byte	1
+ 131 0067 40       		.byte	64
+ 132 0068 03       		.byte	3
+ 133 0069 50       		.byte	80
+ 134 006a 01       		.byte	1
+ 135 006b 40       		.byte	64
+ 136 006c 01       		.byte	1
+ 137 006d 51       		.byte	81
+ 138 006e 01       		.byte	1
+ 139 006f 40       		.byte	64
+ 140 0070 10       		.byte	16
+ 141 0071 80       		.byte	-128
+ 142 0072 20       		.byte	32
+ 143 0073 03       		.byte	3
+ 144 0074 21       		.byte	33
+ 145 0075 06       		.byte	6
+ 146 0076 97       		.byte	-105
+ 147 0077 01       		.byte	1
+ 148 0078 82       		.byte	-126
+ 149 0079 3F       		.byte	63
+ 150 007a 84       		.byte	-124
+ 151 007b 0F       		.byte	15
+ 152 007c 06       		.byte	6
+ 153 007d 4C       		.byte	76
+ 154 007e 0C       		.byte	12
+ 155 007f 31       		.byte	49
+ 156 0080 0E       		.byte	14
+ 157 0081 46       		.byte	70
+ 158 0082 10       		.byte	16
+ 159 0083 31       		.byte	49
+ 160 0084 12       		.byte	18
+ 161 0085 0E       		.byte	14
+ 162 0086 14       		.byte	20
+ 163 0087 6C       		.byte	108
+ 164 0088 16       		.byte	22
+ 165 0089 03       		.byte	3
+ 166 008a 1A       		.byte	26
+ 167 008b 08       		.byte	8
+ 168 008c 2A       		.byte	42
+ 169 008d 13       		.byte	19
+ 170 008e 30       		.byte	48
+ 171 008f 4A       		.byte	74
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 4
+
+
+ 172 0090 32       		.byte	50
+ 173 0091 0F       		.byte	15
+ 174 0092 34       		.byte	52
+ 175 0093 30       		.byte	48
+ 176 0094 38       		.byte	56
+ 177 0095 20       		.byte	32
+ 178 0096 3A       		.byte	58
+ 179 0097 0A       		.byte	10
+ 180 0098 3E       		.byte	62
+ 181 0099 10       		.byte	16
+ 182 009a 40       		.byte	64
+ 183 009b 02       		.byte	2
+ 184 009c 45       		.byte	69
+ 185 009d 04       		.byte	4
+ 186 009e 49       		.byte	73
+ 187 009f FF       		.byte	-1
+ 188 00a0 4A       		.byte	74
+ 189 00a1 07       		.byte	7
+ 190 00a2 4B       		.byte	75
+ 191 00a3 FF       		.byte	-1
+ 192 00a4 4C       		.byte	76
+ 193 00a5 40       		.byte	64
+ 194 00a6 4D       		.byte	77
+ 195 00a7 20       		.byte	32
+ 196 00a8 4E       		.byte	78
+ 197 00a9 F0       		.byte	-16
+ 198 00aa 4F       		.byte	79
+ 199 00ab 05       		.byte	5
+ 200 00ac 50       		.byte	80
+ 201 00ad 08       		.byte	8
+ 202 00ae 58       		.byte	88
+ 203 00af 04       		.byte	4
+ 204 00b0 5A       		.byte	90
+ 205 00b1 04       		.byte	4
+ 206 00b2 5C       		.byte	92
+ 207 00b3 02       		.byte	2
+ 208 00b4 5D       		.byte	93
+ 209 00b5 02       		.byte	2
+ 210 00b6 5F       		.byte	95
+ 211 00b7 01       		.byte	1
+ 212 00b8 60       		.byte	96
+ 213 00b9 40       		.byte	64
+ 214 00ba 61       		.byte	97
+ 215 00bb A8       		.byte	-88
+ 216 00bc 62       		.byte	98
+ 217 00bd 40       		.byte	64
+ 218 00be 63       		.byte	99
+ 219 00bf 20       		.byte	32
+ 220 00c0 01       		.byte	1
+ 221 00c1 88       		.byte	-120
+ 222 00c2 04       		.byte	4
+ 223 00c3 48       		.byte	72
+ 224 00c4 05       		.byte	5
+ 225 00c5 10       		.byte	16
+ 226 00c6 06       		.byte	6
+ 227 00c7 80       		.byte	-128
+ 228 00c8 0A       		.byte	10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 5
+
+
+ 229 00c9 A0       		.byte	-96
+ 230 00ca 0B       		.byte	11
+ 231 00cb 08       		.byte	8
+ 232 00cc 0D       		.byte	13
+ 233 00cd 08       		.byte	8
+ 234 00ce 0E       		.byte	14
+ 235 00cf 01       		.byte	1
+ 236 00d0 0F       		.byte	15
+ 237 00d1 08       		.byte	8
+ 238 00d2 10       		.byte	16
+ 239 00d3 08       		.byte	8
+ 240 00d4 15       		.byte	21
+ 241 00d5 04       		.byte	4
+ 242 00d6 16       		.byte	22
+ 243 00d7 08       		.byte	8
+ 244 00d8 17       		.byte	23
+ 245 00d9 82       		.byte	-126
+ 246 00da 1A       		.byte	26
+ 247 00db A4       		.byte	-92
+ 248 00dc 1C       		.byte	28
+ 249 00dd 20       		.byte	32
+ 250 00de 1D       		.byte	29
+ 251 00df 38       		.byte	56
+ 252 00e0 1E       		.byte	30
+ 253 00e1 88       		.byte	-120
+ 254 00e2 1F       		.byte	31
+ 255 00e3 40       		.byte	64
+ 256 00e4 27       		.byte	39
+ 257 00e5 42       		.byte	66
+ 258 00e6 28       		.byte	40
+ 259 00e7 08       		.byte	8
+ 260 00e8 2B       		.byte	43
+ 261 00e9 08       		.byte	8
+ 262 00ea 2D       		.byte	45
+ 263 00eb 50       		.byte	80
+ 264 00ec 2F       		.byte	47
+ 265 00ed 10       		.byte	16
+ 266 00ee 36       		.byte	54
+ 267 00ef 24       		.byte	36
+ 268 00f0 37       		.byte	55
+ 269 00f1 42       		.byte	66
+ 270 00f2 3C       		.byte	60
+ 271 00f3 20       		.byte	32
+ 272 00f4 3D       		.byte	61
+ 273 00f5 04       		.byte	4
+ 274 00f6 3E       		.byte	62
+ 275 00f7 81       		.byte	-127
+ 276 00f8 42       		.byte	66
+ 277 00f9 04       		.byte	4
+ 278 00fa 45       		.byte	69
+ 279 00fb 28       		.byte	40
+ 280 00fc 47       		.byte	71
+ 281 00fd 02       		.byte	2
+ 282 00fe 49       		.byte	73
+ 283 00ff 04       		.byte	4
+ 284 0100 4B       		.byte	75
+ 285 0101 08       		.byte	8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 6
+
+
+ 286 0102 4D       		.byte	77
+ 287 0103 01       		.byte	1
+ 288 0104 4E       		.byte	78
+ 289 0105 20       		.byte	32
+ 290 0106 4F       		.byte	79
+ 291 0107 08       		.byte	8
+ 292 0108 50       		.byte	80
+ 293 0109 08       		.byte	8
+ 294 010a 56       		.byte	86
+ 295 010b 80       		.byte	-128
+ 296 010c 57       		.byte	87
+ 297 010d 0A       		.byte	10
+ 298 010e 58       		.byte	88
+ 299 010f 20       		.byte	32
+ 300 0110 5B       		.byte	91
+ 301 0111 10       		.byte	16
+ 302 0112 5C       		.byte	92
+ 303 0113 08       		.byte	8
+ 304 0114 5E       		.byte	94
+ 305 0115 80       		.byte	-128
+ 306 0116 5F       		.byte	95
+ 307 0117 10       		.byte	16
+ 308 0118 6C       		.byte	108
+ 309 0119 20       		.byte	32
+ 310 011a 6D       		.byte	109
+ 311 011b 40       		.byte	64
+ 312 011c 6E       		.byte	110
+ 313 011d 10       		.byte	16
+ 314 011e 6F       		.byte	111
+ 315 011f 10       		.byte	16
+ 316 0120 84       		.byte	-124
+ 317 0121 21       		.byte	33
+ 318 0122 C0       		.byte	-64
+ 319 0123 F5       		.byte	-11
+ 320 0124 C2       		.byte	-62
+ 321 0125 EE       		.byte	-18
+ 322 0126 C4       		.byte	-60
+ 323 0127 F2       		.byte	-14
+ 324 0128 CA       		.byte	-54
+ 325 0129 70       		.byte	112
+ 326 012a CC       		.byte	-52
+ 327 012b F0       		.byte	-16
+ 328 012c CE       		.byte	-50
+ 329 012d F0       		.byte	-16
+ 330 012e D0       		.byte	-48
+ 331 012f E4       		.byte	-28
+ 332 0130 D6       		.byte	-42
+ 333 0131 70       		.byte	112
+ 334 0132 00       		.byte	0
+ 335 0133 FF       		.byte	-1
+ 336 0134 04       		.byte	4
+ 337 0135 01       		.byte	1
+ 338 0136 06       		.byte	6
+ 339 0137 04       		.byte	4
+ 340 0138 07       		.byte	7
+ 341 0139 3F       		.byte	63
+ 342 013a 08       		.byte	8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 7
+
+
+ 343 013b 01       		.byte	1
+ 344 013c 0A       		.byte	10
+ 345 013d 08       		.byte	8
+ 346 013e 0B       		.byte	11
+ 347 013f 40       		.byte	64
+ 348 0140 0C       		.byte	12
+ 349 0141 01       		.byte	1
+ 350 0142 0D       		.byte	13
+ 351 0143 02       		.byte	2
+ 352 0144 0E       		.byte	14
+ 353 0145 02       		.byte	2
+ 354 0146 0F       		.byte	15
+ 355 0147 40       		.byte	64
+ 356 0148 11       		.byte	17
+ 357 0149 04       		.byte	4
+ 358 014a 12       		.byte	18
+ 359 014b FE       		.byte	-2
+ 360 014c 13       		.byte	19
+ 361 014d 40       		.byte	64
+ 362 014e 14       		.byte	20
+ 363 014f 01       		.byte	1
+ 364 0150 15       		.byte	21
+ 365 0151 40       		.byte	64
+ 366 0152 16       		.byte	22
+ 367 0153 80       		.byte	-128
+ 368 0154 17       		.byte	23
+ 369 0155 20       		.byte	32
+ 370 0156 19       		.byte	25
+ 371 0157 7F       		.byte	127
+ 372 0158 1A       		.byte	26
+ 373 0159 FE       		.byte	-2
+ 374 015a 1C       		.byte	28
+ 375 015b 01       		.byte	1
+ 376 015c 1E       		.byte	30
+ 377 015d 20       		.byte	32
+ 378 015e 20       		.byte	32
+ 379 015f 01       		.byte	1
+ 380 0160 21       		.byte	33
+ 381 0161 08       		.byte	8
+ 382 0162 22       		.byte	34
+ 383 0163 10       		.byte	16
+ 384 0164 23       		.byte	35
+ 385 0165 40       		.byte	64
+ 386 0166 24       		.byte	36
+ 387 0167 01       		.byte	1
+ 388 0168 25       		.byte	37
+ 389 0169 10       		.byte	16
+ 390 016a 26       		.byte	38
+ 391 016b 40       		.byte	64
+ 392 016c 27       		.byte	39
+ 393 016d 40       		.byte	64
+ 394 016e 29       		.byte	41
+ 395 016f 40       		.byte	64
+ 396 0170 2B       		.byte	43
+ 397 0171 01       		.byte	1
+ 398 0172 2D       		.byte	45
+ 399 0173 80       		.byte	-128
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 8
+
+
+ 400 0174 2E       		.byte	46
+ 401 0175 01       		.byte	1
+ 402 0176 2F       		.byte	47
+ 403 0177 3F       		.byte	63
+ 404 0178 30       		.byte	48
+ 405 0179 FF       		.byte	-1
+ 406 017a 31       		.byte	49
+ 407 017b 80       		.byte	-128
+ 408 017c 34       		.byte	52
+ 409 017d FF       		.byte	-1
+ 410 017e 35       		.byte	53
+ 411 017f 7F       		.byte	127
+ 412 0180 56       		.byte	86
+ 413 0181 02       		.byte	2
+ 414 0182 57       		.byte	87
+ 415 0183 28       		.byte	40
+ 416 0184 58       		.byte	88
+ 417 0185 04       		.byte	4
+ 418 0186 59       		.byte	89
+ 419 0187 04       		.byte	4
+ 420 0188 5B       		.byte	91
+ 421 0189 04       		.byte	4
+ 422 018a 5C       		.byte	92
+ 423 018b 11       		.byte	17
+ 424 018c 5D       		.byte	93
+ 425 018d 10       		.byte	16
+ 426 018e 5F       		.byte	95
+ 427 018f 01       		.byte	1
+ 428 0190 85       		.byte	-123
+ 429 0191 14       		.byte	20
+ 430 0192 86       		.byte	-122
+ 431 0193 08       		.byte	8
+ 432 0194 8C       		.byte	-116
+ 433 0195 53       		.byte	83
+ 434 0196 8E       		.byte	-114
+ 435 0197 0C       		.byte	12
+ 436 0198 90       		.byte	-112
+ 437 0199 53       		.byte	83
+ 438 019a 92       		.byte	-110
+ 439 019b 04       		.byte	4
+ 440 019c 93       		.byte	-109
+ 441 019d 03       		.byte	3
+ 442 019e 94       		.byte	-108
+ 443 019f 0A       		.byte	10
+ 444 01a0 95       		.byte	-107
+ 445 01a1 10       		.byte	16
+ 446 01a2 96       		.byte	-106
+ 447 01a3 54       		.byte	84
+ 448 01a4 98       		.byte	-104
+ 449 01a5 80       		.byte	-128
+ 450 01a6 99       		.byte	-103
+ 451 01a7 1C       		.byte	28
+ 452 01a8 9B       		.byte	-101
+ 453 01a9 02       		.byte	2
+ 454 01aa 9C       		.byte	-100
+ 455 01ab 03       		.byte	3
+ 456 01ac 9D       		.byte	-99
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 9
+
+
+ 457 01ad 0C       		.byte	12
+ 458 01ae 9E       		.byte	-98
+ 459 01af 44       		.byte	68
+ 460 01b0 9F       		.byte	-97
+ 461 01b1 11       		.byte	17
+ 462 01b2 A5       		.byte	-91
+ 463 01b3 09       		.byte	9
+ 464 01b4 A7       		.byte	-89
+ 465 01b5 10       		.byte	16
+ 466 01b6 A8       		.byte	-88
+ 467 01b7 20       		.byte	32
+ 468 01b8 AA       		.byte	-86
+ 469 01b9 45       		.byte	69
+ 470 01ba AD       		.byte	-83
+ 471 01bb 10       		.byte	16
+ 472 01bc AF       		.byte	-81
+ 473 01bd 0C       		.byte	12
+ 474 01be B0       		.byte	-80
+ 475 01bf 40       		.byte	64
+ 476 01c0 B1       		.byte	-79
+ 477 01c1 1F       		.byte	31
+ 478 01c2 B2       		.byte	-78
+ 479 01c3 30       		.byte	48
+ 480 01c4 B4       		.byte	-76
+ 481 01c5 80       		.byte	-128
+ 482 01c6 B5       		.byte	-75
+ 483 01c7 1F       		.byte	31
+ 484 01c8 B6       		.byte	-74
+ 485 01c9 0F       		.byte	15
+ 486 01ca B8       		.byte	-72
+ 487 01cb 08       		.byte	8
+ 488 01cc B9       		.byte	-71
+ 489 01cd 80       		.byte	-128
+ 490 01ce BA       		.byte	-70
+ 491 01cf 80       		.byte	-128
+ 492 01d0 BE       		.byte	-66
+ 493 01d1 11       		.byte	17
+ 494 01d2 BF       		.byte	-65
+ 495 01d3 40       		.byte	64
+ 496 01d4 C0       		.byte	-64
+ 497 01d5 56       		.byte	86
+ 498 01d6 C1       		.byte	-63
+ 499 01d7 01       		.byte	1
+ 500 01d8 C5       		.byte	-59
+ 501 01d9 E0       		.byte	-32
+ 502 01da C6       		.byte	-58
+ 503 01db 0C       		.byte	12
+ 504 01dc C7       		.byte	-57
+ 505 01dd 0B       		.byte	11
+ 506 01de C8       		.byte	-56
+ 507 01df 16       		.byte	22
+ 508 01e0 C9       		.byte	-55
+ 509 01e1 FF       		.byte	-1
+ 510 01e2 CA       		.byte	-54
+ 511 01e3 FF       		.byte	-1
+ 512 01e4 CB       		.byte	-53
+ 513 01e5 FF       		.byte	-1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 10
+
+
+ 514 01e6 CE       		.byte	-50
+ 515 01e7 F0       		.byte	-16
+ 516 01e8 CF       		.byte	-49
+ 517 01e9 44       		.byte	68
+ 518 01ea D0       		.byte	-48
+ 519 01eb 0C       		.byte	12
+ 520 01ec D8       		.byte	-40
+ 521 01ed 04       		.byte	4
+ 522 01ee D9       		.byte	-39
+ 523 01ef 04       		.byte	4
+ 524 01f0 DA       		.byte	-38
+ 525 01f1 04       		.byte	4
+ 526 01f2 DC       		.byte	-36
+ 527 01f3 22       		.byte	34
+ 528 01f4 DD       		.byte	-35
+ 529 01f5 02       		.byte	2
+ 530 01f6 DF       		.byte	-33
+ 531 01f7 01       		.byte	1
+ 532 01f8 E6       		.byte	-26
+ 533 01f9 C0       		.byte	-64
+ 534 01fa EA       		.byte	-22
+ 535 01fb 40       		.byte	64
+ 536 01fc EB       		.byte	-21
+ 537 01fd 02       		.byte	2
+ 538 01fe 01       		.byte	1
+ 539 01ff 88       		.byte	-120
+ 540 0200 06       		.byte	6
+ 541 0201 20       		.byte	32
+ 542 0202 07       		.byte	7
+ 543 0203 49       		.byte	73
+ 544 0204 08       		.byte	8
+ 545 0205 02       		.byte	2
+ 546 0206 09       		.byte	9
+ 547 0207 A0       		.byte	-96
+ 548 0208 0A       		.byte	10
+ 549 0209 A0       		.byte	-96
+ 550 020a 0C       		.byte	12
+ 551 020b 20       		.byte	32
+ 552 020c 0E       		.byte	14
+ 553 020d A1       		.byte	-95
+ 554 020e 10       		.byte	16
+ 555 020f 08       		.byte	8
+ 556 0210 15       		.byte	21
+ 557 0211 44       		.byte	68
+ 558 0212 17       		.byte	23
+ 559 0213 02       		.byte	2
+ 560 0214 19       		.byte	25
+ 561 0215 88       		.byte	-120
+ 562 0216 1A       		.byte	26
+ 563 0217 40       		.byte	64
+ 564 0218 1B       		.byte	27
+ 565 0219 20       		.byte	32
+ 566 021a 1C       		.byte	28
+ 567 021b 40       		.byte	64
+ 568 021c 1E       		.byte	30
+ 569 021d 80       		.byte	-128
+ 570 021e 1F       		.byte	31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 11
+
+
+ 571 021f 10       		.byte	16
+ 572 0220 20       		.byte	32
+ 573 0221 02       		.byte	2
+ 574 0222 21       		.byte	33
+ 575 0223 22       		.byte	34
+ 576 0224 24       		.byte	36
+ 577 0225 04       		.byte	4
+ 578 0226 27       		.byte	39
+ 579 0227 80       		.byte	-128
+ 580 0228 29       		.byte	41
+ 581 0229 88       		.byte	-120
+ 582 022a 2C       		.byte	44
+ 583 022b 01       		.byte	1
+ 584 022c 2D       		.byte	45
+ 585 022d 04       		.byte	4
+ 586 022e 2E       		.byte	46
+ 587 022f 21       		.byte	33
+ 588 0230 31       		.byte	49
+ 589 0231 06       		.byte	6
+ 590 0232 32       		.byte	50
+ 591 0233 50       		.byte	80
+ 592 0234 36       		.byte	54
+ 593 0235 20       		.byte	32
+ 594 0236 37       		.byte	55
+ 595 0237 06       		.byte	6
+ 596 0238 39       		.byte	57
+ 597 0239 08       		.byte	8
+ 598 023a 3C       		.byte	60
+ 599 023b 04       		.byte	4
+ 600 023c 3E       		.byte	62
+ 601 023d 10       		.byte	16
+ 602 023e 3F       		.byte	63
+ 603 023f 80       		.byte	-128
+ 604 0240 40       		.byte	64
+ 605 0241 02       		.byte	2
+ 606 0242 48       		.byte	72
+ 607 0243 08       		.byte	8
+ 608 0244 49       		.byte	73
+ 609 0245 82       		.byte	-126
+ 610 0246 4A       		.byte	74
+ 611 0247 80       		.byte	-128
+ 612 0248 51       		.byte	81
+ 613 0249 84       		.byte	-124
+ 614 024a 64       		.byte	100
+ 615 024b 20       		.byte	32
+ 616 024c 6C       		.byte	108
+ 617 024d 04       		.byte	4
+ 618 024e 6D       		.byte	109
+ 619 024f 95       		.byte	-107
+ 620 0250 6E       		.byte	110
+ 621 0251 21       		.byte	33
+ 622 0252 6F       		.byte	111
+ 623 0253 05       		.byte	5
+ 624 0254 76       		.byte	118
+ 625 0255 28       		.byte	40
+ 626 0256 77       		.byte	119
+ 627 0257 0A       		.byte	10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 12
+
+
+ 628 0258 83       		.byte	-125
+ 629 0259 48       		.byte	72
+ 630 025a 87       		.byte	-121
+ 631 025b 01       		.byte	1
+ 632 025c 91       		.byte	-111
+ 633 025d 40       		.byte	64
+ 634 025e 92       		.byte	-110
+ 635 025f B0       		.byte	-80
+ 636 0260 94       		.byte	-108
+ 637 0261 48       		.byte	72
+ 638 0262 95       		.byte	-107
+ 639 0263 14       		.byte	20
+ 640 0264 96       		.byte	-106
+ 641 0265 01       		.byte	1
+ 642 0266 97       		.byte	-105
+ 643 0267 20       		.byte	32
+ 644 0268 98       		.byte	-104
+ 645 0269 21       		.byte	33
+ 646 026a 99       		.byte	-103
+ 647 026b 04       		.byte	4
+ 648 026c 9B       		.byte	-101
+ 649 026d 40       		.byte	64
+ 650 026e 9D       		.byte	-99
+ 651 026f 88       		.byte	-120
+ 652 0270 9E       		.byte	-98
+ 653 0271 08       		.byte	8
+ 654 0272 9F       		.byte	-97
+ 655 0273 80       		.byte	-128
+ 656 0274 A0       		.byte	-96
+ 657 0275 28       		.byte	40
+ 658 0276 A3       		.byte	-93
+ 659 0277 02       		.byte	2
+ 660 0278 AF       		.byte	-81
+ 661 0279 40       		.byte	64
+ 662 027a B1       		.byte	-79
+ 663 027b 01       		.byte	1
+ 664 027c B3       		.byte	-77
+ 665 027d 10       		.byte	16
+ 666 027e B7       		.byte	-73
+ 667 027f 08       		.byte	8
+ 668 0280 C0       		.byte	-64
+ 669 0281 F5       		.byte	-11
+ 670 0282 C2       		.byte	-62
+ 671 0283 FF       		.byte	-1
+ 672 0284 C4       		.byte	-60
+ 673 0285 B2       		.byte	-78
+ 674 0286 CA       		.byte	-54
+ 675 0287 FA       		.byte	-6
+ 676 0288 CC       		.byte	-52
+ 677 0289 EF       		.byte	-17
+ 678 028a CE       		.byte	-50
+ 679 028b 72       		.byte	114
+ 680 028c D0       		.byte	-48
+ 681 028d 08       		.byte	8
+ 682 028e D2       		.byte	-46
+ 683 028f 0C       		.byte	12
+ 684 0290 D8       		.byte	-40
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 13
+
+
+ 685 0291 40       		.byte	64
+ 686 0292 EA       		.byte	-22
+ 687 0293 10       		.byte	16
+ 688 0294 EE       		.byte	-18
+ 689 0295 80       		.byte	-128
+ 690 0296 02       		.byte	2
+ 691 0297 10       		.byte	16
+ 692 0298 06       		.byte	6
+ 693 0299 0F       		.byte	15
+ 694 029a 0E       		.byte	14
+ 695 029b 08       		.byte	8
+ 696 029c 10       		.byte	16
+ 697 029d 04       		.byte	4
+ 698 029e 12       		.byte	18
+ 699 029f 02       		.byte	2
+ 700 02a0 1A       		.byte	26
+ 701 02a1 20       		.byte	32
+ 702 02a2 1C       		.byte	28
+ 703 02a3 03       		.byte	3
+ 704 02a4 1D       		.byte	29
+ 705 02a5 01       		.byte	1
+ 706 02a6 1E       		.byte	30
+ 707 02a7 04       		.byte	4
+ 708 02a8 22       		.byte	34
+ 709 02a9 01       		.byte	1
+ 710 02aa 26       		.byte	38
+ 711 02ab 01       		.byte	1
+ 712 02ac 28       		.byte	40
+ 713 02ad 01       		.byte	1
+ 714 02ae 2C       		.byte	44
+ 715 02af 10       		.byte	16
+ 716 02b0 2E       		.byte	46
+ 717 02b1 20       		.byte	32
+ 718 02b2 33       		.byte	51
+ 719 02b3 01       		.byte	1
+ 720 02b4 34       		.byte	52
+ 721 02b5 30       		.byte	48
+ 722 02b6 36       		.byte	54
+ 723 02b7 0F       		.byte	15
+ 724 02b8 38       		.byte	56
+ 725 02b9 80       		.byte	-128
+ 726 02ba 3F       		.byte	63
+ 727 02bb 04       		.byte	4
+ 728 02bc 54       		.byte	84
+ 729 02bd 01       		.byte	1
+ 730 02be 58       		.byte	88
+ 731 02bf 04       		.byte	4
+ 732 02c0 59       		.byte	89
+ 733 02c1 04       		.byte	4
+ 734 02c2 5B       		.byte	91
+ 735 02c3 04       		.byte	4
+ 736 02c4 5C       		.byte	92
+ 737 02c5 01       		.byte	1
+ 738 02c6 5D       		.byte	93
+ 739 02c7 20       		.byte	32
+ 740 02c8 5F       		.byte	95
+ 741 02c9 01       		.byte	1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 14
+
+
+ 742 02ca 00       		.byte	0
+ 743 02cb 04       		.byte	4
+ 744 02cc 01       		.byte	1
+ 745 02cd 80       		.byte	-128
+ 746 02ce 03       		.byte	3
+ 747 02cf 40       		.byte	64
+ 748 02d0 04       		.byte	4
+ 749 02d1 45       		.byte	69
+ 750 02d2 07       		.byte	7
+ 751 02d3 08       		.byte	8
+ 752 02d4 09       		.byte	9
+ 753 02d5 82       		.byte	-126
+ 754 02d6 0A       		.byte	10
+ 755 02d7 04       		.byte	4
+ 756 02d8 0E       		.byte	14
+ 757 02d9 01       		.byte	1
+ 758 02da 0F       		.byte	15
+ 759 02db 80       		.byte	-128
+ 760 02dc 11       		.byte	17
+ 761 02dd 95       		.byte	-107
+ 762 02de 15       		.byte	21
+ 763 02df 14       		.byte	20
+ 764 02e0 17       		.byte	23
+ 765 02e1 02       		.byte	2
+ 766 02e2 18       		.byte	24
+ 767 02e3 08       		.byte	8
+ 768 02e4 19       		.byte	25
+ 769 02e5 80       		.byte	-128
+ 770 02e6 1A       		.byte	26
+ 771 02e7 06       		.byte	6
+ 772 02e8 1B       		.byte	27
+ 773 02e9 40       		.byte	64
+ 774 02ea 1C       		.byte	28
+ 775 02eb 41       		.byte	65
+ 776 02ec 1D       		.byte	29
+ 777 02ed AA       		.byte	-86
+ 778 02ee 1F       		.byte	31
+ 779 02ef 24       		.byte	36
+ 780 02f0 22       		.byte	34
+ 781 02f1 04       		.byte	4
+ 782 02f2 26       		.byte	38
+ 783 02f3 68       		.byte	104
+ 784 02f4 2E       		.byte	46
+ 785 02f5 02       		.byte	2
+ 786 02f6 2F       		.byte	47
+ 787 02f7 26       		.byte	38
+ 788 02f8 32       		.byte	50
+ 789 02f9 80       		.byte	-128
+ 790 02fa 36       		.byte	54
+ 791 02fb 28       		.byte	40
+ 792 02fc 37       		.byte	55
+ 793 02fd 01       		.byte	1
+ 794 02fe 3E       		.byte	62
+ 795 02ff 10       		.byte	16
+ 796 0300 3F       		.byte	63
+ 797 0301 02       		.byte	2
+ 798 0302 40       		.byte	64
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 15
+
+
+ 799 0303 20       		.byte	32
+ 800 0304 43       		.byte	67
+ 801 0305 08       		.byte	8
+ 802 0306 45       		.byte	69
+ 803 0307 AA       		.byte	-86
+ 804 0308 4C       		.byte	76
+ 805 0309 04       		.byte	4
+ 806 030a 4D       		.byte	77
+ 807 030b 08       		.byte	8
+ 808 030c 4E       		.byte	78
+ 809 030d 01       		.byte	1
+ 810 030e 4F       		.byte	79
+ 811 030f 02       		.byte	2
+ 812 0310 56       		.byte	86
+ 813 0311 02       		.byte	2
+ 814 0312 57       		.byte	87
+ 815 0313 08       		.byte	8
+ 816 0314 58       		.byte	88
+ 817 0315 10       		.byte	16
+ 818 0316 59       		.byte	89
+ 819 0317 02       		.byte	2
+ 820 0318 5A       		.byte	90
+ 821 0319 48       		.byte	72
+ 822 031a 5C       		.byte	92
+ 823 031b 20       		.byte	32
+ 824 031c 5D       		.byte	93
+ 825 031d 08       		.byte	8
+ 826 031e 5E       		.byte	94
+ 827 031f 80       		.byte	-128
+ 828 0320 83       		.byte	-125
+ 829 0321 08       		.byte	8
+ 830 0322 90       		.byte	-112
+ 831 0323 04       		.byte	4
+ 832 0324 91       		.byte	-111
+ 833 0325 15       		.byte	21
+ 834 0326 92       		.byte	-110
+ 835 0327 51       		.byte	81
+ 836 0328 98       		.byte	-104
+ 837 0329 10       		.byte	16
+ 838 032a 99       		.byte	-103
+ 839 032b 02       		.byte	2
+ 840 032c 9B       		.byte	-101
+ 841 032d 0B       		.byte	11
+ 842 032e A1       		.byte	-95
+ 843 032f 40       		.byte	64
+ 844 0330 A2       		.byte	-94
+ 845 0331 80       		.byte	-128
+ 846 0332 A3       		.byte	-93
+ 847 0333 02       		.byte	2
+ 848 0334 A6       		.byte	-90
+ 849 0335 20       		.byte	32
+ 850 0336 AB       		.byte	-85
+ 851 0337 20       		.byte	32
+ 852 0338 AC       		.byte	-84
+ 853 0339 10       		.byte	16
+ 854 033a AD       		.byte	-83
+ 855 033b 80       		.byte	-128
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 16
+
+
+ 856 033c B0       		.byte	-80
+ 857 033d 01       		.byte	1
+ 858 033e C0       		.byte	-64
+ 859 033f FD       		.byte	-3
+ 860 0340 C2       		.byte	-62
+ 861 0341 9B       		.byte	-101
+ 862 0342 C4       		.byte	-60
+ 863 0343 7F       		.byte	127
+ 864 0344 CA       		.byte	-54
+ 865 0345 F0       		.byte	-16
+ 866 0346 CC       		.byte	-52
+ 867 0347 E8       		.byte	-24
+ 868 0348 CE       		.byte	-50
+ 869 0349 A0       		.byte	-96
+ 870 034a D0       		.byte	-48
+ 871 034b F0       		.byte	-16
+ 872 034c D2       		.byte	-46
+ 873 034d 30       		.byte	48
+ 874 034e D6       		.byte	-42
+ 875 034f 7F       		.byte	127
+ 876 0350 EC       		.byte	-20
+ 877 0351 04       		.byte	4
+ 878 0352 B2       		.byte	-78
+ 879 0353 08       		.byte	8
+ 880 0354 B7       		.byte	-73
+ 881 0355 40       		.byte	64
+ 882 0356 EE       		.byte	-18
+ 883 0357 80       		.byte	-128
+ 884 0358 EA       		.byte	-22
+ 885 0359 10       		.byte	16
+ 886 035a E8       		.byte	-24
+ 887 035b 80       		.byte	-128
+ 888 035c EC       		.byte	-20
+ 889 035d 04       		.byte	4
+ 890 035e E4       		.byte	-28
+ 891 035f 04       		.byte	4
+ 892 0360 EC       		.byte	-20
+ 893 0361 10       		.byte	16
+ 894 0362 E4       		.byte	-28
+ 895 0363 04       		.byte	4
+ 896 0364 EC       		.byte	-20
+ 897 0365 10       		.byte	16
+ 898 0366 39       		.byte	57
+ 899 0367 08       		.byte	8
+ 900 0368 3E       		.byte	62
+ 901 0369 08       		.byte	8
+ 902 036a 3F       		.byte	63
+ 903 036b 20       		.byte	32
+ 904 036c 43       		.byte	67
+ 905 036d 80       		.byte	-128
+ 906 036e 53       		.byte	83
+ 907 036f 02       		.byte	2
+ 908 0370 54       		.byte	84
+ 909 0371 20       		.byte	32
+ 910 0372 5D       		.byte	93
+ 911 0373 80       		.byte	-128
+ 912 0374 CE       		.byte	-50
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 17
+
+
+ 913 0375 E0       		.byte	-32
+ 914 0376 D0       		.byte	-48
+ 915 0377 10       		.byte	16
+ 916 0378 D4       		.byte	-44
+ 917 0379 C0       		.byte	-64
+ 918 037a D6       		.byte	-42
+ 919 037b 20       		.byte	32
+ 920 037c 84       		.byte	-124
+ 921 037d 20       		.byte	32
+ 922 037e 9D       		.byte	-99
+ 923 037f 80       		.byte	-128
+ 924 0380 A4       		.byte	-92
+ 925 0381 20       		.byte	32
+ 926 0382 A7       		.byte	-89
+ 927 0383 90       		.byte	-112
+ 928 0384 AF       		.byte	-81
+ 929 0385 02       		.byte	2
+ 930 0386 B1       		.byte	-79
+ 931 0387 04       		.byte	4
+ 932 0388 B6       		.byte	-74
+ 933 0389 08       		.byte	8
+ 934 038a E2       		.byte	-30
+ 935 038b 40       		.byte	64
+ 936 038c EA       		.byte	-22
+ 937 038d 10       		.byte	16
+ 938 038e 83       		.byte	-125
+ 939 038f 10       		.byte	16
+ 940 0390 9D       		.byte	-99
+ 941 0391 80       		.byte	-128
+ 942 0392 A7       		.byte	-89
+ 943 0393 90       		.byte	-112
+ 944 0394 E6       		.byte	-26
+ 945 0395 80       		.byte	-128
+ 946 0396 A7       		.byte	-89
+ 947 0397 80       		.byte	-128
+ 948 0398 B1       		.byte	-79
+ 949 0399 80       		.byte	-128
+ 950 039a 7C       		.byte	124
+ 951 039b 20       		.byte	32
+ 952 039c DE       		.byte	-34
+ 953 039d 01       		.byte	1
+ 954 039e 5D       		.byte	93
+ 955 039f 02       		.byte	2
+ 956 03a0 9C       		.byte	-100
+ 957 03a1 20       		.byte	32
+ 958 03a2 D6       		.byte	-42
+ 959 03a3 01       		.byte	1
+ 960 03a4 32       		.byte	50
+ 961 03a5 10       		.byte	16
+ 962 03a6 45       		.byte	69
+ 963 03a7 08       		.byte	8
+ 964 03a8 A9       		.byte	-87
+ 965 03a9 02       		.byte	2
+ 966 03aa B0       		.byte	-80
+ 967 03ab 20       		.byte	32
+ 968 03ac CC       		.byte	-52
+ 969 03ad 08       		.byte	8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 18
+
+
+ 970 03ae D0       		.byte	-48
+ 971 03af 01       		.byte	1
+ 972 03b0 E8       		.byte	-24
+ 973 03b1 01       		.byte	1
+ 974 03b2 96       		.byte	-106
+ 975 03b3 20       		.byte	32
+ 976 03b4 9F       		.byte	-97
+ 977 03b5 40       		.byte	64
+ 978 03b6 A5       		.byte	-91
+ 979 03b7 08       		.byte	8
+ 980 03b8 B7       		.byte	-73
+ 981 03b9 40       		.byte	64
+ 982 03ba EA       		.byte	-22
+ 983 03bb 08       		.byte	8
+ 984 03bc 25       		.byte	37
+ 985 03bd 10       		.byte	16
+ 986 03be A7       		.byte	-89
+ 987 03bf 80       		.byte	-128
+ 988 03c0 C8       		.byte	-56
+ 989 03c1 20       		.byte	32
+ 990 03c2 1B       		.byte	27
+ 991 03c3 A0       		.byte	-96
+ 992 03c4 83       		.byte	-125
+ 993 03c5 20       		.byte	32
+ 994 03c6 A7       		.byte	-89
+ 995 03c7 80       		.byte	-128
+ 996 03c8 B5       		.byte	-75
+ 997 03c9 10       		.byte	16
+ 998 03ca C6       		.byte	-58
+ 999 03cb 40       		.byte	64
+ 1000 03cc E4       		.byte	-28
+ 1001 03cd 20       		.byte	32
+ 1002 03ce 96       		.byte	-106
+ 1003 03cf 20       		.byte	32
+ 1004 03d0 9F       		.byte	-97
+ 1005 03d1 40       		.byte	64
+ 1006 03d2 A5       		.byte	-91
+ 1007 03d3 08       		.byte	8
+ 1008 03d4 03       		.byte	3
+ 1009 03d5 40       		.byte	64
+ 1010 03d6 82       		.byte	-126
+ 1011 03d7 10       		.byte	16
+ 1012 03d8 96       		.byte	-106
+ 1013 03d9 20       		.byte	32
+ 1014 03da 9F       		.byte	-97
+ 1015 03db 40       		.byte	64
+ 1016 03dc B5       		.byte	-75
+ 1017 03dd 08       		.byte	8
+ 1018 03de C0       		.byte	-64
+ 1019 03df 08       		.byte	8
+ 1020 03e0 EC       		.byte	-20
+ 1021 03e1 08       		.byte	8
+ 1022 03e2 00       		.byte	0
+ 1023 03e3 06       		.byte	6
+ 1024 03e4 08       		.byte	8
+ 1025 03e5 06       		.byte	6
+ 1026 03e6 0A       		.byte	10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 19
+
+
+ 1027 03e7 06       		.byte	6
+ 1028 03e8 10       		.byte	16
+ 1029 03e9 AA       		.byte	-86
+ 1030 03ea 00       		.byte	0
+ 1031 03eb 00       		.byte	0
+ 1032 03ec 00       		.byte	0
+ 1033 03ed 00       		.byte	0
+ 1034 03ee 20       		.byte	32
+ 1035 03ef 01       		.byte	1
+ 1036 03f0 00       		.byte	0
+ 1037 03f1 00       		.byte	0
+ 1038 03f2 41       		.byte	65
+ 1039 03f3 01       		.byte	1
+ 1040 03f4 65       		.byte	101
+ 1041 03f5 23       		.byte	35
+ 1042 03f6 18       		.byte	24
+ 1043 03f7 44       		.byte	68
+ 1044 03f8 02       		.byte	2
+ 1045 03f9 00       		.byte	0
+ 1046 03fa 00       		.byte	0
+ 1047 03fb 40       		.byte	64
+ 1048 03fc 00       		.byte	0
+ 1049 03fd 60       		.byte	96
+ 1050 03fe 00       		.byte	0
+ 1051 03ff 08       		.byte	8
+ 1052 0400 10       		.byte	16
+ 1053 0401 44       		.byte	68
+ 1054 0402 2C       		.byte	44
+ 1055 0403 22       		.byte	34
+ 1056 0404 00       		.byte	0
+ 1057 0405 00       		.byte	0
+ 1058 0406 10       		.byte	16
+ 1059 0407 20       		.byte	32
+ 1060 0408 00       		.byte	0
+ 1061 0409 00       		.byte	0
+ 1062 040a 41       		.byte	65
+ 1063 040b 10       		.byte	16
+ 1064 040c 75       		.byte	117
+ 1065 040d 00       		.byte	0
+ 1066 040e 08       		.byte	8
+ 1067 040f 00       		.byte	0
+ 1068 0410 00       		.byte	0
+ 1069 0411 00       		.byte	0
+ 1070 0412 41       		.byte	65
+ 1071 0413 0F       		.byte	15
+ 1072 0414 C0       		.byte	-64
+ 1073 0415 00       		.byte	0
+ 1074 0416 01       		.byte	1
+ 1075 0417 01       		.byte	1
+ 1076 0418 80       		.byte	-128
+ 1077 0419 00       		.byte	0
+ 1078 041a 00       		.byte	0
+ 1079 041b 70       		.byte	112
+ 1080 041c 30       		.byte	48
+ 1081 041d 70       		.byte	112
+ 1082 041e 46       		.byte	70
+ 1083 041f 00       		.byte	0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 20
+
+
+ 1084 0420 0F       		.byte	15
+ 1085 0421 00       		.byte	0
+ 1086 0422 80       		.byte	-128
+ 1087 0423 0F       		.byte	15
+ 1088 0424 00       		.byte	0
+ 1089 0425 80       		.byte	-128
+ 1090 0426 00       		.byte	0
+ 1091 0427 00       		.byte	0
+ 1092 0428 00       		.byte	0
+ 1093 0429 00       		.byte	0
+ 1094 042a 01       		.byte	1
+ 1095 042b 00       		.byte	0
+ 1096 042c 42       		.byte	66
+ 1097 042d 03       		.byte	3
+ 1098 042e 00       		.byte	0
+ 1099 042f 00       		.byte	0
+ 1100 0430 00       		.byte	0
+ 1101 0431 EC       		.byte	-20
+ 1102 0432 0D       		.byte	13
+ 1103 0433 BF       		.byte	-65
+ 1104 0434 37       		.byte	55
+ 1105 0435 FF       		.byte	-1
+ 1106 0436 FF       		.byte	-1
+ 1107 0437 FF       		.byte	-1
+ 1108 0438 00       		.byte	0
+ 1109 0439 00       		.byte	0
+ 1110 043a 00       		.byte	0
+ 1111 043b 00       		.byte	0
+ 1112 043c 04       		.byte	4
+ 1113 043d 00       		.byte	0
+ 1114 043e 07       		.byte	7
+ 1115 043f 00       		.byte	0
+ 1116 0440 01       		.byte	1
+ 1117 0441 00       		.byte	0
+ 1118 0442 00       		.byte	0
+ 1119 0443 00       		.byte	0
+ 1120 0444 04       		.byte	4
+ 1121 0445 04       		.byte	4
+ 1122 0446 04       		.byte	4
+ 1123 0447 04       		.byte	4
+ 1124 0448 11       		.byte	17
+ 1125 0449 11       		.byte	17
+ 1126 044a 00       		.byte	0
+ 1127 044b 01       		.byte	1
+ 1128 044c 00       		.byte	0
+ 1129 044d 00       		.byte	0
+ 1130 044e C0       		.byte	-64
+ 1131 044f 00       		.byte	0
+ 1132 0450 40       		.byte	64
+ 1133 0451 01       		.byte	1
+ 1134 0452 80       		.byte	-128
+ 1135 0453 00       		.byte	0
+ 1136 0454 30       		.byte	48
+ 1137 0455 00       		.byte	0
+ 1138 0456 40       		.byte	64
+ 1139 0457 10       		.byte	16
+ 1140 0458 10       		.byte	16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 21
+
+
+ 1141 0459 00       		.byte	0
+ 1142 045a 40       		.byte	64
+ 1143 045b A8       		.byte	-88
+ 1144 045c 00       		.byte	0
+ 1145 045d 00       		.byte	0
+ 1146 045e 00       		.byte	0
+ 1147 045f 00       		.byte	0
+ 1148 0460 00       		.byte	0
+ 1149 0461 00       		.byte	0
+ 1150 0462 00       		.byte	0
+ 1151 0463 00       		.byte	0
+ 1152 0464 00       		.byte	0
+ 1153 0465 00       		.byte	0
+ 1154 0466 00       		.byte	0
+ 1155 0467 00       		.byte	0
+ 1156 0468 00       		.byte	0
+ 1157 0469 00       		.byte	0
+ 1158 046a 00       		.byte	0
+ 1159 046b 00       		.byte	0
+ 1160 046c 1B       		.byte	27
+ 1161 046d 00       		.byte	0
+ 1162 046e A4       		.byte	-92
+ 1163 046f 24       		.byte	36
+ 1164 0470 00       		.byte	0
+ 1165 0471 00       		.byte	0
+ 1166 0472 1F       		.byte	31
+ 1167 0473 00       		.byte	0
+ 1168 0474 09       		.byte	9
+ 1169 0475 00       		.byte	0
+ 1170 0476 12       		.byte	18
+ 1171 0477 1C       		.byte	28
+ 1172 0478 BF       		.byte	-65
+ 1173 0479 00       		.byte	0
+ 1174 047a 40       		.byte	64
+ 1175 047b 00       		.byte	0
+ 1176 047c DB       		.byte	-37
+ 1177 047d 01       		.byte	1
+ 1178 047e 24       		.byte	36
+ 1179 047f 02       		.byte	2
+ 1180 0480 00       		.byte	0
+ 1181 0481 00       		.byte	0
+ 1182 0482 00       		.byte	0
+ 1183 0483 01       		.byte	1
+ 1184 0484 00       		.byte	0
+ 1185 0485 00       		.byte	0
+ 1186 0486 00       		.byte	0
+ 1187 0487 10       		.byte	16
+ 1188 0488 00       		.byte	0
+ 1189 0489 00       		.byte	0
+ 1190 048a 1B       		.byte	27
+ 1191 048b 00       		.byte	0
+ 1192 048c 11       		.byte	17
+ 1193 048d 00       		.byte	0
+ 1194 048e 0A       		.byte	10
+ 1195 048f 48       		.byte	72
+ 1196 0490 00       		.byte	0
+ 1197 0491 00       		.byte	0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 22
+
+
+ 1198 0492 1B       		.byte	27
+ 1199 0493 24       		.byte	36
+ 1200 0494 1B       		.byte	27
+ 1201 0495 00       		.byte	0
+ 1202 0496 00       		.byte	0
+ 1203 0497 48       		.byte	72
+ 1204 0498 00       		.byte	0
+ 1205 0499 00       		.byte	0
+ 1206 049a 00       		.byte	0
+ 1207 049b 02       		.byte	2
+ 1208 049c 1C       		.byte	28
+ 1209 049d 00       		.byte	0
+ 1210 049e 80       		.byte	-128
+ 1211 049f 03       		.byte	3
+ 1212 04a0 60       		.byte	96
+ 1213 04a1 1C       		.byte	28
+ 1214 04a2 07       		.byte	7
+ 1215 04a3 60       		.byte	96
+ 1216 04a4 00       		.byte	0
+ 1217 04a5 00       		.byte	0
+ 1218 04a6 00       		.byte	0
+ 1219 04a7 00       		.byte	0
+ 1220 04a8 00       		.byte	0
+ 1221 04a9 00       		.byte	0
+ 1222 04aa 00       		.byte	0
+ 1223 04ab 40       		.byte	64
+ 1224 04ac 45       		.byte	69
+ 1225 04ad 01       		.byte	1
+ 1226 04ae 32       		.byte	50
+ 1227 04af 00       		.byte	0
+ 1228 04b0 06       		.byte	6
+ 1229 04b1 CF       		.byte	-49
+ 1230 04b2 00       		.byte	0
+ 1231 04b3 DE       		.byte	-34
+ 1232 04b4 33       		.byte	51
+ 1233 04b5 FF       		.byte	-1
+ 1234 04b6 FF       		.byte	-1
+ 1235 04b7 FF       		.byte	-1
+ 1236 04b8 02       		.byte	2
+ 1237 04b9 20       		.byte	32
+ 1238 04ba 00       		.byte	0
+ 1239 04bb 05       		.byte	5
+ 1240 04bc 04       		.byte	4
+ 1241 04bd 00       		.byte	0
+ 1242 04be 00       		.byte	0
+ 1243 04bf 00       		.byte	0
+ 1244 04c0 01       		.byte	1
+ 1245 04c1 00       		.byte	0
+ 1246 04c2 00       		.byte	0
+ 1247 04c3 00       		.byte	0
+ 1248 04c4 04       		.byte	4
+ 1249 04c5 04       		.byte	4
+ 1250 04c6 04       		.byte	4
+ 1251 04c7 04       		.byte	4
+ 1252 04c8 11       		.byte	17
+ 1253 04c9 11       		.byte	17
+ 1254 04ca 00       		.byte	0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 23
+
+
+ 1255 04cb 01       		.byte	1
+ 1256 04cc 00       		.byte	0
+ 1257 04cd 00       		.byte	0
+ 1258 04ce 40       		.byte	64
+ 1259 04cf 01       		.byte	1
+ 1260 04d0 40       		.byte	64
+ 1261 04d1 01       		.byte	1
+ 1262 04d2 50       		.byte	80
+ 1263 04d3 01       		.byte	1
+ 1264 04d4 40       		.byte	64
+ 1265 04d5 01       		.byte	1
+ 1266 04d6 70       		.byte	112
+ 1267 04d7 10       		.byte	16
+ 1268 04d8 40       		.byte	64
+ 1269 04d9 10       		.byte	16
+ 1270 04da 00       		.byte	0
+ 1271 04db 00       		.byte	0
+ 1272 04dc 00       		.byte	0
+ 1273 04dd 00       		.byte	0
+ 1274 04de 00       		.byte	0
+ 1275 04df 00       		.byte	0
+ 1276 04e0 00       		.byte	0
+ 1277 04e1 00       		.byte	0
+ 1278 04e2 00       		.byte	0
+ 1279 04e3 00       		.byte	0
+ 1280 04e4 00       		.byte	0
+ 1281 04e5 00       		.byte	0
+ 1282 04e6 00       		.byte	0
+ 1283 04e7 00       		.byte	0
+ 1284 04e8 00       		.byte	0
+ 1285 04e9 00       		.byte	0
+ 1286 04ea 00       		.byte	0
+ 1287 04eb 00       		.byte	0
+ 1288 04ec 00       		.byte	0
+ 1289 04ed 00       		.byte	0
+ 1290 04ee 00       		.byte	0
+ 1291 04ef 00       		.byte	0
+ 1292 04f0 00       		.byte	0
+ 1293 04f1 00       		.byte	0
+ 1294 04f2 40       		.byte	64
+ 1295 04f3 00       		.byte	0
+ 1296 04f4 80       		.byte	-128
+ 1297 04f5 00       		.byte	0
+ 1298 04f6 00       		.byte	0
+ 1299 04f7 80       		.byte	-128
+ 1300 04f8 80       		.byte	-128
+ 1301 04f9 00       		.byte	0
+ 1302 04fa 80       		.byte	-128
+ 1303 04fb 00       		.byte	0
+ 1304 04fc 00       		.byte	0
+ 1305 04fd 00       		.byte	0
+ 1306 04fe 00       		.byte	0
+ 1307 04ff 00       		.byte	0
+ 1308 0500 00       		.byte	0
+ 1309 0501 07       		.byte	7
+ 1310 0502 07       		.byte	7
+ 1311 0503 00       		.byte	0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 24
+
+
+ 1312 0504 07       		.byte	7
+ 1313 0505 00       		.byte	0
+ 1314 0506 00       		.byte	0
+ 1315 0507 00       		.byte	0
+ 1316 0508 01       		.byte	1
+ 1317 0509 00       		.byte	0
+ 1318 050a 00       		.byte	0
+ 1319 050b 00       		.byte	0
+ 1320 050c 00       		.byte	0
+ 1321 050d 00       		.byte	0
+ 1322 050e 00       		.byte	0
+ 1323 050f 00       		.byte	0
+ 1324 0510 07       		.byte	7
+ 1325 0511 00       		.byte	0
+ 1326 0512 18       		.byte	24
+ 1327 0513 01       		.byte	1
+ 1328              		.section	.cywolatch,"a",%progbits
+ 1329              		.align	2
+ 1330              		.type	cy_meta_wonvl, %object
+ 1331              		.size	cy_meta_wonvl, 4
+ 1332              	cy_meta_wonvl:
+ 1333 0000 BC       		.byte	-68
+ 1334 0001 90       		.byte	-112
+ 1335 0002 AC       		.byte	-84
+ 1336 0003 AF       		.byte	-81
+ 1337              		.section	.cycustnvl,"a",%progbits
+ 1338              		.align	2
+ 1339              		.type	cy_meta_custnvl, %object
+ 1340              		.size	cy_meta_custnvl, 4
+ 1341              	cy_meta_custnvl:
+ 1342 0000 00       		.byte	0
+ 1343 0001 00       		.byte	0
+ 1344 0002 40       		.byte	64
+ 1345 0003 05       		.byte	5
+ 1346              		.section	.cymeta,"a",%progbits
+ 1347              		.align	2
+ 1348              		.type	cy_metadata, %object
+ 1349              		.size	cy_metadata, 12
+ 1350              	cy_metadata:
+ 1351 0000 00       		.byte	0
+ 1352 0001 01       		.byte	1
+ 1353 0002 2E       		.byte	46
+ 1354 0003 12       		.byte	18
+ 1355 0004 30       		.byte	48
+ 1356 0005 69       		.byte	105
+ 1357 0006 00       		.byte	0
+ 1358 0007 01       		.byte	1
+ 1359 0008 00       		.byte	0
+ 1360 0009 00       		.byte	0
+ 1361 000a 00       		.byte	0
+ 1362 000b 00       		.byte	0
+ 1363              		.section	.cyflashprotect,"a",%progbits
+ 1364              		.align	2
+ 1365              		.type	cy_meta_flashprotect, %object
+ 1366              		.size	cy_meta_flashprotect, 256
+ 1367              	cy_meta_flashprotect:
+ 1368 0000 00000000 		.space	256
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 25
+
+
+ 1368      00000000 
+ 1368      00000000 
+ 1368      00000000 
+ 1368      00000000 
+ 1369              		.text
+ 1370              	.Letext0:
+ 1371              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 1372              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1373              		.section	.debug_info,"",%progbits
+ 1374              	.Ldebug_info0:
+ 1375 0000 37010000 		.4byte	0x137
+ 1376 0004 0400     		.2byte	0x4
+ 1377 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1378 000a 04       		.byte	0x4
+ 1379 000b 01       		.uleb128 0x1
+ 1380 000c 94000000 		.4byte	.LASF18
+ 1381 0010 01       		.byte	0x1
+ 1382 0011 00000000 		.4byte	.LASF19
+ 1383 0015 85010000 		.4byte	.LASF20
+ 1384 0019 00000000 		.4byte	.Ldebug_line0
+ 1385 001d 02       		.uleb128 0x2
+ 1386 001e 01       		.byte	0x1
+ 1387 001f 06       		.byte	0x6
+ 1388 0020 FB010000 		.4byte	.LASF0
+ 1389 0024 02       		.uleb128 0x2
+ 1390 0025 01       		.byte	0x1
+ 1391 0026 08       		.byte	0x8
+ 1392 0027 38000000 		.4byte	.LASF1
+ 1393 002b 02       		.uleb128 0x2
+ 1394 002c 02       		.byte	0x2
+ 1395 002d 05       		.byte	0x5
+ 1396 002e E2010000 		.4byte	.LASF2
+ 1397 0032 02       		.uleb128 0x2
+ 1398 0033 02       		.byte	0x2
+ 1399 0034 07       		.byte	0x7
+ 1400 0035 58000000 		.4byte	.LASF3
+ 1401 0039 02       		.uleb128 0x2
+ 1402 003a 04       		.byte	0x4
+ 1403 003b 05       		.byte	0x5
+ 1404 003c F2010000 		.4byte	.LASF4
+ 1405 0040 02       		.uleb128 0x2
+ 1406 0041 04       		.byte	0x4
+ 1407 0042 07       		.byte	0x7
+ 1408 0043 46000000 		.4byte	.LASF5
+ 1409 0047 02       		.uleb128 0x2
+ 1410 0048 08       		.byte	0x8
+ 1411 0049 05       		.byte	0x5
+ 1412 004a 72010000 		.4byte	.LASF6
+ 1413 004e 02       		.uleb128 0x2
+ 1414 004f 08       		.byte	0x8
+ 1415 0050 07       		.byte	0x7
+ 1416 0051 2F010000 		.4byte	.LASF7
+ 1417 0055 03       		.uleb128 0x3
+ 1418 0056 04       		.byte	0x4
+ 1419 0057 05       		.byte	0x5
+ 1420 0058 696E7400 		.ascii	"int\000"
+ 1421 005c 02       		.uleb128 0x2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 26
+
+
+ 1422 005d 04       		.byte	0x4
+ 1423 005e 07       		.byte	0x7
+ 1424 005f 22010000 		.4byte	.LASF8
+ 1425 0063 04       		.uleb128 0x4
+ 1426 0064 EC010000 		.4byte	.LASF21
+ 1427 0068 02       		.byte	0x2
+ 1428 0069 5B       		.byte	0x5b
+ 1429 006a 24000000 		.4byte	0x24
+ 1430 006e 02       		.uleb128 0x2
+ 1431 006f 04       		.byte	0x4
+ 1432 0070 04       		.byte	0x4
+ 1433 0071 32000000 		.4byte	.LASF9
+ 1434 0075 02       		.uleb128 0x2
+ 1435 0076 08       		.byte	0x8
+ 1436 0077 04       		.byte	0x4
+ 1437 0078 6B000000 		.4byte	.LASF10
+ 1438 007c 02       		.uleb128 0x2
+ 1439 007d 01       		.byte	0x1
+ 1440 007e 08       		.byte	0x8
+ 1441 007f 80010000 		.4byte	.LASF11
+ 1442 0083 05       		.uleb128 0x5
+ 1443 0084 63000000 		.4byte	0x63
+ 1444 0088 94000000 		.4byte	0x94
+ 1445 008c 06       		.uleb128 0x6
+ 1446 008d 94000000 		.4byte	0x94
+ 1447 0091 1305     		.2byte	0x513
+ 1448 0093 00       		.byte	0
+ 1449 0094 02       		.uleb128 0x2
+ 1450 0095 04       		.byte	0x4
+ 1451 0096 07       		.byte	0x7
+ 1452 0097 69010000 		.4byte	.LASF12
+ 1453 009b 07       		.uleb128 0x7
+ 1454 009c 82000000 		.4byte	.LASF13
+ 1455 00a0 01       		.byte	0x1
+ 1456 00a1 1C       		.byte	0x1c
+ 1457 00a2 AC000000 		.4byte	0xac
+ 1458 00a6 05       		.uleb128 0x5
+ 1459 00a7 03       		.byte	0x3
+ 1460 00a8 00000000 		.4byte	cy_meta_configecc
+ 1461 00ac 08       		.uleb128 0x8
+ 1462 00ad 83000000 		.4byte	0x83
+ 1463 00b1 05       		.uleb128 0x5
+ 1464 00b2 63000000 		.4byte	0x63
+ 1465 00b6 C1000000 		.4byte	0xc1
+ 1466 00ba 09       		.uleb128 0x9
+ 1467 00bb 94000000 		.4byte	0x94
+ 1468 00bf 03       		.byte	0x3
+ 1469 00c0 00       		.byte	0
+ 1470 00c1 07       		.uleb128 0x7
+ 1471 00c2 72000000 		.4byte	.LASF14
+ 1472 00c6 01       		.byte	0x1
+ 1473 00c7 C9       		.byte	0xc9
+ 1474 00c8 D2000000 		.4byte	0xd2
+ 1475 00cc 05       		.uleb128 0x5
+ 1476 00cd 03       		.byte	0x3
+ 1477 00ce 00000000 		.4byte	cy_meta_custnvl
+ 1478 00d2 08       		.uleb128 0x8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 27
+
+
+ 1479 00d3 B1000000 		.4byte	0xb1
+ 1480 00d7 07       		.uleb128 0x7
+ 1481 00d8 5B010000 		.4byte	.LASF15
+ 1482 00dc 01       		.byte	0x1
+ 1483 00dd D4       		.byte	0xd4
+ 1484 00de E8000000 		.4byte	0xe8
+ 1485 00e2 05       		.uleb128 0x5
+ 1486 00e3 03       		.byte	0x3
+ 1487 00e4 00000000 		.4byte	cy_meta_wonvl
+ 1488 00e8 08       		.uleb128 0x8
+ 1489 00e9 B1000000 		.4byte	0xb1
+ 1490 00ed 05       		.uleb128 0x5
+ 1491 00ee 63000000 		.4byte	0x63
+ 1492 00f2 FD000000 		.4byte	0xfd
+ 1493 00f6 09       		.uleb128 0x9
+ 1494 00f7 94000000 		.4byte	0x94
+ 1495 00fb FF       		.byte	0xff
+ 1496 00fc 00       		.byte	0
+ 1497 00fd 07       		.uleb128 0x7
+ 1498 00fe 46010000 		.4byte	.LASF16
+ 1499 0102 01       		.byte	0x1
+ 1500 0103 DF       		.byte	0xdf
+ 1501 0104 0E010000 		.4byte	0x10e
+ 1502 0108 05       		.uleb128 0x5
+ 1503 0109 03       		.byte	0x3
+ 1504 010a 00000000 		.4byte	cy_meta_flashprotect
+ 1505 010e 08       		.uleb128 0x8
+ 1506 010f ED000000 		.4byte	0xed
+ 1507 0113 05       		.uleb128 0x5
+ 1508 0114 63000000 		.4byte	0x63
+ 1509 0118 23010000 		.4byte	0x123
+ 1510 011c 09       		.uleb128 0x9
+ 1511 011d 94000000 		.4byte	0x94
+ 1512 0121 0B       		.byte	0xb
+ 1513 0122 00       		.byte	0
+ 1514 0123 0A       		.uleb128 0xa
+ 1515 0124 26000000 		.4byte	.LASF17
+ 1516 0128 01       		.byte	0x1
+ 1517 0129 0901     		.2byte	0x109
+ 1518 012b 35010000 		.4byte	0x135
+ 1519 012f 05       		.uleb128 0x5
+ 1520 0130 03       		.byte	0x3
+ 1521 0131 00000000 		.4byte	cy_metadata
+ 1522 0135 08       		.uleb128 0x8
+ 1523 0136 13010000 		.4byte	0x113
+ 1524 013a 00       		.byte	0
+ 1525              		.section	.debug_abbrev,"",%progbits
+ 1526              	.Ldebug_abbrev0:
+ 1527 0000 01       		.uleb128 0x1
+ 1528 0001 11       		.uleb128 0x11
+ 1529 0002 01       		.byte	0x1
+ 1530 0003 25       		.uleb128 0x25
+ 1531 0004 0E       		.uleb128 0xe
+ 1532 0005 13       		.uleb128 0x13
+ 1533 0006 0B       		.uleb128 0xb
+ 1534 0007 03       		.uleb128 0x3
+ 1535 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 28
+
+
+ 1536 0009 1B       		.uleb128 0x1b
+ 1537 000a 0E       		.uleb128 0xe
+ 1538 000b 10       		.uleb128 0x10
+ 1539 000c 17       		.uleb128 0x17
+ 1540 000d 00       		.byte	0
+ 1541 000e 00       		.byte	0
+ 1542 000f 02       		.uleb128 0x2
+ 1543 0010 24       		.uleb128 0x24
+ 1544 0011 00       		.byte	0
+ 1545 0012 0B       		.uleb128 0xb
+ 1546 0013 0B       		.uleb128 0xb
+ 1547 0014 3E       		.uleb128 0x3e
+ 1548 0015 0B       		.uleb128 0xb
+ 1549 0016 03       		.uleb128 0x3
+ 1550 0017 0E       		.uleb128 0xe
+ 1551 0018 00       		.byte	0
+ 1552 0019 00       		.byte	0
+ 1553 001a 03       		.uleb128 0x3
+ 1554 001b 24       		.uleb128 0x24
+ 1555 001c 00       		.byte	0
+ 1556 001d 0B       		.uleb128 0xb
+ 1557 001e 0B       		.uleb128 0xb
+ 1558 001f 3E       		.uleb128 0x3e
+ 1559 0020 0B       		.uleb128 0xb
+ 1560 0021 03       		.uleb128 0x3
+ 1561 0022 08       		.uleb128 0x8
+ 1562 0023 00       		.byte	0
+ 1563 0024 00       		.byte	0
+ 1564 0025 04       		.uleb128 0x4
+ 1565 0026 16       		.uleb128 0x16
+ 1566 0027 00       		.byte	0
+ 1567 0028 03       		.uleb128 0x3
+ 1568 0029 0E       		.uleb128 0xe
+ 1569 002a 3A       		.uleb128 0x3a
+ 1570 002b 0B       		.uleb128 0xb
+ 1571 002c 3B       		.uleb128 0x3b
+ 1572 002d 0B       		.uleb128 0xb
+ 1573 002e 49       		.uleb128 0x49
+ 1574 002f 13       		.uleb128 0x13
+ 1575 0030 00       		.byte	0
+ 1576 0031 00       		.byte	0
+ 1577 0032 05       		.uleb128 0x5
+ 1578 0033 01       		.uleb128 0x1
+ 1579 0034 01       		.byte	0x1
+ 1580 0035 49       		.uleb128 0x49
+ 1581 0036 13       		.uleb128 0x13
+ 1582 0037 01       		.uleb128 0x1
+ 1583 0038 13       		.uleb128 0x13
+ 1584 0039 00       		.byte	0
+ 1585 003a 00       		.byte	0
+ 1586 003b 06       		.uleb128 0x6
+ 1587 003c 21       		.uleb128 0x21
+ 1588 003d 00       		.byte	0
+ 1589 003e 49       		.uleb128 0x49
+ 1590 003f 13       		.uleb128 0x13
+ 1591 0040 2F       		.uleb128 0x2f
+ 1592 0041 05       		.uleb128 0x5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 29
+
+
+ 1593 0042 00       		.byte	0
+ 1594 0043 00       		.byte	0
+ 1595 0044 07       		.uleb128 0x7
+ 1596 0045 34       		.uleb128 0x34
+ 1597 0046 00       		.byte	0
+ 1598 0047 03       		.uleb128 0x3
+ 1599 0048 0E       		.uleb128 0xe
+ 1600 0049 3A       		.uleb128 0x3a
+ 1601 004a 0B       		.uleb128 0xb
+ 1602 004b 3B       		.uleb128 0x3b
+ 1603 004c 0B       		.uleb128 0xb
+ 1604 004d 49       		.uleb128 0x49
+ 1605 004e 13       		.uleb128 0x13
+ 1606 004f 3F       		.uleb128 0x3f
+ 1607 0050 19       		.uleb128 0x19
+ 1608 0051 02       		.uleb128 0x2
+ 1609 0052 18       		.uleb128 0x18
+ 1610 0053 00       		.byte	0
+ 1611 0054 00       		.byte	0
+ 1612 0055 08       		.uleb128 0x8
+ 1613 0056 26       		.uleb128 0x26
+ 1614 0057 00       		.byte	0
+ 1615 0058 49       		.uleb128 0x49
+ 1616 0059 13       		.uleb128 0x13
+ 1617 005a 00       		.byte	0
+ 1618 005b 00       		.byte	0
+ 1619 005c 09       		.uleb128 0x9
+ 1620 005d 21       		.uleb128 0x21
+ 1621 005e 00       		.byte	0
+ 1622 005f 49       		.uleb128 0x49
+ 1623 0060 13       		.uleb128 0x13
+ 1624 0061 2F       		.uleb128 0x2f
+ 1625 0062 0B       		.uleb128 0xb
+ 1626 0063 00       		.byte	0
+ 1627 0064 00       		.byte	0
+ 1628 0065 0A       		.uleb128 0xa
+ 1629 0066 34       		.uleb128 0x34
+ 1630 0067 00       		.byte	0
+ 1631 0068 03       		.uleb128 0x3
+ 1632 0069 0E       		.uleb128 0xe
+ 1633 006a 3A       		.uleb128 0x3a
+ 1634 006b 0B       		.uleb128 0xb
+ 1635 006c 3B       		.uleb128 0x3b
+ 1636 006d 05       		.uleb128 0x5
+ 1637 006e 49       		.uleb128 0x49
+ 1638 006f 13       		.uleb128 0x13
+ 1639 0070 3F       		.uleb128 0x3f
+ 1640 0071 19       		.uleb128 0x19
+ 1641 0072 02       		.uleb128 0x2
+ 1642 0073 18       		.uleb128 0x18
+ 1643 0074 00       		.byte	0
+ 1644 0075 00       		.byte	0
+ 1645 0076 00       		.byte	0
+ 1646              		.section	.debug_aranges,"",%progbits
+ 1647 0000 14000000 		.4byte	0x14
+ 1648 0004 0200     		.2byte	0x2
+ 1649 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 30
+
+
+ 1650 000a 04       		.byte	0x4
+ 1651 000b 00       		.byte	0
+ 1652 000c 0000     		.2byte	0
+ 1653 000e 0000     		.2byte	0
+ 1654 0010 00000000 		.4byte	0
+ 1655 0014 00000000 		.4byte	0
+ 1656              		.section	.debug_line,"",%progbits
+ 1657              	.Ldebug_line0:
+ 1658 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 1658      02004900 
+ 1658      00000201 
+ 1658      FB0E0D00 
+ 1658      01010101 
+ 1659              	.LASF19:
+ 1660 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1660      6E657261 
+ 1660      7465645F 
+ 1660      536F7572 
+ 1660      63655C50 
+ 1661              	.LASF17:
+ 1662 0026 63795F6D 		.ascii	"cy_metadata\000"
+ 1662      65746164 
+ 1662      61746100 
+ 1663              	.LASF9:
+ 1664 0032 666C6F61 		.ascii	"float\000"
+ 1664      7400
+ 1665              	.LASF1:
+ 1666 0038 756E7369 		.ascii	"unsigned char\000"
+ 1666      676E6564 
+ 1666      20636861 
+ 1666      7200
+ 1667              	.LASF5:
+ 1668 0046 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1668      20756E73 
+ 1668      69676E65 
+ 1668      6420696E 
+ 1668      7400
+ 1669              	.LASF3:
+ 1670 0058 73686F72 		.ascii	"short unsigned int\000"
+ 1670      7420756E 
+ 1670      7369676E 
+ 1670      65642069 
+ 1670      6E7400
+ 1671              	.LASF10:
+ 1672 006b 646F7562 		.ascii	"double\000"
+ 1672      6C6500
+ 1673              	.LASF14:
+ 1674 0072 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1674      6574615F 
+ 1674      63757374 
+ 1674      6E766C00 
+ 1675              	.LASF13:
+ 1676 0082 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1676      6574615F 
+ 1676      636F6E66 
+ 1676      69676563 
+ 1676      6300
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 31
+
+
+ 1677              	.LASF18:
+ 1678 0094 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1678      4320342E 
+ 1678      392E3320 
+ 1678      32303135 
+ 1678      30333033 
+ 1679 00c7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1679      20726576 
+ 1679      6973696F 
+ 1679      6E203232 
+ 1679      31323230 
+ 1680 00fa 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1680      66756E63 
+ 1680      74696F6E 
+ 1680      2D736563 
+ 1680      74696F6E 
+ 1681              	.LASF8:
+ 1682 0122 756E7369 		.ascii	"unsigned int\000"
+ 1682      676E6564 
+ 1682      20696E74 
+ 1682      00
+ 1683              	.LASF7:
+ 1684 012f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1684      206C6F6E 
+ 1684      6720756E 
+ 1684      7369676E 
+ 1684      65642069 
+ 1685              	.LASF16:
+ 1686 0146 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1686      6574615F 
+ 1686      666C6173 
+ 1686      6870726F 
+ 1686      74656374 
+ 1687              	.LASF15:
+ 1688 015b 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1688      6574615F 
+ 1688      776F6E76 
+ 1688      6C00
+ 1689              	.LASF12:
+ 1690 0169 73697A65 		.ascii	"sizetype\000"
+ 1690      74797065 
+ 1690      00
+ 1691              	.LASF6:
+ 1692 0172 6C6F6E67 		.ascii	"long long int\000"
+ 1692      206C6F6E 
+ 1692      6720696E 
+ 1692      7400
+ 1693              	.LASF11:
+ 1694 0180 63686172 		.ascii	"char\000"
+ 1694      00
+ 1695              	.LASF20:
+ 1696 0185 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Senior Project C"
+ 1696      73657273 
+ 1696      5C49616E 
+ 1696      5C446F63 
+ 1696      756D656E 
+ 1697 01b3 68697020 		.ascii	"hip Design\\Wave Generator\\Wave Generator.cydsn\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccjFWpJx.s 			page 32
+
+
+ 1697      44657369 
+ 1697      676E5C57 
+ 1697      61766520 
+ 1697      47656E65 
+ 1698              	.LASF2:
+ 1699 01e2 73686F72 		.ascii	"short int\000"
+ 1699      7420696E 
+ 1699      7400
+ 1700              	.LASF21:
+ 1701 01ec 75696E74 		.ascii	"uint8\000"
+ 1701      3800
+ 1702              	.LASF4:
+ 1703 01f2 6C6F6E67 		.ascii	"long int\000"
+ 1703      20696E74 
+ 1703      00
+ 1704              	.LASF0:
+ 1705 01fb 7369676E 		.ascii	"signed char\000"
+ 1705      65642063 
+ 1705      68617200 
+ 1706              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
