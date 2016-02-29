@@ -13,7 +13,7 @@ Senior Project 2015-2016
 	2. Whitley Forman  
 	3. Dhruvit Naik  
 	4. Zachary Nelson (Team Leader)   
-	5. Juliann Swift
+	5. Juliann Swift 
 	6. Ian Patel (Volunteer)
 
 **Advisors:**  
