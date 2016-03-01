@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
   29:.\Generated_Source\PSoC5/I2S.c **** *  Enables I2S interface. Starts the generation of the sck and ws outputs.
   30:.\Generated_Source\PSoC5/I2S.c **** *  The Tx and Rx directions remain disabled. It is not necessary to call
   31:.\Generated_Source\PSoC5/I2S.c **** *  I2S_Enable() because the I2S_Start() routine calls this function, which is
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/I2S.c **** *  the preferred method to begin component operation.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
   63              		.thumb
   64              		.thumb_func
   65              		.type	I2S_Init, %function
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 3
 
 
   66              	I2S_Init:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
   89:.\Generated_Source\PSoC5/I2S.c ****         #if (I2S_TX_STEREO_3_PRESENT)
   90:.\Generated_Source\PSoC5/I2S.c ****             I2S_SET_TX_INT_MASK(CH3, I2S_TX_INT_SOURCE);
   91:.\Generated_Source\PSoC5/I2S.c ****         #endif /* I2S_TX_STEREO_3_PRESENT */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 4
 
 
   92:.\Generated_Source\PSoC5/I2S.c ****         #if (I2S_TX_STEREO_4_PRESENT)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  122:.\Generated_Source\PSoC5/I2S.c ****                 I2S_SET_NEG_THRESHOLD(CH3, I2S_negThresholds[I2S_STEREO_3]);
  123:.\Generated_Source\PSoC5/I2S.c ****             #endif /* I2S_CLIP_DETECT_ENABLE */
  124:.\Generated_Source\PSoC5/I2S.c ****         #endif /* I2S_RX_STEREO_3_PRESENT */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 5
 
 
  125:.\Generated_Source\PSoC5/I2S.c ****         #if (I2S_RX_STEREO_4_PRESENT)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  120              		.loc 1 163 0
  121 000c 0122     		movs	r2, #1
  122 000e 024B     		ldr	r3, .L11
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 6
 
 
  123 0010 1A70     		strb	r2, [r3]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  197:.\Generated_Source\PSoC5/I2S.c **** 
  198:.\Generated_Source\PSoC5/I2S.c ****     #if (I2S_TX_DIRECTION_ENABLE)
  199:.\Generated_Source\PSoC5/I2S.c ****         I2S_DisableTx();
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 7
 
 
  200:.\Generated_Source\PSoC5/I2S.c ****         I2S_ClearTxFIFO();
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  254:.\Generated_Source\PSoC5/I2S.c ****             break;
  255:.\Generated_Source\PSoC5/I2S.c ****         default: status = CYRET_BAD_PARAM;
  256:.\Generated_Source\PSoC5/I2S.c ****             break;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 8
 
 
  257:.\Generated_Source\PSoC5/I2S.c ****         }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  162              	.LVL5:
  293:.\Generated_Source\PSoC5/I2S.c ****         
  294:.\Generated_Source\PSoC5/I2S.c ****         I2S_CONTROL_REG |= I2S_TX_EN;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 9
 
 
  163              		.loc 1 294 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  193              		.loc 1 318 0
  194 0002 074A     		ldr	r2, .L19
  195 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 10
 
 
  196 0006 03F0FE03 		and	r3, r3, #254
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  343:.\Generated_Source\PSoC5/I2S.c ****     * Return:
  344:.\Generated_Source\PSoC5/I2S.c ****     *  None.
  345:.\Generated_Source\PSoC5/I2S.c ****     *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 11
 
 
  346:.\Generated_Source\PSoC5/I2S.c ****     *******************************************************************************/
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  260              		.thumb_func
  261              		.type	I2S_EnableRx, %function
  262              	I2S_EnableRx:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 12
 
 
  263              	.LFB7:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  400:.\Generated_Source\PSoC5/I2S.c ****         
  401:.\Generated_Source\PSoC5/I2S.c ****         I2S_CONTROL_REG |= I2S_RX_EN;
  283              		.loc 1 401 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 13
 
 
  284 0014 034A     		ldr	r2, .L27+4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  316 0006 03F0FD03 		and	r3, r3, #253
  317 000a 1370     		strb	r3, [r2]
  424:.\Generated_Source\PSoC5/I2S.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 14
 
 
  425:.\Generated_Source\PSoC5/I2S.c ****         enableInterrupts = CyEnterCriticalSection();
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  451:.\Generated_Source\PSoC5/I2S.c ****     *******************************************************************************/
  452:.\Generated_Source\PSoC5/I2S.c ****     void I2S_ClearRxFIFO(void) 
  453:.\Generated_Source\PSoC5/I2S.c ****     {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 15
 
 
  346              		.loc 1 453 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  383              	.LFB3:
  186:.\Generated_Source\PSoC5/I2S.c ****     uint8 enableInterrupts;
  384              		.loc 1 186 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 16
 
 
  385              		.cfi_startproc
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  430 0040 72640040 		.word	1073767538
  431              		.cfi_endproc
  432              	.LFE3:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 17
 
 
  433              		.size	I2S_Stop, .-I2S_Stop
@@ -980,10 +980,10 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  449 0006 00000000 		.4byte	.Ldebug_abbrev0
  450 000a 04       		.byte	0x4
  451 000b 01       		.uleb128 0x1
- 452 000c F7000000 		.4byte	.LASF25
+ 452 000c 9A000000 		.4byte	.LASF25
  453 0010 01       		.byte	0x1
- 454 0011 22020000 		.4byte	.LASF26
- 455 0015 5F000000 		.4byte	.LASF27
+ 454 0011 C5010000 		.4byte	.LASF26
+ 455 0015 1E020000 		.4byte	.LASF27
  456 0019 00000000 		.4byte	.Ldebug_ranges0+0
  457 001d 00000000 		.4byte	0
  458 0021 00000000 		.4byte	.Ldebug_line0
@@ -994,11 +994,11 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  463 002c 03       		.uleb128 0x3
  464 002d 04       		.byte	0x4
  465 002e 07       		.byte	0x7
- 466 002f 9C010000 		.4byte	.LASF0
+ 466 002f 3F010000 		.4byte	.LASF0
  467 0033 03       		.uleb128 0x3
  468 0034 01       		.byte	0x1
  469 0035 06       		.byte	0x6
- 470 0036 66020000 		.4byte	.LASF1
+ 470 0036 09020000 		.4byte	.LASF1
  471 003a 03       		.uleb128 0x3
  472 003b 01       		.byte	0x1
  473 003c 08       		.byte	0x8
@@ -1006,7 +1006,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  475 0041 03       		.uleb128 0x3
  476 0042 02       		.byte	0x2
  477 0043 05       		.byte	0x5
- 478 0044 18020000 		.4byte	.LASF3
+ 478 0044 BB010000 		.4byte	.LASF3
  479 0048 03       		.uleb128 0x3
  480 0049 02       		.byte	0x2
  481 004a 07       		.byte	0x7
@@ -1014,18 +1014,18 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  483 004f 03       		.uleb128 0x3
  484 0050 04       		.byte	0x4
  485 0051 05       		.byte	0x5
- 486 0052 4F020000 		.4byte	.LASF5
+ 486 0052 F2010000 		.4byte	.LASF5
  487 0056 03       		.uleb128 0x3
  488 0057 04       		.byte	0x4
  489 0058 07       		.byte	0x7
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 18
 
 
- 490 0059 BC000000 		.4byte	.LASF6
+ 490 0059 5F000000 		.4byte	.LASF6
  491 005d 03       		.uleb128 0x3
  492 005e 08       		.byte	0x8
  493 005f 05       		.byte	0x5
- 494 0060 EB010000 		.4byte	.LASF7
+ 494 0060 8E010000 		.4byte	.LASF7
  495 0064 03       		.uleb128 0x3
  496 0065 08       		.byte	0x8
  497 0066 07       		.byte	0x7
@@ -1033,13 +1033,13 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  499 006b 03       		.uleb128 0x3
  500 006c 04       		.byte	0x4
  501 006d 07       		.byte	0x7
- 502 006e E2010000 		.4byte	.LASF9
+ 502 006e 85010000 		.4byte	.LASF9
  503 0072 03       		.uleb128 0x3
  504 0073 01       		.byte	0x1
  505 0074 08       		.byte	0x8
- 506 0075 06020000 		.4byte	.LASF10
+ 506 0075 A9010000 		.4byte	.LASF10
  507 0079 04       		.uleb128 0x4
- 508 007a CE000000 		.4byte	.LASF13
+ 508 007a 71000000 		.4byte	.LASF13
  509 007e 02       		.byte	0x2
  510 007f 5B       		.byte	0x5b
  511 0080 3A000000 		.4byte	0x3a
@@ -1050,7 +1050,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  516 008b 03       		.uleb128 0x3
  517 008c 08       		.byte	0x8
  518 008d 04       		.byte	0x4
- 519 008e E5000000 		.4byte	.LASF12
+ 519 008e 88000000 		.4byte	.LASF12
  520 0092 04       		.uleb128 0x4
  521 0093 5A000000 		.4byte	.LASF14
  522 0097 02       		.byte	0x2
@@ -1059,7 +1059,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  525 009d 05       		.uleb128 0x5
  526 009e 79000000 		.4byte	0x79
  527 00a2 06       		.uleb128 0x6
- 528 00a3 EC000000 		.4byte	.LASF15
+ 528 00a3 8F000000 		.4byte	.LASF15
  529 00a7 01       		.byte	0x1
  530 00a8 29       		.byte	0x29
  531 00a9 00000000 		.4byte	.LFB0
@@ -1068,7 +1068,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  534 00b2 9C       		.byte	0x9c
  535 00b3 D9000000 		.4byte	0xd9
  536 00b7 07       		.uleb128 0x7
- 537 00b8 D4000000 		.4byte	.LASF18
+ 537 00b8 77000000 		.4byte	.LASF18
  538 00bc 01       		.byte	0x1
  539 00bd 2B       		.byte	0x2b
  540 00be 79000000 		.4byte	0x79
@@ -1078,13 +1078,13 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  544 00cb D4020000 		.4byte	0x2d4
  545 00cf 08       		.uleb128 0x8
  546 00d0 14000000 		.4byte	.LVL1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 19
 
 
  547 00d4 DF020000 		.4byte	0x2df
  548 00d8 00       		.byte	0
  549 00d9 09       		.uleb128 0x9
- 550 00da A9010000 		.4byte	.LASF28
+ 550 00da 4C010000 		.4byte	.LASF28
  551 00de 01       		.byte	0x1
  552 00df 45       		.byte	0x45
  553 00e0 00000000 		.4byte	.LFB1
@@ -1092,7 +1092,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  555 00e8 01       		.uleb128 0x1
  556 00e9 9C       		.byte	0x9c
  557 00ea 06       		.uleb128 0x6
- 558 00eb C8010000 		.4byte	.LASF16
+ 558 00eb 6B010000 		.4byte	.LASF16
  559 00ef 01       		.byte	0x1
  560 00f0 9E       		.byte	0x9e
  561 00f1 00000000 		.4byte	.LFB2
@@ -1108,7 +1108,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  571 010d A2000000 		.4byte	0xa2
  572 0111 00       		.byte	0
  573 0112 0A       		.uleb128 0xa
- 574 0113 0B020000 		.4byte	.LASF17
+ 574 0113 AE010000 		.4byte	.LASF17
  575 0117 01       		.byte	0x1
  576 0118 1801     		.2byte	0x118
  577 011a 00000000 		.4byte	.LFB4
@@ -1117,7 +1117,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  580 0123 9C       		.byte	0x9c
  581 0124 4B010000 		.4byte	0x14b
  582 0128 0B       		.uleb128 0xb
- 583 0129 D4000000 		.4byte	.LASF18
+ 583 0129 77000000 		.4byte	.LASF18
  584 012d 01       		.byte	0x1
  585 012e 1A01     		.2byte	0x11a
  586 0130 79000000 		.4byte	0x79
@@ -1130,7 +1130,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  593 0146 DF020000 		.4byte	0x2df
  594 014a 00       		.byte	0
  595 014b 0A       		.uleb128 0xa
- 596 014c 58020000 		.4byte	.LASF19
+ 596 014c FB010000 		.4byte	.LASF19
  597 0150 01       		.byte	0x1
  598 0151 3A01     		.2byte	0x13a
  599 0153 00000000 		.4byte	.LFB5
@@ -1138,11 +1138,11 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  601 015b 01       		.uleb128 0x1
  602 015c 9C       		.byte	0x9c
  603 015d 84010000 		.4byte	0x184
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 20
 
 
  604 0161 0B       		.uleb128 0xb
- 605 0162 D4000000 		.4byte	.LASF18
+ 605 0162 77000000 		.4byte	.LASF18
  606 0166 01       		.byte	0x1
  607 0167 3C01     		.2byte	0x13c
  608 0169 79000000 		.4byte	0x79
@@ -1155,7 +1155,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  615 017f DF020000 		.4byte	0x2df
  616 0183 00       		.byte	0
  617 0184 0A       		.uleb128 0xa
- 618 0185 D2010000 		.4byte	.LASF20
+ 618 0185 75010000 		.4byte	.LASF20
  619 0189 01       		.byte	0x1
  620 018a 5B01     		.2byte	0x15b
  621 018c 00000000 		.4byte	.LFB6
@@ -1164,7 +1164,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  624 0195 9C       		.byte	0x9c
  625 0196 BD010000 		.4byte	0x1bd
  626 019a 0B       		.uleb128 0xb
- 627 019b D4000000 		.4byte	.LASF18
+ 627 019b 77000000 		.4byte	.LASF18
  628 019f 01       		.byte	0x1
  629 01a0 5D01     		.2byte	0x15d
  630 01a2 79000000 		.4byte	0x79
@@ -1177,7 +1177,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  637 01b8 DF020000 		.4byte	0x2df
  638 01bc 00       		.byte	0
  639 01bd 0A       		.uleb128 0xa
- 640 01be F9010000 		.4byte	.LASF21
+ 640 01be 9C010000 		.4byte	.LASF21
  641 01c2 01       		.byte	0x1
  642 01c3 8301     		.2byte	0x183
  643 01c5 00000000 		.4byte	.LFB7
@@ -1186,7 +1186,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  646 01ce 9C       		.byte	0x9c
  647 01cf F6010000 		.4byte	0x1f6
  648 01d3 0B       		.uleb128 0xb
- 649 01d4 D4000000 		.4byte	.LASF18
+ 649 01d4 77000000 		.4byte	.LASF18
  650 01d8 01       		.byte	0x1
  651 01d9 8501     		.2byte	0x185
  652 01db 79000000 		.4byte	0x79
@@ -1198,11 +1198,11 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  658 01ed 14000000 		.4byte	.LVL11
  659 01f1 DF020000 		.4byte	0x2df
  660 01f5 00       		.byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 21
 
 
  661 01f6 0A       		.uleb128 0xa
- 662 01f7 41020000 		.4byte	.LASF22
+ 662 01f7 E4010000 		.4byte	.LASF22
  663 01fb 01       		.byte	0x1
  664 01fc A301     		.2byte	0x1a3
  665 01fe 00000000 		.4byte	.LFB8
@@ -1211,7 +1211,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  668 0207 9C       		.byte	0x9c
  669 0208 2F020000 		.4byte	0x22f
  670 020c 0B       		.uleb128 0xb
- 671 020d D4000000 		.4byte	.LASF18
+ 671 020d 77000000 		.4byte	.LASF18
  672 0211 01       		.byte	0x1
  673 0212 A501     		.2byte	0x1a5
  674 0214 79000000 		.4byte	0x79
@@ -1233,7 +1233,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  690 0240 9C       		.byte	0x9c
  691 0241 68020000 		.4byte	0x268
  692 0245 0B       		.uleb128 0xb
- 693 0246 D4000000 		.4byte	.LASF18
+ 693 0246 77000000 		.4byte	.LASF18
  694 024a 01       		.byte	0x1
  695 024b C601     		.2byte	0x1c6
  696 024d 79000000 		.4byte	0x79
@@ -1246,7 +1246,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  703 0263 DF020000 		.4byte	0x2df
  704 0267 00       		.byte	0
  705 0268 06       		.uleb128 0x6
- 706 0269 72020000 		.4byte	.LASF24
+ 706 0269 15020000 		.4byte	.LASF24
  707 026d 01       		.byte	0x1
  708 026e B9       		.byte	0xb9
  709 026f 00000000 		.4byte	.LFB3
@@ -1255,10 +1255,10 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  712 0278 9C       		.byte	0x9c
  713 0279 C3020000 		.4byte	0x2c3
  714 027d 07       		.uleb128 0x7
- 715 027e D4000000 		.4byte	.LASF18
+ 715 027e 77000000 		.4byte	.LASF18
  716 0282 01       		.byte	0x1
  717 0283 BB       		.byte	0xbb
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 22
 
 
  718 0284 79000000 		.4byte	0x79
@@ -1291,12 +1291,12 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  745 02cf 03       		.byte	0x3
  746 02d0 00000000 		.4byte	I2S_initVar
  747 02d4 0D       		.uleb128 0xd
- 748 02d5 85010000 		.4byte	.LASF30
+ 748 02d5 28010000 		.4byte	.LASF30
  749 02d9 03       		.byte	0x3
  750 02da 7E       		.byte	0x7e
  751 02db 79000000 		.4byte	0x79
  752 02df 0E       		.uleb128 0xe
- 753 02e0 B2010000 		.4byte	.LASF31
+ 753 02e0 55010000 		.4byte	.LASF31
  754 02e4 03       		.byte	0x3
  755 02e5 7F       		.byte	0x7f
  756 02e6 0F       		.uleb128 0xf
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  772 000a 0E       		.uleb128 0xe
  773 000b 55       		.uleb128 0x55
  774 000c 17       		.uleb128 0x17
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 23
 
 
  775 000d 11       		.uleb128 0x11
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  829 0043 0E       		.uleb128 0xe
  830 0044 3A       		.uleb128 0x3a
  831 0045 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 24
 
 
  832 0046 3B       		.uleb128 0x3b
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  886 007f 01       		.uleb128 0x1
  887 0080 12       		.uleb128 0x12
  888 0081 06       		.uleb128 0x6
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 25
 
 
  889 0082 40       		.uleb128 0x40
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  943 00ba 0B       		.uleb128 0xb
  944 00bb 49       		.uleb128 0x49
  945 00bc 13       		.uleb128 0x13
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 26
 
 
  946 00bd 3F       		.uleb128 0x3f
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  1000 0004 13000000 		.4byte	.LVL1-1
  1001 0008 0100     		.2byte	0x1
  1002 000a 50       		.byte	0x50
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 27
 
 
  1003 000b 00000000 		.4byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  1057 0006 00000000 		.4byte	.Ldebug_info0
  1058 000a 04       		.byte	0x4
  1059 000b 00       		.byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 28
 
 
  1060 000c 0000     		.2byte	0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  1110      01010101 
  1111              	.LASF23:
  1112 0000 4932535F 		.ascii	"I2S_ClearRxFIFO\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 29
 
 
  1112      436C6561 
@@ -1711,143 +1711,148 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 1
  1123              	.LASF14:
  1124 005a 72656738 		.ascii	"reg8\000"
  1124      00
- 1125              	.LASF27:
- 1126 005f 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Senior Project C"
- 1126      73657273 
- 1126      5C49616E 
- 1126      5C446F63 
- 1126      756D656E 
- 1127 008d 68697020 		.ascii	"hip Design\\Wave Generator\\Wave Generator.cydsn\000"
- 1127      44657369 
- 1127      676E5C57 
- 1127      61766520 
- 1127      47656E65 
- 1128              	.LASF6:
- 1129 00bc 6C6F6E67 		.ascii	"long unsigned int\000"
- 1129      20756E73 
- 1129      69676E65 
- 1129      6420696E 
- 1129      7400
- 1130              	.LASF13:
- 1131 00ce 75696E74 		.ascii	"uint8\000"
- 1131      3800
- 1132              	.LASF18:
- 1133 00d4 656E6162 		.ascii	"enableInterrupts\000"
- 1133      6C65496E 
- 1133      74657272 
- 1133      75707473 
- 1133      00
- 1134              	.LASF12:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 30
+ 1125              	.LASF6:
+ 1126 005f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1126      20756E73 
+ 1126      69676E65 
+ 1126      6420696E 
+ 1126      7400
+ 1127              	.LASF13:
+ 1128 0071 75696E74 		.ascii	"uint8\000"
+ 1128      3800
+ 1129              	.LASF18:
+ 1130 0077 656E6162 		.ascii	"enableInterrupts\000"
+ 1130      6C65496E 
+ 1130      74657272 
+ 1130      75707473 
+ 1130      00
+ 1131              	.LASF12:
+ 1132 0088 646F7562 		.ascii	"double\000"
+ 1132      6C6500
+ 1133              	.LASF15:
+ 1134 008f 4932535F 		.ascii	"I2S_Enable\000"
+ 1134      456E6162 
+ 1134      6C6500
+ 1135              	.LASF25:
+ 1136 009a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1136      4320342E 
+ 1136      392E3320 
+ 1136      32303135 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 30
 
 
- 1135 00e5 646F7562 		.ascii	"double\000"
- 1135      6C6500
- 1136              	.LASF15:
- 1137 00ec 4932535F 		.ascii	"I2S_Enable\000"
- 1137      456E6162 
- 1137      6C6500
- 1138              	.LASF25:
- 1139 00f7 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1139      4320342E 
- 1139      392E3320 
- 1139      32303135 
- 1139      30333033 
- 1140 012a 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1140      20726576 
- 1140      6973696F 
- 1140      6E203232 
- 1140      31323230 
- 1141 015d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1141      66756E63 
- 1141      74696F6E 
- 1141      2D736563 
- 1141      74696F6E 
- 1142              	.LASF30:
- 1143 0185 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 1143      74657243 
- 1143      72697469 
- 1143      63616C53 
- 1143      65637469 
- 1144              	.LASF0:
- 1145 019c 756E7369 		.ascii	"unsigned int\000"
- 1145      676E6564 
- 1145      20696E74 
- 1145      00
- 1146              	.LASF28:
- 1147 01a9 4932535F 		.ascii	"I2S_Init\000"
- 1147      496E6974 
- 1147      00
- 1148              	.LASF31:
- 1149 01b2 43794578 		.ascii	"CyExitCriticalSection\000"
- 1149      69744372 
- 1149      69746963 
- 1149      616C5365 
- 1149      6374696F 
- 1150              	.LASF16:
- 1151 01c8 4932535F 		.ascii	"I2S_Start\000"
- 1151      53746172 
- 1151      7400
- 1152              	.LASF20:
- 1153 01d2 4932535F 		.ascii	"I2S_ClearTxFIFO\000"
- 1153      436C6561 
- 1153      72547846 
- 1153      49464F00 
- 1154              	.LASF9:
- 1155 01e2 73697A65 		.ascii	"sizetype\000"
- 1155      74797065 
- 1155      00
- 1156              	.LASF7:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccnbUP5N.s 			page 31
+ 1136      30333033 
+ 1137 00cd 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1137      20726576 
+ 1137      6973696F 
+ 1137      6E203232 
+ 1137      31323230 
+ 1138 0100 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1138      66756E63 
+ 1138      74696F6E 
+ 1138      2D736563 
+ 1138      74696F6E 
+ 1139              	.LASF30:
+ 1140 0128 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1140      74657243 
+ 1140      72697469 
+ 1140      63616C53 
+ 1140      65637469 
+ 1141              	.LASF0:
+ 1142 013f 756E7369 		.ascii	"unsigned int\000"
+ 1142      676E6564 
+ 1142      20696E74 
+ 1142      00
+ 1143              	.LASF28:
+ 1144 014c 4932535F 		.ascii	"I2S_Init\000"
+ 1144      496E6974 
+ 1144      00
+ 1145              	.LASF31:
+ 1146 0155 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1146      69744372 
+ 1146      69746963 
+ 1146      616C5365 
+ 1146      6374696F 
+ 1147              	.LASF16:
+ 1148 016b 4932535F 		.ascii	"I2S_Start\000"
+ 1148      53746172 
+ 1148      7400
+ 1149              	.LASF20:
+ 1150 0175 4932535F 		.ascii	"I2S_ClearTxFIFO\000"
+ 1150      436C6561 
+ 1150      72547846 
+ 1150      49464F00 
+ 1151              	.LASF9:
+ 1152 0185 73697A65 		.ascii	"sizetype\000"
+ 1152      74797065 
+ 1152      00
+ 1153              	.LASF7:
+ 1154 018e 6C6F6E67 		.ascii	"long long int\000"
+ 1154      206C6F6E 
+ 1154      6720696E 
+ 1154      7400
+ 1155              	.LASF21:
+ 1156 019c 4932535F 		.ascii	"I2S_EnableRx\000"
+ 1156      456E6162 
+ 1156      6C655278 
+ 1156      00
+ 1157              	.LASF10:
+ 1158 01a9 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccxkQ6Xg.s 			page 31
 
 
- 1157 01eb 6C6F6E67 		.ascii	"long long int\000"
- 1157      206C6F6E 
- 1157      6720696E 
- 1157      7400
- 1158              	.LASF21:
- 1159 01f9 4932535F 		.ascii	"I2S_EnableRx\000"
- 1159      456E6162 
- 1159      6C655278 
- 1159      00
- 1160              	.LASF10:
- 1161 0206 63686172 		.ascii	"char\000"
- 1161      00
- 1162              	.LASF17:
- 1163 020b 4932535F 		.ascii	"I2S_EnableTx\000"
- 1163      456E6162 
- 1163      6C655478 
- 1163      00
- 1164              	.LASF3:
- 1165 0218 73686F72 		.ascii	"short int\000"
- 1165      7420696E 
- 1165      7400
- 1166              	.LASF26:
- 1167 0222 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\I2S.c\000"
- 1167      6E657261 
- 1167      7465645F 
- 1167      536F7572 
- 1167      63655C50 
- 1168              	.LASF22:
- 1169 0241 4932535F 		.ascii	"I2S_DisableRx\000"
- 1169      44697361 
- 1169      626C6552 
- 1169      7800
- 1170              	.LASF5:
- 1171 024f 6C6F6E67 		.ascii	"long int\000"
- 1171      20696E74 
- 1171      00
- 1172              	.LASF19:
- 1173 0258 4932535F 		.ascii	"I2S_DisableTx\000"
- 1173      44697361 
- 1173      626C6554 
- 1173      7800
- 1174              	.LASF1:
- 1175 0266 7369676E 		.ascii	"signed char\000"
- 1175      65642063 
- 1175      68617200 
- 1176              	.LASF24:
- 1177 0272 4932535F 		.ascii	"I2S_Stop\000"
- 1177      53746F70 
- 1177      00
- 1178              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1158      00
+ 1159              	.LASF17:
+ 1160 01ae 4932535F 		.ascii	"I2S_EnableTx\000"
+ 1160      456E6162 
+ 1160      6C655478 
+ 1160      00
+ 1161              	.LASF3:
+ 1162 01bb 73686F72 		.ascii	"short int\000"
+ 1162      7420696E 
+ 1162      7400
+ 1163              	.LASF26:
+ 1164 01c5 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\I2S.c\000"
+ 1164      6E657261 
+ 1164      7465645F 
+ 1164      536F7572 
+ 1164      63655C50 
+ 1165              	.LASF22:
+ 1166 01e4 4932535F 		.ascii	"I2S_DisableRx\000"
+ 1166      44697361 
+ 1166      626C6552 
+ 1166      7800
+ 1167              	.LASF5:
+ 1168 01f2 6C6F6E67 		.ascii	"long int\000"
+ 1168      20696E74 
+ 1168      00
+ 1169              	.LASF19:
+ 1170 01fb 4932535F 		.ascii	"I2S_DisableTx\000"
+ 1170      44697361 
+ 1170      626C6554 
+ 1170      7800
+ 1171              	.LASF1:
+ 1172 0209 7369676E 		.ascii	"signed char\000"
+ 1172      65642063 
+ 1172      68617200 
+ 1173              	.LASF24:
+ 1174 0215 4932535F 		.ascii	"I2S_Stop\000"
+ 1174      53746F70 
+ 1174      00
+ 1175              	.LASF27:
+ 1176 021e 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Senior Project C"
+ 1176      73657273 
+ 1176      5C49616E 
+ 1176      5C446F63 
+ 1176      756D656E 
+ 1177 024c 68697020 		.ascii	"hip Design\\Chip-Design\\proj_asic\\psoc\\Wave Gene"
+ 1177      44657369 
+ 1177      676E5C43 
+ 1177      6869702D 
+ 1177      44657369 
+ 1178 027b 7261746F 		.ascii	"rator\\Wave Generator.cydsn\000"
+ 1178      725C5761 
+ 1178      76652047 
+ 1178      656E6572 
+ 1178      61746F72 
+ 1179              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
