@@ -4,7 +4,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   chip_test1_reg_address_h400_write.v
 // Create Date:   2/17/2016
-// Last Edit:     2/17/16
+// Last Edit:     2/29/16
 // Author:        Kevin Cao, Whitley Forman
 //
 // Description:   Modified i2c functionality to be MSB on master and load reg h400 address for bist or i2s select.
@@ -20,8 +20,8 @@ module chip_test1;
     
     // I2S Inputs
 	reg                     i2si_sck;
-	reg                     i2si_ws;
-	reg                     i2si_sd;
+	wire                    i2si_ws;
+	wire                    i2si_sd;
     
     // I2C Inputs
 	reg     [2:0]           i2c_addr_bits;
@@ -51,6 +51,8 @@ module chip_test1;
     integer                         i2s_word_cnt;                                                       // word counter
     parameter                       i2s_cyc_per_half_sck = 33;                                          // about (100 MHz / 1.536 MHz)/2
     parameter                       i2s_bit_tc =  15;                                                   // number of bits in a word
+    integer                         index1;                                                             // counter for instantiating i2s_test_data
+    integer                         index2;                                                             // counter for instantiating i2s_test_data
 
     
     // I2C Internal Variables
@@ -86,8 +88,7 @@ module chip_test1;
 		clk = 0;
         
 		i2si_sck = 0;
-		i2si_ws = 0;
-		i2si_sd = 0;
+
         
 		i2c_addr_bits = 3'b101;
 		i2c_scl = 0;
@@ -95,8 +96,17 @@ module chip_test1;
 		i2c_count = 0;
         
         
+        // Instantiate I2S Test Data: Method 1
+        for(index1 = 0; index1 < `N; index1 = index1 + 1)
+        begin
+            for(index2 = 0; index2 < 2; index2 = index2 + 1)
+            begin
+                i2s_test_data [index1] [index2] = $random;
+            end
+        end
         
         
+        /*
         // Instantiate I2S Test Data
         
         i2s_test_data [ 0] [0] = 16'hAAAA;                                                                                   
@@ -121,6 +131,7 @@ module chip_test1;
         i2s_test_data [ 9] [1] = 16'h7435;                                                                                               
         i2s_test_data [10] [0] = 16'h69D9;                                                              
         i2s_test_data [10] [1] = 16'hABCD;
+        */
         
         // Instantiate I2C Test Data
         i2c_test_data[0] = 8'b00000001;			// data for h400
@@ -198,10 +209,10 @@ module chip_test1;
     assign rst_n = !(clk_count < 20);
 
     // Set which word channel to read from for I2S Interface
-    assign inp_ws = ((0<=i2s_bit_cnt& i2s_bit_cnt<=16'd14)&i2s_lr_cnt==1) | ((i2s_bit_cnt==16'd15)&(i2s_lr_cnt==0));  
+    assign i2si_ws = ((0<=i2s_bit_cnt& i2s_bit_cnt<=16'd14)&i2s_lr_cnt==1) | ((i2s_bit_cnt==16'd15)&(i2s_lr_cnt==0));  
 
     // Set which serial data bit to input
-    assign inp_sd = i2s_test_data [i2s_word_cnt][i2s_lr_cnt][i2s_bit_tc-i2s_bit_cnt];  
+    assign i2si_sd = i2s_test_data [i2s_word_cnt][i2s_lr_cnt][i2s_bit_tc-i2s_bit_cnt];  
     
     
     
@@ -216,15 +227,6 @@ module chip_test1;
     
     // I2C TEST BENCH PORTION
     
-    // From here onward I mostly copied and pasted from i2c_reg_test_automated.v found in the folder "Control Flow Subsystem"
-    // I have no idea if this will work with the I2S portion
-    
-    // Issues that I (Kevin) can identify.
-    // 1. Whitely and I (Kevin) define the reset signal differently. Whitely uses reset, I use rst_n
-    //      Whitely has reset as a reg, I have it as a wire
-    //      Whitely defines reset in intial block, I use an assign statement
-    // 2. Master clock has two different rates in Whitely's and my portion. Whitely uses #50, I use #5. Should not be a problem afaik
-    // 3. I have no idea if Whitely's portion will affect how my block functions, or vice versa (I believe my block will not change how Whitely's block functions). <<<<< BIGGEST ISSUE :)
     
     
     always #1250 i2c_scl = !i2c_scl; 	//create i2c_scl @ 400khz
