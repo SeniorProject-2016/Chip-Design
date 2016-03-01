@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
   29:.\Generated_Source\PSoC5/ADC_theACLK.c **** 
   30:.\Generated_Source\PSoC5/ADC_theACLK.c **** /*******************************************************************************
   31:.\Generated_Source\PSoC5/ADC_theACLK.c **** * Function Name: ADC_theACLK_Start
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/ADC_theACLK.c **** ********************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
   55:.\Generated_Source\PSoC5/ADC_theACLK.c **** ********************************************************************************
   56:.\Generated_Source\PSoC5/ADC_theACLK.c **** *
   57:.\Generated_Source\PSoC5/ADC_theACLK.c **** * Summary:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 3
 
 
   58:.\Generated_Source\PSoC5/ADC_theACLK.c **** *  Stops the clock and returns immediately. This API does not require the
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
   81:.\Generated_Source\PSoC5/ADC_theACLK.c **** 
   82:.\Generated_Source\PSoC5/ADC_theACLK.c **** /*******************************************************************************
   83:.\Generated_Source\PSoC5/ADC_theACLK.c **** * Function Name: ADC_theACLK_StopBlock
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 4
 
 
   84:.\Generated_Source\PSoC5/ADC_theACLK.c **** ********************************************************************************
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  116:.\Generated_Source\PSoC5/ADC_theACLK.c **** #endif /* ADC_theACLK__CFG3 */
  117:.\Generated_Source\PSoC5/ADC_theACLK.c **** 
  118:.\Generated_Source\PSoC5/ADC_theACLK.c ****         /* Clear mask of bus clock. */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 5
 
 
  119:.\Generated_Source\PSoC5/ADC_theACLK.c ****         CLK_DIST_BCFG2 &= (uint8)(~BCFG2_MASK);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  147              		.loc 1 136 0
  148 0056 FF33     		adds	r3, r3, #255
  149 0058 1A80     		strh	r2, [r3]	@ movhi
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 6
 
 
  150              	.LVL1:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  161:.\Generated_Source\PSoC5/ADC_theACLK.c ****         ADC_theACLK_CLKSTBY &= (uint8)(~ADC_theACLK_CLKSTBY_MASK);
  180              		.loc 1 161 0
  181 0002 064A     		ldr	r2, .L15
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 7
 
 
  182 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  190:.\Generated_Source\PSoC5/ADC_theACLK.c **** *  None
  191:.\Generated_Source\PSoC5/ADC_theACLK.c **** *
  192:.\Generated_Source\PSoC5/ADC_theACLK.c **** *******************************************************************************/
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 8
 
 
  193:.\Generated_Source\PSoC5/ADC_theACLK.c **** void ADC_theACLK_SetDividerRegister(uint16 clkDivider, uint8 restart)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  247:.\Generated_Source\PSoC5/ADC_theACLK.c ****                     CLK_DIST_LD = CYCLK_LD_DISABLE|CYCLK_LD_SYNC_EN|CYCLK_LD_LOAD;
  248:.\Generated_Source\PSoC5/ADC_theACLK.c **** 
  249:.\Generated_Source\PSoC5/ADC_theACLK.c ****                     /* Wait for clock to be disabled */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 9
 
 
  250:.\Generated_Source\PSoC5/ADC_theACLK.c ****                     while ((CLK_DIST_LD & CYCLK_LD_LOAD) != 0u) { }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  299:.\Generated_Source\PSoC5/ADC_theACLK.c ****     return CY_GET_REG16(ADC_theACLK_DIV_PTR);
  213              		.loc 1 299 0
  214 0000 014B     		ldr	r3, .L18
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 10
 
 
  215 0002 1888     		ldrh	r0, [r3]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  235              		.cfi_startproc
  236              		@ args = 0, pretend = 0, frame = 0
  237              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 11
 
 
  238              		@ link register save eliminated.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  363:.\Generated_Source\PSoC5/ADC_theACLK.c **** * Returns:
  364:.\Generated_Source\PSoC5/ADC_theACLK.c **** *  None
  365:.\Generated_Source\PSoC5/ADC_theACLK.c **** *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 12
 
 
  366:.\Generated_Source\PSoC5/ADC_theACLK.c **** *******************************************************************************/
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  389:.\Generated_Source\PSoC5/ADC_theACLK.c **** {
  294              		.loc 1 389 0
  295              		.cfi_startproc
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 13
 
 
  296              		@ args = 0, pretend = 0, frame = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  420:.\Generated_Source\PSoC5/ADC_theACLK.c **** {
  421:.\Generated_Source\PSoC5/ADC_theACLK.c ****     uint16 currDiv = ADC_theACLK_GetDividerRegister();
  422:.\Generated_Source\PSoC5/ADC_theACLK.c ****     uint8 oldSrc = ADC_theACLK_GetSourceRegister();
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 14
 
 
  423:.\Generated_Source\PSoC5/ADC_theACLK.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  329 0004 00F00700 		and	r0, r0, #7
  330 0008 7047     		bx	lr
  331              	.L31:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 15
 
 
  332 000a 00BF     		.align	2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  205:.\Generated_Source\PSoC5/ADC_theACLK.c ****         {
  379              		.loc 1 205 0 discriminator 2
  380 0020 85B9     		cbnz	r5, .L34
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 16
 
 
  381              	.L35:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  425 0058 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  426 005a 03F07F03 		and	r3, r3, #127
  427 005e 0B70     		strb	r3, [r1]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 17
 
 
  243:.\Generated_Source\PSoC5/ADC_theACLK.c ****                 {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  472              	.LVL19:
  473              	.L43:
  474 00a4 0122     		movs	r2, #1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 18
 
 
  475              	.LVL20:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  524 0000 38B5     		push	{r3, r4, r5, lr}
  525              		.cfi_def_cfa_offset 16
  526              		.cfi_offset 3, -16
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 19
 
 
  527              		.cfi_offset 4, -12
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  438:.\Generated_Source\PSoC5/ADC_theACLK.c ****             (ADC_theACLK_MOD_SRC & (uint8)(~ADC_theACLK_SRC_SEL_MSK)) | clkSource;
  569              		.loc 1 438 0
  570 0036 03F0F803 		and	r3, r3, #248
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 20
 
 
  571 003a 1C43     		orrs	r4, r4, r3
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  486:.\Generated_Source\PSoC5/ADC_theACLK.c **** *   produces a 10ns delay.
  487:.\Generated_Source\PSoC5/ADC_theACLK.c **** *
  488:.\Generated_Source\PSoC5/ADC_theACLK.c **** * Returns:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 21
 
 
  489:.\Generated_Source\PSoC5/ADC_theACLK.c **** *  None
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  632              		.cfi_startproc
  633              		@ args = 0, pretend = 0, frame = 0
  634              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 22
 
 
  635              		@ link register save eliminated.
@@ -1290,7 +1290,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  659 000c FD010000 		.4byte	.LASF40
  660 0010 01       		.byte	0x1
  661 0011 06010000 		.4byte	.LASF41
- 662 0015 E2020000 		.4byte	.LASF42
+ 662 0015 C6020000 		.4byte	.LASF42
  663 0019 00000000 		.4byte	.Ldebug_ranges0+0
  664 001d 00000000 		.4byte	0
  665 0021 00000000 		.4byte	.Ldebug_line0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  687 0049 04       		.byte	0x4
  688 004a 07       		.byte	0x7
  689 004b AD020000 		.4byte	.LASF5
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 23
 
 
  690 004f 02       		.uleb128 0x2
@@ -1378,14 +1378,14 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  744 00bb 01       		.byte	0x1
  745 00bc 2D       		.byte	0x2d
  746 00bd 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 24
 
 
  747 00c1 1C000000 		.4byte	.LFE0-.LFB0
  748 00c5 01       		.uleb128 0x1
  749 00c6 9C       		.byte	0x9c
  750 00c7 06       		.uleb128 0x6
- 751 00c8 47030000 		.4byte	.LASF17
+ 751 00c8 62030000 		.4byte	.LASF17
  752 00cc 01       		.byte	0x1
  753 00cd 47       		.byte	0x47
  754 00ce 00000000 		.4byte	.LFB1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  801 013a 0C000000 		.4byte	.LFE5-.LFB5
  802 013e 01       		.uleb128 0x1
  803 013f 9C       		.byte	0x9c
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 25
 
 
  804 0140 0C       		.uleb128 0xc
@@ -1474,7 +1474,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  834 0189 34000000 		.4byte	.LLST2
  835 018d 00       		.byte	0
  836 018e 0B       		.uleb128 0xb
- 837 018f C6020000 		.4byte	.LASF25
+ 837 018f 3E030000 		.4byte	.LASF25
  838 0193 01       		.byte	0x1
  839 0194 8401     		.2byte	0x184
  840 0196 6B000000 		.4byte	0x6b
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  858 01c1 00000000 		.4byte	.LFB4
  859 01c5 D8000000 		.4byte	.LFE4-.LFB4
  860 01c9 01       		.uleb128 0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 26
 
 
  861 01ca 9C       		.byte	0x9c
@@ -1516,7 +1516,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  873 01e5 6B000000 		.4byte	0x6b
  874 01e9 76000000 		.4byte	.LLST4
  875 01ed 09       		.uleb128 0x9
- 876 01ee 3F030000 		.4byte	.LASF31
+ 876 01ee 5A030000 		.4byte	.LASF31
  877 01f2 01       		.byte	0x1
  878 01f3 C4       		.byte	0xc4
  879 01f4 6B000000 		.4byte	0x6b
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  915 024d F8000000 		.4byte	.LLST7
  916 0251 11       		.uleb128 0x11
  917 0252 16000000 		.4byte	.LASF35
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 27
 
 
  918 0256 01       		.byte	0x1
@@ -1580,7 +1580,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  934 027d A4010000 		.4byte	0x1a4
  935 0281 00       		.byte	0
  936 0282 0C       		.uleb128 0xc
- 937 0283 61030000 		.4byte	.LASF37
+ 937 0283 7C030000 		.4byte	.LASF37
  938 0287 01       		.byte	0x1
  939 0288 EC01     		.2byte	0x1ec
  940 028a 00000000 		.4byte	.LFB11
@@ -1589,7 +1589,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  943 0293 9C       		.byte	0x9c
  944 0294 A9020000 		.4byte	0x2a9
  945 0298 0D       		.uleb128 0xd
- 946 0299 58030000 		.4byte	.LASF38
+ 946 0299 73030000 		.4byte	.LASF38
  947 029d 01       		.byte	0x1
  948 029e EC01     		.2byte	0x1ec
  949 02a0 6B000000 		.4byte	0x6b
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  972 0008 0E       		.uleb128 0xe
  973 0009 1B       		.uleb128 0x1b
  974 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 28
 
 
  975 000b 55       		.uleb128 0x55
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1029 0041 19       		.uleb128 0x19
  1030 0042 03       		.uleb128 0x3
  1031 0043 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 29
 
 
  1032 0044 3A       		.uleb128 0x3a
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1086 007c 0E       		.uleb128 0xe
  1087 007d 3A       		.uleb128 0x3a
  1088 007e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 30
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 30
 
 
  1089 007f 3B       		.uleb128 0x3b
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1143 00b6 0E       		.uleb128 0xe
  1144 00b7 3A       		.uleb128 0x3a
  1145 00b8 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 31
 
 
  1146 00b9 3B       		.uleb128 0x3b
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1200 00f0 0B       		.uleb128 0xb
  1201 00f1 49       		.uleb128 0x49
  1202 00f2 13       		.uleb128 0x13
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 32
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 32
 
 
  1203 00f3 02       		.uleb128 0x2
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1257 0013 00000000 		.4byte	.LVL3
  1258 0017 08000000 		.4byte	.LVL4
  1259 001b 0100     		.2byte	0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 33
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 33
 
 
  1260 001d 50       		.byte	0x50
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1314 009b 2A000000 		.4byte	.LVL12
  1315 009f 0100     		.2byte	0x1
  1316 00a1 52       		.byte	0x52
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 34
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 34
 
 
  1317 00a2 34000000 		.4byte	.LVL13
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1371              	.LLST9:
  1372 012c 00000000 		.4byte	.LVL30
  1373 0130 04000000 		.4byte	.LVL31
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 35
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 35
 
 
  1374 0134 0100     		.2byte	0x1
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1428 0014 6C000000 		.4byte	.LFE2
  1429 0018 00000000 		.4byte	.LFB3
  1430 001c 20000000 		.4byte	.LFE3
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 36
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 36
 
 
  1431 0020 00000000 		.4byte	.LFB5
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1467      724D6F64 
  1468              	.LASF36:
  1469 005b 6F6C6453 		.ascii	"oldSrc\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 37
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 37
 
 
  1469      726300
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1493 012d 756E7369 		.ascii	"unsigned char\000"
  1493      676E6564 
  1493      20636861 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 38
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 38
 
 
  1493      7200
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1515 01fd 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  1515      4320342E 
  1515      392E3320 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 39
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 39
 
 
  1515      32303135 
@@ -2316,43 +2316,48 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 1
  1528              	.LASF12:
  1529 02bf 646F7562 		.ascii	"double\000"
  1529      6C6500
- 1530              	.LASF25:
- 1531 02c6 4144435F 		.ascii	"ADC_theACLK_GetModeRegister\000"
- 1531      74686541 
- 1531      434C4B5F 
- 1531      4765744D 
- 1531      6F646552 
- 1532              	.LASF42:
- 1533 02e2 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Senior Project C"
- 1533      73657273 
- 1533      5C49616E 
- 1533      5C446F63 
- 1533      756D656E 
- 1534 0310 68697020 		.ascii	"hip Design\\Wave Generator\\Wave Generator.cydsn\000"
- 1534      44657369 
- 1534      676E5C57 
- 1534      61766520 
- 1534      47656E65 
- 1535              	.LASF31:
- 1536 033f 656E6162 		.ascii	"enabled\000"
- 1536      6C656400 
- 1537              	.LASF17:
- 1538 0347 4144435F 		.ascii	"ADC_theACLK_Stop\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKiuL7f.s 			page 40
+ 1530              	.LASF42:
+ 1531 02c6 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Senior Project C"
+ 1531      73657273 
+ 1531      5C49616E 
+ 1531      5C446F63 
+ 1531      756D656E 
+ 1532 02f4 68697020 		.ascii	"hip Design\\Chip-Design\\proj_asic\\psoc\\Wave Gene"
+ 1532      44657369 
+ 1532      676E5C43 
+ 1532      6869702D 
+ 1532      44657369 
+ 1533 0323 7261746F 		.ascii	"rator\\Wave Generator.cydsn\000"
+ 1533      725C5761 
+ 1533      76652047 
+ 1533      656E6572 
+ 1533      61746F72 
+ 1534              	.LASF25:
+ 1535 033e 4144435F 		.ascii	"ADC_theACLK_GetModeRegister\000"
+ 1535      74686541 
+ 1535      434C4B5F 
+ 1535      4765744D 
+ 1535      6F646552 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvpV3Qh.s 			page 40
 
 
- 1538      74686541 
- 1538      434C4B5F 
- 1538      53746F70 
- 1538      00
- 1539              	.LASF38:
- 1540 0358 636C6B50 		.ascii	"clkPhase\000"
- 1540      68617365 
- 1540      00
- 1541              	.LASF37:
- 1542 0361 4144435F 		.ascii	"ADC_theACLK_SetPhaseRegister\000"
- 1542      74686541 
- 1542      434C4B5F 
- 1542      53657450 
- 1542      68617365 
- 1543              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1536              	.LASF31:
+ 1537 035a 656E6162 		.ascii	"enabled\000"
+ 1537      6C656400 
+ 1538              	.LASF17:
+ 1539 0362 4144435F 		.ascii	"ADC_theACLK_Stop\000"
+ 1539      74686541 
+ 1539      434C4B5F 
+ 1539      53746F70 
+ 1539      00
+ 1540              	.LASF38:
+ 1541 0373 636C6B50 		.ascii	"clkPhase\000"
+ 1541      68617365 
+ 1541      00
+ 1542              	.LASF37:
+ 1543 037c 4144435F 		.ascii	"ADC_theACLK_SetPhaseRegister\000"
+ 1543      74686541 
+ 1543      434C4B5F 
+ 1543      53657450 
+ 1543      68617365 
+ 1544              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
