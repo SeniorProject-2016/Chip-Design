@@ -128,8 +128,8 @@ void DmaTxConfiguration(void)
     TxDMA_1_TD[0] = CyDmaTdAllocate();
 
 	// Configure this Td chain
-    CyDmaTdSetConfiguration(TxDMA_0_TD[0], 2, TxDMA_0_TD[0], TxDMA_0__TD_TERMOUT_EN);
-    CyDmaTdSetConfiguration(TxDMA_1_TD[0], 2, TxDMA_1_TD[0], TxDMA_1__TD_TERMOUT_EN);
+    CyDmaTdSetConfiguration(TxDMA_0_TD[0], 2, DMA_INVALID_TD, TxDMA_0__TD_TERMOUT_EN);
+    CyDmaTdSetConfiguration(TxDMA_1_TD[0], 2, DMA_INVALID_TD, TxDMA_1__TD_TERMOUT_EN);
 
 	// ADC AND IS2 HAVE INCOMPATIBLE BURST LENGTHS? ASK PEARLSTEIN I GUESS. 
 	
