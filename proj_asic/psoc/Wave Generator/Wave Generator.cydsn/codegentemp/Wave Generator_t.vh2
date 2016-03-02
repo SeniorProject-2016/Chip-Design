@@ -1,5 +1,5 @@
 -- Project:   C:\Users\Ian\Documents\Junior\Senior Project Chip Design\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn\Wave Generator.cyprj
--- Generated: 02/29/2016 21:01:47
+-- Generated: 03/01/2016 16:23:29
 -- PSoC Creator  3.3 CP1
 
 ENTITY \Wave Generator\ IS
@@ -34,7 +34,7 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
     SIGNAL Net_136 : bit;
     SIGNAL Net_138_0 : bit;
-    ATTRIBUTE placement_force OF Net_138_0 : SIGNAL IS "U(3,3,B)0";
+    ATTRIBUTE placement_force OF Net_138_0 : SIGNAL IS "U(2,5,A)0";
     SIGNAL Net_146 : bit;
     ATTRIBUTE udbclken_assigned OF Net_146 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_146 : SIGNAL IS true;
@@ -98,7 +98,7 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL \I2S:bI2S:reset\ : bit;
     ATTRIBUTE placement_force OF \I2S:bI2S:reset\ : SIGNAL IS "U(3,4,B)1";
     SIGNAL \I2S:bI2S:rx_data_in_0\ : bit;
-    ATTRIBUTE placement_force OF \I2S:bI2S:rx_data_in_0\ : SIGNAL IS "U(2,3,A)3";
+    ATTRIBUTE placement_force OF \I2S:bI2S:rx_data_in_0\ : SIGNAL IS "U(2,5,A)1";
     SIGNAL \I2S:bI2S:rx_f0_full_0\ : bit;
     SIGNAL \I2S:bI2S:rx_f0_load\ : bit;
     ATTRIBUTE placement_force OF \I2S:bI2S:rx_f0_load\ : SIGNAL IS "U(3,3,A)2";
@@ -108,11 +108,11 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL \I2S:bI2S:rx_f1_n_empty_0\ : bit;
     SIGNAL \I2S:bI2S:rx_int_out_0\ : bit;
     SIGNAL \I2S:bI2S:rx_overflow_0\ : bit;
-    ATTRIBUTE placement_force OF \I2S:bI2S:rx_overflow_0\ : SIGNAL IS "U(3,3,B)3";
+    ATTRIBUTE placement_force OF \I2S:bI2S:rx_overflow_0\ : SIGNAL IS "U(2,3,B)3";
     SIGNAL \I2S:bI2S:rx_overflow_sticky\ : bit;
-    ATTRIBUTE placement_force OF \I2S:bI2S:rx_overflow_sticky\ : SIGNAL IS "U(3,3,B)1";
+    ATTRIBUTE placement_force OF \I2S:bI2S:rx_overflow_sticky\ : SIGNAL IS "U(2,3,B)0";
     SIGNAL \I2S:bI2S:rx_state_0\ : bit;
-    ATTRIBUTE placement_force OF \I2S:bI2S:rx_state_0\ : SIGNAL IS "U(2,3,A)1";
+    ATTRIBUTE placement_force OF \I2S:bI2S:rx_state_0\ : SIGNAL IS "U(3,3,B)1";
     SIGNAL \I2S:bI2S:rx_state_1\ : bit;
     ATTRIBUTE placement_force OF \I2S:bI2S:rx_state_1\ : SIGNAL IS "U(3,3,A)1";
     SIGNAL \I2S:bI2S:rx_state_2\ : bit;
@@ -136,26 +136,26 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL \I2S:bI2S:txenable\ : bit;
     ATTRIBUTE placement_force OF \I2S:bI2S:txenable\ : SIGNAL IS "U(3,4,A)0";
     SIGNAL \UART:BUART:counter_load_not\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:counter_load_not\ : SIGNAL IS "U(2,5,A)1";
+    ATTRIBUTE placement_force OF \UART:BUART:counter_load_not\ : SIGNAL IS "U(2,3,A)3";
     SIGNAL \UART:BUART:tx_bitclk\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_bitclk\ : SIGNAL IS "U(2,4,A)1";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_bitclk\ : SIGNAL IS "U(2,4,B)2";
     SIGNAL \UART:BUART:tx_bitclk_enable_pre\ : bit;
     SIGNAL \UART:BUART:tx_counter_dp\ : bit;
     SIGNAL \UART:BUART:tx_fifo_empty\ : bit;
     SIGNAL \UART:BUART:tx_fifo_notfull\ : bit;
     SIGNAL \UART:BUART:tx_shift_out\ : bit;
     SIGNAL \UART:BUART:tx_state_0\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_state_0\ : SIGNAL IS "U(2,4,A)0";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_state_0\ : SIGNAL IS "U(2,4,B)0";
     SIGNAL \UART:BUART:tx_state_1\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_state_1\ : SIGNAL IS "U(2,5,A)3";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_state_1\ : SIGNAL IS "U(2,3,A)1";
     SIGNAL \UART:BUART:tx_state_2\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_state_2\ : SIGNAL IS "U(2,5,A)0";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_state_2\ : SIGNAL IS "U(2,3,A)0";
     SIGNAL \UART:BUART:tx_status_0\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_status_0\ : SIGNAL IS "U(2,4,A)2";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_status_0\ : SIGNAL IS "U(2,4,B)1";
     SIGNAL \UART:BUART:tx_status_2\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_status_2\ : SIGNAL IS "U(2,3,B)1";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_status_2\ : SIGNAL IS "U(2,5,A)2";
     SIGNAL \UART:BUART:txn\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:txn\ : SIGNAL IS "U(2,4,B)0";
+    ATTRIBUTE placement_force OF \UART:BUART:txn\ : SIGNAL IS "U(2,4,A)0";
     SIGNAL \UART:Net_9\ : bit;
     ATTRIBUTE udbclken_assigned OF \UART:Net_9\ : SIGNAL IS "True";
     ATTRIBUTE global_signal OF \UART:Net_9\ : SIGNAL IS true;
@@ -164,7 +164,7 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE global_signal OF \WaveDAC8:Net_279\ : SIGNAL IS true;
     SIGNAL \WaveDAC8:Net_279_local\ : bit;
     SIGNAL __ONE__ : bit;
-    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(2,4,B)1";
+    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(1,4,A)2";
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
@@ -179,25 +179,25 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE lib_model OF Wave_Output(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF Wave_Output(0) : LABEL IS "P1[6]";
     ATTRIBUTE lib_model OF SDI(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF SDI(0) : LABEL IS "P5[0]";
+    ATTRIBUTE Location OF SDI(0) : LABEL IS "P4[7]";
     ATTRIBUTE lib_model OF WS(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF WS(0) : LABEL IS "P4[2]";
     ATTRIBUTE lib_model OF SDO(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF SDO(0) : LABEL IS "P4[1]";
     ATTRIBUTE lib_model OF TX(0) : LABEL IS "iocell6";
-    ATTRIBUTE Location OF TX(0) : LABEL IS "P2[7]";
+    ATTRIBUTE Location OF TX(0) : LABEL IS "P5[0]";
     ATTRIBUTE lib_model OF \I2S:bI2S:tx_underflow_0\ : LABEL IS "macrocell1";
     ATTRIBUTE Location OF \I2S:bI2S:tx_underflow_0\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_overflow_0\ : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF \I2S:bI2S:rx_overflow_0\ : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF \I2S:bI2S:rx_overflow_0\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF Net_277 : LABEL IS "macrocell3";
     ATTRIBUTE Location OF Net_277 : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:counter_load_not\ : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF \UART:BUART:counter_load_not\ : LABEL IS "U(2,5)";
+    ATTRIBUTE Location OF \UART:BUART:counter_load_not\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_status_0\ : LABEL IS "macrocell5";
     ATTRIBUTE Location OF \UART:BUART:tx_status_0\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_status_2\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \UART:BUART:tx_status_2\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \UART:BUART:tx_status_2\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2S:bI2S:CtlReg\ : LABEL IS "controlcell1";
     ATTRIBUTE Location OF \I2S:bI2S:CtlReg\ : LABEL IS "U(3,5)";
     ATTRIBUTE Location OF \I2S:bI2S:BitCounter\ : LABEL IS "U(3,4)";
@@ -220,15 +220,15 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE Location OF \ADC:IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(29)]";
     ATTRIBUTE Location OF \ADC:DEC\ : LABEL IS "F(Decimator,0)";
     ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(2,4)";
+    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(1,4)";
     ATTRIBUTE lib_model OF RxDMA : LABEL IS "drqcell4";
     ATTRIBUTE Location OF RxDMA : LABEL IS "[DrqContainer=(0)][DrqId=(0)]";
     ATTRIBUTE lib_model OF \UART:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell3";
     ATTRIBUTE Location OF \UART:BUART:sTX:TxShifter:u0\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell4";
-    ATTRIBUTE Location OF \UART:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(2,5)";
+    ATTRIBUTE Location OF \UART:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \UART:BUART:sTX:TxSts\ : LABEL IS "statusicell3";
-    ATTRIBUTE Location OF \UART:BUART:sTX:TxSts\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \UART:BUART:sTX:TxSts\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF TxDMA_1 : LABEL IS "drqcell5";
     ATTRIBUTE Location OF TxDMA_1 : LABEL IS "[DrqContainer=(0)][DrqId=(2)]";
     ATTRIBUTE lib_model OF \I2S:bI2S:reset\ : LABEL IS "macrocell8";
@@ -246,7 +246,7 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE lib_model OF \I2S:bI2S:tx_state_0\ : LABEL IS "macrocell14";
     ATTRIBUTE Location OF \I2S:bI2S:tx_state_0\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF Net_138_0 : LABEL IS "macrocell15";
-    ATTRIBUTE Location OF Net_138_0 : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF Net_138_0 : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_f0_load\ : LABEL IS "macrocell16";
     ATTRIBUTE Location OF \I2S:bI2S:rx_f0_load\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_state_2\ : LABEL IS "macrocell17";
@@ -254,23 +254,23 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_state_1\ : LABEL IS "macrocell18";
     ATTRIBUTE Location OF \I2S:bI2S:rx_state_1\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_state_0\ : LABEL IS "macrocell19";
-    ATTRIBUTE Location OF \I2S:bI2S:rx_state_0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \I2S:bI2S:rx_state_0\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_f1_load\ : LABEL IS "macrocell20";
     ATTRIBUTE Location OF \I2S:bI2S:rx_f1_load\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_overflow_sticky\ : LABEL IS "macrocell21";
-    ATTRIBUTE Location OF \I2S:bI2S:rx_overflow_sticky\ : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF \I2S:bI2S:rx_overflow_sticky\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rxenable\ : LABEL IS "macrocell22";
     ATTRIBUTE Location OF \I2S:bI2S:rxenable\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_data_in_0\ : LABEL IS "macrocell23";
-    ATTRIBUTE Location OF \I2S:bI2S:rx_data_in_0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \I2S:bI2S:rx_data_in_0\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \UART:BUART:txn\ : LABEL IS "macrocell24";
     ATTRIBUTE Location OF \UART:BUART:txn\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_state_1\ : LABEL IS "macrocell25";
-    ATTRIBUTE Location OF \UART:BUART:tx_state_1\ : LABEL IS "U(2,5)";
+    ATTRIBUTE Location OF \UART:BUART:tx_state_1\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_state_0\ : LABEL IS "macrocell26";
     ATTRIBUTE Location OF \UART:BUART:tx_state_0\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_state_2\ : LABEL IS "macrocell27";
-    ATTRIBUTE Location OF \UART:BUART:tx_state_2\ : LABEL IS "U(2,5)";
+    ATTRIBUTE Location OF \UART:BUART:tx_state_2\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_bitclk\ : LABEL IS "macrocell28";
     ATTRIBUTE Location OF \UART:BUART:tx_bitclk\ : LABEL IS "U(2,4)";
     COMPONENT clockblockcell

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
   29:.\Generated_Source\PSoC5/CySpc.c **** #define CY_SPC_CMD_WR_USER_NVL              (0x06u)
   30:.\Generated_Source\PSoC5/CySpc.c **** #define CY_SPC_CMD_PRG_ROW                  (0x07u)
   31:.\Generated_Source\PSoC5/CySpc.c **** #define CY_SPC_CMD_ER_SECTOR                (0x08u)
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/CySpc.c **** #define CY_SPC_CMD_ER_ALL                   (0x09u)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
   33              		.cfi_offset 3, -8
   34              		.cfi_offset 14, -4
   80:.\Generated_Source\PSoC5/CySpc.c ****     /* Save current global interrupt enable and disable it */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 3
 
 
   81:.\Generated_Source\PSoC5/CySpc.c ****     uint8 interruptState = CyEnterCriticalSection();
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  103:.\Generated_Source\PSoC5/CySpc.c **** *******************************************************************************/
  104:.\Generated_Source\PSoC5/CySpc.c **** void CySpcStop(void) 
  105:.\Generated_Source\PSoC5/CySpc.c **** {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 4
 
 
   67              		.loc 1 105 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  120:.\Generated_Source\PSoC5/CySpc.c **** * Summary:
  121:.\Generated_Source\PSoC5/CySpc.c **** *  Reads data from the SPC.
  122:.\Generated_Source\PSoC5/CySpc.c **** *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 5
 
 
  123:.\Generated_Source\PSoC5/CySpc.c **** * Parameters:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  137 001a 054B     		ldr	r3, .L14+4
  138 001c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  139 001e 3355     		strb	r3, [r6, r4]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 6
 
 
  139:.\Generated_Source\PSoC5/CySpc.c ****     {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  169:.\Generated_Source\PSoC5/CySpc.c **** *   Number bytes to load.
  170:.\Generated_Source\PSoC5/CySpc.c **** *
  171:.\Generated_Source\PSoC5/CySpc.c **** * Return:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 7
 
 
  172:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_STARTED
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  201 001e B625     		movs	r5, #182
  202 0020 2570     		strb	r5, [r4]
  194:.\Generated_Source\PSoC5/CySpc.c ****             CY_SPC_CPU_DATA_REG = CY_SPC_KEY_TWO(CY_SPC_CMD_LD_MULTI_BYTE);
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 8
 
 
  203              		.loc 1 194 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  244              	.LVL19:
  245              	.L20:
  204:.\Generated_Source\PSoC5/CySpc.c ****                 {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 9
 
 
  246              		.loc 1 204 0 is_stmt 0 discriminator 1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  278              		.cfi_restore 4
  279              		.cfi_def_cfa_offset 0
  280 006e 7047     		bx	lr
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 10
 
 
  281              	.L28:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  258:.\Generated_Source\PSoC5/CySpc.c ****     /* Make sure the SPC is ready to accept command */
  259:.\Generated_Source\PSoC5/CySpc.c ****     if(CY_SPC_IDLE)
  303              		.loc 1 259 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 11
 
 
  304 0000 124B     		ldr	r3, .L36
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  343 0034 9BB2     		uxth	r3, r3
  344              	.LVL32:
  345              	.L31:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 12
 
 
  270:.\Generated_Source\PSoC5/CySpc.c ****             {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  383              		.align	2
  384              		.global	CySpcWriteRow
  385              		.thumb
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 13
 
 
  386              		.thumb_func
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  404 0006 14F0020F 		tst	r4, #2
  405 000a 15D0     		beq	.L40
  323:.\Generated_Source\PSoC5/CySpc.c ****     {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 14
 
 
  324:.\Generated_Source\PSoC5/CySpc.c ****         CY_SPC_CPU_DATA_REG = CY_SPC_KEY_ONE;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  341:.\Generated_Source\PSoC5/CySpc.c ****     }
  342:.\Generated_Source\PSoC5/CySpc.c ****     else
  343:.\Generated_Source\PSoC5/CySpc.c ****     {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 15
 
 
  344:.\Generated_Source\PSoC5/CySpc.c ****         status = CYRET_LOCKED;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  365:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_STARTED
  366:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_CANCELED
  367:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_LOCKED
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 16
 
 
  368:.\Generated_Source\PSoC5/CySpc.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  509              	.LVL48:
  510              	.L47:
  386:.\Generated_Source\PSoC5/CySpc.c ****         }
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 17
 
 
  387:.\Generated_Source\PSoC5/CySpc.c ****         else
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  413:.\Generated_Source\PSoC5/CySpc.c **** *   Number of ADC ACLK cycles. A valid 14 bit value is accepted, higher 2 bits
  414:.\Generated_Source\PSoC5/CySpc.c **** *   of 16 bit values are ignored.
  415:.\Generated_Source\PSoC5/CySpc.c **** *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 18
 
 
  416:.\Generated_Source\PSoC5/CySpc.c **** * uint8 clkDivSelect:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  567              		.loc 1 427 0
  568 0026 0720     		movs	r0, #7
  569              	.LVL53:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 19
 
 
  570 0028 7047     		bx	lr
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  463:.\Generated_Source\PSoC5/CySpc.c **** *  Note
  464:.\Generated_Source\PSoC5/CySpc.c **** *
  465:.\Generated_Source\PSoC5/CySpc.c **** * Return:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 20
 
 
  466:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_SUCCESS - if the resource was free.
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  489:.\Generated_Source\PSoC5/CySpc.c **** 
  490:.\Generated_Source\PSoC5/CySpc.c ****                 /* At least 2 NOP instructions are recommended */
  491:.\Generated_Source\PSoC5/CySpc.c ****                 CY_NOP;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 21
 
 
  631              		.loc 1 491 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  668              		.loc 1 505 0
  669 0040 2046     		mov	r0, r4
  670 0042 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 22
 
 
  671              	.LVL65:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  700 0006 0A4B     		ldr	r3, .L67
  701 0008 0022     		movs	r2, #0
  702 000a 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 23
 
 
  531:.\Generated_Source\PSoC5/CySpc.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  737              	.L68:
  738 002e 00BF     		.align	2
  739              	.L67:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 24
 
 
  740 0030 00000000 		.word	.LANCHOR0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  794 0043 05       		.byte	0x5
  795 0044 82020000 		.4byte	.LASF4
  796 0048 02       		.uleb128 0x2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 25
 
 
  797 0049 04       		.byte	0x4
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  851 00b2 F0       		.byte	0xf0
  852 00b3 B7000000 		.4byte	0xb7
  853 00b7 05       		.uleb128 0x5
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 26
 
 
  854 00b8 6B000000 		.4byte	0x6b
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  908 013c 12040000 		.4byte	0x412
  909 0140 00       		.byte	0
  910 0141 09       		.uleb128 0x9
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 27
 
 
  911 0142 79000000 		.4byte	.LASF24
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  965 01bb 6B000000 		.4byte	0x6b
  966 01bf 9D000000 		.4byte	.LLST5
  967 01c3 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 28
 
 
  968 01c4 D1010000 		.4byte	.LASF27
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1022 023d 58020000 		.4byte	.LASF22
  1023 0241 01       		.byte	0x1
  1024 0242 FD       		.byte	0xfd
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 29
 
 
  1025 0243 09020000 		.4byte	0x209
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1079 02c1 01       		.byte	0x1
  1080 02c2 3C01     		.2byte	0x13c
  1081 02c4 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 30
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 30
 
 
  1082 02c8 01       		.uleb128 0x1
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1136 034a 8E030000 		.4byte	.LLST17
  1137 034e 15       		.uleb128 0x15
  1138 034f 87000000 		.4byte	.LASF28
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 31
 
 
  1139 0353 01       		.byte	0x1
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1193 03e0 12040000 		.4byte	0x412
  1194 03e4 00       		.byte	0
  1195 03e5 17       		.uleb128 0x17
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 32
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 32
 
 
  1196 03e6 8B020000 		.4byte	.LASF39
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1250 0010 17       		.uleb128 0x17
  1251 0011 00       		.byte	0
  1252 0012 00       		.byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 33
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 33
 
 
  1253 0013 02       		.uleb128 0x2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1307 0049 19       		.uleb128 0x19
  1308 004a 11       		.uleb128 0x11
  1309 004b 01       		.uleb128 0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 34
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 34
 
 
  1310 004c 12       		.uleb128 0x12
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1364 0085 18       		.uleb128 0x18
  1365 0086 9742     		.uleb128 0x2117
  1366 0088 19       		.uleb128 0x19
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 35
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 35
 
 
  1367 0089 01       		.uleb128 0x1
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1421 00c4 00       		.byte	0
  1422 00c5 0B       		.uleb128 0xb
  1423 00c6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 36
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 36
 
 
  1424 00c7 49       		.uleb128 0x49
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1478 00fd 49       		.uleb128 0x49
  1479 00fe 13       		.uleb128 0x13
  1480 00ff 11       		.uleb128 0x11
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 37
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 37
 
 
  1481 0100 01       		.uleb128 0x1
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1535 0137 00       		.byte	0
  1536 0138 00       		.byte	0
  1537 0139 16       		.uleb128 0x16
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 38
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 38
 
 
  1538 013a 2E       		.uleb128 0x2e
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1592 0171 00       		.byte	0
  1593 0172 00       		.byte	0
  1594 0173 19       		.uleb128 0x19
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 39
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 39
 
 
  1595 0174 2E       		.uleb128 0x2e
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1649 01aa 0B       		.uleb128 0xb
  1650 01ab 27       		.uleb128 0x27
  1651 01ac 19       		.uleb128 0x19
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 40
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 40
 
 
  1652 01ad 3C       		.uleb128 0x3c
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1706 0073 06000000 		.4byte	.LVL5
  1707 0077 0A000000 		.4byte	.LVL6
  1708 007b 0200     		.2byte	0x2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 41
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 41
 
 
  1709 007d 30       		.byte	0x30
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1763 00fe 50       		.byte	0x50
  1764 00ff 68000000 		.4byte	.LVL25
  1765 0103 6A000000 		.4byte	.LVL26
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 42
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 42
 
 
  1766 0107 0400     		.2byte	0x4
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1820 0183 00000000 		.4byte	0
  1821              	.LLST8:
  1822 0187 48000000 		.4byte	.LVL16
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 43
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 43
 
 
  1823 018b 4C000000 		.4byte	.LVL17
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1877 020e 37       		.byte	0x37
  1878 020f 9F       		.byte	0x9f
  1879 0210 40000000 		.4byte	.LVL34
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 44
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 44
 
 
  1880 0214 42000000 		.4byte	.LVL35
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1934 029e F3       		.byte	0xf3
  1935 029f 01       		.uleb128 0x1
  1936 02a0 50       		.byte	0x50
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 45
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 45
 
 
  1937 02a1 9F       		.byte	0x9f
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  1991 0324 0100     		.2byte	0x1
  1992 0326 50       		.byte	0x50
  1993 0327 2A000000 		.4byte	.LVL47
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 46
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 46
 
 
  1994 032b 2C000000 		.4byte	.LVL48
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  2048 03ad 0100     		.2byte	0x1
  2049 03af 50       		.byte	0x50
  2050 03b0 2C000000 		.4byte	.LVL55
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 47
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 47
 
 
  2051 03b4 2E000000 		.4byte	.LVL56
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  2105 0436 0100     		.2byte	0x1
  2106 0438 54       		.byte	0x54
  2107 0439 44000000 		.4byte	.LVL65
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 48
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 48
 
 
  2108 043d 4C000000 		.4byte	.LFE8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  2162 000c 24000000 		.4byte	.LFE1
  2163 0010 00000000 		.4byte	.LFB2
  2164 0014 34000000 		.4byte	.LFE2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 49
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 49
 
 
  2165 0018 00000000 		.4byte	.LFB3
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  2197      63655C50 
  2198              	.LASF3:
  2199 0066 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 50
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 50
 
 
  2199      7420756E 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  2225 00f3 646F7562 		.ascii	"double\000"
  2225      6C6500
  2226              	.LASF35:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 51
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 51
 
 
  2227 00fa 43795370 		.ascii	"CySpcGetTemp\000"
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  2247      6500
  2248              	.LASF29:
  2249 01fe 43795370 		.ascii	"CySpcLoadRow\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 52
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 52
 
 
  2249      634C6F61 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 1
  2273      69706542 
  2273      79706173 
  2273      7300
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccHBDmAr.s 			page 53
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccUp7vM6.s 			page 53
 
 
  2274              	.LASF0:
