@@ -2,7 +2,7 @@ Release 14.7 ngdbuild P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe -filter
-iseconfig/filter.filter -intstyle ise -dd _ngo -nt timestamp -i -p
+iseconfig/filter.filter -intstyle ise -dd _ngo -nt timestamp -uc chip.ucf -p
 xc7a100t-csg324-3 chip.ngc chip.ngd
 
 Reading NGO file
@@ -11,6 +11,7 @@ gc" ...
 Gathering constraint information from source properties...
 Done.
 
+Annotating constraints to design from ucf file "chip.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
 Done...
@@ -31,10 +32,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   1
 
-Total memory usage is 409568 kilobytes
+Total memory usage is 439620 kilobytes
 
 Writing NGD file "chip.ngd" ...
-Total REAL time to NGDBUILD completion:  50 sec
-Total CPU time to NGDBUILD completion:   49 sec
+Total REAL time to NGDBUILD completion: 1 min  10 sec
+Total CPU time to NGDBUILD completion:  1 min  10 sec
 
 Writing NGDBUILD log file "chip.bld"...
