@@ -123,6 +123,10 @@
     <transform xil_pn:end_ts="1456786812" xil_pn:in_ck="-6422673768300315113" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1456786812">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Deserializer.v"/>
       <outfile xil_pn:name="Sequencer.v"/>
       <outfile xil_pn:name="bist_test.v"/>
@@ -186,6 +190,11 @@
     <transform xil_pn:end_ts="1456786812" xil_pn:in_ck="-6422673768300315113" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1456786812">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Deserializer.v"/>
       <outfile xil_pn:name="Sequencer.v"/>
       <outfile xil_pn:name="bist_test.v"/>
@@ -237,7 +246,10 @@
     <transform xil_pn:end_ts="1456786849" xil_pn:in_ck="-6422673768300315113" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6534700911048748537" xil_pn:start_ts="1456786841">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="chip_test_i2si_serial_enable_beh.prj"/>
       <outfile xil_pn:name="chip_test_i2si_serial_enable_isim_beh.exe"/>
@@ -249,6 +261,7 @@
     <transform xil_pn:end_ts="1456786865" xil_pn:in_ck="8256186921735916615" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="130042767734522940" xil_pn:start_ts="1456786865">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="chip_test_i2si_serial_enable_isim_beh.wdb"/>
@@ -287,7 +300,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="chip.lso"/>
@@ -312,6 +327,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="chip.bld"/>
@@ -322,6 +339,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
@@ -337,6 +355,7 @@
     <transform xil_pn:end_ts="1456794178" xil_pn:in_ck="5167987676406729604" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1456793829">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
       <outfile xil_pn:name="chip.ncd"/>
       <outfile xil_pn:name="chip.pad"/>
@@ -351,6 +370,7 @@
     <transform xil_pn:end_ts="1456794200" xil_pn:in_ck="4357782339175" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="306664139534459597" xil_pn:start_ts="1456794178">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="chip.bgn"/>
       <outfile xil_pn:name="chip.ut"/>
@@ -359,6 +379,7 @@
     <transform xil_pn:end_ts="1456794178" xil_pn:in_ck="4357782339175" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1456794137">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
       <outfile xil_pn:name="chip.twr"/>
       <outfile xil_pn:name="chip.twx"/>
@@ -368,6 +389,7 @@
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="netgen"/>
       <outfile xil_pn:name="netgen/map/chip_map.nlf"/>

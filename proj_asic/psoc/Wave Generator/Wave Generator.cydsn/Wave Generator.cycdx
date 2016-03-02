@@ -6,7 +6,7 @@
     <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <register name="TX_UART_TX_DATA" address="0x40006443" bitWidth="8" desc="TX Data Register" hidden="false" />
-    <register name="TX_UART_TX_STATUS" address="0x40006464" bitWidth="8" desc="TX status register" hidden="false">
+    <register name="TX_UART_TX_STATUS" address="0x40006460" bitWidth="8" desc="TX status register" hidden="false">
       <field name="UART_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="UART_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="UART_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
