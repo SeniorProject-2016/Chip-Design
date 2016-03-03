@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-`define N 11 // number of test elements
+`define N 100 // number of test elements
 
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   chip_test1_reg_address_h400_write.v
@@ -70,8 +70,6 @@ module chip_test1;
     reg                             ws_d1;
     reg                             ws_d2;
     wire                            ws_transition;
-    integer                         inp_count;                                                          // counts number of entries written to input text file, used to close text file
-    integer                         out_count;                                                          // counts number of entries written to output text file, used to close text file
     reg                             i2so_sck_dl;
     wire                            i2so_sck_transition;
     reg         [31:0]              word;

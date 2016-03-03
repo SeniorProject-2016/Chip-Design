@@ -9,6 +9,8 @@
 // Description      Tests the BIST Generator. Sawtooth wave starting value is 0x800 and upper limit value is 0x700
 //                  Outputs success or failure of test to i2s_in_test2_output.txt
 //
+//                  Comparison test is currently broken. However BIST has been verified to work
+//
 // 
 ////////////////////////////////////////////////////////////////////////////////
 

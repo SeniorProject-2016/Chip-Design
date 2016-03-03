@@ -64,6 +64,21 @@ module chip_test2;
 		reg [10:0] i2c_reg_addr_test_data [1:0];
 		reg [7:0] i2c_slave_addr_test_data [1:0];
 		reg [8:0] i2c_count;
+        
+        
+    // Data Capture Internal Variables
+    reg         [15:0]              ext_start_val;                                                   //16 bit sign extension of rf_bist_start_val  
+    reg                             ws_d1;
+    reg                             ws_d2;
+    wire                            ws_transition;
+    reg                             i2so_sck_dl;
+    wire                            i2so_sck_transition;
+    reg         [31:0]              inp_word;
+    reg         [31:0]              out_word;
+    integer                         data_out;
+    reg                             output_to_inp_txt = 1;
+    reg                             output_to_out_txt = 1;
+    integer                         data_in;
 	
     
                                                                                                                         
@@ -88,6 +103,7 @@ module chip_test2;
 		clk = 0;
         
 		i2si_sck = 0;
+        
 
         
 		i2c_addr_bits = 3'b101;
@@ -96,7 +112,7 @@ module chip_test2;
 		i2c_count = 0;
         
         
-        // Instantiate I2S Test Data: Method 1
+        // Instantiate I2S Test Data: Method 1; Irrelevant in testing the BIST
         for(index1 = 0; index1 < `N; index1 = index1 + 1)
         begin
             for(index2 = 0; index2 < 2; index2 = index2 + 1)
@@ -104,6 +120,9 @@ module chip_test2;
                 i2s_test_data [index1] [index2] = $random;
             end
         end
+        
+        data_in = $fopen("chip_test_i2s_bist_enable_input.txt");                                                  // Open chip_test_i2s_bist_enable_input.txt
+        data_out = $fopen("chip_test_i2s_bist_enable_output.txt");                                                // Open chip_test_i2s_bist_enable_output.txt
         
         
         /*
@@ -144,6 +163,10 @@ module chip_test2;
 		i2c_reg_addr_test_data [1] = 11'b10000000000;	//11'h400 = rf_i2s_bist_en register + filter registers
 		i2c_slave_addr_test_data [0] = 8'b10101011;		//current slave address w/ 3'b101 as i2c_addr_bits
 		i2c_slave_addr_test_data [1] = 8'b10101011;		//current slave address w/ 3'b101 as i2c_addr_bits
+        
+        #1;
+        ext_start_val = {{4{chip_test2.uut.rf_bist_start_val[11]}}, chip_test2.uut.rf_bist_start_val}; 
+        inp_word = {~ext_start_val, ext_start_val};
 
 
 	end
@@ -595,12 +618,12 @@ module chip_test2;
     begin                                                                                                   
         if(!rst_n)                                                                                              
         begin                                                                                               
-            word <= 32'b0;                                                                                      
+            out_word <= 32'b0;                                                                                      
         end                                                                                     
         else if(i2so_sck_transition)                                                                     
         begin                                                                               
-            word[31:1] <= word[30:0];                                                                                       
-            word[0] <= i2so_sd;                                                                     
+            out_word[31:1] <= out_word[30:0];                                                                                       
+            out_word[0] <= i2so_sd;                                                                     
         end                                                                                             
     end
     
@@ -608,19 +631,37 @@ module chip_test2;
     // Print output data to chip_test_i2s_bist_enable_output.txt                                                             
     always @(posedge clk)                                                                               
     begin
-        if(output_to_txt)
+        if(output_to_out_txt)
         begin
             if(ws_transition && i2so_sck_transition)                                         
             begin
-                if(word === 32'hxxxxxxxx)                                                       // word should not equal X since BIST will always be outputting valid data
+                if(out_word === 32'hxxxxxxxx)                                                       // out_word should not equal X since BIST will always be outputting valid data
                 begin
-                    output_to_txt = 0;
+                    output_to_out_txt = 0;
                     #1 $fclose(data_out);
                 end
                 else
                 begin
-                    $fdisplay (data_out, "%h", word);
+                    $fdisplay (data_out, "%h", out_word);
                 end
+            end
+        end
+    end
+    
+    
+    // Print input data to chip_test_i2s_bist_enable_input.txt                                                             
+    always @(posedge clk)                                                                               
+    begin
+        if(output_to_inp_txt)
+        begin
+            if(chip_test2.uut.I2S_Input.bist_xfc)                                         
+            begin
+                $fdisplay(data_in, "%h", chip_test2.uut.I2S_Input.bist_data); 
+            end
+            else if(chip_test2.uut.I2S_Input.bist_data === 32'hxxxxxxxx)
+            begin
+                output_to_inp_txt = 0;
+                #1 $fclose(data_in);
             end
         end
     end
