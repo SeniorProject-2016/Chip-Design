@@ -12,7 +12,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module chip_test1;
+module chip_test2;
 
 	// General Inputs
 	reg                     clk;
@@ -554,5 +554,76 @@ module chip_test1;
             end
         end
       end
+      
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ 
+//Capturing Output Data to print to chip_test_i2s_bist_enable_output.txt
+
+    always @(posedge clk or negedge rst_n)
+    begin
+        if(!rst_n)
+        begin
+            i2so_sck_dl <= 0;
+        end
+        else
+        begin
+            i2so_sck_dl <= i2so_sck;
+        end
+    end
+    
+    assign i2so_sck_transition = i2so_sck & ~i2so_sck_dl;
+    
+    // Creates a delay of word select signal, used to help in comparison test
+    always @(posedge clk or negedge rst_n)
+    begin
+        if(!rst_n)
+        begin
+            ws_d1 <= 0;
+            ws_d2 <= 0;
+        end
+        else if(i2so_sck_transition)
+        begin
+            ws_d1 <= i2so_ws;                                                                   // generate 1 cycle delay of i2so_ws
+            ws_d2 <= ws_d1;                                                                     // generate 2nd cycle delay of i2so_ws
+        end
+    end
+    
+    assign ws_transition = ~ws_d1 & ws_d2;                                                          // level to pulse converter when ws goes from high to low
+    
+    // Creates 32 bit words from the serial data being outputted to be compared with the words being inputted
+    always @(posedge clk or negedge rst_n)                                                                  
+    begin                                                                                                   
+        if(!rst_n)                                                                                              
+        begin                                                                                               
+            word <= 32'b0;                                                                                      
+        end                                                                                     
+        else if(i2so_sck_transition)                                                                     
+        begin                                                                               
+            word[31:1] <= word[30:0];                                                                                       
+            word[0] <= i2so_sd;                                                                     
+        end                                                                                             
+    end
+    
+    
+    // Print output data to chip_test_i2s_bist_enable_output.txt                                                             
+    always @(posedge clk)                                                                               
+    begin
+        if(output_to_txt)
+        begin
+            if(ws_transition && i2so_sck_transition)                                         
+            begin
+                if(word === 32'hxxxxxxxx)                                                       // word should not equal X since BIST will always be outputting valid data
+                begin
+                    output_to_txt = 0;
+                    #1 $fclose(data_out);
+                end
+                else
+                begin
+                    $fdisplay (data_out, "%h", word);
+                end
+            end
+        end
+    end
+    
 endmodule
 

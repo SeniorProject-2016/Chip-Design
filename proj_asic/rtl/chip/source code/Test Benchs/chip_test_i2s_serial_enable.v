@@ -66,6 +66,19 @@ module chip_test1;
 		reg [8:0] i2c_count;
 	
     
+    // Data Capture Internal Variables
+    reg                             ws_d1;
+    reg                             ws_d2;
+    wire                            ws_transition;
+    integer                         inp_count;                                                          // counts number of entries written to input text file, used to close text file
+    integer                         out_count;                                                          // counts number of entries written to output text file, used to close text file
+    reg                             i2so_sck_dl;
+    wire                            i2so_sck_transition;
+    reg         [31:0]              word;
+    integer                         data_out;
+    reg                             output_to_txt = 1;
+    integer                         data_in;
+    integer                         index3;                                                             // counter for outputing to text file of list of inputs
                                                                                                                         
     // Instantiate the Unit Under Test (UUT)
 	chip uut (
@@ -95,6 +108,10 @@ module chip_test1;
 		i2c_sda_in = 1;
 		i2c_count = 0;
         
+        data_in = $fopen("chip_test_i2s_serial_enable_input.txt");                                                  // Open chip_test_i2s_serial_enable_input.txt
+        data_out = $fopen("chip_test_i2s_serial_enable_output.txt");                                                // Open chip_test_i2s_serial_enable_output.txt
+
+        
         
         // Instantiate I2S Test Data: Method 1
         for(index1 = 0; index1 < `N; index1 = index1 + 1)
@@ -105,7 +122,10 @@ module chip_test1;
             end
         end
         
-        
+        for(index3 = 0; index3 < `N; index3 = index3 + 1)
+        begin
+            $fdisplay (data_in, "%h", {i2s_test_data [index3] [0], i2s_test_data [index3] [1]});
+        end
         /*
         // Instantiate I2S Test Data
         
@@ -135,18 +155,19 @@ module chip_test1;
         
         
         // Instantiate I2C Test Data
-        i2c_test_data[0] = 8'b00100000;			// data for h400
+          i2c_test_data[0] = 8'b00100000;			// data for h400
 		  i2c_test_data[1] = 8'b00000000;			//data for h400 coeff0_a
 		  i2c_test_data[2] = 8'b00010000;			//data for h401 coeff0_b
 
 		
         
-      i2c_reg_addr_test_data [0] = 11'b00000000100;	//11'h004 = rf_i2s_bist_en register + filter registers
+        i2c_reg_addr_test_data [0] = 11'b00000000100;	//11'h004 = rf_i2s_bist_en register + filter registers
 		i2c_reg_addr_test_data [1] = 11'b10000000000;	//11'h400 = rf_i2s_bist_en register + filter registers
 		i2c_slave_addr_test_data [0] = 8'b10101011;		//current slave address w/ 3'b101 as i2c_addr_bits
 		i2c_slave_addr_test_data [1] = 8'b10101011;		//current slave address w/ 3'b101 as i2c_addr_bits
 
-
+        #1 $fclose(data_in);
+        
 	end
     
     // Generates master clock signal
@@ -555,5 +576,80 @@ module chip_test1;
             end
         end
       end
+      
+      
+      
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Capturing Output Data to print to chip_test_i2s_serial_enable_output.txt
+
+    always @(posedge clk or negedge rst_n)
+    begin
+        if(!rst_n)
+        begin
+            i2so_sck_dl <= 0;
+        end
+        else
+        begin
+            i2so_sck_dl <= i2so_sck;
+        end
+    end
+    
+    assign i2so_sck_transition = i2so_sck & ~i2so_sck_dl;
+    
+    // Creates a delay of word select signal, used to help in comparison test
+    always @(posedge clk or negedge rst_n)
+    begin
+        if(!rst_n)
+        begin
+            ws_d1 <= 0;
+            ws_d2 <= 0;
+        end
+        else if(i2so_sck_transition)
+        begin
+            ws_d1 <= i2so_ws;                                                                   // generate 1 cycle delay of i2so_ws
+            ws_d2 <= ws_d1;                                                                     // generate 2nd cycle delay of i2so_ws
+        end
+    end
+    
+    assign ws_transition = ~ws_d1 & ws_d2;                                                          // level to pulse converter when ws goes from high to low
+    
+    // Creates 32 bit words from the serial data being outputted to be compared with the words being inputted
+    always @(posedge clk or negedge rst_n)                                                                  
+    begin                                                                                                   
+        if(!rst_n)                                                                                              
+        begin                                                                                               
+            word <= 32'b0;                                                                                      
+        end                                                                                     
+        else if(i2so_sck_transition)                                                                     
+        begin                                                                               
+            word[31:1] <= word[30:0];                                                                                       
+            word[0] <= i2so_sd;                                                                     
+        end                                                                                             
+    end
+    
+    
+    // Print output data to chip_test_i2s_serial_enable_output.txt                                                      
+    always @(posedge clk)                                                                               
+    begin
+        if(output_to_txt)
+        begin
+            if(ws_transition && i2so_sck_transition)                                         
+            begin
+                if(word === 32'hxxxxxxxx)
+                begin
+                    output_to_txt = 0;
+                    #1 $fclose(data_out);
+                end
+                else
+                begin
+                    $fdisplay (data_out, "%h", word);
+                end
+            end
+        end
+    end
+
+
+
 endmodule
 
