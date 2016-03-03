@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
   29:.\Generated_Source\PSoC5/UART.c **** #if (UART_TX_INTERRUPT_ENABLED && UART_TX_ENABLED)
   30:.\Generated_Source\PSoC5/UART.c ****     volatile uint8 UART_txBuffer[UART_TX_BUFFER_SIZE];
   31:.\Generated_Source\PSoC5/UART.c ****     volatile uint8 UART_txBufferRead = 0u;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/UART.c ****     uint8 UART_txBufferWrite = 0u;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
   86:.\Generated_Source\PSoC5/UART.c **** }
   87:.\Generated_Source\PSoC5/UART.c **** 
   88:.\Generated_Source\PSoC5/UART.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 3
 
 
   89:.\Generated_Source\PSoC5/UART.c **** /*******************************************************************************
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  138:.\Generated_Source\PSoC5/UART.c ****             UART_TXBITCLKGEN_CTR_REG = UART_BIT_CENTER;
   32              		.loc 1 138 0
   33 0000 0622     		movs	r2, #6
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 4
 
 
   34 0002 044B     		ldr	r3, .L2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  167:.\Generated_Source\PSoC5/UART.c **** * Summary:
  168:.\Generated_Source\PSoC5/UART.c **** *  Activates the hardware and begins component operation. It is not necessary
  169:.\Generated_Source\PSoC5/UART.c **** *  to call UART_Enable() because the UART_Start() API
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 5
 
 
  170:.\Generated_Source\PSoC5/UART.c **** *  calls this function, which is the preferred method to begin component
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  211:.\Generated_Source\PSoC5/UART.c ****         UART_TXSTATUS_ACTL_REG |= UART_INT_ENABLE;
   73              		.loc 1 211 0
   74 0008 054A     		ldr	r2, .L6
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 6
 
 
   75 000a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  115 0008 FFF7FEFF 		bl	UART_Init
  116              	.LVL5:
   82:.\Generated_Source\PSoC5/UART.c ****     }
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 7
 
 
  117              		.loc 1 82 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  149              		.loc 1 243 0
  150 0002 FFF7FEFF 		bl	CyEnterCriticalSection
  151              	.LVL7:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 8
 
 
  152 0006 0446     		mov	r4, r0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  172              		.cfi_endproc
  173              	.LFE3:
  174              		.size	UART_Stop, .-UART_Stop
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 9
 
 
  175              		.section	.text.UART_ReadControlRegister,"ax",%progbits
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  305:.\Generated_Source\PSoC5/UART.c **** /*******************************************************************************
  306:.\Generated_Source\PSoC5/UART.c **** * Function Name: UART_WriteControlRegister
  307:.\Generated_Source\PSoC5/UART.c **** ********************************************************************************
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 10
 
 
  308:.\Generated_Source\PSoC5/UART.c **** *
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  344:.\Generated_Source\PSoC5/UART.c ****     *      UART_RX_STS_FIFO_NOTEMPTY    Interrupt on byte received.
  345:.\Generated_Source\PSoC5/UART.c ****     *      UART_RX_STS_PAR_ERROR        Interrupt on parity error.
  346:.\Generated_Source\PSoC5/UART.c ****     *      UART_RX_STS_STOP_ERROR       Interrupt on stop error.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 11
 
 
  347:.\Generated_Source\PSoC5/UART.c ****     *      UART_RX_STS_BREAK            Interrupt on break.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  401:.\Generated_Source\PSoC5/UART.c ****         /* Protect variables that could change on interrupt */
  402:.\Generated_Source\PSoC5/UART.c ****         UART_DisableRxInt();
  403:.\Generated_Source\PSoC5/UART.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 12
 
 
  404:.\Generated_Source\PSoC5/UART.c ****         locRxBufferRead  = UART_rxBufferRead;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  458:.\Generated_Source\PSoC5/UART.c ****     ********************************************************************************
  459:.\Generated_Source\PSoC5/UART.c ****     *
  460:.\Generated_Source\PSoC5/UART.c ****     * Summary:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 13
 
 
  461:.\Generated_Source\PSoC5/UART.c ****     *  Returns the current state of the receiver status register and the software
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  515:.\Generated_Source\PSoC5/UART.c ****     * Return:
  516:.\Generated_Source\PSoC5/UART.c ****     *  Character read from UART RX buffer. ASCII characters from 1 to 255 are valid.
  517:.\Generated_Source\PSoC5/UART.c ****     *  A returned zero signifies an error condition or no data available.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 14
 
 
  518:.\Generated_Source\PSoC5/UART.c ****     *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  572:.\Generated_Source\PSoC5/UART.c ****                         UART_RXSTATUS_MASK_REG |= UART_RX_STS_FIFO_NOTEMPTY;
  573:.\Generated_Source\PSoC5/UART.c ****                     #endif /* end UART_HD_ENABLED */
  574:.\Generated_Source\PSoC5/UART.c ****                 #endif /* UART_RX_INTERRUPT_ENABLED and Hardware flow control*/
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 15
 
 
  575:.\Generated_Source\PSoC5/UART.c ****             }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  629:.\Generated_Source\PSoC5/UART.c ****     *
  630:.\Generated_Source\PSoC5/UART.c ****     * Reentrant:
  631:.\Generated_Source\PSoC5/UART.c ****     *  No.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 16
 
 
  632:.\Generated_Source\PSoC5/UART.c ****     *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  686:.\Generated_Source\PSoC5/UART.c ****         uint8 size;
  687:.\Generated_Source\PSoC5/UART.c **** 
  688:.\Generated_Source\PSoC5/UART.c ****     #if (UART_RX_INTERRUPT_ENABLED)
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 17
 
 
  689:.\Generated_Source\PSoC5/UART.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  743:.\Generated_Source\PSoC5/UART.c ****     *  UART_rxBufferOverflow - cleared to zero.
  744:.\Generated_Source\PSoC5/UART.c ****     *
  745:.\Generated_Source\PSoC5/UART.c ****     * Reentrant:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 18
 
 
  746:.\Generated_Source\PSoC5/UART.c ****     *  No.
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  800:.\Generated_Source\PSoC5/UART.c ****     *  UART__B_UART__AM_HW_DETECT_TO_BUFFER - Hardware Detect to Buffer
  801:.\Generated_Source\PSoC5/UART.c ****     *                                               address detection
  802:.\Generated_Source\PSoC5/UART.c ****     *  UART__B_UART__AM_NONE - No address detection
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 19
 
 
  803:.\Generated_Source\PSoC5/UART.c ****     *
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  857:.\Generated_Source\PSoC5/UART.c ****     void UART_SetRxAddress1(uint8 address) 
  858:.\Generated_Source\PSoC5/UART.c ****     {
  859:.\Generated_Source\PSoC5/UART.c ****         UART_RXADDRESS1_REG = address;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 20
 
 
  860:.\Generated_Source\PSoC5/UART.c ****     }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  224              		@ link register save eliminated.
  225              	.LVL13:
  910:.\Generated_Source\PSoC5/UART.c ****         UART_TXSTATUS_MASK_REG = intSrc;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 21
 
 
  226              		.loc 1 910 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  247              		@ args = 0, pretend = 0, frame = 0
  248              		@ frame_needed = 0, uses_anonymous_args = 0
  249              		@ link register save eliminated.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 22
 
 
  250              	.LVL14:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  271              		.thumb
  272              		.thumb_func
  273              		.type	UART_ReadTxStatus, %function
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 23
 
 
  274              	UART_ReadTxStatus:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  298              		.type	UART_PutChar, %function
  299              	UART_PutChar:
  300              	.LFB9:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 24
 
 
 1007:.\Generated_Source\PSoC5/UART.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1054:.\Generated_Source\PSoC5/UART.c ****         #if ((UART_TX_BUFFER_SIZE > UART_MAX_BYTE_VALUE) && (CY_PSOC3))
 1055:.\Generated_Source\PSoC5/UART.c ****             /* Disable TX interrupt to protect variables from modification */
 1056:.\Generated_Source\PSoC5/UART.c ****             UART_DisableTxInt();
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 25
 
 
 1057:.\Generated_Source\PSoC5/UART.c ****         #endif /* (UART_TX_BUFFER_SIZE > UART_MAX_BYTE_VALUE) && (CY_PSOC3) */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  311 0004 13F0040F 		tst	r3, #4
  312 0008 FAD1     		bne	.L30
 1108:.\Generated_Source\PSoC5/UART.c ****         {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 26
 
 
 1109:.\Generated_Source\PSoC5/UART.c ****             /* Wait for room in the FIFO */
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1143:.\Generated_Source\PSoC5/UART.c ****     *
 1144:.\Generated_Source\PSoC5/UART.c ****     *******************************************************************************/
 1145:.\Generated_Source\PSoC5/UART.c ****     void UART_PutString(const char8 string[]) 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 27
 
 
 1146:.\Generated_Source\PSoC5/UART.c ****     {
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  375              	.L39:
  376 0020 00000000 		.word	.LANCHOR0
  377              		.cfi_endproc
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 28
 
 
  378              	.LFE10:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1196:.\Generated_Source\PSoC5/UART.c ****         /* If not Initialized then skip this function */
 1197:.\Generated_Source\PSoC5/UART.c ****         if(UART_initVar != 0u)
  393              		.loc 1 1197 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 29
 
 
  394 0000 084B     		ldr	r3, .L47
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  441              	.L47:
  442 0024 00000000 		.word	.LANCHOR0
  443              		.cfi_endproc
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 30
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 30
 
 
  444              	.LFE11:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1234:.\Generated_Source\PSoC5/UART.c ****         {
 1235:.\Generated_Source\PSoC5/UART.c ****             UART_PutChar(txDataByte);
  467              		.loc 1 1235 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 31
 
 
  468 0008 FFF7FEFF 		bl	UART_PutChar
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1263:.\Generated_Source\PSoC5/UART.c ****     *  UART_txBufferWrite - used to calculate left space.
 1264:.\Generated_Source\PSoC5/UART.c ****     *  UART_txBufferRead - used to calculate left space.
 1265:.\Generated_Source\PSoC5/UART.c ****     *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 32
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 32
 
 
 1266:.\Generated_Source\PSoC5/UART.c ****     * Reentrant:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1307:.\Generated_Source\PSoC5/UART.c ****         }
 1308:.\Generated_Source\PSoC5/UART.c ****         else if((size & UART_TX_STS_FIFO_EMPTY) != 0u)
  508              		.loc 1 1308 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 33
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 33
 
 
  509 000c 13F0020F 		tst	r3, #2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1332:.\Generated_Source\PSoC5/UART.c ****     *  None.
 1333:.\Generated_Source\PSoC5/UART.c ****     *
 1334:.\Generated_Source\PSoC5/UART.c ****     * Return:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 34
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 34
 
 
 1335:.\Generated_Source\PSoC5/UART.c ****     *  None.
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  565              	.L62:
  566 0020 93640040 		.word	1073767571
  567              		.cfi_endproc
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 35
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 35
 
 
  568              	.LFE14:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1407:.\Generated_Source\PSoC5/UART.c ****     *  No.
 1408:.\Generated_Source\PSoC5/UART.c ****     *
 1409:.\Generated_Source\PSoC5/UART.c ****     * Theory:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 36
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 36
 
 
 1410:.\Generated_Source\PSoC5/UART.c ****     *  SendBreak function initializes registers to send 13-bit break signal. It is
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1453:.\Generated_Source\PSoC5/UART.c ****                 (retMode == UART_SEND_WAIT_REINIT ) )
 1454:.\Generated_Source\PSoC5/UART.c ****             {
 1455:.\Generated_Source\PSoC5/UART.c ****                 /* CTRL_HD_SEND_BREAK - sends break bits in HD mode */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 37
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 37
 
 
 1456:.\Generated_Source\PSoC5/UART.c ****                 UART_WriteControlRegister(UART_ReadControlRegister() |
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  597 000e 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
  598 0010 0E4A     		ldr	r2, .L71
  599 0012 5170     		strb	r1, [r2, #1]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 38
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 38
 
 
 1502:.\Generated_Source\PSoC5/UART.c ****                     UART_TXBITCLKTX_COMPLETE_REG = UART_TXBITCTR_BREAKBITS;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  630 0038 FAD0     		beq	.L69
  631              	.LVL45:
  632              	.L70:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 39
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 39
 
 
 1526:.\Generated_Source\PSoC5/UART.c ****             }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
 1547:.\Generated_Source\PSoC5/UART.c ****     }
 1548:.\Generated_Source\PSoC5/UART.c **** 
 1549:.\Generated_Source\PSoC5/UART.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 40
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 40
 
 
 1550:.\Generated_Source\PSoC5/UART.c ****     /*******************************************************************************
@@ -2398,20 +2398,20 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  695 0006 00000000 		.4byte	.Ldebug_abbrev0
  696 000a 04       		.byte	0x4
  697 000b 01       		.uleb128 0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 41
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 41
 
 
  698 000c 65010000 		.4byte	.LASF46
  699 0010 01       		.byte	0x1
  700 0011 DF000000 		.4byte	.LASF47
- 701 0015 52030000 		.4byte	.LASF48
+ 701 0015 A0020000 		.4byte	.LASF48
  702 0019 00000000 		.4byte	.Ldebug_ranges0+0
  703 001d 00000000 		.4byte	0
  704 0021 00000000 		.4byte	.Ldebug_line0
  705 0025 02       		.uleb128 0x2
  706 0026 01       		.byte	0x1
  707 0027 06       		.byte	0x6
- 708 0028 32030000 		.4byte	.LASF0
+ 708 0028 8F030000 		.4byte	.LASF0
  709 002c 02       		.uleb128 0x2
  710 002d 01       		.byte	0x1
  711 002e 08       		.byte	0x8
@@ -2419,7 +2419,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  713 0033 02       		.uleb128 0x2
  714 0034 02       		.byte	0x2
  715 0035 05       		.byte	0x5
- 716 0036 F2020000 		.4byte	.LASF2
+ 716 0036 4F030000 		.4byte	.LASF2
  717 003a 02       		.uleb128 0x2
  718 003b 02       		.byte	0x2
  719 003c 07       		.byte	0x7
@@ -2427,7 +2427,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  721 0041 02       		.uleb128 0x2
  722 0042 04       		.byte	0x4
  723 0043 05       		.byte	0x5
- 724 0044 1D030000 		.4byte	.LASF4
+ 724 0044 7A030000 		.4byte	.LASF4
  725 0048 02       		.uleb128 0x2
  726 0049 04       		.byte	0x4
  727 004a 07       		.byte	0x7
@@ -2449,7 +2449,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  743 0066 07       		.byte	0x7
  744 0067 0A020000 		.4byte	.LASF8
  745 006b 04       		.uleb128 0x4
- 746 006c 0F030000 		.4byte	.LASF9
+ 746 006c 6C030000 		.4byte	.LASF9
  747 0070 02       		.byte	0x2
  748 0071 5B       		.byte	0x5b
  749 0072 2C000000 		.4byte	0x2c
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  752 007b 02       		.byte	0x2
  753 007c 5C       		.byte	0x5c
  754 007d 3A000000 		.4byte	0x3a
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 42
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 42
 
 
  755 0081 02       		.uleb128 0x2
@@ -2477,7 +2477,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  768 009a 02       		.uleb128 0x2
  769 009b 01       		.byte	0x1
  770 009c 08       		.byte	0x8
- 771 009d D4020000 		.4byte	.LASF14
+ 771 009d 31030000 		.4byte	.LASF14
  772 00a1 04       		.uleb128 0x4
  773 00a2 C8000000 		.4byte	.LASF15
  774 00a6 02       		.byte	0x2
@@ -2488,7 +2488,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  779 00b1 02       		.uleb128 0x2
  780 00b2 04       		.byte	0x4
  781 00b3 07       		.byte	0x7
- 782 00b4 C0020000 		.4byte	.LASF16
+ 782 00b4 1D030000 		.4byte	.LASF16
  783 00b8 06       		.uleb128 0x6
  784 00b9 BE000000 		.4byte	.LASF49
  785 00bd 01       		.byte	0x1
@@ -2498,7 +2498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  789 00c7 01       		.uleb128 0x1
  790 00c8 9C       		.byte	0x9c
  791 00c9 07       		.uleb128 0x7
- 792 00ca 26030000 		.4byte	.LASF17
+ 792 00ca 83030000 		.4byte	.LASF17
  793 00ce 01       		.byte	0x1
  794 00cf B7       		.byte	0xb7
  795 00d0 00000000 		.4byte	.LFB2
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  809 00f6 09       		.uleb128 0x9
  810 00f7 16000000 		.4byte	.LVL2
  811 00fb 2F040000 		.4byte	0x42f
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 43
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 43
 
 
  812 00ff 0A       		.uleb128 0xa
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  866 017a 02       		.uleb128 0x2
  867 017b 74       		.byte	0x74
  868 017c 00       		.sleb128 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 44
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 44
 
 
  869 017d 00       		.byte	0
@@ -2602,7 +2602,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  887 01a6 9C       		.byte	0x9c
  888 01a7 BA010000 		.4byte	0x1ba
  889 01ab 0E       		.uleb128 0xe
- 890 01ac 15030000 		.4byte	.LASF23
+ 890 01ac 72030000 		.4byte	.LASF23
  891 01b0 01       		.byte	0x1
  892 01b1 3F01     		.2byte	0x13f
  893 01b3 6B000000 		.4byte	0x6b
@@ -2627,7 +2627,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  912 01dd 50       		.byte	0x50
  913 01de 00       		.byte	0
  914 01df 0D       		.uleb128 0xd
- 915 01e0 D9020000 		.4byte	.LASF25
+ 915 01e0 36030000 		.4byte	.LASF25
  916 01e4 01       		.byte	0x1
  917 01e5 AE03     		.2byte	0x3ae
  918 01e7 00000000 		.4byte	.LFB7
@@ -2636,9 +2636,9 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  921 01f0 9C       		.byte	0x9c
  922 01f1 04020000 		.4byte	0x204
  923 01f5 0E       		.uleb128 0xe
- 924 01f6 C9020000 		.4byte	.LASF26
+ 924 01f6 26030000 		.4byte	.LASF26
  925 01fa 01       		.byte	0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 45
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 45
 
 
  926 01fb AE03     		.2byte	0x3ae
@@ -2656,7 +2656,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  938 0218 01       		.uleb128 0x1
  939 0219 9C       		.byte	0x9c
  940 021a 0D       		.uleb128 0xd
- 941 021b A0020000 		.4byte	.LASF29
+ 941 021b FD020000 		.4byte	.LASF29
  942 021f 01       		.byte	0x1
  943 0220 1104     		.2byte	0x411
  944 0222 00000000 		.4byte	.LFB9
@@ -2665,7 +2665,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  947 022b 9C       		.byte	0x9c
  948 022c 3F020000 		.4byte	0x23f
  949 0230 0E       		.uleb128 0xe
- 950 0231 C9020000 		.4byte	.LASF26
+ 950 0231 26030000 		.4byte	.LASF26
  951 0235 01       		.byte	0x1
  952 0236 1104     		.2byte	0x411
  953 0238 6B000000 		.4byte	0x6b
@@ -2673,7 +2673,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  955 023d 50       		.byte	0x50
  956 023e 00       		.byte	0
  957 023f 0D       		.uleb128 0xd
- 958 0240 3E030000 		.4byte	.LASF30
+ 958 0240 9B030000 		.4byte	.LASF30
  959 0244 01       		.byte	0x1
  960 0245 7904     		.2byte	0x479
  961 0247 00000000 		.4byte	.LFB10
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  980 027a 1A020000 		.4byte	0x21a
  981 027e 00       		.byte	0
  982 027f 11       		.uleb128 0x11
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 46
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 46
 
 
  983 0280 04       		.byte	0x4
@@ -2751,14 +2751,14 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1030 02f6 9C       		.byte	0x9c
  1031 02f7 37030000 		.4byte	0x337
  1032 02fb 0F       		.uleb128 0xf
- 1033 02fc C9020000 		.4byte	.LASF26
+ 1033 02fc 26030000 		.4byte	.LASF26
  1034 0300 01       		.byte	0x1
  1035 0301 CE04     		.2byte	0x4ce
  1036 0303 6B000000 		.4byte	0x6b
  1037 0307 66010000 		.4byte	.LLST7
  1038 030b 09       		.uleb128 0x9
  1039 030c 0C000000 		.4byte	.LVL34
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 47
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 47
 
 
  1040 0310 1A020000 		.4byte	0x21a
@@ -2793,14 +2793,14 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1069 034c 9C       		.byte	0x9c
  1070 034d 62030000 		.4byte	0x362
  1071 0351 10       		.uleb128 0x10
- 1072 0352 4D030000 		.4byte	.LASF36
+ 1072 0352 AA030000 		.4byte	.LASF36
  1073 0356 01       		.byte	0x1
  1074 0357 FC04     		.2byte	0x4fc
  1075 0359 6B000000 		.4byte	0x6b
  1076 035d 87010000 		.4byte	.LLST8
  1077 0361 00       		.byte	0
  1078 0362 0D       		.uleb128 0xd
- 1079 0363 FC020000 		.4byte	.LASF37
+ 1079 0363 59030000 		.4byte	.LASF37
  1080 0367 01       		.byte	0x1
  1081 0368 4A05     		.2byte	0x54a
  1082 036a 00000000 		.4byte	.LFB14
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1094 0389 06000000 		.4byte	.LVL39
  1095 038d 24040000 		.4byte	0x424
  1096 0391 09       		.uleb128 0x9
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 48
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 48
 
 
  1097 0392 1C000000 		.4byte	.LVL40
@@ -2834,7 +2834,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1107 03ac 9C       		.byte	0x9c
  1108 03ad EE030000 		.4byte	0x3ee
  1109 03b1 0F       		.uleb128 0xf
- 1110 03b2 EA020000 		.4byte	.LASF39
+ 1110 03b2 47030000 		.4byte	.LASF39
  1111 03b6 01       		.byte	0x1
  1112 03b7 A005     		.2byte	0x5a0
  1113 03b9 6B000000 		.4byte	0x6b
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1151 0413 17       		.uleb128 0x17
  1152 0414 6D000000 		.4byte	.LASF51
  1153 0418 01       		.byte	0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 49
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 49
 
 
  1154 0419 1B       		.byte	0x1b
@@ -2904,7 +2904,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1174 0442 6B000000 		.4byte	0x6b
  1175 0446 00       		.byte	0
  1176 0447 19       		.uleb128 0x19
- 1177 0448 AD020000 		.4byte	.LASF45
+ 1177 0448 0A030000 		.4byte	.LASF45
  1178 044c 03       		.byte	0x3
  1179 044d 28       		.byte	0x28
  1180 044e 00       		.byte	0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1208 0019 0B       		.uleb128 0xb
  1209 001a 03       		.uleb128 0x3
  1210 001b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 50
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 50
 
 
  1211 001c 00       		.byte	0
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1265 0053 00       		.byte	0
  1266 0054 00       		.byte	0
  1267 0055 07       		.uleb128 0x7
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 51
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 51
 
 
  1268 0056 2E       		.uleb128 0x2e
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1322 0091 13       		.uleb128 0x13
  1323 0092 00       		.byte	0
  1324 0093 00       		.byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 52
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 52
 
 
  1325 0094 0B       		.uleb128 0xb
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1379 00cf 19       		.uleb128 0x19
  1380 00d0 01       		.uleb128 0x1
  1381 00d1 13       		.uleb128 0x13
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 53
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 53
 
 
  1382 00d2 00       		.byte	0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1436 0108 00       		.byte	0
  1437 0109 00       		.byte	0
  1438 010a 12       		.uleb128 0x12
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 54
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 54
 
 
  1439 010b 26       		.uleb128 0x26
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1493 0144 34       		.uleb128 0x34
  1494 0145 00       		.byte	0
  1495 0146 03       		.uleb128 0x3
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 55
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 55
 
 
  1496 0147 0E       		.uleb128 0xe
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1550 017d 3A       		.uleb128 0x3a
  1551 017e 0B       		.uleb128 0xb
  1552 017f 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 56
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 56
 
 
  1553 0180 0B       		.uleb128 0xb
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1607 0030 50       		.byte	0x50
  1608 0031 0A000000 		.4byte	.LVL18
  1609 0035 14000000 		.4byte	.LVL22
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 57
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 57
 
 
  1610 0039 0100     		.2byte	0x1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1664 00c3 1C000000 		.4byte	.LVL31
  1665 00c7 0100     		.2byte	0x1
  1666 00c9 50       		.byte	0x50
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 58
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 58
 
 
  1667 00ca 1C000000 		.4byte	.LVL31
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1721 014f 0200     		.2byte	0x2
  1722 0151 30       		.byte	0x30
  1723 0152 9F       		.byte	0x9f
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 59
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 59
 
 
  1724 0153 1C000000 		.4byte	.LVL31
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1778 01dd 28000000 		.4byte	.LVL43
  1779 01e1 0100     		.2byte	0x1
  1780 01e3 53       		.byte	0x53
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 60
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 60
 
 
  1781 01e4 34000000 		.4byte	.LVL44
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1835 0008 00000000 		.4byte	.LFB2
  1836 000c 24000000 		.4byte	.LFE2
  1837 0010 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 61
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 61
 
 
  1838 0014 1C000000 		.4byte	.LFE0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1879      66666572 
  1879      53697A65 
  1880              	.LASF40:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 62
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 62
 
 
  1881 0032 746D7053 		.ascii	"tmpStat\000"
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1905      20756E73 
  1905      69676E65 
  1905      6420696E 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 63
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 63
 
 
  1905      7400
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1928      6E203232 
  1928      31323230 
  1929 01cb 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 64
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 64
 
 
  1929      66756E63 
@@ -3835,93 +3835,88 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 1
  1947      5478496E 
  1947      74657272 
  1947      7570744D 
- 1948              	.LASF29:
- 1949 02a0 55415254 		.ascii	"UART_PutChar\000"
- 1949      5F507574 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 65
+ 1948              	.LASF48:
+ 1949 02a0 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Chip-Design\\pro"
+ 1949      73657273 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 65
 
 
- 1949      43686172 
- 1949      00
- 1950              	.LASF45:
- 1951 02ad 55415254 		.ascii	"UART_IntClock_Stop\000"
- 1951      5F496E74 
- 1951      436C6F63 
- 1951      6B5F5374 
- 1951      6F7000
- 1952              	.LASF16:
- 1953 02c0 73697A65 		.ascii	"sizetype\000"
- 1953      74797065 
- 1953      00
- 1954              	.LASF26:
- 1955 02c9 74784461 		.ascii	"txDataByte\000"
- 1955      74614279 
- 1955      746500
- 1956              	.LASF14:
- 1957 02d4 63686172 		.ascii	"char\000"
- 1957      00
- 1958              	.LASF25:
- 1959 02d9 55415254 		.ascii	"UART_WriteTxData\000"
- 1959      5F577269 
- 1959      74655478 
- 1959      44617461 
- 1959      00
- 1960              	.LASF39:
- 1961 02ea 7265744D 		.ascii	"retMode\000"
- 1961      6F646500 
- 1962              	.LASF2:
- 1963 02f2 73686F72 		.ascii	"short int\000"
- 1963      7420696E 
- 1963      7400
- 1964              	.LASF37:
- 1965 02fc 55415254 		.ascii	"UART_ClearTxBuffer\000"
- 1965      5F436C65 
- 1965      61725478 
- 1965      42756666 
- 1965      657200
- 1966              	.LASF9:
- 1967 030f 75696E74 		.ascii	"uint8\000"
- 1967      3800
- 1968              	.LASF23:
- 1969 0315 636F6E74 		.ascii	"control\000"
- 1969      726F6C00 
- 1970              	.LASF4:
- 1971 031d 6C6F6E67 		.ascii	"long int\000"
- 1971      20696E74 
- 1971      00
- 1972              	.LASF17:
- 1973 0326 55415254 		.ascii	"UART_Enable\000"
- 1973      5F456E61 
- 1973      626C6500 
- 1974              	.LASF0:
- 1975 0332 7369676E 		.ascii	"signed char\000"
- 1975      65642063 
- 1975      68617200 
- 1976              	.LASF30:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc9oRd2f.s 			page 66
+ 1949      5C49616E 
+ 1949      5C446F63 
+ 1949      756D656E 
+ 1950 02cd 6A5F6173 		.ascii	"j_asic\\psoc\\Wave Generator\\Wave Generator.cydsn\000"
+ 1950      69635C70 
+ 1950      736F635C 
+ 1950      57617665 
+ 1950      2047656E 
+ 1951              	.LASF29:
+ 1952 02fd 55415254 		.ascii	"UART_PutChar\000"
+ 1952      5F507574 
+ 1952      43686172 
+ 1952      00
+ 1953              	.LASF45:
+ 1954 030a 55415254 		.ascii	"UART_IntClock_Stop\000"
+ 1954      5F496E74 
+ 1954      436C6F63 
+ 1954      6B5F5374 
+ 1954      6F7000
+ 1955              	.LASF16:
+ 1956 031d 73697A65 		.ascii	"sizetype\000"
+ 1956      74797065 
+ 1956      00
+ 1957              	.LASF26:
+ 1958 0326 74784461 		.ascii	"txDataByte\000"
+ 1958      74614279 
+ 1958      746500
+ 1959              	.LASF14:
+ 1960 0331 63686172 		.ascii	"char\000"
+ 1960      00
+ 1961              	.LASF25:
+ 1962 0336 55415254 		.ascii	"UART_WriteTxData\000"
+ 1962      5F577269 
+ 1962      74655478 
+ 1962      44617461 
+ 1962      00
+ 1963              	.LASF39:
+ 1964 0347 7265744D 		.ascii	"retMode\000"
+ 1964      6F646500 
+ 1965              	.LASF2:
+ 1966 034f 73686F72 		.ascii	"short int\000"
+ 1966      7420696E 
+ 1966      7400
+ 1967              	.LASF37:
+ 1968 0359 55415254 		.ascii	"UART_ClearTxBuffer\000"
+ 1968      5F436C65 
+ 1968      61725478 
+ 1968      42756666 
+ 1968      657200
+ 1969              	.LASF9:
+ 1970 036c 75696E74 		.ascii	"uint8\000"
+ 1970      3800
+ 1971              	.LASF23:
+ 1972 0372 636F6E74 		.ascii	"control\000"
+ 1972      726F6C00 
+ 1973              	.LASF4:
+ 1974 037a 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccBHO7v9.s 			page 66
 
 
- 1977 033e 55415254 		.ascii	"UART_PutString\000"
- 1977      5F507574 
- 1977      53747269 
- 1977      6E6700
- 1978              	.LASF36:
- 1979 034d 73697A65 		.ascii	"size\000"
- 1979      00
- 1980              	.LASF48:
- 1981 0352 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Senior Project C"
- 1981      73657273 
- 1981      5C49616E 
- 1981      5C446F63 
- 1981      756D656E 
- 1982 0380 68697020 		.ascii	"hip Design\\Chip-Design\\proj_asic\\psoc\\Wave Gene"
- 1982      44657369 
- 1982      676E5C43 
- 1982      6869702D 
- 1982      44657369 
- 1983 03af 7261746F 		.ascii	"rator\\Wave Generator.cydsn\000"
- 1983      725C5761 
- 1983      76652047 
- 1983      656E6572 
- 1983      61746F72 
- 1984              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1974      20696E74 
+ 1974      00
+ 1975              	.LASF17:
+ 1976 0383 55415254 		.ascii	"UART_Enable\000"
+ 1976      5F456E61 
+ 1976      626C6500 
+ 1977              	.LASF0:
+ 1978 038f 7369676E 		.ascii	"signed char\000"
+ 1978      65642063 
+ 1978      68617200 
+ 1979              	.LASF30:
+ 1980 039b 55415254 		.ascii	"UART_PutString\000"
+ 1980      5F507574 
+ 1980      53747269 
+ 1980      6E6700
+ 1981              	.LASF36:
+ 1982 03aa 73697A65 		.ascii	"size\000"
+ 1982      00
+ 1983              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

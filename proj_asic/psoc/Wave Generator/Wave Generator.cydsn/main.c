@@ -58,8 +58,6 @@ int main()
 	WaveDAC8_Start(); 
 	ADC_Start();
 	ADC_StartConvert();
-	LCD_Start();
-	LCD_ClearDisplay();
 	
 	 /* Enable I2S component */
     I2S_Start();
@@ -105,8 +103,7 @@ void DmaRxConfiguration(void)
     RxDMA_TD[0] = CyDmaTdAllocate();
 	
 	/* Configure this Td chain, get 16384 samples */
-    //CyDmaTdSetConfiguration(RxDMA_TD[0], 32768, RxDMA_TD[0], TD_INC_DST_ADR);
-	CyDmaTdSetConfiguration(RxDMA_TD[0], 32768, RxDMA_TD[0], TD_INC_DST_ADR);
+    CyDmaTdSetConfiguration(RxDMA_TD[0], 32768, RxDMA_TD[0], TD_INC_DST_ADR);
 
     /* From the I2S to the memory */
     CyDmaTdSetAddress(RxDMA_TD[0], LO16((uint32)ADC_DEC_SAMP_PTR), LO16((uint32)ReceivedData));
