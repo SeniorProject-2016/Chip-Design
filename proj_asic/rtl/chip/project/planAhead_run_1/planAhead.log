@@ -1,0 +1,102 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Fri Mar 04 22:55:26 2016
+# Process ID: 10296
+# Log file: C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/pa.fromNcd.tcl
+# create_project -name SeniorProject -dir "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/planAhead_run_1" -part xc7a100tcsg324-3
+# set srcset [get_property srcset [current_run -impl]]
+# set_property design_mode GateLvl $srcset
+# set_property edif_top_file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project} }
+# set_property target_constrs_file "chip.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.ucf' to fileset 'constrs_1'
+# add_files [list {chip.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc7a100tcsg324-3
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design chip.ngc ...
+WARNING:NetListWriters:298 - No output is written to chip.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus I2S_Input/Bist/i2si_bist_out_data<31 :
+   4> on block chip is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   I2S_Input/Bist/i2si_bist_out_data[15]_rf_bist_start_val[11]_mux_13_OUT<31 :
+   4> on block chip is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/Madd_ext_acc_in[46]_GND_19_o_add_4_OUT_
+   cy<45 : 0> on block chip is not reconstructed, because there are some missing
+   bus signals.
+  finished :Prep
+Writing EDIF netlist file chip.edif ...
+ngc2edif: Total memory usage is 211292 kilobytes
+
+Parsing EDIF File [./planAhead_run_1/SeniorProject.data/cache/chip_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/SeniorProject.data/cache/chip_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 337 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'chip' is not ideal for floorplanning, since the cellview 'chip' defined in file 'chip.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/artix7/artix7/xc7a100t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/artix7/artix7/xc7a100t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/artix7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/artix7/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/artix7/artix7/xc7a100t/csg324/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/artix7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/artix7/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/artix7/drc.xml
+Parsing UCF File [C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.ucf]
+Finished Parsing UCF File [C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 337 instances were transformed.
+  BUFGP => BUFGP (IBUF, BUFG): 1 instances
+  FD => FDCE: 26 instances
+  FDC => FDCE: 68 instances
+  FDE => FDCE: 130 instances
+  FDP => FDPE: 4 instances
+  FDR => FDRE: 44 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 64 instances
+
+Phase 0 | Netlist Checksum: 281c0fcf
+link_design: Time (s): elapsed = 00:00:48 . Memory (MB): peak = 997.402 ; gain = 554.219
+# read_xdl -file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.ncd"
+Release 14.7 - xdl P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+WARNING:XDL:213 - The resulting xdl output will not have LUT equation strings or RAM INIT strings.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+   "chip" is an NCD, version 3.2, device xc7a100t, package csg324, speed -3
+Successfully converted design 'C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\chip.ncd' to 'C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\chip.xdl'.
+INFO: [Designutils 20-669] Parsing Placement File : C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.ncd
+INFO: [Designutils 20-658] Finished Parsing Placement File : C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.ncd
+INFO: [Designutils 20-671] Placed 55497 instances
+read_xdl: Time (s): elapsed = 00:01:01 . Memory (MB): peak = 998.258 ; gain = 0.855
+# if {[catch {read_twx -name results_1 -file "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.twx"} eInfo]} {
+#    puts "WARNING: there was a problem importing \"C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/chip.twx\": $eInfo"
+# }
+INFO: [Timing 38-71] No path element with name Register/Register/rdata<4>_rt found. It will be ignored.
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project\planAhead_pid10296.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Fri Mar 04 23:42:30 2016...
+INFO: [Common 17-83] Releasing license: PlanAhead
