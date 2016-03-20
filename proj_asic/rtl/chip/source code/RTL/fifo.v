@@ -1,12 +1,12 @@
-`timescale 1ns / 1ps
-`define BUF_SIZE (1 << BUF_WIDTH)                                                                       //Number of elements allowed in buffer = 2^Buffer Width
-
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             fifo.v
 // Create Date:             7/13/2015 
 // Last Modification:       1/23/2016
 // Author:                  Zachary Nelson
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+`define BUF_SIZE (1 << BUF_WIDTH)                                                                           //Number of elements allowed in buffer = 2^Buffer Width
                                                                                                                     
 module fifo(clk,rst_n,fifo_inp_data,fifo_out_data,fifo_inp_rts,fifo_out_rtr,fifo_out_rts,fifo_inp_rtr);
                                                                                                                 

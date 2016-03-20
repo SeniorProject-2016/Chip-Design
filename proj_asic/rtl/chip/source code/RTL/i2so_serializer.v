@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -18,6 +17,9 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+
 module i2so_serializer(clk, rst_n, filt_i2so_rts, i2so_sd, i2so_ws, filt_i2so_lft, filt_i2so_rgt, filt_i2so_rtr, sck_transition
     );
 

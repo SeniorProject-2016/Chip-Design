@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             register.v
 // Create Date:             ???????????????????
@@ -6,6 +5,8 @@
 // Author:                  Julie Swift and Zachary Nelson
 // Description: ????????????
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module register(rst_n, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                 ro_fifo_overrun,  rdata, rf_i2si_bist_en, rf_filter_shift, rf_i2si_en,

@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             trig_generator.v
 // Create Date:             ???????????????????
@@ -6,6 +5,8 @@
 // Author:                  Julie Swift and Zachary Nelson
 // Description: ????????????
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module trig_generator(clk, rst_n, address, wdata, xfc, trig_i2si_fifo_overrun_clr, 
                       trig_i2so_fifo_underrun_clr, trig_filter_ovf_flag_clear);

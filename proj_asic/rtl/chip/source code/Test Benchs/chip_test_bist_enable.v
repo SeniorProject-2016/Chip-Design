@@ -1,16 +1,16 @@
-`timescale 1ns / 1ps
-`define N 11 // number of test elements
-
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   chip_test1_reg_address_h400_write.v
 // Create Date:   2/17/2016
-// Last Edit:     2/29/16
+// Last Edit:     3/20/16
 // Author:        Kevin Cao, Whitley Forman
 //
 // Description:   Modified i2c functionality to be MSB on master and load reg h400 address for bist or i2s select.
 //                i2s not working in this version.
 // 
 ////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+`define N 11 // number of test elements
 
 module chip_test2;
 

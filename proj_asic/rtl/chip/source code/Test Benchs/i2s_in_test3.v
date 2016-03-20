@@ -1,9 +1,7 @@
-`define N 101 // number of test elements
-
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   i2s_in_test3.v
 // Create Date:   01/16/16
-// Last Edit:     1/27/16
+// Last Edit:     3/20/16
 // Author:        Kevin Cao
 //
 // Description:     Creates N number random 32 bit words being inputted.
@@ -11,6 +9,9 @@
 //                  Outputs the success and failure of the comparisons in i2s_in_test3_output.txt
 // 
 ////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+`define N 101 // number of test elements
 
 module i2s_in_test3;
 

@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2s_out.v
 // Create Date:             10/13/2015 
@@ -6,6 +5,8 @@
 // Author:                  Kevin Cao
 //
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module i2s_out(                 clk, rst_n,
                                 i2so_sync_sck, i2so_sck_transition,

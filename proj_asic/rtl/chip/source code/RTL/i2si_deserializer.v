@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2si_deserializer
 // Create Date:             9/13/2015 
@@ -12,6 +11,8 @@
 //              To become active, rst_n first needs to go from high to low, and then ws needs to go from high to low. 
 //              Then when sck_transition high, the deserializer becomes active.
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module i2si_deserializer(clk, rst_n, sck_transition, in_ws, in_sd, rf_i2si_en, out_lft, out_rgt, out_xfc);
 

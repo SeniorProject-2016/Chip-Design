@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             reg.v
 // Create Date:             10/15/2015
@@ -6,6 +5,8 @@
 // Author:                  Julie Swift and Zachary Nelson
 // Description: Provides read and write status to control/status registers
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module chip_reg(clk,rst_n,i2c_addr,i2c_wdata,i2c_xfc_write,i2c_op,
                 ro_fifo_overrun,ro_fifo_underrun,ro_filter_ovf_flag,

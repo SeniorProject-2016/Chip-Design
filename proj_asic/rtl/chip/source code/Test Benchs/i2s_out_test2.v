@@ -1,11 +1,7 @@
-`timescale 1ns / 1ps
-`define NUM_ELEMENTS 100 // no. of test elements
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   i2s_out_test2.v
 // Create Date:   1/19/16
-// Last Edit:     1/27/16
+// Last Edit:     3/20/16
 // Author:        Kevin Cao
 //
 // Description:     Creates NUM_ELEMENTS random 32 bits words that are fed into the FIFO
@@ -15,6 +11,9 @@
 //                  of the words queued into the FIFO and the words outputted by i2s_out.
 // 
 ////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+`define NUM_ELEMENTS 100 // no. of test elements
 
 module i2s_out_test2;
 

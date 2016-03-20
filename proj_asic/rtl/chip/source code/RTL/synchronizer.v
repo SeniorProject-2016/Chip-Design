@@ -1,14 +1,19 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 //
 // Module Name:             synchronizer.v
 // Create Date:             10/20/2015 
-// Last Modification:       11/9/2015
+// Last Modification:       3/20/2016
 // Author:                  Kevin Cao
 //
-//Description: Delays and synchronizes the sck, sd, and ws signals
+//Description:      Delays and synchronizes the sck, sd, and ws signals with master clock
+//                      sck: 2 clk cycles
+//                      sd : 4 clk cycles
+//                      ws : 4 clk cycles
+//
 //
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module synchronizer(clk, rst_n, _sck, sck, sck_transition, _sd, sd, _ws, ws
     );
