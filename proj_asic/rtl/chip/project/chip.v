@@ -1179,7 +1179,7 @@ module chip(clk, rst_n,                                        // General
                 
     chip_reg Register(
         .clk                        (clk),                          // input: master clock
-        .rst                        (rst_n),                        // input: reset not
+        .rst_n                      (rst_n),                        // input: reset not
         .i2c_addr                   (i2c_wraddr),                   // input: register address
         .i2c_wdata                  (i2c_wdata),                    // input: data to be written for a write op
         .i2c_xfc_write              (i2c_xfc_write),                // input: write data transfer complete

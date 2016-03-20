@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.48 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.48 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Reading design: chip.prj
 
@@ -191,6 +191,7 @@ Elaborating module <chip_reg>.
 Elaborating module <register>.
 
 Elaborating module <trig_generator>.
+WARNING:HDLCompiler:1016 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v" Line 58: Port i2c_sda is not connected to this instance
 
 Elaborating module <i2c>.
 
@@ -199,6 +200,7 @@ Elaborating module <Deserializer>.
 Elaborating module <Sequencer>.
 
 Elaborating module <Serializer>.
+WARNING:HDLCompiler:552 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v" Line 58: Input port i2c_sda is not connected on this instance
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -1452,7 +1454,7 @@ Synthesizing Unit <register>.
     Found 1-bit register for signal <rf_i2si_bist_en>.
     Found 8-bit register for signal <rdata>.
     Found 1-bit register for signal <rxfc>.
-    Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT> created at line 3178.
+    Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT> created at line 3176.
     Summary:
 	inferred 8239 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
@@ -1472,6 +1474,8 @@ Unit <trig_generator> synthesized.
 
 Synthesizing Unit <i2c>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v".
+WARNING:Xst:2898 - Port 'i2c_sda', unconnected in block instance 'i2c_top_serializer', is tied to GND.
+WARNING:Xst:2898 - Port 'stop_out', unconnected in block instance 'i2c_top_serializer', is tied to GND.
     Summary:
 	no macro.
 Unit <i2c> synthesized.
@@ -1603,6 +1607,7 @@ Unit <Sequencer> synthesized.
 
 Synthesizing Unit <Serializer>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\serializer.v".
+WARNING:Xst:647 - Input <i2c_sda> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <stop>.
     Found 8-bit register for signal <data_read>.
     Found 1-bit register for signal <serialize_data_ready>.
@@ -2200,14 +2205,14 @@ clk                                       |    4.949|         |         |       
 =========================================================================
 
 
-Total REAL time to Xst completion: 403.00 secs
-Total CPU time to Xst completion: 403.31 secs
+Total REAL time to Xst completion: 398.00 secs
+Total CPU time to Xst completion: 397.53 secs
  
 --> 
 
-Total memory usage is 3699896 kilobytes
+Total memory usage is 3700600 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   19 (  12 filtered)
+Number of warnings :   24 (  12 filtered)
 Number of infos    :    2 (   0 filtered)
 
