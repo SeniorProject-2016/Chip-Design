@@ -16,32 +16,31 @@ module i2s_out(                 clk, rst_n,
                                 ro_fifo_underrun
     );
 
-    input                       clk;                                 //Master clock
-    input                       rst_n;                               //Reset
+    input                           clk;                                 //Master clock
+    input                           rst_n;                               //Reset
                                                                         
-    input                       i2so_sync_sck;                       //Serial clock
-    input                       i2so_sck_transition;                 //Serial clock level to pulse converter
+    input                           i2so_sync_sck;                       //Serial clock
+    input                           i2so_sck_transition;                 //Serial clock level to pulse converter
                                                                             
-    output                      i2so_sck;                               
-    output                      i2so_ws;                             //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
-    output                      i2so_sd;                             //Digital audio serial data                                                                            
+    output                          i2so_sck;                               
+    output                          i2so_ws;                             //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
+    output                          i2so_sd;                             //Digital audio serial data                                                                            
                                                                                                           
-    input                       filt_rts;                            //Ready to send handshake signal between Filter and I2S_OUT Block
-    output                      filt_rtr;                            //Ready to read handshake signal between Filter and I2S_OUT Block
-    input   [31:0]              filt_data;                           //Output audio data sent from Filter Block to I2S_OUT Block
+    input                           filt_rts;                            //Ready to send handshake signal between Filter and I2S_OUT Block
+    output                          filt_rtr;                            //Ready to read handshake signal between Filter and I2S_OUT Block
+    input       [31:0]              filt_data;                           //Output audio data sent from Filter Block to I2S_OUT Block
                                                                         
-    input                       trig_fifo_underrun;                  //Signal to reset ro_fifo_underrun
+    input                           trig_fifo_underrun;                  //Signal to reset ro_fifo_underrun
                                                                         
-    output                      ro_fifo_underrun;                    //The FIFO buffer is not full and no more data is available
+    output reg                      ro_fifo_underrun;                    //The FIFO buffer is not full and no more data is available
                                                                         
-    wire                        sck_out;                             //Wire connecting sck synchronizer to sck deserializer  NOT NEEDED???
-    wire                        i2so_sck_transition;                 //Wire connecting i2so_sck_transition signal to other blocks
-    wire                        fifo_rts;                            //Ready to send handshake signal between FIFO and Serializer   
-    wire                        fifo_rtr;                            //Ready to read handshake signal between FIFO and Serializer   
-    wire    [31:0]              fifo_data;                           //Wire connecting 32 bit audio data from FIFO to Serializer
+    wire                            sck_out;                             //Wire connecting sck synchronizer to sck deserializer  NOT NEEDED???
+    wire                            i2so_sck_transition;                 //Wire connecting i2so_sck_transition signal to other blocks
+    wire                            fifo_rts;                            //Ready to send handshake signal between FIFO and Serializer   
+    wire                            fifo_rtr;                            //Ready to read handshake signal between FIFO and Serializer   
+    wire        [31:0]              fifo_data;                           //Wire connecting 32 bit audio data from FIFO to Serializer
 
 
-    reg                         ro_fifo_underrun;
 
     i2so_serializer Serializer(
         .clk                    (clk),
