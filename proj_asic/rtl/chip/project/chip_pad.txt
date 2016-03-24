@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Mar 04 22:54:07 2016
+Sun Mar 20 17:03:49 2016
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -12,7 +12,7 @@ INFO: The IO information is provided in three file formats as part of the Place 
 INPUT FILE:       chip_map.ncd
 OUTPUT FILE:      chip_pad.txt
 PART TYPE:        xc7a100t
-SPEED GRADE:      -3
+SPEED GRADE:      -1
 PACKAGE:          csg324
 
 Pinout by Pin Number:
@@ -41,7 +41,7 @@ Pinout by Pin Number:
 |B1        |                |IOB33M   |IO_L9P_T1_DQS_AD7P_35       |UNUSED   |           |35            |          |         |           |         |         |          |           |                |
 |B2        |                |IOB33S   |IO_L10N_T1_AD15N_35         |UNUSED   |           |35            |          |         |           |         |         |          |           |                |
 |B3        |                |IOB33M   |IO_L10P_T1_AD15P_35         |UNUSED   |           |35            |          |         |           |         |         |          |           |                |
-|B4        |                |IOB33S   |IO_L7N_T1_AD6N_35           |UNUSED   |           |35            |          |         |           |         |         |          |           |                |
+|B4        |i2so_sd         |IOB      |IO_L7N_T1_AD6N_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
 |B5        |                |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
 |B6        |i2si_sd         |IOB      |IO_L2N_T0_AD12N_35          |INPUT    |LVCMOS18*  |35            |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |B7        |i2si_ws         |IOB      |IO_L2P_T0_AD12P_35          |INPUT    |LVCMOS18*  |35            |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
@@ -98,7 +98,7 @@ Pinout by Pin Number:
 |E4        |                |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
 |E5        |i2so_sck        |IOB      |IO_L5N_T0_AD13N_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
 |E6        |rst_n           |IOB      |IO_L5P_T0_AD13P_35          |INPUT    |LVCMOS18*  |35            |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
-|E7        |i2so_sd         |IOB      |IO_L6P_T0_35                |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E7        |                |IOB33M   |IO_L6P_T0_35                |UNUSED   |           |35            |          |         |           |         |         |          |           |                |
 |E8        |                |         |VCCBATT_0                   |         |           |              |          |         |           |         |         |          |           |                |
 |E9        |                |         |CCLK_0                      |         |           |              |          |         |           |         |         |          |           |                |
 |E10       |                |         |TCK_0                       |         |           |              |          |         |           |         |         |          |           |                |

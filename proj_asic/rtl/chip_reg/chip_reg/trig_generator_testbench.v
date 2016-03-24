@@ -1,40 +1,26 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   17:15:19 10/20/2015
-// Design Name:   trig_generator
-// Module Name:   C:/Users/Julie/Desktop/Senior Project/trig_generator/trig_generator_testbench.v
-// Project Name:  trig_generator
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: trig_generator
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             reg.v
+// Create Date:             10/20/2015
+// Last Modification:       3/16/2016
+// Author:                  Julie Swift
+// Description: Provides read and write status to control/status registers
+//////////////////////////////////////////////////////////////////////////////////
 
 module trig_generator_testbench;
 
 	// Inputs
-	reg [10:0] address;
-	reg [7:0] wdata;
-	reg wxfc;
-	reg clk;
-	reg [31:0] count;
+	reg         [10:0]      address;
+	reg         [7:0]       wdata;
+	reg                     wxfc;
+	reg                     clk;
+	reg         [31:0]      count;
+    wire                    rst_n;
 	
 	// Outputs
-	wire trig_i2si_fifo_overrun_clr;
-	wire trig_i2so_fifo_underrun_clr;
-	wire rst_n;
+	wire                    trig_i2si_fifo_overrun_clr;
+	wire                    trig_i2so_fifo_underrun_clr;
 	
 	// Instantiate the Unit Under Test (UUT)
 	trig_generator uut (
@@ -42,18 +28,14 @@ module trig_generator_testbench;
 		.wdata(wdata), 
 		.wxfc(wxfc), 
 		.clk(clk), 
-		.rst(rst), 
+		.rst_n(rst_n), 
 		.trig_i2si_fifo_overrun_clr(trig_i2si_fifo_overrun_clr), 
 		.trig_i2so_fifo_underrun_clr(trig_i2so_fifo_underrun_clr)
 	);
 	
 	always
 	begin
-		begin
-			count = 0;
-			clk = 0;
-		end
-	forever
+        forever
 		begin
 			#5 clk = ~clk;
 			count = count + 1;
@@ -62,15 +44,18 @@ module trig_generator_testbench;
 
 	assign rst_n = !(count < 20);
 
-	initial begin
+	initial 
+    begin
 		// Initialize Inputs
+        count = 0;
+        clk = 0;
 		wdata = 8'hFF;
 
 		// Wait 100 ns for global reset to finish
 		#1000;
     end
 	 
-always @(posedge clk or negedge rst_n)
+    always @(posedge clk or negedge rst_n)
 	begin
 		if (~rst_n)
 		begin

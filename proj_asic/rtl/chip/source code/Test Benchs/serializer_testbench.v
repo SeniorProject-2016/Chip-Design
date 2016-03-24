@@ -1,26 +1,16 @@
-`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////
+// Module Name:   serializer_testbench.v
+// Create Date:   2/14/2016
+// Last Edit:     3/20/16
+// Author:        Kevin Cao
+//
+// Description:     Creates N number 32 bit words specified by the programmer to be inputted.
+//                  Compares the inputted and outputted words.
+//                  Outputs the success and failure of the comparisons in i2s_in_test_output.txt
+// 
+////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   16:45:32 02/14/2016
-// Design Name:   i2so_serializer
-// Module Name:   C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/serializer_testbench.v
-// Project Name:  SeniorProject
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: i2so_serializer
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
 
 module serializer_testbench;
 

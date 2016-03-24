@@ -1,9 +1,7 @@
-`define N 11 // number of test elements
-
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   i2s_in_test.v
 // Create Date:   11/27/2015
-// Last Edit:     1/27/16
+// Last Edit:     3/20/16
 // Author:        Kevin Cao, Zachary Nelson
 //
 // Description:     Creates N number 32 bit words specified by the programmer to be inputted.
@@ -11,6 +9,9 @@
 //                  Outputs the success and failure of the comparisons in i2s_in_test_output.txt
 // 
 ////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+`define N 11 // number of test elements
 
 module i2s_in_test;
 

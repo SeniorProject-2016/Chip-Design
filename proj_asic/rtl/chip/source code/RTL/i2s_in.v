@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2s_in.v
 // Create Date:             10/13/2015 
@@ -6,6 +5,8 @@
 // Author:                  Kevin Cao
 //
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module i2s_in(              clk, rst_n,
                             inp_sck, inp_ws, inp_sd, 
@@ -17,49 +18,50 @@ module i2s_in(              clk, rst_n,
     );
 
     //Ports
-    input                       clk;                                //Master clock
-    input                       rst_n;                              //Reset
+    input                           clk;                                //Master clock
+    input                           rst_n;                              //Reset
                                                                         
-    input                       inp_sck;                            //Digital audio bit clock
-    input                       inp_ws;                             //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
-    input                       inp_sd;                             //Digital audio serial data
+    input                           inp_sck;                            //Digital audio bit clock
+    input                           inp_ws;                             //Word select - selects what audio channel is being read. 0 = left channel, 1 = right channel 
+    input                           inp_sd;                             //Digital audio serial data
                                                                     
-    input                       rf_i2si_en;                         //Enable bit for Deserializer. 0 = inactive, 1 = active
-    input   [11:0]              rf_bist_start_val;                  //Bist start value
-    input   [11:0]              rf_bist_up_limit;                   //Bist upper limit
-    input   [ 7:0]              rf_bist_inc;                        //Bist increment signal by this much
-    input                       rf_mux_en;                          //Mux select bit for BIST or Deserializer data/xfc signals
+    input                           rf_i2si_en;                         //Enable bit for Deserializer. 0 = inactive, 1 = active
+    input       [11:0]              rf_bist_start_val;                  //Bist start value
+    input       [11:0]              rf_bist_up_limit;                   //Bist upper limit
+    input       [ 7:0]              rf_bist_inc;                        //Bist increment signal by this much
+    input                           rf_mux_en;                          //Mux select bit for BIST or Deserializer data/xfc signals
                                                                                                           
-    input                       i2si_rtr;                           //Ready to read handshake signal between I2S_In and Filter Block
-    output                      i2si_rts;                           //Ready to send handshake signal between I2S_IN and Filter Block
-    output  [31:0]              i2si_data;                          //Output audio data sent to Filter Block
+    input                           i2si_rtr;                           //Ready to read handshake signal between I2S_In and Filter Block
+    output                          i2si_rts;                           //Ready to send handshake signal between I2S_IN and Filter Block
+    output      [31:0]              i2si_data;                          //Output audio data sent to Filter Block
                 
-    output                      sync_sck;                           //Delayed and synchronized digital audio bit clock
-    output                      sync_sck_transition;                //Level to pulse converter of sync_sck;    
+    output                          sync_sck;                           //Delayed and synchronized digital audio bit clock
+    output                          sync_sck_transition;                //Level to pulse converter of sync_sck;    
                                                                                                                                             
-    input                       trig_fifo_overrun_clr;              //Signal to reset ro_fifo_overrun
+    input                           trig_fifo_overrun_clr;              //Signal to reset ro_fifo_overrun
                                                                 
-    output                      ro_fifo_overrun;                    //The FIFO buffer is full and no more can be added to the buffer
+    output reg                      ro_fifo_overrun;                    //The FIFO buffer is full and no more can be added to the buffer
                                                                                                                                                                         
                                                                                                                                                                 
                                                                                                                                                                         
     //Internal Variables                                                                                                                                                        
-    wire                        sync_sck_transition;                //Wire leading to level to pulse converter of serial clock
-    wire                        sync_ws;                            //Wire connecting synchronizer output ws to deserializer input ws
-    wire                        sync_sd;                            //Wire connecting synchronizer output sd to deserializer input sd
+    wire                            sync_sck_transition;                //Wire leading to level to pulse converter of serial clock
+    wire                            sync_ws;                            //Wire connecting synchronizer output ws to deserializer input ws
+    wire                            sync_sd;                            //Wire connecting synchronizer output sd to deserializer input sd
                 
-    wire    [31:0]              deserializer_data;                  //Wire connecting output audio data from deserializer to input of mux
-    wire                        deserializer_xfc;                   //Wire connecting output xfc signal from deserializer to input of mux
+    wire        [31:0]              deserializer_data;                  //Wire connecting output audio data from deserializer to input of mux
+    wire                            deserializer_xfc;                   //Wire connecting output xfc signal from deserializer to input of mux
                 
-    wire    [31:0]              bist_data;                          //Wire connecting BIST output data to input of mux
-    wire                        bist_xfc;                           //Wire connecting BIST xfc signal to input of mux
+    wire        [31:0]              bist_data;                          //Wire connecting BIST output data to input of mux
+    wire                            bist_xfc;                           //Wire connecting BIST xfc signal to input of mux
                     
-    wire    [31:0]              fifo_data;                          //Wire connecting output data from mux to FIFO    
-    wire                        fifo_xfc;                           //Wire connecting output xfc signal from mux to FIFO    
-    wire                        fifo_rtr;                           //Wire connecting output rtr signal from FIFO to ovverun
-                                                                    
-    reg                         ro_fifo_overrun;
-                                                                    
+    wire        [31:0]              fifo_data;                          //Wire connecting output data from mux to FIFO    
+    wire                            fifo_xfc;                           //Wire connecting output xfc signal from mux to FIFO    
+    wire                            fifo_rtr;                           //Wire connecting output rtr signal from FIFO to ovverun
+                          
+
+
+                          
     synchronizer Synchronizer(                                      
         .clk                    (clk),                              
         .rst_n                  (rst_n),                              

@@ -1,24 +1,40 @@
+////////////////////////////////////////////////////////////////////////////////
+// Module Name:   bist_test.v
+// Create Date:   10/20/2015
+// Last Edit:     3/20/16
+// Author:        Zachary Nelson
+//
+// Description:     Creates 32 bit sawtooth wave
+//                  Ensuring:
+//                      BIST starts at correct value
+//                      Increments by specified amount
+//                      Resets to starting value when reaching upper limit value
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+
 module bist_test;
 
     // Inputs
-    reg                     clk;
-    wire                    rst_n;
-    wire                    sck_transition;
-    reg [11:0]              rf_bist_start_val;
-    reg [7:0]               rf_bist_inc;
-    reg [11:0]              rf_bist_up_limit;
+    reg                             clk;
+    wire                            rst_n;
+    wire                            sck_transition;
+    reg         [11:0]              rf_bist_start_val;
+    reg         [7:0]               rf_bist_inc;
+    reg         [11:0]              rf_bist_up_limit;
     
     // Internal Variables
-    reg                     i2si_sck;
-    reg                     sck_d1;                             // serial clock delay
-    reg [31:0]              count;                                  
-    reg [31:0]              sck_cnt;                            // serial clock counter
-    reg [31:0]              cyc_per_half_sck = 40;              // about (100 MHz / 1.44 MHz)/2
+    reg                             i2si_sck;
+    reg                             sck_d1;                             // serial clock delay
+    reg         [31:0]              count;                                  
+    reg         [31:0]              sck_cnt;                            // serial clock counter
+    reg         [31:0]              cyc_per_half_sck = 40;              // about (100 MHz / 1.44 MHz)/2
                                     
                                     
-    // Outputs                  
-    wire [31:0]             i2si_bist_out_data;
-    wire                    i2si_bist_out_xfc;
+    // Outputs                              
+    wire        [31:0]              i2si_bist_out_data;
+    wire                            i2si_bist_out_xfc;
 
     // Instantiate the Unit Under Test (UUT)
     i2si_bist_gen uut (
@@ -32,7 +48,8 @@ module bist_test;
         .i2si_bist_out_xfc(i2si_bist_out_xfc)
     );
 
-    initial begin
+    initial 
+    begin
         // Initialize Inputs
         clk = 0;
         i2si_sck=0;

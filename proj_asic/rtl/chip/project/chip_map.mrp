@@ -5,14 +5,14 @@ Design Information
 ------------------
 Command Line   : map -filter
 C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/iseconf
-ig/filter.filter -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high
+ig/filter.filter -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high
 -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power
 off -o chip_map.ncd chip.ngd chip.pcf 
 Target Device  : xc7a100t
 Target Package : csg324
-Target Speed   : -3
+Target Speed   : -1
 Mapper Version : artix7 -- $Revision: 1.55 $
-Mapped Date    : Fri Mar 04 22:39:50 2016
+Mapped Date    : Sun Mar 20 16:52:59 2016
 
 Design Summary
 --------------
@@ -24,10 +24,10 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                     21,674 out of  63,400   34%
+  Number of Slice LUTs:                     21,698 out of  63,400   34%
     Number used as logic:                   21,213 out of  63,400   33%
-      Number using O6 output only:          12,731
-      Number using O5 output only:               3
+      Number using O6 output only:          12,730
+      Number using O5 output only:               4
       Number using O5 and O6:                8,479
       Number used as ROM:                        0
     Number used as Memory:                      68 out of  19,000    1%
@@ -40,17 +40,17 @@ Slice Logic Utilization:
         Number using O6 output only:             4
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:    393
-      Number with same-slice register load:    348
-      Number with same-slice carry load:        45
+    Number used exclusively as route-thrus:    417
+      Number with same-slice register load:    379
+      Number with same-slice carry load:        38
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 7,121 out of  15,850   44%
-  Number of LUT Flip Flop pairs used:       23,913
-    Number with an unused Flip Flop:         7,311 out of  23,913   30%
-    Number with an unused LUT:               2,239 out of  23,913    9%
-    Number of fully used LUT-FF pairs:      14,363 out of  23,913   60%
+  Number of occupied Slices:                 6,994 out of  15,850   44%
+  Number of LUT Flip Flop pairs used:       23,815
+    Number with an unused Flip Flop:         7,236 out of  23,815   30%
+    Number with an unused LUT:               2,117 out of  23,815    8%
+    Number of fully used LUT-FF pairs:      14,462 out of  23,815   60%
     Number of unique control sets:           1,063
     Number of slice register sites lost
       to control set restrictions:              96 out of 126,800    1%
@@ -101,9 +101,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                4.63
 
-Peak Memory Usage:  1662 MB
-Total REAL time to MAP completion:  10 mins 6 secs 
-Total CPU time to MAP completion:   9 mins 45 secs 
+Peak Memory Usage:  1671 MB
+Total REAL time to MAP completion:  7 mins 33 secs 
+Total CPU time to MAP completion:   7 mins 19 secs 
 
 Table of Contents
 -----------------
@@ -130,11 +130,11 @@ WARNING:LIT:701 - PAD symbol "clk" has an undefined IOSTANDARD.
 WARNING:LIT:702 - PAD symbol "clk" is not constrained (LOC) to a specific
    location.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   I2C/i2c_top_deserializer/i2c_sda_neg_pulse is sourced by a combinatorial pin.
+   I2C/i2c_top_deserializer/i2c_scl_neg_pulse is sourced by a combinatorial pin.
    This is not good design practice. Use the CE pin to control the loading of
    data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   I2C/i2c_top_deserializer/i2c_scl_neg_pulse is sourced by a combinatorial pin.
+   I2C/i2c_top_deserializer/i2c_sda_neg_pulse is sourced by a combinatorial pin.
    This is not good design practice. Use the CE pin to control the loading of
    data into the flip-flop.
 WARNING:PhysDesignRules:2452 - The IOB i2si_ws is either not constrained (LOC)

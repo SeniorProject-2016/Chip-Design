@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-ZACH::  Fri Mar 04 22:50:00 2016
+ZACH::  Sun Mar 20 17:00:34 2016
 
 par -filter
 C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/iseconf
@@ -11,7 +11,7 @@ chip.pcf
 
 Constraints file: chip.pcf.
 Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
-   "chip" is an NCD, version 3.2, device xc7a100t, package csg324, speed -3
+   "chip" is an NCD, version 3.2, device xc7a100t, package csg324, speed -1
 
 Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
 Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
@@ -29,10 +29,10 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                     21,674 out of  63,400   34%
+  Number of Slice LUTs:                     21,698 out of  63,400   34%
     Number used as logic:                   21,213 out of  63,400   33%
-      Number using O6 output only:          12,731
-      Number using O5 output only:               3
+      Number using O6 output only:          12,730
+      Number using O5 output only:               4
       Number using O5 and O6:                8,479
       Number used as ROM:                        0
     Number used as Memory:                      68 out of  19,000    1%
@@ -45,17 +45,17 @@ Slice Logic Utilization:
         Number using O6 output only:             4
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:    393
-      Number with same-slice register load:    348
-      Number with same-slice carry load:        45
+    Number used exclusively as route-thrus:    417
+      Number with same-slice register load:    379
+      Number with same-slice carry load:        38
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 7,121 out of  15,850   44%
-  Number of LUT Flip Flop pairs used:       23,913
-    Number with an unused Flip Flop:         7,311 out of  23,913   30%
-    Number with an unused LUT:               2,239 out of  23,913    9%
-    Number of fully used LUT-FF pairs:      14,363 out of  23,913   60%
+  Number of occupied Slices:                 6,994 out of  15,850   44%
+  Number of LUT Flip Flop pairs used:       23,815
+    Number with an unused Flip Flop:         7,236 out of  23,815   30%
+    Number with an unused LUT:               2,117 out of  23,815    8%
+    Number of fully used LUT-FF pairs:      14,462 out of  23,815   60%
     Number of slice register sites lost
       to control set restrictions:               0 out of 126,800    0%
 
@@ -107,33 +107,33 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 44 secs 
-Finished initial Timing Analysis.  REAL time: 46 secs 
+Starting initial Timing Analysis.  REAL time: 34 secs 
+Finished initial Timing Analysis.  REAL time: 36 secs 
 
 Starting Router
 
 
-Phase  1  : 148938 unrouted;      REAL time: 50 secs 
+Phase  1  : 148953 unrouted;      REAL time: 40 secs 
 
-Phase  2  : 131241 unrouted;      REAL time: 56 secs 
+Phase  2  : 131241 unrouted;      REAL time: 45 secs 
 
-Phase  3  : 70705 unrouted;      REAL time: 1 mins 51 secs 
+Phase  3  : 70322 unrouted;      REAL time: 1 mins 26 secs 
 
-Phase  4  : 70705 unrouted; (Setup:0, Hold:77749, Component Switching Limit:0)     REAL time: 1 mins 58 secs 
+Phase  4  : 70319 unrouted; (Setup:0, Hold:56269, Component Switching Limit:0)     REAL time: 1 mins 36 secs 
 
 Updating file: chip.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:55599, Component Switching Limit:0)     REAL time: 3 mins 42 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:42582, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:55599, Component Switching Limit:0)     REAL time: 3 mins 42 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:42582, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:55599, Component Switching Limit:0)     REAL time: 3 mins 42 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:42582, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:55599, Component Switching Limit:0)     REAL time: 3 mins 42 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:42582, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 58 secs 
-Total REAL time to Router completion: 3 mins 58 secs 
-Total CPU time to Router completion: 4 mins 11 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 8 secs 
+Total REAL time to Router completion: 3 mins 8 secs 
+Total CPU time to Router completion: 3 mins 21 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -151,15 +151,15 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP |BUFGCTRL_X0Y31| No   | 4414 |  0.250     |  1.451      |
-+---------------------+--------------+------+------+------------+-------------+
-|I2C/i2c_top_deserial |              |      |      |            |             |
-|izer/i2c_sda_neg_pul |              |      |      |            |             |
-|                  se |         Local|      |    1 |  0.000     |  0.375      |
+|           clk_BUFGP |BUFGCTRL_X0Y31| No   | 4416 |  0.311     |  1.900      |
 +---------------------+--------------+------+------+------------+-------------+
 |I2C/i2c_top_deserial |              |      |      |            |             |
 |izer/i2c_scl_neg_pul |              |      |      |            |             |
-|                  se |         Local|      |    1 |  0.000     |  0.443      |
+|                  se |         Local|      |    1 |  0.000     |  0.527      |
++---------------------+--------------+------+------+------------+-------------+
+|I2C/i2c_top_deserial |              |      |      |            |             |
+|izer/i2c_sda_neg_pul |              |      |      |            |             |
+|                  se |         Local|      |    1 |  0.000     |  0.387      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -179,8 +179,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH  | SETUP       |     5.250ns|    14.750ns|       0|           0
-  50%                                       | HOLD        |     0.018ns|            |       0|           0
+  TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH  | SETUP       |     0.189ns|    19.811ns|       0|           0
+  50%                                       | HOLD        |     0.026ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -191,10 +191,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 4 mins 7 secs 
-Total CPU time to PAR completion: 4 mins 20 secs 
+Total REAL time to PAR completion: 3 mins 15 secs 
+Total CPU time to PAR completion: 3 mins 27 secs 
 
-Peak Memory Usage:  1410 MB
+Peak Memory Usage:  1394 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

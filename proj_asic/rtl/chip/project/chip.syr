@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.48 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.48 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Reading design: chip.prj
 
@@ -46,7 +46,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "chip"
 Output Format                      : NGC
-Target Device                      : xc7a100t-3-csg324
+Target Device                      : xc7a100t-1-csg324
 
 ---- Source Options
 Top Module Name                    : chip
@@ -191,6 +191,7 @@ Elaborating module <chip_reg>.
 Elaborating module <register>.
 
 Elaborating module <trig_generator>.
+WARNING:HDLCompiler:1016 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v" Line 58: Port i2c_sda is not connected to this instance
 
 Elaborating module <i2c>.
 
@@ -199,6 +200,7 @@ Elaborating module <Deserializer>.
 Elaborating module <Sequencer>.
 
 Elaborating module <Serializer>.
+WARNING:HDLCompiler:552 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v" Line 58: Input port i2c_sda is not connected on this instance
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -1452,7 +1454,7 @@ Synthesizing Unit <register>.
     Found 1-bit register for signal <rf_i2si_bist_en>.
     Found 8-bit register for signal <rdata>.
     Found 1-bit register for signal <rxfc>.
-    Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT> created at line 3178.
+    Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT> created at line 3176.
     Summary:
 	inferred 8239 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
@@ -1472,6 +1474,8 @@ Unit <trig_generator> synthesized.
 
 Synthesizing Unit <i2c>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v".
+WARNING:Xst:2898 - Port 'i2c_sda', unconnected in block instance 'i2c_top_serializer', is tied to GND.
+WARNING:Xst:2898 - Port 'stop_out', unconnected in block instance 'i2c_top_serializer', is tied to GND.
     Summary:
 	no macro.
 Unit <i2c> synthesized.
@@ -1603,6 +1607,7 @@ Unit <Sequencer> synthesized.
 
 Synthesizing Unit <Serializer>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\serializer.v".
+WARNING:Xst:647 - Input <i2c_sda> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <stop>.
     Found 8-bit register for signal <data_read>.
     Found 1-bit register for signal <serialize_data_ready>.
@@ -1904,7 +1909,7 @@ WARNING:Xst:1710 - FF/Latch <Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/ro_filter_ov
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 65.
+Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 66.
 
 Final Macro Processing ...
 
@@ -1986,7 +1991,7 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 7a100tcsg324-3 
+Selected Device : 7a100tcsg324-1 
 
 
 Slice Logic Utilization: 
@@ -2048,11 +2053,11 @@ No asynchronous control signals found in this design
 
 Timing Summary:
 ---------------
-Speed Grade: -3
+Speed Grade: -1
 
-   Minimum period: 4.949ns (Maximum Frequency: 202.049MHz)
-   Minimum input arrival time before clock: 3.438ns
-   Maximum output required time after clock: 0.687ns
+   Minimum period: 6.678ns (Maximum Frequency: 149.757MHz)
+   Minimum input arrival time before clock: 4.717ns
+   Maximum output required time after clock: 0.943ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -2061,10 +2066,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.949ns (frequency: 202.049MHz)
+  Clock period: 6.678ns (frequency: 149.757MHz)
   Total number of paths / destination ports: 421077 / 50865
 -------------------------------------------------------------------------
-Delay:               4.949ns (Levels of Logic = 41)
+Delay:               6.678ns (Levels of Logic = 41)
   Source:            Filter/TOP_FILTER_STM/Mmult_accumulator_in_right (DSP)
   Destination:       Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_39 (FF)
   Source Clock:      clk rising
@@ -2074,58 +2079,58 @@ Delay:               4.949ns (Levels of Logic = 41)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     DSP48E1:CLK->P0       1   2.952   0.295  Filter/TOP_FILTER_STM/Mmult_accumulator_in_right (Filter/accumulator_in_right<0>)
-     LUT3:I2->O            1   0.097   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_lut<0> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<0> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<1> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<2> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<3> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<4> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<5> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<6> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<7> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<8> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<9> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<10> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<11> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<12> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<13> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<14> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<15> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<16> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<17> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<17>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<18> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<18>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<19> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<19>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<20> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<20>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<21> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<21>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<22> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<22>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<23> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<23>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<24> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<24>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<25> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<25>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<26> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<26>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<27> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<27>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<28> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<28>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<29> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<29>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<30> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<30>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<31> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<31>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<32> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<32>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<33> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<33>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<34> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<34>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<35> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<35>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<36> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<36>)
-     MUXCY:CI->O           1   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<37> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<37>)
-     MUXCY:CI->O           0   0.023   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<38> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<38>)
-     XORCY:CI->O           1   0.370   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_xor<39> (Result<39>)
-     FDCE:D                    0.008          Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_39
+     DSP48E1:CLK->P0       1   4.009   0.421  Filter/TOP_FILTER_STM/Mmult_accumulator_in_right (Filter/accumulator_in_right<0>)
+     LUT3:I2->O            1   0.124   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_lut<0> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_lut<0>)
+     MUXCY:S->O            1   0.472   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<0> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<0>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<1> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<1>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<2> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<2>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<3> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<3>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<4> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<4>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<5> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<5>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<6> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<6>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<7> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<7>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<8> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<8>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<9> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<9>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<10> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<10>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<11> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<11>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<12> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<12>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<13> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<13>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<14> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<14>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<15> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<15>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<16> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<16>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<17> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<17>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<18> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<18>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<19> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<19>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<20> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<20>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<21> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<21>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<22> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<22>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<23> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<23>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<24> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<24>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<25> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<25>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<26> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<26>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<27> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<27>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<28> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<28>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<29> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<29>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<30> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<30>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<31> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<31>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<32> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<32>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<33> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<33>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<34> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<34>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<35> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<35>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<36> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<36>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<37> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<37>)
+     MUXCY:CI->O           0   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<38> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<38>)
+     XORCY:CI->O           1   0.510   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_xor<39> (Result<39>)
+     FDCE:D                    0.030          Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_39
     ----------------------------------------
-    Total                      4.949ns (4.654ns logic, 0.295ns route)
-                                       (94.0% logic, 6.0% route)
+    Total                      6.678ns (6.257ns logic, 0.421ns route)
+                                       (93.7% logic, 6.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 187 / 152
 -------------------------------------------------------------------------
-Offset:              3.438ns (Levels of Logic = 8)
+Offset:              4.717ns (Levels of Logic = 8)
   Source:            rst_n (PAD)
   Destination:       Register/Register/rdata_3 (FF)
   Destination Clock: clk rising
@@ -2134,24 +2139,24 @@ Offset:              3.438ns (Levels of Logic = 8)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           155   0.001   0.505  rst_n_IBUF (rst_n_IBUF)
-     LUT2:I0->O            2   0.097   0.516  Register/Register/Mmux_rdata[7]_GND_23_o_mux_3094_OUT11 (Register/Register/rdata[7]_GND_23_o_mux_3094_OUT<0>)
-     LUT6:I3->O            1   0.097   0.000  Register/Register/mux_1916 (Register/Register/mux_1916)
-     MUXF7:I1->O           1   0.279   0.379  Register/Register/mux_18_f7 (Register/Register/mux_18_f7)
-     LUT5:I3->O            1   0.097   0.693  Register/Register/addr<7>12 (Register/Register/addr<7>15)
-     LUT6:I0->O            1   0.097   0.295  Register/Register/addr<7>13 (Register/Register/addr<7>11)
-     LUT5:I4->O            1   0.097   0.000  Register/Register/mux_4 (Register/Register/mux_4)
-     MUXF7:I0->O           1   0.277   0.000  Register/Register/mux_2_f7 (Register/Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT<0>)
-     FD:D                      0.008          Register/Register/rdata_0
+     IBUF:I->O           155   0.001   0.715  rst_n_IBUF (rst_n_IBUF)
+     LUT2:I0->O            2   0.124   0.722  Register/Register/Mmux_rdata[7]_GND_23_o_mux_3094_OUT11 (Register/Register/rdata[7]_GND_23_o_mux_3094_OUT<0>)
+     LUT6:I3->O            1   0.124   0.000  Register/Register/mux_1916 (Register/Register/mux_1916)
+     MUXF7:I1->O           1   0.368   0.536  Register/Register/mux_18_f7 (Register/Register/mux_18_f7)
+     LUT5:I3->O            1   0.124   0.939  Register/Register/addr<7>12 (Register/Register/addr<7>15)
+     LUT6:I0->O            1   0.124   0.421  Register/Register/addr<7>13 (Register/Register/addr<7>11)
+     LUT5:I4->O            1   0.124   0.000  Register/Register/mux_4 (Register/Register/mux_4)
+     MUXF7:I0->O           1   0.365   0.000  Register/Register/mux_2_f7 (Register/Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT<0>)
+     FD:D                      0.030          Register/Register/rdata_0
     ----------------------------------------
-    Total                      3.438ns (1.050ns logic, 2.388ns route)
-                                       (30.5% logic, 69.5% route)
+    Total                      4.717ns (1.384ns logic, 3.333ns route)
+                                       (29.3% logic, 70.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Offset:              0.687ns (Levels of Logic = 1)
+Offset:              0.943ns (Levels of Logic = 1)
   Source:            I2S_Input/Synchronizer/sck_vec_1 (FF)
   Destination:       i2so_sck (PAD)
   Source Clock:      clk rising
@@ -2160,11 +2165,11 @@ Offset:              0.687ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             11   0.361   0.326  I2S_Input/Synchronizer/sck_vec_1 (I2S_Input/Synchronizer/sck_vec_1)
+     FDC:C->Q             11   0.478   0.465  I2S_Input/Synchronizer/sck_vec_1 (I2S_Input/Synchronizer/sck_vec_1)
      OBUF:I->O                 0.000          i2so_sck_OBUF (i2so_sck)
     ----------------------------------------
-    Total                      0.687ns (0.361ns logic, 0.326ns route)
-                                       (52.6% logic, 47.4% route)
+    Total                      0.943ns (0.478ns logic, 0.465ns route)
+                                       (50.7% logic, 49.3% route)
 
 =========================================================================
 
@@ -2176,7 +2181,7 @@ Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_scl_neg_pulse
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.530|         |         |         |
+clk            |    2.123|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_sda_neg_pulse
@@ -2184,7 +2189,7 @@ Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_sda_neg_pulse
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.489|         |         |         |
+clk            |    2.064|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -2192,22 +2197,22 @@ Clock to Setup on destination clock clk
                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
-I2C/i2c_top_deserializer/i2c_scl_neg_pulse|    2.209|         |         |         |
-I2C/i2c_top_deserializer/i2c_sda_neg_pulse|    1.264|         |         |         |
-clk                                       |    4.949|         |         |         |
+I2C/i2c_top_deserializer/i2c_scl_neg_pulse|    3.022|         |         |         |
+I2C/i2c_top_deserializer/i2c_sda_neg_pulse|    1.755|         |         |         |
+clk                                       |    6.678|         |         |         |
 ------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 403.00 secs
-Total CPU time to Xst completion: 403.31 secs
+Total REAL time to Xst completion: 398.00 secs
+Total CPU time to Xst completion: 398.24 secs
  
 --> 
 
-Total memory usage is 3699896 kilobytes
+Total memory usage is 3700324 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   19 (  12 filtered)
+Number of warnings :   24 (  12 filtered)
 Number of infos    :    2 (   0 filtered)
 

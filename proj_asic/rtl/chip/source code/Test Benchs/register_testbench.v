@@ -1,31 +1,17 @@
-`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             register_testbench.v
+// Create Date:             1/19/2016
+// Last Modification:       3/16/2016
+// Author:                  Julie Swift
+// Description: ????????????
+//////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   16:58:35 01/19/2016
-// Design Name:   register
-// Module Name:   C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/chip_reg/chip_reg/register_testbench.v
-// Project Name:  Register
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: register
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
 
 module register_testbench;
 
 	// Inputs
-	reg rst;
+	reg rst_n;
 	reg clk;
 	reg [10:0] addr;
 	reg [7:0] wdata;
@@ -1080,7 +1066,7 @@ module register_testbench;
 
 	// Instantiate the Unit Under Test (UUT)
 	register uut (
-		.rst(rst), 
+		.rst_n(rst_n), 
 		.clk(clk), 
 		.addr(addr), 
 		.wdata(wdata), 
@@ -2136,7 +2122,7 @@ module register_testbench;
 
 	initial begin
 		// Initialize Inputs
-		rst = 0;
+		rst_n = 0;
 		clk = 0;
 		addr = 0;
 		wdata = 0;

@@ -1,9 +1,7 @@
-`define N 11 // number of test elements
-
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   i2s_in_test2.v
 // Create Date:   1/10/2016
-// Last Edit:     1/10/2016
+// Last Edit:     3/20/2016
 // Author:        Kevin Cao
 //
 // Description      Tests the BIST Generator. Sawtooth wave starting value is 0x800 and upper limit value is 0x700
@@ -14,6 +12,8 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns / 1ps
+`define N 11 // number of test elements
 
 module i2s_in_test2;
 

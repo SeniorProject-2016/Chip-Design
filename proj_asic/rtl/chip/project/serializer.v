@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Serializer(
 	 input i2c_scl,
-//	 input i2c_sda,
+	 input i2c_sda,
     output reg i2c_sda_out,
 //	 input i2c_sda_in,
 //    input data_ack,
@@ -29,8 +29,8 @@ module Serializer(
     input Clock,
     input reset,
     input [7:0] i2c_rdata,
-    input i2c_xfc_read
-//	 input stop_out
+    input i2c_xfc_read,
+	 input stop_out
     );
 
 //Create SCL Pulse Signals, and states
@@ -82,7 +82,7 @@ reg stop;
 	//initial stop = 0;
 always@(posedge Clock or negedge reset)
 begin
-	if (!reset /*| (!scl_state & i2c_sda_pos_pulse) */| serialize_done)
+	if (!reset /*| (!scl_state & i2c_sda_pos_pulse) */| serialize_done | stop_out)
 	begin
 	stop <= 1;
 	end

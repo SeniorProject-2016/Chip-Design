@@ -1,49 +1,35 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   19:05:56 02/01/2016
-// Design Name:   register
-// Module Name:   C:/Users/Julie/Desktop/Chip-Design/proj_asic/rtl/chip_reg/chip_reg/reg_testbench.v
-// Project Name:  Register
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: register
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             reg_testbench.v
+// Create Date:             2/1/2016
+// Last Modification:       3/16/2016
+// Author:                  Julie Swift
+// Description:
+//////////////////////////////////////////////////////////////////////////////////
 
 module reg_testbench;
 
 	// Inputs
-	reg rst;
-	reg clk;
+	reg        rst_n;
+	reg        clk;
 	reg [10:0] addr;
-	reg [7:0] wdata;
-	reg w_enable;
-	reg wxfc;
-	reg ro_fifo_underrun;
-	reg ro_fifo_overrun;
-	reg ro_filter_ovf_flag;
-
-	// Outputs
-	wire rxfc;
+	reg [7:0]  wdata;
+	reg        w_enable;
+	reg        wxfc;
+	reg        ro_fifo_underrun;
+	reg        ro_fifo_overrun;
+	reg        ro_filter_ovf_flag;
+                    
+	// Outputs   
+	wire       rxfc;
 	wire [7:0] rdata;
-	wire rf_i2si_bist_en;
+	wire       rf_i2si_bist_en;
 	wire [2:0] rf_filter_shift;
-	wire rf_filter_clip_en;
-	wire trig_fifo_overrun;
-	wire trig_fifo_underrun;
-	wire trig_filter_ovf_flag_clear;
+	wire       rf_filter_clip_en;
+	wire       trig_fifo_overrun;
+	wire       trig_fifo_underrun;
+	wire       trig_filter_ovf_flag_clear;
 	wire [7:0] rf_i2si_bist_start_val_a;
 	wire [3:0] rf_i2si_bist_start_val_b;
 	wire [7:0] rf_i2si_bist_incr;
@@ -1076,7 +1062,7 @@ module reg_testbench;
 
 	// Instantiate the Unit Under Test (UUT)
 	register uut (
-		.rst(rst), 
+		.rst_n(rst_n), 
 		.clk(clk), 
 		.addr(addr), 
 		.wdata(wdata), 
@@ -2126,7 +2112,7 @@ module reg_testbench;
 
 	initial begin
 		// Initialize Inputs
-		rst = 0;
+		rst_n = 0;
 		clk = 0;
 		addr = 0;
 		wdata = 0;
@@ -2142,11 +2128,6 @@ module reg_testbench;
 		
 	end
 	
-	initial begin
-	
-	
-	
-	end
       
 endmodule
 
