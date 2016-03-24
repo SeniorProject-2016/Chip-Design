@@ -17,7 +17,7 @@
 
 uint8  WaveDAC8_initVar = 0u;
 
-const uint8 CYCODE WaveDAC8_wave1[WaveDAC8_WAVE1_LENGTH] = { 252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u };
+const uint8 CYCODE WaveDAC8_wave1[WaveDAC8_WAVE1_LENGTH] = { 94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,94u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u };
 const uint8 CYCODE WaveDAC8_wave2[WaveDAC8_WAVE2_LENGTH] = { 252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u };
 
 static uint8  WaveDAC8_Wave1Chan;

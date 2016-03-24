@@ -1,0 +1,3869 @@
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"USBFS_1_drv.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.USBFS_1_LoadEP0,"ax",%progbits
+  19              		.align	2
+  20              		.global	USBFS_1_LoadEP0
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	USBFS_1_LoadEP0, %function
+  24              	USBFS_1_LoadEP0:
+  25              	.LFB4:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\USBFS_1_drv.c"
+   1:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * File Name: USBFS_1_drv.c
+   3:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Version 2.80
+   4:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+   5:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Description:
+   6:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Endpoint 0 Driver for the USBFS Component.
+   7:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+   8:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Note:
+   9:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+  10:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  17:.\Generated_Source\PSoC5/USBFS_1_drv.c **** #include "USBFS_1.h"
+  18:.\Generated_Source\PSoC5/USBFS_1_drv.c **** #include "USBFS_1_pvt.h"
+  19:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  20:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  21:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  22:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /***************************************
+  23:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global data allocation
+  24:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ***************************************/
+  25:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  26:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile T_USBFS_1_EP_CTL_BLOCK USBFS_1_EP[USBFS_1_MAX_EP];
+  27:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_configuration;
+  28:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_interfaceNumber;
+  29:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_configurationChanged;
+  30:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_deviceAddress;
+  31:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_deviceStatus;
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_interfaceSetting[USBFS_1_MAX_INTERFACES_NUMBER];
+  33:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_interfaceSetting_last[USBFS_1_MAX_INTERFACES_NUMBER];
+  34:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_interfaceStatus[USBFS_1_MAX_INTERFACES_NUMBER];
+  35:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_device;
+  36:.\Generated_Source\PSoC5/USBFS_1_drv.c **** const uint8 CYCODE *USBFS_1_interfaceClass;
+  37:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  38:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  39:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /***************************************
+  40:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Local data allocation
+  41:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ***************************************/
+  42:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  43:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_ep0Toggle;
+  44:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_lastPacketSize;
+  45:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_transferState;
+  46:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile T_USBFS_1_TD USBFS_1_currentTD;
+  47:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_ep0Mode;
+  48:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint8 USBFS_1_ep0Count;
+  49:.\Generated_Source\PSoC5/USBFS_1_drv.c **** volatile uint16 USBFS_1_transferByteCount;
+  50:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  51:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  52:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+  53:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_ep_0_Interrupt
+  54:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+  55:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+  56:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+  57:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  This Interrupt Service Routine handles Endpoint 0 (Control Pipe) traffic.
+  58:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  It dispatches setup requests and handles the data and status stages.
+  59:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+  60:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+  61:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+  62:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+  63:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+  64:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+  65:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+  66:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+  67:.\Generated_Source\PSoC5/USBFS_1_drv.c **** CY_ISR(USBFS_1_EP_0_ISR)
+  68:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+  69:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 bRegTemp;
+  70:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 modifyReg;
+  71:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  72:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     #ifdef USBFS_1_EP_0_ISR_ENTRY_CALLBACK
+  73:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_EP_0_ISR_EntryCallback();
+  74:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     #endif /* USBFS_1_EP_0_ISR_ENTRY_CALLBACK */
+  75:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     
+  76:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     bRegTemp = CY_GET_REG8(USBFS_1_EP0_CR_PTR);
+  77:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if ((bRegTemp & USBFS_1_MODE_ACKD) != 0u)
+  78:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+  79:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         modifyReg = 1u;
+  80:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         if ((bRegTemp & USBFS_1_MODE_SETUP_RCVD) != 0u)
+  81:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+  82:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             if((bRegTemp & USBFS_1_MODE_MASK) != USBFS_1_MODE_NAK_IN_OUT)
+  83:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             {
+  84:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 modifyReg = 0u;                                     /* When mode not NAK_IN_OUT => 
+  85:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             }
+  86:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             else
+  87:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             {
+  88:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 USBFS_1_HandleSetup();
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 3
+
+
+  89:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 if((USBFS_1_ep0Mode & USBFS_1_MODE_SETUP_RCVD) != 0u)
+  90:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 {
+  91:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                     modifyReg = 0u;                         /* if SETUP bit set -> exit without mod
+  92:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 }
+  93:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+  94:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             }
+  95:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+  96:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         else if ((bRegTemp & USBFS_1_MODE_IN_RCVD) != 0u)
+  97:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+  98:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_HandleIN();
+  99:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 100:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         else if ((bRegTemp & USBFS_1_MODE_OUT_RCVD) != 0u)
+ 101:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 102:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_HandleOUT();
+ 103:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 104:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         else
+ 105:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 106:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             modifyReg = 0u;
+ 107:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 108:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         if(modifyReg != 0u)
+ 109:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 110:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             bRegTemp = CY_GET_REG8(USBFS_1_EP0_CR_PTR);    /* unlock registers */
+ 111:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             if((bRegTemp & USBFS_1_MODE_SETUP_RCVD) == 0u)  /* Check if SETUP bit is not set, other
+ 112:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             {
+ 113:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 /* Update the count register */
+ 114:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 bRegTemp = USBFS_1_ep0Toggle | USBFS_1_ep0Count;
+ 115:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 CY_SET_REG8(USBFS_1_EP0_CNT_PTR, bRegTemp);
+ 116:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 if(bRegTemp == CY_GET_REG8(USBFS_1_EP0_CNT_PTR))   /* continue if writing was succe
+ 117:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 {
+ 118:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                     do
+ 119:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                     {
+ 120:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         modifyReg = USBFS_1_ep0Mode;       /* Init temporary variable */
+ 121:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         /* Unlock registers */
+ 122:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         bRegTemp = CY_GET_REG8(USBFS_1_EP0_CR_PTR) & USBFS_1_MODE_SETUP_RCVD;
+ 123:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         if(bRegTemp == 0u)                          /* Check if SETUP bit is not se
+ 124:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         {
+ 125:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                             /* Set the Mode Register  */
+ 126:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                             CY_SET_REG8(USBFS_1_EP0_CR_PTR, USBFS_1_ep0Mode);
+ 127:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                             /* Writing check */
+ 128:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                             modifyReg = CY_GET_REG8(USBFS_1_EP0_CR_PTR) & USBFS_1_MODE_MASK;
+ 129:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         }
+ 130:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                     }while(modifyReg != USBFS_1_ep0Mode);  /* Repeat if writing was not successful 
+ 131:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 }
+ 132:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             }
+ 133:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 134:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 135:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     #ifdef USBFS_1_EP_0_ISR_EXIT_CALLBACK
+ 136:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_EP_0_ISR_ExitCallback();
+ 137:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     #endif /* USBFS_1_EP_0_ISR_EXIT_CALLBACK */
+ 138:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 139:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 140:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 141:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 142:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_HandleSetup
+ 143:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 144:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 145:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 4
+
+
+ 146:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  This Routine dispatches requests for the four USB request types
+ 147:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 148:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 149:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 150:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 151:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 152:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 153:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 154:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 155:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 156:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 157:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 158:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_HandleSetup(void) 
+ 159:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 160:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 requestHandled;
+ 161:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 162:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     requestHandled = CY_GET_REG8(USBFS_1_EP0_CR_PTR);      /* unlock registers */
+ 163:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     CY_SET_REG8(USBFS_1_EP0_CR_PTR, requestHandled);       /* clear setup bit */
+ 164:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     requestHandled = CY_GET_REG8(USBFS_1_EP0_CR_PTR);      /* reread register */
+ 165:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if((requestHandled & USBFS_1_MODE_SETUP_RCVD) != 0u)
+ 166:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 167:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_ep0Mode = requestHandled;        /* if SETUP bit set -> exit without modifying the 
+ 168:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 169:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     else
+ 170:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 171:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* In case the previous transfer did not complete, close it out */
+ 172:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_UpdateStatusBlock(USBFS_1_XFER_PREMATURE);
+ 173:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 174:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         switch (CY_GET_REG8(USBFS_1_bmRequestType) & USBFS_1_RQST_TYPE_MASK)
+ 175:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 176:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             case USBFS_1_RQST_TYPE_STD:
+ 177:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 requestHandled = USBFS_1_HandleStandardRqst();
+ 178:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 break;
+ 179:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             case USBFS_1_RQST_TYPE_CLS:
+ 180:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 requestHandled = USBFS_1_DispatchClassRqst();
+ 181:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 break;
+ 182:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             case USBFS_1_RQST_TYPE_VND:
+ 183:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 requestHandled = USBFS_1_HandleVendorRqst();
+ 184:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 break;
+ 185:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             default:
+ 186:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 requestHandled = USBFS_1_FALSE;
+ 187:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 break;
+ 188:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 189:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         if (requestHandled == USBFS_1_FALSE)
+ 190:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 191:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_ep0Mode = USBFS_1_MODE_STALL_IN_OUT;
+ 192:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 193:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 194:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 195:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 196:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 197:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 198:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_HandleIN
+ 199:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 200:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 201:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 202:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  This routine handles EP0 IN transfers.
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 5
+
+
+ 203:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 204:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 205:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 206:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 207:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 208:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 209:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 210:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 211:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 212:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 213:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 214:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_HandleIN(void) 
+ 215:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 216:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     switch (USBFS_1_transferState)
+ 217:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 218:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_IDLE:
+ 219:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 220:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_CONTROL_READ:
+ 221:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_ControlReadDataStage();
+ 222:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 223:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_CONTROL_WRITE:
+ 224:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_ControlWriteStatusStage();
+ 225:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 226:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_NO_DATA_CONTROL:
+ 227:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_NoDataControlStatusStage();
+ 228:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 229:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         default:    /* there are no more states */
+ 230:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 231:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 232:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 233:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 234:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 235:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 236:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_HandleOUT
+ 237:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 238:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 239:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 240:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  This routine handles EP0 OUT transfers.
+ 241:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 242:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 243:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 244:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 245:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 246:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 247:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 248:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 249:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 250:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 251:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 252:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_HandleOUT(void) 
+ 253:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 254:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     switch (USBFS_1_transferState)
+ 255:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 256:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_IDLE:
+ 257:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 258:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_CONTROL_READ:
+ 259:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_ControlReadStatusStage();
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 6
+
+
+ 260:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 261:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_CONTROL_WRITE:
+ 262:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_ControlWriteDataStage();
+ 263:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 264:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_NO_DATA_CONTROL:
+ 265:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             /* Update the completion block */
+ 266:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_UpdateStatusBlock(USBFS_1_XFER_ERROR);
+ 267:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             /* We expect no more data, so stall INs and OUTs */
+ 268:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_ep0Mode = USBFS_1_MODE_STALL_IN_OUT;
+ 269:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 270:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         default:    /* There are no more states */
+ 271:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 272:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 273:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 274:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 275:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 276:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 277:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_LoadEP0
+ 278:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 279:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 280:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 281:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  This routine loads the EP0 data registers for OUT transfers.  It uses the
+ 282:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  currentTD (previously initialized by the _InitControlWrite function and
+ 283:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  updated for each OUT transfer, and the bLastPacketSize) to determine how
+ 284:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  many uint8s to transfer on the current OUT.
+ 285:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 286:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  If the number of uint8s remaining is zero and the last transfer was full,
+ 287:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  we need to send a zero length packet.  Otherwise we send the minimum
+ 288:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  of the control endpoint size (8) or remaining number of uint8s for the
+ 289:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  transaction.
+ 290:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 291:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 292:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 293:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 294:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 295:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 296:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 297:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 298:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferByteCount - Update the transfer byte count from the
+ 299:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *     last transaction.
+ 300:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Count - counts the data loaded to the SIE memory in
+ 301:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *     current packet.
+ 302:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_lastPacketSize - remembers the USBFS_ep0Count value for the
+ 303:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *     next packet.
+ 304:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferByteCount - sum of the previous bytes transferred
+ 305:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *     on previous packets(sum of USBFS_lastPacketSize)
+ 306:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Toggle - inverted
+ 307:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Mode  - prepare for mode register content.
+ 308:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferState - set to TRANS_STATE_CONTROL_READ
+ 309:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 310:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 311:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 312:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 313:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 314:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_LoadEP0(void) 
+ 315:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+  27              		.loc 1 315 0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 7
+
+
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+ 316:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 ep0Count = 0u;
+ 317:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 318:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the transfer byte count from the last transaction */
+ 319:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferByteCount += USBFS_1_lastPacketSize;
+  33              		.loc 1 319 0
+  34 0000 1E4B     		ldr	r3, .L8
+  35 0002 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+  36 0004 1E4A     		ldr	r2, .L8+4
+  37 0006 1388     		ldrh	r3, [r2]
+  38 0008 0B44     		add	r3, r3, r1
+  39 000a 9BB2     		uxth	r3, r3
+  40 000c 1380     		strh	r3, [r2]	@ movhi
+ 316:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 ep0Count = 0u;
+  41              		.loc 1 316 0
+  42 000e 0023     		movs	r3, #0
+ 320:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Now load the next transaction */
+ 321:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     while ((USBFS_1_currentTD.count > 0u) && (ep0Count < 8u))
+  43              		.loc 1 321 0
+  44 0010 11E0     		b	.L2
+  45              	.LVL1:
+  46              	.L4:
+ 322:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 323:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         CY_SET_REG8((reg8 *)(USBFS_1_EP0_DR0_IND + ep0Count), *USBFS_1_currentTD.pData);
+  47              		.loc 1 323 0
+  48 0012 03F18041 		add	r1, r3, #1073741824
+  49 0016 01F5C041 		add	r1, r1, #24576
+  50 001a 1A4A     		ldr	r2, .L8+8
+  51 001c 5068     		ldr	r0, [r2, #4]
+  52 001e 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+  53 0020 C0B2     		uxtb	r0, r0
+  54 0022 0870     		strb	r0, [r1]
+ 324:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.pData = &USBFS_1_currentTD.pData[1u];
+  55              		.loc 1 324 0
+  56 0024 5168     		ldr	r1, [r2, #4]
+  57 0026 0131     		adds	r1, r1, #1
+  58 0028 5160     		str	r1, [r2, #4]
+ 325:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         ep0Count++;
+  59              		.loc 1 325 0
+  60 002a 0133     		adds	r3, r3, #1
+  61              	.LVL2:
+  62 002c DBB2     		uxtb	r3, r3
+  63              	.LVL3:
+ 326:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.count--;
+  64              		.loc 1 326 0
+  65 002e 1188     		ldrh	r1, [r2]
+  66 0030 0139     		subs	r1, r1, #1
+  67 0032 89B2     		uxth	r1, r1
+  68 0034 1180     		strh	r1, [r2]	@ movhi
+  69              	.LVL4:
+  70              	.L2:
+ 321:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+  71              		.loc 1 321 0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 8
+
+
+  72 0036 134A     		ldr	r2, .L8+8
+  73 0038 1288     		ldrh	r2, [r2]
+  74 003a 92B2     		uxth	r2, r2
+  75 003c 0AB1     		cbz	r2, .L3
+ 321:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+  76              		.loc 1 321 0 is_stmt 0 discriminator 1
+  77 003e 072B     		cmp	r3, #7
+  78 0040 E7D9     		bls	.L4
+  79              	.L3:
+ 327:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 328:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Support zero-length packet*/
+ 329:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if( (USBFS_1_lastPacketSize == 8u) || (ep0Count > 0u) )
+  80              		.loc 1 329 0 is_stmt 1
+  81 0042 0E4A     		ldr	r2, .L8
+  82 0044 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+  83 0046 D2B2     		uxtb	r2, r2
+  84 0048 082A     		cmp	r2, #8
+  85 004a 00D0     		beq	.L5
+  86              		.loc 1 329 0 is_stmt 0 discriminator 1
+  87 004c 5BB1     		cbz	r3, .L6
+  88              	.L5:
+ 330:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 331:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Update the data toggle */
+ 332:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_ep0Toggle ^= USBFS_1_EP0_CNT_DATA_TOGGLE;
+  89              		.loc 1 332 0 is_stmt 1
+  90 004e 0E49     		ldr	r1, .L8+12
+  91 0050 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+  92 0052 82F08002 		eor	r2, r2, #128
+  93 0056 0A70     		strb	r2, [r1]
+ 333:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Set the Mode Register  */
+ 334:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_ep0Mode = USBFS_1_MODE_ACK_IN_STATUS_OUT;
+  94              		.loc 1 334 0
+  95 0058 0F21     		movs	r1, #15
+  96 005a 0C4A     		ldr	r2, .L8+16
+  97 005c 1170     		strb	r1, [r2]
+ 335:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Update the state (or stay the same) */
+ 336:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_transferState = USBFS_1_TRANS_STATE_CONTROL_READ;
+  98              		.loc 1 336 0
+  99 005e 0221     		movs	r1, #2
+ 100 0060 0B4A     		ldr	r2, .L8+20
+ 101 0062 1170     		strb	r1, [r2]
+ 102 0064 04E0     		b	.L7
+ 103              	.L6:
+ 337:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 338:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     else
+ 339:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 340:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Expect Status Stage Out */
+ 341:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_ep0Mode = USBFS_1_MODE_STATUS_OUT_ONLY;
+ 104              		.loc 1 341 0
+ 105 0066 0222     		movs	r2, #2
+ 106 0068 0849     		ldr	r1, .L8+16
+ 107 006a 0A70     		strb	r2, [r1]
+ 342:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Update the state (or stay the same) */
+ 343:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_transferState = USBFS_1_TRANS_STATE_CONTROL_READ;
+ 108              		.loc 1 343 0
+ 109 006c 0849     		ldr	r1, .L8+20
+ 110 006e 0A70     		strb	r2, [r1]
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 9
+
+
+ 111              	.L7:
+ 344:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 345:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 346:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Save the packet size for next time */
+ 347:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_lastPacketSize = ep0Count;
+ 112              		.loc 1 347 0
+ 113 0070 024A     		ldr	r2, .L8
+ 114 0072 1370     		strb	r3, [r2]
+ 348:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Count = ep0Count;
+ 115              		.loc 1 348 0
+ 116 0074 074A     		ldr	r2, .L8+24
+ 117 0076 1370     		strb	r3, [r2]
+ 118 0078 7047     		bx	lr
+ 119              	.L9:
+ 120 007a 00BF     		.align	2
+ 121              	.L8:
+ 122 007c 00000000 		.word	USBFS_1_lastPacketSize
+ 123 0080 00000000 		.word	USBFS_1_transferByteCount
+ 124 0084 00000000 		.word	USBFS_1_currentTD
+ 125 0088 00000000 		.word	USBFS_1_ep0Toggle
+ 126 008c 00000000 		.word	USBFS_1_ep0Mode
+ 127 0090 00000000 		.word	USBFS_1_transferState
+ 128 0094 00000000 		.word	USBFS_1_ep0Count
+ 129              		.cfi_endproc
+ 130              	.LFE4:
+ 131              		.size	USBFS_1_LoadEP0, .-USBFS_1_LoadEP0
+ 132              		.section	.text.USBFS_1_InitZeroLengthControlTransfer,"ax",%progbits
+ 133              		.align	2
+ 134              		.global	USBFS_1_InitZeroLengthControlTransfer
+ 135              		.thumb
+ 136              		.thumb_func
+ 137              		.type	USBFS_1_InitZeroLengthControlTransfer, %function
+ 138              	USBFS_1_InitZeroLengthControlTransfer:
+ 139              	.LFB6:
+ 349:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 350:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 351:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 352:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 353:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_InitControlRead
+ 354:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 355:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 356:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 357:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Initialize a control read transaction, usable to send data to the host.
+ 358:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  The following global variables should be initialized before this function
+ 359:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  called. To send zero length packet use InitZeroLengthControlTransfer
+ 360:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  function.
+ 361:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 362:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 363:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 364:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 365:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 366:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  requestHandled state.
+ 367:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 368:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 369:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_currentTD.count - counts of data to be sent.
+ 370:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_currentTD.pData - data pointer.
+ 371:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 10
+
+
+ 372:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 373:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 374:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 375:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 376:.\Generated_Source\PSoC5/USBFS_1_drv.c **** uint8 USBFS_1_InitControlRead(void) 
+ 377:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 378:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint16 xferCount;
+ 379:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if(USBFS_1_currentTD.count == 0u)
+ 380:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 381:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         (void) USBFS_1_InitZeroLengthControlTransfer();
+ 382:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 383:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     else
+ 384:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 385:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Set up the state machine */
+ 386:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_transferState = USBFS_1_TRANS_STATE_CONTROL_READ;
+ 387:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Set the toggle, it gets updated in LoadEP */
+ 388:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_ep0Toggle = 0u;
+ 389:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Initialize the Status Block */
+ 390:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_InitializeStatusBlock();
+ 391:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         xferCount = (((uint16)CY_GET_REG8(USBFS_1_lengthHi) << 8u) | (CY_GET_REG8(USBFS_1_lengthLo)
+ 392:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 393:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         if (USBFS_1_currentTD.count > xferCount)
+ 394:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 395:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             USBFS_1_currentTD.count = xferCount;
+ 396:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 397:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_LoadEP0();
+ 398:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 399:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 400:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     return(USBFS_1_TRUE);
+ 401:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 402:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 403:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 404:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 405:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_InitZeroLengthControlTransfer
+ 406:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 407:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 408:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 409:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Initialize a zero length data IN transfer.
+ 410:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 411:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 412:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 413:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 414:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 415:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  requestHandled state.
+ 416:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 417:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 418:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Toggle - set to EP0_CNT_DATA_TOGGLE
+ 419:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Mode  - prepare for mode register content.
+ 420:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferState - set to TRANS_STATE_CONTROL_READ
+ 421:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Count - cleared, means the zero-length packet.
+ 422:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_lastPacketSize - cleared.
+ 423:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 424:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 425:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 426:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 427:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 428:.\Generated_Source\PSoC5/USBFS_1_drv.c **** uint8 USBFS_1_InitZeroLengthControlTransfer(void)
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 11
+
+
+ 429:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                                                 
+ 430:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 140              		.loc 1 430 0
+ 141              		.cfi_startproc
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+ 431:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the state */
+ 432:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferState = USBFS_1_TRANS_STATE_CONTROL_READ;
+ 145              		.loc 1 432 0
+ 146 0000 0222     		movs	r2, #2
+ 147 0002 074B     		ldr	r3, .L11
+ 148 0004 1A70     		strb	r2, [r3]
+ 433:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Set the data toggle */
+ 434:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Toggle = USBFS_1_EP0_CNT_DATA_TOGGLE;
+ 149              		.loc 1 434 0
+ 150 0006 8022     		movs	r2, #128
+ 151 0008 064B     		ldr	r3, .L11+4
+ 152 000a 1A70     		strb	r2, [r3]
+ 435:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Set the Mode Register  */
+ 436:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Mode = USBFS_1_MODE_ACK_IN_STATUS_OUT;
+ 153              		.loc 1 436 0
+ 154 000c 0F22     		movs	r2, #15
+ 155 000e 064B     		ldr	r3, .L11+8
+ 156 0010 1A70     		strb	r2, [r3]
+ 437:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Save the packet size for next time */
+ 438:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_lastPacketSize = 0u;
+ 157              		.loc 1 438 0
+ 158 0012 0023     		movs	r3, #0
+ 159 0014 054A     		ldr	r2, .L11+12
+ 160 0016 1370     		strb	r3, [r2]
+ 439:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Count = 0u;
+ 161              		.loc 1 439 0
+ 162 0018 054A     		ldr	r2, .L11+16
+ 163 001a 1370     		strb	r3, [r2]
+ 440:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 441:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     return(USBFS_1_TRUE);
+ 442:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 164              		.loc 1 442 0
+ 165 001c 0120     		movs	r0, #1
+ 166 001e 7047     		bx	lr
+ 167              	.L12:
+ 168              		.align	2
+ 169              	.L11:
+ 170 0020 00000000 		.word	USBFS_1_transferState
+ 171 0024 00000000 		.word	USBFS_1_ep0Toggle
+ 172 0028 00000000 		.word	USBFS_1_ep0Mode
+ 173 002c 00000000 		.word	USBFS_1_lastPacketSize
+ 174 0030 00000000 		.word	USBFS_1_ep0Count
+ 175              		.cfi_endproc
+ 176              	.LFE6:
+ 177              		.size	USBFS_1_InitZeroLengthControlTransfer, .-USBFS_1_InitZeroLengthControlTransfer
+ 178              		.section	.text.USBFS_1_ControlReadDataStage,"ax",%progbits
+ 179              		.align	2
+ 180              		.global	USBFS_1_ControlReadDataStage
+ 181              		.thumb
+ 182              		.thumb_func
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 12
+
+
+ 183              		.type	USBFS_1_ControlReadDataStage, %function
+ 184              	USBFS_1_ControlReadDataStage:
+ 185              	.LFB7:
+ 443:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 444:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 445:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 446:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_ControlReadDataStage
+ 447:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 448:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 449:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 450:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Handle the Data Stage of a control read transfer.
+ 451:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 452:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 453:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 454:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 455:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 456:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 457:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 458:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 459:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 460:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 461:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 462:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_ControlReadDataStage(void) 
+ 463:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 464:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 186              		.loc 1 464 0
+ 187              		.cfi_startproc
+ 188              		@ args = 0, pretend = 0, frame = 0
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190 0000 08B5     		push	{r3, lr}
+ 191              		.cfi_def_cfa_offset 8
+ 192              		.cfi_offset 3, -8
+ 193              		.cfi_offset 14, -4
+ 465:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_LoadEP0();
+ 194              		.loc 1 465 0
+ 195 0002 FFF7FEFF 		bl	USBFS_1_LoadEP0
+ 196              	.LVL5:
+ 197 0006 08BD     		pop	{r3, pc}
+ 198              		.cfi_endproc
+ 199              	.LFE7:
+ 200              		.size	USBFS_1_ControlReadDataStage, .-USBFS_1_ControlReadDataStage
+ 201              		.section	.text.USBFS_1_ControlWriteDataStage,"ax",%progbits
+ 202              		.align	2
+ 203              		.global	USBFS_1_ControlWriteDataStage
+ 204              		.thumb
+ 205              		.thumb_func
+ 206              		.type	USBFS_1_ControlWriteDataStage, %function
+ 207              	USBFS_1_ControlWriteDataStage:
+ 208              	.LFB10:
+ 466:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 467:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 468:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 469:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 470:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_ControlReadStatusStage
+ 471:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 472:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 473:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 13
+
+
+ 474:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Handle the Status Stage of a control read transfer.
+ 475:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 476:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 477:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 478:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 479:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 480:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 481:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 482:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 483:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_USBFS_transferByteCount - updated with last packet size.
+ 484:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferState - set to TRANS_STATE_IDLE.
+ 485:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Mode  - set to MODE_STALL_IN_OUT.
+ 486:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 487:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 488:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 489:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 490:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 491:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_ControlReadStatusStage(void) 
+ 492:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 493:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the transfer byte count */
+ 494:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferByteCount += USBFS_1_lastPacketSize;
+ 495:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Go Idle */
+ 496:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferState = USBFS_1_TRANS_STATE_IDLE;
+ 497:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the completion block */
+ 498:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_UpdateStatusBlock(USBFS_1_XFER_STATUS_ACK);
+ 499:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* We expect no more data, so stall INs and OUTs */
+ 500:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Mode =  USBFS_1_MODE_STALL_IN_OUT;
+ 501:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 502:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 503:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 504:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 505:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_InitControlWrite
+ 506:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 507:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 508:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 509:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Initialize a control write transaction
+ 510:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 511:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 512:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 513:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 514:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 515:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  requestHandled state.
+ 516:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 517:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 518:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_USBFS_transferState - set to TRANS_STATE_CONTROL_WRITE
+ 519:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Toggle - set to EP0_CNT_DATA_TOGGLE
+ 520:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Mode  - set to MODE_ACK_OUT_STATUS_IN
+ 521:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 522:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 523:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 524:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 525:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 526:.\Generated_Source\PSoC5/USBFS_1_drv.c **** uint8 USBFS_1_InitControlWrite(void) 
+ 527:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 528:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint16 xferCount;
+ 529:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 530:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Set up the state machine */
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 14
+
+
+ 531:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferState = USBFS_1_TRANS_STATE_CONTROL_WRITE;
+ 532:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* This might not be necessary */
+ 533:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Toggle = USBFS_1_EP0_CNT_DATA_TOGGLE;
+ 534:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Initialize the Status Block */
+ 535:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_InitializeStatusBlock();
+ 536:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 537:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     xferCount = (((uint16)CY_GET_REG8(USBFS_1_lengthHi) << 8u) | (CY_GET_REG8(USBFS_1_lengthLo)));
+ 538:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 539:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if (USBFS_1_currentTD.count > xferCount)
+ 540:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 541:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.count = xferCount;
+ 542:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 543:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 544:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Expect Data or Status Stage */
+ 545:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Mode = USBFS_1_MODE_ACK_OUT_STATUS_IN;
+ 546:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 547:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     return(USBFS_1_TRUE);
+ 548:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 549:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 550:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 551:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 552:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_ControlWriteDataStage
+ 553:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 554:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 555:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 556:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Handle the Data Stage of a control write transfer
+ 557:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *       1. Get the data (We assume the destination was validated previously)
+ 558:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *       2. Update the count and data toggle
+ 559:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *       3. Update the mode register for the next transaction
+ 560:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 561:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 562:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 563:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 564:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 565:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 566:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 567:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 568:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferByteCount - Update the transfer byte count from the
+ 569:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *    last transaction.
+ 570:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Count - counts the data loaded from the SIE memory
+ 571:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *    in current packet.
+ 572:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferByteCount - sum of the previous bytes transferred
+ 573:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *    on previous packets(sum of USBFS_lastPacketSize)
+ 574:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Toggle - inverted
+ 575:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Mode  - set to MODE_ACK_OUT_STATUS_IN.
+ 576:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 577:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 578:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 579:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 580:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 581:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_ControlWriteDataStage(void) 
+ 582:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 209              		.loc 1 582 0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              		@ link register save eliminated.
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 15
+
+
+ 214 0000 10B4     		push	{r4}
+ 215              		.cfi_def_cfa_offset 4
+ 216              		.cfi_offset 4, -4
+ 217              	.LVL6:
+ 583:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 ep0Count;
+ 584:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 regIndex = 0u;
+ 585:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 586:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     ep0Count = (CY_GET_REG8(USBFS_1_EP0_CNT_PTR) & USBFS_1_EPX_CNT0_MASK) -
+ 218              		.loc 1 586 0
+ 219 0002 1A4B     		ldr	r3, .L20
+ 220 0004 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 221 0006 01F00F01 		and	r1, r1, #15
+ 222 000a 0239     		subs	r1, r1, #2
+ 223 000c C9B2     		uxtb	r1, r1
+ 224              	.LVL7:
+ 587:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                USBFS_1_EPX_CNTX_CRC_COUNT;
+ 588:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 589:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferByteCount += ep0Count;
+ 225              		.loc 1 589 0
+ 226 000e 184A     		ldr	r2, .L20+4
+ 227 0010 1388     		ldrh	r3, [r2]
+ 228 0012 0B44     		add	r3, r3, r1
+ 229 0014 9BB2     		uxth	r3, r3
+ 230 0016 1380     		strh	r3, [r2]	@ movhi
+ 584:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 231              		.loc 1 584 0
+ 232 0018 0020     		movs	r0, #0
+ 590:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 591:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     while ((USBFS_1_currentTD.count > 0u) && (ep0Count > 0u))
+ 233              		.loc 1 591 0
+ 234 001a 13E0     		b	.L16
+ 235              	.LVL8:
+ 236              	.L18:
+ 592:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 593:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         *USBFS_1_currentTD.pData = CY_GET_REG8((reg8 *)(USBFS_1_EP0_DR0_IND + regIndex));
+ 237              		.loc 1 593 0
+ 238 001c 154B     		ldr	r3, .L20+8
+ 239 001e 5C68     		ldr	r4, [r3, #4]
+ 240 0020 00F18042 		add	r2, r0, #1073741824
+ 241 0024 02F5C042 		add	r2, r2, #24576
+ 242 0028 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 243 002a D2B2     		uxtb	r2, r2
+ 244 002c 2270     		strb	r2, [r4]
+ 594:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.pData = &USBFS_1_currentTD.pData[1u];
+ 245              		.loc 1 594 0
+ 246 002e 5A68     		ldr	r2, [r3, #4]
+ 247 0030 0132     		adds	r2, r2, #1
+ 248 0032 5A60     		str	r2, [r3, #4]
+ 595:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         regIndex++;
+ 249              		.loc 1 595 0
+ 250 0034 0130     		adds	r0, r0, #1
+ 251              	.LVL9:
+ 252 0036 C0B2     		uxtb	r0, r0
+ 253              	.LVL10:
+ 596:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         ep0Count--;
+ 254              		.loc 1 596 0
+ 255 0038 0139     		subs	r1, r1, #1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 16
+
+
+ 256              	.LVL11:
+ 257 003a C9B2     		uxtb	r1, r1
+ 258              	.LVL12:
+ 597:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.count--;
+ 259              		.loc 1 597 0
+ 260 003c 1A88     		ldrh	r2, [r3]
+ 261 003e 013A     		subs	r2, r2, #1
+ 262 0040 92B2     		uxth	r2, r2
+ 263 0042 1A80     		strh	r2, [r3]	@ movhi
+ 264              	.LVL13:
+ 265              	.L16:
+ 591:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 266              		.loc 1 591 0
+ 267 0044 0B4B     		ldr	r3, .L20+8
+ 268 0046 1B88     		ldrh	r3, [r3]
+ 269 0048 9BB2     		uxth	r3, r3
+ 270 004a 0BB1     		cbz	r3, .L17
+ 591:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 271              		.loc 1 591 0 is_stmt 0 discriminator 1
+ 272 004c 0029     		cmp	r1, #0
+ 273 004e E5D1     		bne	.L18
+ 274              	.L17:
+ 598:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 599:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Count = ep0Count;
+ 275              		.loc 1 599 0 is_stmt 1
+ 276 0050 094B     		ldr	r3, .L20+12
+ 277 0052 1970     		strb	r1, [r3]
+ 600:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the data toggle */
+ 601:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Toggle ^= USBFS_1_EP0_CNT_DATA_TOGGLE;
+ 278              		.loc 1 601 0
+ 279 0054 094A     		ldr	r2, .L20+16
+ 280 0056 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 281 0058 83F08003 		eor	r3, r3, #128
+ 282 005c 1370     		strb	r3, [r2]
+ 602:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Expect Data or Status Stage */
+ 603:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Mode = USBFS_1_MODE_ACK_OUT_STATUS_IN;
+ 283              		.loc 1 603 0
+ 284 005e 0B22     		movs	r2, #11
+ 285 0060 074B     		ldr	r3, .L20+20
+ 286 0062 1A70     		strb	r2, [r3]
+ 604:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 287              		.loc 1 604 0
+ 288 0064 5DF8044B 		ldr	r4, [sp], #4
+ 289              		.cfi_restore 4
+ 290              		.cfi_def_cfa_offset 0
+ 291 0068 7047     		bx	lr
+ 292              	.L21:
+ 293 006a 00BF     		.align	2
+ 294              	.L20:
+ 295 006c 29600040 		.word	1073766441
+ 296 0070 00000000 		.word	USBFS_1_transferByteCount
+ 297 0074 00000000 		.word	USBFS_1_currentTD
+ 298 0078 00000000 		.word	USBFS_1_ep0Count
+ 299 007c 00000000 		.word	USBFS_1_ep0Toggle
+ 300 0080 00000000 		.word	USBFS_1_ep0Mode
+ 301              		.cfi_endproc
+ 302              	.LFE10:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 17
+
+
+ 303              		.size	USBFS_1_ControlWriteDataStage, .-USBFS_1_ControlWriteDataStage
+ 304              		.section	.text.USBFS_1_InitNoDataControlTransfer,"ax",%progbits
+ 305              		.align	2
+ 306              		.global	USBFS_1_InitNoDataControlTransfer
+ 307              		.thumb
+ 308              		.thumb_func
+ 309              		.type	USBFS_1_InitNoDataControlTransfer, %function
+ 310              	USBFS_1_InitNoDataControlTransfer:
+ 311              	.LFB12:
+ 605:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 606:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 607:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 608:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_ControlWriteStatusStage
+ 609:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 610:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 611:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 612:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Handle the Status Stage of a control write transfer
+ 613:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 614:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 615:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 616:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 617:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 618:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 619:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 620:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 621:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferState - set to TRANS_STATE_IDLE.
+ 622:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_USBFS_ep0Mode  - set to MODE_STALL_IN_OUT.
+ 623:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 624:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 625:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 626:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 627:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 628:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_ControlWriteStatusStage(void) 
+ 629:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 630:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Go Idle */
+ 631:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferState = USBFS_1_TRANS_STATE_IDLE;
+ 632:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the completion block */
+ 633:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_UpdateStatusBlock(USBFS_1_XFER_STATUS_ACK);
+ 634:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* We expect no more data, so stall INs and OUTs */
+ 635:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Mode = USBFS_1_MODE_STALL_IN_OUT;
+ 636:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 637:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 638:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 639:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 640:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_InitNoDataControlTransfer
+ 641:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 642:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 643:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 644:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Initialize a no data control transfer
+ 645:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 646:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 647:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 648:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 649:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 650:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  requestHandled state.
+ 651:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 652:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 18
+
+
+ 653:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferState - set to TRANS_STATE_NO_DATA_CONTROL.
+ 654:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Mode  - set to MODE_STATUS_IN_ONLY.
+ 655:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Count - cleared.
+ 656:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Toggle - set to EP0_CNT_DATA_TOGGLE
+ 657:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 658:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 659:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 660:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 661:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 662:.\Generated_Source\PSoC5/USBFS_1_drv.c **** uint8 USBFS_1_InitNoDataControlTransfer(void) 
+ 663:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 312              		.loc 1 663 0
+ 313              		.cfi_startproc
+ 314              		@ args = 0, pretend = 0, frame = 0
+ 315              		@ frame_needed = 0, uses_anonymous_args = 0
+ 316              		@ link register save eliminated.
+ 664:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferState = USBFS_1_TRANS_STATE_NO_DATA_CONTROL;
+ 317              		.loc 1 664 0
+ 318 0000 0623     		movs	r3, #6
+ 319 0002 064A     		ldr	r2, .L23
+ 320 0004 1370     		strb	r3, [r2]
+ 665:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Mode = USBFS_1_MODE_STATUS_IN_ONLY;
+ 321              		.loc 1 665 0
+ 322 0006 064A     		ldr	r2, .L23+4
+ 323 0008 1370     		strb	r3, [r2]
+ 666:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Toggle = USBFS_1_EP0_CNT_DATA_TOGGLE;
+ 324              		.loc 1 666 0
+ 325 000a 8022     		movs	r2, #128
+ 326 000c 054B     		ldr	r3, .L23+8
+ 327 000e 1A70     		strb	r2, [r3]
+ 667:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Count = 0u;
+ 328              		.loc 1 667 0
+ 329 0010 0022     		movs	r2, #0
+ 330 0012 054B     		ldr	r3, .L23+12
+ 331 0014 1A70     		strb	r2, [r3]
+ 668:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 669:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     return(USBFS_1_TRUE);
+ 670:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 332              		.loc 1 670 0
+ 333 0016 0120     		movs	r0, #1
+ 334 0018 7047     		bx	lr
+ 335              	.L24:
+ 336 001a 00BF     		.align	2
+ 337              	.L23:
+ 338 001c 00000000 		.word	USBFS_1_transferState
+ 339 0020 00000000 		.word	USBFS_1_ep0Mode
+ 340 0024 00000000 		.word	USBFS_1_ep0Toggle
+ 341 0028 00000000 		.word	USBFS_1_ep0Count
+ 342              		.cfi_endproc
+ 343              	.LFE12:
+ 344              		.size	USBFS_1_InitNoDataControlTransfer, .-USBFS_1_InitNoDataControlTransfer
+ 345              		.section	.text.USBFS_1_UpdateStatusBlock,"ax",%progbits
+ 346              		.align	2
+ 347              		.global	USBFS_1_UpdateStatusBlock
+ 348              		.thumb
+ 349              		.thumb_func
+ 350              		.type	USBFS_1_UpdateStatusBlock, %function
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 19
+
+
+ 351              	USBFS_1_UpdateStatusBlock:
+ 352              	.LFB14:
+ 671:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 672:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 673:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 674:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_NoDataControlStatusStage
+ 675:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 676:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 677:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Handle the Status Stage of a no data control transfer.
+ 678:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 679:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  SET_ADDRESS is special, since we need to receive the status stage with
+ 680:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  the old address.
+ 681:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 682:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 683:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 684:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 685:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 686:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 687:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 688:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 689:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferState - set to TRANS_STATE_IDLE.
+ 690:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Mode  - set to MODE_STALL_IN_OUT.
+ 691:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_ep0Toggle - set to EP0_CNT_DATA_TOGGLE
+ 692:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_deviceAddress - used to set new address and cleared
+ 693:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 694:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 695:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 696:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 697:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 698:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_NoDataControlStatusStage(void) 
+ 699:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 700:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Change the USB address register if we got a SET_ADDRESS. */
+ 701:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if (USBFS_1_deviceAddress != 0u)
+ 702:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 703:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         CY_SET_REG8(USBFS_1_CR0_PTR, USBFS_1_deviceAddress | USBFS_1_CR0_ENABLE);
+ 704:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_deviceAddress = 0u;
+ 705:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 706:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Go Idle */
+ 707:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferState = USBFS_1_TRANS_STATE_IDLE;
+ 708:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the completion block */
+ 709:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_UpdateStatusBlock(USBFS_1_XFER_STATUS_ACK);
+ 710:.\Generated_Source\PSoC5/USBFS_1_drv.c ****      /* We expect no more data, so stall INs and OUTs */
+ 711:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_ep0Mode = USBFS_1_MODE_STALL_IN_OUT;
+ 712:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 713:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 714:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 715:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 716:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_UpdateStatusBlock
+ 717:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 718:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 719:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 720:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Update the Completion Status Block for a Request.  The block is updated
+ 721:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  with the completion code the USBFS_1_transferByteCount.  The
+ 722:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  StatusBlock Pointer is set to NULL.
+ 723:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 724:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 725:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  completionCode - status.
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 20
+
+
+ 726:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 727:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 728:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 729:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 730:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 731:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_currentTD.pStatusBlock->status - updated by the
+ 732:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *    completionCode parameter.
+ 733:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_currentTD.pStatusBlock->length - updated.
+ 734:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_currentTD.pStatusBlock - cleared.
+ 735:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 736:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 737:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 738:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 739:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 740:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_UpdateStatusBlock(uint8 completionCode) 
+ 741:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 353              		.loc 1 741 0
+ 354              		.cfi_startproc
+ 355              		@ args = 0, pretend = 0, frame = 0
+ 356              		@ frame_needed = 0, uses_anonymous_args = 0
+ 357              		@ link register save eliminated.
+ 358              	.LVL14:
+ 742:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if (USBFS_1_currentTD.pStatusBlock != NULL)
+ 359              		.loc 1 742 0
+ 360 0000 064B     		ldr	r3, .L27
+ 361 0002 9B68     		ldr	r3, [r3, #8]
+ 362 0004 43B1     		cbz	r3, .L25
+ 743:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 744:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.pStatusBlock->status = completionCode;
+ 363              		.loc 1 744 0
+ 364 0006 054B     		ldr	r3, .L27
+ 365 0008 9A68     		ldr	r2, [r3, #8]
+ 366 000a 1070     		strb	r0, [r2]
+ 745:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.pStatusBlock->length = USBFS_1_transferByteCount;
+ 367              		.loc 1 745 0
+ 368 000c 9A68     		ldr	r2, [r3, #8]
+ 369 000e 0449     		ldr	r1, .L27+4
+ 370 0010 0988     		ldrh	r1, [r1]
+ 371 0012 5180     		strh	r1, [r2, #2]	@ movhi
+ 746:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.pStatusBlock = NULL;
+ 372              		.loc 1 746 0
+ 373 0014 0022     		movs	r2, #0
+ 374 0016 9A60     		str	r2, [r3, #8]
+ 375              	.L25:
+ 376 0018 7047     		bx	lr
+ 377              	.L28:
+ 378 001a 00BF     		.align	2
+ 379              	.L27:
+ 380 001c 00000000 		.word	USBFS_1_currentTD
+ 381 0020 00000000 		.word	USBFS_1_transferByteCount
+ 382              		.cfi_endproc
+ 383              	.LFE14:
+ 384              		.size	USBFS_1_UpdateStatusBlock, .-USBFS_1_UpdateStatusBlock
+ 385              		.section	.text.USBFS_1_HandleSetup,"ax",%progbits
+ 386              		.align	2
+ 387              		.global	USBFS_1_HandleSetup
+ 388              		.thumb
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 21
+
+
+ 389              		.thumb_func
+ 390              		.type	USBFS_1_HandleSetup, %function
+ 391              	USBFS_1_HandleSetup:
+ 392              	.LFB1:
+ 159:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 requestHandled;
+ 393              		.loc 1 159 0
+ 394              		.cfi_startproc
+ 395              		@ args = 0, pretend = 0, frame = 0
+ 396              		@ frame_needed = 0, uses_anonymous_args = 0
+ 397 0000 08B5     		push	{r3, lr}
+ 398              		.cfi_def_cfa_offset 8
+ 399              		.cfi_offset 3, -8
+ 400              		.cfi_offset 14, -4
+ 162:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     CY_SET_REG8(USBFS_1_EP0_CR_PTR, requestHandled);       /* clear setup bit */
+ 401              		.loc 1 162 0
+ 402 0002 134B     		ldr	r3, .L39
+ 403 0004 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 404 0006 D2B2     		uxtb	r2, r2
+ 405              	.LVL15:
+ 163:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     requestHandled = CY_GET_REG8(USBFS_1_EP0_CR_PTR);      /* reread register */
+ 406              		.loc 1 163 0
+ 407 0008 1A70     		strb	r2, [r3]
+ 164:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if((requestHandled & USBFS_1_MODE_SETUP_RCVD) != 0u)
+ 408              		.loc 1 164 0
+ 409 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 410 000c DBB2     		uxtb	r3, r3
+ 411              	.LVL16:
+ 165:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 412              		.loc 1 165 0
+ 413 000e 13F0800F 		tst	r3, #128
+ 414 0012 02D0     		beq	.L30
+ 167:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 415              		.loc 1 167 0
+ 416 0014 0F4A     		ldr	r2, .L39+4
+ 417 0016 1370     		strb	r3, [r2]
+ 418 0018 08BD     		pop	{r3, pc}
+ 419              	.LVL17:
+ 420              	.L30:
+ 172:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 421              		.loc 1 172 0
+ 422 001a 0220     		movs	r0, #2
+ 423 001c FFF7FEFF 		bl	USBFS_1_UpdateStatusBlock
+ 424              	.LVL18:
+ 174:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 425              		.loc 1 174 0
+ 426 0020 0D4B     		ldr	r3, .L39+8
+ 427 0022 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 428 0024 03F06003 		and	r3, r3, #96
+ 429 0028 202B     		cmp	r3, #32
+ 430 002a 05D0     		beq	.L33
+ 431 002c 402B     		cmp	r3, #64
+ 432 002e 06D0     		beq	.L34
+ 433 0030 43B9     		cbnz	r3, .L37
+ 177:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 break;
+ 434              		.loc 1 177 0
+ 435 0032 FFF7FEFF 		bl	USBFS_1_HandleStandardRqst
+ 436              	.LVL19:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 22
+
+
+ 178:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             case USBFS_1_RQST_TYPE_CLS:
+ 437              		.loc 1 178 0
+ 438 0036 06E0     		b	.L32
+ 439              	.LVL20:
+ 440              	.L33:
+ 180:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 break;
+ 441              		.loc 1 180 0
+ 442 0038 FFF7FEFF 		bl	USBFS_1_DispatchClassRqst
+ 443              	.LVL21:
+ 181:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             case USBFS_1_RQST_TYPE_VND:
+ 444              		.loc 1 181 0
+ 445 003c 03E0     		b	.L32
+ 446              	.LVL22:
+ 447              	.L34:
+ 183:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 break;
+ 448              		.loc 1 183 0
+ 449 003e FFF7FEFF 		bl	USBFS_1_HandleVendorRqst
+ 450              	.LVL23:
+ 184:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             default:
+ 451              		.loc 1 184 0
+ 452 0042 00E0     		b	.L32
+ 453              	.LVL24:
+ 454              	.L37:
+ 186:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 break;
+ 455              		.loc 1 186 0
+ 456 0044 0020     		movs	r0, #0
+ 457              	.L32:
+ 458              	.LVL25:
+ 189:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 459              		.loc 1 189 0
+ 460 0046 10B9     		cbnz	r0, .L29
+ 191:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 461              		.loc 1 191 0
+ 462 0048 0322     		movs	r2, #3
+ 463 004a 024B     		ldr	r3, .L39+4
+ 464 004c 1A70     		strb	r2, [r3]
+ 465              	.L29:
+ 466 004e 08BD     		pop	{r3, pc}
+ 467              	.L40:
+ 468              		.align	2
+ 469              	.L39:
+ 470 0050 28600040 		.word	1073766440
+ 471 0054 00000000 		.word	USBFS_1_ep0Mode
+ 472 0058 00600040 		.word	1073766400
+ 473              		.cfi_endproc
+ 474              	.LFE1:
+ 475              		.size	USBFS_1_HandleSetup, .-USBFS_1_HandleSetup
+ 476              		.section	.text.USBFS_1_ControlReadStatusStage,"ax",%progbits
+ 477              		.align	2
+ 478              		.global	USBFS_1_ControlReadStatusStage
+ 479              		.thumb
+ 480              		.thumb_func
+ 481              		.type	USBFS_1_ControlReadStatusStage, %function
+ 482              	USBFS_1_ControlReadStatusStage:
+ 483              	.LFB8:
+ 492:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the transfer byte count */
+ 484              		.loc 1 492 0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 23
+
+
+ 485              		.cfi_startproc
+ 486              		@ args = 0, pretend = 0, frame = 0
+ 487              		@ frame_needed = 0, uses_anonymous_args = 0
+ 488 0000 08B5     		push	{r3, lr}
+ 489              		.cfi_def_cfa_offset 8
+ 490              		.cfi_offset 3, -8
+ 491              		.cfi_offset 14, -4
+ 494:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Go Idle */
+ 492              		.loc 1 494 0
+ 493 0002 084B     		ldr	r3, .L43
+ 494 0004 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 495 0006 084A     		ldr	r2, .L43+4
+ 496 0008 1388     		ldrh	r3, [r2]
+ 497 000a 0B44     		add	r3, r3, r1
+ 498 000c 9BB2     		uxth	r3, r3
+ 499 000e 1380     		strh	r3, [r2]	@ movhi
+ 496:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the completion block */
+ 500              		.loc 1 496 0
+ 501 0010 0022     		movs	r2, #0
+ 502 0012 064B     		ldr	r3, .L43+8
+ 503 0014 1A70     		strb	r2, [r3]
+ 498:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* We expect no more data, so stall INs and OUTs */
+ 504              		.loc 1 498 0
+ 505 0016 0120     		movs	r0, #1
+ 506 0018 FFF7FEFF 		bl	USBFS_1_UpdateStatusBlock
+ 507              	.LVL26:
+ 500:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 508              		.loc 1 500 0
+ 509 001c 0322     		movs	r2, #3
+ 510 001e 044B     		ldr	r3, .L43+12
+ 511 0020 1A70     		strb	r2, [r3]
+ 512 0022 08BD     		pop	{r3, pc}
+ 513              	.L44:
+ 514              		.align	2
+ 515              	.L43:
+ 516 0024 00000000 		.word	USBFS_1_lastPacketSize
+ 517 0028 00000000 		.word	USBFS_1_transferByteCount
+ 518 002c 00000000 		.word	USBFS_1_transferState
+ 519 0030 00000000 		.word	USBFS_1_ep0Mode
+ 520              		.cfi_endproc
+ 521              	.LFE8:
+ 522              		.size	USBFS_1_ControlReadStatusStage, .-USBFS_1_ControlReadStatusStage
+ 523              		.section	.text.USBFS_1_HandleOUT,"ax",%progbits
+ 524              		.align	2
+ 525              		.global	USBFS_1_HandleOUT
+ 526              		.thumb
+ 527              		.thumb_func
+ 528              		.type	USBFS_1_HandleOUT, %function
+ 529              	USBFS_1_HandleOUT:
+ 530              	.LFB3:
+ 253:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     switch (USBFS_1_transferState)
+ 531              		.loc 1 253 0
+ 532              		.cfi_startproc
+ 533              		@ args = 0, pretend = 0, frame = 0
+ 534              		@ frame_needed = 0, uses_anonymous_args = 0
+ 535 0000 08B5     		push	{r3, lr}
+ 536              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 24
+
+
+ 537              		.cfi_offset 3, -8
+ 538              		.cfi_offset 14, -4
+ 254:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 539              		.loc 1 254 0
+ 540 0002 0B4B     		ldr	r3, .L51
+ 541 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 542 0006 DBB2     		uxtb	r3, r3
+ 543 0008 042B     		cmp	r3, #4
+ 544 000a 06D0     		beq	.L47
+ 545 000c 062B     		cmp	r3, #6
+ 546 000e 07D0     		beq	.L48
+ 547 0010 022B     		cmp	r3, #2
+ 548 0012 0BD1     		bne	.L45
+ 259:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 549              		.loc 1 259 0
+ 550 0014 FFF7FEFF 		bl	USBFS_1_ControlReadStatusStage
+ 551              	.LVL27:
+ 260:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_CONTROL_WRITE:
+ 552              		.loc 1 260 0
+ 553 0018 08BD     		pop	{r3, pc}
+ 554              	.L47:
+ 262:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 555              		.loc 1 262 0
+ 556 001a FFF7FEFF 		bl	USBFS_1_ControlWriteDataStage
+ 557              	.LVL28:
+ 263:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_NO_DATA_CONTROL:
+ 558              		.loc 1 263 0
+ 559 001e 08BD     		pop	{r3, pc}
+ 560              	.L48:
+ 266:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             /* We expect no more data, so stall INs and OUTs */
+ 561              		.loc 1 266 0
+ 562 0020 0320     		movs	r0, #3
+ 563 0022 FFF7FEFF 		bl	USBFS_1_UpdateStatusBlock
+ 564              	.LVL29:
+ 268:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 565              		.loc 1 268 0
+ 566 0026 0322     		movs	r2, #3
+ 567 0028 024B     		ldr	r3, .L51+4
+ 568 002a 1A70     		strb	r2, [r3]
+ 569              	.L45:
+ 570 002c 08BD     		pop	{r3, pc}
+ 571              	.L52:
+ 572 002e 00BF     		.align	2
+ 573              	.L51:
+ 574 0030 00000000 		.word	USBFS_1_transferState
+ 575 0034 00000000 		.word	USBFS_1_ep0Mode
+ 576              		.cfi_endproc
+ 577              	.LFE3:
+ 578              		.size	USBFS_1_HandleOUT, .-USBFS_1_HandleOUT
+ 579              		.section	.text.USBFS_1_ControlWriteStatusStage,"ax",%progbits
+ 580              		.align	2
+ 581              		.global	USBFS_1_ControlWriteStatusStage
+ 582              		.thumb
+ 583              		.thumb_func
+ 584              		.type	USBFS_1_ControlWriteStatusStage, %function
+ 585              	USBFS_1_ControlWriteStatusStage:
+ 586              	.LFB11:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 25
+
+
+ 629:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Go Idle */
+ 587              		.loc 1 629 0
+ 588              		.cfi_startproc
+ 589              		@ args = 0, pretend = 0, frame = 0
+ 590              		@ frame_needed = 0, uses_anonymous_args = 0
+ 591 0000 08B5     		push	{r3, lr}
+ 592              		.cfi_def_cfa_offset 8
+ 593              		.cfi_offset 3, -8
+ 594              		.cfi_offset 14, -4
+ 631:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the completion block */
+ 595              		.loc 1 631 0
+ 596 0002 0022     		movs	r2, #0
+ 597 0004 044B     		ldr	r3, .L55
+ 598 0006 1A70     		strb	r2, [r3]
+ 633:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* We expect no more data, so stall INs and OUTs */
+ 599              		.loc 1 633 0
+ 600 0008 0120     		movs	r0, #1
+ 601 000a FFF7FEFF 		bl	USBFS_1_UpdateStatusBlock
+ 602              	.LVL30:
+ 635:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 603              		.loc 1 635 0
+ 604 000e 0322     		movs	r2, #3
+ 605 0010 024B     		ldr	r3, .L55+4
+ 606 0012 1A70     		strb	r2, [r3]
+ 607 0014 08BD     		pop	{r3, pc}
+ 608              	.L56:
+ 609 0016 00BF     		.align	2
+ 610              	.L55:
+ 611 0018 00000000 		.word	USBFS_1_transferState
+ 612 001c 00000000 		.word	USBFS_1_ep0Mode
+ 613              		.cfi_endproc
+ 614              	.LFE11:
+ 615              		.size	USBFS_1_ControlWriteStatusStage, .-USBFS_1_ControlWriteStatusStage
+ 616              		.section	.text.USBFS_1_NoDataControlStatusStage,"ax",%progbits
+ 617              		.align	2
+ 618              		.global	USBFS_1_NoDataControlStatusStage
+ 619              		.thumb
+ 620              		.thumb_func
+ 621              		.type	USBFS_1_NoDataControlStatusStage, %function
+ 622              	USBFS_1_NoDataControlStatusStage:
+ 623              	.LFB13:
+ 699:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Change the USB address register if we got a SET_ADDRESS. */
+ 624              		.loc 1 699 0
+ 625              		.cfi_startproc
+ 626              		@ args = 0, pretend = 0, frame = 0
+ 627              		@ frame_needed = 0, uses_anonymous_args = 0
+ 628 0000 08B5     		push	{r3, lr}
+ 629              		.cfi_def_cfa_offset 8
+ 630              		.cfi_offset 3, -8
+ 631              		.cfi_offset 14, -4
+ 701:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 632              		.loc 1 701 0
+ 633 0002 0B4B     		ldr	r3, .L60
+ 634 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 635 0006 13F0FF0F 		tst	r3, #255
+ 636 000a 07D0     		beq	.L58
+ 703:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_deviceAddress = 0u;
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 26
+
+
+ 637              		.loc 1 703 0
+ 638 000c 084A     		ldr	r2, .L60
+ 639 000e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 640 0010 43F08003 		orr	r3, r3, #128
+ 641 0014 0749     		ldr	r1, .L60+4
+ 642 0016 0B70     		strb	r3, [r1]
+ 704:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 643              		.loc 1 704 0
+ 644 0018 0023     		movs	r3, #0
+ 645 001a 1370     		strb	r3, [r2]
+ 646              	.L58:
+ 707:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Update the completion block */
+ 647              		.loc 1 707 0
+ 648 001c 0022     		movs	r2, #0
+ 649 001e 064B     		ldr	r3, .L60+8
+ 650 0020 1A70     		strb	r2, [r3]
+ 709:.\Generated_Source\PSoC5/USBFS_1_drv.c ****      /* We expect no more data, so stall INs and OUTs */
+ 651              		.loc 1 709 0
+ 652 0022 0120     		movs	r0, #1
+ 653 0024 FFF7FEFF 		bl	USBFS_1_UpdateStatusBlock
+ 654              	.LVL31:
+ 711:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 655              		.loc 1 711 0
+ 656 0028 0322     		movs	r2, #3
+ 657 002a 044B     		ldr	r3, .L60+12
+ 658 002c 1A70     		strb	r2, [r3]
+ 659 002e 08BD     		pop	{r3, pc}
+ 660              	.L61:
+ 661              		.align	2
+ 662              	.L60:
+ 663 0030 00000000 		.word	USBFS_1_deviceAddress
+ 664 0034 08600040 		.word	1073766408
+ 665 0038 00000000 		.word	USBFS_1_transferState
+ 666 003c 00000000 		.word	USBFS_1_ep0Mode
+ 667              		.cfi_endproc
+ 668              	.LFE13:
+ 669              		.size	USBFS_1_NoDataControlStatusStage, .-USBFS_1_NoDataControlStatusStage
+ 670              		.section	.text.USBFS_1_HandleIN,"ax",%progbits
+ 671              		.align	2
+ 672              		.global	USBFS_1_HandleIN
+ 673              		.thumb
+ 674              		.thumb_func
+ 675              		.type	USBFS_1_HandleIN, %function
+ 676              	USBFS_1_HandleIN:
+ 677              	.LFB2:
+ 215:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     switch (USBFS_1_transferState)
+ 678              		.loc 1 215 0
+ 679              		.cfi_startproc
+ 680              		@ args = 0, pretend = 0, frame = 0
+ 681              		@ frame_needed = 0, uses_anonymous_args = 0
+ 682 0000 08B5     		push	{r3, lr}
+ 683              		.cfi_def_cfa_offset 8
+ 684              		.cfi_offset 3, -8
+ 685              		.cfi_offset 14, -4
+ 216:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 686              		.loc 1 216 0
+ 687 0002 094B     		ldr	r3, .L68
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 27
+
+
+ 688 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 689 0006 DBB2     		uxtb	r3, r3
+ 690 0008 042B     		cmp	r3, #4
+ 691 000a 06D0     		beq	.L64
+ 692 000c 062B     		cmp	r3, #6
+ 693 000e 07D0     		beq	.L65
+ 694 0010 022B     		cmp	r3, #2
+ 695 0012 07D1     		bne	.L62
+ 221:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 696              		.loc 1 221 0
+ 697 0014 FFF7FEFF 		bl	USBFS_1_ControlReadDataStage
+ 698              	.LVL32:
+ 222:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_CONTROL_WRITE:
+ 699              		.loc 1 222 0
+ 700 0018 08BD     		pop	{r3, pc}
+ 701              	.L64:
+ 224:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 702              		.loc 1 224 0
+ 703 001a FFF7FEFF 		bl	USBFS_1_ControlWriteStatusStage
+ 704              	.LVL33:
+ 225:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         case USBFS_1_TRANS_STATE_NO_DATA_CONTROL:
+ 705              		.loc 1 225 0
+ 706 001e 08BD     		pop	{r3, pc}
+ 707              	.L65:
+ 227:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             break;
+ 708              		.loc 1 227 0
+ 709 0020 FFF7FEFF 		bl	USBFS_1_NoDataControlStatusStage
+ 710              	.LVL34:
+ 711              	.L62:
+ 712 0024 08BD     		pop	{r3, pc}
+ 713              	.L69:
+ 714 0026 00BF     		.align	2
+ 715              	.L68:
+ 716 0028 00000000 		.word	USBFS_1_transferState
+ 717              		.cfi_endproc
+ 718              	.LFE2:
+ 719              		.size	USBFS_1_HandleIN, .-USBFS_1_HandleIN
+ 720              		.section	.text.USBFS_1_EP_0_ISR,"ax",%progbits
+ 721              		.align	2
+ 722              		.global	USBFS_1_EP_0_ISR
+ 723              		.thumb
+ 724              		.thumb_func
+ 725              		.type	USBFS_1_EP_0_ISR, %function
+ 726              	USBFS_1_EP_0_ISR:
+ 727              	.LFB0:
+  68:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint8 bRegTemp;
+ 728              		.loc 1 68 0
+ 729              		.cfi_startproc
+ 730              		@ args = 0, pretend = 0, frame = 0
+ 731              		@ frame_needed = 0, uses_anonymous_args = 0
+ 732 0000 08B5     		push	{r3, lr}
+ 733              		.cfi_def_cfa_offset 8
+ 734              		.cfi_offset 3, -8
+ 735              		.cfi_offset 14, -4
+  76:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if ((bRegTemp & USBFS_1_MODE_ACKD) != 0u)
+ 736              		.loc 1 76 0
+ 737 0002 284B     		ldr	r3, .L81
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 28
+
+
+ 738 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 739 0006 DBB2     		uxtb	r3, r3
+ 740              	.LVL35:
+  77:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 741              		.loc 1 77 0
+ 742 0008 13F0100F 		tst	r3, #16
+ 743 000c 48D0     		beq	.L70
+ 744              	.LVL36:
+  80:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 745              		.loc 1 80 0
+ 746 000e 13F0800F 		tst	r3, #128
+ 747 0012 0CD0     		beq	.L72
+  82:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             {
+ 748              		.loc 1 82 0
+ 749 0014 03F00F03 		and	r3, r3, #15
+ 750              	.LVL37:
+ 751 0018 012B     		cmp	r3, #1
+ 752 001a 16D1     		bne	.L77
+  88:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 if((USBFS_1_ep0Mode & USBFS_1_MODE_SETUP_RCVD) != 0u)
+ 753              		.loc 1 88 0
+ 754 001c FFF7FEFF 		bl	USBFS_1_HandleSetup
+ 755              	.LVL38:
+  89:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 {
+ 756              		.loc 1 89 0
+ 757 0020 214B     		ldr	r3, .L81+4
+ 758 0022 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 759 0024 13F0800F 		tst	r3, #128
+ 760 0028 11D1     		bne	.L78
+  79:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         if ((bRegTemp & USBFS_1_MODE_SETUP_RCVD) != 0u)
+ 761              		.loc 1 79 0
+ 762 002a 0123     		movs	r3, #1
+ 763 002c 12E0     		b	.L73
+ 764              	.LVL39:
+ 765              	.L72:
+  96:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 766              		.loc 1 96 0
+ 767 002e 13F0400F 		tst	r3, #64
+ 768 0032 03D0     		beq	.L74
+  98:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 769              		.loc 1 98 0
+ 770 0034 FFF7FEFF 		bl	USBFS_1_HandleIN
+ 771              	.LVL40:
+  79:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         if ((bRegTemp & USBFS_1_MODE_SETUP_RCVD) != 0u)
+ 772              		.loc 1 79 0
+ 773 0038 0123     		movs	r3, #1
+ 774 003a 0BE0     		b	.L73
+ 775              	.LVL41:
+ 776              	.L74:
+ 100:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 777              		.loc 1 100 0
+ 778 003c 13F0200F 		tst	r3, #32
+ 779 0040 07D0     		beq	.L79
+ 102:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 780              		.loc 1 102 0
+ 781 0042 FFF7FEFF 		bl	USBFS_1_HandleOUT
+ 782              	.LVL42:
+  79:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         if ((bRegTemp & USBFS_1_MODE_SETUP_RCVD) != 0u)
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 29
+
+
+ 783              		.loc 1 79 0
+ 784 0046 0123     		movs	r3, #1
+ 785 0048 04E0     		b	.L73
+ 786              	.L77:
+  84:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             }
+ 787              		.loc 1 84 0
+ 788 004a 0023     		movs	r3, #0
+ 789 004c 02E0     		b	.L73
+ 790              	.L78:
+  91:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 }
+ 791              		.loc 1 91 0
+ 792 004e 0023     		movs	r3, #0
+ 793 0050 00E0     		b	.L73
+ 794              	.LVL43:
+ 795              	.L79:
+ 106:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 796              		.loc 1 106 0
+ 797 0052 0023     		movs	r3, #0
+ 798              	.LVL44:
+ 799              	.L73:
+ 108:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 800              		.loc 1 108 0
+ 801 0054 23B3     		cbz	r3, .L70
+ 110:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             if((bRegTemp & USBFS_1_MODE_SETUP_RCVD) == 0u)  /* Check if SETUP bit is not set, other
+ 802              		.loc 1 110 0
+ 803 0056 134B     		ldr	r3, .L81
+ 804              	.LVL45:
+ 805 0058 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 806              	.LVL46:
+ 111:.\Generated_Source\PSoC5/USBFS_1_drv.c ****             {
+ 807              		.loc 1 111 0
+ 808 005a 13F0800F 		tst	r3, #128
+ 809 005e 1FD1     		bne	.L70
+ 114:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 CY_SET_REG8(USBFS_1_EP0_CNT_PTR, bRegTemp);
+ 810              		.loc 1 114 0
+ 811 0060 124B     		ldr	r3, .L81+8
+ 812              	.LVL47:
+ 813 0062 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 814 0064 124A     		ldr	r2, .L81+12
+ 815 0066 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 816 0068 1343     		orrs	r3, r3, r2
+ 817              	.LVL48:
+ 115:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 if(bRegTemp == CY_GET_REG8(USBFS_1_EP0_CNT_PTR))   /* continue if writing was succe
+ 818              		.loc 1 115 0
+ 819 006a 124A     		ldr	r2, .L81+16
+ 820 006c 1370     		strb	r3, [r2]
+ 116:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 {
+ 821              		.loc 1 116 0
+ 822 006e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 823 0070 D2B2     		uxtb	r2, r2
+ 824 0072 9A42     		cmp	r2, r3
+ 825 0074 14D1     		bne	.L70
+ 826              	.LVL49:
+ 827              	.L76:
+ 120:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         /* Unlock registers */
+ 828              		.loc 1 120 0
+ 829 0076 0C4B     		ldr	r3, .L81+4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 30
+
+
+ 830 0078 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 831 007a DBB2     		uxtb	r3, r3
+ 832              	.LVL50:
+ 122:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         if(bRegTemp == 0u)                          /* Check if SETUP bit is not se
+ 833              		.loc 1 122 0
+ 834 007c 094A     		ldr	r2, .L81
+ 835 007e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 836              	.LVL51:
+ 123:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         {
+ 837              		.loc 1 123 0
+ 838 0080 12F0800F 		tst	r2, #128
+ 839 0084 07D1     		bne	.L75
+ 126:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                             /* Writing check */
+ 840              		.loc 1 126 0
+ 841 0086 084B     		ldr	r3, .L81+4
+ 842              	.LVL52:
+ 843 0088 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 844 008a DBB2     		uxtb	r3, r3
+ 845 008c 054A     		ldr	r2, .L81
+ 846              	.LVL53:
+ 847 008e 1370     		strb	r3, [r2]
+ 128:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                         }
+ 848              		.loc 1 128 0
+ 849 0090 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 850 0092 03F00F03 		and	r3, r3, #15
+ 851              	.LVL54:
+ 852              	.L75:
+ 130:.\Generated_Source\PSoC5/USBFS_1_drv.c ****                 }
+ 853              		.loc 1 130 0
+ 854 0096 044A     		ldr	r2, .L81+4
+ 855 0098 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 856 009a D2B2     		uxtb	r2, r2
+ 857 009c 9342     		cmp	r3, r2
+ 858 009e EAD1     		bne	.L76
+ 859              	.LVL55:
+ 860              	.L70:
+ 861 00a0 08BD     		pop	{r3, pc}
+ 862              	.L82:
+ 863 00a2 00BF     		.align	2
+ 864              	.L81:
+ 865 00a4 28600040 		.word	1073766440
+ 866 00a8 00000000 		.word	USBFS_1_ep0Mode
+ 867 00ac 00000000 		.word	USBFS_1_ep0Toggle
+ 868 00b0 00000000 		.word	USBFS_1_ep0Count
+ 869 00b4 29600040 		.word	1073766441
+ 870              		.cfi_endproc
+ 871              	.LFE0:
+ 872              		.size	USBFS_1_EP_0_ISR, .-USBFS_1_EP_0_ISR
+ 873              		.section	.text.USBFS_1_InitializeStatusBlock,"ax",%progbits
+ 874              		.align	2
+ 875              		.global	USBFS_1_InitializeStatusBlock
+ 876              		.thumb
+ 877              		.thumb_func
+ 878              		.type	USBFS_1_InitializeStatusBlock, %function
+ 879              	USBFS_1_InitializeStatusBlock:
+ 880              	.LFB15:
+ 747:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 31
+
+
+ 748:.\Generated_Source\PSoC5/USBFS_1_drv.c **** }
+ 749:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 750:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 751:.\Generated_Source\PSoC5/USBFS_1_drv.c **** /*******************************************************************************
+ 752:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Function Name: USBFS_1_InitializeStatusBlock
+ 753:.\Generated_Source\PSoC5/USBFS_1_drv.c **** ********************************************************************************
+ 754:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 755:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Summary:
+ 756:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Initialize the Completion Status Block for a Request.  The completion
+ 757:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  code is set to USB_XFER_IDLE.
+ 758:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 759:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  Also, initializes USBFS_1_transferByteCount.  Save some space,
+ 760:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  this is the only consumer.
+ 761:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 762:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Parameters:
+ 763:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 764:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 765:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Return:
+ 766:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  None.
+ 767:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 768:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Global variables:
+ 769:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_currentTD.pStatusBlock->status - set to XFER_IDLE.
+ 770:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_currentTD.pStatusBlock->length - cleared.
+ 771:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  USBFS_1_transferByteCount - cleared.
+ 772:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 773:.\Generated_Source\PSoC5/USBFS_1_drv.c **** * Reentrant:
+ 774:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *  No.
+ 775:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *
+ 776:.\Generated_Source\PSoC5/USBFS_1_drv.c **** *******************************************************************************/
+ 777:.\Generated_Source\PSoC5/USBFS_1_drv.c **** void USBFS_1_InitializeStatusBlock(void) 
+ 778:.\Generated_Source\PSoC5/USBFS_1_drv.c **** {
+ 881              		.loc 1 778 0
+ 882              		.cfi_startproc
+ 883              		@ args = 0, pretend = 0, frame = 0
+ 884              		@ frame_needed = 0, uses_anonymous_args = 0
+ 885              		@ link register save eliminated.
+ 779:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     USBFS_1_transferByteCount = 0u;
+ 886              		.loc 1 779 0
+ 887 0000 0022     		movs	r2, #0
+ 888 0002 064B     		ldr	r3, .L85
+ 889 0004 1A80     		strh	r2, [r3]	@ movhi
+ 780:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     if(USBFS_1_currentTD.pStatusBlock != NULL)
+ 890              		.loc 1 780 0
+ 891 0006 064B     		ldr	r3, .L85+4
+ 892 0008 9B68     		ldr	r3, [r3, #8]
+ 893 000a 2BB1     		cbz	r3, .L83
+ 781:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 782:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.pStatusBlock->status = USBFS_1_XFER_IDLE;
+ 894              		.loc 1 782 0
+ 895 000c 044A     		ldr	r2, .L85+4
+ 896 000e 9168     		ldr	r1, [r2, #8]
+ 897 0010 0023     		movs	r3, #0
+ 898 0012 0B70     		strb	r3, [r1]
+ 783:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         USBFS_1_currentTD.pStatusBlock->length = 0u;
+ 899              		.loc 1 783 0
+ 900 0014 9268     		ldr	r2, [r2, #8]
+ 901 0016 5380     		strh	r3, [r2, #2]	@ movhi
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 32
+
+
+ 902              	.L83:
+ 903 0018 7047     		bx	lr
+ 904              	.L86:
+ 905 001a 00BF     		.align	2
+ 906              	.L85:
+ 907 001c 00000000 		.word	USBFS_1_transferByteCount
+ 908 0020 00000000 		.word	USBFS_1_currentTD
+ 909              		.cfi_endproc
+ 910              	.LFE15:
+ 911              		.size	USBFS_1_InitializeStatusBlock, .-USBFS_1_InitializeStatusBlock
+ 912              		.section	.text.USBFS_1_InitControlRead,"ax",%progbits
+ 913              		.align	2
+ 914              		.global	USBFS_1_InitControlRead
+ 915              		.thumb
+ 916              		.thumb_func
+ 917              		.type	USBFS_1_InitControlRead, %function
+ 918              	USBFS_1_InitControlRead:
+ 919              	.LFB5:
+ 377:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint16 xferCount;
+ 920              		.loc 1 377 0
+ 921              		.cfi_startproc
+ 922              		@ args = 0, pretend = 0, frame = 0
+ 923              		@ frame_needed = 0, uses_anonymous_args = 0
+ 924 0000 08B5     		push	{r3, lr}
+ 925              		.cfi_def_cfa_offset 8
+ 926              		.cfi_offset 3, -8
+ 927              		.cfi_offset 14, -4
+ 379:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 928              		.loc 1 379 0
+ 929 0002 104B     		ldr	r3, .L92
+ 930 0004 1B88     		ldrh	r3, [r3]
+ 931 0006 9BB2     		uxth	r3, r3
+ 932 0008 13B9     		cbnz	r3, .L88
+ 381:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 933              		.loc 1 381 0
+ 934 000a FFF7FEFF 		bl	USBFS_1_InitZeroLengthControlTransfer
+ 935              	.LVL56:
+ 936 000e 16E0     		b	.L89
+ 937              	.L88:
+ 386:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Set the toggle, it gets updated in LoadEP */
+ 938              		.loc 1 386 0
+ 939 0010 0222     		movs	r2, #2
+ 940 0012 0D4B     		ldr	r3, .L92+4
+ 941 0014 1A70     		strb	r2, [r3]
+ 388:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         /* Initialize the Status Block */
+ 942              		.loc 1 388 0
+ 943 0016 0022     		movs	r2, #0
+ 944 0018 0C4B     		ldr	r3, .L92+8
+ 945 001a 1A70     		strb	r2, [r3]
+ 390:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         xferCount = (((uint16)CY_GET_REG8(USBFS_1_lengthHi) << 8u) | (CY_GET_REG8(USBFS_1_lengthLo)
+ 946              		.loc 1 390 0
+ 947 001c FFF7FEFF 		bl	USBFS_1_InitializeStatusBlock
+ 948              	.LVL57:
+ 391:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 949              		.loc 1 391 0
+ 950 0020 0B4B     		ldr	r3, .L92+12
+ 951 0022 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 33
+
+
+ 952 0024 013B     		subs	r3, r3, #1
+ 953 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 954 0028 43EA0223 		orr	r3, r3, r2, lsl #8
+ 955              	.LVL58:
+ 393:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         {
+ 956              		.loc 1 393 0
+ 957 002c 054A     		ldr	r2, .L92
+ 958 002e 1288     		ldrh	r2, [r2]
+ 959 0030 92B2     		uxth	r2, r2
+ 960 0032 9A42     		cmp	r2, r3
+ 961 0034 01D9     		bls	.L90
+ 395:.\Generated_Source\PSoC5/USBFS_1_drv.c ****         }
+ 962              		.loc 1 395 0
+ 963 0036 034A     		ldr	r2, .L92
+ 964 0038 1380     		strh	r3, [r2]	@ movhi
+ 965              	.L90:
+ 397:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 966              		.loc 1 397 0
+ 967 003a FFF7FEFF 		bl	USBFS_1_LoadEP0
+ 968              	.LVL59:
+ 969              	.L89:
+ 401:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 970              		.loc 1 401 0
+ 971 003e 0120     		movs	r0, #1
+ 972 0040 08BD     		pop	{r3, pc}
+ 973              	.L93:
+ 974 0042 00BF     		.align	2
+ 975              	.L92:
+ 976 0044 00000000 		.word	USBFS_1_currentTD
+ 977 0048 00000000 		.word	USBFS_1_transferState
+ 978 004c 00000000 		.word	USBFS_1_ep0Toggle
+ 979 0050 07600040 		.word	1073766407
+ 980              		.cfi_endproc
+ 981              	.LFE5:
+ 982              		.size	USBFS_1_InitControlRead, .-USBFS_1_InitControlRead
+ 983              		.section	.text.USBFS_1_InitControlWrite,"ax",%progbits
+ 984              		.align	2
+ 985              		.global	USBFS_1_InitControlWrite
+ 986              		.thumb
+ 987              		.thumb_func
+ 988              		.type	USBFS_1_InitControlWrite, %function
+ 989              	USBFS_1_InitControlWrite:
+ 990              	.LFB9:
+ 527:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     uint16 xferCount;
+ 991              		.loc 1 527 0
+ 992              		.cfi_startproc
+ 993              		@ args = 0, pretend = 0, frame = 0
+ 994              		@ frame_needed = 0, uses_anonymous_args = 0
+ 995 0000 08B5     		push	{r3, lr}
+ 996              		.cfi_def_cfa_offset 8
+ 997              		.cfi_offset 3, -8
+ 998              		.cfi_offset 14, -4
+ 531:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* This might not be necessary */
+ 999              		.loc 1 531 0
+ 1000 0002 0422     		movs	r2, #4
+ 1001 0004 0C4B     		ldr	r3, .L97
+ 1002 0006 1A70     		strb	r2, [r3]
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 34
+
+
+ 533:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     /* Initialize the Status Block */
+ 1003              		.loc 1 533 0
+ 1004 0008 8022     		movs	r2, #128
+ 1005 000a 0C4B     		ldr	r3, .L97+4
+ 1006 000c 1A70     		strb	r2, [r3]
+ 535:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 1007              		.loc 1 535 0
+ 1008 000e FFF7FEFF 		bl	USBFS_1_InitializeStatusBlock
+ 1009              	.LVL60:
+ 537:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 1010              		.loc 1 537 0
+ 1011 0012 0B4B     		ldr	r3, .L97+8
+ 1012 0014 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 1013 0016 013B     		subs	r3, r3, #1
+ 1014 0018 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1015 001a 43EA0223 		orr	r3, r3, r2, lsl #8
+ 1016              	.LVL61:
+ 539:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     {
+ 1017              		.loc 1 539 0
+ 1018 001e 094A     		ldr	r2, .L97+12
+ 1019 0020 1288     		ldrh	r2, [r2]
+ 1020 0022 92B2     		uxth	r2, r2
+ 1021 0024 9A42     		cmp	r2, r3
+ 1022 0026 01D9     		bls	.L95
+ 541:.\Generated_Source\PSoC5/USBFS_1_drv.c ****     }
+ 1023              		.loc 1 541 0
+ 1024 0028 064A     		ldr	r2, .L97+12
+ 1025 002a 1380     		strh	r3, [r2]	@ movhi
+ 1026              	.L95:
+ 545:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 1027              		.loc 1 545 0
+ 1028 002c 0B22     		movs	r2, #11
+ 1029 002e 064B     		ldr	r3, .L97+16
+ 1030              	.LVL62:
+ 1031 0030 1A70     		strb	r2, [r3]
+ 548:.\Generated_Source\PSoC5/USBFS_1_drv.c **** 
+ 1032              		.loc 1 548 0
+ 1033 0032 0120     		movs	r0, #1
+ 1034 0034 08BD     		pop	{r3, pc}
+ 1035              	.L98:
+ 1036 0036 00BF     		.align	2
+ 1037              	.L97:
+ 1038 0038 00000000 		.word	USBFS_1_transferState
+ 1039 003c 00000000 		.word	USBFS_1_ep0Toggle
+ 1040 0040 07600040 		.word	1073766407
+ 1041 0044 00000000 		.word	USBFS_1_currentTD
+ 1042 0048 00000000 		.word	USBFS_1_ep0Mode
+ 1043              		.cfi_endproc
+ 1044              	.LFE9:
+ 1045              		.size	USBFS_1_InitControlWrite, .-USBFS_1_InitControlWrite
+ 1046              		.comm	USBFS_1_transferByteCount,2,2
+ 1047              		.comm	USBFS_1_ep0Count,1,1
+ 1048              		.comm	USBFS_1_ep0Mode,1,1
+ 1049              		.comm	USBFS_1_currentTD,12,4
+ 1050              		.comm	USBFS_1_transferState,1,1
+ 1051              		.comm	USBFS_1_lastPacketSize,1,1
+ 1052              		.comm	USBFS_1_ep0Toggle,1,1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 35
+
+
+ 1053              		.comm	USBFS_1_interfaceClass,4,4
+ 1054              		.comm	USBFS_1_device,1,1
+ 1055              		.comm	USBFS_1_interfaceStatus,1,4
+ 1056              		.comm	USBFS_1_interfaceSetting_last,1,4
+ 1057              		.comm	USBFS_1_interfaceSetting,1,4
+ 1058              		.comm	USBFS_1_deviceStatus,1,1
+ 1059              		.comm	USBFS_1_deviceAddress,1,1
+ 1060              		.comm	USBFS_1_configurationChanged,1,1
+ 1061              		.comm	USBFS_1_interfaceNumber,1,1
+ 1062              		.comm	USBFS_1_configuration,1,1
+ 1063              		.comm	USBFS_1_EP,108,4
+ 1064              		.text
+ 1065              	.Letext0:
+ 1066              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1067              		.file 3 ".\\Generated_Source\\PSoC5\\USBFS_1.h"
+ 1068              		.file 4 ".\\Generated_Source\\PSoC5\\USBFS_1_pvt.h"
+ 1069              		.section	.debug_info,"",%progbits
+ 1070              	.Ldebug_info0:
+ 1071 0000 0D060000 		.4byte	0x60d
+ 1072 0004 0400     		.2byte	0x4
+ 1073 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1074 000a 04       		.byte	0x4
+ 1075 000b 01       		.uleb128 0x1
+ 1076 000c DF040000 		.4byte	.LASF75
+ 1077 0010 01       		.byte	0x1
+ 1078 0011 9F040000 		.4byte	.LASF76
+ 1079 0015 77050000 		.4byte	.LASF77
+ 1080 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1081 001d 00000000 		.4byte	0
+ 1082 0021 00000000 		.4byte	.Ldebug_line0
+ 1083 0025 02       		.uleb128 0x2
+ 1084 0026 01       		.byte	0x1
+ 1085 0027 06       		.byte	0x6
+ 1086 0028 F1000000 		.4byte	.LASF0
+ 1087 002c 02       		.uleb128 0x2
+ 1088 002d 01       		.byte	0x1
+ 1089 002e 08       		.byte	0x8
+ 1090 002f 68030000 		.4byte	.LASF1
+ 1091 0033 02       		.uleb128 0x2
+ 1092 0034 02       		.byte	0x2
+ 1093 0035 05       		.byte	0x5
+ 1094 0036 87030000 		.4byte	.LASF2
+ 1095 003a 02       		.uleb128 0x2
+ 1096 003b 02       		.byte	0x2
+ 1097 003c 07       		.byte	0x7
+ 1098 003d 86020000 		.4byte	.LASF3
+ 1099 0041 02       		.uleb128 0x2
+ 1100 0042 04       		.byte	0x4
+ 1101 0043 05       		.byte	0x5
+ 1102 0044 34010000 		.4byte	.LASF4
+ 1103 0048 02       		.uleb128 0x2
+ 1104 0049 04       		.byte	0x4
+ 1105 004a 07       		.byte	0x7
+ 1106 004b 58020000 		.4byte	.LASF5
+ 1107 004f 02       		.uleb128 0x2
+ 1108 0050 08       		.byte	0x8
+ 1109 0051 05       		.byte	0x5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 36
+
+
+ 1110 0052 E3000000 		.4byte	.LASF6
+ 1111 0056 02       		.uleb128 0x2
+ 1112 0057 08       		.byte	0x8
+ 1113 0058 07       		.byte	0x7
+ 1114 0059 8F000000 		.4byte	.LASF7
+ 1115 005d 03       		.uleb128 0x3
+ 1116 005e 04       		.byte	0x4
+ 1117 005f 05       		.byte	0x5
+ 1118 0060 696E7400 		.ascii	"int\000"
+ 1119 0064 02       		.uleb128 0x2
+ 1120 0065 04       		.byte	0x4
+ 1121 0066 07       		.byte	0x7
+ 1122 0067 2B020000 		.4byte	.LASF8
+ 1123 006b 04       		.uleb128 0x4
+ 1124 006c 55010000 		.4byte	.LASF9
+ 1125 0070 02       		.byte	0x2
+ 1126 0071 5B       		.byte	0x5b
+ 1127 0072 2C000000 		.4byte	0x2c
+ 1128 0076 04       		.uleb128 0x4
+ 1129 0077 13000000 		.4byte	.LASF10
+ 1130 007b 02       		.byte	0x2
+ 1131 007c 5C       		.byte	0x5c
+ 1132 007d 3A000000 		.4byte	0x3a
+ 1133 0081 02       		.uleb128 0x2
+ 1134 0082 04       		.byte	0x4
+ 1135 0083 04       		.byte	0x4
+ 1136 0084 1B030000 		.4byte	.LASF11
+ 1137 0088 02       		.uleb128 0x2
+ 1138 0089 08       		.byte	0x8
+ 1139 008a 04       		.byte	0x4
+ 1140 008b 86010000 		.4byte	.LASF12
+ 1141 008f 02       		.uleb128 0x2
+ 1142 0090 01       		.byte	0x1
+ 1143 0091 08       		.byte	0x8
+ 1144 0092 00040000 		.4byte	.LASF13
+ 1145 0096 04       		.uleb128 0x4
+ 1146 0097 63030000 		.4byte	.LASF14
+ 1147 009b 02       		.byte	0x2
+ 1148 009c F0       		.byte	0xf0
+ 1149 009d A1000000 		.4byte	0xa1
+ 1150 00a1 05       		.uleb128 0x5
+ 1151 00a2 6B000000 		.4byte	0x6b
+ 1152 00a6 05       		.uleb128 0x5
+ 1153 00a7 76000000 		.4byte	0x76
+ 1154 00ab 02       		.uleb128 0x2
+ 1155 00ac 04       		.byte	0x4
+ 1156 00ad 07       		.byte	0x7
+ 1157 00ae EC020000 		.4byte	.LASF15
+ 1158 00b2 06       		.uleb128 0x6
+ 1159 00b3 0C       		.byte	0xc
+ 1160 00b4 03       		.byte	0x3
+ 1161 00b5 76       		.byte	0x76
+ 1162 00b6 27010000 		.4byte	0x127
+ 1163 00ba 07       		.uleb128 0x7
+ 1164 00bb F5020000 		.4byte	.LASF16
+ 1165 00bf 03       		.byte	0x3
+ 1166 00c0 78       		.byte	0x78
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 37
+
+
+ 1167 00c1 6B000000 		.4byte	0x6b
+ 1168 00c5 00       		.byte	0
+ 1169 00c6 07       		.uleb128 0x7
+ 1170 00c7 21030000 		.4byte	.LASF17
+ 1171 00cb 03       		.byte	0x3
+ 1172 00cc 79       		.byte	0x79
+ 1173 00cd 6B000000 		.4byte	0x6b
+ 1174 00d1 01       		.byte	0x1
+ 1175 00d2 07       		.uleb128 0x7
+ 1176 00d3 E2020000 		.4byte	.LASF18
+ 1177 00d7 03       		.byte	0x3
+ 1178 00d8 7A       		.byte	0x7a
+ 1179 00d9 6B000000 		.4byte	0x6b
+ 1180 00dd 02       		.byte	0x2
+ 1181 00de 07       		.uleb128 0x7
+ 1182 00df 5B010000 		.4byte	.LASF19
+ 1183 00e3 03       		.byte	0x3
+ 1184 00e4 7B       		.byte	0x7b
+ 1185 00e5 6B000000 		.4byte	0x6b
+ 1186 00e9 03       		.byte	0x3
+ 1187 00ea 07       		.uleb128 0x7
+ 1188 00eb A6000000 		.4byte	.LASF20
+ 1189 00ef 03       		.byte	0x3
+ 1190 00f0 7C       		.byte	0x7c
+ 1191 00f1 6B000000 		.4byte	0x6b
+ 1192 00f5 04       		.byte	0x4
+ 1193 00f6 07       		.uleb128 0x7
+ 1194 00f7 0C020000 		.4byte	.LASF21
+ 1195 00fb 03       		.byte	0x3
+ 1196 00fc 7D       		.byte	0x7d
+ 1197 00fd 6B000000 		.4byte	0x6b
+ 1198 0101 05       		.byte	0x5
+ 1199 0102 07       		.uleb128 0x7
+ 1200 0103 39040000 		.4byte	.LASF22
+ 1201 0107 03       		.byte	0x3
+ 1202 0108 7E       		.byte	0x7e
+ 1203 0109 76000000 		.4byte	0x76
+ 1204 010d 06       		.byte	0x6
+ 1205 010e 07       		.uleb128 0x7
+ 1206 010f 05040000 		.4byte	.LASF23
+ 1207 0113 03       		.byte	0x3
+ 1208 0114 7F       		.byte	0x7f
+ 1209 0115 76000000 		.4byte	0x76
+ 1210 0119 08       		.byte	0x8
+ 1211 011a 07       		.uleb128 0x7
+ 1212 011b D8020000 		.4byte	.LASF24
+ 1213 011f 03       		.byte	0x3
+ 1214 0120 80       		.byte	0x80
+ 1215 0121 6B000000 		.4byte	0x6b
+ 1216 0125 0A       		.byte	0xa
+ 1217 0126 00       		.byte	0
+ 1218 0127 04       		.uleb128 0x4
+ 1219 0128 99020000 		.4byte	.LASF25
+ 1220 012c 03       		.byte	0x3
+ 1221 012d 81       		.byte	0x81
+ 1222 012e B2000000 		.4byte	0xb2
+ 1223 0132 06       		.uleb128 0x6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 38
+
+
+ 1224 0133 04       		.byte	0x4
+ 1225 0134 03       		.byte	0x3
+ 1226 0135 8D       		.byte	0x8d
+ 1227 0136 53010000 		.4byte	0x153
+ 1228 013a 07       		.uleb128 0x7
+ 1229 013b FD000000 		.4byte	.LASF26
+ 1230 013f 03       		.byte	0x3
+ 1231 0140 8F       		.byte	0x8f
+ 1232 0141 6B000000 		.4byte	0x6b
+ 1233 0145 00       		.byte	0
+ 1234 0146 07       		.uleb128 0x7
+ 1235 0147 F9030000 		.4byte	.LASF27
+ 1236 014b 03       		.byte	0x3
+ 1237 014c 90       		.byte	0x90
+ 1238 014d 76000000 		.4byte	0x76
+ 1239 0151 02       		.byte	0x2
+ 1240 0152 00       		.byte	0
+ 1241 0153 04       		.uleb128 0x4
+ 1242 0154 6A020000 		.4byte	.LASF28
+ 1243 0158 03       		.byte	0x3
+ 1244 0159 91       		.byte	0x91
+ 1245 015a 32010000 		.4byte	0x132
+ 1246 015e 06       		.uleb128 0x6
+ 1247 015f 0C       		.byte	0xc
+ 1248 0160 03       		.byte	0x3
+ 1249 0161 93       		.byte	0x93
+ 1250 0162 8B010000 		.4byte	0x18b
+ 1251 0166 07       		.uleb128 0x7
+ 1252 0167 0D000000 		.4byte	.LASF29
+ 1253 016b 03       		.byte	0x3
+ 1254 016c 95       		.byte	0x95
+ 1255 016d 76000000 		.4byte	0x76
+ 1256 0171 00       		.byte	0
+ 1257 0172 07       		.uleb128 0x7
+ 1258 0173 06020000 		.4byte	.LASF30
+ 1259 0177 03       		.byte	0x3
+ 1260 0178 96       		.byte	0x96
+ 1261 0179 8B010000 		.4byte	0x18b
+ 1262 017d 04       		.byte	0x4
+ 1263 017e 07       		.uleb128 0x7
+ 1264 017f 00000000 		.4byte	.LASF31
+ 1265 0183 03       		.byte	0x3
+ 1266 0184 97       		.byte	0x97
+ 1267 0185 91010000 		.4byte	0x191
+ 1268 0189 08       		.byte	0x8
+ 1269 018a 00       		.byte	0
+ 1270 018b 08       		.uleb128 0x8
+ 1271 018c 04       		.byte	0x4
+ 1272 018d A1000000 		.4byte	0xa1
+ 1273 0191 08       		.uleb128 0x8
+ 1274 0192 04       		.byte	0x4
+ 1275 0193 53010000 		.4byte	0x153
+ 1276 0197 04       		.uleb128 0x4
+ 1277 0198 B0020000 		.4byte	.LASF32
+ 1278 019c 03       		.byte	0x3
+ 1279 019d 98       		.byte	0x98
+ 1280 019e 5E010000 		.4byte	0x15e
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 39
+
+
+ 1281 01a2 09       		.uleb128 0x9
+ 1282 01a3 AB000000 		.4byte	.LASF33
+ 1283 01a7 01       		.byte	0x1
+ 1284 01a8 3A01     		.2byte	0x13a
+ 1285 01aa 00000000 		.4byte	.LFB4
+ 1286 01ae 98000000 		.4byte	.LFE4-.LFB4
+ 1287 01b2 01       		.uleb128 0x1
+ 1288 01b3 9C       		.byte	0x9c
+ 1289 01b4 C9010000 		.4byte	0x1c9
+ 1290 01b8 0A       		.uleb128 0xa
+ 1291 01b9 CF020000 		.4byte	.LASF36
+ 1292 01bd 01       		.byte	0x1
+ 1293 01be 3C01     		.2byte	0x13c
+ 1294 01c0 6B000000 		.4byte	0x6b
+ 1295 01c4 00000000 		.4byte	.LLST0
+ 1296 01c8 00       		.byte	0
+ 1297 01c9 0B       		.uleb128 0xb
+ 1298 01ca 8D010000 		.4byte	.LASF38
+ 1299 01ce 01       		.byte	0x1
+ 1300 01cf AC01     		.2byte	0x1ac
+ 1301 01d1 6B000000 		.4byte	0x6b
+ 1302 01d5 00000000 		.4byte	.LFB6
+ 1303 01d9 34000000 		.4byte	.LFE6-.LFB6
+ 1304 01dd 01       		.uleb128 0x1
+ 1305 01de 9C       		.byte	0x9c
+ 1306 01df 09       		.uleb128 0x9
+ 1307 01e0 BB000000 		.4byte	.LASF34
+ 1308 01e4 01       		.byte	0x1
+ 1309 01e5 CE01     		.2byte	0x1ce
+ 1310 01e7 00000000 		.4byte	.LFB7
+ 1311 01eb 08000000 		.4byte	.LFE7-.LFB7
+ 1312 01ef 01       		.uleb128 0x1
+ 1313 01f0 9C       		.byte	0x9c
+ 1314 01f1 FF010000 		.4byte	0x1ff
+ 1315 01f5 0C       		.uleb128 0xc
+ 1316 01f6 06000000 		.4byte	.LVL5
+ 1317 01fa A2010000 		.4byte	0x1a2
+ 1318 01fe 00       		.byte	0
+ 1319 01ff 09       		.uleb128 0x9
+ 1320 0200 E6050000 		.4byte	.LASF35
+ 1321 0204 01       		.byte	0x1
+ 1322 0205 4502     		.2byte	0x245
+ 1323 0207 00000000 		.4byte	.LFB10
+ 1324 020b 84000000 		.4byte	.LFE10-.LFB10
+ 1325 020f 01       		.uleb128 0x1
+ 1326 0210 9C       		.byte	0x9c
+ 1327 0211 36020000 		.4byte	0x236
+ 1328 0215 0A       		.uleb128 0xa
+ 1329 0216 CF020000 		.4byte	.LASF36
+ 1330 021a 01       		.byte	0x1
+ 1331 021b 4702     		.2byte	0x247
+ 1332 021d 6B000000 		.4byte	0x6b
+ 1333 0221 2A000000 		.4byte	.LLST1
+ 1334 0225 0A       		.uleb128 0xa
+ 1335 0226 77000000 		.4byte	.LASF37
+ 1336 022a 01       		.byte	0x1
+ 1337 022b 4802     		.2byte	0x248
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 40
+
+
+ 1338 022d 6B000000 		.4byte	0x6b
+ 1339 0231 48000000 		.4byte	.LLST2
+ 1340 0235 00       		.byte	0
+ 1341 0236 0B       		.uleb128 0xb
+ 1342 0237 64010000 		.4byte	.LASF39
+ 1343 023b 01       		.byte	0x1
+ 1344 023c 9602     		.2byte	0x296
+ 1345 023e 6B000000 		.4byte	0x6b
+ 1346 0242 00000000 		.4byte	.LFB12
+ 1347 0246 2C000000 		.4byte	.LFE12-.LFB12
+ 1348 024a 01       		.uleb128 0x1
+ 1349 024b 9C       		.byte	0x9c
+ 1350 024c 09       		.uleb128 0x9
+ 1351 024d 45000000 		.4byte	.LASF40
+ 1352 0251 01       		.byte	0x1
+ 1353 0252 E402     		.2byte	0x2e4
+ 1354 0254 00000000 		.4byte	.LFB14
+ 1355 0258 24000000 		.4byte	.LFE14-.LFB14
+ 1356 025c 01       		.uleb128 0x1
+ 1357 025d 9C       		.byte	0x9c
+ 1358 025e 71020000 		.4byte	0x271
+ 1359 0262 0D       		.uleb128 0xd
+ 1360 0263 80000000 		.4byte	.LASF78
+ 1361 0267 01       		.byte	0x1
+ 1362 0268 E402     		.2byte	0x2e4
+ 1363 026a 6B000000 		.4byte	0x6b
+ 1364 026e 01       		.uleb128 0x1
+ 1365 026f 50       		.byte	0x50
+ 1366 0270 00       		.byte	0
+ 1367 0271 0E       		.uleb128 0xe
+ 1368 0272 A8030000 		.4byte	.LASF41
+ 1369 0276 01       		.byte	0x1
+ 1370 0277 9E       		.byte	0x9e
+ 1371 0278 00000000 		.4byte	.LFB1
+ 1372 027c 5C000000 		.4byte	.LFE1-.LFB1
+ 1373 0280 01       		.uleb128 0x1
+ 1374 0281 9C       		.byte	0x9c
+ 1375 0282 C4020000 		.4byte	0x2c4
+ 1376 0286 0F       		.uleb128 0xf
+ 1377 0287 10040000 		.4byte	.LASF42
+ 1378 028b 01       		.byte	0x1
+ 1379 028c A0       		.byte	0xa0
+ 1380 028d 6B000000 		.4byte	0x6b
+ 1381 0291 72000000 		.4byte	.LLST3
+ 1382 0295 10       		.uleb128 0x10
+ 1383 0296 20000000 		.4byte	.LVL18
+ 1384 029a 4C020000 		.4byte	0x24c
+ 1385 029e A8020000 		.4byte	0x2a8
+ 1386 02a2 11       		.uleb128 0x11
+ 1387 02a3 01       		.uleb128 0x1
+ 1388 02a4 50       		.byte	0x50
+ 1389 02a5 01       		.uleb128 0x1
+ 1390 02a6 32       		.byte	0x32
+ 1391 02a7 00       		.byte	0
+ 1392 02a8 0C       		.uleb128 0xc
+ 1393 02a9 36000000 		.4byte	.LVL19
+ 1394 02ad EF050000 		.4byte	0x5ef
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 41
+
+
+ 1395 02b1 0C       		.uleb128 0xc
+ 1396 02b2 3C000000 		.4byte	.LVL21
+ 1397 02b6 FA050000 		.4byte	0x5fa
+ 1398 02ba 0C       		.uleb128 0xc
+ 1399 02bb 42000000 		.4byte	.LVL23
+ 1400 02bf 05060000 		.4byte	0x605
+ 1401 02c3 00       		.byte	0
+ 1402 02c4 09       		.uleb128 0x9
+ 1403 02c5 15010000 		.4byte	.LASF43
+ 1404 02c9 01       		.byte	0x1
+ 1405 02ca EB01     		.2byte	0x1eb
+ 1406 02cc 00000000 		.4byte	.LFB8
+ 1407 02d0 34000000 		.4byte	.LFE8-.LFB8
+ 1408 02d4 01       		.uleb128 0x1
+ 1409 02d5 9C       		.byte	0x9c
+ 1410 02d6 EA020000 		.4byte	0x2ea
+ 1411 02da 12       		.uleb128 0x12
+ 1412 02db 1C000000 		.4byte	.LVL26
+ 1413 02df 4C020000 		.4byte	0x24c
+ 1414 02e3 11       		.uleb128 0x11
+ 1415 02e4 01       		.uleb128 0x1
+ 1416 02e5 50       		.byte	0x50
+ 1417 02e6 01       		.uleb128 0x1
+ 1418 02e7 31       		.byte	0x31
+ 1419 02e8 00       		.byte	0
+ 1420 02e9 00       		.byte	0
+ 1421 02ea 0E       		.uleb128 0xe
+ 1422 02eb BD020000 		.4byte	.LASF44
+ 1423 02ef 01       		.byte	0x1
+ 1424 02f0 FC       		.byte	0xfc
+ 1425 02f1 00000000 		.4byte	.LFB3
+ 1426 02f5 38000000 		.4byte	.LFE3-.LFB3
+ 1427 02f9 01       		.uleb128 0x1
+ 1428 02fa 9C       		.byte	0x9c
+ 1429 02fb 21030000 		.4byte	0x321
+ 1430 02ff 0C       		.uleb128 0xc
+ 1431 0300 18000000 		.4byte	.LVL27
+ 1432 0304 C4020000 		.4byte	0x2c4
+ 1433 0308 0C       		.uleb128 0xc
+ 1434 0309 1E000000 		.4byte	.LVL28
+ 1435 030d FF010000 		.4byte	0x1ff
+ 1436 0311 12       		.uleb128 0x12
+ 1437 0312 26000000 		.4byte	.LVL29
+ 1438 0316 4C020000 		.4byte	0x24c
+ 1439 031a 11       		.uleb128 0x11
+ 1440 031b 01       		.uleb128 0x1
+ 1441 031c 50       		.byte	0x50
+ 1442 031d 01       		.uleb128 0x1
+ 1443 031e 33       		.byte	0x33
+ 1444 031f 00       		.byte	0
+ 1445 0320 00       		.byte	0
+ 1446 0321 09       		.uleb128 0x9
+ 1447 0322 D9030000 		.4byte	.LASF45
+ 1448 0326 01       		.byte	0x1
+ 1449 0327 7402     		.2byte	0x274
+ 1450 0329 00000000 		.4byte	.LFB11
+ 1451 032d 20000000 		.4byte	.LFE11-.LFB11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 42
+
+
+ 1452 0331 01       		.uleb128 0x1
+ 1453 0332 9C       		.byte	0x9c
+ 1454 0333 47030000 		.4byte	0x347
+ 1455 0337 12       		.uleb128 0x12
+ 1456 0338 0E000000 		.4byte	.LVL30
+ 1457 033c 4C020000 		.4byte	0x24c
+ 1458 0340 11       		.uleb128 0x11
+ 1459 0341 01       		.uleb128 0x1
+ 1460 0342 50       		.byte	0x50
+ 1461 0343 01       		.uleb128 0x1
+ 1462 0344 31       		.byte	0x31
+ 1463 0345 00       		.byte	0
+ 1464 0346 00       		.byte	0
+ 1465 0347 09       		.uleb128 0x9
+ 1466 0348 1B060000 		.4byte	.LASF46
+ 1467 034c 01       		.byte	0x1
+ 1468 034d BA02     		.2byte	0x2ba
+ 1469 034f 00000000 		.4byte	.LFB13
+ 1470 0353 40000000 		.4byte	.LFE13-.LFB13
+ 1471 0357 01       		.uleb128 0x1
+ 1472 0358 9C       		.byte	0x9c
+ 1473 0359 6D030000 		.4byte	0x36d
+ 1474 035d 12       		.uleb128 0x12
+ 1475 035e 28000000 		.4byte	.LVL31
+ 1476 0362 4C020000 		.4byte	0x24c
+ 1477 0366 11       		.uleb128 0x11
+ 1478 0367 01       		.uleb128 0x1
+ 1479 0368 50       		.byte	0x50
+ 1480 0369 01       		.uleb128 0x1
+ 1481 036a 31       		.byte	0x31
+ 1482 036b 00       		.byte	0
+ 1483 036c 00       		.byte	0
+ 1484 036d 0E       		.uleb128 0xe
+ 1485 036e 5A040000 		.4byte	.LASF47
+ 1486 0372 01       		.byte	0x1
+ 1487 0373 D6       		.byte	0xd6
+ 1488 0374 00000000 		.4byte	.LFB2
+ 1489 0378 2C000000 		.4byte	.LFE2-.LFB2
+ 1490 037c 01       		.uleb128 0x1
+ 1491 037d 9C       		.byte	0x9c
+ 1492 037e 9E030000 		.4byte	0x39e
+ 1493 0382 0C       		.uleb128 0xc
+ 1494 0383 18000000 		.4byte	.LVL32
+ 1495 0387 DF010000 		.4byte	0x1df
+ 1496 038b 0C       		.uleb128 0xc
+ 1497 038c 1E000000 		.4byte	.LVL33
+ 1498 0390 21030000 		.4byte	0x321
+ 1499 0394 0C       		.uleb128 0xc
+ 1500 0395 24000000 		.4byte	.LVL34
+ 1501 0399 47030000 		.4byte	0x347
+ 1502 039d 00       		.byte	0
+ 1503 039e 0E       		.uleb128 0xe
+ 1504 039f 04010000 		.4byte	.LASF48
+ 1505 03a3 01       		.byte	0x1
+ 1506 03a4 43       		.byte	0x43
+ 1507 03a5 00000000 		.4byte	.LFB0
+ 1508 03a9 B8000000 		.4byte	.LFE0-.LFB0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 43
+
+
+ 1509 03ad 01       		.uleb128 0x1
+ 1510 03ae 9C       		.byte	0x9c
+ 1511 03af ED030000 		.4byte	0x3ed
+ 1512 03b3 0F       		.uleb128 0xf
+ 1513 03b4 B3010000 		.4byte	.LASF49
+ 1514 03b8 01       		.byte	0x1
+ 1515 03b9 45       		.byte	0x45
+ 1516 03ba 6B000000 		.4byte	0x6b
+ 1517 03be BC000000 		.4byte	.LLST4
+ 1518 03c2 0F       		.uleb128 0xf
+ 1519 03c3 4E020000 		.4byte	.LASF50
+ 1520 03c7 01       		.byte	0x1
+ 1521 03c8 46       		.byte	0x46
+ 1522 03c9 6B000000 		.4byte	0x6b
+ 1523 03cd 16010000 		.4byte	.LLST5
+ 1524 03d1 0C       		.uleb128 0xc
+ 1525 03d2 20000000 		.4byte	.LVL38
+ 1526 03d6 71020000 		.4byte	0x271
+ 1527 03da 0C       		.uleb128 0xc
+ 1528 03db 38000000 		.4byte	.LVL40
+ 1529 03df 6D030000 		.4byte	0x36d
+ 1530 03e3 0C       		.uleb128 0xc
+ 1531 03e4 46000000 		.4byte	.LVL42
+ 1532 03e8 EA020000 		.4byte	0x2ea
+ 1533 03ec 00       		.byte	0
+ 1534 03ed 13       		.uleb128 0x13
+ 1535 03ee 81040000 		.4byte	.LASF79
+ 1536 03f2 01       		.byte	0x1
+ 1537 03f3 0903     		.2byte	0x309
+ 1538 03f5 00000000 		.4byte	.LFB15
+ 1539 03f9 24000000 		.4byte	.LFE15-.LFB15
+ 1540 03fd 01       		.uleb128 0x1
+ 1541 03fe 9C       		.byte	0x9c
+ 1542 03ff 14       		.uleb128 0x14
+ 1543 0400 3D010000 		.4byte	.LASF52
+ 1544 0404 01       		.byte	0x1
+ 1545 0405 7801     		.2byte	0x178
+ 1546 0407 6B000000 		.4byte	0x6b
+ 1547 040b 00000000 		.4byte	.LFB5
+ 1548 040f 54000000 		.4byte	.LFE5-.LFB5
+ 1549 0413 01       		.uleb128 0x1
+ 1550 0414 9C       		.byte	0x9c
+ 1551 0415 45040000 		.4byte	0x445
+ 1552 0419 0A       		.uleb128 0xa
+ 1553 041a 6D050000 		.4byte	.LASF51
+ 1554 041e 01       		.byte	0x1
+ 1555 041f 7A01     		.2byte	0x17a
+ 1556 0421 76000000 		.4byte	0x76
+ 1557 0425 4B010000 		.4byte	.LLST6
+ 1558 0429 0C       		.uleb128 0xc
+ 1559 042a 0E000000 		.4byte	.LVL56
+ 1560 042e C9010000 		.4byte	0x1c9
+ 1561 0432 0C       		.uleb128 0xc
+ 1562 0433 20000000 		.4byte	.LVL57
+ 1563 0437 ED030000 		.4byte	0x3ed
+ 1564 043b 0C       		.uleb128 0xc
+ 1565 043c 3E000000 		.4byte	.LVL59
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 44
+
+
+ 1566 0440 A2010000 		.4byte	0x1a2
+ 1567 0444 00       		.byte	0
+ 1568 0445 14       		.uleb128 0x14
+ 1569 0446 C6040000 		.4byte	.LASF53
+ 1570 044a 01       		.byte	0x1
+ 1571 044b 0E02     		.2byte	0x20e
+ 1572 044d 6B000000 		.4byte	0x6b
+ 1573 0451 00000000 		.4byte	.LFB9
+ 1574 0455 4C000000 		.4byte	.LFE9-.LFB9
+ 1575 0459 01       		.uleb128 0x1
+ 1576 045a 9C       		.byte	0x9c
+ 1577 045b 79040000 		.4byte	0x479
+ 1578 045f 0A       		.uleb128 0xa
+ 1579 0460 6D050000 		.4byte	.LASF51
+ 1580 0464 01       		.byte	0x1
+ 1581 0465 1002     		.2byte	0x210
+ 1582 0467 76000000 		.4byte	0x76
+ 1583 046b 5E010000 		.4byte	.LLST7
+ 1584 046f 0C       		.uleb128 0xc
+ 1585 0470 12000000 		.4byte	.LVL60
+ 1586 0474 ED030000 		.4byte	0x3ed
+ 1587 0478 00       		.byte	0
+ 1588 0479 15       		.uleb128 0x15
+ 1589 047a FC020000 		.4byte	.LASF54
+ 1590 047e 01       		.byte	0x1
+ 1591 047f 23       		.byte	0x23
+ 1592 0480 A1000000 		.4byte	0xa1
+ 1593 0484 05       		.uleb128 0x5
+ 1594 0485 03       		.byte	0x3
+ 1595 0486 00000000 		.4byte	USBFS_1_device
+ 1596 048a 15       		.uleb128 0x15
+ 1597 048b 44040000 		.4byte	.LASF55
+ 1598 048f 01       		.byte	0x1
+ 1599 0490 2D       		.byte	0x2d
+ 1600 0491 A1000000 		.4byte	0xa1
+ 1601 0495 05       		.uleb128 0x5
+ 1602 0496 03       		.byte	0x3
+ 1603 0497 00000000 		.4byte	USBFS_1_transferState
+ 1604 049b 15       		.uleb128 0x15
+ 1605 049c 38020000 		.4byte	.LASF56
+ 1606 04a0 01       		.byte	0x1
+ 1607 04a1 1B       		.byte	0x1b
+ 1608 04a2 A1000000 		.4byte	0xa1
+ 1609 04a6 05       		.uleb128 0x5
+ 1610 04a7 03       		.byte	0x3
+ 1611 04a8 00000000 		.4byte	USBFS_1_configuration
+ 1612 04ac 15       		.uleb128 0x15
+ 1613 04ad BC030000 		.4byte	.LASF57
+ 1614 04b1 01       		.byte	0x1
+ 1615 04b2 1D       		.byte	0x1d
+ 1616 04b3 A1000000 		.4byte	0xa1
+ 1617 04b7 05       		.uleb128 0x5
+ 1618 04b8 03       		.byte	0x3
+ 1619 04b9 00000000 		.4byte	USBFS_1_configurationChanged
+ 1620 04bd 15       		.uleb128 0x15
+ 1621 04be BC010000 		.4byte	.LASF58
+ 1622 04c2 01       		.byte	0x1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 45
+
+
+ 1623 04c3 1F       		.byte	0x1f
+ 1624 04c4 A1000000 		.4byte	0xa1
+ 1625 04c8 05       		.uleb128 0x5
+ 1626 04c9 03       		.byte	0x3
+ 1627 04ca 00000000 		.4byte	USBFS_1_deviceStatus
+ 1628 04ce 15       		.uleb128 0x15
+ 1629 04cf 13020000 		.4byte	.LASF59
+ 1630 04d3 01       		.byte	0x1
+ 1631 04d4 1C       		.byte	0x1c
+ 1632 04d5 A1000000 		.4byte	0xa1
+ 1633 04d9 05       		.uleb128 0x5
+ 1634 04da 03       		.byte	0x3
+ 1635 04db 00000000 		.4byte	USBFS_1_interfaceNumber
+ 1636 04df 16       		.uleb128 0x16
+ 1637 04e0 6B000000 		.4byte	0x6b
+ 1638 04e4 EF040000 		.4byte	0x4ef
+ 1639 04e8 17       		.uleb128 0x17
+ 1640 04e9 AB000000 		.4byte	0xab
+ 1641 04ed 00       		.byte	0
+ 1642 04ee 00       		.byte	0
+ 1643 04ef 15       		.uleb128 0x15
+ 1644 04f0 2C030000 		.4byte	.LASF60
+ 1645 04f4 01       		.byte	0x1
+ 1646 04f5 20       		.byte	0x20
+ 1647 04f6 00050000 		.4byte	0x500
+ 1648 04fa 05       		.uleb128 0x5
+ 1649 04fb 03       		.byte	0x3
+ 1650 04fc 00000000 		.4byte	USBFS_1_interfaceSetting
+ 1651 0500 05       		.uleb128 0x5
+ 1652 0501 DF040000 		.4byte	0x4df
+ 1653 0505 15       		.uleb128 0x15
+ 1654 0506 45030000 		.4byte	.LASF61
+ 1655 050a 01       		.byte	0x1
+ 1656 050b 21       		.byte	0x21
+ 1657 050c 16050000 		.4byte	0x516
+ 1658 0510 05       		.uleb128 0x5
+ 1659 0511 03       		.byte	0x3
+ 1660 0512 00000000 		.4byte	USBFS_1_interfaceSetting_last
+ 1661 0516 05       		.uleb128 0x5
+ 1662 0517 DF040000 		.4byte	0x4df
+ 1663 051b 15       		.uleb128 0x15
+ 1664 051c 6B040000 		.4byte	.LASF62
+ 1665 0520 01       		.byte	0x1
+ 1666 0521 1E       		.byte	0x1e
+ 1667 0522 A1000000 		.4byte	0xa1
+ 1668 0526 05       		.uleb128 0x5
+ 1669 0527 03       		.byte	0x3
+ 1670 0528 00000000 		.4byte	USBFS_1_deviceAddress
+ 1671 052c 15       		.uleb128 0x15
+ 1672 052d 5F000000 		.4byte	.LASF63
+ 1673 0531 01       		.byte	0x1
+ 1674 0532 22       		.byte	0x22
+ 1675 0533 3D050000 		.4byte	0x53d
+ 1676 0537 05       		.uleb128 0x5
+ 1677 0538 03       		.byte	0x3
+ 1678 0539 00000000 		.4byte	USBFS_1_interfaceStatus
+ 1679 053d 05       		.uleb128 0x5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 46
+
+
+ 1680 053e DF040000 		.4byte	0x4df
+ 1681 0542 15       		.uleb128 0x15
+ 1682 0543 91030000 		.4byte	.LASF64
+ 1683 0547 01       		.byte	0x1
+ 1684 0548 24       		.byte	0x24
+ 1685 0549 53050000 		.4byte	0x553
+ 1686 054d 05       		.uleb128 0x5
+ 1687 054e 03       		.byte	0x3
+ 1688 054f 00000000 		.4byte	USBFS_1_interfaceClass
+ 1689 0553 08       		.uleb128 0x8
+ 1690 0554 04       		.byte	0x4
+ 1691 0555 59050000 		.4byte	0x559
+ 1692 0559 18       		.uleb128 0x18
+ 1693 055a 6B000000 		.4byte	0x6b
+ 1694 055e 16       		.uleb128 0x16
+ 1695 055f 27010000 		.4byte	0x127
+ 1696 0563 6E050000 		.4byte	0x56e
+ 1697 0567 17       		.uleb128 0x17
+ 1698 0568 AB000000 		.4byte	0xab
+ 1699 056c 08       		.byte	0x8
+ 1700 056d 00       		.byte	0
+ 1701 056e 15       		.uleb128 0x15
+ 1702 056f D8000000 		.4byte	.LASF65
+ 1703 0573 01       		.byte	0x1
+ 1704 0574 1A       		.byte	0x1a
+ 1705 0575 7F050000 		.4byte	0x57f
+ 1706 0579 05       		.uleb128 0x5
+ 1707 057a 03       		.byte	0x3
+ 1708 057b 00000000 		.4byte	USBFS_1_EP
+ 1709 057f 05       		.uleb128 0x5
+ 1710 0580 5E050000 		.4byte	0x55e
+ 1711 0584 15       		.uleb128 0x15
+ 1712 0585 33000000 		.4byte	.LASF66
+ 1713 0589 01       		.byte	0x1
+ 1714 058a 2E       		.byte	0x2e
+ 1715 058b 95050000 		.4byte	0x595
+ 1716 058f 05       		.uleb128 0x5
+ 1717 0590 03       		.byte	0x3
+ 1718 0591 00000000 		.4byte	USBFS_1_currentTD
+ 1719 0595 05       		.uleb128 0x5
+ 1720 0596 97010000 		.4byte	0x197
+ 1721 059a 15       		.uleb128 0x15
+ 1722 059b D4050000 		.4byte	.LASF67
+ 1723 059f 01       		.byte	0x1
+ 1724 05a0 2B       		.byte	0x2b
+ 1725 05a1 A1000000 		.4byte	0xa1
+ 1726 05a5 05       		.uleb128 0x5
+ 1727 05a6 03       		.byte	0x3
+ 1728 05a7 00000000 		.4byte	USBFS_1_ep0Toggle
+ 1729 05ab 15       		.uleb128 0x15
+ 1730 05ac 04060000 		.4byte	.LASF68
+ 1731 05b0 01       		.byte	0x1
+ 1732 05b1 2C       		.byte	0x2c
+ 1733 05b2 A1000000 		.4byte	0xa1
+ 1734 05b6 05       		.uleb128 0x5
+ 1735 05b7 03       		.byte	0x3
+ 1736 05b8 00000000 		.4byte	USBFS_1_lastPacketSize
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 47
+
+
+ 1737 05bc 15       		.uleb128 0x15
+ 1738 05bd 0B030000 		.4byte	.LASF69
+ 1739 05c1 01       		.byte	0x1
+ 1740 05c2 2F       		.byte	0x2f
+ 1741 05c3 A1000000 		.4byte	0xa1
+ 1742 05c7 05       		.uleb128 0x5
+ 1743 05c8 03       		.byte	0x3
+ 1744 05c9 00000000 		.4byte	USBFS_1_ep0Mode
+ 1745 05cd 15       		.uleb128 0x15
+ 1746 05ce 76030000 		.4byte	.LASF70
+ 1747 05d2 01       		.byte	0x1
+ 1748 05d3 30       		.byte	0x30
+ 1749 05d4 A1000000 		.4byte	0xa1
+ 1750 05d8 05       		.uleb128 0x5
+ 1751 05d9 03       		.byte	0x3
+ 1752 05da 00000000 		.4byte	USBFS_1_ep0Count
+ 1753 05de 15       		.uleb128 0x15
+ 1754 05df D1010000 		.4byte	.LASF71
+ 1755 05e3 01       		.byte	0x1
+ 1756 05e4 31       		.byte	0x31
+ 1757 05e5 A6000000 		.4byte	0xa6
+ 1758 05e9 05       		.uleb128 0x5
+ 1759 05ea 03       		.byte	0x3
+ 1760 05eb 00000000 		.4byte	USBFS_1_transferByteCount
+ 1761 05ef 19       		.uleb128 0x19
+ 1762 05f0 EB010000 		.4byte	.LASF72
+ 1763 05f4 04       		.byte	0x4
+ 1764 05f5 B2       		.byte	0xb2
+ 1765 05f6 6B000000 		.4byte	0x6b
+ 1766 05fa 19       		.uleb128 0x19
+ 1767 05fb 1F040000 		.4byte	.LASF73
+ 1768 05ff 04       		.byte	0x4
+ 1769 0600 B3       		.byte	0xb3
+ 1770 0601 6B000000 		.4byte	0x6b
+ 1771 0605 19       		.uleb128 0x19
+ 1772 0606 1A000000 		.4byte	.LASF74
+ 1773 060a 04       		.byte	0x4
+ 1774 060b B4       		.byte	0xb4
+ 1775 060c 6B000000 		.4byte	0x6b
+ 1776 0610 00       		.byte	0
+ 1777              		.section	.debug_abbrev,"",%progbits
+ 1778              	.Ldebug_abbrev0:
+ 1779 0000 01       		.uleb128 0x1
+ 1780 0001 11       		.uleb128 0x11
+ 1781 0002 01       		.byte	0x1
+ 1782 0003 25       		.uleb128 0x25
+ 1783 0004 0E       		.uleb128 0xe
+ 1784 0005 13       		.uleb128 0x13
+ 1785 0006 0B       		.uleb128 0xb
+ 1786 0007 03       		.uleb128 0x3
+ 1787 0008 0E       		.uleb128 0xe
+ 1788 0009 1B       		.uleb128 0x1b
+ 1789 000a 0E       		.uleb128 0xe
+ 1790 000b 55       		.uleb128 0x55
+ 1791 000c 17       		.uleb128 0x17
+ 1792 000d 11       		.uleb128 0x11
+ 1793 000e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 48
+
+
+ 1794 000f 10       		.uleb128 0x10
+ 1795 0010 17       		.uleb128 0x17
+ 1796 0011 00       		.byte	0
+ 1797 0012 00       		.byte	0
+ 1798 0013 02       		.uleb128 0x2
+ 1799 0014 24       		.uleb128 0x24
+ 1800 0015 00       		.byte	0
+ 1801 0016 0B       		.uleb128 0xb
+ 1802 0017 0B       		.uleb128 0xb
+ 1803 0018 3E       		.uleb128 0x3e
+ 1804 0019 0B       		.uleb128 0xb
+ 1805 001a 03       		.uleb128 0x3
+ 1806 001b 0E       		.uleb128 0xe
+ 1807 001c 00       		.byte	0
+ 1808 001d 00       		.byte	0
+ 1809 001e 03       		.uleb128 0x3
+ 1810 001f 24       		.uleb128 0x24
+ 1811 0020 00       		.byte	0
+ 1812 0021 0B       		.uleb128 0xb
+ 1813 0022 0B       		.uleb128 0xb
+ 1814 0023 3E       		.uleb128 0x3e
+ 1815 0024 0B       		.uleb128 0xb
+ 1816 0025 03       		.uleb128 0x3
+ 1817 0026 08       		.uleb128 0x8
+ 1818 0027 00       		.byte	0
+ 1819 0028 00       		.byte	0
+ 1820 0029 04       		.uleb128 0x4
+ 1821 002a 16       		.uleb128 0x16
+ 1822 002b 00       		.byte	0
+ 1823 002c 03       		.uleb128 0x3
+ 1824 002d 0E       		.uleb128 0xe
+ 1825 002e 3A       		.uleb128 0x3a
+ 1826 002f 0B       		.uleb128 0xb
+ 1827 0030 3B       		.uleb128 0x3b
+ 1828 0031 0B       		.uleb128 0xb
+ 1829 0032 49       		.uleb128 0x49
+ 1830 0033 13       		.uleb128 0x13
+ 1831 0034 00       		.byte	0
+ 1832 0035 00       		.byte	0
+ 1833 0036 05       		.uleb128 0x5
+ 1834 0037 35       		.uleb128 0x35
+ 1835 0038 00       		.byte	0
+ 1836 0039 49       		.uleb128 0x49
+ 1837 003a 13       		.uleb128 0x13
+ 1838 003b 00       		.byte	0
+ 1839 003c 00       		.byte	0
+ 1840 003d 06       		.uleb128 0x6
+ 1841 003e 13       		.uleb128 0x13
+ 1842 003f 01       		.byte	0x1
+ 1843 0040 0B       		.uleb128 0xb
+ 1844 0041 0B       		.uleb128 0xb
+ 1845 0042 3A       		.uleb128 0x3a
+ 1846 0043 0B       		.uleb128 0xb
+ 1847 0044 3B       		.uleb128 0x3b
+ 1848 0045 0B       		.uleb128 0xb
+ 1849 0046 01       		.uleb128 0x1
+ 1850 0047 13       		.uleb128 0x13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 49
+
+
+ 1851 0048 00       		.byte	0
+ 1852 0049 00       		.byte	0
+ 1853 004a 07       		.uleb128 0x7
+ 1854 004b 0D       		.uleb128 0xd
+ 1855 004c 00       		.byte	0
+ 1856 004d 03       		.uleb128 0x3
+ 1857 004e 0E       		.uleb128 0xe
+ 1858 004f 3A       		.uleb128 0x3a
+ 1859 0050 0B       		.uleb128 0xb
+ 1860 0051 3B       		.uleb128 0x3b
+ 1861 0052 0B       		.uleb128 0xb
+ 1862 0053 49       		.uleb128 0x49
+ 1863 0054 13       		.uleb128 0x13
+ 1864 0055 38       		.uleb128 0x38
+ 1865 0056 0B       		.uleb128 0xb
+ 1866 0057 00       		.byte	0
+ 1867 0058 00       		.byte	0
+ 1868 0059 08       		.uleb128 0x8
+ 1869 005a 0F       		.uleb128 0xf
+ 1870 005b 00       		.byte	0
+ 1871 005c 0B       		.uleb128 0xb
+ 1872 005d 0B       		.uleb128 0xb
+ 1873 005e 49       		.uleb128 0x49
+ 1874 005f 13       		.uleb128 0x13
+ 1875 0060 00       		.byte	0
+ 1876 0061 00       		.byte	0
+ 1877 0062 09       		.uleb128 0x9
+ 1878 0063 2E       		.uleb128 0x2e
+ 1879 0064 01       		.byte	0x1
+ 1880 0065 3F       		.uleb128 0x3f
+ 1881 0066 19       		.uleb128 0x19
+ 1882 0067 03       		.uleb128 0x3
+ 1883 0068 0E       		.uleb128 0xe
+ 1884 0069 3A       		.uleb128 0x3a
+ 1885 006a 0B       		.uleb128 0xb
+ 1886 006b 3B       		.uleb128 0x3b
+ 1887 006c 05       		.uleb128 0x5
+ 1888 006d 27       		.uleb128 0x27
+ 1889 006e 19       		.uleb128 0x19
+ 1890 006f 11       		.uleb128 0x11
+ 1891 0070 01       		.uleb128 0x1
+ 1892 0071 12       		.uleb128 0x12
+ 1893 0072 06       		.uleb128 0x6
+ 1894 0073 40       		.uleb128 0x40
+ 1895 0074 18       		.uleb128 0x18
+ 1896 0075 9742     		.uleb128 0x2117
+ 1897 0077 19       		.uleb128 0x19
+ 1898 0078 01       		.uleb128 0x1
+ 1899 0079 13       		.uleb128 0x13
+ 1900 007a 00       		.byte	0
+ 1901 007b 00       		.byte	0
+ 1902 007c 0A       		.uleb128 0xa
+ 1903 007d 34       		.uleb128 0x34
+ 1904 007e 00       		.byte	0
+ 1905 007f 03       		.uleb128 0x3
+ 1906 0080 0E       		.uleb128 0xe
+ 1907 0081 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 50
+
+
+ 1908 0082 0B       		.uleb128 0xb
+ 1909 0083 3B       		.uleb128 0x3b
+ 1910 0084 05       		.uleb128 0x5
+ 1911 0085 49       		.uleb128 0x49
+ 1912 0086 13       		.uleb128 0x13
+ 1913 0087 02       		.uleb128 0x2
+ 1914 0088 17       		.uleb128 0x17
+ 1915 0089 00       		.byte	0
+ 1916 008a 00       		.byte	0
+ 1917 008b 0B       		.uleb128 0xb
+ 1918 008c 2E       		.uleb128 0x2e
+ 1919 008d 00       		.byte	0
+ 1920 008e 3F       		.uleb128 0x3f
+ 1921 008f 19       		.uleb128 0x19
+ 1922 0090 03       		.uleb128 0x3
+ 1923 0091 0E       		.uleb128 0xe
+ 1924 0092 3A       		.uleb128 0x3a
+ 1925 0093 0B       		.uleb128 0xb
+ 1926 0094 3B       		.uleb128 0x3b
+ 1927 0095 05       		.uleb128 0x5
+ 1928 0096 27       		.uleb128 0x27
+ 1929 0097 19       		.uleb128 0x19
+ 1930 0098 49       		.uleb128 0x49
+ 1931 0099 13       		.uleb128 0x13
+ 1932 009a 11       		.uleb128 0x11
+ 1933 009b 01       		.uleb128 0x1
+ 1934 009c 12       		.uleb128 0x12
+ 1935 009d 06       		.uleb128 0x6
+ 1936 009e 40       		.uleb128 0x40
+ 1937 009f 18       		.uleb128 0x18
+ 1938 00a0 9742     		.uleb128 0x2117
+ 1939 00a2 19       		.uleb128 0x19
+ 1940 00a3 00       		.byte	0
+ 1941 00a4 00       		.byte	0
+ 1942 00a5 0C       		.uleb128 0xc
+ 1943 00a6 898201   		.uleb128 0x4109
+ 1944 00a9 00       		.byte	0
+ 1945 00aa 11       		.uleb128 0x11
+ 1946 00ab 01       		.uleb128 0x1
+ 1947 00ac 31       		.uleb128 0x31
+ 1948 00ad 13       		.uleb128 0x13
+ 1949 00ae 00       		.byte	0
+ 1950 00af 00       		.byte	0
+ 1951 00b0 0D       		.uleb128 0xd
+ 1952 00b1 05       		.uleb128 0x5
+ 1953 00b2 00       		.byte	0
+ 1954 00b3 03       		.uleb128 0x3
+ 1955 00b4 0E       		.uleb128 0xe
+ 1956 00b5 3A       		.uleb128 0x3a
+ 1957 00b6 0B       		.uleb128 0xb
+ 1958 00b7 3B       		.uleb128 0x3b
+ 1959 00b8 05       		.uleb128 0x5
+ 1960 00b9 49       		.uleb128 0x49
+ 1961 00ba 13       		.uleb128 0x13
+ 1962 00bb 02       		.uleb128 0x2
+ 1963 00bc 18       		.uleb128 0x18
+ 1964 00bd 00       		.byte	0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 51
+
+
+ 1965 00be 00       		.byte	0
+ 1966 00bf 0E       		.uleb128 0xe
+ 1967 00c0 2E       		.uleb128 0x2e
+ 1968 00c1 01       		.byte	0x1
+ 1969 00c2 3F       		.uleb128 0x3f
+ 1970 00c3 19       		.uleb128 0x19
+ 1971 00c4 03       		.uleb128 0x3
+ 1972 00c5 0E       		.uleb128 0xe
+ 1973 00c6 3A       		.uleb128 0x3a
+ 1974 00c7 0B       		.uleb128 0xb
+ 1975 00c8 3B       		.uleb128 0x3b
+ 1976 00c9 0B       		.uleb128 0xb
+ 1977 00ca 27       		.uleb128 0x27
+ 1978 00cb 19       		.uleb128 0x19
+ 1979 00cc 11       		.uleb128 0x11
+ 1980 00cd 01       		.uleb128 0x1
+ 1981 00ce 12       		.uleb128 0x12
+ 1982 00cf 06       		.uleb128 0x6
+ 1983 00d0 40       		.uleb128 0x40
+ 1984 00d1 18       		.uleb128 0x18
+ 1985 00d2 9742     		.uleb128 0x2117
+ 1986 00d4 19       		.uleb128 0x19
+ 1987 00d5 01       		.uleb128 0x1
+ 1988 00d6 13       		.uleb128 0x13
+ 1989 00d7 00       		.byte	0
+ 1990 00d8 00       		.byte	0
+ 1991 00d9 0F       		.uleb128 0xf
+ 1992 00da 34       		.uleb128 0x34
+ 1993 00db 00       		.byte	0
+ 1994 00dc 03       		.uleb128 0x3
+ 1995 00dd 0E       		.uleb128 0xe
+ 1996 00de 3A       		.uleb128 0x3a
+ 1997 00df 0B       		.uleb128 0xb
+ 1998 00e0 3B       		.uleb128 0x3b
+ 1999 00e1 0B       		.uleb128 0xb
+ 2000 00e2 49       		.uleb128 0x49
+ 2001 00e3 13       		.uleb128 0x13
+ 2002 00e4 02       		.uleb128 0x2
+ 2003 00e5 17       		.uleb128 0x17
+ 2004 00e6 00       		.byte	0
+ 2005 00e7 00       		.byte	0
+ 2006 00e8 10       		.uleb128 0x10
+ 2007 00e9 898201   		.uleb128 0x4109
+ 2008 00ec 01       		.byte	0x1
+ 2009 00ed 11       		.uleb128 0x11
+ 2010 00ee 01       		.uleb128 0x1
+ 2011 00ef 31       		.uleb128 0x31
+ 2012 00f0 13       		.uleb128 0x13
+ 2013 00f1 01       		.uleb128 0x1
+ 2014 00f2 13       		.uleb128 0x13
+ 2015 00f3 00       		.byte	0
+ 2016 00f4 00       		.byte	0
+ 2017 00f5 11       		.uleb128 0x11
+ 2018 00f6 8A8201   		.uleb128 0x410a
+ 2019 00f9 00       		.byte	0
+ 2020 00fa 02       		.uleb128 0x2
+ 2021 00fb 18       		.uleb128 0x18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 52
+
+
+ 2022 00fc 9142     		.uleb128 0x2111
+ 2023 00fe 18       		.uleb128 0x18
+ 2024 00ff 00       		.byte	0
+ 2025 0100 00       		.byte	0
+ 2026 0101 12       		.uleb128 0x12
+ 2027 0102 898201   		.uleb128 0x4109
+ 2028 0105 01       		.byte	0x1
+ 2029 0106 11       		.uleb128 0x11
+ 2030 0107 01       		.uleb128 0x1
+ 2031 0108 31       		.uleb128 0x31
+ 2032 0109 13       		.uleb128 0x13
+ 2033 010a 00       		.byte	0
+ 2034 010b 00       		.byte	0
+ 2035 010c 13       		.uleb128 0x13
+ 2036 010d 2E       		.uleb128 0x2e
+ 2037 010e 00       		.byte	0
+ 2038 010f 3F       		.uleb128 0x3f
+ 2039 0110 19       		.uleb128 0x19
+ 2040 0111 03       		.uleb128 0x3
+ 2041 0112 0E       		.uleb128 0xe
+ 2042 0113 3A       		.uleb128 0x3a
+ 2043 0114 0B       		.uleb128 0xb
+ 2044 0115 3B       		.uleb128 0x3b
+ 2045 0116 05       		.uleb128 0x5
+ 2046 0117 27       		.uleb128 0x27
+ 2047 0118 19       		.uleb128 0x19
+ 2048 0119 11       		.uleb128 0x11
+ 2049 011a 01       		.uleb128 0x1
+ 2050 011b 12       		.uleb128 0x12
+ 2051 011c 06       		.uleb128 0x6
+ 2052 011d 40       		.uleb128 0x40
+ 2053 011e 18       		.uleb128 0x18
+ 2054 011f 9742     		.uleb128 0x2117
+ 2055 0121 19       		.uleb128 0x19
+ 2056 0122 00       		.byte	0
+ 2057 0123 00       		.byte	0
+ 2058 0124 14       		.uleb128 0x14
+ 2059 0125 2E       		.uleb128 0x2e
+ 2060 0126 01       		.byte	0x1
+ 2061 0127 3F       		.uleb128 0x3f
+ 2062 0128 19       		.uleb128 0x19
+ 2063 0129 03       		.uleb128 0x3
+ 2064 012a 0E       		.uleb128 0xe
+ 2065 012b 3A       		.uleb128 0x3a
+ 2066 012c 0B       		.uleb128 0xb
+ 2067 012d 3B       		.uleb128 0x3b
+ 2068 012e 05       		.uleb128 0x5
+ 2069 012f 27       		.uleb128 0x27
+ 2070 0130 19       		.uleb128 0x19
+ 2071 0131 49       		.uleb128 0x49
+ 2072 0132 13       		.uleb128 0x13
+ 2073 0133 11       		.uleb128 0x11
+ 2074 0134 01       		.uleb128 0x1
+ 2075 0135 12       		.uleb128 0x12
+ 2076 0136 06       		.uleb128 0x6
+ 2077 0137 40       		.uleb128 0x40
+ 2078 0138 18       		.uleb128 0x18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 53
+
+
+ 2079 0139 9742     		.uleb128 0x2117
+ 2080 013b 19       		.uleb128 0x19
+ 2081 013c 01       		.uleb128 0x1
+ 2082 013d 13       		.uleb128 0x13
+ 2083 013e 00       		.byte	0
+ 2084 013f 00       		.byte	0
+ 2085 0140 15       		.uleb128 0x15
+ 2086 0141 34       		.uleb128 0x34
+ 2087 0142 00       		.byte	0
+ 2088 0143 03       		.uleb128 0x3
+ 2089 0144 0E       		.uleb128 0xe
+ 2090 0145 3A       		.uleb128 0x3a
+ 2091 0146 0B       		.uleb128 0xb
+ 2092 0147 3B       		.uleb128 0x3b
+ 2093 0148 0B       		.uleb128 0xb
+ 2094 0149 49       		.uleb128 0x49
+ 2095 014a 13       		.uleb128 0x13
+ 2096 014b 3F       		.uleb128 0x3f
+ 2097 014c 19       		.uleb128 0x19
+ 2098 014d 02       		.uleb128 0x2
+ 2099 014e 18       		.uleb128 0x18
+ 2100 014f 00       		.byte	0
+ 2101 0150 00       		.byte	0
+ 2102 0151 16       		.uleb128 0x16
+ 2103 0152 01       		.uleb128 0x1
+ 2104 0153 01       		.byte	0x1
+ 2105 0154 49       		.uleb128 0x49
+ 2106 0155 13       		.uleb128 0x13
+ 2107 0156 01       		.uleb128 0x1
+ 2108 0157 13       		.uleb128 0x13
+ 2109 0158 00       		.byte	0
+ 2110 0159 00       		.byte	0
+ 2111 015a 17       		.uleb128 0x17
+ 2112 015b 21       		.uleb128 0x21
+ 2113 015c 00       		.byte	0
+ 2114 015d 49       		.uleb128 0x49
+ 2115 015e 13       		.uleb128 0x13
+ 2116 015f 2F       		.uleb128 0x2f
+ 2117 0160 0B       		.uleb128 0xb
+ 2118 0161 00       		.byte	0
+ 2119 0162 00       		.byte	0
+ 2120 0163 18       		.uleb128 0x18
+ 2121 0164 26       		.uleb128 0x26
+ 2122 0165 00       		.byte	0
+ 2123 0166 49       		.uleb128 0x49
+ 2124 0167 13       		.uleb128 0x13
+ 2125 0168 00       		.byte	0
+ 2126 0169 00       		.byte	0
+ 2127 016a 19       		.uleb128 0x19
+ 2128 016b 2E       		.uleb128 0x2e
+ 2129 016c 00       		.byte	0
+ 2130 016d 3F       		.uleb128 0x3f
+ 2131 016e 19       		.uleb128 0x19
+ 2132 016f 03       		.uleb128 0x3
+ 2133 0170 0E       		.uleb128 0xe
+ 2134 0171 3A       		.uleb128 0x3a
+ 2135 0172 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 54
+
+
+ 2136 0173 3B       		.uleb128 0x3b
+ 2137 0174 0B       		.uleb128 0xb
+ 2138 0175 27       		.uleb128 0x27
+ 2139 0176 19       		.uleb128 0x19
+ 2140 0177 49       		.uleb128 0x49
+ 2141 0178 13       		.uleb128 0x13
+ 2142 0179 3C       		.uleb128 0x3c
+ 2143 017a 19       		.uleb128 0x19
+ 2144 017b 00       		.byte	0
+ 2145 017c 00       		.byte	0
+ 2146 017d 00       		.byte	0
+ 2147              		.section	.debug_loc,"",%progbits
+ 2148              	.Ldebug_loc0:
+ 2149              	.LLST0:
+ 2150 0000 00000000 		.4byte	.LVL0
+ 2151 0004 12000000 		.4byte	.LVL1
+ 2152 0008 0200     		.2byte	0x2
+ 2153 000a 30       		.byte	0x30
+ 2154 000b 9F       		.byte	0x9f
+ 2155 000c 12000000 		.4byte	.LVL1
+ 2156 0010 2C000000 		.4byte	.LVL2
+ 2157 0014 0100     		.2byte	0x1
+ 2158 0016 53       		.byte	0x53
+ 2159 0017 2E000000 		.4byte	.LVL3
+ 2160 001b 98000000 		.4byte	.LFE4
+ 2161 001f 0100     		.2byte	0x1
+ 2162 0021 53       		.byte	0x53
+ 2163 0022 00000000 		.4byte	0
+ 2164 0026 00000000 		.4byte	0
+ 2165              	.LLST1:
+ 2166 002a 0E000000 		.4byte	.LVL7
+ 2167 002e 3A000000 		.4byte	.LVL11
+ 2168 0032 0100     		.2byte	0x1
+ 2169 0034 51       		.byte	0x51
+ 2170 0035 3C000000 		.4byte	.LVL12
+ 2171 0039 84000000 		.4byte	.LFE10
+ 2172 003d 0100     		.2byte	0x1
+ 2173 003f 51       		.byte	0x51
+ 2174 0040 00000000 		.4byte	0
+ 2175 0044 00000000 		.4byte	0
+ 2176              	.LLST2:
+ 2177 0048 02000000 		.4byte	.LVL6
+ 2178 004c 1C000000 		.4byte	.LVL8
+ 2179 0050 0200     		.2byte	0x2
+ 2180 0052 30       		.byte	0x30
+ 2181 0053 9F       		.byte	0x9f
+ 2182 0054 1C000000 		.4byte	.LVL8
+ 2183 0058 36000000 		.4byte	.LVL9
+ 2184 005c 0100     		.2byte	0x1
+ 2185 005e 50       		.byte	0x50
+ 2186 005f 38000000 		.4byte	.LVL10
+ 2187 0063 84000000 		.4byte	.LFE10
+ 2188 0067 0100     		.2byte	0x1
+ 2189 0069 50       		.byte	0x50
+ 2190 006a 00000000 		.4byte	0
+ 2191 006e 00000000 		.4byte	0
+ 2192              	.LLST3:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 55
+
+
+ 2193 0072 08000000 		.4byte	.LVL15
+ 2194 0076 0E000000 		.4byte	.LVL16
+ 2195 007a 0100     		.2byte	0x1
+ 2196 007c 52       		.byte	0x52
+ 2197 007d 0E000000 		.4byte	.LVL16
+ 2198 0081 1F000000 		.4byte	.LVL18-1
+ 2199 0085 0100     		.2byte	0x1
+ 2200 0087 53       		.byte	0x53
+ 2201 0088 36000000 		.4byte	.LVL19
+ 2202 008c 38000000 		.4byte	.LVL20
+ 2203 0090 0100     		.2byte	0x1
+ 2204 0092 50       		.byte	0x50
+ 2205 0093 3C000000 		.4byte	.LVL21
+ 2206 0097 3E000000 		.4byte	.LVL22
+ 2207 009b 0100     		.2byte	0x1
+ 2208 009d 50       		.byte	0x50
+ 2209 009e 42000000 		.4byte	.LVL23
+ 2210 00a2 44000000 		.4byte	.LVL24
+ 2211 00a6 0100     		.2byte	0x1
+ 2212 00a8 50       		.byte	0x50
+ 2213 00a9 46000000 		.4byte	.LVL25
+ 2214 00ad 5C000000 		.4byte	.LFE1
+ 2215 00b1 0100     		.2byte	0x1
+ 2216 00b3 50       		.byte	0x50
+ 2217 00b4 00000000 		.4byte	0
+ 2218 00b8 00000000 		.4byte	0
+ 2219              	.LLST4:
+ 2220 00bc 08000000 		.4byte	.LVL35
+ 2221 00c0 18000000 		.4byte	.LVL37
+ 2222 00c4 0100     		.2byte	0x1
+ 2223 00c6 53       		.byte	0x53
+ 2224 00c7 2E000000 		.4byte	.LVL39
+ 2225 00cb 37000000 		.4byte	.LVL40-1
+ 2226 00cf 0100     		.2byte	0x1
+ 2227 00d1 53       		.byte	0x53
+ 2228 00d2 3C000000 		.4byte	.LVL41
+ 2229 00d6 45000000 		.4byte	.LVL42-1
+ 2230 00da 0100     		.2byte	0x1
+ 2231 00dc 53       		.byte	0x53
+ 2232 00dd 52000000 		.4byte	.LVL43
+ 2233 00e1 54000000 		.4byte	.LVL44
+ 2234 00e5 0100     		.2byte	0x1
+ 2235 00e7 53       		.byte	0x53
+ 2236 00e8 5A000000 		.4byte	.LVL46
+ 2237 00ec 62000000 		.4byte	.LVL47
+ 2238 00f0 0100     		.2byte	0x1
+ 2239 00f2 53       		.byte	0x53
+ 2240 00f3 6A000000 		.4byte	.LVL48
+ 2241 00f7 76000000 		.4byte	.LVL49
+ 2242 00fb 0100     		.2byte	0x1
+ 2243 00fd 53       		.byte	0x53
+ 2244 00fe 80000000 		.4byte	.LVL51
+ 2245 0102 8E000000 		.4byte	.LVL53
+ 2246 0106 0600     		.2byte	0x6
+ 2247 0108 72       		.byte	0x72
+ 2248 0109 00       		.sleb128 0
+ 2249 010a 08       		.byte	0x8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 56
+
+
+ 2250 010b 80       		.byte	0x80
+ 2251 010c 1A       		.byte	0x1a
+ 2252 010d 9F       		.byte	0x9f
+ 2253 010e 00000000 		.4byte	0
+ 2254 0112 00000000 		.4byte	0
+ 2255              	.LLST5:
+ 2256 0116 0E000000 		.4byte	.LVL36
+ 2257 011a 54000000 		.4byte	.LVL44
+ 2258 011e 0200     		.2byte	0x2
+ 2259 0120 31       		.byte	0x31
+ 2260 0121 9F       		.byte	0x9f
+ 2261 0122 54000000 		.4byte	.LVL44
+ 2262 0126 58000000 		.4byte	.LVL45
+ 2263 012a 0100     		.2byte	0x1
+ 2264 012c 53       		.byte	0x53
+ 2265 012d 7C000000 		.4byte	.LVL50
+ 2266 0131 88000000 		.4byte	.LVL52
+ 2267 0135 0100     		.2byte	0x1
+ 2268 0137 53       		.byte	0x53
+ 2269 0138 96000000 		.4byte	.LVL54
+ 2270 013c A0000000 		.4byte	.LVL55
+ 2271 0140 0100     		.2byte	0x1
+ 2272 0142 53       		.byte	0x53
+ 2273 0143 00000000 		.4byte	0
+ 2274 0147 00000000 		.4byte	0
+ 2275              	.LLST6:
+ 2276 014b 2C000000 		.4byte	.LVL58
+ 2277 014f 3D000000 		.4byte	.LVL59-1
+ 2278 0153 0100     		.2byte	0x1
+ 2279 0155 53       		.byte	0x53
+ 2280 0156 00000000 		.4byte	0
+ 2281 015a 00000000 		.4byte	0
+ 2282              	.LLST7:
+ 2283 015e 1E000000 		.4byte	.LVL61
+ 2284 0162 30000000 		.4byte	.LVL62
+ 2285 0166 0100     		.2byte	0x1
+ 2286 0168 53       		.byte	0x53
+ 2287 0169 00000000 		.4byte	0
+ 2288 016d 00000000 		.4byte	0
+ 2289              		.section	.debug_aranges,"",%progbits
+ 2290 0000 94000000 		.4byte	0x94
+ 2291 0004 0200     		.2byte	0x2
+ 2292 0006 00000000 		.4byte	.Ldebug_info0
+ 2293 000a 04       		.byte	0x4
+ 2294 000b 00       		.byte	0
+ 2295 000c 0000     		.2byte	0
+ 2296 000e 0000     		.2byte	0
+ 2297 0010 00000000 		.4byte	.LFB4
+ 2298 0014 98000000 		.4byte	.LFE4-.LFB4
+ 2299 0018 00000000 		.4byte	.LFB6
+ 2300 001c 34000000 		.4byte	.LFE6-.LFB6
+ 2301 0020 00000000 		.4byte	.LFB7
+ 2302 0024 08000000 		.4byte	.LFE7-.LFB7
+ 2303 0028 00000000 		.4byte	.LFB10
+ 2304 002c 84000000 		.4byte	.LFE10-.LFB10
+ 2305 0030 00000000 		.4byte	.LFB12
+ 2306 0034 2C000000 		.4byte	.LFE12-.LFB12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 57
+
+
+ 2307 0038 00000000 		.4byte	.LFB14
+ 2308 003c 24000000 		.4byte	.LFE14-.LFB14
+ 2309 0040 00000000 		.4byte	.LFB1
+ 2310 0044 5C000000 		.4byte	.LFE1-.LFB1
+ 2311 0048 00000000 		.4byte	.LFB8
+ 2312 004c 34000000 		.4byte	.LFE8-.LFB8
+ 2313 0050 00000000 		.4byte	.LFB3
+ 2314 0054 38000000 		.4byte	.LFE3-.LFB3
+ 2315 0058 00000000 		.4byte	.LFB11
+ 2316 005c 20000000 		.4byte	.LFE11-.LFB11
+ 2317 0060 00000000 		.4byte	.LFB13
+ 2318 0064 40000000 		.4byte	.LFE13-.LFB13
+ 2319 0068 00000000 		.4byte	.LFB2
+ 2320 006c 2C000000 		.4byte	.LFE2-.LFB2
+ 2321 0070 00000000 		.4byte	.LFB0
+ 2322 0074 B8000000 		.4byte	.LFE0-.LFB0
+ 2323 0078 00000000 		.4byte	.LFB15
+ 2324 007c 24000000 		.4byte	.LFE15-.LFB15
+ 2325 0080 00000000 		.4byte	.LFB5
+ 2326 0084 54000000 		.4byte	.LFE5-.LFB5
+ 2327 0088 00000000 		.4byte	.LFB9
+ 2328 008c 4C000000 		.4byte	.LFE9-.LFB9
+ 2329 0090 00000000 		.4byte	0
+ 2330 0094 00000000 		.4byte	0
+ 2331              		.section	.debug_ranges,"",%progbits
+ 2332              	.Ldebug_ranges0:
+ 2333 0000 00000000 		.4byte	.LFB4
+ 2334 0004 98000000 		.4byte	.LFE4
+ 2335 0008 00000000 		.4byte	.LFB6
+ 2336 000c 34000000 		.4byte	.LFE6
+ 2337 0010 00000000 		.4byte	.LFB7
+ 2338 0014 08000000 		.4byte	.LFE7
+ 2339 0018 00000000 		.4byte	.LFB10
+ 2340 001c 84000000 		.4byte	.LFE10
+ 2341 0020 00000000 		.4byte	.LFB12
+ 2342 0024 2C000000 		.4byte	.LFE12
+ 2343 0028 00000000 		.4byte	.LFB14
+ 2344 002c 24000000 		.4byte	.LFE14
+ 2345 0030 00000000 		.4byte	.LFB1
+ 2346 0034 5C000000 		.4byte	.LFE1
+ 2347 0038 00000000 		.4byte	.LFB8
+ 2348 003c 34000000 		.4byte	.LFE8
+ 2349 0040 00000000 		.4byte	.LFB3
+ 2350 0044 38000000 		.4byte	.LFE3
+ 2351 0048 00000000 		.4byte	.LFB11
+ 2352 004c 20000000 		.4byte	.LFE11
+ 2353 0050 00000000 		.4byte	.LFB13
+ 2354 0054 40000000 		.4byte	.LFE13
+ 2355 0058 00000000 		.4byte	.LFB2
+ 2356 005c 2C000000 		.4byte	.LFE2
+ 2357 0060 00000000 		.4byte	.LFB0
+ 2358 0064 B8000000 		.4byte	.LFE0
+ 2359 0068 00000000 		.4byte	.LFB15
+ 2360 006c 24000000 		.4byte	.LFE15
+ 2361 0070 00000000 		.4byte	.LFB5
+ 2362 0074 54000000 		.4byte	.LFE5
+ 2363 0078 00000000 		.4byte	.LFB9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 58
+
+
+ 2364 007c 4C000000 		.4byte	.LFE9
+ 2365 0080 00000000 		.4byte	0
+ 2366 0084 00000000 		.4byte	0
+ 2367              		.section	.debug_line,"",%progbits
+ 2368              	.Ldebug_line0:
+ 2369 0000 1A020000 		.section	.debug_str,"MS",%progbits,1
+ 2369      02006800 
+ 2369      00000201 
+ 2369      FB0E0D00 
+ 2369      01010101 
+ 2370              	.LASF31:
+ 2371 0000 70537461 		.ascii	"pStatusBlock\000"
+ 2371      74757342 
+ 2371      6C6F636B 
+ 2371      00
+ 2372              	.LASF29:
+ 2373 000d 636F756E 		.ascii	"count\000"
+ 2373      7400
+ 2374              	.LASF10:
+ 2375 0013 75696E74 		.ascii	"uint16\000"
+ 2375      313600
+ 2376              	.LASF74:
+ 2377 001a 55534246 		.ascii	"USBFS_1_HandleVendorRqst\000"
+ 2377      535F315F 
+ 2377      48616E64 
+ 2377      6C655665 
+ 2377      6E646F72 
+ 2378              	.LASF66:
+ 2379 0033 55534246 		.ascii	"USBFS_1_currentTD\000"
+ 2379      535F315F 
+ 2379      63757272 
+ 2379      656E7454 
+ 2379      4400
+ 2380              	.LASF40:
+ 2381 0045 55534246 		.ascii	"USBFS_1_UpdateStatusBlock\000"
+ 2381      535F315F 
+ 2381      55706461 
+ 2381      74655374 
+ 2381      61747573 
+ 2382              	.LASF63:
+ 2383 005f 55534246 		.ascii	"USBFS_1_interfaceStatus\000"
+ 2383      535F315F 
+ 2383      696E7465 
+ 2383      72666163 
+ 2383      65537461 
+ 2384              	.LASF37:
+ 2385 0077 72656749 		.ascii	"regIndex\000"
+ 2385      6E646578 
+ 2385      00
+ 2386              	.LASF78:
+ 2387 0080 636F6D70 		.ascii	"completionCode\000"
+ 2387      6C657469 
+ 2387      6F6E436F 
+ 2387      646500
+ 2388              	.LASF7:
+ 2389 008f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2389      206C6F6E 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 59
+
+
+ 2389      6720756E 
+ 2389      7369676E 
+ 2389      65642069 
+ 2390              	.LASF20:
+ 2391 00a6 61646472 		.ascii	"addr\000"
+ 2391      00
+ 2392              	.LASF33:
+ 2393 00ab 55534246 		.ascii	"USBFS_1_LoadEP0\000"
+ 2393      535F315F 
+ 2393      4C6F6164 
+ 2393      45503000 
+ 2394              	.LASF34:
+ 2395 00bb 55534246 		.ascii	"USBFS_1_ControlReadDataStage\000"
+ 2395      535F315F 
+ 2395      436F6E74 
+ 2395      726F6C52 
+ 2395      65616444 
+ 2396              	.LASF65:
+ 2397 00d8 55534246 		.ascii	"USBFS_1_EP\000"
+ 2397      535F315F 
+ 2397      455000
+ 2398              	.LASF6:
+ 2399 00e3 6C6F6E67 		.ascii	"long long int\000"
+ 2399      206C6F6E 
+ 2399      6720696E 
+ 2399      7400
+ 2400              	.LASF0:
+ 2401 00f1 7369676E 		.ascii	"signed char\000"
+ 2401      65642063 
+ 2401      68617200 
+ 2402              	.LASF26:
+ 2403 00fd 73746174 		.ascii	"status\000"
+ 2403      757300
+ 2404              	.LASF48:
+ 2405 0104 55534246 		.ascii	"USBFS_1_EP_0_ISR\000"
+ 2405      535F315F 
+ 2405      45505F30 
+ 2405      5F495352 
+ 2405      00
+ 2406              	.LASF43:
+ 2407 0115 55534246 		.ascii	"USBFS_1_ControlReadStatusStage\000"
+ 2407      535F315F 
+ 2407      436F6E74 
+ 2407      726F6C52 
+ 2407      65616453 
+ 2408              	.LASF4:
+ 2409 0134 6C6F6E67 		.ascii	"long int\000"
+ 2409      20696E74 
+ 2409      00
+ 2410              	.LASF52:
+ 2411 013d 55534246 		.ascii	"USBFS_1_InitControlRead\000"
+ 2411      535F315F 
+ 2411      496E6974 
+ 2411      436F6E74 
+ 2411      726F6C52 
+ 2412              	.LASF9:
+ 2413 0155 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 60
+
+
+ 2413      3800
+ 2414              	.LASF19:
+ 2415 015b 6570546F 		.ascii	"epToggle\000"
+ 2415      67676C65 
+ 2415      00
+ 2416              	.LASF39:
+ 2417 0164 55534246 		.ascii	"USBFS_1_InitNoDataControlTransfer\000"
+ 2417      535F315F 
+ 2417      496E6974 
+ 2417      4E6F4461 
+ 2417      7461436F 
+ 2418              	.LASF12:
+ 2419 0186 646F7562 		.ascii	"double\000"
+ 2419      6C6500
+ 2420              	.LASF38:
+ 2421 018d 55534246 		.ascii	"USBFS_1_InitZeroLengthControlTransfer\000"
+ 2421      535F315F 
+ 2421      496E6974 
+ 2421      5A65726F 
+ 2421      4C656E67 
+ 2422              	.LASF49:
+ 2423 01b3 62526567 		.ascii	"bRegTemp\000"
+ 2423      54656D70 
+ 2423      00
+ 2424              	.LASF58:
+ 2425 01bc 55534246 		.ascii	"USBFS_1_deviceStatus\000"
+ 2425      535F315F 
+ 2425      64657669 
+ 2425      63655374 
+ 2425      61747573 
+ 2426              	.LASF71:
+ 2427 01d1 55534246 		.ascii	"USBFS_1_transferByteCount\000"
+ 2427      535F315F 
+ 2427      7472616E 
+ 2427      73666572 
+ 2427      42797465 
+ 2428              	.LASF72:
+ 2429 01eb 55534246 		.ascii	"USBFS_1_HandleStandardRqst\000"
+ 2429      535F315F 
+ 2429      48616E64 
+ 2429      6C655374 
+ 2429      616E6461 
+ 2430              	.LASF30:
+ 2431 0206 70446174 		.ascii	"pData\000"
+ 2431      6100
+ 2432              	.LASF21:
+ 2433 020c 65704D6F 		.ascii	"epMode\000"
+ 2433      646500
+ 2434              	.LASF59:
+ 2435 0213 55534246 		.ascii	"USBFS_1_interfaceNumber\000"
+ 2435      535F315F 
+ 2435      696E7465 
+ 2435      72666163 
+ 2435      654E756D 
+ 2436              	.LASF8:
+ 2437 022b 756E7369 		.ascii	"unsigned int\000"
+ 2437      676E6564 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 61
+
+
+ 2437      20696E74 
+ 2437      00
+ 2438              	.LASF56:
+ 2439 0238 55534246 		.ascii	"USBFS_1_configuration\000"
+ 2439      535F315F 
+ 2439      636F6E66 
+ 2439      69677572 
+ 2439      6174696F 
+ 2440              	.LASF50:
+ 2441 024e 6D6F6469 		.ascii	"modifyReg\000"
+ 2441      66795265 
+ 2441      6700
+ 2442              	.LASF5:
+ 2443 0258 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2443      20756E73 
+ 2443      69676E65 
+ 2443      6420696E 
+ 2443      7400
+ 2444              	.LASF28:
+ 2445 026a 545F5553 		.ascii	"T_USBFS_1_XFER_STATUS_BLOCK\000"
+ 2445      4246535F 
+ 2445      315F5846 
+ 2445      45525F53 
+ 2445      54415455 
+ 2446              	.LASF3:
+ 2447 0286 73686F72 		.ascii	"short unsigned int\000"
+ 2447      7420756E 
+ 2447      7369676E 
+ 2447      65642069 
+ 2447      6E7400
+ 2448              	.LASF25:
+ 2449 0299 545F5553 		.ascii	"T_USBFS_1_EP_CTL_BLOCK\000"
+ 2449      4246535F 
+ 2449      315F4550 
+ 2449      5F43544C 
+ 2449      5F424C4F 
+ 2450              	.LASF32:
+ 2451 02b0 545F5553 		.ascii	"T_USBFS_1_TD\000"
+ 2451      4246535F 
+ 2451      315F5444 
+ 2451      00
+ 2452              	.LASF44:
+ 2453 02bd 55534246 		.ascii	"USBFS_1_HandleOUT\000"
+ 2453      535F315F 
+ 2453      48616E64 
+ 2453      6C654F55 
+ 2453      5400
+ 2454              	.LASF36:
+ 2455 02cf 65703043 		.ascii	"ep0Count\000"
+ 2455      6F756E74 
+ 2455      00
+ 2456              	.LASF24:
+ 2457 02d8 696E7465 		.ascii	"interface\000"
+ 2457      72666163 
+ 2457      6500
+ 2458              	.LASF18:
+ 2459 02e2 68774570 		.ascii	"hwEpState\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 62
+
+
+ 2459      53746174 
+ 2459      6500
+ 2460              	.LASF15:
+ 2461 02ec 73697A65 		.ascii	"sizetype\000"
+ 2461      74797065 
+ 2461      00
+ 2462              	.LASF16:
+ 2463 02f5 61747472 		.ascii	"attrib\000"
+ 2463      696200
+ 2464              	.LASF54:
+ 2465 02fc 55534246 		.ascii	"USBFS_1_device\000"
+ 2465      535F315F 
+ 2465      64657669 
+ 2465      636500
+ 2466              	.LASF69:
+ 2467 030b 55534246 		.ascii	"USBFS_1_ep0Mode\000"
+ 2467      535F315F 
+ 2467      6570304D 
+ 2467      6F646500 
+ 2468              	.LASF11:
+ 2469 031b 666C6F61 		.ascii	"float\000"
+ 2469      7400
+ 2470              	.LASF17:
+ 2471 0321 61706945 		.ascii	"apiEpState\000"
+ 2471      70537461 
+ 2471      746500
+ 2472              	.LASF60:
+ 2473 032c 55534246 		.ascii	"USBFS_1_interfaceSetting\000"
+ 2473      535F315F 
+ 2473      696E7465 
+ 2473      72666163 
+ 2473      65536574 
+ 2474              	.LASF61:
+ 2475 0345 55534246 		.ascii	"USBFS_1_interfaceSetting_last\000"
+ 2475      535F315F 
+ 2475      696E7465 
+ 2475      72666163 
+ 2475      65536574 
+ 2476              	.LASF14:
+ 2477 0363 72656738 		.ascii	"reg8\000"
+ 2477      00
+ 2478              	.LASF1:
+ 2479 0368 756E7369 		.ascii	"unsigned char\000"
+ 2479      676E6564 
+ 2479      20636861 
+ 2479      7200
+ 2480              	.LASF70:
+ 2481 0376 55534246 		.ascii	"USBFS_1_ep0Count\000"
+ 2481      535F315F 
+ 2481      65703043 
+ 2481      6F756E74 
+ 2481      00
+ 2482              	.LASF2:
+ 2483 0387 73686F72 		.ascii	"short int\000"
+ 2483      7420696E 
+ 2483      7400
+ 2484              	.LASF64:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 63
+
+
+ 2485 0391 55534246 		.ascii	"USBFS_1_interfaceClass\000"
+ 2485      535F315F 
+ 2485      696E7465 
+ 2485      72666163 
+ 2485      65436C61 
+ 2486              	.LASF41:
+ 2487 03a8 55534246 		.ascii	"USBFS_1_HandleSetup\000"
+ 2487      535F315F 
+ 2487      48616E64 
+ 2487      6C655365 
+ 2487      74757000 
+ 2488              	.LASF57:
+ 2489 03bc 55534246 		.ascii	"USBFS_1_configurationChanged\000"
+ 2489      535F315F 
+ 2489      636F6E66 
+ 2489      69677572 
+ 2489      6174696F 
+ 2490              	.LASF45:
+ 2491 03d9 55534246 		.ascii	"USBFS_1_ControlWriteStatusStage\000"
+ 2491      535F315F 
+ 2491      436F6E74 
+ 2491      726F6C57 
+ 2491      72697465 
+ 2492              	.LASF27:
+ 2493 03f9 6C656E67 		.ascii	"length\000"
+ 2493      746800
+ 2494              	.LASF13:
+ 2495 0400 63686172 		.ascii	"char\000"
+ 2495      00
+ 2496              	.LASF23:
+ 2497 0405 62756666 		.ascii	"bufferSize\000"
+ 2497      65725369 
+ 2497      7A6500
+ 2498              	.LASF42:
+ 2499 0410 72657175 		.ascii	"requestHandled\000"
+ 2499      65737448 
+ 2499      616E646C 
+ 2499      656400
+ 2500              	.LASF73:
+ 2501 041f 55534246 		.ascii	"USBFS_1_DispatchClassRqst\000"
+ 2501      535F315F 
+ 2501      44697370 
+ 2501      61746368 
+ 2501      436C6173 
+ 2502              	.LASF22:
+ 2503 0439 62756666 		.ascii	"buffOffset\000"
+ 2503      4F666673 
+ 2503      657400
+ 2504              	.LASF55:
+ 2505 0444 55534246 		.ascii	"USBFS_1_transferState\000"
+ 2505      535F315F 
+ 2505      7472616E 
+ 2505      73666572 
+ 2505      53746174 
+ 2506              	.LASF47:
+ 2507 045a 55534246 		.ascii	"USBFS_1_HandleIN\000"
+ 2507      535F315F 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 64
+
+
+ 2507      48616E64 
+ 2507      6C65494E 
+ 2507      00
+ 2508              	.LASF62:
+ 2509 046b 55534246 		.ascii	"USBFS_1_deviceAddress\000"
+ 2509      535F315F 
+ 2509      64657669 
+ 2509      63654164 
+ 2509      64726573 
+ 2510              	.LASF79:
+ 2511 0481 55534246 		.ascii	"USBFS_1_InitializeStatusBlock\000"
+ 2511      535F315F 
+ 2511      496E6974 
+ 2511      69616C69 
+ 2511      7A655374 
+ 2512              	.LASF76:
+ 2513 049f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\USBFS_1_drv.c\000"
+ 2513      6E657261 
+ 2513      7465645F 
+ 2513      536F7572 
+ 2513      63655C50 
+ 2514              	.LASF53:
+ 2515 04c6 55534246 		.ascii	"USBFS_1_InitControlWrite\000"
+ 2515      535F315F 
+ 2515      496E6974 
+ 2515      436F6E74 
+ 2515      726F6C57 
+ 2516              	.LASF75:
+ 2517 04df 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2517      4320342E 
+ 2517      392E3320 
+ 2517      32303135 
+ 2517      30333033 
+ 2518 0512 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 2518      20726576 
+ 2518      6973696F 
+ 2518      6E203232 
+ 2518      31323230 
+ 2519 0545 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2519      66756E63 
+ 2519      74696F6E 
+ 2519      2D736563 
+ 2519      74696F6E 
+ 2520              	.LASF51:
+ 2521 056d 78666572 		.ascii	"xferCount\000"
+ 2521      436F756E 
+ 2521      7400
+ 2522              	.LASF77:
+ 2523 0577 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Senior Project C"
+ 2523      73657273 
+ 2523      5C49616E 
+ 2523      5C446F63 
+ 2523      756D656E 
+ 2524 05a5 68697020 		.ascii	"hip Design\\Wave Generator\\Wave Generator.cydsn\000"
+ 2524      44657369 
+ 2524      676E5C57 
+ 2524      61766520 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccURMmQY.s 			page 65
+
+
+ 2524      47656E65 
+ 2525              	.LASF67:
+ 2526 05d4 55534246 		.ascii	"USBFS_1_ep0Toggle\000"
+ 2526      535F315F 
+ 2526      65703054 
+ 2526      6F67676C 
+ 2526      6500
+ 2527              	.LASF35:
+ 2528 05e6 55534246 		.ascii	"USBFS_1_ControlWriteDataStage\000"
+ 2528      535F315F 
+ 2528      436F6E74 
+ 2528      726F6C57 
+ 2528      72697465 
+ 2529              	.LASF68:
+ 2530 0604 55534246 		.ascii	"USBFS_1_lastPacketSize\000"
+ 2530      535F315F 
+ 2530      6C617374 
+ 2530      5061636B 
+ 2530      65745369 
+ 2531              	.LASF46:
+ 2532 061b 55534246 		.ascii	"USBFS_1_NoDataControlStatusStage\000"
+ 2532      535F315F 
+ 2532      4E6F4461 
+ 2532      7461436F 
+ 2532      6E74726F 
+ 2533              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

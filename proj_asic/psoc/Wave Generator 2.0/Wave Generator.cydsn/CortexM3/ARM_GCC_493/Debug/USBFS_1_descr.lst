@@ -1,0 +1,859 @@
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"USBFS_1_descr.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	USBFS_1_TABLE
+  19              		.global	USBFS_1_DEVICE0_TABLE
+  20              		.global	USBFS_1_DEVICE0_CONFIGURATION0_TABLE
+  21              		.global	USBFS_1_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+  22              		.global	USBFS_1_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+  23              		.global	USBFS_1_STRING_DESCRIPTORS
+  24              		.global	USBFS_1_DEVICE0_CONFIGURATION0_DESCR
+  25              		.global	USBFS_1_DEVICE0_DESCR
+  26              		.section	.rodata
+  27              		.align	2
+  28              		.type	USBFS_1_TABLE, %object
+  29              		.size	USBFS_1_TABLE, 8
+  30              	USBFS_1_TABLE:
+  31 0000 01       		.byte	1
+  32 0001 000000   		.space	3
+  33 0004 00000000 		.word	USBFS_1_DEVICE0_TABLE
+  34              		.type	USBFS_1_DEVICE0_TABLE, %object
+  35              		.size	USBFS_1_DEVICE0_TABLE, 16
+  36              	USBFS_1_DEVICE0_TABLE:
+  37 0008 01       		.byte	1
+  38 0009 000000   		.space	3
+  39 000c 00000000 		.word	USBFS_1_DEVICE0_DESCR
+  40 0010 01       		.byte	1
+  41 0011 000000   		.space	3
+  42 0014 00000000 		.word	USBFS_1_DEVICE0_CONFIGURATION0_TABLE
+  43              		.type	USBFS_1_DEVICE0_CONFIGURATION0_TABLE, %object
+  44              		.size	USBFS_1_DEVICE0_CONFIGURATION0_TABLE, 32
+  45              	USBFS_1_DEVICE0_CONFIGURATION0_TABLE:
+  46 0018 01       		.byte	1
+  47 0019 000000   		.space	3
+  48 001c 00000000 		.word	USBFS_1_DEVICE0_CONFIGURATION0_DESCR
+  49 0020 02       		.byte	2
+  50 0021 000000   		.space	3
+  51 0024 00000000 		.word	USBFS_1_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+  52 0028 00       		.byte	0
+  53 0029 000000   		.space	3
+  54 002c 00000000 		.word	0
+  55 0030 00       		.byte	0
+  56 0031 000000   		.space	3
+  57 0034 00000000 		.word	USBFS_1_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 2
+
+
+  58              		.type	USBFS_1_DEVICE0_CONFIGURATION0_INTERFACE_CLASS, %object
+  59              		.size	USBFS_1_DEVICE0_CONFIGURATION0_INTERFACE_CLASS, 1
+  60              	USBFS_1_DEVICE0_CONFIGURATION0_INTERFACE_CLASS:
+  61 0038 FF       		.byte	-1
+  62 0039 000000   		.space	3
+  63              		.type	USBFS_1_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE, %object
+  64              		.size	USBFS_1_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE, 16
+  65              	USBFS_1_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE:
+  66 003c 00       		.byte	0
+  67 003d 00       		.byte	0
+  68 003e 81       		.byte	-127
+  69 003f 02       		.byte	2
+  70 0040 4000     		.short	64
+  71 0042 FF       		.byte	-1
+  72 0043 00       		.space	1
+  73 0044 00       		.byte	0
+  74 0045 00       		.byte	0
+  75 0046 02       		.byte	2
+  76 0047 02       		.byte	2
+  77 0048 4000     		.short	64
+  78 004a FF       		.byte	-1
+  79 004b 00       		.space	1
+  80              		.type	USBFS_1_STRING_DESCRIPTORS, %object
+  81              		.size	USBFS_1_STRING_DESCRIPTORS, 31
+  82              	USBFS_1_STRING_DESCRIPTORS:
+  83 004c 04       		.byte	4
+  84 004d 03       		.byte	3
+  85 004e 09       		.byte	9
+  86 004f 04       		.byte	4
+  87 0050 10       		.byte	16
+  88 0051 03       		.byte	3
+  89 0052 43       		.byte	67
+  90 0053 00       		.byte	0
+  91 0054 79       		.byte	121
+  92 0055 00       		.byte	0
+  93 0056 70       		.byte	112
+  94 0057 00       		.byte	0
+  95 0058 72       		.byte	114
+  96 0059 00       		.byte	0
+  97 005a 65       		.byte	101
+  98 005b 00       		.byte	0
+  99 005c 73       		.byte	115
+ 100 005d 00       		.byte	0
+ 101 005e 73       		.byte	115
+ 102 005f 00       		.byte	0
+ 103 0060 0A       		.byte	10
+ 104 0061 03       		.byte	3
+ 105 0062 42       		.byte	66
+ 106 0063 00       		.byte	0
+ 107 0064 75       		.byte	117
+ 108 0065 00       		.byte	0
+ 109 0066 6C       		.byte	108
+ 110 0067 00       		.byte	0
+ 111 0068 6B       		.byte	107
+ 112 0069 00       		.byte	0
+ 113 006a 00       		.byte	0
+ 114 006b 00       		.space	1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 3
+
+
+ 115              		.type	USBFS_1_DEVICE0_CONFIGURATION0_DESCR, %object
+ 116              		.size	USBFS_1_DEVICE0_CONFIGURATION0_DESCR, 32
+ 117              	USBFS_1_DEVICE0_CONFIGURATION0_DESCR:
+ 118 006c 09       		.byte	9
+ 119 006d 02       		.byte	2
+ 120 006e 20       		.byte	32
+ 121 006f 00       		.byte	0
+ 122 0070 01       		.byte	1
+ 123 0071 01       		.byte	1
+ 124 0072 00       		.byte	0
+ 125 0073 80       		.byte	-128
+ 126 0074 0A       		.byte	10
+ 127 0075 09       		.byte	9
+ 128 0076 04       		.byte	4
+ 129 0077 00       		.byte	0
+ 130 0078 00       		.byte	0
+ 131 0079 02       		.byte	2
+ 132 007a FF       		.byte	-1
+ 133 007b 00       		.byte	0
+ 134 007c 00       		.byte	0
+ 135 007d 00       		.byte	0
+ 136 007e 07       		.byte	7
+ 137 007f 05       		.byte	5
+ 138 0080 81       		.byte	-127
+ 139 0081 02       		.byte	2
+ 140 0082 40       		.byte	64
+ 141 0083 00       		.byte	0
+ 142 0084 0A       		.byte	10
+ 143 0085 07       		.byte	7
+ 144 0086 05       		.byte	5
+ 145 0087 02       		.byte	2
+ 146 0088 02       		.byte	2
+ 147 0089 40       		.byte	64
+ 148 008a 00       		.byte	0
+ 149 008b 0A       		.byte	10
+ 150              		.type	USBFS_1_DEVICE0_DESCR, %object
+ 151              		.size	USBFS_1_DEVICE0_DESCR, 18
+ 152              	USBFS_1_DEVICE0_DESCR:
+ 153 008c 12       		.byte	18
+ 154 008d 01       		.byte	1
+ 155 008e 00       		.byte	0
+ 156 008f 02       		.byte	2
+ 157 0090 FF       		.byte	-1
+ 158 0091 00       		.byte	0
+ 159 0092 00       		.byte	0
+ 160 0093 08       		.byte	8
+ 161 0094 B4       		.byte	-76
+ 162 0095 04       		.byte	4
+ 163 0096 10       		.byte	16
+ 164 0097 00       		.byte	0
+ 165 0098 00       		.byte	0
+ 166 0099 00       		.byte	0
+ 167 009a 01       		.byte	1
+ 168 009b 02       		.byte	2
+ 169 009c 00       		.byte	0
+ 170 009d 01       		.byte	1
+ 171 009e 0000     		.text
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 4
+
+
+ 172              	.Letext0:
+ 173              		.file 1 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 174              		.file 2 ".\\Generated_Source\\PSoC5\\USBFS_1.h"
+ 175              		.file 3 ".\\Generated_Source\\PSoC5\\USBFS_1_descr.c"
+ 176              		.section	.debug_info,"",%progbits
+ 177              	.Ldebug_info0:
+ 178 0000 4F020000 		.4byte	0x24f
+ 179 0004 0400     		.2byte	0x4
+ 180 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 181 000a 04       		.byte	0x4
+ 182 000b 01       		.uleb128 0x1
+ 183 000c 6A010000 		.4byte	.LASF32
+ 184 0010 01       		.byte	0x1
+ 185 0011 D2020000 		.4byte	.LASF33
+ 186 0015 85000000 		.4byte	.LASF34
+ 187 0019 00000000 		.4byte	.Ldebug_line0
+ 188 001d 02       		.uleb128 0x2
+ 189 001e 01       		.byte	0x1
+ 190 001f 06       		.byte	0x6
+ 191 0020 52000000 		.4byte	.LASF0
+ 192 0024 02       		.uleb128 0x2
+ 193 0025 01       		.byte	0x1
+ 194 0026 08       		.byte	0x8
+ 195 0027 6C000000 		.4byte	.LASF1
+ 196 002b 02       		.uleb128 0x2
+ 197 002c 02       		.byte	0x2
+ 198 002d 05       		.byte	0x5
+ 199 002e 6E020000 		.4byte	.LASF2
+ 200 0032 02       		.uleb128 0x2
+ 201 0033 02       		.byte	0x2
+ 202 0034 07       		.byte	0x7
+ 203 0035 09000000 		.4byte	.LASF3
+ 204 0039 02       		.uleb128 0x2
+ 205 003a 04       		.byte	0x4
+ 206 003b 05       		.byte	0x5
+ 207 003c 00000000 		.4byte	.LASF4
+ 208 0040 02       		.uleb128 0x2
+ 209 0041 04       		.byte	0x4
+ 210 0042 07       		.byte	0x7
+ 211 0043 E2000000 		.4byte	.LASF5
+ 212 0047 02       		.uleb128 0x2
+ 213 0048 08       		.byte	0x8
+ 214 0049 05       		.byte	0x5
+ 215 004a 50020000 		.4byte	.LASF6
+ 216 004e 02       		.uleb128 0x2
+ 217 004f 08       		.byte	0x8
+ 218 0050 07       		.byte	0x7
+ 219 0051 29020000 		.4byte	.LASF7
+ 220 0055 03       		.uleb128 0x3
+ 221 0056 04       		.byte	0x4
+ 222 0057 05       		.byte	0x5
+ 223 0058 696E7400 		.ascii	"int\000"
+ 224 005c 02       		.uleb128 0x2
+ 225 005d 04       		.byte	0x4
+ 226 005e 07       		.byte	0x7
+ 227 005f F8010000 		.4byte	.LASF8
+ 228 0063 04       		.uleb128 0x4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 5
+
+
+ 229 0064 78020000 		.4byte	.LASF9
+ 230 0068 01       		.byte	0x1
+ 231 0069 5B       		.byte	0x5b
+ 232 006a 24000000 		.4byte	0x24
+ 233 006e 04       		.uleb128 0x4
+ 234 006f 32010000 		.4byte	.LASF10
+ 235 0073 01       		.byte	0x1
+ 236 0074 5C       		.byte	0x5c
+ 237 0075 32000000 		.4byte	0x32
+ 238 0079 02       		.uleb128 0x2
+ 239 007a 04       		.byte	0x4
+ 240 007b 04       		.byte	0x4
+ 241 007c 41000000 		.4byte	.LASF11
+ 242 0080 02       		.uleb128 0x2
+ 243 0081 08       		.byte	0x8
+ 244 0082 04       		.byte	0x4
+ 245 0083 2B010000 		.4byte	.LASF12
+ 246 0087 02       		.uleb128 0x2
+ 247 0088 01       		.byte	0x1
+ 248 0089 08       		.byte	0x8
+ 249 008a 5E020000 		.4byte	.LASF13
+ 250 008e 02       		.uleb128 0x2
+ 251 008f 04       		.byte	0x4
+ 252 0090 07       		.byte	0x7
+ 253 0091 47020000 		.4byte	.LASF14
+ 254 0095 05       		.uleb128 0x5
+ 255 0096 08       		.byte	0x8
+ 256 0097 02       		.byte	0x2
+ 257 0098 83       		.byte	0x83
+ 258 0099 E6000000 		.4byte	0xe6
+ 259 009d 06       		.uleb128 0x6
+ 260 009e 7E020000 		.4byte	.LASF15
+ 261 00a2 02       		.byte	0x2
+ 262 00a3 85       		.byte	0x85
+ 263 00a4 63000000 		.4byte	0x63
+ 264 00a8 00       		.byte	0
+ 265 00a9 06       		.uleb128 0x6
+ 266 00aa 47000000 		.4byte	.LASF16
+ 267 00ae 02       		.byte	0x2
+ 268 00af 86       		.byte	0x86
+ 269 00b0 63000000 		.4byte	0x63
+ 270 00b4 01       		.byte	0x1
+ 271 00b5 06       		.uleb128 0x6
+ 272 00b6 F4000000 		.4byte	.LASF17
+ 273 00ba 02       		.byte	0x2
+ 274 00bb 87       		.byte	0x87
+ 275 00bc 63000000 		.4byte	0x63
+ 276 00c0 02       		.byte	0x2
+ 277 00c1 06       		.uleb128 0x6
+ 278 00c2 7A000000 		.4byte	.LASF18
+ 279 00c6 02       		.byte	0x2
+ 280 00c7 88       		.byte	0x88
+ 281 00c8 63000000 		.4byte	0x63
+ 282 00cc 03       		.byte	0x3
+ 283 00cd 06       		.uleb128 0x6
+ 284 00ce 63020000 		.4byte	.LASF19
+ 285 00d2 02       		.byte	0x2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 6
+
+
+ 286 00d3 89       		.byte	0x89
+ 287 00d4 6E000000 		.4byte	0x6e
+ 288 00d8 04       		.byte	0x4
+ 289 00d9 06       		.uleb128 0x6
+ 290 00da 20030000 		.4byte	.LASF20
+ 291 00de 02       		.byte	0x2
+ 292 00df 8A       		.byte	0x8a
+ 293 00e0 63000000 		.4byte	0x63
+ 294 00e4 06       		.byte	0x6
+ 295 00e5 00       		.byte	0
+ 296 00e6 04       		.uleb128 0x4
+ 297 00e7 0F010000 		.4byte	.LASF21
+ 298 00eb 02       		.byte	0x2
+ 299 00ec 8B       		.byte	0x8b
+ 300 00ed 95000000 		.4byte	0x95
+ 301 00f1 05       		.uleb128 0x5
+ 302 00f2 08       		.byte	0x8
+ 303 00f3 02       		.byte	0x2
+ 304 00f4 9B       		.byte	0x9b
+ 305 00f5 10010000 		.4byte	0x110
+ 306 00f9 07       		.uleb128 0x7
+ 307 00fa 6300     		.ascii	"c\000"
+ 308 00fc 02       		.byte	0x2
+ 309 00fd 9D       		.byte	0x9d
+ 310 00fe 63000000 		.4byte	0x63
+ 311 0102 00       		.byte	0
+ 312 0103 06       		.uleb128 0x6
+ 313 0104 40020000 		.4byte	.LASF22
+ 314 0108 02       		.byte	0x2
+ 315 0109 9E       		.byte	0x9e
+ 316 010a 10010000 		.4byte	0x110
+ 317 010e 04       		.byte	0x4
+ 318 010f 00       		.byte	0
+ 319 0110 08       		.uleb128 0x8
+ 320 0111 04       		.byte	0x4
+ 321 0112 16010000 		.4byte	0x116
+ 322 0116 09       		.uleb128 0x9
+ 323 0117 04       		.uleb128 0x4
+ 324 0118 05020000 		.4byte	.LASF23
+ 325 011c 02       		.byte	0x2
+ 326 011d 9F       		.byte	0x9f
+ 327 011e F1000000 		.4byte	0xf1
+ 328 0122 0A       		.uleb128 0xa
+ 329 0123 63000000 		.4byte	0x63
+ 330 0127 32010000 		.4byte	0x132
+ 331 012b 0B       		.uleb128 0xb
+ 332 012c 8E000000 		.4byte	0x8e
+ 333 0130 11       		.byte	0x11
+ 334 0131 00       		.byte	0
+ 335 0132 0C       		.uleb128 0xc
+ 336 0133 13020000 		.4byte	.LASF24
+ 337 0137 03       		.byte	0x3
+ 338 0138 26       		.byte	0x26
+ 339 0139 43010000 		.4byte	0x143
+ 340 013d 05       		.uleb128 0x5
+ 341 013e 03       		.byte	0x3
+ 342 013f 00000000 		.4byte	USBFS_1_DEVICE0_DESCR
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 7
+
+
+ 343 0143 0D       		.uleb128 0xd
+ 344 0144 22010000 		.4byte	0x122
+ 345 0148 0A       		.uleb128 0xa
+ 346 0149 63000000 		.4byte	0x63
+ 347 014d 58010000 		.4byte	0x158
+ 348 0151 0B       		.uleb128 0xb
+ 349 0152 8E000000 		.4byte	0x8e
+ 350 0156 1F       		.byte	0x1f
+ 351 0157 00       		.byte	0
+ 352 0158 0C       		.uleb128 0xc
+ 353 0159 1C000000 		.4byte	.LASF25
+ 354 015d 03       		.byte	0x3
+ 355 015e 39       		.byte	0x39
+ 356 015f 69010000 		.4byte	0x169
+ 357 0163 05       		.uleb128 0x5
+ 358 0164 03       		.byte	0x3
+ 359 0165 00000000 		.4byte	USBFS_1_DEVICE0_CONFIGURATION0_DESCR
+ 360 0169 0D       		.uleb128 0xd
+ 361 016a 48010000 		.4byte	0x148
+ 362 016e 0A       		.uleb128 0xa
+ 363 016f E6000000 		.4byte	0xe6
+ 364 0173 7E010000 		.4byte	0x17e
+ 365 0177 0B       		.uleb128 0xb
+ 366 0178 8E000000 		.4byte	0x8e
+ 367 017c 01       		.byte	0x1
+ 368 017d 00       		.byte	0
+ 369 017e 0C       		.uleb128 0xc
+ 370 017f 39010000 		.4byte	.LASF26
+ 371 0183 03       		.byte	0x3
+ 372 0184 87       		.byte	0x87
+ 373 0185 8F010000 		.4byte	0x18f
+ 374 0189 05       		.uleb128 0x5
+ 375 018a 03       		.byte	0x3
+ 376 018b 00000000 		.4byte	USBFS_1_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+ 377 018f 0D       		.uleb128 0xd
+ 378 0190 6E010000 		.4byte	0x16e
+ 379 0194 0A       		.uleb128 0xa
+ 380 0195 63000000 		.4byte	0x63
+ 381 0199 A4010000 		.4byte	0x1a4
+ 382 019d 0B       		.uleb128 0xb
+ 383 019e 8E000000 		.4byte	0x8e
+ 384 01a2 00       		.byte	0
+ 385 01a3 00       		.byte	0
+ 386 01a4 0C       		.uleb128 0xc
+ 387 01a5 A3020000 		.4byte	.LASF27
+ 388 01a9 03       		.byte	0x3
+ 389 01aa 8C       		.byte	0x8c
+ 390 01ab B5010000 		.4byte	0x1b5
+ 391 01af 05       		.uleb128 0x5
+ 392 01b0 03       		.byte	0x3
+ 393 01b1 00000000 		.4byte	USBFS_1_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+ 394 01b5 0D       		.uleb128 0xd
+ 395 01b6 94010000 		.4byte	0x194
+ 396 01ba 0A       		.uleb128 0xa
+ 397 01bb 17010000 		.4byte	0x117
+ 398 01bf CA010000 		.4byte	0x1ca
+ 399 01c3 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 8
+
+
+ 400 01c4 8E000000 		.4byte	0x8e
+ 401 01c8 03       		.byte	0x3
+ 402 01c9 00       		.byte	0
+ 403 01ca 0C       		.uleb128 0xc
+ 404 01cb FB020000 		.4byte	.LASF28
+ 405 01cf 03       		.byte	0x3
+ 406 01d0 94       		.byte	0x94
+ 407 01d1 DB010000 		.4byte	0x1db
+ 408 01d5 05       		.uleb128 0x5
+ 409 01d6 03       		.byte	0x3
+ 410 01d7 00000000 		.4byte	USBFS_1_DEVICE0_CONFIGURATION0_TABLE
+ 411 01db 0D       		.uleb128 0xd
+ 412 01dc BA010000 		.4byte	0x1ba
+ 413 01e0 0A       		.uleb128 0xa
+ 414 01e1 17010000 		.4byte	0x117
+ 415 01e5 F0010000 		.4byte	0x1f0
+ 416 01e9 0B       		.uleb128 0xb
+ 417 01ea 8E000000 		.4byte	0x8e
+ 418 01ee 01       		.byte	0x1
+ 419 01ef 00       		.byte	0
+ 420 01f0 0C       		.uleb128 0xc
+ 421 01f1 F9000000 		.4byte	.LASF29
+ 422 01f5 03       		.byte	0x3
+ 423 01f6 9E       		.byte	0x9e
+ 424 01f7 01020000 		.4byte	0x201
+ 425 01fb 05       		.uleb128 0x5
+ 426 01fc 03       		.byte	0x3
+ 427 01fd 00000000 		.4byte	USBFS_1_DEVICE0_TABLE
+ 428 0201 0D       		.uleb128 0xd
+ 429 0202 E0010000 		.4byte	0x1e0
+ 430 0206 0A       		.uleb128 0xa
+ 431 0207 17010000 		.4byte	0x117
+ 432 020b 16020000 		.4byte	0x216
+ 433 020f 0B       		.uleb128 0xb
+ 434 0210 8E000000 		.4byte	0x8e
+ 435 0214 00       		.byte	0
+ 436 0215 00       		.byte	0
+ 437 0216 0C       		.uleb128 0xc
+ 438 0217 5E000000 		.4byte	.LASF30
+ 439 021b 03       		.byte	0x3
+ 440 021c A5       		.byte	0xa5
+ 441 021d 27020000 		.4byte	0x227
+ 442 0221 05       		.uleb128 0x5
+ 443 0222 03       		.byte	0x3
+ 444 0223 00000000 		.4byte	USBFS_1_TABLE
+ 445 0227 0D       		.uleb128 0xd
+ 446 0228 06020000 		.4byte	0x206
+ 447 022c 0A       		.uleb128 0xa
+ 448 022d 63000000 		.4byte	0x63
+ 449 0231 3C020000 		.4byte	0x23c
+ 450 0235 0B       		.uleb128 0xb
+ 451 0236 8E000000 		.4byte	0x8e
+ 452 023a 1E       		.byte	0x1e
+ 453 023b 00       		.byte	0
+ 454 023c 0C       		.uleb128 0xc
+ 455 023d 88020000 		.4byte	.LASF31
+ 456 0241 03       		.byte	0x3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 9
+
+
+ 457 0242 65       		.byte	0x65
+ 458 0243 4D020000 		.4byte	0x24d
+ 459 0247 05       		.uleb128 0x5
+ 460 0248 03       		.byte	0x3
+ 461 0249 00000000 		.4byte	USBFS_1_STRING_DESCRIPTORS
+ 462 024d 0D       		.uleb128 0xd
+ 463 024e 2C020000 		.4byte	0x22c
+ 464 0252 00       		.byte	0
+ 465              		.section	.debug_abbrev,"",%progbits
+ 466              	.Ldebug_abbrev0:
+ 467 0000 01       		.uleb128 0x1
+ 468 0001 11       		.uleb128 0x11
+ 469 0002 01       		.byte	0x1
+ 470 0003 25       		.uleb128 0x25
+ 471 0004 0E       		.uleb128 0xe
+ 472 0005 13       		.uleb128 0x13
+ 473 0006 0B       		.uleb128 0xb
+ 474 0007 03       		.uleb128 0x3
+ 475 0008 0E       		.uleb128 0xe
+ 476 0009 1B       		.uleb128 0x1b
+ 477 000a 0E       		.uleb128 0xe
+ 478 000b 10       		.uleb128 0x10
+ 479 000c 17       		.uleb128 0x17
+ 480 000d 00       		.byte	0
+ 481 000e 00       		.byte	0
+ 482 000f 02       		.uleb128 0x2
+ 483 0010 24       		.uleb128 0x24
+ 484 0011 00       		.byte	0
+ 485 0012 0B       		.uleb128 0xb
+ 486 0013 0B       		.uleb128 0xb
+ 487 0014 3E       		.uleb128 0x3e
+ 488 0015 0B       		.uleb128 0xb
+ 489 0016 03       		.uleb128 0x3
+ 490 0017 0E       		.uleb128 0xe
+ 491 0018 00       		.byte	0
+ 492 0019 00       		.byte	0
+ 493 001a 03       		.uleb128 0x3
+ 494 001b 24       		.uleb128 0x24
+ 495 001c 00       		.byte	0
+ 496 001d 0B       		.uleb128 0xb
+ 497 001e 0B       		.uleb128 0xb
+ 498 001f 3E       		.uleb128 0x3e
+ 499 0020 0B       		.uleb128 0xb
+ 500 0021 03       		.uleb128 0x3
+ 501 0022 08       		.uleb128 0x8
+ 502 0023 00       		.byte	0
+ 503 0024 00       		.byte	0
+ 504 0025 04       		.uleb128 0x4
+ 505 0026 16       		.uleb128 0x16
+ 506 0027 00       		.byte	0
+ 507 0028 03       		.uleb128 0x3
+ 508 0029 0E       		.uleb128 0xe
+ 509 002a 3A       		.uleb128 0x3a
+ 510 002b 0B       		.uleb128 0xb
+ 511 002c 3B       		.uleb128 0x3b
+ 512 002d 0B       		.uleb128 0xb
+ 513 002e 49       		.uleb128 0x49
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 10
+
+
+ 514 002f 13       		.uleb128 0x13
+ 515 0030 00       		.byte	0
+ 516 0031 00       		.byte	0
+ 517 0032 05       		.uleb128 0x5
+ 518 0033 13       		.uleb128 0x13
+ 519 0034 01       		.byte	0x1
+ 520 0035 0B       		.uleb128 0xb
+ 521 0036 0B       		.uleb128 0xb
+ 522 0037 3A       		.uleb128 0x3a
+ 523 0038 0B       		.uleb128 0xb
+ 524 0039 3B       		.uleb128 0x3b
+ 525 003a 0B       		.uleb128 0xb
+ 526 003b 01       		.uleb128 0x1
+ 527 003c 13       		.uleb128 0x13
+ 528 003d 00       		.byte	0
+ 529 003e 00       		.byte	0
+ 530 003f 06       		.uleb128 0x6
+ 531 0040 0D       		.uleb128 0xd
+ 532 0041 00       		.byte	0
+ 533 0042 03       		.uleb128 0x3
+ 534 0043 0E       		.uleb128 0xe
+ 535 0044 3A       		.uleb128 0x3a
+ 536 0045 0B       		.uleb128 0xb
+ 537 0046 3B       		.uleb128 0x3b
+ 538 0047 0B       		.uleb128 0xb
+ 539 0048 49       		.uleb128 0x49
+ 540 0049 13       		.uleb128 0x13
+ 541 004a 38       		.uleb128 0x38
+ 542 004b 0B       		.uleb128 0xb
+ 543 004c 00       		.byte	0
+ 544 004d 00       		.byte	0
+ 545 004e 07       		.uleb128 0x7
+ 546 004f 0D       		.uleb128 0xd
+ 547 0050 00       		.byte	0
+ 548 0051 03       		.uleb128 0x3
+ 549 0052 08       		.uleb128 0x8
+ 550 0053 3A       		.uleb128 0x3a
+ 551 0054 0B       		.uleb128 0xb
+ 552 0055 3B       		.uleb128 0x3b
+ 553 0056 0B       		.uleb128 0xb
+ 554 0057 49       		.uleb128 0x49
+ 555 0058 13       		.uleb128 0x13
+ 556 0059 38       		.uleb128 0x38
+ 557 005a 0B       		.uleb128 0xb
+ 558 005b 00       		.byte	0
+ 559 005c 00       		.byte	0
+ 560 005d 08       		.uleb128 0x8
+ 561 005e 0F       		.uleb128 0xf
+ 562 005f 00       		.byte	0
+ 563 0060 0B       		.uleb128 0xb
+ 564 0061 0B       		.uleb128 0xb
+ 565 0062 49       		.uleb128 0x49
+ 566 0063 13       		.uleb128 0x13
+ 567 0064 00       		.byte	0
+ 568 0065 00       		.byte	0
+ 569 0066 09       		.uleb128 0x9
+ 570 0067 26       		.uleb128 0x26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 11
+
+
+ 571 0068 00       		.byte	0
+ 572 0069 00       		.byte	0
+ 573 006a 00       		.byte	0
+ 574 006b 0A       		.uleb128 0xa
+ 575 006c 01       		.uleb128 0x1
+ 576 006d 01       		.byte	0x1
+ 577 006e 49       		.uleb128 0x49
+ 578 006f 13       		.uleb128 0x13
+ 579 0070 01       		.uleb128 0x1
+ 580 0071 13       		.uleb128 0x13
+ 581 0072 00       		.byte	0
+ 582 0073 00       		.byte	0
+ 583 0074 0B       		.uleb128 0xb
+ 584 0075 21       		.uleb128 0x21
+ 585 0076 00       		.byte	0
+ 586 0077 49       		.uleb128 0x49
+ 587 0078 13       		.uleb128 0x13
+ 588 0079 2F       		.uleb128 0x2f
+ 589 007a 0B       		.uleb128 0xb
+ 590 007b 00       		.byte	0
+ 591 007c 00       		.byte	0
+ 592 007d 0C       		.uleb128 0xc
+ 593 007e 34       		.uleb128 0x34
+ 594 007f 00       		.byte	0
+ 595 0080 03       		.uleb128 0x3
+ 596 0081 0E       		.uleb128 0xe
+ 597 0082 3A       		.uleb128 0x3a
+ 598 0083 0B       		.uleb128 0xb
+ 599 0084 3B       		.uleb128 0x3b
+ 600 0085 0B       		.uleb128 0xb
+ 601 0086 49       		.uleb128 0x49
+ 602 0087 13       		.uleb128 0x13
+ 603 0088 3F       		.uleb128 0x3f
+ 604 0089 19       		.uleb128 0x19
+ 605 008a 02       		.uleb128 0x2
+ 606 008b 18       		.uleb128 0x18
+ 607 008c 00       		.byte	0
+ 608 008d 00       		.byte	0
+ 609 008e 0D       		.uleb128 0xd
+ 610 008f 26       		.uleb128 0x26
+ 611 0090 00       		.byte	0
+ 612 0091 49       		.uleb128 0x49
+ 613 0092 13       		.uleb128 0x13
+ 614 0093 00       		.byte	0
+ 615 0094 00       		.byte	0
+ 616 0095 00       		.byte	0
+ 617              		.section	.debug_aranges,"",%progbits
+ 618 0000 14000000 		.4byte	0x14
+ 619 0004 0200     		.2byte	0x2
+ 620 0006 00000000 		.4byte	.Ldebug_info0
+ 621 000a 04       		.byte	0x4
+ 622 000b 00       		.byte	0
+ 623 000c 0000     		.2byte	0
+ 624 000e 0000     		.2byte	0
+ 625 0010 00000000 		.4byte	0
+ 626 0014 00000000 		.4byte	0
+ 627              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 12
+
+
+ 628              	.Ldebug_line0:
+ 629 0000 5F000000 		.section	.debug_str,"MS",%progbits,1
+ 629      02005900 
+ 629      00000201 
+ 629      FB0E0D00 
+ 629      01010101 
+ 630              	.LASF4:
+ 631 0000 6C6F6E67 		.ascii	"long int\000"
+ 631      20696E74 
+ 631      00
+ 632              	.LASF3:
+ 633 0009 73686F72 		.ascii	"short unsigned int\000"
+ 633      7420756E 
+ 633      7369676E 
+ 633      65642069 
+ 633      6E7400
+ 634              	.LASF25:
+ 635 001c 55534246 		.ascii	"USBFS_1_DEVICE0_CONFIGURATION0_DESCR\000"
+ 635      535F315F 
+ 635      44455649 
+ 635      4345305F 
+ 635      434F4E46 
+ 636              	.LASF11:
+ 637 0041 666C6F61 		.ascii	"float\000"
+ 637      7400
+ 638              	.LASF16:
+ 639 0047 616C7453 		.ascii	"altSetting\000"
+ 639      65747469 
+ 639      6E6700
+ 640              	.LASF0:
+ 641 0052 7369676E 		.ascii	"signed char\000"
+ 641      65642063 
+ 641      68617200 
+ 642              	.LASF30:
+ 643 005e 55534246 		.ascii	"USBFS_1_TABLE\000"
+ 643      535F315F 
+ 643      5441424C 
+ 643      4500
+ 644              	.LASF1:
+ 645 006c 756E7369 		.ascii	"unsigned char\000"
+ 645      676E6564 
+ 645      20636861 
+ 645      7200
+ 646              	.LASF18:
+ 647 007a 61747472 		.ascii	"attributes\000"
+ 647      69627574 
+ 647      657300
+ 648              	.LASF34:
+ 649 0085 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Senior Project C"
+ 649      73657273 
+ 649      5C49616E 
+ 649      5C446F63 
+ 649      756D656E 
+ 650 00b3 68697020 		.ascii	"hip Design\\Wave Generator\\Wave Generator.cydsn\000"
+ 650      44657369 
+ 650      676E5C57 
+ 650      61766520 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 13
+
+
+ 650      47656E65 
+ 651              	.LASF5:
+ 652 00e2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 652      20756E73 
+ 652      69676E65 
+ 652      6420696E 
+ 652      7400
+ 653              	.LASF17:
+ 654 00f4 61646472 		.ascii	"addr\000"
+ 654      00
+ 655              	.LASF29:
+ 656 00f9 55534246 		.ascii	"USBFS_1_DEVICE0_TABLE\000"
+ 656      535F315F 
+ 656      44455649 
+ 656      4345305F 
+ 656      5441424C 
+ 657              	.LASF21:
+ 658 010f 545F5553 		.ascii	"T_USBFS_1_EP_SETTINGS_BLOCK\000"
+ 658      4246535F 
+ 658      315F4550 
+ 658      5F534554 
+ 658      54494E47 
+ 659              	.LASF12:
+ 660 012b 646F7562 		.ascii	"double\000"
+ 660      6C6500
+ 661              	.LASF10:
+ 662 0132 75696E74 		.ascii	"uint16\000"
+ 662      313600
+ 663              	.LASF26:
+ 664 0139 55534246 		.ascii	"USBFS_1_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE\000"
+ 664      535F315F 
+ 664      44455649 
+ 664      4345305F 
+ 664      434F4E46 
+ 665              	.LASF32:
+ 666 016a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 666      4320342E 
+ 666      392E3320 
+ 666      32303135 
+ 666      30333033 
+ 667 019d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 667      20726576 
+ 667      6973696F 
+ 667      6E203232 
+ 667      31323230 
+ 668 01d0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 668      66756E63 
+ 668      74696F6E 
+ 668      2D736563 
+ 668      74696F6E 
+ 669              	.LASF8:
+ 670 01f8 756E7369 		.ascii	"unsigned int\000"
+ 670      676E6564 
+ 670      20696E74 
+ 670      00
+ 671              	.LASF23:
+ 672 0205 545F5553 		.ascii	"T_USBFS_1_LUT\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 14
+
+
+ 672      4246535F 
+ 672      315F4C55 
+ 672      5400
+ 673              	.LASF24:
+ 674 0213 55534246 		.ascii	"USBFS_1_DEVICE0_DESCR\000"
+ 674      535F315F 
+ 674      44455649 
+ 674      4345305F 
+ 674      44455343 
+ 675              	.LASF7:
+ 676 0229 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 676      206C6F6E 
+ 676      6720756E 
+ 676      7369676E 
+ 676      65642069 
+ 677              	.LASF22:
+ 678 0240 705F6C69 		.ascii	"p_list\000"
+ 678      737400
+ 679              	.LASF14:
+ 680 0247 73697A65 		.ascii	"sizetype\000"
+ 680      74797065 
+ 680      00
+ 681              	.LASF6:
+ 682 0250 6C6F6E67 		.ascii	"long long int\000"
+ 682      206C6F6E 
+ 682      6720696E 
+ 682      7400
+ 683              	.LASF13:
+ 684 025e 63686172 		.ascii	"char\000"
+ 684      00
+ 685              	.LASF19:
+ 686 0263 62756666 		.ascii	"bufferSize\000"
+ 686      65725369 
+ 686      7A6500
+ 687              	.LASF2:
+ 688 026e 73686F72 		.ascii	"short int\000"
+ 688      7420696E 
+ 688      7400
+ 689              	.LASF9:
+ 690 0278 75696E74 		.ascii	"uint8\000"
+ 690      3800
+ 691              	.LASF15:
+ 692 027e 696E7465 		.ascii	"interface\000"
+ 692      72666163 
+ 692      6500
+ 693              	.LASF31:
+ 694 0288 55534246 		.ascii	"USBFS_1_STRING_DESCRIPTORS\000"
+ 694      535F315F 
+ 694      53545249 
+ 694      4E475F44 
+ 694      45534352 
+ 695              	.LASF27:
+ 696 02a3 55534246 		.ascii	"USBFS_1_DEVICE0_CONFIGURATION0_INTERFACE_CLASS\000"
+ 696      535F315F 
+ 696      44455649 
+ 696      4345305F 
+ 696      434F4E46 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc6VFk5e.s 			page 15
+
+
+ 697              	.LASF33:
+ 698 02d2 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\USBFS_1_descr.c\000"
+ 698      6E657261 
+ 698      7465645F 
+ 698      536F7572 
+ 698      63655C50 
+ 699              	.LASF28:
+ 700 02fb 55534246 		.ascii	"USBFS_1_DEVICE0_CONFIGURATION0_TABLE\000"
+ 700      535F315F 
+ 700      44455649 
+ 700      4345305F 
+ 700      434F4E46 
+ 701              	.LASF20:
+ 702 0320 624D6973 		.ascii	"bMisc\000"
+ 702      6300
+ 703              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
