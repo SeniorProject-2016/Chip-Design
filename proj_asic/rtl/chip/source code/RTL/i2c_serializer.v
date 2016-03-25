@@ -18,9 +18,9 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module I2C_Serializer(
+module Serializer(
 	 input i2c_scl,
-	 input i2c_sda,
+//	 input i2c_sda,
     output reg i2c_sda_out,
 //	 input i2c_sda_in,
 //    input data_ack,
@@ -29,29 +29,29 @@ module I2C_Serializer(
     input Clock,
     input reset,
     input [7:0] i2c_rdata,
-    input i2c_xfc_read,
-	 input stop_out
+    input i2c_xfc_read
+	 //input stop_out
     );
 
 //Create SCL Pulse Signals, and states
-wire i2c_sda_pos_pulse;
+//wire i2c_sda_pos_pulse;
 wire i2c_sda_neg_pulse;
-wire i2c_scl_pos_pulse;
+//wire i2c_scl_pos_pulse;
 wire i2c_scl_neg_pulse;
-reg Q_sda;
+//reg Q_sda;
 reg Q_scl;
 //reg sda_state;
-reg scl_state;
+//reg scl_state;
 
 always@(posedge Clock)
 begin
-	Q_sda = !i2c_sda;
+	//Q_sda = !i2c_sda;
 	Q_scl = !i2c_scl;
 end
 //assign i2c_sda_neg_pulse = !Q_sda && !i2c_sda;
-assign i2c_sda_pos_pulse = !Q_sda && i2c_sda;
+//assign i2c_sda_pos_pulse = !Q_sda && i2c_sda;
 assign i2c_scl_neg_pulse = !Q_scl && !i2c_scl;
-assign i2c_scl_pos_pulse = !Q_scl && i2c_scl;
+//assign i2c_scl_pos_pulse = !Q_scl && i2c_scl;
 
 /*always@(posedge i2c_sda_pos_pulse or posedge i2c_sda_neg_pulse)
 begin
@@ -65,7 +65,7 @@ begin
 	end
 end*/
 
-always@(posedge i2c_scl_pos_pulse or posedge i2c_scl_neg_pulse)
+/* always@(posedge i2c_scl_pos_pulse or posedge i2c_scl_neg_pulse)
 begin
 	if (i2c_scl_pos_pulse)
 	begin
@@ -75,14 +75,14 @@ begin
     begin
 	scl_state <= 0;
 	end
-end
+end */
 
 //Stop Conditions
 reg stop;
 	//initial stop = 0;
 always@(posedge Clock or negedge reset)
 begin
-	if (!reset | (!scl_state & i2c_sda_pos_pulse) | serialize_done | stop_out)
+	if (!reset /*| (!scl_state & i2c_sda_pos_pulse) */| serialize_done /*| stop_out*/)
 	begin
 	stop <= 1;
 	end
@@ -124,6 +124,9 @@ reg serialize_done;
 reg serialize_ack_done;
 reg first_data_bit_ready;
 
+wire i2c_ack_state;
+assign i2c_ack_state = i2c_ack;
+
 always@(posedge Clock)
 begin
 	if(stop)
@@ -132,11 +135,13 @@ begin
 	serialize_done <= 0;
 	serialize_bit_counter <= 8'b00000000;
 	first_data_bit_ready <= 0;
+	serialize_ack_done <= 0;
 	end
 	
-	else if(i2c_ack)
+	//Serialize General i2c ACK for address match, data
+	else if(i2c_ack_state) 
 	begin
-	i2c_sda_out <= i2c_ack;
+	i2c_sda_out <= i2c_ack_state;
 	serialize_ack_done <= 1;
 	end
 	
@@ -187,6 +192,11 @@ begin
 					end
 	4'b0111 : 	begin
 					i2c_sda_out <= data_read[0];
+					serialize_bit_counter <= 4'b1000;
+					//serialize_done <= 1;
+					end
+	4'b1000 : 	begin
+					//i2c_sda_out <= data_read[0];
 					serialize_bit_counter <= 4'b0000;
 					serialize_done <= 1;
 					end

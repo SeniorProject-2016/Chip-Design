@@ -28,6 +28,7 @@ module trig_generator(clk, rst_n, address, wdata, xfc, trig_i2si_fifo_overrun_cl
         begin
             trig_i2si_fifo_overrun_clr <= 0;
             trig_i2so_fifo_underrun_clr <= 0;
+            trig_filter_ovf_flag_clear <= 0;
         end
         
         else

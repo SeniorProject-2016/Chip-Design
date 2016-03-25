@@ -76,7 +76,7 @@ assign i2c_scl_neg_pulse = !Q_scl && !i2c_scl;
 assign i2c_scl_pos_pulse = Q_scl && i2c_scl;
 
 //Transform local clocked pulses to full waveform states
-always@(posedge i2c_sda_pos_pulse or posedge i2c_sda_neg_pulse /*or Clock*/)
+always@(posedge Clock)
 begin
 	if (i2c_sda_pos_pulse)
 	begin
