@@ -1,9 +1,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2s_in.v
 // Create Date:             10/13/2015 
-// Last Modification:       1/23/2016
+// Last Modification:       3/25/2016
 // Author:                  Kevin Cao
-//
+// Description:             Top Module of I2S In Interface
 //////////////////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 1ps

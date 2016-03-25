@@ -1,26 +1,13 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             filter_mux_tf.v
+// Create Date:             11/23/2015
+// Last Modification:       3/25/2016
+// Author:                  Dhruvit Naik
+// Description:             ????
+//////////////////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   19:29:22 11/23/2015
-// Design Name:   filter_mux
-// Module Name:   E:/23 November/proj_asic/rtl/filter/chip/filter_mux_tf.v
-// Project Name:  chip
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: filter_mux
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 
 module filter_mux_tf;
 
@@ -3142,7 +3129,7 @@ module filter_mux_tf;
 		rdptr = 8;
 	end
 	
-		always
+	always
 	begin
 		forever #5 clk = ~clk;
 	end

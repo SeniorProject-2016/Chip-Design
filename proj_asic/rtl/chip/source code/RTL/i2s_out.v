@@ -1,9 +1,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2s_out.v
 // Create Date:             10/13/2015 
-// Last Modification:       12/1/2015
+// Last Modification:       3/25/2015
 // Author:                  Kevin Cao
-//
+// Description:             Top module of I2S Out Interface
 //////////////////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 1ps

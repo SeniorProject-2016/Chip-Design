@@ -1,32 +1,19 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             filter_tf_test_xfc.v
+// Create Date:             2/9/2016
+// Last Modification:       3/25/2016
+// Author:                  Dhruvit Naik
+// Description:             ????
+//////////////////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   17:31:00 02/09/2016
-// Design Name:   filter
-// Module Name:   Z:/Desktop/chip/filter_tf_test_xfc.v
-// Project Name:  chip
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: filter
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 
 module filter_tf_test_xfc;
 
 	// Inputs
 	reg clk;
-	reg rstb;
+	reg rst_n;
 	reg [31:0] filt_input_data;
 	reg aud_in_rts;
 	reg aud_out_rtr;
@@ -1067,7 +1054,7 @@ module filter_tf_test_xfc;
 	// Instantiate the Unit Under Test (UUT)
 	filter uut (
 		.clk(clk), 
-		.rstb(rstb), 
+		.rst_n(rst_n), 
 		.filt_input_data(filt_input_data), 
 		.aud_in_rts(aud_in_rts), 
 		.aud_in_rtr(aud_in_rtr), 
@@ -2107,7 +2094,7 @@ module filter_tf_test_xfc;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		rstb = 0;
+		rst_n = 0;
 		//filt_input_data = 32'b00000000000000000100000000000000;
 		filt_input_data = 32'h21AB84C2;
 		aud_in_rts = 0;
@@ -3143,7 +3130,7 @@ module filter_tf_test_xfc;
 		// Wait 100 ns for global reset to finish
 		#100;
 		// Add stimulus here
-		rstb = 1'b1;
+		rst_n = 1'b1;
 		aud_in_rts = 1'b0;
 		aud_out_rtr = 1'b0;
 		#100;
