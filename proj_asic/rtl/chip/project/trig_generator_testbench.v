@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             trig_generator_testbench.v
 // Create Date:             10/20/2015
@@ -7,6 +5,8 @@
 // Author:                  Julie Swift
 // Description: ????????????
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module trig_generator_testbench;
 

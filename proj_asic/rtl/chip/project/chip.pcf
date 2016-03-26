@@ -1,15 +1,27 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Mar 20 17:00:21 2016
+// Written by: Map P.20131013 on Sat Mar 26 18:29:23 2016
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "i2si_ws" LOCATE = SITE "V15" LEVEL 1;
+COMP "i2si_sd" LOCATE = SITE "K16" LEVEL 1;
+COMP "i2c_scl" LOCATE = SITE "B13" LEVEL 1;
+COMP "clk" LOCATE = SITE "E3" LEVEL 1;
+COMP "i2so_sck" LOCATE = SITE "R16" LEVEL 1;
+COMP "i2c_sda_in" LOCATE = SITE "F14" LEVEL 1;
+COMP "i2c_addr_bits<1>" LOCATE = SITE "C17" LEVEL 1;
+COMP "i2c_addr_bits<2>" LOCATE = SITE "D18" LEVEL 1;
+COMP "i2c_addr_bits<0>" LOCATE = SITE "G13" LEVEL 1;
+COMP "i2so_ws" LOCATE = SITE "T9" LEVEL 1;
+COMP "i2so_sd" LOCATE = SITE "U11" LEVEL 1;
+COMP "i2si_sck" LOCATE = SITE "V11" LEVEL 1;
+COMP "i2c_sda_out" LOCATE = SITE "D17" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "P15" LEVEL 1;
 PIN Filter/TOP_FILTER_STM/Mmult_accumulator_in_right_pins<117> = BEL
         "Filter/TOP_FILTER_STM/Mmult_accumulator_in_right" PINNAME CLK;
 PIN Filter/TOP_FILTER_STM/Mmult_accumulator_in_left_pins<117> = BEL
         "Filter/TOP_FILTER_STM/Mmult_accumulator_in_left" PINNAME CLK;
-TIMEGRP clk = BEL "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
-        "Register/Trig_Gen/trig_i2so_fifo_underrun_clr" BEL
-        "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
+TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_1" BEL
         "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_2" BEL
         "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_3" BEL
@@ -16785,85 +16797,6 @@ TIMEGRP clk = BEL "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
         "Filter/TOP_FILTER_STM/filter_storage_x/ram_0_2" BEL
         "Filter/TOP_FILTER_STM/filter_storage_x/ram_0_1" BEL
         "Filter/TOP_FILTER_STM/filter_storage_x/ram_0_0" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_15" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_14" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_13" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_12" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_11" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_10" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_9" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_8" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_7" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_6" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_5" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_4" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_3" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_2" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_1" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_0" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_27" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_26" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_25" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_24" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_23" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_22" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_21" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_20" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_19" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_18" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_17" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_16" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_15" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_14" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_13" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_12" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_11" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_10" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_9" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_8" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_7" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_6" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_5" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_4" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_3" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_2" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_1" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_0" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_46" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_45" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_44" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_43" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_42" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_41" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_40" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_39" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_38" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_37" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_36" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_35" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_34" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_33" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_32" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_31" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_30" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_29" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_28" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_27" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_26" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_25" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_24" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_23" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_22" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_21" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_20" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_19" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_18" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_17" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_16" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_15" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_14" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_13" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_12" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/filter_out_15" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/filter_out_14" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/filter_out_13" BEL
@@ -16943,6 +16876,85 @@ TIMEGRP clk = BEL "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_14" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_13" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_12" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_15" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_14" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_13" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_12" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_11" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_10" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_9" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_8" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_7" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_6" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_5" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_4" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_3" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_2" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_1" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_0" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_27" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_26" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_25" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_24" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_23" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_22" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_21" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_20" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_19" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_18" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_17" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_16" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_15" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_14" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_13" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_12" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_11" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_10" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_9" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_8" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_7" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_6" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_5" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_4" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_3" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_2" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_1" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_0" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_46" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_45" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_44" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_43" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_42" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_41" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_40" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_39" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_38" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_37" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_36" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_35" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_34" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_33" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_32" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_31" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_30" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_29" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_28" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_27" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_26" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_25" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_24" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_23" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_22" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_21" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_20" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_19" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_18" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_17" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_16" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_15" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_14" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_13" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_12" BEL
         "Register/Register/rdata_7" BEL "Register/Register/rdata_6" BEL
         "Register/Register/rdata_5" BEL "Register/Register/rdata_4" BEL
         "Register/Register/rdata_3" BEL "Register/Register/rdata_2" BEL
@@ -25176,12 +25188,14 @@ TIMEGRP clk = BEL "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
         "Register/Register/rf_i2si_bist_start_val_a_2" BEL
         "Register/Register/rf_i2si_bist_start_val_a_1" BEL
         "Register/Register/rf_i2si_bist_start_val_a_0" BEL
+        "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
+        "Register/Trig_Gen/trig_i2so_fifo_underrun_clr" BEL
         "I2C/i2c_top_deserializer/got_addr2" BEL
         "I2C/i2c_top_deserializer/got_addr" BEL
         "I2C/i2c_top_deserializer/got_data" BEL
+        "I2C/i2c_top_deserializer/data_xfc" BEL
         "I2C/i2c_top_deserializer/addr_ack2" BEL
         "I2C/i2c_top_deserializer/addr_xfc" BEL
-        "I2C/i2c_top_deserializer/data_xfc" BEL
         "I2C/i2c_top_deserializer/addr_ack" BEL
         "I2C/i2c_top_deserializer/i2c_ack" BEL
         "I2C/i2c_top_deserializer/slave_ack" BEL
@@ -25189,19 +25203,19 @@ TIMEGRP clk = BEL "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
         "I2C/i2c_top_serializer/serialize_data_ready" BEL
         "I2C/i2c_top_serializer/serialize_ack_done" BEL
         "I2S_Output/ro_fifo_underrun" BEL
-        "I2C/i2c_top_deserializer/i2c_addr_1" BEL
-        "I2C/i2c_top_deserializer/i2c_addr_2" BEL
         "I2C/i2c_top_deserializer/i2c_addr_0" BEL
-        "I2C/i2c_top_deserializer/i2c_addr_4" BEL
-        "I2C/i2c_top_deserializer/i2c_addr_5" BEL
+        "I2C/i2c_top_deserializer/i2c_addr_2" BEL
         "I2C/i2c_top_deserializer/i2c_addr_3" BEL
+        "I2C/i2c_top_deserializer/i2c_addr_1" BEL
+        "I2C/i2c_top_deserializer/i2c_addr_5" BEL
         "I2C/i2c_top_deserializer/i2c_addr_6" BEL
+        "I2C/i2c_top_deserializer/i2c_addr_4" BEL
         "I2C/i2c_top_deserializer/i2c_addr_7" BEL
         "I2C/i2c_top_deserializer/i2c_addr_8" BEL
         "I2C/i2c_top_deserializer/i2c_addr_9" BEL
-        "I2C/i2c_top_deserializer/i2c_RW" BEL
         "I2C/i2c_top_deserializer/i2c_addr_10" BEL
-        "I2C/i2c_top_deserializer/stop" BEL
+        "I2C/i2c_top_deserializer/i2c_RW" BEL "I2C/i2c_top_deserializer/stop"
+        BEL "I2C/i2c_top_deserializer/stop_out" BEL
         "I2C/i2c_top_serializer/i2c_sda_out" BEL "I2C/i2c_top_serializer/stop"
         BEL "I2C/i2c_top_sequencer/i2c_xfc" BEL "I2C/i2c_top_sequencer/i2c_op"
         BEL "I2C/i2c_top_sequencer/stop_read" BEL "I2S_Input/ro_fifo_overrun"
@@ -25213,12 +25227,17 @@ TIMEGRP clk = BEL "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
         "I2S_Output/Serializer/LR" BEL "I2S_Output/Serializer/i2so_ws" BEL
         "Filter/TOP_FILTER_STM/filter_need_new" BEL
         "Filter/TOP_FILTER_STM/filter_running_1st" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/ro_filter_ovf_flag" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/ro_filter_ovf_flag" BEL
+        "Register/Trig_Gen/trig_filter_ovf_flag_clear" BEL
         "I2C/i2c_top_deserializer/slave_addr_stop" BEL
         "I2C/i2c_top_serializer/serialize_done" BEL
         "I2C/i2c_top_deserializer/got_slave_addr" BEL
         "I2C/i2c_top_deserializer/Q_sda" BEL "I2C/i2c_top_deserializer/Q_scl"
         BEL "I2C/i2c_top_serializer/Q_scl" BEL "I2C/i2c_top_sequencer/Q_data"
         BEL "I2C/i2c_top_sequencer/Q_addr" BEL "Register/Register/rxfc" BEL
+        "I2C/i2c_top_deserializer/scl_state" BEL
+        "I2C/i2c_top_deserializer/sda_state" BEL
         "I2C/i2c_top_sequencer/xfc_ready" BEL "clk_BUFGP/BUFG" BEL
         "I2C/i2c_top_deserializer/Mshreg_i2c_sda" BEL
         "I2C/i2c_top_deserializer/i2c_sda" BEL
@@ -25228,9 +25247,9 @@ TIMEGRP clk = BEL "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
         "I2S_Input/Synchronizer/sd_vec_31" BEL
         "I2S_Input/Synchronizer/Mshreg_ws_vec_3" BEL
         "I2S_Input/Synchronizer/ws_vec_31" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/rstb_inv_BUFG_shift1" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/rstb_inv_BUFG_shift2" BEL
-        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/rstb_inv_BUFG_shift3" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/rst_n_inv_BUFG_shift1" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/rst_n_inv_BUFG_shift2" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/rst_n_inv_BUFG_shift3" BEL
         "I2S_Input/Synchronizer/sd_vec_3" BEL
         "I2S_Input/Synchronizer/ws_vec_3" BEL
         "I2S_Input/i2si_Fifo/Mram_buf_mem1/DP" BEL

@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             register_testbench.v
 // Create Date:             1/19/2016
@@ -7,6 +5,8 @@
 // Author:                  Julie Swift
 // Description: ????????????
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module register_testbench;
 

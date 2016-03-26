@@ -26,7 +26,7 @@ static unsigned int ng1[] = {0U, 0U};
 
 
 
-static void Always_28_0(char *t0)
+static void Always_25_0(char *t0)
 {
     char t6[8];
     char *t1;
@@ -65,7 +65,7 @@ LAB0:    t1 = (t0 + 3168U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(28, ng0);
+LAB2:    xsi_set_current_line(25, ng0);
     t2 = (t0 + 3488);
     *((int *)t2) = 1;
     t3 = (t0 + 3200);
@@ -73,9 +73,9 @@ LAB2:    xsi_set_current_line(28, ng0);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(29, ng0);
+LAB4:    xsi_set_current_line(26, ng0);
 
-LAB5:    xsi_set_current_line(30, ng0);
+LAB5:    xsi_set_current_line(27, ng0);
     t4 = (t0 + 1688U);
     t5 = *((char **)t4);
     t4 = ((char*)((ng1)));
@@ -111,14 +111,14 @@ LAB9:    t22 = (t6 + 4);
     if (t27 > 0)
         goto LAB10;
 
-LAB11:    xsi_set_current_line(36, ng0);
+LAB11:    xsi_set_current_line(33, ng0);
 
-LAB14:    xsi_set_current_line(37, ng0);
+LAB14:    xsi_set_current_line(34, ng0);
     t2 = (t0 + 1368U);
     t3 = *((char **)t2);
     t2 = (t0 + 2088);
     xsi_vlogvar_wait_assign_value(t2, t3, 0, 0, 32, 0LL);
-    xsi_set_current_line(38, ng0);
+    xsi_set_current_line(35, ng0);
     t2 = (t0 + 1528U);
     t3 = *((char **)t2);
     t2 = (t0 + 2248);
@@ -131,14 +131,14 @@ LAB8:    t21 = (t6 + 4);
     *((unsigned int *)t21) = 1;
     goto LAB9;
 
-LAB10:    xsi_set_current_line(31, ng0);
+LAB10:    xsi_set_current_line(28, ng0);
 
-LAB13:    xsi_set_current_line(32, ng0);
+LAB13:    xsi_set_current_line(29, ng0);
     t28 = (t0 + 1048U);
     t29 = *((char **)t28);
     t28 = (t0 + 2088);
     xsi_vlogvar_wait_assign_value(t28, t29, 0, 0, 32, 0LL);
-    xsi_set_current_line(33, ng0);
+    xsi_set_current_line(30, ng0);
     t2 = (t0 + 1208U);
     t3 = *((char **)t2);
     t2 = (t0 + 2248);
@@ -150,7 +150,7 @@ LAB13:    xsi_set_current_line(32, ng0);
 
 extern void work_m_00000000003741982042_3856551223_init()
 {
-	static char *pe[] = {(void *)Always_28_0};
+	static char *pe[] = {(void *)Always_25_0};
 	xsi_register_didat("work_m_00000000003741982042_3856551223", "isim/chip_test1_isim_beh.exe.sim/work/m_00000000003741982042_3856551223.didat");
 	xsi_register_executes(pe);
 }

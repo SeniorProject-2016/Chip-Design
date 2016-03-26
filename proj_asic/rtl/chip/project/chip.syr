@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: chip.prj
 
@@ -111,10 +111,6 @@ Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\
 Parsing module <trig_generator>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\synchronizer.v" into library work
 Parsing module <synchronizer>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\serializer.v" into library work
-Parsing module <Serializer>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\Sequencer.v" into library work
-Parsing module <Sequencer>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\register.v" into library work
 Parsing module <register>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2so_serializer.v" into library work
@@ -125,6 +121,12 @@ Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\
 Parsing module <i2si_deserializer>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2si_bist_gen.v" into library work
 Parsing module <i2si_bist_gen>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c_serializer.v" into library work
+Parsing module <Serializer>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c_sequencer.v" into library work
+Parsing module <Sequencer>.
+Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c_deserializer.v" into library work
+Parsing module <Deserializer>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_stm.v" into library work
 Parsing module <filter_stm>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" into library work
@@ -135,8 +137,6 @@ Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\
 Parsing module <filter_accumulator>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\fifo.v" into library work
 Parsing module <fifo>.
-Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\Deserializer.v" into library work
-Parsing module <Deserializer>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2s_out.v" into library work
 Parsing module <i2s_out>.
 Analyzing Verilog file "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2s_in.v" into library work
@@ -181,8 +181,8 @@ Elaborating module <filter_storage>.
 Elaborating module <filter_accumulator>.
 
 Elaborating module <filter_round_truncate>.
-"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" Line 50. $display acc_t > (1<<15)-1
-"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" Line 60. $display acc_t < -(1<<15) = -32768
+"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" Line 59. $display acc_t > (1<<15)-1
+"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_round_truncate.v" Line 69. $display acc_t < -(1<<15) = -32768
 
 Elaborating module <filter_mux>.
 
@@ -191,7 +191,6 @@ Elaborating module <chip_reg>.
 Elaborating module <register>.
 
 Elaborating module <trig_generator>.
-WARNING:HDLCompiler:1016 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v" Line 58: Port i2c_sda is not connected to this instance
 
 Elaborating module <i2c>.
 
@@ -200,7 +199,6 @@ Elaborating module <Deserializer>.
 Elaborating module <Sequencer>.
 
 Elaborating module <Serializer>.
-WARNING:HDLCompiler:552 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v" Line 58: Input port i2c_sda is not connected on this instance
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -249,9 +247,9 @@ Synthesizing Unit <i2si_bist_gen>.
     Found 5-bit register for signal <sck_count>.
     Found 32-bit register for signal <i2si_bist_out_data>.
     Found 1-bit register for signal <bist_active>.
-    Found 5-bit adder for signal <sck_count[4]_GND_6_o_add_1_OUT> created at line 47.
-    Found 16-bit adder for signal <i2si_bist_out_data[15]_GND_6_o_add_10_OUT> created at line 91.
-    Found 16-bit comparator lessequal for signal <n0012> created at line 79
+    Found 5-bit adder for signal <sck_count[4]_GND_6_o_add_1_OUT> created at line 45.
+    Found 16-bit adder for signal <i2si_bist_out_data[15]_GND_6_o_add_10_OUT> created at line 89.
+    Found 16-bit comparator lessequal for signal <n0012> created at line 77
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  38 D-type flip-flop(s).
@@ -273,10 +271,10 @@ Synthesizing Unit <fifo>.
     Found 3-bit register for signal <wr_ptr>.
     Found 3-bit register for signal <rd_ptr>.
     Found 4-bit register for signal <fifo_counter>.
-    Found 4-bit subtractor for signal <fifo_counter[3]_GND_9_o_sub_4_OUT> created at line 61.
-    Found 4-bit adder for signal <fifo_counter[3]_GND_9_o_add_2_OUT> created at line 57.
-    Found 3-bit adder for signal <wr_ptr[2]_GND_9_o_add_15_OUT> created at line 105.
-    Found 3-bit adder for signal <rd_ptr[2]_GND_9_o_add_17_OUT> created at line 110.
+    Found 4-bit subtractor for signal <fifo_counter[3]_GND_9_o_sub_4_OUT> created at line 58.
+    Found 4-bit adder for signal <fifo_counter[3]_GND_9_o_add_2_OUT> created at line 54.
+    Found 3-bit adder for signal <wr_ptr[2]_GND_9_o_add_15_OUT> created at line 102.
+    Found 3-bit adder for signal <rd_ptr[2]_GND_9_o_add_17_OUT> created at line 107.
     Found 8x32-bit dual-port RAM <Mram_buf_mem> for signal <buf_mem>.
     Summary:
 	inferred   1 RAM(s).
@@ -302,9 +300,9 @@ Synthesizing Unit <i2so_serializer>.
     Found 1-bit register for signal <i2so_ws>.
     Found 1-bit register for signal <i2so_sd>.
     Found 1-bit register for signal <filt_i2so_rts_delay>.
-    Found 4-bit subtractor for signal <bit_count[3]_GND_11_o_sub_7_OUT> created at line 107.
-    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_12_o> created at line 132.
-    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_13_o> created at line 137.
+    Found 4-bit subtractor for signal <bit_count[3]_GND_11_o_sub_7_OUT> created at line 106.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_12_o> created at line 131.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_13_o> created at line 136.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  41 D-type flip-flop(s).
@@ -341,18 +339,18 @@ Synthesizing Unit <filter_stm>.
     | Inputs             | 7                                              |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
-    | Reset              | rstb (negative)                                |
+    | Reset              | rst_n (negative)                               |
     | Reset type         | asynchronous                                   |
     | Reset State        | 0001                                           |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 9-bit subtractor for signal <rd_addr_x[8]_GND_14_o_sub_10_OUT> created at line 158.
-    Found 9-bit adder for signal <wr_addr_x[8]_GND_14_o_add_6_OUT> created at line 130.
-    Found 9-bit adder for signal <mux_rdptr[8]_GND_14_o_add_10_OUT> created at line 159.
-    Found 9-bit adder for signal <filter_count[8]_GND_14_o_add_11_OUT> created at line 160.
-    Found 16x16-bit multiplier for signal <accumulator_in_left> created at line 74.
-    Found 16x16-bit multiplier for signal <accumulator_in_right> created at line 75.
+    Found 9-bit subtractor for signal <rd_addr_x[8]_GND_14_o_sub_10_OUT> created at line 169.
+    Found 9-bit adder for signal <wr_addr_x[8]_GND_14_o_add_6_OUT> created at line 141.
+    Found 9-bit adder for signal <mux_rdptr[8]_GND_14_o_add_10_OUT> created at line 170.
+    Found 9-bit adder for signal <filter_count[8]_GND_14_o_add_11_OUT> created at line 171.
+    Found 16x16-bit multiplier for signal <accumulator_in_left> created at line 85.
+    Found 16x16-bit multiplier for signal <accumulator_in_right> created at line 86.
     Summary:
 	inferred   2 Multiplier(s).
 	inferred   4 Adder/Subtractor(s).
@@ -365,7 +363,7 @@ Synthesizing Unit <filter_storage>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_storage.v".
     Found 32-bit register for signal <rddata>.
     Found 16384-bit register for signal <n0522[16383:0]>.
-    Found 32-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][31]_wide_mux_516_OUT> created at line 550.
+    Found 32-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][31]_wide_mux_516_OUT> created at line 556.
     Summary:
 	inferred 16416 D-type flip-flop(s).
 	inferred 513 Multiplexer(s).
@@ -374,7 +372,7 @@ Unit <filter_storage> synthesized.
 Synthesizing Unit <filter_accumulator>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_accumulator.v".
     Found 40-bit register for signal <tmp>.
-    Found 40-bit adder for signal <tmp[39]_D[31]_add_1_OUT> created at line 24.
+    Found 40-bit adder for signal <tmp[39]_D[31]_add_1_OUT> created at line 35.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  40 D-type flip-flop(s).
@@ -387,13 +385,13 @@ Synthesizing Unit <filter_round_truncate>.
     Found 1-bit register for signal <ro_filter_ovf_flag>.
     Found 47-bit register for signal <acc_r>.
     Found 28-bit register for signal <acc_t>.
-    Found 6-bit subtractor for signal <GND_19_o_GND_19_o_sub_3_OUT> created at line 43.
-    Found 5-bit adder for signal <n0049> created at line 19.
-    Found 47-bit adder for signal <ext_acc_in[46]_GND_19_o_add_4_OUT> created at line 43.
-    Found 47-bit shifter logical left for signal <n0058> created at line 43
-    Found 60-bit shifter logical right for signal <n0035> created at line 46
-    Found 32-bit comparator greater for signal <acc_t[27]_GND_19_o_LessThan_7_o> created at line 48
-    Found 32-bit comparator greater for signal <PWR_18_o_acc_t[27]_LessThan_10_o> created at line 58
+    Found 6-bit subtractor for signal <GND_19_o_GND_19_o_sub_3_OUT> created at line 52.
+    Found 5-bit adder for signal <n0049> created at line 31.
+    Found 47-bit adder for signal <ext_acc_in[46]_GND_19_o_add_4_OUT> created at line 52.
+    Found 47-bit shifter logical left for signal <n0058> created at line 52
+    Found 60-bit shifter logical right for signal <n0035> created at line 55
+    Found 32-bit comparator greater for signal <acc_t[27]_GND_19_o_LessThan_7_o> created at line 57
+    Found 32-bit comparator greater for signal <PWR_18_o_acc_t[27]_LessThan_10_o> created at line 67
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  92 D-type flip-flop(s).
@@ -405,7 +403,7 @@ Unit <filter_round_truncate> synthesized.
 Synthesizing Unit <filter_mux>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\filter_mux.v".
     Found 16-bit register for signal <rddata>.
-    Found 16-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][15]_wide_mux_513_OUT> created at line 663.
+    Found 16-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][15]_wide_mux_513_OUT> created at line 672.
     Summary:
 	inferred  16 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
@@ -1454,7 +1452,7 @@ Synthesizing Unit <register>.
     Found 1-bit register for signal <rf_i2si_bist_en>.
     Found 8-bit register for signal <rdata>.
     Found 1-bit register for signal <rxfc>.
-    Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT> created at line 3176.
+    Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT> created at line 3177.
     Summary:
 	inferred 8239 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
@@ -1462,27 +1460,23 @@ Unit <register> synthesized.
 
 Synthesizing Unit <trig_generator>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\trig_generator.v".
-WARNING:Xst:647 - Input <wdata<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <wdata<3:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <wdata<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <trig_i2so_fifo_underrun_clr>.
+    Found 1-bit register for signal <trig_filter_ovf_flag_clear>.
     Found 1-bit register for signal <trig_i2si_fifo_overrun_clr>.
     Summary:
-	inferred   2 D-type flip-flop(s).
+	inferred   3 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
 Unit <trig_generator> synthesized.
 
 Synthesizing Unit <i2c>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c.v".
-WARNING:Xst:2898 - Port 'i2c_sda', unconnected in block instance 'i2c_top_serializer', is tied to GND.
-WARNING:Xst:2898 - Port 'stop_out', unconnected in block instance 'i2c_top_serializer', is tied to GND.
     Summary:
 	no macro.
 Unit <i2c> synthesized.
 
 Synthesizing Unit <Deserializer>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\Deserializer.v".
-WARNING:Xst:653 - Signal <stop_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c_deserializer.v".
+    Found 1-bit register for signal <stop_out>.
     Found 1-bit register for signal <stop>.
     Found 1-bit register for signal <i2c_scl>.
     Found 1-bit register for signal <sda_p1>.
@@ -1490,6 +1484,7 @@ WARNING:Xst:653 - Signal <stop_out> is used but never assigned. This sourceless 
     Found 1-bit register for signal <i2c_sda>.
     Found 1-bit register for signal <Q_sda>.
     Found 1-bit register for signal <Q_scl>.
+    Found 1-bit register for signal <sda_state>.
     Found 1-bit register for signal <scl_state>.
     Found 2-bit register for signal <deserial_state>.
     Found 1-bit register for signal <got_slave_addr>.
@@ -1521,7 +1516,6 @@ WARNING:Xst:653 - Signal <stop_out> is used but never assigned. This sourceless 
     Found 1-bit register for signal <got_data>.
     Found 1-bit register for signal <data_xfc>.
     Found 1-bit register for signal <scl_p1>.
-    Found 1-bit register for signal <sda_state>.
     Found finite state machine <FSM_1> for signal <bit_counter_slave_addr>.
     -----------------------------------------------------------------------
     | States             | 9                                              |
@@ -1575,18 +1569,18 @@ WARNING:Xst:653 - Signal <stop_out> is used but never assigned. This sourceless 
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_21_OUT> created at line 207.
-    Found 8-bit 8-to-1 multiplexer for signal <_n0411> created at line 498.
-    Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_29_o> created at line 269
+    Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_23_OUT> created at line 207.
+    Found 8-bit 8-to-1 multiplexer for signal <_n0416> created at line 498.
+    Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_31_o> created at line 269
     Summary:
-	inferred  49 D-type flip-flop(s).
+	inferred  50 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 	inferred  13 Multiplexer(s).
 	inferred   4 Finite State Machine(s).
 Unit <Deserializer> synthesized.
 
 Synthesizing Unit <Sequencer>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\Sequencer.v".
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c_sequencer.v".
     Found 11-bit register for signal <i2c_addr_out>.
     Found 11-bit register for signal <addr_increment>.
     Found 11-bit register for signal <i2c_addr_write>.
@@ -1606,8 +1600,7 @@ Synthesizing Unit <Sequencer>.
 Unit <Sequencer> synthesized.
 
 Synthesizing Unit <Serializer>.
-    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\serializer.v".
-WARNING:Xst:647 - Input <i2c_sda> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\chip\project\i2c_serializer.v".
     Found 1-bit register for signal <stop>.
     Found 8-bit register for signal <data_read>.
     Found 1-bit register for signal <serialize_data_ready>.
@@ -1656,8 +1649,8 @@ Macro Statistics
  6-bit subtractor                                      : 2
  9-bit adder                                           : 3
  9-bit subtractor                                      : 1
-# Registers                                            : 1151
- 1-bit register                                        : 79
+# Registers                                            : 1153
+ 1-bit register                                        : 81
  11-bit register                                       : 3
  16-bit register                                       : 7
  16384-bit register                                    : 1
@@ -1701,8 +1694,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <ro_filter_ovf_flag> (without init value) has a constant value of 0 in block <TOP_FILTER_ROUND_TRUNCATE_LEFT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ro_filter_ovf_flag> (without init value) has a constant value of 0 in block <TOP_FILTER_ROUND_TRUNCATE_RIGHT>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <Sequencer>.
 The following registers are absorbed into counter <addr_increment>: 1 register on signal <addr_increment>.
@@ -1767,8 +1758,8 @@ Macro Statistics
  5-bit up counter                                      : 1
 # Accumulators                                         : 2
  40-bit up loadable accumulator                        : 2
-# Registers                                            : 25191
- Flip-Flops                                            : 25191
+# Registers                                            : 25193
+ Flip-Flops                                            : 25193
 # Comparators                                          : 6
  16-bit comparator lessequal                           : 1
  32-bit comparator greater                             : 4
@@ -1905,7 +1896,8 @@ Optimizing unit <filter_storage> ...
 Optimizing unit <filter_round_truncate> ...
 
 Optimizing unit <register> ...
-WARNING:Xst:1710 - FF/Latch <Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/ro_filter_ovf_flag> (without init value) has a constant value of 0 in block <chip>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <trig_generator> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -1924,8 +1916,8 @@ Unit <chip> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 25235
- Flip-Flops                                            : 25235
+# Registers                                            : 25239
+ Flip-Flops                                            : 25239
 # Shift Registers                                      : 4
  2-bit shift register                                  : 1
  3-bit shift register                                  : 1
@@ -1954,25 +1946,25 @@ Primitive and Black Box Usage:
 ------------------------------
 # BELS                             : 30179
 #      GND                         : 1
-#      INV                         : 15
+#      INV                         : 14
 #      LUT1                        : 60
-#      LUT2                        : 138
-#      LUT3                        : 16612
-#      LUT4                        : 169
-#      LUT5                        : 329
-#      LUT6                        : 12416
+#      LUT2                        : 121
+#      LUT3                        : 16624
+#      LUT4                        : 166
+#      LUT5                        : 326
+#      LUT6                        : 12426
 #      MUXCY                       : 184
-#      MUXF7                       : 68
+#      MUXF7                       : 70
 #      MUXF8                       : 2
 #      VCC                         : 1
 #      XORCY                       : 184
-# FlipFlops/Latches                : 25244
-#      FD                          : 26
-#      FDC                         : 68
+# FlipFlops/Latches                : 25248
+#      FD                          : 28
+#      FDC                         : 71
 #      FDCE                        : 24918
 #      FDE                         : 130
-#      FDP                         : 4
-#      FDPE                        : 38
+#      FDP                         : 5
+#      FDPE                        : 36
 #      FDR                         : 44
 #      FDRE                        : 16
 # RAMS                             : 64
@@ -1995,19 +1987,19 @@ Selected Device : 7a100tcsg324-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           25244  out of  126800    19%  
- Number of Slice LUTs:                29871  out of  63400    47%  
-    Number used as Logic:             29739  out of  63400    46%  
+ Number of Slice Registers:           25248  out of  126800    19%  
+ Number of Slice LUTs:                29869  out of  63400    47%  
+    Number used as Logic:             29737  out of  63400    46%  
     Number used as Memory:              132  out of  19000     0%  
        Number used as RAM:              128
        Number used as SRL:                4
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:  38204
-   Number with an unused Flip Flop:   12960  out of  38204    33%  
-   Number with an unused LUT:          8333  out of  38204    21%  
-   Number of fully used LUT-FF pairs: 16911  out of  38204    44%  
-   Number of unique control sets:      1062
+   Number with an unused Flip Flop:   12956  out of  38204    33%  
+   Number with an unused LUT:          8335  out of  38204    21%  
+   Number of fully used LUT-FF pairs: 16913  out of  38204    44%  
+   Number of unique control sets:      1060
 
 IO Utilization: 
  Number of IOs:                          14
@@ -2035,17 +2027,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------------------------------------------------------+--------------------------------------------+-------+
-Clock Signal                                                                             | Clock buffer(FF name)                      | Load  |
------------------------------------------------------------------------------------------+--------------------------------------------+-------+
-clk                                                                                      | BUFGP                                      | 25312 |
-I2C/i2c_top_deserializer/i2c_sda_neg_pulse(I2C/i2c_top_deserializer/i2c_sda_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/sda_state)| 1     |
-I2C/i2c_top_deserializer/i2c_scl_neg_pulse(I2C/i2c_top_deserializer/i2c_scl_neg_pulse1:O)| NONE(*)(I2C/i2c_top_deserializer/scl_state)| 1     |
------------------------------------------------------------------------------------------+--------------------------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 25318 |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -2056,7 +2042,7 @@ Timing Summary:
 Speed Grade: -1
 
    Minimum period: 6.678ns (Maximum Frequency: 149.757MHz)
-   Minimum input arrival time before clock: 4.717ns
+   Minimum input arrival time before clock: 4.718ns
    Maximum output required time after clock: 0.943ns
    Maximum combinational path delay: No path found
 
@@ -2067,7 +2053,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 6.678ns (frequency: 149.757MHz)
-  Total number of paths / destination ports: 421077 / 50865
+  Total number of paths / destination ports: 421348 / 50871
 -------------------------------------------------------------------------
 Delay:               6.678ns (Levels of Logic = 41)
   Source:            Filter/TOP_FILTER_STM/Mmult_accumulator_in_right (DSP)
@@ -2130,7 +2116,7 @@ Delay:               6.678ns (Levels of Logic = 41)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 187 / 152
 -------------------------------------------------------------------------
-Offset:              4.717ns (Levels of Logic = 8)
+Offset:              4.718ns (Levels of Logic = 8)
   Source:            rst_n (PAD)
   Destination:       Register/Register/rdata_3 (FF)
   Destination Clock: clk rising
@@ -2139,7 +2125,7 @@ Offset:              4.717ns (Levels of Logic = 8)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           155   0.001   0.715  rst_n_IBUF (rst_n_IBUF)
+     IBUF:I->O           156   0.001   0.716  rst_n_IBUF (rst_n_IBUF)
      LUT2:I0->O            2   0.124   0.722  Register/Register/Mmux_rdata[7]_GND_23_o_mux_3094_OUT11 (Register/Register/rdata[7]_GND_23_o_mux_3094_OUT<0>)
      LUT6:I3->O            1   0.124   0.000  Register/Register/mux_1916 (Register/Register/mux_1916)
      MUXF7:I1->O           1   0.368   0.536  Register/Register/mux_18_f7 (Register/Register/mux_18_f7)
@@ -2149,7 +2135,7 @@ Offset:              4.717ns (Levels of Logic = 8)
      MUXF7:I0->O           1   0.365   0.000  Register/Register/mux_2_f7 (Register/Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT<0>)
      FD:D                      0.030          Register/Register/rdata_0
     ----------------------------------------
-    Total                      4.717ns (1.384ns logic, 3.333ns route)
+    Total                      4.718ns (1.384ns logic, 3.334ns route)
                                        (29.3% logic, 70.7% route)
 
 =========================================================================
@@ -2176,43 +2162,25 @@ Offset:              0.943ns (Levels of Logic = 1)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_scl_neg_pulse
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    2.123|         |         |         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock I2C/i2c_top_deserializer/i2c_sda_neg_pulse
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    2.064|         |         |         |
----------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock clk
-------------------------------------------+---------+---------+---------+---------+
-                                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------+---------+---------+---------+---------+
-I2C/i2c_top_deserializer/i2c_scl_neg_pulse|    3.022|         |         |         |
-I2C/i2c_top_deserializer/i2c_sda_neg_pulse|    1.755|         |         |         |
-clk                                       |    6.678|         |         |         |
-------------------------------------------+---------+---------+---------+---------+
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.678|         |         |         |
+---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 398.00 secs
-Total CPU time to Xst completion: 398.24 secs
+Total REAL time to Xst completion: 322.00 secs
+Total CPU time to Xst completion: 321.78 secs
  
 --> 
 
-Total memory usage is 3700324 kilobytes
+Total memory usage is 3716144 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   24 (  12 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :   14 (  14 filtered)
+Number of infos    :    1 (   0 filtered)
 

@@ -1,18 +1,22 @@
-`define N 101 // number of test elements
-
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:   i2s_in_test4.v
 // Create Date:   01/16/16
-// Last Edit:     1/27/16
+// Last Edit:     3/20/16
 // Author:        Kevin Cao
 //
-// Description:     Creates N number random 32 bit words being inputted.
+// Description:     Testing different clock rates
+//                  Creates N number random 32 bit words being inputted.
 //                  Compares the inputted and outputted words.
 //                  Master Clock Rate:
 //                  Serial Clock Rate:
 //                  Outputs the success and failure of the comparisons in i2s_in_test3_output.txt
+//
+//                  IN PROGRESS
 // 
 ////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
+`define N 101 // number of test elements
 
 module i2s_in_test4;
 
@@ -48,7 +52,7 @@ module i2s_in_test4;
     integer                         bit_cnt;                                                         // bit number counter
     integer                         lr_cnt;                                                          // left right counter
     integer                         word_cnt;                                                        // word counter
-    parameter                       cyc_per_half_sck = 1;                                           // about (100 MHz / 0.256 MHz)/2
+    parameter                       cyc_per_half_sck = 1;                                            // about (100 MHz / 0.256 MHz)/2
     parameter                       bit_tc =  15;                                                    // number of bits in a word
     
     

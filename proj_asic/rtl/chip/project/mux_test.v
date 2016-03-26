@@ -1,18 +1,28 @@
-`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////
+// Module Name:   mux_test.v
+// Create Date:   10/13/2015
+// Last Edit:     3/20/16
+// Author:        Kevin Cao
+//
+// Description:     Testing output of multiplexer
+//                  Ensuring multiplexer outputs correct inputs based on select bit
+// 
+////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns / 1ps
 
 module mux_test;
 
 	// Inputs
-	reg [31:0]                          in_0_data;
-	reg                                 in_0_xfc;
-	reg [31:0]                          in_1_data;
-	reg                                 in_1_xfc;
-	reg                                 sel;
+	reg         [31:0]                          in_0_data;
+	reg                                         in_0_xfc;
+	reg         [31:0]                          in_1_data;
+	reg                                         in_1_xfc;
+	reg                                         sel;
                                                         
 	// Outputs                                  
-	wire [31:0]                         mux_data;
-	wire                                mux_xfc;
+	wire        [31:0]                          mux_data;
+	wire                                        mux_xfc;
 
 	// Instantiate the Unit Under Test (UUT)
 	i2si_mux uut (
@@ -25,7 +35,8 @@ module mux_test;
 		.mux_xfc(mux_xfc)
 	);
 
-	initial begin
+	initial 
+    begin
 		in_0_data = 0;
 		in_0_xfc = 0;
 		in_1_data = 0;

@@ -25,7 +25,7 @@ static const char *ng0 = "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asi
 
 
 
-static void Cont_96_0(char *t0)
+static void Cont_97_0(char *t0)
 {
     char t3[8];
     char *t1;
@@ -53,7 +53,7 @@ LAB0:    t1 = (t0 + 172928U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(96, ng0);
+LAB2:    xsi_set_current_line(97, ng0);
     t2 = (t0 + 171288U);
     t4 = *((char **)t2);
     t2 = (t0 + 171128U);
@@ -84,7 +84,7 @@ LAB2:    xsi_set_current_line(96, ng0);
 LAB1:    return;
 }
 
-static void Cont_97_1(char *t0)
+static void Cont_98_1(char *t0)
 {
     char t3[8];
     char *t1;
@@ -112,7 +112,7 @@ LAB0:    t1 = (t0 + 173176U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(97, ng0);
+LAB2:    xsi_set_current_line(98, ng0);
     t2 = (t0 + 171608U);
     t4 = *((char **)t2);
     t2 = (t0 + 171448U);
@@ -146,7 +146,7 @@ LAB1:    return;
 
 extern void work_m_00000000001951978006_0068154608_init()
 {
-	static char *pe[] = {(void *)Cont_96_0,(void *)Cont_97_1};
+	static char *pe[] = {(void *)Cont_97_0,(void *)Cont_98_1};
 	xsi_register_didat("work_m_00000000001951978006_0068154608", "isim/chip_test1_isim_beh.exe.sim/work/m_00000000001951978006_0068154608.didat");
 	xsi_register_executes(pe);
 }

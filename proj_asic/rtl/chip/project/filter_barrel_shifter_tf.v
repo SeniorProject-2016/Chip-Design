@@ -1,13 +1,21 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             filter_barrel_shifter_tf.v
+// Create Date:             ??? 
+// Last Modification:       3/25/2016
+// Author:                  Dhruvit Naik
+// Description:             ????
+//////////////////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
 module filter_barrel_shifter_tf;
 
 	// Inputs
-	reg [39:0] input_signal;
-	reg [2:0] sel_shift;
+	reg             [39:0]              input_signal;
+	reg             [ 2:0]              sel_shift;
 
 	// Outputs
-	wire [39:0] output_signal;
+	wire            [39:0]              output_signal;
 
 	// Instantiate the Unit Under Test (UUT)
 	filter_barrel_shifter uut (
@@ -37,7 +45,7 @@ module filter_barrel_shifter_tf;
 			sel_shift = 3'b110;
 			#50;
 			sel_shift = 3'b111;
-		   #50 $finish;
+		    #50 $finish;
 		  
 		  
 		// Add stimulus here

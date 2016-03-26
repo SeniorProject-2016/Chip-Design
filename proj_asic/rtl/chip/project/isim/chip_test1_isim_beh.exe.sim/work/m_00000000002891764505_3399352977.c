@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/Deserializer.v";
+static const char *ng0 = "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/i2c_deserializer.v";
 static int ng1[] = {1, 0};
 static int ng2[] = {0, 0};
 static unsigned int ng3[] = {1U, 0U};
@@ -3020,6 +3020,10 @@ LAB55:    xsi_set_current_line(159, ng0);
     t176 = ((char*)((ng1)));
     t177 = (t0 + 5608);
     xsi_vlogvar_wait_assign_value(t177, t176, 0, 0, 1, 0LL);
+    xsi_set_current_line(160, ng0);
+    t2 = ((char*)((ng1)));
+    t3 = (t0 + 3848);
+    xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 1, 0LL);
     goto LAB54;
 
 LAB56:    *((unsigned int *)t4) = 1;
@@ -3106,6 +3110,10 @@ LAB73:    xsi_set_current_line(177, ng0);
     t43 = ((char*)((ng2)));
     t51 = (t0 + 5608);
     xsi_vlogvar_wait_assign_value(t51, t43, 0, 0, 1, 0LL);
+    xsi_set_current_line(178, ng0);
+    t2 = ((char*)((ng2)));
+    t3 = (t0 + 3848);
+    xsi_vlogvar_wait_assign_value(t3, t2, 0, 0, 1, 0LL);
     goto LAB72;
 
 LAB74:    *((unsigned int *)t4) = 1;

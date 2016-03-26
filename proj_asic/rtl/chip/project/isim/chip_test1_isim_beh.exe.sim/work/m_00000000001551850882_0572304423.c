@@ -27,7 +27,7 @@ static unsigned int ng2[] = {1U, 0U};
 
 
 
-static void Always_121_0(char *t0)
+static void Always_123_0(char *t0)
 {
     char t4[8];
     char t24[8];
@@ -98,7 +98,7 @@ LAB0:    t1 = (t0 + 6208U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(121, ng0);
+LAB2:    xsi_set_current_line(123, ng0);
     t2 = (t0 + 6528);
     *((int *)t2) = 1;
     t3 = (t0 + 6240);
@@ -106,9 +106,9 @@ LAB2:    xsi_set_current_line(121, ng0);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(122, ng0);
+LAB4:    xsi_set_current_line(124, ng0);
 
-LAB5:    xsi_set_current_line(123, ng0);
+LAB5:    xsi_set_current_line(125, ng0);
     t5 = (t0 + 1208U);
     t6 = *((char **)t5);
     memset(t4, 0, 8);
@@ -137,7 +137,7 @@ LAB9:    t13 = (t4 + 4);
     if (t18 > 0)
         goto LAB10;
 
-LAB11:    xsi_set_current_line(125, ng0);
+LAB11:    xsi_set_current_line(127, ng0);
     t2 = (t0 + 4888U);
     t3 = *((char **)t2);
     memset(t4, 0, 8);
@@ -198,7 +198,7 @@ LAB21:    t54 = (t24 + 4);
     if (t59 > 0)
         goto LAB22;
 
-LAB23:    xsi_set_current_line(127, ng0);
+LAB23:    xsi_set_current_line(129, ng0);
     t2 = (t0 + 3448U);
     t3 = *((char **)t2);
     t2 = (t3 + 4);
@@ -218,7 +218,7 @@ LAB12:    goto LAB2;
 LAB6:    *((unsigned int *)t4) = 1;
     goto LAB9;
 
-LAB10:    xsi_set_current_line(124, ng0);
+LAB10:    xsi_set_current_line(126, ng0);
     t19 = ((char*)((ng1)));
     t20 = (t0 + 5288);
     xsi_vlogvar_wait_assign_value(t20, t19, 0, 0, 1, 0LL);
@@ -262,13 +262,13 @@ LAB19:    t34 = *((unsigned int *)t24);
     *((unsigned int *)t24) = (t53 & t49);
     goto LAB21;
 
-LAB22:    xsi_set_current_line(126, ng0);
+LAB22:    xsi_set_current_line(128, ng0);
     t60 = ((char*)((ng2)));
     t61 = (t0 + 5288);
     xsi_vlogvar_wait_assign_value(t61, t60, 0, 0, 1, 0LL);
     goto LAB24;
 
-LAB25:    xsi_set_current_line(128, ng0);
+LAB25:    xsi_set_current_line(130, ng0);
     t5 = ((char*)((ng1)));
     t6 = (t0 + 5288);
     xsi_vlogvar_wait_assign_value(t6, t5, 0, 0, 1, 0LL);
@@ -279,7 +279,7 @@ LAB25:    xsi_set_current_line(128, ng0);
 
 extern void work_m_00000000001551850882_0572304423_init()
 {
-	static char *pe[] = {(void *)Always_121_0};
+	static char *pe[] = {(void *)Always_123_0};
 	xsi_register_didat("work_m_00000000001551850882_0572304423", "isim/chip_test1_isim_beh.exe.sim/work/m_00000000001551850882_0572304423.didat");
 	xsi_register_executes(pe);
 }

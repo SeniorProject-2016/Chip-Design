@@ -1,42 +1,31 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             filter_accumulator_tf.v
+// Create Date:             11/3/2015
+// Last Modification:       3/25/2016
+// Author:                  Dhruvit Naik
+// Description:             ????
+//////////////////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   15:44:47 11/03/2015
-// Design Name:   filter_accumulator
-// Module Name:   C:/Users/Dhruvit/Dropbox/TCNJ/Senior Project/rtl/chip/filter_accumulator_tf.v
-// Project Name:  chip
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: filter_accumulator
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 
 module filter_accumulator_tf;
 
 	// Inputs
-	reg clk;
-	reg rstb;
-	reg enable;
-	reg load;
-	reg [15:0] D;
+	reg                             clk;
+	reg                             rst_n;
+	reg                             enable;
+	reg                             load;
+	reg             [15:0]          D;
+    
+    
 	// Outputs
-	wire [19:0] Q;
+	wire            [19:0]          Q;
 
 	// Instantiate the Unit Under Test (UUT)
 	filter_accumulator uut (
     .clk(clk), 
-    .rstb(rstb), 
+    .rst_n(rst_n), 
     .enable(enable), 
     .load(load), 
     .D(D), 
@@ -47,12 +36,12 @@ module filter_accumulator_tf;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		rstb = 0;
+		rst_n = 0;
 		enable = 0;
 		load = 0;
 		
 		#100; 
-		rstb = 1;
+		rst_n = 1;
 		D = 16'h000A;
 		enable = 1;
 		load = 1;
@@ -75,7 +64,7 @@ module filter_accumulator_tf;
 		load=0;
 		D = 16'h0001;
 		#100;
-		rstb = 0; 
+		rst_n = 0; 
 	end
 	
 	always

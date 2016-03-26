@@ -1,32 +1,19 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             filter_tf.v
+// Create Date:             11/28/2015
+// Last Modification:       3/25/2016
+// Author:                  Dhruvit Naik
+// Description:             ????
+//////////////////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   17:27:07 11/28/2015
-// Design Name:   filter
-// Module Name:   Z:/Desktop/chip/filter_tf.v
-// Project Name:  chip
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: filter
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 
 module filter_tf;
 
 	// Inputs
 	reg clk;
-	reg rstb;
+	reg rst_n;
 	reg [31:0] aud_in;
 	reg aud_in_rts;
 	reg aud_out_rtr;
@@ -1065,7 +1052,7 @@ module filter_tf;
 	// Instantiate the Unit Under Test (UUT)
 	filter uut (
 		.clk(clk), 
-		.rstb(rstb), 
+		.rst_n(rst_n), 
 		.aud_in(aud_in), 
 		.aud_in_rts(aud_in_rts), 
 		.aud_in_rtr(aud_in_rtr), 
@@ -2103,7 +2090,7 @@ module filter_tf;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		rstb = 0;
+		rst_n = 0;
 		aud_in = 0;
 		aud_in_rts = 0;
 		aud_out_rtr = 0;
@@ -2125,7 +2112,7 @@ module filter_tf;
 		rf_filter_coeff7_b = 8'h00;
 		// Wait 100 ns for global reset to finish
 		#100;
-		rstb = 1;
+		rst_n = 1;
 		aud_in_rts = 1;
 		// Add stimulus here
 		aud_in = 32'h00AA00AA;

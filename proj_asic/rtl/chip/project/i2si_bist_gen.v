@@ -1,33 +1,31 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2si_bist_gen.v
 // Create Date:             10/13/2015 
-// Last Modification:       1/23/2016
+// Last Modification:       3/20/2016
 // Author:                  Kevin Cao, Zachary Nelson
 // Description: Creates a saw-tooth wave based on the bist register values
 //////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns / 1ps
+
 module i2si_bist_gen(clk,rst_n,sck_transition,rf_bist_start_val,rf_bist_inc,rf_bist_up_limit,i2si_bist_out_data, i2si_bist_out_xfc);
 
     //Ports
-    input               clk;                                          //Master Clock
-    input               rst_n;                                        //Reset
-    input               sck_transition;                               //Serial Clock Level to Pulse Converter
+    input                       clk;                                            //Master Clock
+    input                       rst_n;                                          //Reset
+    input                       sck_transition;                                 //Serial Clock Level to Pulse Converter
     
-    input  [11:0]       rf_bist_start_val;                            //Start value
-    input  [11:0]       rf_bist_up_limit;                             //Upper limit
-    input  [ 7:0]       rf_bist_inc;                                  //Increment signal by this much
+    input           [11:0]      rf_bist_start_val;                              //Start value
+    input           [11:0]      rf_bist_up_limit;                               //Upper limit
+    input           [ 7:0]      rf_bist_inc;                                    //Increment signal by this much
                                                                         
-    output [31:0]       i2si_bist_out_data;                           //Output data
-    output              i2si_bist_out_xfc;                            //Transfer Complete
+    output reg      [31:0]      i2si_bist_out_data;                             //Output data
+    output wire                 i2si_bist_out_xfc;                              //Transfer Complete
                                                                                 
-    //Port Data Types
-    reg    [31:0]       i2si_bist_out_data;                             
-    wire                i2si_bist_out_xfc;
                                                                                                     
     //Internal Variables
-    reg                 bist_active;                                  //Defines if BIST generator is active
-    reg    [ 4:0]       sck_count;                                    //Serial clock counter                    
+    reg                 bist_active;                                            //Defines if BIST generator is active
+    reg    [ 4:0]       sck_count;                                              //Serial clock counter                    
     
                                                                                                     
                                                                                                     

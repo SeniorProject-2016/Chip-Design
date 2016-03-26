@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             chip.v
 // Create Date:             12/20/2015
@@ -6,6 +5,8 @@
 // Author:                  Zachary Nelson
 //
 //////////////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns / 1ps
 
 module chip(clk, rst_n,                                        // General
             i2si_sck, i2si_ws, i2si_sd,                        // I2S Input
@@ -139,7 +140,7 @@ module chip(clk, rst_n,                                        // General
     
     filter Filter(
         .clk                        (clk),                          // input: master clock
-        .rstb                       (rst_n),                        // input: reset not
+        .rst_n                      (rst_n),                        // input: reset not
         .filt_input_data            (filt_input_data),              // input: input parallel digital audio
         .aud_in_rts                 (filt_rts),                     // input: ready to send (for input FIFO)
         .aud_in_rtr                 (i2si_rtr),                     // output: ready to receive (for input FIFO)

@@ -92,7 +92,7 @@ begin
 	end
 end
 
-always@(posedge i2c_scl_pos_pulse or posedge i2c_scl_neg_pulse /*or Clock*/)
+always@(posedge Clock)
 begin
 	if (i2c_scl_pos_pulse)
 	begin

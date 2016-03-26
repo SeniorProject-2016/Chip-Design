@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-ZACH::  Sun Mar 20 17:00:34 2016
+ZACH::  Sat Mar 26 18:29:37 2016
 
 par -filter
 C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/chip/project/iseconf
@@ -24,16 +24,16 @@ Device speed data version:  "PRODUCTION 1.10 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                25,244 out of 126,800   19%
-    Number used as Flip Flops:              25,244
+  Number of Slice Registers:                25,248 out of 126,800   19%
+    Number used as Flip Flops:              25,248
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                     21,698 out of  63,400   34%
-    Number used as logic:                   21,213 out of  63,400   33%
-      Number using O6 output only:          12,730
+  Number of Slice LUTs:                     21,764 out of  63,400   34%
+    Number used as logic:                   21,215 out of  63,400   33%
+      Number using O6 output only:          12,736
       Number using O5 output only:               4
-      Number using O5 and O6:                8,479
+      Number using O5 and O6:                8,475
       Number used as ROM:                        0
     Number used as Memory:                      68 out of  19,000    1%
       Number used as Dual Port RAM:             64
@@ -45,17 +45,17 @@ Slice Logic Utilization:
         Number using O6 output only:             4
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:    417
-      Number with same-slice register load:    379
-      Number with same-slice carry load:        38
+    Number used exclusively as route-thrus:    481
+      Number with same-slice register load:    424
+      Number with same-slice carry load:        57
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 6,994 out of  15,850   44%
-  Number of LUT Flip Flop pairs used:       23,815
-    Number with an unused Flip Flop:         7,236 out of  23,815   30%
-    Number with an unused LUT:               2,117 out of  23,815    8%
-    Number of fully used LUT-FF pairs:      14,462 out of  23,815   60%
+  Number of occupied Slices:                 6,705 out of  15,850   42%
+  Number of LUT Flip Flop pairs used:       23,619
+    Number with an unused Flip Flop:         7,100 out of  23,619   30%
+    Number with an unused LUT:               1,855 out of  23,619    7%
+    Number of fully used LUT-FF pairs:      14,664 out of  23,619   62%
     Number of slice register sites lost
       to control set restrictions:               0 out of 126,800    0%
 
@@ -69,6 +69,7 @@ Slice Logic Distribution:
 
 IO Utilization:
   Number of bonded IOBs:                        14 out of     210    6%
+    Number of LOCed IOBs:                       14 out of      14  100%
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                  0 out of     135    0%
@@ -113,27 +114,27 @@ Finished initial Timing Analysis.  REAL time: 36 secs
 Starting Router
 
 
-Phase  1  : 148953 unrouted;      REAL time: 40 secs 
+Phase  1  : 148927 unrouted;      REAL time: 40 secs 
 
-Phase  2  : 131241 unrouted;      REAL time: 45 secs 
+Phase  2  : 131267 unrouted;      REAL time: 44 secs 
 
-Phase  3  : 70322 unrouted;      REAL time: 1 mins 26 secs 
+Phase  3  : 70275 unrouted;      REAL time: 1 mins 28 secs 
 
-Phase  4  : 70319 unrouted; (Setup:0, Hold:56269, Component Switching Limit:0)     REAL time: 1 mins 36 secs 
+Phase  4  : 70275 unrouted; (Setup:0, Hold:54129, Component Switching Limit:0)     REAL time: 1 mins 34 secs 
 
 Updating file: chip.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:42582, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:39899, Component Switching Limit:0)     REAL time: 3 mins 1 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:42582, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:39899, Component Switching Limit:0)     REAL time: 3 mins 1 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:42582, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:39899, Component Switching Limit:0)     REAL time: 3 mins 1 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:42582, Component Switching Limit:0)     REAL time: 2 mins 57 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:39899, Component Switching Limit:0)     REAL time: 3 mins 1 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 8 secs 
-Total REAL time to Router completion: 3 mins 8 secs 
-Total CPU time to Router completion: 3 mins 21 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 mins 13 secs 
+Total REAL time to Router completion: 3 mins 14 secs 
+Total CPU time to Router completion: 3 mins 25 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -151,15 +152,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP |BUFGCTRL_X0Y31| No   | 4416 |  0.311     |  1.900      |
-+---------------------+--------------+------+------+------------+-------------+
-|I2C/i2c_top_deserial |              |      |      |            |             |
-|izer/i2c_scl_neg_pul |              |      |      |            |             |
-|                  se |         Local|      |    1 |  0.000     |  0.527      |
-+---------------------+--------------+------+------+------------+-------------+
-|I2C/i2c_top_deserial |              |      |      |            |             |
-|izer/i2c_sda_neg_pul |              |      |      |            |             |
-|                  se |         Local|      |    1 |  0.000     |  0.387      |
+|           clk_BUFGP |BUFGCTRL_X0Y31| No   | 4402 |  0.311     |  1.900      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -179,8 +172,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH  | SETUP       |     0.189ns|    19.811ns|       0|           0
-  50%                                       | HOLD        |     0.026ns|            |       0|           0
+  TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH  | SETUP       |     0.606ns|    19.394ns|       0|           0
+  50%                                       | HOLD        |     0.013ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -191,8 +184,8 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 3 mins 15 secs 
-Total CPU time to PAR completion: 3 mins 27 secs 
+Total REAL time to PAR completion: 3 mins 21 secs 
+Total CPU time to PAR completion: 3 mins 32 secs 
 
 Peak Memory Usage:  1394 MB
 

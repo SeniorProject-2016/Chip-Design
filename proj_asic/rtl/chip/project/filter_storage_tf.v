@@ -1,45 +1,32 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name:             filter_storage_tf.v
+// Create Date:             11/3/2015 
+// Last Modification:       3/25/2016
+// Author:                  Dhruvit Naik
+// Description:             ????
+//////////////////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   17:38:42 11/03/2015
-// Design Name:   filter_storage
-// Module Name:   C:/Users/Dhruvit/Dropbox/TCNJ/Senior Project/rtl/chip/filter_storage_tf.v
-// Project Name:  chip
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: filter_storage
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 
 module filter_storage_tf;
 
 	// Inputs
-	reg clk;
-	reg rstb;
-	reg wren;
-	reg [8:0] wrptr;
-	reg [15:0] wrdata;
-	reg rden;
-	reg [8:0] rdptr;
+	reg                             clk;
+	reg                             rst_n;
+	reg                             wren;
+	reg             [ 8:0]          wrptr;
+	reg             [15:0]          wrdata;
+	reg                             rden;
+	reg             [ 8:0]          rdptr;
 
 	// Outputs
-	wire [15:0] rddata;
+	wire            [15:0]          rddata;
 
 	// Instantiate the Unit Under Test (UUT)
 	filter_storage instance_name (
     .clk(clk), 
-    .rstb(rstb), 
+    .rst_n(rst_n), 
     .wren(wren), 
     .wrptr(wrptr), 
     .wrdata(wrdata), 
@@ -61,10 +48,10 @@ module filter_storage_tf;
 		rden = 0;
 		rdptr = 0;
 		wren = 0;
-		rstb = 0;
+		rst_n = 0;
 		// Wait 100 ns for global reset to finish
 		#100;
-		rstb = 1;
+		rst_n = 1;
 		wren = 1; 
 		wrdata = 32'hAAAAAAAA;
 		
