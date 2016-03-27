@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Zachary/Desktop/i2c_reg_test/i2c_reg_test_automated_isim_beh.exe" -prj "C:/Users/Zachary/Desktop/i2c_reg_test/i2c_reg_test_automated_beh.prj" "work.i2c_reg_test_automated" "work.glbl" 
