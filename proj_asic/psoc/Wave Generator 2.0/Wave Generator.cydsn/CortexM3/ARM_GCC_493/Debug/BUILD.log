@@ -1,4 +1,4 @@
---------------- Build Started: 03/27/2016 13:40:34 Project: Wave Generator, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+--------------- Build Started: 03/27/2016 13:59:13 Project: Wave Generator, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\main.c -o .\CortexM3\ARM_GCC_493\Debug\main.o
 arm-none-eabi-ar.exe -rs ".\CortexM3\ARM_GCC_493\Debug\Wave Generator.a" .\CortexM3\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_493\Debug\I2S.o .\CortexM3\ARM_GCC_493\Debug\I2S_PM.o .\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_493\Debug\CyDmac.o .\CortexM3\ARM_GCC_493\Debug\CyFlash.o .\CortexM3\ARM_GCC_493\Debug\CyLib.o .\CortexM3\ARM_GCC_493\Debug\cyPm.o .\CortexM3\ARM_GCC_493\Debug\CySpc.o .\CortexM3\ARM_GCC_493\Debug\cyutils.o .\CortexM3\ARM_GCC_493\Debug\TxDMA_0_dma.o .\CortexM3\ARM_GCC_493\Debug\TxDMA_1_dma.o .\CortexM3\ARM_GCC_493\Debug\I2S_Clock.o .\CortexM3\ARM_GCC_493\Debug\UART.o .\CortexM3\ARM_GCC_493\Debug\UART_PM.o .\CortexM3\ARM_GCC_493\Debug\UART_INT.o .\CortexM3\ARM_GCC_493\Debug\UART_BOOT.o .\CortexM3\ARM_GCC_493\Debug\UART_IntClock.o .\CortexM3\ARM_GCC_493\Debug\RxDMA_1_dma.o .\CortexM3\ARM_GCC_493\Debug\RxDMA_0_dma.o
@@ -8,4 +8,4 @@ cyelftool.exe -C "C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave 
 cyelftool.exe -S "C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn\CortexM3\ARM_GCC_493\Debug\Wave Generator.elf"
 Flash used: 5376 of 262144 bytes (2.1 %).
 SRAM used: 25141 of 65536 bytes (38.4 %). Stack: 16384 bytes. Heap: 4096 bytes.
---------------- Build Succeeded: 03/27/2016 13:40:36 ---------------
+--------------- Build Succeeded: 03/27/2016 13:59:15 ---------------

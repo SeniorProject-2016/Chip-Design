@@ -17,7 +17,7 @@ void DmaRxConfiguration(void);
 void DmaTxConfiguration(void);
 
 /* DMA Configuration for RxDMA */
-#define RxDMA_BYTES_PER_BURST       2
+#define RxDMA_BYTES_PER_BURST       1
 #define RxDMA_REQUEST_PER_BURST     1
 #define RxDMA_SRC_BASE              (CYDEV_PERIPH_BASE)
 #define RxDMA_DST_BASE              (CYDEV_SRAM_BASE)
@@ -40,24 +40,20 @@ uint8_t TxDMA_0_TD[1];
 uint8_t TxDMA_1_Chan;
 uint8_t TxDMA_1_TD[1];
 
-#define TRANSFER_COUNT 48		// the "N" MATLAB prints
+/* The "N" that MATLAB prints */
+#define TRANSFER_COUNT 48
 
+/* Copy data that MATLAB produces in "data.txt" file */
 uint16_t signal[TRANSFER_COUNT] = 
-{0x8000, 0x90B5, 0xA120, 0xB0FB, 0xBFFF, 0xCDEB, 0xDA82, 0xE58C, 0xEED9, 0xF641, 
-0xFBA2, 0xFEE7, 0xFFFF, 0xFEE7, 0xFBA2, 0xF641, 0xEED9, 0xE58C, 0xDA82, 0xCDEB, 
-0xBFFF, 0xB0FB, 0xA120, 0x90B5, 0x8000, 0x6F4A, 0x5EDF, 0x4F04, 0x4000, 0x3214, 
-0x257D, 0x1A73, 0x1126, 0x9BE, 0x45D, 0x118, 0x0, 0x118, 0x45D, 0x9BE, 
-0x1126, 0x1A73, 0x257D, 0x3214, 0x4000, 0x4F04, 0x5EDF, 0x6F4A};
+	{0x0, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 
+	0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 
+	0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0x0, 0x0, 0x0, 0x0, 0x0, 
+	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 
+	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
 
-#define BUFFER_SIZE 1024
-uint16_t ReceivedData[BUFFER_SIZE];    /* IN buffer */
-uint16_t dummy[BUFFER_SIZE];			/* secondary IN buffer */
-
-#if (CY_PSOC5LP)
-	#if !defined(DMA_DISABLE_TD)
-	    #define DMA_DISABLE_TD          0xFEu
-	#endif
-#endif  /* (CY_PSOC5LP) */
+#define BUFFER_SIZE 1024				/* number of samples to receive */
+uint16_t ReceivedData[BUFFER_SIZE];    	/* left IN buffer */
+uint16_t dummy[BUFFER_SIZE];			/* right IN buffer, ignored */
 
 int main()
 {
@@ -65,8 +61,10 @@ int main()
 	
 	/* Enable global interrupts */
 	CyGlobalIntEnable;
-	for (i=0; i<BUFFER_SIZE;++i)
-		ReceivedData[i]=i;
+	
+	/* Initialize received data array */
+	for (i = 0; i < BUFFER_SIZE; i++)
+		ReceivedData[i] = 0;
 
     /* Configure DMAs for each direction */ 
     DmaRxConfiguration();
@@ -77,32 +75,34 @@ int main()
 	I2S_EnableRx();		/* Enable Rx direction */
     I2S_EnableTx();     /* Enable Tx direction */
     	
-	CyDelay(2000);		/* Wait for data transmissions to complete */
+	CyDelay(3000);		/* Wait for data transmissions to complete */
+	/* There's probably a better way to do that than simply waiting... */
 		
 	UART_Start();     	/* Enabling the UART */
 	
 	/* Send the data to computer through the UART component, serial to USB */
 	for(i = 0; i < BUFFER_SIZE; i++)
 	{
-		uint8_t part1 = (ReceivedData[i] >> 8) & 0x00ff;		/* get first byte */
-		uint8_t part2 = (ReceivedData[i] >> 0) & 0x00ff;		/* get second byte */
+		uint8_t part1 = (ReceivedData[i] >> 8) & 0x00ff;	/* get first byte */
+		uint8_t part2 = (ReceivedData[i] >> 0) & 0x00ff;	/* get second byte */
 		char part1_string[5];
 		char part2_string[5];
 		sprintf(part1_string, "%02X", part1);
 		sprintf(part2_string, "%02X", part2);
-		UART_PutString(part1_string);					
+		UART_PutString(part1_string);						/* print first byte through UART */			
 		UART_PutString(", ");							
-		UART_PutString(part2_string);					
-		UART_PutString(" data \n\r");
+		UART_PutString(part2_string);						/* print second byte through UART */
+		UART_PutString("\n\r");
 	}
 	
+	/* Wait forever */
 	for(;;);
 }
 
 /* Rx DMA Config */
 void DmaRxConfiguration(void)
 {
-    /* Init DMA, 2 byte bursts, each burst requires a request */
+    /* Init DMA, 1 byte bursts, each burst requires a request */
     RxDMA_Chan_0 = RxDMA_0_DmaInitialize(RxDMA_BYTES_PER_BURST, RxDMA_REQUEST_PER_BURST, 
                                      HI16(RxDMA_SRC_BASE), HI16(RxDMA_DST_BASE));
 	RxDMA_Chan_1 = RxDMA_1_DmaInitialize(RxDMA_BYTES_PER_BURST, RxDMA_REQUEST_PER_BURST, 
@@ -111,9 +111,9 @@ void DmaRxConfiguration(void)
     RxDMA_TD_0[0] = CyDmaTdAllocate();
 	RxDMA_TD_1[0] = CyDmaTdAllocate();
 	
-	/* Configure this Td chain, get 8192 samples */
-    CyDmaTdSetConfiguration(RxDMA_TD_0[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_0__TD_TERMOUT_EN);
-	CyDmaTdSetConfiguration(RxDMA_TD_1[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_1__TD_TERMOUT_EN);
+	/* Configure this Td chain, get BUFFER_SIZE samples */
+    CyDmaTdSetConfiguration(RxDMA_TD_0[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_0__TD_TERMOUT_EN | CY_DMA_TD_SWAP_EN);
+	CyDmaTdSetConfiguration(RxDMA_TD_1[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_1__TD_TERMOUT_EN | CY_DMA_TD_SWAP_EN);
 
     /* From the I2S to the memory */
     CyDmaTdSetAddress(RxDMA_TD_0[0], LO16((uint32)I2S_RX_CH0_F0_PTR), LO16((uint32)ReceivedData));
@@ -131,7 +131,7 @@ void DmaRxConfiguration(void)
 /* Tx DMA Config */
 void DmaTxConfiguration(void)
 {
-    /* Init DMA, 2 byte bursts, each burst requires a request */
+    /* Init DMA, 1 byte bursts, each burst requires a request */
     TxDMA_0_Chan = TxDMA_0_DmaInitialize(TxDMA_BYTES_PER_BURST, TxDMA_REQUEST_PER_BURST, 
                                     HI16(TxDMA_SRC_BASE), HI16(TxDMA_DST_BASE));
 	TxDMA_1_Chan = TxDMA_1_DmaInitialize(TxDMA_BYTES_PER_BURST, TxDMA_REQUEST_PER_BURST, 
@@ -140,7 +140,7 @@ void DmaTxConfiguration(void)
     TxDMA_0_TD[0] = CyDmaTdAllocate();
     TxDMA_1_TD[0] = CyDmaTdAllocate();
 
-	/* Configure this Td chain */
+	/* Configure this Td chain, send TRANSFER_COUNT samples and then restarts itself */
 	CyDmaTdSetConfiguration(TxDMA_0_TD[0], 2*TRANSFER_COUNT, TxDMA_0_TD[0], TD_INC_SRC_ADR);
     CyDmaTdSetConfiguration(TxDMA_1_TD[0], 2*TRANSFER_COUNT, TxDMA_1_TD[0], TD_INC_SRC_ADR);
 	
