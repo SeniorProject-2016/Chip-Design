@@ -1,5 +1,5 @@
--- Project:   C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn\Wave Generator.cyprj
--- Generated: 03/22/2016 19:41:43
+-- Project:   C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn\Wave Generator.cyprj
+-- Generated: 03/27/2016 13:04:51
 -- PSoC Creator  3.3 CP1
 
 ENTITY \Wave Generator\ IS
@@ -39,8 +39,6 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE udbclken_assigned OF Net_146 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_146 : SIGNAL IS true;
     SIGNAL Net_146_local : bit;
-    SIGNAL Net_201 : bit;
-    SIGNAL Net_202 : bit;
     SIGNAL Net_247 : bit;
     SIGNAL Net_248 : bit;
     ATTRIBUTE placement_force OF Net_248 : SIGNAL IS "U(3,5,A)3";
@@ -50,10 +48,8 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL Net_259_0 : bit;
     SIGNAL Net_261 : bit;
     SIGNAL Net_277 : bit;
-    ATTRIBUTE placement_force OF Net_277 : SIGNAL IS "U(2,4,B)2";
+    ATTRIBUTE placement_force OF Net_277 : SIGNAL IS "U(2,5,B)2";
     SIGNAL Net_310 : bit;
-    SIGNAL Net_355 : bit;
-    SIGNAL Net_358 : bit;
     SIGNAL Net_359_0 : bit;
     SIGNAL Net_361 : bit;
     SIGNAL SCK(0)__PA : bit;
@@ -61,24 +57,6 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL SDO(0)__PA : bit;
     SIGNAL TX(0)__PA : bit;
     SIGNAL WS(0)__PA : bit;
-    SIGNAL Wave_Output(0)__PA : bit;
-    SIGNAL \\\ADC_SAR:Bypass(0)\\__PA\ : bit;
-    SIGNAL \ADC_SAR:Net_207_0\ : bit;
-    SIGNAL \ADC_SAR:Net_207_10\ : bit;
-    SIGNAL \ADC_SAR:Net_207_11\ : bit;
-    SIGNAL \ADC_SAR:Net_207_1\ : bit;
-    SIGNAL \ADC_SAR:Net_207_2\ : bit;
-    SIGNAL \ADC_SAR:Net_207_3\ : bit;
-    SIGNAL \ADC_SAR:Net_207_4\ : bit;
-    SIGNAL \ADC_SAR:Net_207_5\ : bit;
-    SIGNAL \ADC_SAR:Net_207_6\ : bit;
-    SIGNAL \ADC_SAR:Net_207_7\ : bit;
-    SIGNAL \ADC_SAR:Net_207_8\ : bit;
-    SIGNAL \ADC_SAR:Net_207_9\ : bit;
-    SIGNAL \ADC_SAR:Net_252\ : bit;
-    SIGNAL \ADC_SAR:Net_376\ : bit;
-    ATTRIBUTE global_signal OF \ADC_SAR:Net_376\ : SIGNAL IS true;
-    SIGNAL \ADC_SAR:Net_376_local\ : bit;
     SIGNAL \I2S:bI2S:count_1\ : bit;
     SIGNAL \I2S:bI2S:count_2\ : bit;
     SIGNAL \I2S:bI2S:count_3\ : bit;
@@ -105,7 +83,7 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE placement_force OF \I2S:bI2S:rx_f1_load\ : SIGNAL IS "U(3,3,A)3";
     SIGNAL \I2S:bI2S:rx_int_out_0\ : bit;
     SIGNAL \I2S:bI2S:rx_overflow_0\ : bit;
-    ATTRIBUTE placement_force OF \I2S:bI2S:rx_overflow_0\ : SIGNAL IS "U(2,3,B)2";
+    ATTRIBUTE placement_force OF \I2S:bI2S:rx_overflow_0\ : SIGNAL IS "U(3,3,B)0";
     SIGNAL \I2S:bI2S:rx_overflow_sticky\ : bit;
     ATTRIBUTE placement_force OF \I2S:bI2S:rx_overflow_sticky\ : SIGNAL IS "U(2,3,B)0";
     SIGNAL \I2S:bI2S:rx_state_0\ : bit;
@@ -135,31 +113,28 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL \UART:BUART:counter_load_not\ : bit;
     ATTRIBUTE placement_force OF \UART:BUART:counter_load_not\ : SIGNAL IS "U(2,4,B)1";
     SIGNAL \UART:BUART:tx_bitclk\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_bitclk\ : SIGNAL IS "U(2,3,A)3";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_bitclk\ : SIGNAL IS "U(2,3,A)1";
     SIGNAL \UART:BUART:tx_bitclk_enable_pre\ : bit;
     SIGNAL \UART:BUART:tx_counter_dp\ : bit;
     SIGNAL \UART:BUART:tx_fifo_empty\ : bit;
     SIGNAL \UART:BUART:tx_fifo_notfull\ : bit;
     SIGNAL \UART:BUART:tx_shift_out\ : bit;
     SIGNAL \UART:BUART:tx_state_0\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_state_0\ : SIGNAL IS "U(2,3,A)0";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_state_0\ : SIGNAL IS "U(2,4,B)0";
     SIGNAL \UART:BUART:tx_state_1\ : bit;
     ATTRIBUTE placement_force OF \UART:BUART:tx_state_1\ : SIGNAL IS "U(2,4,A)1";
     SIGNAL \UART:BUART:tx_state_2\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_state_2\ : SIGNAL IS "U(2,4,B)0";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_state_2\ : SIGNAL IS "U(2,3,A)0";
     SIGNAL \UART:BUART:tx_status_0\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_status_0\ : SIGNAL IS "U(2,3,A)1";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_status_0\ : SIGNAL IS "U(2,4,B)2";
     SIGNAL \UART:BUART:tx_status_2\ : bit;
-    ATTRIBUTE placement_force OF \UART:BUART:tx_status_2\ : SIGNAL IS "U(2,5,A)3";
+    ATTRIBUTE placement_force OF \UART:BUART:tx_status_2\ : SIGNAL IS "U(2,5,B)3";
     SIGNAL \UART:BUART:txn\ : bit;
     ATTRIBUTE placement_force OF \UART:BUART:txn\ : SIGNAL IS "U(2,4,A)0";
     SIGNAL \UART:Net_9\ : bit;
     ATTRIBUTE udbclken_assigned OF \UART:Net_9\ : SIGNAL IS "True";
     ATTRIBUTE global_signal OF \UART:Net_9\ : SIGNAL IS true;
     SIGNAL \UART:Net_9_local\ : bit;
-    SIGNAL \WaveDAC8:Net_279\ : bit;
-    ATTRIBUTE global_signal OF \WaveDAC8:Net_279\ : SIGNAL IS true;
-    SIGNAL \WaveDAC8:Net_279_local\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -171,28 +146,24 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE lib_model OF SCK(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF SCK(0) : LABEL IS "P4[0]";
-    ATTRIBUTE lib_model OF Wave_Output(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF Wave_Output(0) : LABEL IS "P1[6]";
-    ATTRIBUTE lib_model OF SDI(0) : LABEL IS "iocell3";
+    ATTRIBUTE lib_model OF SDI(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF SDI(0) : LABEL IS "P4[7]";
-    ATTRIBUTE lib_model OF WS(0) : LABEL IS "iocell4";
+    ATTRIBUTE lib_model OF WS(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF WS(0) : LABEL IS "P4[2]";
-    ATTRIBUTE lib_model OF SDO(0) : LABEL IS "iocell5";
+    ATTRIBUTE lib_model OF SDO(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF SDO(0) : LABEL IS "P4[1]";
-    ATTRIBUTE lib_model OF TX(0) : LABEL IS "iocell6";
+    ATTRIBUTE lib_model OF TX(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF TX(0) : LABEL IS "P5[0]";
-    ATTRIBUTE lib_model OF \ADC_SAR:Bypass(0)\ : LABEL IS "iocell7";
-    ATTRIBUTE Location OF \ADC_SAR:Bypass(0)\ : LABEL IS "P0[2]";
     ATTRIBUTE lib_model OF \I2S:bI2S:tx_underflow_0\ : LABEL IS "macrocell1";
     ATTRIBUTE Location OF \I2S:bI2S:tx_underflow_0\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF \I2S:bI2S:rx_overflow_0\ : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF \I2S:bI2S:rx_overflow_0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \I2S:bI2S:rx_overflow_0\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF Net_277 : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF Net_277 : LABEL IS "U(2,4)";
+    ATTRIBUTE Location OF Net_277 : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \UART:BUART:counter_load_not\ : LABEL IS "macrocell4";
     ATTRIBUTE Location OF \UART:BUART:counter_load_not\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_status_0\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \UART:BUART:tx_status_0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \UART:BUART:tx_status_0\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_status_2\ : LABEL IS "macrocell6";
     ATTRIBUTE Location OF \UART:BUART:tx_status_2\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2S:bI2S:CtlReg\ : LABEL IS "controlcell1";
@@ -206,27 +177,20 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE Location OF \I2S:bI2S:Rx:STS[0]:Sts\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2S:bI2S:Rx:CH[0]:dpRx:u0\ : LABEL IS "datapathcell2";
     ATTRIBUTE Location OF \I2S:bI2S:Rx:CH[0]:dpRx:u0\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \WaveDAC8:Wave1_DMA\ : LABEL IS "drqcell1";
-    ATTRIBUTE Location OF \WaveDAC8:Wave1_DMA\ : LABEL IS "[DrqContainer=(0)][DrqId=(4)]";
-    ATTRIBUTE lib_model OF \WaveDAC8:Wave2_DMA\ : LABEL IS "drqcell2";
-    ATTRIBUTE Location OF \WaveDAC8:Wave2_DMA\ : LABEL IS "[DrqContainer=(0)][DrqId=(5)]";
-    ATTRIBUTE Location OF \WaveDAC8:VDAC8:viDAC8\ : LABEL IS "F(VIDAC,1)";
-    ATTRIBUTE lib_model OF TxDMA_0 : LABEL IS "drqcell3";
+    ATTRIBUTE lib_model OF TxDMA_0 : LABEL IS "drqcell1";
     ATTRIBUTE Location OF TxDMA_0 : LABEL IS "[DrqContainer=(0)][DrqId=(2)]";
-    ATTRIBUTE lib_model OF RxDMA_1 : LABEL IS "drqcell4";
+    ATTRIBUTE lib_model OF RxDMA_1 : LABEL IS "drqcell2";
     ATTRIBUTE Location OF RxDMA_1 : LABEL IS "[DrqContainer=(0)][DrqId=(1)]";
-    ATTRIBUTE lib_model OF RxDMA_0 : LABEL IS "drqcell5";
+    ATTRIBUTE lib_model OF RxDMA_0 : LABEL IS "drqcell3";
     ATTRIBUTE Location OF RxDMA_0 : LABEL IS "[DrqContainer=(0)][DrqId=(0)]";
     ATTRIBUTE lib_model OF \UART:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell3";
-    ATTRIBUTE Location OF \UART:BUART:sTX:TxShifter:u0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \UART:BUART:sTX:TxShifter:u0\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell4";
-    ATTRIBUTE Location OF \UART:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(2,4)";
+    ATTRIBUTE Location OF \UART:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \UART:BUART:sTX:TxSts\ : LABEL IS "statusicell3";
-    ATTRIBUTE Location OF \UART:BUART:sTX:TxSts\ : LABEL IS "U(2,5)";
-    ATTRIBUTE lib_model OF TxDMA_1 : LABEL IS "drqcell6";
+    ATTRIBUTE Location OF \UART:BUART:sTX:TxSts\ : LABEL IS "U(2,4)";
+    ATTRIBUTE lib_model OF TxDMA_1 : LABEL IS "drqcell4";
     ATTRIBUTE Location OF TxDMA_1 : LABEL IS "[DrqContainer=(0)][DrqId=(3)]";
-    ATTRIBUTE Location OF \ADC_SAR:IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
-    ATTRIBUTE Location OF \ADC_SAR:ADC_SAR\ : LABEL IS "F(SAR,1)";
     ATTRIBUTE lib_model OF \I2S:bI2S:reset\ : LABEL IS "macrocell7";
     ATTRIBUTE Location OF \I2S:bI2S:reset\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF Net_248 : LABEL IS "macrocell8";
@@ -264,9 +228,9 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE lib_model OF \UART:BUART:tx_state_1\ : LABEL IS "macrocell24";
     ATTRIBUTE Location OF \UART:BUART:tx_state_1\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_state_0\ : LABEL IS "macrocell25";
-    ATTRIBUTE Location OF \UART:BUART:tx_state_0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \UART:BUART:tx_state_0\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_state_2\ : LABEL IS "macrocell26";
-    ATTRIBUTE Location OF \UART:BUART:tx_state_2\ : LABEL IS "U(2,4)";
+    ATTRIBUTE Location OF \UART:BUART:tx_state_2\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \UART:BUART:tx_bitclk\ : LABEL IS "macrocell27";
     ATTRIBUTE Location OF \UART:BUART:tx_bitclk\ : LABEL IS "U(2,3)";
     COMPONENT clockblockcell
@@ -484,11 +448,6 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
             termout : OUT std_ulogic;
             clock : IN std_ulogic);
     END COMPONENT;
-    COMPONENT interrupt
-        PORT (
-            interrupt : IN std_ulogic;
-            clock : IN std_ulogic);
-    END COMPONENT;
     COMPONENT iocell
         PORT (
             pin_input : IN std_ulogic;
@@ -564,36 +523,6 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
             q : OUT std_ulogic;
             q_fixed : OUT std_ulogic);
     END COMPONENT;
-    COMPONENT sarcell
-        PORT (
-            clock : IN std_ulogic;
-            pump_clock : IN std_ulogic;
-            clk_udb : IN std_ulogic;
-            sof_udb : IN std_ulogic;
-            vp_ctl_udb_0 : IN std_ulogic;
-            vp_ctl_udb_1 : IN std_ulogic;
-            vp_ctl_udb_2 : IN std_ulogic;
-            vp_ctl_udb_3 : IN std_ulogic;
-            vn_ctl_udb_0 : IN std_ulogic;
-            vn_ctl_udb_1 : IN std_ulogic;
-            vn_ctl_udb_2 : IN std_ulogic;
-            vn_ctl_udb_3 : IN std_ulogic;
-            data_out_udb_0 : OUT std_ulogic;
-            data_out_udb_1 : OUT std_ulogic;
-            data_out_udb_2 : OUT std_ulogic;
-            data_out_udb_3 : OUT std_ulogic;
-            data_out_udb_4 : OUT std_ulogic;
-            data_out_udb_5 : OUT std_ulogic;
-            data_out_udb_6 : OUT std_ulogic;
-            data_out_udb_7 : OUT std_ulogic;
-            data_out_udb_8 : OUT std_ulogic;
-            data_out_udb_9 : OUT std_ulogic;
-            data_out_udb_10 : OUT std_ulogic;
-            data_out_udb_11 : OUT std_ulogic;
-            eof_udb : OUT std_ulogic;
-            irq : OUT std_ulogic;
-            next : OUT std_ulogic);
-    END COMPONENT;
     COMPONENT statusicell
         PORT (
             status_0 : IN std_ulogic;
@@ -607,22 +536,6 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
             reset : IN std_ulogic;
             interrupt : OUT std_ulogic;
             clk_en : IN std_ulogic);
-    END COMPONENT;
-    COMPONENT vidaccell
-        PORT (
-            data_0 : IN std_ulogic;
-            data_1 : IN std_ulogic;
-            data_2 : IN std_ulogic;
-            data_3 : IN std_ulogic;
-            data_4 : IN std_ulogic;
-            data_5 : IN std_ulogic;
-            data_6 : IN std_ulogic;
-            data_7 : IN std_ulogic;
-            strobe : IN std_ulogic;
-            strobe_udb : IN std_ulogic;
-            reset : IN std_ulogic;
-            idir : IN std_ulogic;
-            ioff : IN std_ulogic);
     END COMPONENT;
 BEGIN
 
@@ -641,14 +554,10 @@ BEGIN
             clk_bus => ClockBlock_BUS_CLK_local,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => \ADC_SAR:Net_376\,
-            dclk_0 => \ADC_SAR:Net_376_local\,
-            dclk_glb_1 => Net_146,
-            dclk_1 => Net_146_local,
-            dclk_glb_2 => \UART:Net_9\,
-            dclk_2 => \UART:Net_9_local\,
-            dclk_glb_3 => \WaveDAC8:Net_279\,
-            dclk_3 => \WaveDAC8:Net_279_local\);
+            dclk_glb_0 => Net_146,
+            dclk_0 => Net_146_local,
+            dclk_glb_1 => \UART:Net_9\,
+            dclk_1 => \UART:Net_9_local\);
 
     SCK:logicalport
         GENERIC MAP(
@@ -735,95 +644,6 @@ BEGIN
             pin_input => Net_136,
             pad_out => SCK(0)_PAD,
             pad_in => SCK(0)_PAD,
-            in_clock => open,
-            in_clock_en => '1',
-            in_reset => '0',
-            out_clock => open,
-            out_clock_en => '1',
-            out_reset => '0');
-
-    Wave_Output:logicalport
-        GENERIC MAP(
-            drive_mode => "000",
-            ibuf_enabled => "0",
-            id => "a783b260-3f8f-4521-800a-d49c026b1397",
-            init_dr_st => "0",
-            input_buffer_sel => "00",
-            input_clk_en => 0,
-            input_sync => "1",
-            input_sync_mode => "0",
-            intr_mode => "00",
-            invert_in_clock => 0,
-            invert_in_clock_en => 0,
-            invert_in_reset => 0,
-            invert_out_clock => 0,
-            invert_out_clock_en => 0,
-            invert_out_reset => 0,
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            oe_reset => 0,
-            oe_sync => "0",
-            output_clk_en => 0,
-            output_clock_mode => "0",
-            output_conn => "0",
-            output_mode => "0",
-            output_reset => 0,
-            output_sync => "0",
-            ovt_hyst_trim => "0",
-            ovt_needed => "0",
-            ovt_slew_control => "00",
-            pa_in_clock => -1,
-            pa_in_clock_en => -1,
-            pa_in_reset => -1,
-            pa_out_clock => -1,
-            pa_out_clock_en => -1,
-            pa_out_reset => -1,
-            pin_aliases => "",
-            pin_mode => "A",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "1",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vohsel => "",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1,
-            in_clk_inv => 0,
-            in_clken_inv => 0,
-            in_clken_mode => 1,
-            in_rst_inv => 0,
-            out_clk_inv => 0,
-            out_clken_inv => 0,
-            out_clken_mode => 1,
-            out_rst_inv => 0)
-        PORT MAP(
-            in_clock_en => open,
-            in_reset => open,
-            out_clock_en => open,
-            out_reset => open);
-
-    Wave_Output(0):iocell
-        GENERIC MAP(
-            in_sync_mode => 0,
-            out_sync_mode => 0,
-            oe_sync_mode => 0,
-            logicalport => "Wave_Output",
-            logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000010")
-        PORT MAP(
-            pa_out => Wave_Output(0)__PA,
-            oe => open,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -1198,95 +1018,6 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
-    \ADC_SAR:Bypass\:logicalport
-        GENERIC MAP(
-            drive_mode => "000",
-            ibuf_enabled => "0",
-            id => "e7335286-d8a6-4678-aabc-dfdb97977fbe/16a808f6-2e13-45b9-bce0-b001c8655113",
-            init_dr_st => "0",
-            input_buffer_sel => "",
-            input_clk_en => 0,
-            input_sync => "1",
-            input_sync_mode => "0",
-            intr_mode => "00",
-            invert_in_clock => 0,
-            invert_in_clock_en => 0,
-            invert_in_reset => 0,
-            invert_out_clock => 0,
-            invert_out_clock_en => 0,
-            invert_out_reset => 0,
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            oe_reset => 0,
-            oe_sync => "0",
-            output_clk_en => 0,
-            output_clock_mode => "0",
-            output_conn => "0",
-            output_mode => "0",
-            output_reset => 0,
-            output_sync => "0",
-            ovt_hyst_trim => "",
-            ovt_needed => "",
-            ovt_slew_control => "",
-            pa_in_clock => -1,
-            pa_in_clock_en => -1,
-            pa_in_reset => -1,
-            pa_out_clock => -1,
-            pa_out_clock_en => -1,
-            pa_out_reset => -1,
-            pin_aliases => "",
-            pin_mode => "A",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "0",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vohsel => "",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1,
-            in_clk_inv => 0,
-            in_clken_inv => 0,
-            in_clken_mode => 1,
-            in_rst_inv => 0,
-            out_clk_inv => 0,
-            out_clken_inv => 0,
-            out_clken_mode => 1,
-            out_rst_inv => 0)
-        PORT MAP(
-            in_clock_en => open,
-            in_reset => open,
-            out_clock_en => open,
-            out_reset => open);
-
-    \ADC_SAR:Bypass(0)\:iocell
-        GENERIC MAP(
-            in_sync_mode => 0,
-            out_sync_mode => 0,
-            oe_sync_mode => 0,
-            logicalport => "\ADC_SAR:Bypass\",
-            logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000010")
-        PORT MAP(
-            pa_out => \\\ADC_SAR:Bypass(0)\\__PA\,
-            oe => open,
-            in_clock => open,
-            in_clock_en => '1',
-            in_reset => '0',
-            out_clock => open,
-            out_clock_en => '1',
-            out_reset => '0');
-
     \I2S:bI2S:tx_underflow_0\:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0 * !main_1 * main_2 * main_3) + (main_0 * !main_1 * !main_2 * main_4)",
@@ -1508,37 +1239,6 @@ BEGIN
             f1_blk_stat_comb => \I2S:bI2S:rx_f1_full_0\,
             busclk => ClockBlock_BUS_CLK);
 
-    \WaveDAC8:Wave1_DMA\:drqcell
-        GENERIC MAP(
-            drq_type => "10",
-            num_tds => 0)
-        PORT MAP(
-            dmareq => \WaveDAC8:Net_279_local\,
-            termin => '0',
-            termout => Net_202,
-            clock => ClockBlock_BUS_CLK);
-
-    \WaveDAC8:Wave2_DMA\:drqcell
-        GENERIC MAP(
-            drq_type => "10",
-            num_tds => 0)
-        PORT MAP(
-            dmareq => open,
-            termin => '0',
-            termout => Net_201,
-            clock => ClockBlock_BUS_CLK);
-
-    \WaveDAC8:VDAC8:viDAC8\:vidaccell
-        GENERIC MAP(
-            cy_registers => "",
-            is_all_if_any => 0,
-            reg_data => 0)
-        PORT MAP(
-            reset => open,
-            idir => open,
-            ioff => open,
-            strobe_udb => \WaveDAC8:Net_279_local\);
-
     TxDMA_0:drqcell
         GENERIC MAP(
             drq_type => "01",
@@ -1669,43 +1369,6 @@ BEGIN
             termin => '0',
             termout => Net_310,
             clock => ClockBlock_BUS_CLK);
-
-    \ADC_SAR:IRQ\:interrupt
-        GENERIC MAP(
-            int_type => "10")
-        PORT MAP(
-            interrupt => Net_355,
-            clock => ClockBlock_BUS_CLK);
-
-    \ADC_SAR:ADC_SAR\:sarcell
-        GENERIC MAP(
-            cy_registers => "")
-        PORT MAP(
-            clk_udb => \ADC_SAR:Net_376_local\,
-            sof_udb => open,
-            vp_ctl_udb_3 => open,
-            vp_ctl_udb_2 => open,
-            vp_ctl_udb_1 => open,
-            vp_ctl_udb_0 => open,
-            vn_ctl_udb_3 => open,
-            vn_ctl_udb_2 => open,
-            vn_ctl_udb_1 => open,
-            vn_ctl_udb_0 => open,
-            irq => \ADC_SAR:Net_252\,
-            next => Net_358,
-            data_out_udb_11 => \ADC_SAR:Net_207_11\,
-            data_out_udb_10 => \ADC_SAR:Net_207_10\,
-            data_out_udb_9 => \ADC_SAR:Net_207_9\,
-            data_out_udb_8 => \ADC_SAR:Net_207_8\,
-            data_out_udb_7 => \ADC_SAR:Net_207_7\,
-            data_out_udb_6 => \ADC_SAR:Net_207_6\,
-            data_out_udb_5 => \ADC_SAR:Net_207_5\,
-            data_out_udb_4 => \ADC_SAR:Net_207_4\,
-            data_out_udb_3 => \ADC_SAR:Net_207_3\,
-            data_out_udb_2 => \ADC_SAR:Net_207_2\,
-            data_out_udb_1 => \ADC_SAR:Net_207_1\,
-            data_out_udb_0 => \ADC_SAR:Net_207_0\,
-            eof_udb => Net_355);
 
     \I2S:bI2S:reset\:macrocell
         GENERIC MAP(

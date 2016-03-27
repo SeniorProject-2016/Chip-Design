@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="Wave Generator" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" Version="4.11" Type="Normal">
+  <Project Name="Wave Generator" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" Version="4.11" Type="Normal">
     <CMSIS_SVD_File>Wave Generator.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,13 +34,13 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC5\Cm3Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="BUILD" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn">
+      <Folder BuildType="BUILD" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn">
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn\Generated_Source\PSoC5">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn\Generated_Source\PSoC5">
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn">
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cymetadata.c</File>
@@ -57,9 +57,6 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitteriar.inc</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cydisabledsheets.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Wave_Output_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Wave_Output.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Wave_Output.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2S.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2S.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\I2S_PM.c</File>
@@ -86,18 +83,6 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\core_cmInstr.h</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Generated_Source\PSoC5\CyBootAsmIar.s</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\project.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_DacClk.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_DacClk.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_Wave1_DMA_dma.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_Wave1_DMA_dma.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_Wave2_DMA_dma.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_Wave2_DMA_dma.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_VDAC8.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_VDAC8.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\WaveDAC8_VDAC8_PM.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\TxDMA_0_dma.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\TxDMA_0_dma.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\TxDMA_1_dma.c</File>
@@ -111,64 +96,53 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_BOOT.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_IntClock.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_IntClock.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_IRQ.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_IRQ.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_theACLK.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_theACLK.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_Bypass_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_Bypass.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_SAR_Bypass.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\RxDMA_1_dma.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\RxDMA_1_dma.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\RxDMA_0_dma.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\RxDMA_0_dma.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn\Export\ARM_GCC_Generic">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn\Export\ARM_GCC_Generic">
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">.\Export\ARM_GCC_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn\Export\ARM_MDK_Generic">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn\Export\ARM_MDK_Generic">
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn">
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">.\Export\ARM_MDK_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn\Export\ARM_IAR_Generic">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn\Export\ARM_IAR_Generic">
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn">
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Export\ARM_IAR_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\Generated_Source\PSoC3">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\Generated_Source\PSoC4">
-        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator\Wave Generator.cydsn" />
+        <Files Root="C:\Users\Ian\Documents\Junior\Chip-Design\proj_asic\psoc\Wave Generator 2.0\Wave Generator.cydsn" />
       </Folder>
     </Folders>
   </Project>

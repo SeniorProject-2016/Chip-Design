@@ -1,7 +1,7 @@
 A = 2;          % Max voltage
 Fs = 48000;     % Sampling frequency
 F0 = 1000;      % Signal frequency
-N = 10*Fs/F0;   % Fs/F0 is 1 complete cycle
+N = Fs/F0   % Fs/F0 is 1 complete cycle
 
 x1 = Wave(A, Fs, N, F0, 'sine');
 x2 = Wave(A, Fs, N, F0, 'square');

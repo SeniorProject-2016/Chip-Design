@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
   30:.\Generated_Source\PSoC5/cyPm.c **** 
   31:.\Generated_Source\PSoC5/cyPm.c **** static CY_PM_BACKUP_STRUCT          cyPmBackup;
   32:.\Generated_Source\PSoC5/cyPm.c **** static CY_PM_CLOCK_BACKUP_STRUCT    cyPmClockBackup;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 2
 
 
   33:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
   87:.\Generated_Source\PSoC5/cyPm.c **** 
   88:.\Generated_Source\PSoC5/cyPm.c ****     /* Save current flash wait cycles and set the maximum value */
   89:.\Generated_Source\PSoC5/cyPm.c ****     cyPmClockBackup.flashWaitCycles = CY_PM_CACHE_CR_CYCLES_MASK & CY_PM_CACHE_CR_REG;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 3
 
 
   90:.\Generated_Source\PSoC5/cyPm.c ****     CyFlash_SetWaitCycles(CY_PM_MAX_FLASH_WAIT_CYCLES);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  144:.\Generated_Source\PSoC5/cyPm.c ****         cyPmClockBackup.pllEnableState = CY_PM_DISABLED;
  145:.\Generated_Source\PSoC5/cyPm.c ****     }
  146:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 4
 
 
  147:.\Generated_Source\PSoC5/cyPm.c ****     /* IMO - set appropriate frequency for LPM */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  201:.\Generated_Source\PSoC5/cyPm.c ****     /* Master clock - save divider and set it to divide-by-one (if no yet) */
  202:.\Generated_Source\PSoC5/cyPm.c ****     cyPmClockBackup.clkSyncDiv = CY_PM_CLKDIST_MSTR0_REG;
  203:.\Generated_Source\PSoC5/cyPm.c ****     if(CY_PM_DIV_BY_ONE != cyPmClockBackup.clkSyncDiv)
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 5
 
 
  204:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  258:.\Generated_Source\PSoC5/cyPm.c **** *
  259:.\Generated_Source\PSoC5/cyPm.c **** * Summary:
  260:.\Generated_Source\PSoC5/cyPm.c **** *  Restores any state that was preserved by the last call to CyPmSaveClocks().
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 6
 
 
  261:.\Generated_Source\PSoC5/cyPm.c **** *  The Flash wait state setting is also restored.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  315:.\Generated_Source\PSoC5/cyPm.c ****         (void) CyXTAL_Start(CY_PM_XTAL_MHZ_NO_WAIT);
  316:.\Generated_Source\PSoC5/cyPm.c **** 
  317:.\Generated_Source\PSoC5/cyPm.c ****         /* Read XERR bit to clear it */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 7
 
 
  318:.\Generated_Source\PSoC5/cyPm.c ****         (void) CY_PM_FASTCLK_XMHZ_CSR_REG;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  372:.\Generated_Source\PSoC5/cyPm.c ****     else
  373:.\Generated_Source\PSoC5/cyPm.c ****     {
  374:.\Generated_Source\PSoC5/cyPm.c ****         /* Restore IMO frequency */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 8
 
 
  375:.\Generated_Source\PSoC5/cyPm.c ****         CyIMO_SetFreq(cyPmImoFreqMhz2Reg[cyPmClockBackup.imoFreq]);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  429:.\Generated_Source\PSoC5/cyPm.c **** 
  430:.\Generated_Source\PSoC5/cyPm.c ****         /* It should take 250 us lock: 251-80 = 171 */
  431:.\Generated_Source\PSoC5/cyPm.c ****         for(i = 171u; i > 0u; i--)
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 9
 
 
  432:.\Generated_Source\PSoC5/cyPm.c ****         {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  486:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_CACHE_CR_REG = ((CY_PM_CACHE_CR_REG & ((uint8)(~CY_PM_CACHE_CR_CYCLES_MASK))) |
  487:.\Generated_Source\PSoC5/cyPm.c ****                            cyPmClockBackup.flashWaitCycles);
  488:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 10
 
 
  489:.\Generated_Source\PSoC5/cyPm.c ****     /* Digital and analog clocks - restore state */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  543:.\Generated_Source\PSoC5/cyPm.c **** *  Sleep Timer component and one second interval should be configured with the
  544:.\Generated_Source\PSoC5/cyPm.c **** *  RTC component.
  545:.\Generated_Source\PSoC5/cyPm.c **** *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 11
 
 
  546:.\Generated_Source\PSoC5/cyPm.c **** *  The wakeup behavior depends on the wakeupSource parameter in the following
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  600:.\Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_PICU              PICU
  601:.\Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_I2C               I2C
  602:.\Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_BOOSTCONVERTER    Boost Converter
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 12
 
 
  603:.\Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_FTW               Fast Timewheel*
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  657:.\Generated_Source\PSoC5/cyPm.c **** 
  658:.\Generated_Source\PSoC5/cyPm.c ****             /* Include associated timer to wakeupSource */
  659:.\Generated_Source\PSoC5/cyPm.c ****             wakeupSource |= PM_ALT_ACT_SRC_FTW;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 13
 
 
  660:.\Generated_Source\PSoC5/cyPm.c ****         }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  714:.\Generated_Source\PSoC5/cyPm.c **** 
  715:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore wake up configuration */
  716:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG0_REG = cyPmBackup.wakeupCfg0;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 14
 
 
  717:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG1_REG = cyPmBackup.wakeupCfg1;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  771:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_TIME_CTW_2MS            CTW: 2 ms
  772:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_TIME_CTW_4MS            CTW: 4 ms
  773:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_TIME_CTW_8MS            CTW: 8 ms
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 15
 
 
  774:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_TIME_CTW_16MS           CTW: 16 ms
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  828:.\Generated_Source\PSoC5/cyPm.c **** *  delay is measured using rising edges of the 1 kHz ILO.
  829:.\Generated_Source\PSoC5/cyPm.c **** *
  830:.\Generated_Source\PSoC5/cyPm.c **** *  For PSoC 3 silicon hardware buzz should be disabled before entering a sleep
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 16
 
 
  831:.\Generated_Source\PSoC5/cyPm.c **** *  power mode. It is disabled by PSoC Creator during startup.
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  885:.\Generated_Source\PSoC5/cyPm.c ****             /* Hardware buzz expected to be disabled in Sleep mode */
  886:.\Generated_Source\PSoC5/cyPm.c ****             CYASSERT(0u == (CY_PM_PWRSYS_WAKE_TR2_REG & CY_PM_PWRSYS_WAKE_TR2_EN_BUZZ));
  887:.\Generated_Source\PSoC5/cyPm.c ****         }
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 17
 
 
  888:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  942:.\Generated_Source\PSoC5/cyPm.c ****         {
  943:.\Generated_Source\PSoC5/cyPm.c ****             /* Save current and set new configuration of CTW */
  944:.\Generated_Source\PSoC5/cyPm.c ****             CyPmCtwSetInterval((uint8)(wakeupTime - 1u));
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 18
 
 
  945:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  999:.\Generated_Source\PSoC5/cyPm.c ****         cyPmBackup.imoActFreq = CY_PM_FASTCLK_IMO_CR_REG & CY_PM_FASTCLK_IMO_CR_FREQ_MASK;
 1000:.\Generated_Source\PSoC5/cyPm.c **** 
 1001:.\Generated_Source\PSoC5/cyPm.c ****         /* Set IMO frequency to 12 MHz */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 19
 
 
 1002:.\Generated_Source\PSoC5/cyPm.c ****         CY_PM_FASTCLK_IMO_CR_REG &= ((uint8) (~CY_PM_FASTCLK_IMO_CR_FREQ_MASK));
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1056:.\Generated_Source\PSoC5/cyPm.c ****     #endif /* (CY_PSOC3) */
 1057:.\Generated_Source\PSoC5/cyPm.c **** 
 1058:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 20
 
 
 1059:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore current wake up configuration */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1113:.\Generated_Source\PSoC5/cyPm.c **** {
 1114:.\Generated_Source\PSoC5/cyPm.c ****     uint8 interruptState;
 1115:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 21
 
 
 1116:.\Generated_Source\PSoC5/cyPm.c ****     /* Save current global interrupt enable and disable it */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1170:.\Generated_Source\PSoC5/cyPm.c ****     }
 1171:.\Generated_Source\PSoC5/cyPm.c **** 
 1172:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 22
 
 
 1173:.\Generated_Source\PSoC5/cyPm.c ****     /* Switch to Hibernate Mode */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1227:.\Generated_Source\PSoC5/cyPm.c **** *
 1228:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
 1229:.\Generated_Source\PSoC5/cyPm.c **** *  mask: Bits in the shadow register to clear.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 23
 
 
 1230:.\Generated_Source\PSoC5/cyPm.c **** *
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1284:.\Generated_Source\PSoC5/cyPm.c **** static void CyPmHibSaveSet(void) 
 1285:.\Generated_Source\PSoC5/cyPm.c **** {
 1286:.\Generated_Source\PSoC5/cyPm.c ****     /* I2C backup reg must be off when the sleep regulator is unavailable */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 24
 
 
 1287:.\Generated_Source\PSoC5/cyPm.c ****     if(0u != (CY_PM_PWRSYS_CR1_REG & CY_PM_PWRSYS_CR1_I2CREG_BACKUP))
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1341:.\Generated_Source\PSoC5/cyPm.c ****     CyPmHibSlpSaveSet();
 1342:.\Generated_Source\PSoC5/cyPm.c **** 
 1343:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 25
 
 
 1344:.\Generated_Source\PSoC5/cyPm.c ****     /***************************************************************************
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1398:.\Generated_Source\PSoC5/cyPm.c **** 
 1399:.\Generated_Source\PSoC5/cyPm.c **** 
 1400:.\Generated_Source\PSoC5/cyPm.c ****     if(CY_PM_DISABLED == cyPmBackup.slpTrBypass)
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 26
 
 
 1401:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1455:.\Generated_Source\PSoC5/cyPm.c ****     else
 1456:.\Generated_Source\PSoC5/cyPm.c ****     {
 1457:.\Generated_Source\PSoC5/cyPm.c ****         /* Set CTW interval if needed */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 27
 
 
 1458:.\Generated_Source\PSoC5/cyPm.c ****         if(CY_PM_TW_CFG1_REG != ctwInterval)
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1512:.\Generated_Source\PSoC5/cyPm.c **** *  - Sets a new FTW interval.
 1513:.\Generated_Source\PSoC5/cyPm.c **** *
 1514:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 28
 
 
 1515:.\Generated_Source\PSoC5/cyPm.c **** *  ftwInterval - FTW counter interval.
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1569:.\Generated_Source\PSoC5/cyPm.c **** *  - Saves the boost reference selection and sets it to internal
 1570:.\Generated_Source\PSoC5/cyPm.c **** *
 1571:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 29
 
 
 1572:.\Generated_Source\PSoC5/cyPm.c **** *  None
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
   62              		.loc 1 1589 0
   63 002c 514A     		ldr	r2, .L5+16
   64 002e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 30
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 30
 
 
   65 0030 9A73     		strb	r2, [r3, #14]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  106              		.loc 1 1602 0
  107 006e 4C4A     		ldr	r2, .L5+60
  108 0070 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 31
 
 
  109 0072 5A76     		strb	r2, [r3, #25]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  151 00c8 3C4A     		ldr	r2, .L5+88
  152 00ca 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
  153 00cc 83F82420 		strb	r2, [r3, #36]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 32
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 32
 
 
 1615:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  192              		.loc 1 1630 0
  193 0106 0232     		adds	r2, r2, #2
  194 0108 1370     		strb	r3, [r2]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 33
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 33
 
 
 1631:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1653:.\Generated_Source\PSoC5/cyPm.c ****         /* Disable SWV before entering low power mode */
 1654:.\Generated_Source\PSoC5/cyPm.c ****         if(0u != (CY_PM_MLOGIC_DBG_REG & CY_PM_MLOGIC_DBG_SWV_CLK_EN))
 1655:.\Generated_Source\PSoC5/cyPm.c ****         {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 34
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 34
 
 
 1656:.\Generated_Source\PSoC5/cyPm.c ****             /* Save SWV clock enabled state */
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  247 015e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
  248              	.L6:
  249 0162 00BF     		.align	2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 35
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 35
 
 
  250              	.L5:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1703:.\Generated_Source\PSoC5/cyPm.c **** *  - Restores the  boost reference selection
 1704:.\Generated_Source\PSoC5/cyPm.c **** *
 1705:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 36
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 36
 
 
 1706:.\Generated_Source\PSoC5/cyPm.c **** *  None
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  327 002e 0632     		adds	r2, r2, #6
  328 0030 1170     		strb	r1, [r2]
 1724:.\Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC1_SW2 , cyPmBackup.scctData[8u] );
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 37
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 37
 
 
  329              		.loc 1 1724 0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  372 0072 1170     		strb	r1, [r2]
 1736:.\Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC2_SW8 , cyPmBackup.scctData[19u]);
  373              		.loc 1 1736 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 38
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 38
 
 
  374 0074 197F     		ldrb	r1, [r3, #28]	@ zero_extendqisi2
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1756:.\Generated_Source\PSoC5/cyPm.c **** 
 1757:.\Generated_Source\PSoC5/cyPm.c ****             /* Enable SWV clocks */
 1758:.\Generated_Source\PSoC5/cyPm.c ****             CY_PM_MLOGIC_DBG_REG |= CY_PM_MLOGIC_DBG_SWV_CLK_EN;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 39
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 39
 
 
 1759:.\Generated_Source\PSoC5/cyPm.c ****         }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1786:.\Generated_Source\PSoC5/cyPm.c **** *  No
 1787:.\Generated_Source\PSoC5/cyPm.c **** *
 1788:.\Generated_Source\PSoC5/cyPm.c **** *******************************************************************************/
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 40
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 40
 
 
 1789:.\Generated_Source\PSoC5/cyPm.c **** static void CyPmHviLviSaveDisable(void) 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  473 0036 83F82520 		strb	r2, [r3, #37]
  474              	.L13:
 1805:.\Generated_Source\PSoC5/cyPm.c ****     }
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 41
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 41
 
 
 1806:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  510 0076 06D0     		beq	.L16
 1824:.\Generated_Source\PSoC5/cyPm.c ****     {
 1825:.\Generated_Source\PSoC5/cyPm.c ****         cyPmBackup.hviaEn = CY_PM_ENABLED;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 42
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 42
 
 
  511              		.loc 1 1825 0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  557 000e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  558 0010 03F0FB03 		and	r3, r3, #251
  559 0014 1370     		strb	r3, [r2]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 43
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 43
 
 
  560              	.L22:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  602 0054 FFF7FEFF 		bl	CyPmHviLviSaveDisable
  603              	.LVL4:
 1341:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 44
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 44
 
 
  604              		.loc 1 1341 0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1843:.\Generated_Source\PSoC5/cyPm.c **** *  None
 1844:.\Generated_Source\PSoC5/cyPm.c **** *
 1845:.\Generated_Source\PSoC5/cyPm.c **** * Return:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 45
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 45
 
 
 1846:.\Generated_Source\PSoC5/cyPm.c **** *  None
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  676 0034 93F82930 		ldrb	r3, [r3, #41]	@ zero_extendqisi2
  677 0038 012B     		cmp	r3, #1
  678 003a 01D1     		bne	.L28
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 46
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 46
 
 
 1866:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  725 001c 01D1     		bne	.L37
 1393:.\Generated_Source\PSoC5/cyPm.c ****     }
  726              		.loc 1 1393 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 47
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 47
 
 
  727 001e FFF7FEFF 		bl	CyILO_Start100K
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  775              		@ frame_needed = 0, uses_anonymous_args = 0
  776 0000 10B5     		push	{r4, lr}
  777              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 48
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 48
 
 
  778              		.cfi_offset 4, -8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  822 005a 84F83920 		strb	r2, [r4, #57]
  823 005e 03E0     		b	.L44
  824              	.L43:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 49
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 49
 
 
  105:.\Generated_Source\PSoC5/cyPm.c ****     }
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  869 00a6 02E0     		b	.L45
  870              	.L67:
  129:.\Generated_Source\PSoC5/cyPm.c ****             break;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 50
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 50
 
 
  871              		.loc 1 129 0 discriminator 1
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  916              	.LVL21:
  165:.\Generated_Source\PSoC5/cyPm.c ****     }
  917              		.loc 1 165 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 51
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 51
 
 
  918 00f4 0620     		movs	r0, #6
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  963 0144 03F0CF03 		and	r3, r3, #207
  964 0148 1370     		strb	r3, [r2]
  965              	.L57:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 52
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 52
 
 
  196:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  219:.\Generated_Source\PSoC5/cyPm.c ****     }    /* Do nothing if saved and actual values are equal */
  1010              		.loc 1 219 0
  1011 018e 0020     		movs	r0, #0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 53
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 53
 
 
  1012 0190 FFF7FEFF 		bl	CyBusClk_SetDivider
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1058              	.L70:
  1059 01e2 00BF     		.align	2
  1060              	.L69:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 54
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 54
 
 
  1061 01e4 A1430040 		.word	1073759137
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1111 0024 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  1112 0026 03F00703 		and	r3, r3, #7
  1113 002a 7C4A     		ldr	r2, .L93
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 55
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 55
 
 
  1114 002c D05C     		ldrb	r0, [r2, r3]	@ zero_extendqisi2
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1159              		.loc 1 321 0 discriminator 2
  1160 007c 013C     		subs	r4, r4, #1
  1161              	.LVL36:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 56
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 56
 
 
  1162 007e A4B2     		uxth	r4, r4
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1208 00ca 1344     		add	r3, r3, r2
  1209 00cc 13F8083C 		ldrb	r3, [r3, #-8]	@ zero_extendqisi2
  366:.\Generated_Source\PSoC5/cyPm.c ****         (CY_IMO_FREQ_24MHZ == cyPmImoFreqMhz2Reg[cyPmClockBackup.imoFreq]))
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 57
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 57
 
 
  1210              		.loc 1 366 0 discriminator 1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1255              		.loc 1 392 0
  1256 0122 0020     		movs	r0, #0
  1257 0124 FFF7FEFF 		bl	CyIMO_Start
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 58
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 58
 
 
  1258              	.LVL44:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1303 0178 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  1304              	.LVL49:
  431:.\Generated_Source\PSoC5/cyPm.c ****         {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 59
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 59
 
 
  1305              		.loc 1 431 0
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1350              		.loc 1 463 0
  1351 01ba FFF7FEFF 		bl	CyMasterClk_SetDivider
  1352              	.LVL55:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 60
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 60
 
 
  1353              	.L89:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1396 01fa 094B     		ldr	r3, .L93+4
  1397 01fc 93F83510 		ldrb	r1, [r3, #53]	@ zero_extendqisi2
  486:.\Generated_Source\PSoC5/cyPm.c ****                            cyPmClockBackup.flashWaitCycles);
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 61
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 61
 
 
  1398              		.loc 1 486 0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1448              		.cfi_offset 3, -16
  1449              		.cfi_offset 4, -12
  1450              		.cfi_offset 5, -8
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 62
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 62
 
 
  1451              		.cfi_offset 14, -4
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1494              	
  1495              	@ 0 "" 2
  708:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 63
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 63
 
 
  1496              		.loc 1 708 0
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1545              		.cfi_offset 6, -8
  1546              		.cfi_offset 14, -4
  1547 0002 0646     		mov	r6, r0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 64
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 64
 
 
  1548 0004 0C46     		mov	r4, r1
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  970:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG1_REG = (((uint8) wakeupSource) & CY_PM_WAKEUP_SRC_CMPS_MASK);
  1592              		.loc 1 970 0
  1593 0042 0132     		adds	r2, r2, #1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 65
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 65
 
 
  1594 0044 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1638 0098 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
 1012:.\Generated_Source\PSoC5/cyPm.c ****     CY_NOP;
  1639              		.loc 1 1012 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 66
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 66
 
 
  1640              	@ 1012 ".\Generated_Source\PSoC5\cyPm.c" 1
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1684 00ce 9A79     		ldrb	r2, [r3, #6]	@ zero_extendqisi2
  1685 00d0 074B     		ldr	r3, .L109+20
  1686 00d2 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 67
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 67
 
 
 1065:.\Generated_Source\PSoC5/cyPm.c **** }
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1735              		.loc 1 1140 0
  1736 001c FFF7FEFF 		bl	CyPmHibSaveSet
  1737              	.LVL76:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 68
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 68
 
 
 1144:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG0_REG = CY_PM_WAKEUP_PICU;
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1781 005c 0023     		movs	r3, #0
  1782 005e 81F82D30 		strb	r3, [r1, #45]
 1166:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 69
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 69
 
 
  1783              		.loc 1 1166 0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1193:.\Generated_Source\PSoC5/cyPm.c ****                                     cyPmBackup.imoActFreq;
  1828              		.loc 1 1193 0
  1829 00a0 03F0F803 		and	r3, r3, #248
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 70
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 70
 
 
  1830 00a4 1343     		orrs	r3, r3, r2
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1878              	.LVL81:
  1879 0000 38B5     		push	{r3, r4, r5, lr}
  1880              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 71
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 71
 
 
  1881              		.cfi_offset 3, -16
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1929              		.cfi_offset 3, -16
  1930              		.cfi_offset 4, -12
  1931              		.cfi_offset 5, -8
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 72
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 72
 
 
  1932              		.cfi_offset 14, -4
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  1976 0048 024A     		ldr	r2, .L131
  1977 004a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  1978 004c 43F00403 		orr	r3, r3, #4
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 73
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 73
 
 
  1979 0050 1370     		strb	r3, [r2]
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2028 0024 08430040 		.word	1073758984
  2029 0028 82430040 		.word	1073759106
  2030              		.cfi_endproc
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 74
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 74
 
 
  2031              	.LFE9:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
 1541:.\Generated_Source\PSoC5/cyPm.c ****         }   /* Required interval is already set */
  2078              		.loc 1 1541 0
  2079 0030 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 75
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 75
 
 
  2080 0032 42F00102 		orr	r2, r2, #1
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2131 000f 00       		.bss
  2132              		.align	2
  2133              		.set	.LANCHOR0,. + 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 76
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 76
 
 
  2134              		.type	cyPmBackup, %object
@@ -4535,10 +4535,10 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2157 0006 00000000 		.4byte	.Ldebug_abbrev0
  2158 000a 04       		.byte	0x4
  2159 000b 01       		.uleb128 0x1
- 2160 000c D6050000 		.4byte	.LASF113
+ 2160 000c DA050000 		.4byte	.LASF113
  2161 0010 01       		.byte	0x1
  2162 0011 AE010000 		.4byte	.LASF114
- 2163 0015 52050000 		.4byte	.LASF115
+ 2163 0015 E5010000 		.4byte	.LASF115
  2164 0019 00000000 		.4byte	.Ldebug_ranges0+0
  2165 001d 00000000 		.4byte	0
  2166 0021 00000000 		.4byte	.Ldebug_line0
@@ -4549,16 +4549,16 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2171 002c 02       		.uleb128 0x2
  2172 002d 01       		.byte	0x1
  2173 002e 08       		.byte	0x8
- 2174 002f 4C040000 		.4byte	.LASF1
+ 2174 002f AD040000 		.4byte	.LASF1
  2175 0033 02       		.uleb128 0x2
  2176 0034 02       		.byte	0x2
  2177 0035 05       		.byte	0x5
- 2178 0036 85040000 		.4byte	.LASF2
+ 2178 0036 E6040000 		.4byte	.LASF2
  2179 003a 02       		.uleb128 0x2
  2180 003b 02       		.byte	0x2
  2181 003c 07       		.byte	0x7
- 2182 003d C1020000 		.4byte	.LASF3
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 77
+ 2182 003d 22030000 		.4byte	.LASF3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 77
 
 
  2183 0041 02       		.uleb128 0x2
@@ -4568,7 +4568,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2187 0048 02       		.uleb128 0x2
  2188 0049 04       		.byte	0x4
  2189 004a 07       		.byte	0x7
- 2190 004b 32020000 		.4byte	.LASF5
+ 2190 004b 93020000 		.4byte	.LASF5
  2191 004f 02       		.uleb128 0x2
  2192 0050 08       		.byte	0x8
  2193 0051 05       		.byte	0x5
@@ -4584,7 +4584,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2203 0064 02       		.uleb128 0x2
  2204 0065 04       		.byte	0x4
  2205 0066 07       		.byte	0x7
- 2206 0067 04020000 		.4byte	.LASF8
+ 2206 0067 65020000 		.4byte	.LASF8
  2207 006b 04       		.uleb128 0x4
  2208 006c 87010000 		.4byte	.LASF9
  2209 0070 02       		.byte	0x2
@@ -4603,7 +4603,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2222 008c 02       		.uleb128 0x2
  2223 008d 04       		.byte	0x4
  2224 008e 04       		.byte	0x4
- 2225 008f ED030000 		.4byte	.LASF12
+ 2225 008f 4E040000 		.4byte	.LASF12
  2226 0093 02       		.uleb128 0x2
  2227 0094 08       		.byte	0x8
  2228 0095 04       		.byte	0x4
@@ -4611,17 +4611,17 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2230 009a 02       		.uleb128 0x2
  2231 009b 01       		.byte	0x1
  2232 009c 08       		.byte	0x8
- 2233 009d AF040000 		.4byte	.LASF14
+ 2233 009d 10050000 		.4byte	.LASF14
  2234 00a1 04       		.uleb128 0x4
- 2235 00a2 BA060000 		.4byte	.LASF15
+ 2235 00a2 BE060000 		.4byte	.LASF15
  2236 00a6 02       		.byte	0x2
  2237 00a7 E8       		.byte	0xe8
  2238 00a8 48000000 		.4byte	0x48
  2239 00ac 04       		.uleb128 0x4
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 78
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 78
 
 
- 2240 00ad 34040000 		.4byte	.LASF16
+ 2240 00ad 95040000 		.4byte	.LASF16
  2241 00b1 02       		.byte	0x2
  2242 00b2 F0       		.byte	0xf0
  2243 00b3 B7000000 		.4byte	0xb7
@@ -4630,21 +4630,21 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2246 00bc 02       		.uleb128 0x2
  2247 00bd 04       		.byte	0x4
  2248 00be 07       		.byte	0x7
- 2249 00bf 76030000 		.4byte	.LASF17
+ 2249 00bf D7030000 		.4byte	.LASF17
  2250 00c3 06       		.uleb128 0x6
- 2251 00c4 4B020000 		.4byte	.LASF34
+ 2251 00c4 AC020000 		.4byte	.LASF34
  2252 00c8 12       		.byte	0x12
  2253 00c9 03       		.byte	0x3
  2254 00ca F1       		.byte	0xf1
  2255 00cb 87010000 		.4byte	0x187
  2256 00cf 07       		.uleb128 0x7
- 2257 00d0 92030000 		.4byte	.LASF18
+ 2257 00d0 F3030000 		.4byte	.LASF18
  2258 00d4 03       		.byte	0x3
  2259 00d5 F4       		.byte	0xf4
  2260 00d6 6B000000 		.4byte	0x6b
  2261 00da 00       		.byte	0
  2262 00db 07       		.uleb128 0x7
- 2263 00dc 99030000 		.4byte	.LASF19
+ 2263 00dc FA030000 		.4byte	.LASF19
  2264 00e0 03       		.byte	0x3
  2265 00e1 F5       		.byte	0xf5
  2266 00e2 6B000000 		.4byte	0x6b
@@ -4656,7 +4656,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2272 00ee 6B000000 		.4byte	0x6b
  2273 00f2 02       		.byte	0x2
  2274 00f3 07       		.uleb128 0x7
- 2275 00f4 2A020000 		.4byte	.LASF21
+ 2275 00f4 8B020000 		.4byte	.LASF21
  2276 00f8 03       		.byte	0x3
  2277 00f9 F7       		.byte	0xf7
  2278 00fa 6B000000 		.4byte	0x6b
@@ -4668,28 +4668,28 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2284 0106 6B000000 		.4byte	0x6b
  2285 010a 04       		.byte	0x4
  2286 010b 07       		.uleb128 0x7
- 2287 010c C3060000 		.4byte	.LASF23
+ 2287 010c C7060000 		.4byte	.LASF23
  2288 0110 03       		.byte	0x3
  2289 0111 F9       		.byte	0xf9
  2290 0112 6B000000 		.4byte	0x6b
  2291 0116 05       		.byte	0x5
  2292 0117 07       		.uleb128 0x7
- 2293 0118 0E070000 		.4byte	.LASF24
+ 2293 0118 12070000 		.4byte	.LASF24
  2294 011c 03       		.byte	0x3
  2295 011d FA       		.byte	0xfa
  2296 011e 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 79
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 79
 
 
  2297 0122 06       		.byte	0x6
  2298 0123 07       		.uleb128 0x7
- 2299 0124 E3030000 		.4byte	.LASF25
+ 2299 0124 44040000 		.4byte	.LASF25
  2300 0128 03       		.byte	0x3
  2301 0129 FB       		.byte	0xfb
  2302 012a 6B000000 		.4byte	0x6b
  2303 012e 07       		.byte	0x7
  2304 012f 07       		.uleb128 0x7
- 2305 0130 44030000 		.4byte	.LASF26
+ 2305 0130 A5030000 		.4byte	.LASF26
  2306 0134 03       		.byte	0x3
  2307 0135 FC       		.byte	0xfc
  2308 0136 6B000000 		.4byte	0x6b
@@ -4713,7 +4713,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2326 015a 76000000 		.4byte	0x76
  2327 015e 0C       		.byte	0xc
  2328 015f 08       		.uleb128 0x8
- 2329 0160 6A040000 		.4byte	.LASF30
+ 2329 0160 CB040000 		.4byte	.LASF30
  2330 0164 03       		.byte	0x3
  2331 0165 0001     		.2byte	0x100
  2332 0167 6B000000 		.4byte	0x6b
@@ -4725,20 +4725,20 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2338 0174 6B000000 		.4byte	0x6b
  2339 0178 0F       		.byte	0xf
  2340 0179 08       		.uleb128 0x8
- 2341 017a AF050000 		.4byte	.LASF32
+ 2341 017a B3050000 		.4byte	.LASF32
  2342 017e 03       		.byte	0x3
  2343 017f 0201     		.2byte	0x102
  2344 0181 6B000000 		.4byte	0x6b
  2345 0185 10       		.byte	0x10
  2346 0186 00       		.byte	0
  2347 0187 09       		.uleb128 0x9
- 2348 0188 A7020000 		.4byte	.LASF33
+ 2348 0188 08030000 		.4byte	.LASF33
  2349 018c 03       		.byte	0x3
  2350 018d 0401     		.2byte	0x104
  2351 018f C3000000 		.4byte	0xc3
  2352 0193 0A       		.uleb128 0xa
- 2353 0194 78020000 		.4byte	.LASF35
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 80
+ 2353 0194 D9020000 		.4byte	.LASF35
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 80
 
 
  2354 0198 2F       		.byte	0x2f
@@ -4752,37 +4752,37 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2362 01a8 6B000000 		.4byte	0x6b
  2363 01ac 00       		.byte	0
  2364 01ad 08       		.uleb128 0x8
- 2365 01ae 79040000 		.4byte	.LASF37
+ 2365 01ae DA040000 		.4byte	.LASF37
  2366 01b2 03       		.byte	0x3
  2367 01b3 0A01     		.2byte	0x10a
  2368 01b5 6B000000 		.4byte	0x6b
  2369 01b9 01       		.byte	0x1
  2370 01ba 08       		.uleb128 0x8
- 2371 01bb A1040000 		.4byte	.LASF38
+ 2371 01bb 02050000 		.4byte	.LASF38
  2372 01bf 03       		.byte	0x3
  2373 01c0 0B01     		.2byte	0x10b
  2374 01c2 6B000000 		.4byte	0x6b
  2375 01c6 02       		.byte	0x2
  2376 01c7 08       		.uleb128 0x8
- 2377 01c8 6A030000 		.4byte	.LASF39
+ 2377 01c8 CB030000 		.4byte	.LASF39
  2378 01cc 03       		.byte	0x3
  2379 01cd 0D01     		.2byte	0x10d
  2380 01cf 6B000000 		.4byte	0x6b
  2381 01d3 03       		.byte	0x3
  2382 01d4 08       		.uleb128 0x8
- 2383 01d5 0A030000 		.4byte	.LASF40
+ 2383 01d5 6B030000 		.4byte	.LASF40
  2384 01d9 03       		.byte	0x3
  2385 01da 1701     		.2byte	0x117
  2386 01dc 6B000000 		.4byte	0x6b
  2387 01e0 04       		.byte	0x4
  2388 01e1 08       		.uleb128 0x8
- 2389 01e2 15030000 		.4byte	.LASF41
+ 2389 01e2 76030000 		.4byte	.LASF41
  2390 01e6 03       		.byte	0x3
  2391 01e7 1801     		.2byte	0x118
  2392 01e9 6B000000 		.4byte	0x6b
  2393 01ed 05       		.byte	0x5
  2394 01ee 08       		.uleb128 0x8
- 2395 01ef 20030000 		.4byte	.LASF42
+ 2395 01ef 81030000 		.4byte	.LASF42
  2396 01f3 03       		.byte	0x3
  2397 01f4 1901     		.2byte	0x119
  2398 01f6 6B000000 		.4byte	0x6b
@@ -4798,30 +4798,30 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2408 020d 03       		.byte	0x3
  2409 020e 1C01     		.2byte	0x11c
  2410 0210 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 81
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 81
 
 
  2411 0214 08       		.byte	0x8
  2412 0215 08       		.uleb128 0x8
- 2413 0216 11020000 		.4byte	.LASF45
+ 2413 0216 72020000 		.4byte	.LASF45
  2414 021a 03       		.byte	0x3
  2415 021b 1E01     		.2byte	0x11e
  2416 021d A5020000 		.4byte	0x2a5
  2417 0221 09       		.byte	0x9
  2418 0222 08       		.uleb128 0x8
- 2419 0223 44020000 		.4byte	.LASF46
+ 2419 0223 A5020000 		.4byte	.LASF46
  2420 0227 03       		.byte	0x3
  2421 0228 2101     		.2byte	0x121
  2422 022a 6B000000 		.4byte	0x6b
  2423 022e 25       		.byte	0x25
  2424 022f 08       		.uleb128 0x8
- 2425 0230 05070000 		.4byte	.LASF47
+ 2425 0230 09070000 		.4byte	.LASF47
  2426 0234 03       		.byte	0x3
  2427 0235 2201     		.2byte	0x122
  2428 0237 6B000000 		.4byte	0x6b
  2429 023b 26       		.byte	0x26
  2430 023c 08       		.uleb128 0x8
- 2431 023d 64060000 		.4byte	.LASF48
+ 2431 023d 68060000 		.4byte	.LASF48
  2432 0241 03       		.byte	0x3
  2433 0242 2301     		.2byte	0x123
  2434 0244 6B000000 		.4byte	0x6b
@@ -4839,26 +4839,26 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2446 025e 6B000000 		.4byte	0x6b
  2447 0262 29       		.byte	0x29
  2448 0263 08       		.uleb128 0x8
- 2449 0264 13040000 		.4byte	.LASF51
+ 2449 0264 74040000 		.4byte	.LASF51
  2450 0268 03       		.byte	0x3
  2451 0269 2601     		.2byte	0x126
  2452 026b 6B000000 		.4byte	0x6b
  2453 026f 2A       		.byte	0x2a
  2454 0270 08       		.uleb128 0x8
- 2455 0271 D3060000 		.4byte	.LASF52
+ 2455 0271 D7060000 		.4byte	.LASF52
  2456 0275 03       		.byte	0x3
  2457 0276 2701     		.2byte	0x127
  2458 0278 6B000000 		.4byte	0x6b
  2459 027c 2B       		.byte	0x2b
  2460 027d 08       		.uleb128 0x8
- 2461 027e F9010000 		.4byte	.LASF53
+ 2461 027e 5A020000 		.4byte	.LASF53
  2462 0282 03       		.byte	0x3
  2463 0283 2901     		.2byte	0x129
  2464 0285 6B000000 		.4byte	0x6b
  2465 0289 2C       		.byte	0x2c
  2466 028a 08       		.uleb128 0x8
- 2467 028b DC040000 		.4byte	.LASF54
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 82
+ 2467 028b 3D050000 		.4byte	.LASF54
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 82
 
 
  2468 028f 03       		.byte	0x3
@@ -4866,7 +4866,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2470 0292 6B000000 		.4byte	0x6b
  2471 0296 2D       		.byte	0x2d
  2472 0297 08       		.uleb128 0x8
- 2473 0298 38030000 		.4byte	.LASF55
+ 2473 0298 99030000 		.4byte	.LASF55
  2474 029c 03       		.byte	0x3
  2475 029d 2C01     		.2byte	0x12c
  2476 029f 6B000000 		.4byte	0x6b
@@ -4885,7 +4885,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2489 02bb 2E01     		.2byte	0x12e
  2490 02bd 93010000 		.4byte	0x193
  2491 02c1 0D       		.uleb128 0xd
- 2492 02c2 8F040000 		.4byte	.LASF57
+ 2492 02c2 F0040000 		.4byte	.LASF57
  2493 02c6 01       		.byte	0x1
  2494 02c7 2D06     		.2byte	0x62d
  2495 02c9 00000000 		.4byte	.LFB11
@@ -4918,12 +4918,12 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2522 030d 0F       		.uleb128 0xf
  2523 030e 84000000 		.4byte	.LVL2
  2524 0312 9C080000 		.4byte	0x89c
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 83
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 83
 
 
  2525 0316 00       		.byte	0
  2526 0317 0E       		.uleb128 0xe
- 2527 0318 8D060000 		.4byte	.LASF60
+ 2527 0318 91060000 		.4byte	.LASF60
  2528 031c 01       		.byte	0x1
  2529 031d 0405     		.2byte	0x504
  2530 031f 00000000 		.4byte	.LFB6
@@ -4968,7 +4968,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2569 0380 E4080000 		.4byte	0x8e4
  2570 0384 00       		.byte	0
  2571 0385 0E       		.uleb128 0xe
- 2572 0386 E5010000 		.4byte	.LASF62
+ 2572 0386 46020000 		.4byte	.LASF62
  2573 038a 01       		.byte	0x1
  2574 038b 5E05     		.2byte	0x55e
  2575 038d 00000000 		.4byte	.LFB7
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2579 0397 C9030000 		.4byte	0x3c9
  2580 039b 0F       		.uleb128 0xf
  2581 039c 06000000 		.4byte	.LVL9
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 84
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 84
 
 
  2582 03a0 53030000 		.4byte	0x353
@@ -4996,7 +4996,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2594 03c4 A3080000 		.4byte	0x8a3
  2595 03c8 00       		.byte	0
  2596 03c9 12       		.uleb128 0x12
- 2597 03ca 4E030000 		.4byte	.LASF63
+ 2597 03ca AF030000 		.4byte	.LASF63
  2598 03ce 01       		.byte	0x1
  2599 03cf 50       		.byte	0x50
  2600 03d0 00000000 		.4byte	.LFB0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2636 0418 10       		.uleb128 0x10
  2637 0419 A6000000 		.4byte	.LVL17
  2638 041d 0A090000 		.4byte	0x90a
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 85
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 85
 
 
  2639 0421 2B040000 		.4byte	0x42b
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2693 048d 11       		.uleb128 0x11
  2694 048e 01       		.uleb128 0x1
  2695 048f 50       		.byte	0x50
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 86
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 86
 
 
  2696 0490 01       		.uleb128 0x1
@@ -5154,11 +5154,11 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2746 04f9 9C       		.byte	0x9c
  2747 04fa 23060000 		.4byte	0x623
  2748 04fe 14       		.uleb128 0x14
- 2749 04ff CF050000 		.4byte	.LASF65
+ 2749 04ff D3050000 		.4byte	.LASF65
  2750 0503 01       		.byte	0x1
  2751 0504 1C01     		.2byte	0x11c
  2752 0506 A1000000 		.4byte	0xa1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 87
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 87
 
 
  2753 050a 10       		.byte	0x10
@@ -5169,13 +5169,13 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2758 0511 76000000 		.4byte	0x76
  2759 0515 00000000 		.4byte	.LLST0
  2760 0519 16       		.uleb128 0x16
- 2761 051a 2B030000 		.4byte	.LASF66
+ 2761 051a 8C030000 		.4byte	.LASF66
  2762 051e 01       		.byte	0x1
  2763 051f 1E01     		.2byte	0x11e
  2764 0521 76000000 		.4byte	0x76
  2765 0525 4D000000 		.4byte	.LLST1
  2766 0529 17       		.uleb128 0x17
- 2767 052a 7F030000 		.4byte	.LASF67
+ 2767 052a E0030000 		.4byte	.LASF67
  2768 052e 01       		.byte	0x1
  2769 052f 2201     		.2byte	0x122
  2770 0531 33060000 		.4byte	0x633
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2807 0583 10       		.uleb128 0x10
  2808 0584 DA000000 		.4byte	.LVL42
  2809 0588 33090000 		.4byte	0x933
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 88
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 88
 
 
  2810 058c 96050000 		.4byte	0x596
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2864 05fb 01       		.uleb128 0x1
  2865 05fc 31       		.byte	0x31
  2866 05fd 00       		.byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 89
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 89
 
 
  2867 05fe 0F       		.uleb128 0xf
@@ -5304,7 +5304,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2887 0633 18       		.uleb128 0x18
  2888 0634 23060000 		.4byte	0x623
  2889 0638 13       		.uleb128 0x13
- 2890 0639 1B040000 		.4byte	.LASF68
+ 2890 0639 7C040000 		.4byte	.LASF68
  2891 063d 01       		.byte	0x1
  2892 063e 7C02     		.2byte	0x27c
  2893 0640 00000000 		.4byte	.LFB2
@@ -5313,13 +5313,13 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2896 0649 9C       		.byte	0x9c
  2897 064a 7E060000 		.4byte	0x67e
  2898 064e 19       		.uleb128 0x19
- 2899 064f 9C060000 		.4byte	.LASF69
+ 2899 064f A0060000 		.4byte	.LASF69
  2900 0653 01       		.byte	0x1
  2901 0654 7C02     		.2byte	0x27c
  2902 0656 76000000 		.4byte	0x76
  2903 065a 6F000000 		.4byte	.LLST2
  2904 065e 19       		.uleb128 0x19
- 2905 065f B0030000 		.4byte	.LASF70
+ 2905 065f 11040000 		.4byte	.LASF70
  2906 0663 01       		.byte	0x1
  2907 0664 7C02     		.2byte	0x27c
  2908 0666 76000000 		.4byte	0x76
@@ -5335,10 +5335,10 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2918 067c 00       		.byte	0
  2919 067d 00       		.byte	0
  2920 067e 13       		.uleb128 0x13
- 2921 067f 09040000 		.4byte	.LASF71
+ 2921 067f 6A040000 		.4byte	.LASF71
  2922 0683 01       		.byte	0x1
  2923 0684 4803     		.2byte	0x348
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 90
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 90
 
 
  2924 0686 00000000 		.4byte	.LFB3
@@ -5347,13 +5347,13 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2927 068f 9C       		.byte	0x9c
  2928 0690 0C070000 		.4byte	0x70c
  2929 0694 19       		.uleb128 0x19
- 2930 0695 9C060000 		.4byte	.LASF69
+ 2930 0695 A0060000 		.4byte	.LASF69
  2931 0699 01       		.byte	0x1
  2932 069a 4803     		.2byte	0x348
  2933 069c 6B000000 		.4byte	0x6b
  2934 06a0 B1000000 		.4byte	.LLST4
  2935 06a4 19       		.uleb128 0x19
- 2936 06a5 B0030000 		.4byte	.LASF70
+ 2936 06a5 11040000 		.4byte	.LASF70
  2937 06a9 01       		.byte	0x1
  2938 06aa 4803     		.2byte	0x348
  2939 06ac 76000000 		.4byte	0x76
@@ -5398,10 +5398,10 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  2978 070a 00       		.byte	0
  2979 070b 00       		.byte	0
  2980 070c 13       		.uleb128 0x13
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 91
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 91
 
 
- 2981 070d EC040000 		.4byte	.LASF73
+ 2981 070d 4D050000 		.4byte	.LASF73
  2982 0711 01       		.byte	0x1
  2983 0712 5804     		.2byte	0x458
  2984 0714 00000000 		.4byte	.LFB4
@@ -5439,7 +5439,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3016 0765 00       		.byte	0
  3017 0766 00       		.byte	0
  3018 0767 1B       		.uleb128 0x1b
- 3019 0768 2F050000 		.4byte	.LASF116
+ 3019 0768 90050000 		.4byte	.LASF116
  3020 076c 01       		.byte	0x1
  3021 076d D804     		.2byte	0x4d8
  3022 076f 6B000000 		.4byte	0x6b
@@ -5449,16 +5449,16 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3026 077c 9C       		.byte	0x9c
  3027 077d D6070000 		.4byte	0x7d6
  3028 0781 19       		.uleb128 0x19
- 3029 0782 F4010000 		.4byte	.LASF74
+ 3029 0782 55020000 		.4byte	.LASF74
  3030 0786 01       		.byte	0x1
  3031 0787 D804     		.2byte	0x4d8
  3032 0789 6B000000 		.4byte	0x6b
  3033 078d 2F010000 		.4byte	.LLST8
  3034 0791 17       		.uleb128 0x17
- 3035 0792 18070000 		.4byte	.LASF75
+ 3035 0792 1C070000 		.4byte	.LASF75
  3036 0796 01       		.byte	0x1
  3037 0797 DA04     		.2byte	0x4da
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 92
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 92
 
 
  3038 0799 6B000000 		.4byte	0x6b
@@ -5485,7 +5485,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3059 07d1 FB090000 		.4byte	0x9fb
  3060 07d5 00       		.byte	0
  3061 07d6 13       		.uleb128 0x13
- 3062 07d7 BC050000 		.4byte	.LASF77
+ 3062 07d7 C0050000 		.4byte	.LASF77
  3063 07db 01       		.byte	0x1
  3064 07dc 9B05     		.2byte	0x59b
  3065 07de 00000000 		.4byte	.LFB8
@@ -5494,7 +5494,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3068 07e7 9C       		.byte	0x9c
  3069 07e8 06080000 		.4byte	0x806
  3070 07ec 19       		.uleb128 0x19
- 3071 07ed D4020000 		.4byte	.LASF78
+ 3071 07ed 35030000 		.4byte	.LASF78
  3072 07f1 01       		.byte	0x1
  3073 07f2 9B05     		.2byte	0x59b
  3074 07f4 6B000000 		.4byte	0x6b
@@ -5504,7 +5504,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3078 0801 EB080000 		.4byte	0x8eb
  3079 0805 00       		.byte	0
  3080 0806 13       		.uleb128 0x13
- 3081 0807 40040000 		.4byte	.LASF79
+ 3081 0807 A1040000 		.4byte	.LASF79
  3082 080b 01       		.byte	0x1
  3083 080c CF05     		.2byte	0x5cf
  3084 080e 00000000 		.4byte	.LFB9
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3092 0825 00       		.byte	0
  3093 0826 13       		.uleb128 0x13
  3094 0827 EC000000 		.4byte	.LASF80
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 93
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 93
 
 
  3095 082b 01       		.byte	0x1
@@ -5529,7 +5529,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3100 0837 9C       		.byte	0x9c
  3101 0838 56080000 		.4byte	0x856
  3102 083c 19       		.uleb128 0x19
- 3103 083d 10050000 		.4byte	.LASF81
+ 3103 083d 71050000 		.4byte	.LASF81
  3104 0841 01       		.byte	0x1
  3105 0842 F405     		.2byte	0x5f4
  3106 0844 6B000000 		.4byte	0x6b
@@ -5539,7 +5539,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3110 0851 F2080000 		.4byte	0x8f2
  3111 0855 00       		.byte	0
  3112 0856 1C       		.uleb128 0x1c
- 3113 0857 FA060000 		.4byte	.LASF82
+ 3113 0857 FE060000 		.4byte	.LASF82
  3114 085b 01       		.byte	0x1
  3115 085c 1F       		.byte	0x1f
  3116 085d B5020000 		.4byte	0x2b5
@@ -5547,7 +5547,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3118 0862 03       		.byte	0x3
  3119 0863 00000000 		.4byte	cyPmBackup
  3120 0867 1C       		.uleb128 0x1c
- 3121 0868 5A040000 		.4byte	.LASF83
+ 3121 0868 BB040000 		.4byte	.LASF83
  3122 086c 01       		.byte	0x1
  3123 086d 20       		.byte	0x20
  3124 086e 87010000 		.4byte	0x187
@@ -5555,7 +5555,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3126 0873 03       		.byte	0x3
  3127 0874 30000000 		.4byte	cyPmClockBackup
  3128 0878 1C       		.uleb128 0x1c
- 3129 0879 1C050000 		.4byte	.LASF84
+ 3129 0879 7D050000 		.4byte	.LASF84
  3130 087d 01       		.byte	0x1
  3131 087e 23       		.byte	0x23
  3132 087f 89080000 		.4byte	0x889
@@ -5565,7 +5565,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3136 0889 18       		.uleb128 0x18
  3137 088a 23060000 		.4byte	0x623
  3138 088e 1D       		.uleb128 0x1d
- 3139 088f C9040000 		.4byte	.LASF85
+ 3139 088f 2A050000 		.4byte	.LASF85
  3140 0893 04       		.byte	0x4
  3141 0894 9D       		.byte	0x9d
  3142 0895 1D       		.uleb128 0x1d
@@ -5573,12 +5573,12 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3144 089a 04       		.byte	0x4
  3145 089b 9E       		.byte	0x9e
  3146 089c 1D       		.uleb128 0x1d
- 3147 089d E0020000 		.4byte	.LASF87
+ 3147 089d 41030000 		.4byte	.LASF87
  3148 08a1 04       		.byte	0x4
  3149 08a2 A0       		.byte	0xa0
  3150 08a3 1E       		.uleb128 0x1e
- 3151 08a4 89020000 		.4byte	.LASF106
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 94
+ 3151 08a4 EA020000 		.4byte	.LASF106
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 94
 
 
  3152 08a8 04       		.byte	0x4
@@ -5599,7 +5599,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3167 08c9 6B000000 		.4byte	0x6b
  3168 08cd 00       		.byte	0
  3169 08ce 20       		.uleb128 0x20
- 3170 08cf A7060000 		.4byte	.LASF89
+ 3170 08cf AB060000 		.4byte	.LASF89
  3171 08d3 04       		.byte	0x4
  3172 08d4 9C       		.byte	0x9c
  3173 08d5 E4080000 		.4byte	0x8e4
@@ -5609,7 +5609,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3177 08df 6B000000 		.4byte	0x6b
  3178 08e3 00       		.byte	0
  3179 08e4 1D       		.uleb128 0x1d
- 3180 08e5 DB060000 		.4byte	.LASF90
+ 3180 08e5 DF060000 		.4byte	.LASF90
  3181 08e9 04       		.byte	0x4
  3182 08ea 9F       		.byte	0x9f
  3183 08eb 1D       		.uleb128 0x1d
@@ -5617,11 +5617,11 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3185 08f0 04       		.byte	0x4
  3186 08f1 58       		.byte	0x58
  3187 08f2 1D       		.uleb128 0x1d
- 3188 08f3 A0030000 		.4byte	.LASF92
+ 3188 08f3 01040000 		.4byte	.LASF92
  3189 08f7 04       		.byte	0x4
  3190 08f8 5A       		.byte	0x5a
  3191 08f9 20       		.uleb128 0x20
- 3192 08fa FA040000 		.4byte	.LASF93
+ 3192 08fa 5B050000 		.4byte	.LASF93
  3193 08fe 05       		.byte	0x5
  3194 08ff 4B       		.byte	0x4b
  3195 0900 0A090000 		.4byte	0x90a
@@ -5629,7 +5629,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3197 0905 6B000000 		.4byte	0x6b
  3198 0909 00       		.byte	0
  3199 090a 20       		.uleb128 0x20
- 3200 090b F4020000 		.4byte	.LASF94
+ 3200 090b 55030000 		.4byte	.LASF94
  3201 090f 04       		.byte	0x4
  3202 0910 4E       		.byte	0x4e
  3203 0911 1B090000 		.4byte	0x91b
@@ -5637,8 +5637,8 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3205 0916 6B000000 		.4byte	0x6b
  3206 091a 00       		.byte	0
  3207 091b 20       		.uleb128 0x20
- 3208 091c 39040000 		.4byte	.LASF95
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 95
+ 3208 091c 9A040000 		.4byte	.LASF95
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 95
 
 
  3209 0920 04       		.byte	0x4
@@ -5648,11 +5648,11 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3213 0927 6B000000 		.4byte	0x6b
  3214 092b 00       		.byte	0
  3215 092c 1D       		.uleb128 0x1d
- 3216 092d BD030000 		.4byte	.LASF96
+ 3216 092d 1E040000 		.4byte	.LASF96
  3217 0931 04       		.byte	0x4
  3218 0932 43       		.byte	0x43
  3219 0933 20       		.uleb128 0x20
- 3220 0934 6B060000 		.4byte	.LASF97
+ 3220 0934 6F060000 		.4byte	.LASF97
  3221 0938 04       		.byte	0x4
  3222 0939 49       		.byte	0x49
  3223 093a 44090000 		.4byte	0x944
@@ -5676,7 +5676,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3241 0961 76000000 		.4byte	0x76
  3242 0965 00       		.byte	0
  3243 0966 20       		.uleb128 0x20
- 3244 0967 1A020000 		.4byte	.LASF100
+ 3244 0967 7B020000 		.4byte	.LASF100
  3245 096b 04       		.byte	0x4
  3246 096c 4A       		.byte	0x4a
  3247 096d 77090000 		.4byte	0x977
@@ -5684,11 +5684,11 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3249 0972 6B000000 		.4byte	0x6b
  3250 0976 00       		.byte	0
  3251 0977 1D       		.uleb128 0x1d
- 3252 0978 B4040000 		.4byte	.LASF101
+ 3252 0978 15050000 		.4byte	.LASF101
  3253 097c 04       		.byte	0x4
  3254 097d 4C       		.byte	0x4c
  3255 097e 20       		.uleb128 0x20
- 3256 097f CC030000 		.4byte	.LASF102
+ 3256 097f 2D040000 		.4byte	.LASF102
  3257 0983 04       		.byte	0x4
  3258 0984 4F       		.byte	0x4f
  3259 0985 8F090000 		.4byte	0x98f
@@ -5696,9 +5696,9 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3261 098a 6B000000 		.4byte	0x6b
  3262 098e 00       		.byte	0
  3263 098f 20       		.uleb128 0x20
- 3264 0990 3E050000 		.4byte	.LASF103
+ 3264 0990 9F050000 		.4byte	.LASF103
  3265 0994 04       		.byte	0x4
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 96
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 96
 
 
  3266 0995 50       		.byte	0x50
@@ -5707,11 +5707,11 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3269 099b 76000000 		.4byte	0x76
  3270 099f 00       		.byte	0
  3271 09a0 1D       		.uleb128 0x1d
- 3272 09a1 EE060000 		.4byte	.LASF104
+ 3272 09a1 F2060000 		.4byte	.LASF104
  3273 09a5 04       		.byte	0x4
  3274 09a6 67       		.byte	0x67
  3275 09a7 20       		.uleb128 0x20
- 3276 09a8 26040000 		.4byte	.LASF105
+ 3276 09a8 87040000 		.4byte	.LASF105
  3277 09ac 04       		.byte	0x4
  3278 09ad 7A       		.byte	0x7a
  3279 09ae B8090000 		.4byte	0x9b8
@@ -5719,7 +5719,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3281 09b3 81000000 		.4byte	0x81
  3282 09b7 00       		.byte	0
  3283 09b8 1E       		.uleb128 0x1e
- 3284 09b9 5D030000 		.4byte	.LASF107
+ 3284 09b9 BE030000 		.4byte	.LASF107
  3285 09bd 04       		.byte	0x4
  3286 09be 66       		.byte	0x66
  3287 09bf A1000000 		.4byte	0xa1
@@ -5728,7 +5728,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3290 09c8 6B000000 		.4byte	0x6b
  3291 09cc 00       		.byte	0
  3292 09cd 1D       		.uleb128 0x1d
- 3293 09ce 79060000 		.4byte	.LASF108
+ 3293 09ce 7D060000 		.4byte	.LASF108
  3294 09d2 04       		.byte	0x4
  3295 09d3 4B       		.byte	0x4b
  3296 09d4 1E       		.uleb128 0x1e
@@ -5741,16 +5741,16 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3303 09e4 6B000000 		.4byte	0x6b
  3304 09e8 00       		.byte	0
  3305 09e9 1D       		.uleb128 0x1d
- 3306 09ea 9C020000 		.4byte	.LASF110
+ 3306 09ea FD020000 		.4byte	.LASF110
  3307 09ee 04       		.byte	0x4
  3308 09ef 48       		.byte	0x48
  3309 09f0 21       		.uleb128 0x21
- 3310 09f1 61020000 		.4byte	.LASF117
+ 3310 09f1 C2020000 		.4byte	.LASF117
  3311 09f5 04       		.byte	0x4
  3312 09f6 7E       		.byte	0x7e
  3313 09f7 6B000000 		.4byte	0x6b
  3314 09fb 20       		.uleb128 0x20
- 3315 09fc F3030000 		.4byte	.LASF111
+ 3315 09fc 54040000 		.4byte	.LASF111
  3316 0a00 04       		.byte	0x4
  3317 0a01 7F       		.byte	0x7f
  3318 0a02 0C0A0000 		.4byte	0xa0c
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3320 0a07 6B000000 		.4byte	0x6b
  3321 0a0b 00       		.byte	0
  3322 0a0c 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 97
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 97
 
 
  3323 0a0d 72000000 		.4byte	.LASF112
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3377 0030 3B       		.uleb128 0x3b
  3378 0031 0B       		.uleb128 0xb
  3379 0032 49       		.uleb128 0x49
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 98
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 98
 
 
  3380 0033 13       		.uleb128 0x13
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3434 0069 00       		.byte	0
  3435 006a 09       		.uleb128 0x9
  3436 006b 16       		.uleb128 0x16
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 99
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 99
 
 
  3437 006c 00       		.byte	0
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3491 00a2 19       		.uleb128 0x19
  3492 00a3 11       		.uleb128 0x11
  3493 00a4 01       		.uleb128 0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 100
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 100
 
 
  3494 00a5 12       		.uleb128 0x12
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3548 00e3 02       		.uleb128 0x2
  3549 00e4 18       		.uleb128 0x18
  3550 00e5 9142     		.uleb128 0x2111
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 101
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 101
 
 
  3551 00e7 18       		.uleb128 0x18
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3605 011f 34       		.uleb128 0x34
  3606 0120 00       		.byte	0
  3607 0121 03       		.uleb128 0x3
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 102
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 102
 
 
  3608 0122 0E       		.uleb128 0xe
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3662 0158 00       		.byte	0
  3663 0159 00       		.byte	0
  3664 015a 18       		.uleb128 0x18
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 103
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 103
 
 
  3665 015b 26       		.uleb128 0x26
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3719 0194 13       		.uleb128 0x13
  3720 0195 00       		.byte	0
  3721 0196 00       		.byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 104
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 104
 
 
  3722 0197 1C       		.uleb128 0x1c
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3776 01cd 05       		.uleb128 0x5
  3777 01ce 00       		.byte	0
  3778 01cf 49       		.uleb128 0x49
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 105
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 105
 
 
  3779 01d0 13       		.uleb128 0x13
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3833 0017 80000000 		.4byte	.LVL37
  3834 001b 84000000 		.4byte	.LVL38
  3835 001f 0100     		.2byte	0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 106
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 106
 
 
  3836 0021 54       		.byte	0x54
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3890 00a5 F3       		.byte	0xf3
  3891 00a6 01       		.uleb128 0x1
  3892 00a7 51       		.byte	0x51
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 107
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 107
 
 
  3893 00a8 9F       		.byte	0x9f
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  3947 012f 00000000 		.4byte	.LVL81
  3948 0133 07000000 		.4byte	.LVL82-1
  3949 0137 0100     		.2byte	0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 108
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 108
 
 
  3950 0139 50       		.byte	0x50
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  4004 01bb 00000000 		.4byte	0
  4005 01bf 00000000 		.4byte	0
  4006              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 109
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 109
 
 
  4007 0000 8C000000 		.4byte	0x8c
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  4061 0034 18020000 		.4byte	.LFE0
  4062 0038 00000000 		.4byte	.LFB1
  4063 003c 4C020000 		.4byte	.LFE1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 110
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 110
 
 
  4064 0040 00000000 		.4byte	.LFB2
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  4096      00
  4097              	.LASF56:
  4098 005e 43595F50 		.ascii	"CY_PM_BACKUP_STRUCT\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 111
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 111
 
 
  4098      4D5F4241 
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  4120 0106 43795664 		.ascii	"CyVdLvDigitEnable\000"
  4120      4C764469 
  4120      67697445 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 112
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 112
 
 
  4120      6E61626C 
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  4144      7300
  4145              	.LASF13:
  4146 01a7 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 113
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 113
 
 
  4146      6C6500
@@ -6736,429 +6736,430 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 1
  4152      456E6162 
  4152      6C655374 
  4152      61746500 
- 4153              	.LASF62:
- 4154 01e5 4379506D 		.ascii	"CyPmHibRestore\000"
- 4154      48696252 
- 4154      6573746F 
- 4154      726500
- 4155              	.LASF74:
- 4156 01f4 6D61736B 		.ascii	"mask\000"
- 4156      00
- 4157              	.LASF53:
- 4158 01f9 696D6F41 		.ascii	"imoActFreq\000"
- 4158      63744672 
- 4158      657100
- 4159              	.LASF8:
- 4160 0204 756E7369 		.ascii	"unsigned int\000"
- 4160      676E6564 
- 4160      20696E74 
+ 4153              	.LASF115:
+ 4154 01e5 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Chip-Design\\pro"
+ 4154      73657273 
+ 4154      5C49616E 
+ 4154      5C446F63 
+ 4154      756D656E 
+ 4155 0212 6A5F6173 		.ascii	"j_asic\\psoc\\Wave Generator 2.0\\Wave Generator.cy"
+ 4155      69635C70 
+ 4155      736F635C 
+ 4155      57617665 
+ 4155      2047656E 
+ 4156 0242 64736E00 		.ascii	"dsn\000"
+ 4157              	.LASF62:
+ 4158 0246 4379506D 		.ascii	"CyPmHibRestore\000"
+ 4158      48696252 
+ 4158      6573746F 
+ 4158      726500
+ 4159              	.LASF74:
+ 4160 0255 6D61736B 		.ascii	"mask\000"
  4160      00
- 4161              	.LASF45:
- 4162 0211 73636374 		.ascii	"scctData\000"
- 4162      44617461 
- 4162      00
- 4163              	.LASF100:
- 4164 021a 4379494D 		.ascii	"CyIMO_SetSource\000"
- 4164      4F5F5365 
- 4164      74536F75 
- 4164      72636500 
- 4165              	.LASF21:
- 4166 022a 696D6F46 		.ascii	"imoFreq\000"
- 4166      72657100 
- 4167              	.LASF5:
- 4168 0232 6C6F6E67 		.ascii	"long unsigned int\000"
- 4168      20756E73 
- 4168      69676E65 
- 4168      6420696E 
- 4168      7400
- 4169              	.LASF46:
- 4170 0244 6C766964 		.ascii	"lvidEn\000"
- 4170      456E00
- 4171              	.LASF34:
- 4172 024b 6379506D 		.ascii	"cyPmClockBackupStruct\000"
- 4172      436C6F63 
- 4172      6B426163 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 114
+ 4161              	.LASF53:
+ 4162 025a 696D6F41 		.ascii	"imoActFreq\000"
+ 4162      63744672 
+ 4162      657100
+ 4163              	.LASF8:
+ 4164 0265 756E7369 		.ascii	"unsigned int\000"
+ 4164      676E6564 
+ 4164      20696E74 
+ 4164      00
+ 4165              	.LASF45:
+ 4166 0272 73636374 		.ascii	"scctData\000"
+ 4166      44617461 
+ 4166      00
+ 4167              	.LASF100:
+ 4168 027b 4379494D 		.ascii	"CyIMO_SetSource\000"
+ 4168      4F5F5365 
+ 4168      74536F75 
+ 4168      72636500 
+ 4169              	.LASF21:
+ 4170 028b 696D6F46 		.ascii	"imoFreq\000"
+ 4170      72657100 
+ 4171              	.LASF5:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 114
 
 
- 4172      6B757053 
- 4172      74727563 
- 4173              	.LASF117:
- 4174 0261 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 4174      74657243 
- 4174      72697469 
- 4174      63616C53 
- 4174      65637469 
- 4175              	.LASF35:
- 4176 0278 6379506D 		.ascii	"cyPmBackupStruct\000"
- 4176      4261636B 
- 4176      75705374 
- 4176      72756374 
- 4176      00
- 4177              	.LASF106:
- 4178 0289 4379494C 		.ascii	"CyILO_SetPowerMode\000"
- 4178      4F5F5365 
- 4178      74506F77 
- 4178      65724D6F 
- 4178      646500
- 4179              	.LASF110:
- 4180 029c 4379494D 		.ascii	"CyIMO_Stop\000"
- 4180      4F5F5374 
- 4180      6F7000
- 4181              	.LASF33:
- 4182 02a7 43595F50 		.ascii	"CY_PM_CLOCK_BACKUP_STRUCT\000"
- 4182      4D5F434C 
- 4182      4F434B5F 
- 4182      4241434B 
- 4182      55505F53 
- 4183              	.LASF3:
- 4184 02c1 73686F72 		.ascii	"short unsigned int\000"
- 4184      7420756E 
- 4184      7369676E 
- 4184      65642069 
- 4184      6E7400
- 4185              	.LASF78:
- 4186 02d4 63747749 		.ascii	"ctwInterval\000"
- 4186      6E746572 
- 4186      76616C00 
- 4187              	.LASF87:
- 4188 02e0 43795664 		.ascii	"CyVdHvAnalogDisable\000"
- 4188      4876416E 
- 4188      616C6F67 
- 4188      44697361 
- 4188      626C6500 
- 4189              	.LASF94:
- 4190 02f4 43794D61 		.ascii	"CyMasterClk_SetSource\000"
- 4190      73746572 
- 4190      436C6B5F 
- 4190      53657453 
- 4190      6F757263 
- 4191              	.LASF40:
- 4192 030a 77616B65 		.ascii	"wakeupCfg0\000"
- 4192      75704366 
- 4192      673000
- 4193              	.LASF41:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 115
+ 4172 0293 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4172      20756E73 
+ 4172      69676E65 
+ 4172      6420696E 
+ 4172      7400
+ 4173              	.LASF46:
+ 4174 02a5 6C766964 		.ascii	"lvidEn\000"
+ 4174      456E00
+ 4175              	.LASF34:
+ 4176 02ac 6379506D 		.ascii	"cyPmClockBackupStruct\000"
+ 4176      436C6F63 
+ 4176      6B426163 
+ 4176      6B757053 
+ 4176      74727563 
+ 4177              	.LASF117:
+ 4178 02c2 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 4178      74657243 
+ 4178      72697469 
+ 4178      63616C53 
+ 4178      65637469 
+ 4179              	.LASF35:
+ 4180 02d9 6379506D 		.ascii	"cyPmBackupStruct\000"
+ 4180      4261636B 
+ 4180      75705374 
+ 4180      72756374 
+ 4180      00
+ 4181              	.LASF106:
+ 4182 02ea 4379494C 		.ascii	"CyILO_SetPowerMode\000"
+ 4182      4F5F5365 
+ 4182      74506F77 
+ 4182      65724D6F 
+ 4182      646500
+ 4183              	.LASF110:
+ 4184 02fd 4379494D 		.ascii	"CyIMO_Stop\000"
+ 4184      4F5F5374 
+ 4184      6F7000
+ 4185              	.LASF33:
+ 4186 0308 43595F50 		.ascii	"CY_PM_CLOCK_BACKUP_STRUCT\000"
+ 4186      4D5F434C 
+ 4186      4F434B5F 
+ 4186      4241434B 
+ 4186      55505F53 
+ 4187              	.LASF3:
+ 4188 0322 73686F72 		.ascii	"short unsigned int\000"
+ 4188      7420756E 
+ 4188      7369676E 
+ 4188      65642069 
+ 4188      6E7400
+ 4189              	.LASF78:
+ 4190 0335 63747749 		.ascii	"ctwInterval\000"
+ 4190      6E746572 
+ 4190      76616C00 
+ 4191              	.LASF87:
+ 4192 0341 43795664 		.ascii	"CyVdHvAnalogDisable\000"
+ 4192      4876416E 
+ 4192      616C6F67 
+ 4192      44697361 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 115
 
 
- 4194 0315 77616B65 		.ascii	"wakeupCfg1\000"
- 4194      75704366 
- 4194      673100
- 4195              	.LASF42:
- 4196 0320 77616B65 		.ascii	"wakeupCfg2\000"
+ 4192      626C6500 
+ 4193              	.LASF94:
+ 4194 0355 43794D61 		.ascii	"CyMasterClk_SetSource\000"
+ 4194      73746572 
+ 4194      436C6B5F 
+ 4194      53657453 
+ 4194      6F757263 
+ 4195              	.LASF40:
+ 4196 036b 77616B65 		.ascii	"wakeupCfg0\000"
  4196      75704366 
- 4196      673200
- 4197              	.LASF66:
- 4198 032b 636C6B42 		.ascii	"clkBusDivTmp\000"
- 4198      75734469 
- 4198      76546D70 
- 4198      00
- 4199              	.LASF55:
- 4200 0338 626F6F73 		.ascii	"boostRefExt\000"
- 4200      74526566 
- 4200      45787400 
- 4201              	.LASF26:
- 4202 0344 636C6B49 		.ascii	"clkImoSrc\000"
- 4202      6D6F5372 
- 4202      6300
- 4203              	.LASF63:
- 4204 034e 4379506D 		.ascii	"CyPmSaveClocks\000"
- 4204      53617665 
- 4204      436C6F63 
- 4204      6B7300
- 4205              	.LASF107:
- 4206 035d 43795854 		.ascii	"CyXTAL_Start\000"
- 4206      414C5F53 
- 4206      74617274 
- 4206      00
- 4207              	.LASF39:
- 4208 036a 736C7054 		.ascii	"slpTrBypass\000"
- 4208      72427970 
- 4208      61737300 
- 4209              	.LASF17:
- 4210 0376 73697A65 		.ascii	"sizetype\000"
- 4210      74797065 
+ 4196      673000
+ 4197              	.LASF41:
+ 4198 0376 77616B65 		.ascii	"wakeupCfg1\000"
+ 4198      75704366 
+ 4198      673100
+ 4199              	.LASF42:
+ 4200 0381 77616B65 		.ascii	"wakeupCfg2\000"
+ 4200      75704366 
+ 4200      673200
+ 4201              	.LASF66:
+ 4202 038c 636C6B42 		.ascii	"clkBusDivTmp\000"
+ 4202      75734469 
+ 4202      76546D70 
+ 4202      00
+ 4203              	.LASF55:
+ 4204 0399 626F6F73 		.ascii	"boostRefExt\000"
+ 4204      74526566 
+ 4204      45787400 
+ 4205              	.LASF26:
+ 4206 03a5 636C6B49 		.ascii	"clkImoSrc\000"
+ 4206      6D6F5372 
+ 4206      6300
+ 4207              	.LASF63:
+ 4208 03af 4379506D 		.ascii	"CyPmSaveClocks\000"
+ 4208      53617665 
+ 4208      436C6F63 
+ 4208      6B7300
+ 4209              	.LASF107:
+ 4210 03be 43795854 		.ascii	"CyXTAL_Start\000"
+ 4210      414C5F53 
+ 4210      74617274 
  4210      00
- 4211              	.LASF67:
- 4212 037f 6379506D 		.ascii	"cyPmImoFreqMhz2Reg\000"
- 4212      496D6F46 
- 4212      7265714D 
- 4212      687A3252 
- 4212      656700
- 4213              	.LASF18:
- 4214 0392 656E436C 		.ascii	"enClkA\000"
- 4214      6B4100
- 4215              	.LASF19:
- 4216 0399 656E436C 		.ascii	"enClkD\000"
- 4216      6B4400
- 4217              	.LASF92:
- 4218 03a0 4379494C 		.ascii	"CyILO_Start100K\000"
- 4218      4F5F5374 
- 4218      61727431 
- 4218      30304B00 
- 4219              	.LASF70:
- 4220 03b0 77616B65 		.ascii	"wakeupSource\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 116
+ 4211              	.LASF39:
+ 4212 03cb 736C7054 		.ascii	"slpTrBypass\000"
+ 4212      72427970 
+ 4212      61737300 
+ 4213              	.LASF17:
+ 4214 03d7 73697A65 		.ascii	"sizetype\000"
+ 4214      74797065 
+ 4214      00
+ 4215              	.LASF67:
+ 4216 03e0 6379506D 		.ascii	"cyPmImoFreqMhz2Reg\000"
+ 4216      496D6F46 
+ 4216      7265714D 
+ 4216      687A3252 
+ 4216      656700
+ 4217              	.LASF18:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 116
 
 
- 4220      7570536F 
- 4220      75726365 
- 4220      00
- 4221              	.LASF96:
- 4222 03bd 4379504C 		.ascii	"CyPLL_OUT_Stop\000"
- 4222      4C5F4F55 
- 4222      545F5374 
- 4222      6F7000
- 4223              	.LASF102:
- 4224 03cc 43794D61 		.ascii	"CyMasterClk_SetDivider\000"
- 4224      73746572 
- 4224      436C6B5F 
- 4224      53657444 
- 4224      69766964 
- 4225              	.LASF25:
- 4226 03e3 696D6F43 		.ascii	"imoClkSrc\000"
- 4226      6C6B5372 
- 4226      6300
- 4227              	.LASF12:
- 4228 03ed 666C6F61 		.ascii	"float\000"
- 4228      7400
- 4229              	.LASF111:
- 4230 03f3 43794578 		.ascii	"CyExitCriticalSection\000"
- 4230      69744372 
- 4230      69746963 
- 4230      616C5365 
- 4230      6374696F 
- 4231              	.LASF71:
- 4232 0409 4379506D 		.ascii	"CyPmSleep\000"
- 4232      536C6565 
- 4232      7000
- 4233              	.LASF51:
- 4234 0413 6C766964 		.ascii	"lvidRst\000"
- 4234      52737400 
- 4235              	.LASF68:
- 4236 041b 4379506D 		.ascii	"CyPmAltAct\000"
- 4236      416C7441 
- 4236      637400
- 4237              	.LASF105:
- 4238 0426 43794465 		.ascii	"CyDelayCycles\000"
- 4238      6C617943 
- 4238      79636C65 
- 4238      7300
- 4239              	.LASF16:
- 4240 0434 72656738 		.ascii	"reg8\000"
- 4240      00
- 4241              	.LASF95:
- 4242 0439 43794861 		.ascii	"CyHalt\000"
- 4242      6C7400
- 4243              	.LASF79:
- 4244 0440 4379506D 		.ascii	"CyPmOppsSet\000"
- 4244      4F707073 
- 4244      53657400 
- 4245              	.LASF1:
- 4246 044c 756E7369 		.ascii	"unsigned char\000"
- 4246      676E6564 
- 4246      20636861 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 117
+ 4218 03f3 656E436C 		.ascii	"enClkA\000"
+ 4218      6B4100
+ 4219              	.LASF19:
+ 4220 03fa 656E436C 		.ascii	"enClkD\000"
+ 4220      6B4400
+ 4221              	.LASF92:
+ 4222 0401 4379494C 		.ascii	"CyILO_Start100K\000"
+ 4222      4F5F5374 
+ 4222      61727431 
+ 4222      30304B00 
+ 4223              	.LASF70:
+ 4224 0411 77616B65 		.ascii	"wakeupSource\000"
+ 4224      7570536F 
+ 4224      75726365 
+ 4224      00
+ 4225              	.LASF96:
+ 4226 041e 4379504C 		.ascii	"CyPLL_OUT_Stop\000"
+ 4226      4C5F4F55 
+ 4226      545F5374 
+ 4226      6F7000
+ 4227              	.LASF102:
+ 4228 042d 43794D61 		.ascii	"CyMasterClk_SetDivider\000"
+ 4228      73746572 
+ 4228      436C6B5F 
+ 4228      53657444 
+ 4228      69766964 
+ 4229              	.LASF25:
+ 4230 0444 696D6F43 		.ascii	"imoClkSrc\000"
+ 4230      6C6B5372 
+ 4230      6300
+ 4231              	.LASF12:
+ 4232 044e 666C6F61 		.ascii	"float\000"
+ 4232      7400
+ 4233              	.LASF111:
+ 4234 0454 43794578 		.ascii	"CyExitCriticalSection\000"
+ 4234      69744372 
+ 4234      69746963 
+ 4234      616C5365 
+ 4234      6374696F 
+ 4235              	.LASF71:
+ 4236 046a 4379506D 		.ascii	"CyPmSleep\000"
+ 4236      536C6565 
+ 4236      7000
+ 4237              	.LASF51:
+ 4238 0474 6C766964 		.ascii	"lvidRst\000"
+ 4238      52737400 
+ 4239              	.LASF68:
+ 4240 047c 4379506D 		.ascii	"CyPmAltAct\000"
+ 4240      416C7441 
+ 4240      637400
+ 4241              	.LASF105:
+ 4242 0487 43794465 		.ascii	"CyDelayCycles\000"
+ 4242      6C617943 
+ 4242      79636C65 
+ 4242      7300
+ 4243              	.LASF16:
+ 4244 0495 72656738 		.ascii	"reg8\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 117
 
 
- 4246      7200
- 4247              	.LASF83:
- 4248 045a 6379506D 		.ascii	"cyPmClockBackup\000"
- 4248      436C6F63 
- 4248      6B426163 
- 4248      6B757000 
- 4249              	.LASF30:
- 4250 046a 706C6C45 		.ascii	"pllEnableState\000"
- 4250      6E61626C 
- 4250      65537461 
- 4250      746500
- 4251              	.LASF37:
- 4252 0479 696C6F31 		.ascii	"ilo1kEnable\000"
- 4252      6B456E61 
- 4252      626C6500 
- 4253              	.LASF2:
- 4254 0485 73686F72 		.ascii	"short int\000"
- 4254      7420696E 
- 4254      7400
- 4255              	.LASF57:
- 4256 048f 4379506D 		.ascii	"CyPmHibSlpSaveSet\000"
- 4256      48696253 
- 4256      6C705361 
- 4256      76655365 
- 4256      7400
- 4257              	.LASF38:
- 4258 04a1 696C6F31 		.ascii	"ilo100kEnable\000"
- 4258      30306B45 
- 4258      6E61626C 
- 4258      6500
- 4259              	.LASF14:
- 4260 04af 63686172 		.ascii	"char\000"
- 4260      00
- 4261              	.LASF101:
- 4262 04b4 4379494D 		.ascii	"CyIMO_DisableDoubler\000"
- 4262      4F5F4469 
- 4262      7361626C 
- 4262      65446F75 
- 4262      626C6572 
- 4263              	.LASF85:
- 4264 04c9 43795664 		.ascii	"CyVdLvDigitDisable\000"
- 4264      4C764469 
- 4264      67697444 
- 4264      69736162 
- 4264      6C6500
- 4265              	.LASF54:
- 4266 04dc 696D6F41 		.ascii	"imoActFreq12Mhz\000"
- 4266      63744672 
- 4266      65713132 
- 4266      4D687A00 
- 4267              	.LASF73:
- 4268 04ec 4379506D 		.ascii	"CyPmHibernate\000"
- 4268      48696265 
- 4268      726E6174 
- 4268      6500
- 4269              	.LASF93:
- 4270 04fa 4379466C 		.ascii	"CyFlash_SetWaitCycles\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 118
+ 4244      00
+ 4245              	.LASF95:
+ 4246 049a 43794861 		.ascii	"CyHalt\000"
+ 4246      6C7400
+ 4247              	.LASF79:
+ 4248 04a1 4379506D 		.ascii	"CyPmOppsSet\000"
+ 4248      4F707073 
+ 4248      53657400 
+ 4249              	.LASF1:
+ 4250 04ad 756E7369 		.ascii	"unsigned char\000"
+ 4250      676E6564 
+ 4250      20636861 
+ 4250      7200
+ 4251              	.LASF83:
+ 4252 04bb 6379506D 		.ascii	"cyPmClockBackup\000"
+ 4252      436C6F63 
+ 4252      6B426163 
+ 4252      6B757000 
+ 4253              	.LASF30:
+ 4254 04cb 706C6C45 		.ascii	"pllEnableState\000"
+ 4254      6E61626C 
+ 4254      65537461 
+ 4254      746500
+ 4255              	.LASF37:
+ 4256 04da 696C6F31 		.ascii	"ilo1kEnable\000"
+ 4256      6B456E61 
+ 4256      626C6500 
+ 4257              	.LASF2:
+ 4258 04e6 73686F72 		.ascii	"short int\000"
+ 4258      7420696E 
+ 4258      7400
+ 4259              	.LASF57:
+ 4260 04f0 4379506D 		.ascii	"CyPmHibSlpSaveSet\000"
+ 4260      48696253 
+ 4260      6C705361 
+ 4260      76655365 
+ 4260      7400
+ 4261              	.LASF38:
+ 4262 0502 696C6F31 		.ascii	"ilo100kEnable\000"
+ 4262      30306B45 
+ 4262      6E61626C 
+ 4262      6500
+ 4263              	.LASF14:
+ 4264 0510 63686172 		.ascii	"char\000"
+ 4264      00
+ 4265              	.LASF101:
+ 4266 0515 4379494D 		.ascii	"CyIMO_DisableDoubler\000"
+ 4266      4F5F4469 
+ 4266      7361626C 
+ 4266      65446F75 
+ 4266      626C6572 
+ 4267              	.LASF85:
+ 4268 052a 43795664 		.ascii	"CyVdLvDigitDisable\000"
+ 4268      4C764469 
+ 4268      67697444 
+ 4268      69736162 
+ 4268      6C6500
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 118
 
 
- 4270      6173685F 
- 4270      53657457 
- 4270      61697443 
- 4270      79636C65 
- 4271              	.LASF81:
- 4272 0510 66747749 		.ascii	"ftwInterval\000"
- 4272      6E746572 
- 4272      76616C00 
- 4273              	.LASF84:
- 4274 051c 6379506D 		.ascii	"cyPmImoFreqReg2Mhz\000"
- 4274      496D6F46 
- 4274      72657152 
- 4274      6567324D 
- 4274      687A00
- 4275              	.LASF116:
- 4276 052f 4379506D 		.ascii	"CyPmReadStatus\000"
- 4276      52656164 
- 4276      53746174 
- 4276      757300
- 4277              	.LASF103:
- 4278 053e 43794275 		.ascii	"CyBusClk_SetDivider\000"
- 4278      73436C6B 
- 4278      5F536574 
- 4278      44697669 
- 4278      64657200 
- 4279              	.LASF115:
- 4280 0552 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Chip-Design\\pro"
- 4280      73657273 
- 4280      5C49616E 
- 4280      5C446F63 
- 4280      756D656E 
- 4281 057f 6A5F6173 		.ascii	"j_asic\\psoc\\Wave Generator\\Wave Generator.cydsn\000"
- 4281      69635C70 
- 4281      736F635C 
- 4281      57617665 
- 4281      2047656E 
- 4282              	.LASF32:
- 4283 05af 636C6B44 		.ascii	"clkDistDelay\000"
- 4283      69737444 
- 4283      656C6179 
- 4283      00
- 4284              	.LASF77:
- 4285 05bc 4379506D 		.ascii	"CyPmCtwSetInterval\000"
- 4285      43747753 
- 4285      6574496E 
- 4285      74657276 
- 4285      616C00
- 4286              	.LASF65:
- 4287 05cf 73746174 		.ascii	"status\000"
- 4287      757300
- 4288              	.LASF113:
- 4289 05d6 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 4289      4320342E 
- 4289      392E3320 
- 4289      32303135 
- 4289      30333033 
- 4290 0609 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 119
+ 4269              	.LASF54:
+ 4270 053d 696D6F41 		.ascii	"imoActFreq12Mhz\000"
+ 4270      63744672 
+ 4270      65713132 
+ 4270      4D687A00 
+ 4271              	.LASF73:
+ 4272 054d 4379506D 		.ascii	"CyPmHibernate\000"
+ 4272      48696265 
+ 4272      726E6174 
+ 4272      6500
+ 4273              	.LASF93:
+ 4274 055b 4379466C 		.ascii	"CyFlash_SetWaitCycles\000"
+ 4274      6173685F 
+ 4274      53657457 
+ 4274      61697443 
+ 4274      79636C65 
+ 4275              	.LASF81:
+ 4276 0571 66747749 		.ascii	"ftwInterval\000"
+ 4276      6E746572 
+ 4276      76616C00 
+ 4277              	.LASF84:
+ 4278 057d 6379506D 		.ascii	"cyPmImoFreqReg2Mhz\000"
+ 4278      496D6F46 
+ 4278      72657152 
+ 4278      6567324D 
+ 4278      687A00
+ 4279              	.LASF116:
+ 4280 0590 4379506D 		.ascii	"CyPmReadStatus\000"
+ 4280      52656164 
+ 4280      53746174 
+ 4280      757300
+ 4281              	.LASF103:
+ 4282 059f 43794275 		.ascii	"CyBusClk_SetDivider\000"
+ 4282      73436C6B 
+ 4282      5F536574 
+ 4282      44697669 
+ 4282      64657200 
+ 4283              	.LASF32:
+ 4284 05b3 636C6B44 		.ascii	"clkDistDelay\000"
+ 4284      69737444 
+ 4284      656C6179 
+ 4284      00
+ 4285              	.LASF77:
+ 4286 05c0 4379506D 		.ascii	"CyPmCtwSetInterval\000"
+ 4286      43747753 
+ 4286      6574496E 
+ 4286      74657276 
+ 4286      616C00
+ 4287              	.LASF65:
+ 4288 05d3 73746174 		.ascii	"status\000"
+ 4288      757300
+ 4289              	.LASF113:
+ 4290 05da 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 4290      4320342E 
+ 4290      392E3320 
+ 4290      32303135 
+ 4290      30333033 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 119
 
 
- 4290      20726576 
- 4290      6973696F 
- 4290      6E203232 
- 4290      31323230 
- 4291 063c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 4291      66756E63 
- 4291      74696F6E 
- 4291      2D736563 
- 4291      74696F6E 
- 4292              	.LASF48:
- 4293 0664 6C766961 		.ascii	"lviaEn\000"
- 4293      456E00
- 4294              	.LASF97:
- 4295 066b 4379494D 		.ascii	"CyIMO_SetFreq\000"
- 4295      4F5F5365 
- 4295      74467265 
- 4295      7100
- 4296              	.LASF108:
- 4297 0679 4379494D 		.ascii	"CyIMO_EnableDoubler\000"
- 4297      4F5F456E 
- 4297      61626C65 
- 4297      446F7562 
- 4297      6C657200 
- 4298              	.LASF60:
- 4299 068d 4379506D 		.ascii	"CyPmHibSaveSet\000"
- 4299      48696253 
- 4299      61766553 
- 4299      657400
- 4300              	.LASF69:
- 4301 069c 77616B65 		.ascii	"wakeupTime\000"
- 4301      75705469 
- 4301      6D6500
- 4302              	.LASF89:
- 4303 06a7 43795664 		.ascii	"CyVdLvAnalogEnable\000"
- 4303      4C76416E 
- 4303      616C6F67 
- 4303      456E6162 
- 4303      6C6500
- 4304              	.LASF15:
- 4305 06ba 63797374 		.ascii	"cystatus\000"
- 4305      61747573 
- 4305      00
- 4306              	.LASF23:
- 4307 06c3 666C6173 		.ascii	"flashWaitCycles\000"
- 4307      68576169 
- 4307      74437963 
- 4307      6C657300 
- 4308              	.LASF52:
- 4309 06d3 6C766961 		.ascii	"lviaRst\000"
- 4309      52737400 
- 4310              	.LASF90:
- 4311 06db 43795664 		.ascii	"CyVdHvAnalogEnable\000"
- 4311      4876416E 
- 4311      616C6F67 
- 4311      456E6162 
- 4311      6C6500
- 4312              	.LASF104:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccKMVNo9.s 			page 120
+ 4291 060d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 4291      20726576 
+ 4291      6973696F 
+ 4291      6E203232 
+ 4291      31323230 
+ 4292 0640 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 4292      66756E63 
+ 4292      74696F6E 
+ 4292      2D736563 
+ 4292      74696F6E 
+ 4293              	.LASF48:
+ 4294 0668 6C766961 		.ascii	"lviaEn\000"
+ 4294      456E00
+ 4295              	.LASF97:
+ 4296 066f 4379494D 		.ascii	"CyIMO_SetFreq\000"
+ 4296      4F5F5365 
+ 4296      74467265 
+ 4296      7100
+ 4297              	.LASF108:
+ 4298 067d 4379494D 		.ascii	"CyIMO_EnableDoubler\000"
+ 4298      4F5F456E 
+ 4298      61626C65 
+ 4298      446F7562 
+ 4298      6C657200 
+ 4299              	.LASF60:
+ 4300 0691 4379506D 		.ascii	"CyPmHibSaveSet\000"
+ 4300      48696253 
+ 4300      61766553 
+ 4300      657400
+ 4301              	.LASF69:
+ 4302 06a0 77616B65 		.ascii	"wakeupTime\000"
+ 4302      75705469 
+ 4302      6D6500
+ 4303              	.LASF89:
+ 4304 06ab 43795664 		.ascii	"CyVdLvAnalogEnable\000"
+ 4304      4C76416E 
+ 4304      616C6F67 
+ 4304      456E6162 
+ 4304      6C6500
+ 4305              	.LASF15:
+ 4306 06be 63797374 		.ascii	"cystatus\000"
+ 4306      61747573 
+ 4306      00
+ 4307              	.LASF23:
+ 4308 06c7 666C6173 		.ascii	"flashWaitCycles\000"
+ 4308      68576169 
+ 4308      74437963 
+ 4308      6C657300 
+ 4309              	.LASF52:
+ 4310 06d7 6C766961 		.ascii	"lviaRst\000"
+ 4310      52737400 
+ 4311              	.LASF90:
+ 4312 06df 43795664 		.ascii	"CyVdHvAnalogEnable\000"
+ 4312      4876416E 
+ 4312      616C6F67 
+ 4312      456E6162 
+ 4312      6C6500
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccNdcoMf.s 			page 120
 
 
- 4313 06ee 43795854 		.ascii	"CyXTAL_Stop\000"
- 4313      414C5F53 
- 4313      746F7000 
- 4314              	.LASF82:
- 4315 06fa 6379506D 		.ascii	"cyPmBackup\000"
- 4315      4261636B 
- 4315      757000
- 4316              	.LASF47:
- 4317 0705 6C766964 		.ascii	"lvidTrip\000"
- 4317      54726970 
- 4317      00
- 4318              	.LASF24:
- 4319 070e 696D6F45 		.ascii	"imoEnable\000"
- 4319      6E61626C 
- 4319      6500
- 4320              	.LASF75:
- 4321 0718 696E7465 		.ascii	"interruptStatus\000"
- 4321      72727570 
- 4321      74537461 
- 4321      74757300 
- 4322              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 4313              	.LASF104:
+ 4314 06f2 43795854 		.ascii	"CyXTAL_Stop\000"
+ 4314      414C5F53 
+ 4314      746F7000 
+ 4315              	.LASF82:
+ 4316 06fe 6379506D 		.ascii	"cyPmBackup\000"
+ 4316      4261636B 
+ 4316      757000
+ 4317              	.LASF47:
+ 4318 0709 6C766964 		.ascii	"lvidTrip\000"
+ 4318      54726970 
+ 4318      00
+ 4319              	.LASF24:
+ 4320 0712 696D6F45 		.ascii	"imoEnable\000"
+ 4320      6E61626C 
+ 4320      6500
+ 4321              	.LASF75:
+ 4322 071c 696E7465 		.ascii	"interruptStatus\000"
+ 4322      72727570 
+ 4322      74537461 
+ 4322      74757300 
+ 4323              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
