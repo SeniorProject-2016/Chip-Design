@@ -2,7 +2,7 @@
 // Module Name:             register.v
 // Create Date:             ???????????????????
 // Last Modification:       3/29/2016
-// Author:                  Julie Swift and Zachary Nelson
+// Author:                  Julie Swift
 // Description: This sub-block allocates the control and status bits of other blocks
 //              to specific addresses that can be read from or written to
 //////////////////////////////////////////////////////////////////////////////////

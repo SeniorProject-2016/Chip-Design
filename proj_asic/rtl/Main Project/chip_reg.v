@@ -2,7 +2,7 @@
 // Module Name:             reg.v
 // Create Date:             10/15/2015
 // Last Modification:       3/16/2016
-// Author:                  Julie Swift and Zachary Nelson
+// Author:                  Julie Swift
 // Description: Provides read and write status to control/status registers
 //////////////////////////////////////////////////////////////////////////////////
 
