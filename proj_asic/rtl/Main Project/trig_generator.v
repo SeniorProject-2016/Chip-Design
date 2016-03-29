@@ -1,9 +1,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             trig_generator.v
 // Create Date:             ???????????????????
-// Last Modification:       3/16/2016
+// Last Modification:       3/29/2016
 // Author:                  Julie Swift and Zachary Nelson
-// Description: ????????????
+// Description: When triggered, this sub-block generates a signal to clear 
+//					 any of the status bits (such as the overrun and underrun)
 //////////////////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 1ps
