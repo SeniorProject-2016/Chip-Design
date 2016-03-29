@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             register.v
-// Create Date:             ???????????????????
+// Create Date:             10/10/2015
 // Last Modification:       3/29/2016
 // Author:                  Julie Swift
 // Description: This sub-block allocates the control and status bits of other blocks
@@ -56,8 +56,6 @@ module register(rst_n, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
             trig_fifo_overrun <= 1'h0; //NA?
             trig_fifo_underrun <= 1'h0; //NA?
             trig_filter_ovf_flag_clear <= 1'h0;
-				trig_i2si_fifo_overrun_clr <= 1'h0;
-				trig_i2so_fifo_underrun_clr <= 1'h0;
             rf_i2si_bist_incr <= 8'h010;
             rf_i2si_bist_start_val_a <= 8'h80;
             rf_i2si_bist_start_val_b <= 4'h0;
@@ -3189,8 +3187,8 @@ module register(rst_n, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                         rdata[1] <= ro_fifo_overrun;
                         rdata[2] <= trig_fifo_underrun;
                         rdata[3] <= ro_fifo_underrun;
-						rdata[4] <= trig_filter_ovf_flag_clear;
-						rdata[5] <= ro_filter_ovf_flag;
+								rdata[4] <= trig_filter_ovf_flag_clear;
+								rdata[5] <= ro_filter_ovf_flag;
                         end
                     11'h00c:
                         rdata[7:0] <= rf_i2si_bist_incr;
@@ -3198,7 +3196,7 @@ module register(rst_n, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
                         rdata[7:0] <= rf_i2si_bist_start_val_a;
                     11'h00e:
                         rdata[3:0] <= rf_i2si_bist_start_val_b;
-					11'h010:
+						  11'h010:
                         rdata[7:0] <= rf_i2si_bist_upper_limit_a;
                     11'h011:
                         rdata[3:0] <= rf_i2si_bist_upper_limit_b;
