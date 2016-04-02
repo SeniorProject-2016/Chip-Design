@@ -52,8 +52,9 @@ module filter_round_truncate(clk, rst_n, acc_in, rf_sat, rf_shift, trig_filter_o
         begin
 		  
             acc_r <= ext_acc_in + (1<<(num_shift-1));            
-            acc_t <= acc_r[num_shift+:23];
-            
+            acc_t <= acc_r[num_shift+:24];
+            // when num_shift is 12 == acc_t[35:12]
+            // when num_shift is 19 == acc_t[42:19]
             if (acc_t > (1<<15)-1)
             begin 
                 ro_filter_ovf_flag <= 1; 
