@@ -49,7 +49,7 @@ module register(rst_n, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
         if (~rst_n)
         begin
             rf_i2si_bist_en <= 1'h1;
-            rf_filter_shift <= 4'hf;
+            rf_filter_shift <= 3'b000;
             rf_filter_clip_en <= 1'h1;
             rf_i2si_en <= 1'h1;
             trig_fifo_overrun <= 1'h0; //NA?
@@ -60,8 +60,8 @@ module register(rst_n, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
             rf_i2si_bist_start_val_b <= 4'h0;
             rf_i2si_bist_upper_limit_a <= 8'h7f;
             rf_i2si_bist_upper_limit_b <= 4'hf;
-            rf_filter_coeff0_a <= 8'h000;
-            rf_filter_coeff0_b <= 8'h000;
+            rf_filter_coeff0_a <= 8'b00010000;
+            rf_filter_coeff0_b <= 8'b00000000;
             rf_filter_coeff1_a <= 8'h000;
             rf_filter_coeff1_b <= 8'h000;
             rf_filter_coeff2_a <= 8'h000;
