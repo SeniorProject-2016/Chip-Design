@@ -9,15 +9,20 @@ x3 = Wave(A, Fs, N, F0, 'triangle');
 
 t = 0:1/Fs:(N/Fs-1/Fs);
 
-% plot(t, x1, t, x2, t, x3);    % Uncomment these if you'd like to see a nice plot 
-% grid;
+plot(t, x1, t, x2, t, x3);    % Uncomment these if you'd like to see a nice plot 
+grid;
 
 % Write the sine wave data to the file
 outFile = fopen('data.txt', 'w');
 fprintf(outFile, 'Sine: \n{');
 for i = 1:length(x1)
     fprintf(outFile, '0x');
-    fprintf(outFile, dec2hex(round(65535*x1(i)/A)));
+    if (x1(i) >= 0)
+        fprintf(outFile, dec2hex(round(32767*x1(i)/A)));
+    else
+        fprintf(outFile, ndec2hex(round(32768*x1(i)/A)));
+    end
+    
     if (i ~= length(x1))
         fprintf(outFile, ', ');
     else
@@ -32,7 +37,12 @@ end
 fprintf(outFile, 'Square: \n{');
 for i = 1:length(x2)
     fprintf(outFile, '0x');
-    fprintf(outFile, dec2hex(round(65535*x2(i)/A)));
+    if (x2(i) >= 0)
+        fprintf(outFile, dec2hex(round(32767*x2(i)/A)));
+    else
+        fprintf(outFile, ndec2hex(round(32768*x2(i)/A)));
+    end
+    
     if (i ~= length(x2))
         fprintf(outFile, ', ');
     else
@@ -47,7 +57,12 @@ end
 fprintf(outFile, 'Triangular: \n{');
 for i = 1:length(x3)
     fprintf(outFile, '0x');
-    fprintf(outFile, dec2hex(round(65535*x3(i)/A)));
+    if (x3(i) >= 0)
+        fprintf(outFile, dec2hex(round(32767*x3(i)/A)));
+    else
+        fprintf(outFile, ndec2hex(round(32768*x3(i)/A)));
+    end
+    
     if (i ~= length(x3))
         fprintf(outFile, ', ');
     else
