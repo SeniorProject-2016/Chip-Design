@@ -6,30 +6,30 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 1ps
-`define BUF_SIZE (1 << BUF_WIDTH)                                                                           //Number of elements allowed in buffer = 2^Buffer Width
+`define BUF_SIZE (1 << BUF_WIDTH)                                                                           	// Number of elements allowed in buffer = 2^Buffer Width
                                                                                                                     
 module fifo(clk,rst_n,fifo_inp_data,fifo_out_data,fifo_inp_rts,fifo_out_rtr,fifo_out_rts,fifo_inp_rtr);
                                                                                                                 
-    parameter                               DATA_SIZE = 32;                                                     //Number of bits for fifo data
-    parameter                               BUF_WIDTH = 3;                                                      //Number of bits to be used in pointer
+    parameter                               DATA_SIZE = 32;                                                     // Number of bits for fifo data
+    parameter                               BUF_WIDTH = 3;                                                      // Number of bits to be used in pointer
                                                                                 
-    input                                   clk;                                                                //Master clock
-    input                                   rst_n;                                                              //Reset
+    input                                   clk;                                                                // Master clock
+    input                                   rst_n;                                                              // Reset
 
-    input                                   fifo_inp_rts;                                                       //Write client asserts ready to send 
-    output reg                              fifo_inp_rtr;                                                       //Write client asserts ready to read
-    input           [DATA_SIZE - 1:0]       fifo_inp_data;                                                      //Data input to be pushed to buffer
+    input                                   fifo_inp_rts;                                                       // Write client asserts ready to send 
+    output reg                              fifo_inp_rtr;                                                       // Write client asserts ready to read
+    input           [DATA_SIZE - 1:0]       fifo_inp_data;                                                      // Data input to be pushed to buffer
                                                                                                         
-    output reg                              fifo_out_rts;                                                       //Output FIFO asserts read to send
+    output reg                              fifo_out_rts;                                                       // Output FIFO asserts read to send
     input                                   fifo_out_rtr;                                                     
-    output reg      [DATA_SIZE - 1:0]       fifo_out_data;                                                      //Port to output the data using pop.
+    output reg      [DATA_SIZE - 1:0]       fifo_out_data;                                                      // Port to output the data using pop.
                                                    
                                             
 
     reg             [BUF_WIDTH    :0]       fifo_counter;                                                                   
-    reg             [BUF_WIDTH - 1:0]       rd_ptr;                                                             //Pointer to read
-    reg             [BUF_WIDTH - 1:0]       wr_ptr;                                                             //Write addresses  
-    reg             [DATA_SIZE - 1:0]       buf_mem[`BUF_SIZE - 1:0];                                           //Buffer memory
+    reg             [BUF_WIDTH - 1:0]       rd_ptr;                                                             // Pointer to read
+    reg             [BUF_WIDTH - 1:0]       wr_ptr;                                                             // Write addresses  
+    reg             [DATA_SIZE - 1:0]       buf_mem[`BUF_SIZE - 1:0];                                           // Buffer memory
 
     always @(fifo_counter)
     begin

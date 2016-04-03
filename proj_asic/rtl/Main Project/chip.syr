@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.24 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.25 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: chip.prj
 
@@ -370,7 +370,7 @@ Unit <filter_storage> synthesized.
 Synthesizing Unit <filter_accumulator>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_accumulator.v".
     Found 40-bit register for signal <tmp>.
-    Found 40-bit adder for signal <tmp[39]_D[31]_add_1_OUT> created at line 35.
+    Found 40-bit adder for signal <tmp[39]_D[31]_add_1_OUT> created at line 39.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  40 D-type flip-flop(s).
@@ -383,13 +383,13 @@ Synthesizing Unit <filter_round_truncate>.
     Found 1-bit register for signal <ro_filter_ovf_flag>.
     Found 43-bit register for signal <acc_r>.
     Found 24-bit register for signal <acc_t>.
-    Found 6-bit subtractor for signal <GND_19_o_GND_19_o_sub_3_OUT> created at line 54.
-    Found 5-bit adder for signal <n0049> created at line 39.
-    Found 43-bit adder for signal <ext_acc_in[42]_GND_19_o_add_4_OUT> created at line 54.
-    Found 43-bit shifter logical left for signal <n0058> created at line 54
-    Found 62-bit shifter logical right for signal <n0035> created at line 55
-    Found 32-bit comparator greater for signal <acc_t[23]_GND_19_o_LessThan_7_o> created at line 58
-    Found 32-bit comparator greater for signal <PWR_18_o_acc_t[23]_LessThan_10_o> created at line 67
+    Found 6-bit subtractor for signal <GND_19_o_GND_19_o_sub_3_OUT> created at line 60.
+    Found 5-bit adder for signal <n0049> created at line 45.
+    Found 43-bit adder for signal <ext_acc_in[42]_GND_19_o_add_4_OUT> created at line 60.
+    Found 43-bit shifter logical left for signal <n0058> created at line 60
+    Found 62-bit shifter logical right for signal <n0035> created at line 61
+    Found 32-bit comparator greater for signal <acc_t[23]_GND_19_o_LessThan_7_o> created at line 64
+    Found 32-bit comparator greater for signal <PWR_18_o_acc_t[23]_LessThan_10_o> created at line 73
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  84 D-type flip-flop(s).
@@ -401,7 +401,7 @@ Unit <filter_round_truncate> synthesized.
 Synthesizing Unit <filter_mux>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_mux.v".
     Found 16-bit register for signal <rddata>.
-    Found 16-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][15]_wide_mux_513_OUT> created at line 663.
+    Found 16-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][15]_wide_mux_513_OUT> created at line 670.
     Summary:
 	inferred  16 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
@@ -1567,9 +1567,9 @@ Synthesizing Unit <Deserializer>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_23_OUT> created at line 207.
-    Found 8-bit 8-to-1 multiplexer for signal <_n0433> created at line 498.
-    Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_31_o> created at line 269
+    Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_23_OUT> created at line 181.
+    Found 8-bit 8-to-1 multiplexer for signal <_n0433> created at line 464.
+    Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_31_o> created at line 243
     Summary:
 	inferred  50 D-type flip-flop(s).
 	inferred   1 Comparator(s).
@@ -1589,8 +1589,8 @@ Synthesizing Unit <Sequencer>.
     Found 1-bit register for signal <Q_data>.
     Found 1-bit register for signal <xfc_ready>.
     Found 1-bit register for signal <Q_addr>.
-    Found 11-bit adder for signal <i2c_addr_write[10]_addr_increment[10]_add_1_OUT> created at line 115.
-    Found 11-bit adder for signal <addr_increment[10]_GND_32_o_add_2_OUT> created at line 128.
+    Found 11-bit adder for signal <i2c_addr_write[10]_addr_increment[10]_add_1_OUT> created at line 95.
+    Found 11-bit adder for signal <addr_increment[10]_GND_32_o_add_2_OUT> created at line 108.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  47 D-type flip-flop(s).
@@ -2171,12 +2171,12 @@ clk            |    6.678|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 320.00 secs
-Total CPU time to Xst completion: 319.96 secs
+Total REAL time to Xst completion: 421.00 secs
+Total CPU time to Xst completion: 421.23 secs
  
 --> 
 
-Total memory usage is 3701088 kilobytes
+Total memory usage is 3700512 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   12 (  12 filtered)

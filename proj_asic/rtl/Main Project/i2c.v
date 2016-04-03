@@ -1,16 +1,17 @@
 `timescale 1ns / 1ps
+
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             i2c.v
-// Create Date:             ?????
+// Create Date:             10/15/2016
 // Last Modification:       1/13/2015
 // Author:                  Whitley Forman
 // Description:
 //////////////////////////////////////////////////////////////////////////////////
 
 module i2c(
-    input [2:0] i2c_addr_bits,
-    input i2c_sda_in,
-    input i2c_scl,
+    input [2:0] i2c_addr_bits,                  //descriptions needed
+    input i2c_sda_in,                           //
+    input i2c_scl,                              // 
     output i2c_op,
     output i2c_xfc_write,
     output [10:0] i2c_wraddr,
@@ -57,14 +58,12 @@ module i2c(
 
     Serializer i2c_top_serializer (
         .i2c_scl			(i2c_scl), 			//external input	*
-        //.i2c_sda			(i2c_sda_in), 		//external input	*
         .i2c_sda_out		(i2c_sda_out), 	    //external input	*
         .i2c_ack			(i2c_ack), 			//internal input	*
         .Clock				(clk), 				//external input	*
         .reset				(reset), 			//external input	*
         .i2c_rdata			(i2c_rdata), 		//external input	*
         .i2c_xfc_read		(i2c_xfc_read) 		//external input 	*
-        //.stop_out			(stop_out)			//internal input	*
         );
 	 
 endmodule

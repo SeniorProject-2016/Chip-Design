@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             register.v
-// Create Date:             ???????????????????
+// Create Date:             10/15/2016
 // Last Modification:       3/16/2016
 // Author:                  Julie Swift and Zachary Nelson
 // Description: ????????????

@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             filter_round_truncate.v
-// Create Date:             ??? 
+// Create Date:             10/15/2016 
 // Last Modification:       4/1/2016
 // Author:                  Dhruvit Naik
 // Description:             ????
@@ -21,6 +21,9 @@
 module filter_round_truncate(clk, rst_n, acc_in, rf_sat, rf_shift, trig_filter_ovf_flag_clear, filter_out, ro_filter_ovf_flag
     );
     
+    // MODULE CONNECTIONS
+    //---------------------------------------------------------------------------  
+    //---------------------------------------------------------------------------  
     input                                   clk; 
     input                                   rst_n;
     input               [39:0]              acc_in; 
@@ -30,6 +33,9 @@ module filter_round_truncate(clk, rst_n, acc_in, rf_sat, rf_shift, trig_filter_o
     output reg          [15:0]              filter_out;
     output reg                              ro_filter_ovf_flag; 
     reg signed          [42:0]              acc_r;
+    //---------------------------------------------------------------------------  
+    //---------------------------------------------------------------------------      
+    
     reg signed          [23:0]              acc_t;
     wire                [4:0]               num_shift;
     wire                                    sign_bit; 

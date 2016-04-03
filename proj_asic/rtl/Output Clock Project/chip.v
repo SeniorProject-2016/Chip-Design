@@ -8,7 +8,7 @@
 
 `timescale 1ns / 1ps
 
-module chip(clk, rst_n, clk_out,                               // General
+module chip(clk, rst_n,                                        // General
             i2si_sck, i2si_ws, i2si_sd,                        // I2S Input
             i2so_sck, i2so_ws, i2so_sd,                        // I2S Output
             i2c_addr_bits, i2c_scl, i2c_sda_in, i2c_sda_out);  // I2C
@@ -20,7 +20,6 @@ module chip(clk, rst_n, clk_out,                               // General
     // General
     input clk;                          // master clock
     input rst_n;                        // reset not
-    output clk_out;
     
     // I2S Input
     input i2si_sck;                     // I2S input serial clock
@@ -40,7 +39,6 @@ module chip(clk, rst_n, clk_out,                               // General
     //---------------------------------------------------------------------------  
     //---------------------------------------------------------------------------  
     
-    assign clk_out=clk;
     
     // BLOCK CONNECTIONS
     //---------------------------------------------------------------------------  

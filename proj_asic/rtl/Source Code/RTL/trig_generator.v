@@ -1,9 +1,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:             trig_generator.v
-// Create Date:             ???????????????????
-// Last Modification:       3/16/2016
-// Author:                  Julie Swift and Zachary Nelson
-// Description: ????????????
+// Create Date:             10/1/2015
+// Last Modification:       3/29/2016
+// Author:                  Julie Swift
+// Description: When triggered, this sub-block generates a signal to clear 
+//					 any of the status bits (such as the overrun and underrun)
 //////////////////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 1ps
@@ -19,7 +20,7 @@ module trig_generator(clk, rst_n, address, wdata, xfc, trig_i2si_fifo_overrun_cl
     input                       xfc;                                // transfer complete
     // Outputs
     output reg                  trig_i2si_fifo_overrun_clr;         // address = 0x008 bit 0
-    output reg                  trig_i2so_fifo_underrun_clr;	    // address = 0x008 bit 2
+    output reg                  trig_i2so_fifo_underrun_clr;	     // address = 0x008 bit 2
     output reg                  trig_filter_ovf_flag_clear;         // address = 0x008 bit 4
 
     always @ (posedge clk or negedge rst_n)
