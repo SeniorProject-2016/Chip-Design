@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Apr 03 16:33:11 2016
+// Written by: Map P.20131013 on Sun Apr 03 22:03:26 2016
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -16813,6 +16813,10 @@ TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/filter_out_2" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/filter_out_1" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/filter_out_0" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_27" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_26" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_25" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_24" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_23" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_22" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_21" BEL
@@ -16837,6 +16841,10 @@ TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_2" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_1" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_t_0" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_46" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_45" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_44" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_43" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_42" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_41" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_LEFT/acc_r_40" BEL
@@ -16884,6 +16892,10 @@ TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_2" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_1" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/filter_out_0" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_27" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_26" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_25" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_24" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_23" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_22" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_21" BEL
@@ -16908,6 +16920,10 @@ TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_2" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_1" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_t_0" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_46" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_45" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_44" BEL
+        "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_43" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_42" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_41" BEL
         "Filter/TOP_FILTER_ROUND_TRUNCATE_RIGHT/acc_r_40" BEL
@@ -16949,13 +16965,13 @@ TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Register/Register/rf_i2si_bist_start_val_b_2" BEL
         "Register/Register/rf_i2si_bist_start_val_b_1" BEL
         "Register/Register/rf_i2si_bist_start_val_b_0" BEL
-        "Register/Register/rf_filter_shift_2" BEL
-        "Register/Register/rf_filter_shift_1" BEL
-        "Register/Register/rf_filter_shift_0" BEL
         "Register/Register/rf_i2si_bist_upper_limit_b_3" BEL
         "Register/Register/rf_i2si_bist_upper_limit_b_2" BEL
         "Register/Register/rf_i2si_bist_upper_limit_b_1" BEL
         "Register/Register/rf_i2si_bist_upper_limit_b_0" BEL
+        "Register/Register/rf_filter_shift_2" BEL
+        "Register/Register/rf_filter_shift_1" BEL
+        "Register/Register/rf_filter_shift_0" BEL
         "Register/Register/rf_filter_coeff511_b_7" BEL
         "Register/Register/rf_filter_coeff511_b_6" BEL
         "Register/Register/rf_filter_coeff511_b_5" BEL
@@ -25140,14 +25156,6 @@ TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Register/Register/rf_filter_coeff0_b_2" BEL
         "Register/Register/rf_filter_coeff0_b_1" BEL
         "Register/Register/rf_filter_coeff0_b_0" BEL
-        "Register/Register/rf_i2si_bist_start_val_a_7" BEL
-        "Register/Register/rf_i2si_bist_start_val_a_6" BEL
-        "Register/Register/rf_i2si_bist_start_val_a_5" BEL
-        "Register/Register/rf_i2si_bist_start_val_a_4" BEL
-        "Register/Register/rf_i2si_bist_start_val_a_3" BEL
-        "Register/Register/rf_i2si_bist_start_val_a_2" BEL
-        "Register/Register/rf_i2si_bist_start_val_a_1" BEL
-        "Register/Register/rf_i2si_bist_start_val_a_0" BEL
         "Register/Register/rf_filter_coeff0_a_7" BEL
         "Register/Register/rf_filter_coeff0_a_6" BEL
         "Register/Register/rf_filter_coeff0_a_5" BEL
@@ -25156,14 +25164,6 @@ TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Register/Register/rf_filter_coeff0_a_2" BEL
         "Register/Register/rf_filter_coeff0_a_1" BEL
         "Register/Register/rf_filter_coeff0_a_0" BEL
-        "Register/Register/rf_i2si_bist_incr_7" BEL
-        "Register/Register/rf_i2si_bist_incr_6" BEL
-        "Register/Register/rf_i2si_bist_incr_5" BEL
-        "Register/Register/rf_i2si_bist_incr_4" BEL
-        "Register/Register/rf_i2si_bist_incr_3" BEL
-        "Register/Register/rf_i2si_bist_incr_2" BEL
-        "Register/Register/rf_i2si_bist_incr_1" BEL
-        "Register/Register/rf_i2si_bist_incr_0" BEL
         "Register/Register/rf_i2si_bist_upper_limit_a_7" BEL
         "Register/Register/rf_i2si_bist_upper_limit_a_6" BEL
         "Register/Register/rf_i2si_bist_upper_limit_a_5" BEL
@@ -25172,6 +25172,22 @@ TIMEGRP clk = BEL "Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_0" BEL
         "Register/Register/rf_i2si_bist_upper_limit_a_2" BEL
         "Register/Register/rf_i2si_bist_upper_limit_a_1" BEL
         "Register/Register/rf_i2si_bist_upper_limit_a_0" BEL
+        "Register/Register/rf_i2si_bist_incr_7" BEL
+        "Register/Register/rf_i2si_bist_incr_6" BEL
+        "Register/Register/rf_i2si_bist_incr_5" BEL
+        "Register/Register/rf_i2si_bist_incr_4" BEL
+        "Register/Register/rf_i2si_bist_incr_3" BEL
+        "Register/Register/rf_i2si_bist_incr_2" BEL
+        "Register/Register/rf_i2si_bist_incr_1" BEL
+        "Register/Register/rf_i2si_bist_incr_0" BEL
+        "Register/Register/rf_i2si_bist_start_val_a_7" BEL
+        "Register/Register/rf_i2si_bist_start_val_a_6" BEL
+        "Register/Register/rf_i2si_bist_start_val_a_5" BEL
+        "Register/Register/rf_i2si_bist_start_val_a_4" BEL
+        "Register/Register/rf_i2si_bist_start_val_a_3" BEL
+        "Register/Register/rf_i2si_bist_start_val_a_2" BEL
+        "Register/Register/rf_i2si_bist_start_val_a_1" BEL
+        "Register/Register/rf_i2si_bist_start_val_a_0" BEL
         "Register/Trig_Gen/trig_i2si_fifo_overrun_clr" BEL
         "Register/Trig_Gen/trig_i2so_fifo_underrun_clr" BEL
         "I2C/i2c_top_deserializer/got_addr2" BEL
