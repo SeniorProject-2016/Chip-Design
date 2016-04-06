@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.29 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.29 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: chip.prj
 
@@ -417,13 +417,13 @@ Unit <chip_reg> synthesized.
 
 Synthesizing Unit <register>.
     Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\register.v".
-    Found 3-bit register for signal <rf_filter_shift>.
     Found 4-bit register for signal <rf_i2si_bist_upper_limit_b>.
+    Found 3-bit register for signal <rf_filter_shift>.
     Found 8-bit register for signal <rf_i2si_bist_incr>.
+    Found 8-bit register for signal <rf_filter_coeff0_a>.
     Found 8-bit register for signal <rf_i2si_bist_upper_limit_a>.
     Found 8-bit register for signal <rf_i2si_bist_start_val_a>.
     Found 4-bit register for signal <rf_i2si_bist_start_val_b>.
-    Found 8-bit register for signal <rf_filter_coeff0_a>.
     Found 8-bit register for signal <rf_filter_coeff0_b>.
     Found 8-bit register for signal <rf_filter_coeff1_a>.
     Found 8-bit register for signal <rf_filter_coeff1_b>.
@@ -1961,10 +1961,10 @@ Primitive and Black Box Usage:
 # FlipFlops/Latches                : 25248
 #      FD                          : 28
 #      FDC                         : 71
-#      FDCE                        : 24918
+#      FDCE                        : 24920
 #      FDE                         : 130
 #      FDP                         : 5
-#      FDPE                        : 36
+#      FDPE                        : 34
 #      FDR                         : 44
 #      FDRE                        : 16
 # RAMS                             : 64
@@ -2173,14 +2173,14 @@ clk            |    6.678|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 451.00 secs
-Total CPU time to Xst completion: 450.94 secs
+Total REAL time to Xst completion: 397.00 secs
+Total CPU time to Xst completion: 397.07 secs
  
 --> 
 
-Total memory usage is 3700440 kilobytes
+Total memory usage is 3700036 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   14 (  14 filtered)
+Number of warnings :   13 (  13 filtered)
 Number of infos    :    1 (   0 filtered)
 
