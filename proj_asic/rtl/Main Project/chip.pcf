@@ -1,21 +1,20 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Apr 05 15:06:30 2016
+// Written by: Map P.20131013 on Wed Apr 13 14:44:39 2016
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "i2si_ws" LOCATE = SITE "V15" LEVEL 1;
 COMP "i2si_sd" LOCATE = SITE "K16" LEVEL 1;
+COMP "i2c_sda" LOCATE = SITE "F14" LEVEL 1;
 COMP "i2c_scl" LOCATE = SITE "B13" LEVEL 1;
 COMP "clk" LOCATE = SITE "E3" LEVEL 1;
 COMP "i2so_sck" LOCATE = SITE "R16" LEVEL 1;
-COMP "i2c_sda_in" LOCATE = SITE "F14" LEVEL 1;
 COMP "i2c_addr_bits<1>" LOCATE = SITE "C17" LEVEL 1;
 COMP "i2c_addr_bits<2>" LOCATE = SITE "D18" LEVEL 1;
 COMP "i2c_addr_bits<0>" LOCATE = SITE "G13" LEVEL 1;
 COMP "i2so_ws" LOCATE = SITE "T9" LEVEL 1;
 COMP "i2so_sd" LOCATE = SITE "U11" LEVEL 1;
 COMP "i2si_sck" LOCATE = SITE "V11" LEVEL 1;
-COMP "i2c_sda_out" LOCATE = SITE "D17" LEVEL 1;
 COMP "rst_n" LOCATE = SITE "P15" LEVEL 1;
 PIN Filter/TOP_FILTER_STM/Mmult_accumulator_in_right_pins<117> = BEL
         "Filter/TOP_FILTER_STM/Mmult_accumulator_in_right" PINNAME CLK;

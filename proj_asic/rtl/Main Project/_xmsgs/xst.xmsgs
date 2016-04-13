@@ -5,47 +5,13 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="413" filtered="1" delta="new" >"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v" Line 55: Result of <arg fmt="%d" index="1">34</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">28</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" filtered="1" delta="old" >"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\chip.v" Line 41: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" filtered="1" delta="new" >"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2c_sequencer.v" Line 108: Result of <arg fmt="%d" index="1">12</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">11</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" filtered="1" delta="old" >"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v" Line 55: Result of <arg fmt="%d" index="1">34</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">28</arg>-bit target.
 </msg>
 
-<msg type="warning" file="Xst" num="647" filtered="1" delta="new" >Input &lt;<arg fmt="%s" index="1">wdata&lt;1:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="647" filtered="1" delta="new" >Input &lt;<arg fmt="%s" index="1">wdata&lt;3:3&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="647" filtered="1" delta="new" >Input &lt;<arg fmt="%s" index="1">wdata&lt;7:5&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="info" file="Xst" num="3217" delta="new" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">fifo_out_data</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_buf_mem</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" filtered="1" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" filtered="1" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" filtered="1" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" filtered="1" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" filtered="1" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" filtered="1" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" filtered="1" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_18</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" filtered="1" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i2si_bist_out_data_19</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">i2si_bist_gen</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="HDLCompiler" num="413" filtered="1" delta="old" >"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2c_sequencer.v" Line 108: Result of <arg fmt="%d" index="1">12</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">11</arg>-bit target.
 </msg>
 
 </messages>
-

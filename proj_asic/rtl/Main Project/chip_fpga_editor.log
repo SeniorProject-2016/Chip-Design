@@ -1,0 +1,511 @@
+#:C189   
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.20131013
+#Current Working Directory:
+#:D   C:\Users\Zachary\Desktop\Main Project
+#Date/Time:
+#:T   Wed Apr 13 13:40:29 2016
+#------------------------------
+	#Reading chip.ncd...
+	#Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+	#   "chip" is an NCD, version 3.2, device xc7a100t, package csg324, speed -1
+	#Design creation date: 2016.04.05.18.57.46
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+unselect -all
+	#3
+unselect -all
+	#4
+unselect -all
+	#5
+unselect -all
+	#6
+unselect -all
+	#7
+unselect -all
+	#8
+select site 'UNB_X0Y157'
+	#site "UNB_X0Y157",  unbonded type = IOB33S,  pad name = IOB_X0Y157  (RPM grid X1Y315)
+	#9
+unselect site 'UNB_X0Y157'
+	#10
+select -k comp 'clk'
+	#11
+unselect comp 'clk'
+	#12
+select -k comp 'Filter/TOP_FILTER_ACCUMULATOR_LEFT/tmp<7>'
+	#13
+unselect -all
+	#14
+unselect -all
+	#15
+select site 'TIEOFF_X11Y122'
+	#site "TIEOFF_X11Y122",  type = TIEOFF  (RPM grid X48Y244)
+	#16
+unselect -all
+	#17
+select site 'TIEOFF_X11Y122'
+	#site "TIEOFF_X11Y122",  type = TIEOFF  (RPM grid X48Y244)
+	#18
+post block
+	#19
+post find
+	#20
+setattr find  type bel  name i2s
+	#21
+unselect -all
+	#22
+select -k bel i2s
+	#WARNING:FPGAEditor:46 - No bel has a name that matches the pattern "i2s".
+	#23
+setattr find  type bel
+	#24
+unselect -all
+	#25
+select -k bel i2s
+	#WARNING:FPGAEditor:46 - No bel has a name that matches the pattern "i2s".
+	#26
+unpost find
+	#27
+unselect -all
+	#28
+select site 'TIEOFF_X19Y91'
+	#site "TIEOFF_X19Y91",  type = TIEOFF  (RPM grid X76Y182)
+	#29
+unselect -all
+	#30
+unselect -all
+	#31
+unselect -all
+	#32
+unselect -all
+	#33
+select site 'TIEOFF_X57Y88'
+	#site "TIEOFF_X57Y88",  type = TIEOFF  (RPM grid X220Y176)
+	#34
+unselect -all
+	#35
+select site 'TIEOFF_X53Y113'
+	#site "TIEOFF_X53Y113",  type = TIEOFF  (RPM grid X204Y226)
+	#36
+unselect -all
+	#37
+unselect -all
+	#38
+unselect -all
+	#39
+select site 'OPAD_X0Y14'
+	#site "OPAD_X0Y14",  unbonded type = OPAD,  pad name = OPAD_X0Y14  (RPM grid X211Y388)
+	#40
+unselect -all
+	#41
+select site 'OPAD_X0Y14'
+	#site "OPAD_X0Y14",  unbonded type = OPAD,  pad name = OPAD_X0Y14  (RPM grid X211Y388)
+	#42
+unselect -all
+	#43
+select site 'OPAD_X0Y15'
+	#site "OPAD_X0Y15",  unbonded type = OPAD,  pad name = OPAD_X0Y15  (RPM grid X211Y389)
+	#44
+unselect -all
+	#45
+select site 'OPAD_X0Y15'
+	#site "OPAD_X0Y15",  unbonded type = OPAD,  pad name = OPAD_X0Y15  (RPM grid X211Y389)
+	#46
+unselect -all
+	#47
+select site 'OPAD_X0Y15'
+	#site "OPAD_X0Y15",  unbonded type = OPAD,  pad name = OPAD_X0Y15  (RPM grid X211Y389)
+	#48
+unselect -all
+	#49
+select site 'OPAD_X0Y15'
+	#site "OPAD_X0Y15",  unbonded type = OPAD,  pad name = OPAD_X0Y15  (RPM grid X211Y389)
+	#50
+unselect -all
+	#51
+select site 'OPAD_X0Y15'
+	#site "OPAD_X0Y15",  unbonded type = OPAD,  pad name = OPAD_X0Y15  (RPM grid X211Y389)
+	#52
+post block
+	#53
+unselect -all
+	#54
+unselect -all
+	#55
+select arc 'OUTPUT(107116,305844)--->INPUT(107044,305844)'
+	#arc "OUTPUT(107116,305844)--->INPUT(107044,305844)"
+	#56
+unselect -all
+	#57
+select pin 'GTPE2_CHANNEL_X0Y7.GTPRXN'
+	#site.pin = GTPE2_CHANNEL_X0Y7.GTPRXN
+	#58
+unselect -all
+	#59
+unselect -all
+	#60
+select site 'OPAD_X0Y15'
+	#site "OPAD_X0Y15",  unbonded type = OPAD,  pad name = OPAD_X0Y15  (RPM grid X211Y389)
+	#61
+unselect -all
+	#62
+select site 'OPAD_X0Y15'
+	#site "OPAD_X0Y15",  unbonded type = OPAD,  pad name = OPAD_X0Y15  (RPM grid X211Y389)
+	#63
+unselect -all
+	#64
+select site 'OPAD_X0Y15'
+	#site "OPAD_X0Y15",  unbonded type = OPAD,  pad name = OPAD_X0Y15  (RPM grid X211Y389)
+	#65
+post block
+	#66
+unselect -all
+	#67
+select wire 'INPUT(106980,308692)'
+	#node = INPUT(106980,308692)
+	#68
+unselect -all
+	#69
+unselect -all
+	#70
+unselect -all
+	#71
+unselect -all
+	#72
+unselect -all
+	#73
+unselect -all
+	#74
+select pin 'GTPE2_CHANNEL_X0Y7.SCANIN0'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SCANIN0
+	#75
+unselect -all
+	#76
+select pin 'GTPE2_CHANNEL_X0Y7.SCANIN0'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SCANIN0
+	#77
+unselect -all
+	#78
+select pin 'GTPE2_CHANNEL_X0Y7.SCANIN1'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SCANIN1
+	#79
+unselect -all
+	#80
+select pin 'GTPE2_CHANNEL_X0Y7.SCANIN1'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SCANIN1
+	#81
+unselect -all
+	#82
+select pin 'GTPE2_CHANNEL_X0Y7.SIGVALIDCLK'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SIGVALIDCLK
+	#83
+unselect -all
+	#84
+select pin 'GTPE2_CHANNEL_X0Y7.SIGVALIDCLK'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SIGVALIDCLK
+	#85
+unselect -all
+	#86
+select pin 'GTPE2_CHANNEL_X0Y7.SIGVALIDCLK'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SIGVALIDCLK
+	#87
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#88
+unselect -all
+	#89
+select pin 'GTPE2_CHANNEL_X0Y7.SIGVALIDCLK'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SIGVALIDCLK
+	#90
+unselect -all
+	#91
+select pin 'GTPE2_CHANNEL_X0Y7.SIGVALIDCLK'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SIGVALIDCLK
+	#92
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#93
+unselect -all
+	#94
+select pin 'GTPE2_CHANNEL_X0Y7.SIGVALIDCLK'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SIGVALIDCLK
+	#95
+unselect -all
+	#96
+select pin 'GTPE2_CHANNEL_X0Y7.SIGVALIDCLK'
+	#site.pin = GTPE2_CHANNEL_X0Y7.SIGVALIDCLK
+	#97
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#98
+post attr
+	#99
+unpost pin "GTPE2_CHANNEL_X0Y7.SIGVALIDCLK"
+	#100
+unselect -all
+	#101
+select site 'UNB_X0Y162'
+	#site "UNB_X0Y162",  unbonded type = IOB33M,  pad name = IOB_X0Y162  (RPM grid X1Y322)
+	#102
+post attr
+	#103
+unpost site "UNB_X0Y162"
+	#104
+unselect -all
+	#105
+unselect -all
+	#106
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#107
+post attr
+	#108
+unpost site "OLOGIC_X0Y162"
+	#109
+unselect -all
+	#110
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#111
+unselect -all
+	#112
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#113
+post block
+	#<OQUSED>.
+	#<OQUSED>.
+	#<OQUSED>.
+	#<OQUSED>.
+	#<OFB>.
+	#<OFB>.
+	#114
+unselect -all
+	#115
+select pin 'OLOGIC_X0Y162.T1'
+	#site.pin = OLOGIC_X0Y162.T1
+	#116
+unselect -all
+	#117
+select pin 'OLOGIC_X0Y162.T2'
+	#site.pin = OLOGIC_X0Y162.T2
+	#118
+unselect -all
+	#119
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#120
+hilite -c yellow
+	#121
+unhilite
+	#122
+unselect -all
+	#123
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#124
+unselect -all
+	#125
+unselect -all
+	#126
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#127
+setattr main disable_draw on
+	#128
+setattr layer pinwires view off
+	#129
+setattr main disable_draw off
+	#Hint: change the visibility of more than one layer at a time by clicking on the apply button, clicking two or more layer buttons, and then clicking on the apply button again.
+	#130
+setattr main disable_draw on
+	#131
+setattr layer pinwires view on
+	#132
+setattr main disable_draw off
+	#133
+setattr main disable_draw on
+	#134
+setattr layer pinwires view off
+	#135
+setattr main disable_draw off
+	#136
+setattr main disable_draw on
+	#137
+setattr layer pinwires view on
+	#138
+setattr main disable_draw off
+	#139
+unselect -all
+	#140
+select site 'ILOGIC_X0Y161'
+	#site "ILOGIC_X0Y161",  type = ILOGICE3  (RPM grid X2Y323)
+	#141
+unselect -all
+	#142
+select site 'ILOGIC_X0Y161'
+	#site "ILOGIC_X0Y161",  type = ILOGICE3  (RPM grid X2Y323)
+	#143
+unselect -all
+	#144
+select site 'ILOGIC_X0Y161'
+	#site "ILOGIC_X0Y161",  type = ILOGICE3  (RPM grid X2Y323)
+	#145
+post block
+	#<INIT_Q1>.
+	#<INIT_Q1>.
+	#<INIT_Q1>.
+	#146
+unselect -all
+	#147
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#148
+unselect -all
+	#149
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#150
+unselect -all
+	#151
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#152
+unselect -all
+	#153
+select site 'OLOGIC_X0Y162'
+	#site "OLOGIC_X0Y162",  type = OLOGICE3  (RPM grid X3Y322)
+	#154
+post block
+	#<TMUX>.
+	#155
+unselect -all
+	#156
+select site 'IDELAY_X0Y161'
+	#site "IDELAY_X0Y161",  type = IDELAYE2  (RPM grid X5Y323)
+	#157
+unselect -all
+	#158
+select site 'IDELAY_X0Y161'
+	#site "IDELAY_X0Y161",  type = IDELAYE2  (RPM grid X5Y323)
+	#159
+unselect -all
+	#160
+select site 'IDELAY_X0Y161'
+	#site "IDELAY_X0Y161",  type = IDELAYE2  (RPM grid X5Y323)
+	#161
+post block
+	#162
+unselect -all
+	#163
+select -k comp 'i2c_sda_out'
+	#164
+unselect comp 'i2c_sda_out'
+	#165
+select -k comp 'i2c_sda_in'
+	#166
+unselect -all
+	#167
+select comp 'i2c_sda_in'
+	#comp "i2c_sda_in",  site "F14",  bonded type = IOB33,  pad name = IOB_X0Y139,  pin name = F14  (RPM grid X1Y279)
+	#168
+unselect comp 'i2c_sda_in'
+	#169
+select -k comp 'i2c_sda_out'
+	#170
+unselect -all
+	#171
+select comp 'i2c_sda_out'
+	#comp "i2c_sda_out",  site "D17",  bonded type = IOB33,  pad name = IOB_X0Y117,  pin name = D17  (RPM grid X1Y235)
+	#172
+unselect -all
+	#173
+select comp 'i2c_sda_out'
+	#comp "i2c_sda_out",  site "D17",  bonded type = IOB33,  pad name = IOB_X0Y117,  pin name = D17  (RPM grid X1Y235)
+	#174
+post block
+	#<O>; net <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<O>; net <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<O>; net <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<O>; net <I2C/i2c_top_serializer/i2c_sda_out>.
+	#175
+unselect -all
+	#176
+select net "I2C/i2c_top_serializer/i2c_sda_out"
+	#net "I2C/i2c_top_serializer/i2c_sda_out"
+	#177
+unselect -all
+	#178
+select net "I2C/i2c_top_serializer/i2c_sda_out"
+	#net "I2C/i2c_top_serializer/i2c_sda_out"
+	#179
+unselect -all
+	#180
+select net "I2C/i2c_top_serializer/i2c_sda_out"
+	#net "I2C/i2c_top_serializer/i2c_sda_out"
+	#181
+unselect net 'I2C/i2c_top_serializer/i2c_sda_out'
+	#182
+select -k comp 'i2c_sda_out'
+	#183
+unselect comp 'i2c_sda_out'
+	#184
+select -k comp 'I2C/i2c_top_serializer/Mmux_i2c_sda_out_i2c_ack_state_MUX_20017_o2'
+	#185
+unselect comp 'I2C/i2c_top_serializer/Mmux_i2c_sda_out_i2c_ack_state_MUX_20017_o2'
+	#186
+select -k comp 'I2C/i2c_top_serializer/i2c_sda_out'
+	#187
+unselect comp 'I2C/i2c_top_serializer/i2c_sda_out'
+	#188
+select -k comp 'I2C/i2c_top_serializer/Mmux_i2c_sda_out_i2c_ack_state_MUX_20017_o21'
+	#189
+unselect comp 'I2C/i2c_top_serializer/Mmux_i2c_sda_out_i2c_ack_state_MUX_20017_o21'
+	#190
+select -k comp 'I2C/i2c_top_serializer/i2c_sda_out'
+	#<PULL>.
+	#191
+unselect -all
+	#192
+select comp 'I2C/i2c_top_serializer/i2c_sda_out'
+	#comp "I2C/i2c_top_serializer/i2c_sda_out",  site "SLICE_X19Y151",  type = SLICEL  (RPM grid X63Y302)
+	#193
+post block
+	#194
+post find
+	#195
+unpost find
+	#<B>; net <Register/Register/mux_2362>.
+	#<B>; net <Register/Register/mux_2362>.
+	#<CQ>; net <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<CQ>; net <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<CQ>; net <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<CQ>; net <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<CFFINIT>.
+	#<CFFINIT>.
+	#<CFF>; bel <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<CFF>; bel <I2C/i2c_top_serializer/i2c_sda_out>.
+	#<CFF>; bel <I2C/i2c_top_serializer/i2c_sda_out>.
+	#WARNING:FPGAEditor:3 - You cannot make logic changes in the current edit mode.
+	#<CFFINIT>.
+	#<CFFINIT>.
+	#<CFFSR>.
+	#<CFFINIT>.
+	#<CEUSEDMUX>.
+	#<SYNC_ATTR>.
+	#<SYNC_ATTR>.
+	#<SYNC_ATTR>.
+	#WARNING:FPGAEditor:3 - You cannot make logic changes in the current edit mode.
+	#<B5FF>.
+	#<CFFSR>.

@@ -11,9 +11,8 @@
 module chip(clk, rst_n,                                        // General
             i2si_sck, i2si_ws, i2si_sd,                        // I2S Input
             i2so_sck, i2so_ws, i2so_sd,                        // I2S Output
-            i2c_addr_bits, i2c_scl, i2c_sda_in, i2c_sda_out);  // I2C
-       
-       
+            i2c_addr_bits, i2c_scl, i2c_sda_in, i2c_sda_od);   // I2C
+         
     // CHIP INTERFACES
     //---------------------------------------------------------------------------  
     //---------------------------------------------------------------------------  
@@ -34,11 +33,12 @@ module chip(clk, rst_n,                                        // General
     // I2C
     input i2c_addr_bits;                // 3 LSB I2C address select
     input i2c_scl;                      // serial clock
-    input i2c_sda_in;                   // serial data input
-    output i2c_sda_out;                 // serial data output
+    input i2c_sda_in;                   // serial data
+    output i2c_sda_od;
     //---------------------------------------------------------------------------  
     //---------------------------------------------------------------------------  
     
+    assign i2c_sda_od = i2c_sda_out ? 0:1'bZ;
     
     // BLOCK CONNECTIONS
     //---------------------------------------------------------------------------  
