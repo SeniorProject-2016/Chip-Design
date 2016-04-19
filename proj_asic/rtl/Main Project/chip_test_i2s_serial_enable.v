@@ -153,16 +153,16 @@ module chip_test1;
         
         
         // Instantiate I2C Test Data
-          i2c_test_data[0] = 8'b00100000;			// data for h400
-		  i2c_test_data[1] = 8'b00000000;			//data for h400 coeff0_a
-		  i2c_test_data[2] = 8'b00010000;			//data for h401 coeff0_b
+       //   i2c_test_data[0] = 8'b00100000;			// data for h400
+		 // i2c_test_data[1] = 8'b00000000;			//data for h400 coeff0_a
+		 // i2c_test_data[2] = 8'b00010000;			//data for h401 coeff0_b
 
 		
         
-        i2c_reg_addr_test_data [0] = 11'b00000000100;	//11'h004 = rf_i2s_bist_en register + filter registers
-		i2c_reg_addr_test_data [1] = 11'b10000000000;	//11'h400 = rf_i2s_bist_en register + filter registers
-		i2c_slave_addr_test_data [0] = 8'b10101011;		//current slave address w/ 3'b101 as i2c_addr_bits
-		i2c_slave_addr_test_data [1] = 8'b10101011;		//current slave address w/ 3'b101 as i2c_addr_bits
+      //i2c_reg_addr_test_data [0] = 11'b00000000000;	//11'h004 = rf_i2s_bist_en register + filter registers
+		//i2c_reg_addr_test_data [1] = 11'b10000000000;	//11'h400 = rf_i2s_bist_en register + filter registers
+		//i2c_slave_addr_test_data [0] = 8'b10101011;		//current slave address w/ 3'b101 as i2c_addr_bits
+		//i2c_slave_addr_test_data [1] = 8'b10101011;		//current slave address w/ 3'b101 as i2c_addr_bits
 
         #1 $fclose(data_in);
         

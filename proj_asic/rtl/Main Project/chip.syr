@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: chip.prj
 
@@ -181,8 +181,10 @@ Elaborating module <filter_storage>.
 Elaborating module <filter_accumulator>.
 
 Elaborating module <filter_round_truncate>.
-"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v" Line 59. $display acc_t > (1<<15)-1
-"C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v" Line 69. $display acc_t < -(1<<15) = -32768
+ERROR:HDLCompiler:1831 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v" Line 49: Complex expression in event control
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:1831"
+Module filter_round_truncate remains a blackbox, due to errors in its contents
+WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v" Line 21: Empty module <filter_round_truncate> remains a black box.
 
 Elaborating module <filter_mux>.
 
@@ -199,3 +201,11 @@ Elaborating module <Deserializer>.
 Elaborating module <Sequencer>.
 
 Elaborating module <Serializer>.
+--> 
+
+Total memory usage is 2531376 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    3 (   2 filtered)
+Number of infos    :    0 (   0 filtered)
+
