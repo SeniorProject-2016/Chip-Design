@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: chip.prj
 
@@ -181,10 +181,6 @@ Elaborating module <filter_storage>.
 Elaborating module <filter_accumulator>.
 
 Elaborating module <filter_round_truncate>.
-ERROR:HDLCompiler:1831 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v" Line 49: Complex expression in event control
-INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:1831"
-Module filter_round_truncate remains a blackbox, due to errors in its contents
-WARNING:HDLCompiler:1499 - "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v" Line 21: Empty module <filter_round_truncate> remains a black box.
 
 Elaborating module <filter_mux>.
 
@@ -201,11 +197,1995 @@ Elaborating module <Deserializer>.
 Elaborating module <Sequencer>.
 
 Elaborating module <Serializer>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <chip>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\chip.v".
+    Found 1-bit tristate buffer for signal <i2c_sda_od> created at line 41
+    Summary:
+	inferred   1 Tristate(s).
+Unit <chip> synthesized.
+
+Synthesizing Unit <i2s_in>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2s_in.v".
+    Found 1-bit register for signal <ro_fifo_overrun>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <i2s_in> synthesized.
+
+Synthesizing Unit <synchronizer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\synchronizer.v".
+    Found 4-bit register for signal <ws_vec>.
+    Found 4-bit register for signal <sd_vec>.
+    Found 3-bit register for signal <sck_vec>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+Unit <synchronizer> synthesized.
+
+Synthesizing Unit <i2si_deserializer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2si_deserializer.v".
+    Found 1-bit register for signal <in_left>.
+    Found 16-bit register for signal <out_lft>.
+    Found 16-bit register for signal <out_rgt>.
+    Found 1-bit register for signal <armed1>.
+    Found 1-bit register for signal <armed2>.
+    Found 1-bit register for signal <active>.
+    Found 1-bit register for signal <in_left_delay>.
+    Found 1-bit register for signal <out_xfc>.
+    Found 1-bit register for signal <ws_d>.
+    Found 2-bit register for signal <rst_n_vec>.
+    Summary:
+	inferred  41 D-type flip-flop(s).
+Unit <i2si_deserializer> synthesized.
+
+Synthesizing Unit <i2si_bist_gen>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2si_bist_gen.v".
+    Found 5-bit register for signal <sck_count>.
+    Found 32-bit register for signal <i2si_bist_out_data>.
+    Found 1-bit register for signal <bist_active>.
+    Found 5-bit adder for signal <sck_count[4]_GND_7_o_add_1_OUT> created at line 45.
+    Found 16-bit adder for signal <i2si_bist_out_data[15]_GND_7_o_add_10_OUT> created at line 89.
+    Found 16-bit comparator lessequal for signal <n0012> created at line 77
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <i2si_bist_gen> synthesized.
+
+Synthesizing Unit <i2si_mux>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2si_mux.v".
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <i2si_mux> synthesized.
+
+Synthesizing Unit <fifo>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\fifo.v".
+        DATA_SIZE = 32
+        BUF_WIDTH = 3
+    Found 32-bit register for signal <fifo_out_data>.
+    Found 3-bit register for signal <wr_ptr>.
+    Found 3-bit register for signal <rd_ptr>.
+    Found 4-bit register for signal <fifo_counter>.
+    Found 4-bit subtractor for signal <fifo_counter[3]_GND_10_o_sub_4_OUT> created at line 58.
+    Found 4-bit adder for signal <fifo_counter[3]_GND_10_o_add_2_OUT> created at line 54.
+    Found 3-bit adder for signal <wr_ptr[2]_GND_10_o_add_15_OUT> created at line 102.
+    Found 3-bit adder for signal <rd_ptr[2]_GND_10_o_add_17_OUT> created at line 107.
+    Found 8x32-bit dual-port RAM <Mram_buf_mem> for signal <buf_mem>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  42 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <fifo> synthesized.
+
+Synthesizing Unit <i2s_out>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2s_out.v".
+    Found 1-bit register for signal <ro_fifo_underrun>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <i2s_out> synthesized.
+
+Synthesizing Unit <i2so_serializer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2so_serializer.v".
+    Found 1-bit register for signal <LR>.
+    Found 16-bit register for signal <lft_data>.
+    Found 16-bit register for signal <rgt_data>.
+    Found 4-bit register for signal <bit_count>.
+    Found 1-bit register for signal <serializer_active>.
+    Found 1-bit register for signal <i2so_ws>.
+    Found 1-bit register for signal <i2so_sd>.
+    Found 1-bit register for signal <filt_i2so_rts_delay>.
+    Found 4-bit subtractor for signal <bit_count[3]_GND_12_o_sub_7_OUT> created at line 106.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_lft_data[15]_Mux_12_o> created at line 131.
+    Found 1-bit 16-to-1 multiplexer for signal <bit_count[3]_rgt_data[15]_Mux_13_o> created at line 136.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <i2so_serializer> synthesized.
+
+Synthesizing Unit <filter>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter.v".
+    Summary:
+	no macro.
+Unit <filter> synthesized.
+
+Synthesizing Unit <filter_stm>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_stm.v".
+    Found 9-bit register for signal <wr_addr_x>.
+    Found 9-bit register for signal <rd_addr_x>.
+    Found 9-bit register for signal <mux_rdptr>.
+    Found 9-bit register for signal <filter_count>.
+    Found 4-bit register for signal <filter_state>.
+    Found 1-bit register for signal <arr_re_x>.
+    Found 1-bit register for signal <arr_we_x>.
+    Found 1-bit register for signal <mux_re>.
+    Found 1-bit register for signal <filter_running>.
+    Found 1-bit register for signal <filter_running_1st>.
+    Found 1-bit register for signal <filter_need_new>.
+    Found 1-bit register for signal <filter_aud_in_rtr>.
+    Found 1-bit register for signal <filter_aud_out_rts>.
+    Found 1-bit register for signal <accumulator_enable>.
+    Found 1-bit register for signal <accumulator_load>.
+    Found finite state machine <FSM_0> for signal <filter_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 9-bit subtractor for signal <rd_addr_x[8]_GND_15_o_sub_10_OUT> created at line 169.
+    Found 9-bit adder for signal <wr_addr_x[8]_GND_15_o_add_6_OUT> created at line 141.
+    Found 9-bit adder for signal <mux_rdptr[8]_GND_15_o_add_10_OUT> created at line 170.
+    Found 9-bit adder for signal <filter_count[8]_GND_15_o_add_11_OUT> created at line 171.
+    Found 16x16-bit multiplier for signal <accumulator_in_left> created at line 85.
+    Found 16x16-bit multiplier for signal <accumulator_in_right> created at line 86.
+    Summary:
+	inferred   2 Multiplier(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred  41 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <filter_stm> synthesized.
+
+Synthesizing Unit <filter_storage>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_storage.v".
+    Found 32-bit register for signal <rddata>.
+    Found 16384-bit register for signal <n0522[16383:0]>.
+    Found 32-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][31]_wide_mux_516_OUT> created at line 556.
+    Summary:
+	inferred 16416 D-type flip-flop(s).
+	inferred 513 Multiplexer(s).
+Unit <filter_storage> synthesized.
+
+Synthesizing Unit <filter_accumulator>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_accumulator.v".
+    Found 40-bit register for signal <tmp>.
+    Found 40-bit adder for signal <tmp[39]_D[31]_add_1_OUT> created at line 39.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <filter_accumulator> synthesized.
+
+Synthesizing Unit <filter_round_truncate>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_round_truncate.v".
+    Found 16-bit register for signal <filter_out>.
+    Found 1-bit register for signal <ro_filter_ovf_flag>.
+    Found 43-bit register for signal <acc_r>.
+    Found 24-bit register for signal <acc_t>.
+    Found 6-bit subtractor for signal <GND_20_o_GND_20_o_sub_3_OUT> created at line 59.
+    Found 5-bit adder for signal <n0045> created at line 45.
+    Found 43-bit adder for signal <ext_acc_in[42]_GND_20_o_add_4_OUT> created at line 59.
+    Found 43-bit shifter logical left for signal <n0054> created at line 59
+    Found 62-bit shifter logical right for signal <n0033> created at line 60
+    Found 32-bit comparator greater for signal <acc_t[23]_GND_20_o_LessThan_7_o> created at line 65
+    Found 32-bit comparator greater for signal <PWR_18_o_acc_t[23]_LessThan_9_o> created at line 74
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  84 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   5 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <filter_round_truncate> synthesized.
+
+Synthesizing Unit <filter_mux>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\filter_mux.v".
+    Found 16-bit register for signal <rddata>.
+    Found 16-bit 512-to-1 multiplexer for signal <rdptr[8]_ram[511][15]_wide_mux_513_OUT> created at line 670.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <filter_mux> synthesized.
+
+Synthesizing Unit <chip_reg>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\chip_reg.v".
+    Summary:
+	no macro.
+Unit <chip_reg> synthesized.
+
+Synthesizing Unit <register>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\register.v".
+    Found 4-bit register for signal <rf_i2si_bist_upper_limit_b>.
+    Found 8-bit register for signal <rf_filter_coeff64_a>.
+    Found 8-bit register for signal <rf_filter_coeff64_b>.
+    Found 8-bit register for signal <rf_filter_coeff65_a>.
+    Found 8-bit register for signal <rf_filter_coeff65_b>.
+    Found 8-bit register for signal <rf_filter_coeff68_a>.
+    Found 8-bit register for signal <rf_filter_coeff68_b>.
+    Found 8-bit register for signal <rf_filter_coeff69_a>.
+    Found 8-bit register for signal <rf_filter_coeff69_b>.
+    Found 8-bit register for signal <rf_filter_coeff72_a>.
+    Found 8-bit register for signal <rf_filter_coeff72_b>.
+    Found 8-bit register for signal <rf_filter_coeff73_a>.
+    Found 8-bit register for signal <rf_filter_coeff73_b>.
+    Found 8-bit register for signal <rf_filter_coeff76_a>.
+    Found 8-bit register for signal <rf_filter_coeff76_b>.
+    Found 8-bit register for signal <rf_filter_coeff77_a>.
+    Found 8-bit register for signal <rf_filter_coeff77_b>.
+    Found 8-bit register for signal <rf_filter_coeff80_a>.
+    Found 8-bit register for signal <rf_filter_coeff80_b>.
+    Found 8-bit register for signal <rf_filter_coeff81_a>.
+    Found 8-bit register for signal <rf_filter_coeff81_b>.
+    Found 8-bit register for signal <rf_filter_coeff84_a>.
+    Found 8-bit register for signal <rf_filter_coeff84_b>.
+    Found 8-bit register for signal <rf_filter_coeff85_a>.
+    Found 8-bit register for signal <rf_filter_coeff85_b>.
+    Found 8-bit register for signal <rf_filter_coeff88_a>.
+    Found 8-bit register for signal <rf_filter_coeff88_b>.
+    Found 8-bit register for signal <rf_filter_coeff89_a>.
+    Found 8-bit register for signal <rf_filter_coeff89_b>.
+    Found 8-bit register for signal <rf_filter_coeff92_a>.
+    Found 8-bit register for signal <rf_filter_coeff92_b>.
+    Found 8-bit register for signal <rf_filter_coeff93_a>.
+    Found 8-bit register for signal <rf_filter_coeff93_b>.
+    Found 8-bit register for signal <rf_filter_coeff96_a>.
+    Found 8-bit register for signal <rf_filter_coeff97_a>.
+    Found 8-bit register for signal <rf_filter_coeff100_a>.
+    Found 8-bit register for signal <rf_filter_coeff101_a>.
+    Found 8-bit register for signal <rf_filter_coeff104_a>.
+    Found 8-bit register for signal <rf_filter_coeff105_a>.
+    Found 8-bit register for signal <rf_filter_coeff108_a>.
+    Found 8-bit register for signal <rf_filter_coeff109_a>.
+    Found 8-bit register for signal <rf_filter_coeff112_a>.
+    Found 8-bit register for signal <rf_filter_coeff113_a>.
+    Found 8-bit register for signal <rf_filter_coeff116_a>.
+    Found 8-bit register for signal <rf_filter_coeff117_a>.
+    Found 8-bit register for signal <rf_filter_coeff120_a>.
+    Found 8-bit register for signal <rf_filter_coeff121_a>.
+    Found 8-bit register for signal <rf_filter_coeff124_a>.
+    Found 8-bit register for signal <rf_filter_coeff125_a>.
+    Found 8-bit register for signal <rf_filter_coeff128_a>.
+    Found 8-bit register for signal <rf_filter_coeff129_a>.
+    Found 8-bit register for signal <rf_filter_coeff132_a>.
+    Found 8-bit register for signal <rf_filter_coeff133_a>.
+    Found 8-bit register for signal <rf_filter_coeff136_a>.
+    Found 8-bit register for signal <rf_filter_coeff137_a>.
+    Found 8-bit register for signal <rf_filter_coeff140_a>.
+    Found 8-bit register for signal <rf_filter_coeff141_a>.
+    Found 8-bit register for signal <rf_filter_coeff144_a>.
+    Found 8-bit register for signal <rf_filter_coeff145_a>.
+    Found 8-bit register for signal <rf_filter_coeff148_a>.
+    Found 8-bit register for signal <rf_filter_coeff149_a>.
+    Found 8-bit register for signal <rf_filter_coeff152_a>.
+    Found 8-bit register for signal <rf_filter_coeff153_a>.
+    Found 8-bit register for signal <rf_filter_coeff156_a>.
+    Found 8-bit register for signal <rf_filter_coeff157_a>.
+    Found 8-bit register for signal <rf_filter_coeff160_a>.
+    Found 8-bit register for signal <rf_filter_coeff161_a>.
+    Found 8-bit register for signal <rf_filter_coeff164_a>.
+    Found 8-bit register for signal <rf_filter_coeff165_a>.
+    Found 8-bit register for signal <rf_filter_coeff168_a>.
+    Found 8-bit register for signal <rf_filter_coeff169_a>.
+    Found 8-bit register for signal <rf_filter_coeff172_a>.
+    Found 8-bit register for signal <rf_filter_coeff173_a>.
+    Found 8-bit register for signal <rf_filter_coeff176_a>.
+    Found 8-bit register for signal <rf_filter_coeff177_a>.
+    Found 8-bit register for signal <rf_filter_coeff180_a>.
+    Found 8-bit register for signal <rf_filter_coeff181_a>.
+    Found 8-bit register for signal <rf_filter_coeff184_a>.
+    Found 8-bit register for signal <rf_filter_coeff185_a>.
+    Found 8-bit register for signal <rf_filter_coeff188_a>.
+    Found 8-bit register for signal <rf_filter_coeff189_a>.
+    Found 8-bit register for signal <rf_filter_coeff192_a>.
+    Found 8-bit register for signal <rf_filter_coeff193_a>.
+    Found 8-bit register for signal <rf_filter_coeff196_a>.
+    Found 8-bit register for signal <rf_filter_coeff197_a>.
+    Found 8-bit register for signal <rf_filter_coeff200_a>.
+    Found 8-bit register for signal <rf_filter_coeff201_a>.
+    Found 8-bit register for signal <rf_filter_coeff204_a>.
+    Found 8-bit register for signal <rf_filter_coeff205_a>.
+    Found 8-bit register for signal <rf_filter_coeff208_a>.
+    Found 8-bit register for signal <rf_filter_coeff209_a>.
+    Found 8-bit register for signal <rf_filter_coeff212_a>.
+    Found 8-bit register for signal <rf_filter_coeff213_a>.
+    Found 8-bit register for signal <rf_filter_coeff216_a>.
+    Found 8-bit register for signal <rf_filter_coeff217_a>.
+    Found 8-bit register for signal <rf_filter_coeff220_a>.
+    Found 8-bit register for signal <rf_filter_coeff221_a>.
+    Found 8-bit register for signal <rf_filter_coeff224_a>.
+    Found 8-bit register for signal <rf_filter_coeff225_a>.
+    Found 8-bit register for signal <rf_filter_coeff228_a>.
+    Found 8-bit register for signal <rf_filter_coeff229_a>.
+    Found 8-bit register for signal <rf_filter_coeff232_a>.
+    Found 8-bit register for signal <rf_filter_coeff233_a>.
+    Found 8-bit register for signal <rf_filter_coeff236_a>.
+    Found 8-bit register for signal <rf_filter_coeff237_a>.
+    Found 8-bit register for signal <rf_filter_coeff240_a>.
+    Found 8-bit register for signal <rf_filter_coeff241_a>.
+    Found 8-bit register for signal <rf_filter_coeff244_a>.
+    Found 8-bit register for signal <rf_filter_coeff245_a>.
+    Found 8-bit register for signal <rf_filter_coeff248_a>.
+    Found 8-bit register for signal <rf_filter_coeff249_a>.
+    Found 8-bit register for signal <rf_filter_coeff262_a>.
+    Found 8-bit register for signal <rf_filter_coeff263_a>.
+    Found 8-bit register for signal <rf_filter_coeff266_a>.
+    Found 8-bit register for signal <rf_filter_coeff267_a>.
+    Found 8-bit register for signal <rf_filter_coeff270_a>.
+    Found 8-bit register for signal <rf_filter_coeff271_a>.
+    Found 8-bit register for signal <rf_filter_coeff274_a>.
+    Found 8-bit register for signal <rf_filter_coeff275_a>.
+    Found 8-bit register for signal <rf_filter_coeff278_a>.
+    Found 8-bit register for signal <rf_filter_coeff279_a>.
+    Found 8-bit register for signal <rf_filter_coeff282_a>.
+    Found 8-bit register for signal <rf_filter_coeff283_a>.
+    Found 8-bit register for signal <rf_filter_coeff286_a>.
+    Found 8-bit register for signal <rf_filter_coeff287_a>.
+    Found 8-bit register for signal <rf_filter_coeff290_a>.
+    Found 8-bit register for signal <rf_filter_coeff291_a>.
+    Found 8-bit register for signal <rf_filter_coeff294_a>.
+    Found 8-bit register for signal <rf_filter_coeff295_a>.
+    Found 8-bit register for signal <rf_filter_coeff298_a>.
+    Found 8-bit register for signal <rf_filter_coeff299_a>.
+    Found 8-bit register for signal <rf_filter_coeff302_a>.
+    Found 8-bit register for signal <rf_filter_coeff303_a>.
+    Found 8-bit register for signal <rf_filter_coeff306_a>.
+    Found 8-bit register for signal <rf_filter_coeff307_a>.
+    Found 8-bit register for signal <rf_filter_coeff310_a>.
+    Found 8-bit register for signal <rf_filter_coeff311_a>.
+    Found 8-bit register for signal <rf_filter_coeff314_a>.
+    Found 8-bit register for signal <rf_filter_coeff315_a>.
+    Found 8-bit register for signal <rf_filter_coeff318_a>.
+    Found 8-bit register for signal <rf_filter_coeff319_a>.
+    Found 8-bit register for signal <rf_filter_coeff322_a>.
+    Found 8-bit register for signal <rf_filter_coeff323_a>.
+    Found 8-bit register for signal <rf_filter_coeff326_a>.
+    Found 8-bit register for signal <rf_filter_coeff327_a>.
+    Found 8-bit register for signal <rf_filter_coeff330_a>.
+    Found 8-bit register for signal <rf_filter_coeff331_a>.
+    Found 8-bit register for signal <rf_filter_coeff334_a>.
+    Found 8-bit register for signal <rf_filter_coeff335_a>.
+    Found 8-bit register for signal <rf_filter_coeff338_a>.
+    Found 8-bit register for signal <rf_filter_coeff339_a>.
+    Found 8-bit register for signal <rf_filter_coeff342_a>.
+    Found 8-bit register for signal <rf_filter_coeff343_a>.
+    Found 8-bit register for signal <rf_filter_coeff346_a>.
+    Found 8-bit register for signal <rf_filter_coeff347_a>.
+    Found 8-bit register for signal <rf_filter_coeff350_a>.
+    Found 8-bit register for signal <rf_filter_coeff351_a>.
+    Found 8-bit register for signal <rf_filter_coeff354_a>.
+    Found 8-bit register for signal <rf_filter_coeff355_a>.
+    Found 8-bit register for signal <rf_filter_coeff358_a>.
+    Found 8-bit register for signal <rf_filter_coeff359_a>.
+    Found 8-bit register for signal <rf_filter_coeff362_a>.
+    Found 8-bit register for signal <rf_filter_coeff363_a>.
+    Found 8-bit register for signal <rf_filter_coeff366_a>.
+    Found 8-bit register for signal <rf_filter_coeff367_a>.
+    Found 8-bit register for signal <rf_filter_coeff370_a>.
+    Found 8-bit register for signal <rf_filter_coeff371_a>.
+    Found 8-bit register for signal <rf_filter_coeff374_a>.
+    Found 8-bit register for signal <rf_filter_coeff375_a>.
+    Found 8-bit register for signal <rf_filter_coeff378_a>.
+    Found 8-bit register for signal <rf_filter_coeff379_a>.
+    Found 8-bit register for signal <rf_filter_coeff382_a>.
+    Found 8-bit register for signal <rf_filter_coeff383_a>.
+    Found 8-bit register for signal <rf_filter_coeff386_a>.
+    Found 8-bit register for signal <rf_filter_coeff387_a>.
+    Found 8-bit register for signal <rf_filter_coeff390_a>.
+    Found 8-bit register for signal <rf_filter_coeff391_a>.
+    Found 8-bit register for signal <rf_filter_coeff394_a>.
+    Found 8-bit register for signal <rf_filter_coeff395_a>.
+    Found 8-bit register for signal <rf_filter_coeff398_a>.
+    Found 8-bit register for signal <rf_filter_coeff399_a>.
+    Found 8-bit register for signal <rf_filter_coeff402_a>.
+    Found 8-bit register for signal <rf_filter_coeff403_a>.
+    Found 8-bit register for signal <rf_filter_coeff406_a>.
+    Found 8-bit register for signal <rf_filter_coeff407_a>.
+    Found 8-bit register for signal <rf_filter_coeff410_a>.
+    Found 8-bit register for signal <rf_filter_coeff411_a>.
+    Found 8-bit register for signal <rf_filter_coeff414_a>.
+    Found 8-bit register for signal <rf_filter_coeff415_a>.
+    Found 8-bit register for signal <rf_filter_coeff418_a>.
+    Found 8-bit register for signal <rf_filter_coeff418_b>.
+    Found 8-bit register for signal <rf_filter_coeff419_a>.
+    Found 8-bit register for signal <rf_filter_coeff419_b>.
+    Found 8-bit register for signal <rf_filter_coeff422_a>.
+    Found 8-bit register for signal <rf_filter_coeff422_b>.
+    Found 8-bit register for signal <rf_filter_coeff423_a>.
+    Found 8-bit register for signal <rf_filter_coeff423_b>.
+    Found 8-bit register for signal <rf_filter_coeff426_a>.
+    Found 8-bit register for signal <rf_filter_coeff426_b>.
+    Found 8-bit register for signal <rf_filter_coeff427_a>.
+    Found 8-bit register for signal <rf_filter_coeff427_b>.
+    Found 8-bit register for signal <rf_filter_coeff430_a>.
+    Found 8-bit register for signal <rf_filter_coeff430_b>.
+    Found 8-bit register for signal <rf_filter_coeff431_a>.
+    Found 8-bit register for signal <rf_filter_coeff431_b>.
+    Found 8-bit register for signal <rf_filter_coeff434_a>.
+    Found 8-bit register for signal <rf_filter_coeff434_b>.
+    Found 8-bit register for signal <rf_filter_coeff435_a>.
+    Found 8-bit register for signal <rf_filter_coeff435_b>.
+    Found 8-bit register for signal <rf_filter_coeff438_a>.
+    Found 8-bit register for signal <rf_filter_coeff438_b>.
+    Found 8-bit register for signal <rf_filter_coeff439_a>.
+    Found 8-bit register for signal <rf_filter_coeff439_b>.
+    Found 8-bit register for signal <rf_filter_coeff442_a>.
+    Found 8-bit register for signal <rf_filter_coeff442_b>.
+    Found 8-bit register for signal <rf_filter_coeff443_a>.
+    Found 8-bit register for signal <rf_filter_coeff443_b>.
+    Found 8-bit register for signal <rf_filter_coeff446_a>.
+    Found 8-bit register for signal <rf_filter_coeff446_b>.
+    Found 8-bit register for signal <rf_filter_coeff447_a>.
+    Found 8-bit register for signal <rf_filter_coeff447_b>.
+    Found 3-bit register for signal <rf_filter_shift>.
+    Found 8-bit register for signal <rf_filter_coeff208_b>.
+    Found 8-bit register for signal <rf_filter_coeff303_b>.
+    Found 8-bit register for signal <rf_i2si_bist_incr>.
+    Found 8-bit register for signal <rf_i2si_bist_upper_limit_a>.
+    Found 8-bit register for signal <rf_i2si_bist_start_val_a>.
+    Found 4-bit register for signal <rf_i2si_bist_start_val_b>.
+    Found 8-bit register for signal <rf_filter_coeff0_a>.
+    Found 8-bit register for signal <rf_filter_coeff0_b>.
+    Found 8-bit register for signal <rf_filter_coeff1_a>.
+    Found 8-bit register for signal <rf_filter_coeff1_b>.
+    Found 8-bit register for signal <rf_filter_coeff2_a>.
+    Found 8-bit register for signal <rf_filter_coeff2_b>.
+    Found 8-bit register for signal <rf_filter_coeff3_a>.
+    Found 8-bit register for signal <rf_filter_coeff3_b>.
+    Found 8-bit register for signal <rf_filter_coeff4_a>.
+    Found 8-bit register for signal <rf_filter_coeff4_b>.
+    Found 8-bit register for signal <rf_filter_coeff5_a>.
+    Found 8-bit register for signal <rf_filter_coeff5_b>.
+    Found 8-bit register for signal <rf_filter_coeff6_a>.
+    Found 8-bit register for signal <rf_filter_coeff6_b>.
+    Found 8-bit register for signal <rf_filter_coeff7_a>.
+    Found 8-bit register for signal <rf_filter_coeff7_b>.
+    Found 8-bit register for signal <rf_filter_coeff8_a>.
+    Found 8-bit register for signal <rf_filter_coeff8_b>.
+    Found 8-bit register for signal <rf_filter_coeff9_a>.
+    Found 8-bit register for signal <rf_filter_coeff9_b>.
+    Found 8-bit register for signal <rf_filter_coeff10_a>.
+    Found 8-bit register for signal <rf_filter_coeff10_b>.
+    Found 8-bit register for signal <rf_filter_coeff11_a>.
+    Found 8-bit register for signal <rf_filter_coeff11_b>.
+    Found 8-bit register for signal <rf_filter_coeff12_a>.
+    Found 8-bit register for signal <rf_filter_coeff12_b>.
+    Found 8-bit register for signal <rf_filter_coeff13_a>.
+    Found 8-bit register for signal <rf_filter_coeff13_b>.
+    Found 8-bit register for signal <rf_filter_coeff14_a>.
+    Found 8-bit register for signal <rf_filter_coeff14_b>.
+    Found 8-bit register for signal <rf_filter_coeff15_a>.
+    Found 8-bit register for signal <rf_filter_coeff15_b>.
+    Found 8-bit register for signal <rf_filter_coeff16_a>.
+    Found 8-bit register for signal <rf_filter_coeff16_b>.
+    Found 8-bit register for signal <rf_filter_coeff17_a>.
+    Found 8-bit register for signal <rf_filter_coeff17_b>.
+    Found 8-bit register for signal <rf_filter_coeff18_a>.
+    Found 8-bit register for signal <rf_filter_coeff18_b>.
+    Found 8-bit register for signal <rf_filter_coeff19_a>.
+    Found 8-bit register for signal <rf_filter_coeff19_b>.
+    Found 8-bit register for signal <rf_filter_coeff20_a>.
+    Found 8-bit register for signal <rf_filter_coeff20_b>.
+    Found 8-bit register for signal <rf_filter_coeff21_a>.
+    Found 8-bit register for signal <rf_filter_coeff21_b>.
+    Found 8-bit register for signal <rf_filter_coeff22_a>.
+    Found 8-bit register for signal <rf_filter_coeff22_b>.
+    Found 8-bit register for signal <rf_filter_coeff23_a>.
+    Found 8-bit register for signal <rf_filter_coeff23_b>.
+    Found 8-bit register for signal <rf_filter_coeff24_a>.
+    Found 8-bit register for signal <rf_filter_coeff24_b>.
+    Found 8-bit register for signal <rf_filter_coeff25_a>.
+    Found 8-bit register for signal <rf_filter_coeff25_b>.
+    Found 8-bit register for signal <rf_filter_coeff26_a>.
+    Found 8-bit register for signal <rf_filter_coeff26_b>.
+    Found 8-bit register for signal <rf_filter_coeff27_a>.
+    Found 8-bit register for signal <rf_filter_coeff27_b>.
+    Found 8-bit register for signal <rf_filter_coeff28_a>.
+    Found 8-bit register for signal <rf_filter_coeff28_b>.
+    Found 8-bit register for signal <rf_filter_coeff29_a>.
+    Found 8-bit register for signal <rf_filter_coeff29_b>.
+    Found 8-bit register for signal <rf_filter_coeff30_a>.
+    Found 8-bit register for signal <rf_filter_coeff30_b>.
+    Found 8-bit register for signal <rf_filter_coeff31_a>.
+    Found 8-bit register for signal <rf_filter_coeff31_b>.
+    Found 8-bit register for signal <rf_filter_coeff32_a>.
+    Found 8-bit register for signal <rf_filter_coeff32_b>.
+    Found 8-bit register for signal <rf_filter_coeff33_a>.
+    Found 8-bit register for signal <rf_filter_coeff33_b>.
+    Found 8-bit register for signal <rf_filter_coeff34_a>.
+    Found 8-bit register for signal <rf_filter_coeff34_b>.
+    Found 8-bit register for signal <rf_filter_coeff35_a>.
+    Found 8-bit register for signal <rf_filter_coeff35_b>.
+    Found 8-bit register for signal <rf_filter_coeff36_a>.
+    Found 8-bit register for signal <rf_filter_coeff36_b>.
+    Found 8-bit register for signal <rf_filter_coeff37_a>.
+    Found 8-bit register for signal <rf_filter_coeff37_b>.
+    Found 8-bit register for signal <rf_filter_coeff38_a>.
+    Found 8-bit register for signal <rf_filter_coeff38_b>.
+    Found 8-bit register for signal <rf_filter_coeff39_a>.
+    Found 8-bit register for signal <rf_filter_coeff39_b>.
+    Found 8-bit register for signal <rf_filter_coeff40_a>.
+    Found 8-bit register for signal <rf_filter_coeff40_b>.
+    Found 8-bit register for signal <rf_filter_coeff41_a>.
+    Found 8-bit register for signal <rf_filter_coeff41_b>.
+    Found 8-bit register for signal <rf_filter_coeff42_a>.
+    Found 8-bit register for signal <rf_filter_coeff42_b>.
+    Found 8-bit register for signal <rf_filter_coeff43_a>.
+    Found 8-bit register for signal <rf_filter_coeff43_b>.
+    Found 8-bit register for signal <rf_filter_coeff44_a>.
+    Found 8-bit register for signal <rf_filter_coeff44_b>.
+    Found 8-bit register for signal <rf_filter_coeff45_a>.
+    Found 8-bit register for signal <rf_filter_coeff45_b>.
+    Found 8-bit register for signal <rf_filter_coeff46_a>.
+    Found 8-bit register for signal <rf_filter_coeff46_b>.
+    Found 8-bit register for signal <rf_filter_coeff47_a>.
+    Found 8-bit register for signal <rf_filter_coeff47_b>.
+    Found 8-bit register for signal <rf_filter_coeff48_a>.
+    Found 8-bit register for signal <rf_filter_coeff48_b>.
+    Found 8-bit register for signal <rf_filter_coeff49_a>.
+    Found 8-bit register for signal <rf_filter_coeff49_b>.
+    Found 8-bit register for signal <rf_filter_coeff50_a>.
+    Found 8-bit register for signal <rf_filter_coeff50_b>.
+    Found 8-bit register for signal <rf_filter_coeff51_a>.
+    Found 8-bit register for signal <rf_filter_coeff51_b>.
+    Found 8-bit register for signal <rf_filter_coeff52_a>.
+    Found 8-bit register for signal <rf_filter_coeff52_b>.
+    Found 8-bit register for signal <rf_filter_coeff53_a>.
+    Found 8-bit register for signal <rf_filter_coeff53_b>.
+    Found 8-bit register for signal <rf_filter_coeff54_a>.
+    Found 8-bit register for signal <rf_filter_coeff54_b>.
+    Found 8-bit register for signal <rf_filter_coeff55_a>.
+    Found 8-bit register for signal <rf_filter_coeff55_b>.
+    Found 8-bit register for signal <rf_filter_coeff56_a>.
+    Found 8-bit register for signal <rf_filter_coeff56_b>.
+    Found 8-bit register for signal <rf_filter_coeff57_a>.
+    Found 8-bit register for signal <rf_filter_coeff57_b>.
+    Found 8-bit register for signal <rf_filter_coeff58_a>.
+    Found 8-bit register for signal <rf_filter_coeff58_b>.
+    Found 8-bit register for signal <rf_filter_coeff59_a>.
+    Found 8-bit register for signal <rf_filter_coeff59_b>.
+    Found 8-bit register for signal <rf_filter_coeff60_a>.
+    Found 8-bit register for signal <rf_filter_coeff60_b>.
+    Found 8-bit register for signal <rf_filter_coeff61_a>.
+    Found 8-bit register for signal <rf_filter_coeff61_b>.
+    Found 8-bit register for signal <rf_filter_coeff62_a>.
+    Found 8-bit register for signal <rf_filter_coeff62_b>.
+    Found 8-bit register for signal <rf_filter_coeff63_a>.
+    Found 8-bit register for signal <rf_filter_coeff66_a>.
+    Found 8-bit register for signal <rf_filter_coeff67_a>.
+    Found 8-bit register for signal <rf_filter_coeff70_a>.
+    Found 8-bit register for signal <rf_filter_coeff71_a>.
+    Found 8-bit register for signal <rf_filter_coeff74_a>.
+    Found 8-bit register for signal <rf_filter_coeff75_a>.
+    Found 8-bit register for signal <rf_filter_coeff78_a>.
+    Found 8-bit register for signal <rf_filter_coeff79_a>.
+    Found 8-bit register for signal <rf_filter_coeff82_a>.
+    Found 8-bit register for signal <rf_filter_coeff83_a>.
+    Found 8-bit register for signal <rf_filter_coeff86_a>.
+    Found 8-bit register for signal <rf_filter_coeff87_a>.
+    Found 8-bit register for signal <rf_filter_coeff90_a>.
+    Found 8-bit register for signal <rf_filter_coeff91_a>.
+    Found 8-bit register for signal <rf_filter_coeff94_a>.
+    Found 8-bit register for signal <rf_filter_coeff95_a>.
+    Found 8-bit register for signal <rf_filter_coeff98_a>.
+    Found 8-bit register for signal <rf_filter_coeff99_a>.
+    Found 8-bit register for signal <rf_filter_coeff102_a>.
+    Found 8-bit register for signal <rf_filter_coeff103_a>.
+    Found 8-bit register for signal <rf_filter_coeff106_a>.
+    Found 8-bit register for signal <rf_filter_coeff107_a>.
+    Found 8-bit register for signal <rf_filter_coeff110_a>.
+    Found 8-bit register for signal <rf_filter_coeff111_a>.
+    Found 8-bit register for signal <rf_filter_coeff114_a>.
+    Found 8-bit register for signal <rf_filter_coeff115_a>.
+    Found 8-bit register for signal <rf_filter_coeff118_a>.
+    Found 8-bit register for signal <rf_filter_coeff119_a>.
+    Found 8-bit register for signal <rf_filter_coeff122_a>.
+    Found 8-bit register for signal <rf_filter_coeff123_a>.
+    Found 8-bit register for signal <rf_filter_coeff126_a>.
+    Found 8-bit register for signal <rf_filter_coeff127_a>.
+    Found 8-bit register for signal <rf_filter_coeff130_a>.
+    Found 8-bit register for signal <rf_filter_coeff131_a>.
+    Found 8-bit register for signal <rf_filter_coeff134_a>.
+    Found 8-bit register for signal <rf_filter_coeff135_a>.
+    Found 8-bit register for signal <rf_filter_coeff138_a>.
+    Found 8-bit register for signal <rf_filter_coeff139_a>.
+    Found 8-bit register for signal <rf_filter_coeff142_a>.
+    Found 8-bit register for signal <rf_filter_coeff143_a>.
+    Found 8-bit register for signal <rf_filter_coeff146_a>.
+    Found 8-bit register for signal <rf_filter_coeff147_a>.
+    Found 8-bit register for signal <rf_filter_coeff150_a>.
+    Found 8-bit register for signal <rf_filter_coeff151_a>.
+    Found 8-bit register for signal <rf_filter_coeff154_a>.
+    Found 8-bit register for signal <rf_filter_coeff155_a>.
+    Found 8-bit register for signal <rf_filter_coeff158_a>.
+    Found 8-bit register for signal <rf_filter_coeff159_a>.
+    Found 8-bit register for signal <rf_filter_coeff162_a>.
+    Found 8-bit register for signal <rf_filter_coeff163_a>.
+    Found 8-bit register for signal <rf_filter_coeff166_a>.
+    Found 8-bit register for signal <rf_filter_coeff167_a>.
+    Found 8-bit register for signal <rf_filter_coeff170_a>.
+    Found 8-bit register for signal <rf_filter_coeff171_a>.
+    Found 8-bit register for signal <rf_filter_coeff174_a>.
+    Found 8-bit register for signal <rf_filter_coeff175_a>.
+    Found 8-bit register for signal <rf_filter_coeff178_a>.
+    Found 8-bit register for signal <rf_filter_coeff179_a>.
+    Found 8-bit register for signal <rf_filter_coeff182_a>.
+    Found 8-bit register for signal <rf_filter_coeff183_a>.
+    Found 8-bit register for signal <rf_filter_coeff186_a>.
+    Found 8-bit register for signal <rf_filter_coeff187_a>.
+    Found 8-bit register for signal <rf_filter_coeff190_a>.
+    Found 8-bit register for signal <rf_filter_coeff191_a>.
+    Found 8-bit register for signal <rf_filter_coeff194_a>.
+    Found 8-bit register for signal <rf_filter_coeff195_a>.
+    Found 8-bit register for signal <rf_filter_coeff198_a>.
+    Found 8-bit register for signal <rf_filter_coeff199_a>.
+    Found 8-bit register for signal <rf_filter_coeff202_a>.
+    Found 8-bit register for signal <rf_filter_coeff203_a>.
+    Found 8-bit register for signal <rf_filter_coeff206_a>.
+    Found 8-bit register for signal <rf_filter_coeff207_a>.
+    Found 8-bit register for signal <rf_filter_coeff210_a>.
+    Found 8-bit register for signal <rf_filter_coeff211_a>.
+    Found 8-bit register for signal <rf_filter_coeff214_a>.
+    Found 8-bit register for signal <rf_filter_coeff215_a>.
+    Found 8-bit register for signal <rf_filter_coeff218_a>.
+    Found 8-bit register for signal <rf_filter_coeff219_a>.
+    Found 8-bit register for signal <rf_filter_coeff222_a>.
+    Found 8-bit register for signal <rf_filter_coeff223_a>.
+    Found 8-bit register for signal <rf_filter_coeff226_a>.
+    Found 8-bit register for signal <rf_filter_coeff227_a>.
+    Found 8-bit register for signal <rf_filter_coeff230_a>.
+    Found 8-bit register for signal <rf_filter_coeff231_a>.
+    Found 8-bit register for signal <rf_filter_coeff234_a>.
+    Found 8-bit register for signal <rf_filter_coeff235_a>.
+    Found 8-bit register for signal <rf_filter_coeff238_a>.
+    Found 8-bit register for signal <rf_filter_coeff239_a>.
+    Found 8-bit register for signal <rf_filter_coeff242_a>.
+    Found 8-bit register for signal <rf_filter_coeff243_a>.
+    Found 8-bit register for signal <rf_filter_coeff246_a>.
+    Found 8-bit register for signal <rf_filter_coeff247_a>.
+    Found 8-bit register for signal <rf_filter_coeff250_a>.
+    Found 8-bit register for signal <rf_filter_coeff251_a>.
+    Found 8-bit register for signal <rf_filter_coeff260_a>.
+    Found 8-bit register for signal <rf_filter_coeff261_a>.
+    Found 8-bit register for signal <rf_filter_coeff264_a>.
+    Found 8-bit register for signal <rf_filter_coeff265_a>.
+    Found 8-bit register for signal <rf_filter_coeff268_a>.
+    Found 8-bit register for signal <rf_filter_coeff269_a>.
+    Found 8-bit register for signal <rf_filter_coeff272_a>.
+    Found 8-bit register for signal <rf_filter_coeff273_a>.
+    Found 8-bit register for signal <rf_filter_coeff276_a>.
+    Found 8-bit register for signal <rf_filter_coeff277_a>.
+    Found 8-bit register for signal <rf_filter_coeff280_a>.
+    Found 8-bit register for signal <rf_filter_coeff281_a>.
+    Found 8-bit register for signal <rf_filter_coeff284_a>.
+    Found 8-bit register for signal <rf_filter_coeff285_a>.
+    Found 8-bit register for signal <rf_filter_coeff288_a>.
+    Found 8-bit register for signal <rf_filter_coeff289_a>.
+    Found 8-bit register for signal <rf_filter_coeff292_a>.
+    Found 8-bit register for signal <rf_filter_coeff293_a>.
+    Found 8-bit register for signal <rf_filter_coeff296_a>.
+    Found 8-bit register for signal <rf_filter_coeff297_a>.
+    Found 8-bit register for signal <rf_filter_coeff300_a>.
+    Found 8-bit register for signal <rf_filter_coeff301_a>.
+    Found 8-bit register for signal <rf_filter_coeff304_a>.
+    Found 8-bit register for signal <rf_filter_coeff305_a>.
+    Found 8-bit register for signal <rf_filter_coeff308_a>.
+    Found 8-bit register for signal <rf_filter_coeff309_a>.
+    Found 8-bit register for signal <rf_filter_coeff312_a>.
+    Found 8-bit register for signal <rf_filter_coeff313_a>.
+    Found 8-bit register for signal <rf_filter_coeff316_a>.
+    Found 8-bit register for signal <rf_filter_coeff317_a>.
+    Found 8-bit register for signal <rf_filter_coeff320_a>.
+    Found 8-bit register for signal <rf_filter_coeff321_a>.
+    Found 8-bit register for signal <rf_filter_coeff324_a>.
+    Found 8-bit register for signal <rf_filter_coeff325_a>.
+    Found 8-bit register for signal <rf_filter_coeff328_a>.
+    Found 8-bit register for signal <rf_filter_coeff329_a>.
+    Found 8-bit register for signal <rf_filter_coeff332_a>.
+    Found 8-bit register for signal <rf_filter_coeff333_a>.
+    Found 8-bit register for signal <rf_filter_coeff336_a>.
+    Found 8-bit register for signal <rf_filter_coeff337_a>.
+    Found 8-bit register for signal <rf_filter_coeff340_a>.
+    Found 8-bit register for signal <rf_filter_coeff341_a>.
+    Found 8-bit register for signal <rf_filter_coeff344_a>.
+    Found 8-bit register for signal <rf_filter_coeff345_a>.
+    Found 8-bit register for signal <rf_filter_coeff348_a>.
+    Found 8-bit register for signal <rf_filter_coeff349_a>.
+    Found 8-bit register for signal <rf_filter_coeff352_a>.
+    Found 8-bit register for signal <rf_filter_coeff353_a>.
+    Found 8-bit register for signal <rf_filter_coeff356_a>.
+    Found 8-bit register for signal <rf_filter_coeff357_a>.
+    Found 8-bit register for signal <rf_filter_coeff360_a>.
+    Found 8-bit register for signal <rf_filter_coeff361_a>.
+    Found 8-bit register for signal <rf_filter_coeff364_a>.
+    Found 8-bit register for signal <rf_filter_coeff365_a>.
+    Found 8-bit register for signal <rf_filter_coeff368_a>.
+    Found 8-bit register for signal <rf_filter_coeff369_a>.
+    Found 8-bit register for signal <rf_filter_coeff372_a>.
+    Found 8-bit register for signal <rf_filter_coeff373_a>.
+    Found 8-bit register for signal <rf_filter_coeff376_a>.
+    Found 8-bit register for signal <rf_filter_coeff377_a>.
+    Found 8-bit register for signal <rf_filter_coeff380_a>.
+    Found 8-bit register for signal <rf_filter_coeff381_a>.
+    Found 8-bit register for signal <rf_filter_coeff384_a>.
+    Found 8-bit register for signal <rf_filter_coeff385_a>.
+    Found 8-bit register for signal <rf_filter_coeff388_a>.
+    Found 8-bit register for signal <rf_filter_coeff389_a>.
+    Found 8-bit register for signal <rf_filter_coeff392_a>.
+    Found 8-bit register for signal <rf_filter_coeff393_a>.
+    Found 8-bit register for signal <rf_filter_coeff396_a>.
+    Found 8-bit register for signal <rf_filter_coeff397_a>.
+    Found 8-bit register for signal <rf_filter_coeff400_a>.
+    Found 8-bit register for signal <rf_filter_coeff401_a>.
+    Found 8-bit register for signal <rf_filter_coeff404_a>.
+    Found 8-bit register for signal <rf_filter_coeff405_a>.
+    Found 8-bit register for signal <rf_filter_coeff408_a>.
+    Found 8-bit register for signal <rf_filter_coeff409_a>.
+    Found 8-bit register for signal <rf_filter_coeff412_a>.
+    Found 8-bit register for signal <rf_filter_coeff413_a>.
+    Found 8-bit register for signal <rf_filter_coeff416_a>.
+    Found 8-bit register for signal <rf_filter_coeff417_a>.
+    Found 8-bit register for signal <rf_filter_coeff420_a>.
+    Found 8-bit register for signal <rf_filter_coeff421_a>.
+    Found 8-bit register for signal <rf_filter_coeff424_a>.
+    Found 8-bit register for signal <rf_filter_coeff425_a>.
+    Found 8-bit register for signal <rf_filter_coeff428_a>.
+    Found 8-bit register for signal <rf_filter_coeff429_a>.
+    Found 8-bit register for signal <rf_filter_coeff432_a>.
+    Found 8-bit register for signal <rf_filter_coeff433_a>.
+    Found 8-bit register for signal <rf_filter_coeff436_a>.
+    Found 8-bit register for signal <rf_filter_coeff437_a>.
+    Found 8-bit register for signal <rf_filter_coeff440_a>.
+    Found 8-bit register for signal <rf_filter_coeff441_a>.
+    Found 8-bit register for signal <rf_filter_coeff444_a>.
+    Found 8-bit register for signal <rf_filter_coeff445_a>.
+    Found 8-bit register for signal <rf_filter_coeff448_a>.
+    Found 8-bit register for signal <rf_filter_coeff449_a>.
+    Found 8-bit register for signal <rf_filter_coeff449_b>.
+    Found 8-bit register for signal <rf_filter_coeff450_a>.
+    Found 8-bit register for signal <rf_filter_coeff450_b>.
+    Found 8-bit register for signal <rf_filter_coeff451_a>.
+    Found 8-bit register for signal <rf_filter_coeff451_b>.
+    Found 8-bit register for signal <rf_filter_coeff452_a>.
+    Found 8-bit register for signal <rf_filter_coeff452_b>.
+    Found 8-bit register for signal <rf_filter_coeff453_a>.
+    Found 8-bit register for signal <rf_filter_coeff453_b>.
+    Found 8-bit register for signal <rf_filter_coeff454_a>.
+    Found 8-bit register for signal <rf_filter_coeff454_b>.
+    Found 8-bit register for signal <rf_filter_coeff455_a>.
+    Found 8-bit register for signal <rf_filter_coeff455_b>.
+    Found 8-bit register for signal <rf_filter_coeff456_a>.
+    Found 8-bit register for signal <rf_filter_coeff456_b>.
+    Found 8-bit register for signal <rf_filter_coeff457_a>.
+    Found 8-bit register for signal <rf_filter_coeff457_b>.
+    Found 8-bit register for signal <rf_filter_coeff458_a>.
+    Found 8-bit register for signal <rf_filter_coeff458_b>.
+    Found 8-bit register for signal <rf_filter_coeff459_a>.
+    Found 8-bit register for signal <rf_filter_coeff459_b>.
+    Found 8-bit register for signal <rf_filter_coeff460_a>.
+    Found 8-bit register for signal <rf_filter_coeff460_b>.
+    Found 8-bit register for signal <rf_filter_coeff461_a>.
+    Found 8-bit register for signal <rf_filter_coeff461_b>.
+    Found 8-bit register for signal <rf_filter_coeff462_a>.
+    Found 8-bit register for signal <rf_filter_coeff462_b>.
+    Found 8-bit register for signal <rf_filter_coeff463_a>.
+    Found 8-bit register for signal <rf_filter_coeff463_b>.
+    Found 8-bit register for signal <rf_filter_coeff464_a>.
+    Found 8-bit register for signal <rf_filter_coeff464_b>.
+    Found 8-bit register for signal <rf_filter_coeff465_a>.
+    Found 8-bit register for signal <rf_filter_coeff465_b>.
+    Found 8-bit register for signal <rf_filter_coeff466_a>.
+    Found 8-bit register for signal <rf_filter_coeff466_b>.
+    Found 8-bit register for signal <rf_filter_coeff467_a>.
+    Found 8-bit register for signal <rf_filter_coeff467_b>.
+    Found 8-bit register for signal <rf_filter_coeff468_a>.
+    Found 8-bit register for signal <rf_filter_coeff468_b>.
+    Found 8-bit register for signal <rf_filter_coeff469_a>.
+    Found 8-bit register for signal <rf_filter_coeff469_b>.
+    Found 8-bit register for signal <rf_filter_coeff470_a>.
+    Found 8-bit register for signal <rf_filter_coeff470_b>.
+    Found 8-bit register for signal <rf_filter_coeff471_a>.
+    Found 8-bit register for signal <rf_filter_coeff471_b>.
+    Found 8-bit register for signal <rf_filter_coeff472_a>.
+    Found 8-bit register for signal <rf_filter_coeff472_b>.
+    Found 8-bit register for signal <rf_filter_coeff473_a>.
+    Found 8-bit register for signal <rf_filter_coeff473_b>.
+    Found 8-bit register for signal <rf_filter_coeff474_a>.
+    Found 8-bit register for signal <rf_filter_coeff474_b>.
+    Found 8-bit register for signal <rf_filter_coeff475_a>.
+    Found 8-bit register for signal <rf_filter_coeff475_b>.
+    Found 8-bit register for signal <rf_filter_coeff476_a>.
+    Found 8-bit register for signal <rf_filter_coeff476_b>.
+    Found 8-bit register for signal <rf_filter_coeff477_a>.
+    Found 8-bit register for signal <rf_filter_coeff477_b>.
+    Found 8-bit register for signal <rf_filter_coeff478_a>.
+    Found 8-bit register for signal <rf_filter_coeff478_b>.
+    Found 8-bit register for signal <rf_filter_coeff479_a>.
+    Found 8-bit register for signal <rf_filter_coeff479_b>.
+    Found 8-bit register for signal <rf_filter_coeff480_a>.
+    Found 8-bit register for signal <rf_filter_coeff480_b>.
+    Found 8-bit register for signal <rf_filter_coeff481_a>.
+    Found 8-bit register for signal <rf_filter_coeff481_b>.
+    Found 8-bit register for signal <rf_filter_coeff482_a>.
+    Found 8-bit register for signal <rf_filter_coeff482_b>.
+    Found 8-bit register for signal <rf_filter_coeff483_a>.
+    Found 8-bit register for signal <rf_filter_coeff483_b>.
+    Found 8-bit register for signal <rf_filter_coeff484_a>.
+    Found 8-bit register for signal <rf_filter_coeff484_b>.
+    Found 8-bit register for signal <rf_filter_coeff485_a>.
+    Found 8-bit register for signal <rf_filter_coeff485_b>.
+    Found 8-bit register for signal <rf_filter_coeff486_a>.
+    Found 8-bit register for signal <rf_filter_coeff486_b>.
+    Found 8-bit register for signal <rf_filter_coeff487_a>.
+    Found 8-bit register for signal <rf_filter_coeff487_b>.
+    Found 8-bit register for signal <rf_filter_coeff488_a>.
+    Found 8-bit register for signal <rf_filter_coeff488_b>.
+    Found 8-bit register for signal <rf_filter_coeff489_a>.
+    Found 8-bit register for signal <rf_filter_coeff489_b>.
+    Found 8-bit register for signal <rf_filter_coeff490_a>.
+    Found 8-bit register for signal <rf_filter_coeff490_b>.
+    Found 8-bit register for signal <rf_filter_coeff491_a>.
+    Found 8-bit register for signal <rf_filter_coeff491_b>.
+    Found 8-bit register for signal <rf_filter_coeff492_a>.
+    Found 8-bit register for signal <rf_filter_coeff492_b>.
+    Found 8-bit register for signal <rf_filter_coeff493_a>.
+    Found 8-bit register for signal <rf_filter_coeff493_b>.
+    Found 8-bit register for signal <rf_filter_coeff494_a>.
+    Found 8-bit register for signal <rf_filter_coeff494_b>.
+    Found 8-bit register for signal <rf_filter_coeff495_a>.
+    Found 8-bit register for signal <rf_filter_coeff495_b>.
+    Found 8-bit register for signal <rf_filter_coeff496_a>.
+    Found 8-bit register for signal <rf_filter_coeff496_b>.
+    Found 8-bit register for signal <rf_filter_coeff497_a>.
+    Found 8-bit register for signal <rf_filter_coeff497_b>.
+    Found 8-bit register for signal <rf_filter_coeff498_a>.
+    Found 8-bit register for signal <rf_filter_coeff498_b>.
+    Found 8-bit register for signal <rf_filter_coeff499_a>.
+    Found 8-bit register for signal <rf_filter_coeff499_b>.
+    Found 8-bit register for signal <rf_filter_coeff500_a>.
+    Found 8-bit register for signal <rf_filter_coeff500_b>.
+    Found 8-bit register for signal <rf_filter_coeff501_a>.
+    Found 8-bit register for signal <rf_filter_coeff501_b>.
+    Found 8-bit register for signal <rf_filter_coeff502_a>.
+    Found 8-bit register for signal <rf_filter_coeff502_b>.
+    Found 8-bit register for signal <rf_filter_coeff503_a>.
+    Found 8-bit register for signal <rf_filter_coeff503_b>.
+    Found 8-bit register for signal <rf_filter_coeff504_a>.
+    Found 8-bit register for signal <rf_filter_coeff504_b>.
+    Found 8-bit register for signal <rf_filter_coeff505_a>.
+    Found 8-bit register for signal <rf_filter_coeff505_b>.
+    Found 8-bit register for signal <rf_filter_coeff506_a>.
+    Found 8-bit register for signal <rf_filter_coeff506_b>.
+    Found 8-bit register for signal <rf_filter_coeff507_a>.
+    Found 8-bit register for signal <rf_filter_coeff507_b>.
+    Found 8-bit register for signal <rf_filter_coeff508_a>.
+    Found 8-bit register for signal <rf_filter_coeff508_b>.
+    Found 8-bit register for signal <rf_filter_coeff509_a>.
+    Found 8-bit register for signal <rf_filter_coeff509_b>.
+    Found 8-bit register for signal <rf_filter_coeff510_a>.
+    Found 8-bit register for signal <rf_filter_coeff510_b>.
+    Found 8-bit register for signal <rf_filter_coeff511_a>.
+    Found 8-bit register for signal <rf_filter_coeff511_b>.
+    Found 8-bit register for signal <rf_filter_coeff96_b>.
+    Found 8-bit register for signal <rf_filter_coeff97_b>.
+    Found 8-bit register for signal <rf_filter_coeff100_b>.
+    Found 8-bit register for signal <rf_filter_coeff101_b>.
+    Found 8-bit register for signal <rf_filter_coeff104_b>.
+    Found 8-bit register for signal <rf_filter_coeff105_b>.
+    Found 8-bit register for signal <rf_filter_coeff108_b>.
+    Found 8-bit register for signal <rf_filter_coeff109_b>.
+    Found 8-bit register for signal <rf_filter_coeff112_b>.
+    Found 8-bit register for signal <rf_filter_coeff113_b>.
+    Found 8-bit register for signal <rf_filter_coeff252_a>.
+    Found 8-bit register for signal <rf_filter_coeff253_a>.
+    Found 8-bit register for signal <rf_filter_coeff258_a>.
+    Found 8-bit register for signal <rf_filter_coeff259_a>.
+    Found 8-bit register for signal <rf_filter_coeff398_b>.
+    Found 8-bit register for signal <rf_filter_coeff399_b>.
+    Found 8-bit register for signal <rf_filter_coeff402_b>.
+    Found 8-bit register for signal <rf_filter_coeff403_b>.
+    Found 8-bit register for signal <rf_filter_coeff406_b>.
+    Found 8-bit register for signal <rf_filter_coeff407_b>.
+    Found 8-bit register for signal <rf_filter_coeff410_b>.
+    Found 8-bit register for signal <rf_filter_coeff411_b>.
+    Found 8-bit register for signal <rf_filter_coeff414_b>.
+    Found 8-bit register for signal <rf_filter_coeff415_b>.
+    Found 8-bit register for signal <rf_filter_coeff63_b>.
+    Found 8-bit register for signal <rf_filter_coeff66_b>.
+    Found 8-bit register for signal <rf_filter_coeff67_b>.
+    Found 8-bit register for signal <rf_filter_coeff70_b>.
+    Found 8-bit register for signal <rf_filter_coeff71_b>.
+    Found 8-bit register for signal <rf_filter_coeff74_b>.
+    Found 8-bit register for signal <rf_filter_coeff75_b>.
+    Found 8-bit register for signal <rf_filter_coeff78_b>.
+    Found 8-bit register for signal <rf_filter_coeff79_b>.
+    Found 8-bit register for signal <rf_filter_coeff82_b>.
+    Found 8-bit register for signal <rf_filter_coeff83_b>.
+    Found 8-bit register for signal <rf_filter_coeff86_b>.
+    Found 8-bit register for signal <rf_filter_coeff87_b>.
+    Found 8-bit register for signal <rf_filter_coeff90_b>.
+    Found 8-bit register for signal <rf_filter_coeff91_b>.
+    Found 8-bit register for signal <rf_filter_coeff420_b>.
+    Found 8-bit register for signal <rf_filter_coeff421_b>.
+    Found 8-bit register for signal <rf_filter_coeff424_b>.
+    Found 8-bit register for signal <rf_filter_coeff425_b>.
+    Found 8-bit register for signal <rf_filter_coeff428_b>.
+    Found 8-bit register for signal <rf_filter_coeff429_b>.
+    Found 8-bit register for signal <rf_filter_coeff432_b>.
+    Found 8-bit register for signal <rf_filter_coeff433_b>.
+    Found 8-bit register for signal <rf_filter_coeff436_b>.
+    Found 8-bit register for signal <rf_filter_coeff437_b>.
+    Found 8-bit register for signal <rf_filter_coeff440_b>.
+    Found 8-bit register for signal <rf_filter_coeff441_b>.
+    Found 8-bit register for signal <rf_filter_coeff444_b>.
+    Found 8-bit register for signal <rf_filter_coeff445_b>.
+    Found 8-bit register for signal <rf_filter_coeff448_b>.
+    Found 8-bit register for signal <rf_filter_coeff116_b>.
+    Found 8-bit register for signal <rf_filter_coeff117_b>.
+    Found 8-bit register for signal <rf_filter_coeff120_b>.
+    Found 8-bit register for signal <rf_filter_coeff121_b>.
+    Found 8-bit register for signal <rf_filter_coeff124_b>.
+    Found 8-bit register for signal <rf_filter_coeff125_b>.
+    Found 8-bit register for signal <rf_filter_coeff128_b>.
+    Found 8-bit register for signal <rf_filter_coeff129_b>.
+    Found 8-bit register for signal <rf_filter_coeff382_b>.
+    Found 8-bit register for signal <rf_filter_coeff383_b>.
+    Found 8-bit register for signal <rf_filter_coeff386_b>.
+    Found 8-bit register for signal <rf_filter_coeff387_b>.
+    Found 8-bit register for signal <rf_filter_coeff390_b>.
+    Found 8-bit register for signal <rf_filter_coeff391_b>.
+    Found 8-bit register for signal <rf_filter_coeff394_b>.
+    Found 8-bit register for signal <rf_filter_coeff395_b>.
+    Found 8-bit register for signal <rf_filter_coeff94_b>.
+    Found 8-bit register for signal <rf_filter_coeff95_b>.
+    Found 8-bit register for signal <rf_filter_coeff98_b>.
+    Found 8-bit register for signal <rf_filter_coeff99_b>.
+    Found 8-bit register for signal <rf_filter_coeff102_b>.
+    Found 8-bit register for signal <rf_filter_coeff103_b>.
+    Found 8-bit register for signal <rf_filter_coeff106_b>.
+    Found 8-bit register for signal <rf_filter_coeff107_b>.
+    Found 8-bit register for signal <rf_filter_coeff110_b>.
+    Found 8-bit register for signal <rf_filter_coeff111_b>.
+    Found 8-bit register for signal <rf_filter_coeff254_a>.
+    Found 8-bit register for signal <rf_filter_coeff257_a>.
+    Found 8-bit register for signal <rf_filter_coeff400_b>.
+    Found 8-bit register for signal <rf_filter_coeff401_b>.
+    Found 8-bit register for signal <rf_filter_coeff404_b>.
+    Found 8-bit register for signal <rf_filter_coeff405_b>.
+    Found 8-bit register for signal <rf_filter_coeff408_b>.
+    Found 8-bit register for signal <rf_filter_coeff409_b>.
+    Found 8-bit register for signal <rf_filter_coeff412_b>.
+    Found 8-bit register for signal <rf_filter_coeff413_b>.
+    Found 8-bit register for signal <rf_filter_coeff416_b>.
+    Found 8-bit register for signal <rf_filter_coeff417_b>.
+    Found 8-bit register for signal <rf_filter_coeff132_b>.
+    Found 8-bit register for signal <rf_filter_coeff133_b>.
+    Found 8-bit register for signal <rf_filter_coeff136_b>.
+    Found 8-bit register for signal <rf_filter_coeff137_b>.
+    Found 8-bit register for signal <rf_filter_coeff140_b>.
+    Found 8-bit register for signal <rf_filter_coeff141_b>.
+    Found 8-bit register for signal <rf_filter_coeff370_b>.
+    Found 8-bit register for signal <rf_filter_coeff371_b>.
+    Found 8-bit register for signal <rf_filter_coeff374_b>.
+    Found 8-bit register for signal <rf_filter_coeff375_b>.
+    Found 8-bit register for signal <rf_filter_coeff378_b>.
+    Found 8-bit register for signal <rf_filter_coeff379_b>.
+    Found 8-bit register for signal <rf_filter_coeff114_b>.
+    Found 8-bit register for signal <rf_filter_coeff115_b>.
+    Found 8-bit register for signal <rf_filter_coeff118_b>.
+    Found 8-bit register for signal <rf_filter_coeff119_b>.
+    Found 8-bit register for signal <rf_filter_coeff122_b>.
+    Found 8-bit register for signal <rf_filter_coeff123_b>.
+    Found 8-bit register for signal <rf_filter_coeff126_b>.
+    Found 8-bit register for signal <rf_filter_coeff127_b>.
+    Found 8-bit register for signal <rf_filter_coeff384_b>.
+    Found 8-bit register for signal <rf_filter_coeff385_b>.
+    Found 8-bit register for signal <rf_filter_coeff388_b>.
+    Found 8-bit register for signal <rf_filter_coeff389_b>.
+    Found 8-bit register for signal <rf_filter_coeff392_b>.
+    Found 8-bit register for signal <rf_filter_coeff393_b>.
+    Found 8-bit register for signal <rf_filter_coeff396_b>.
+    Found 8-bit register for signal <rf_filter_coeff397_b>.
+    Found 8-bit register for signal <rf_filter_coeff144_b>.
+    Found 8-bit register for signal <rf_filter_coeff145_b>.
+    Found 8-bit register for signal <rf_filter_coeff148_b>.
+    Found 8-bit register for signal <rf_filter_coeff149_b>.
+    Found 8-bit register for signal <rf_filter_coeff362_b>.
+    Found 8-bit register for signal <rf_filter_coeff363_b>.
+    Found 8-bit register for signal <rf_filter_coeff366_b>.
+    Found 8-bit register for signal <rf_filter_coeff367_b>.
+    Found 8-bit register for signal <rf_filter_coeff130_b>.
+    Found 8-bit register for signal <rf_filter_coeff131_b>.
+    Found 8-bit register for signal <rf_filter_coeff134_b>.
+    Found 8-bit register for signal <rf_filter_coeff135_b>.
+    Found 8-bit register for signal <rf_filter_coeff138_b>.
+    Found 8-bit register for signal <rf_filter_coeff139_b>.
+    Found 8-bit register for signal <rf_filter_coeff372_b>.
+    Found 8-bit register for signal <rf_filter_coeff373_b>.
+    Found 8-bit register for signal <rf_filter_coeff376_b>.
+    Found 8-bit register for signal <rf_filter_coeff377_b>.
+    Found 8-bit register for signal <rf_filter_coeff380_b>.
+    Found 8-bit register for signal <rf_filter_coeff381_b>.
+    Found 8-bit register for signal <rf_filter_coeff152_b>.
+    Found 8-bit register for signal <rf_filter_coeff153_b>.
+    Found 8-bit register for signal <rf_filter_coeff156_b>.
+    Found 8-bit register for signal <rf_filter_coeff157_b>.
+    Found 8-bit register for signal <rf_filter_coeff160_b>.
+    Found 8-bit register for signal <rf_filter_coeff351_b>.
+    Found 8-bit register for signal <rf_filter_coeff354_b>.
+    Found 8-bit register for signal <rf_filter_coeff355_b>.
+    Found 8-bit register for signal <rf_filter_coeff358_b>.
+    Found 8-bit register for signal <rf_filter_coeff359_b>.
+    Found 8-bit register for signal <rf_filter_coeff142_b>.
+    Found 8-bit register for signal <rf_filter_coeff143_b>.
+    Found 8-bit register for signal <rf_filter_coeff146_b>.
+    Found 8-bit register for signal <rf_filter_coeff147_b>.
+    Found 8-bit register for signal <rf_filter_coeff150_b>.
+    Found 8-bit register for signal <rf_filter_coeff151_b>.
+    Found 8-bit register for signal <rf_filter_coeff360_b>.
+    Found 8-bit register for signal <rf_filter_coeff361_b>.
+    Found 8-bit register for signal <rf_filter_coeff364_b>.
+    Found 8-bit register for signal <rf_filter_coeff365_b>.
+    Found 8-bit register for signal <rf_filter_coeff368_b>.
+    Found 8-bit register for signal <rf_filter_coeff369_b>.
+    Found 8-bit register for signal <rf_filter_coeff161_b>.
+    Found 8-bit register for signal <rf_filter_coeff164_b>.
+    Found 8-bit register for signal <rf_filter_coeff165_b>.
+    Found 8-bit register for signal <rf_filter_coeff168_b>.
+    Found 8-bit register for signal <rf_filter_coeff252_b>.
+    Found 8-bit register for signal <rf_filter_coeff259_b>.
+    Found 8-bit register for signal <rf_filter_coeff343_b>.
+    Found 8-bit register for signal <rf_filter_coeff346_b>.
+    Found 8-bit register for signal <rf_filter_coeff347_b>.
+    Found 8-bit register for signal <rf_filter_coeff350_b>.
+    Found 8-bit register for signal <rf_filter_coeff154_b>.
+    Found 8-bit register for signal <rf_filter_coeff155_b>.
+    Found 8-bit register for signal <rf_filter_coeff158_b>.
+    Found 8-bit register for signal <rf_filter_coeff159_b>.
+    Found 8-bit register for signal <rf_filter_coeff352_b>.
+    Found 8-bit register for signal <rf_filter_coeff353_b>.
+    Found 8-bit register for signal <rf_filter_coeff356_b>.
+    Found 8-bit register for signal <rf_filter_coeff357_b>.
+    Found 8-bit register for signal <rf_filter_coeff169_b>.
+    Found 8-bit register for signal <rf_filter_coeff172_b>.
+    Found 8-bit register for signal <rf_filter_coeff173_b>.
+    Found 8-bit register for signal <rf_filter_coeff338_b>.
+    Found 8-bit register for signal <rf_filter_coeff339_b>.
+    Found 8-bit register for signal <rf_filter_coeff342_b>.
+    Found 8-bit register for signal <rf_filter_coeff162_b>.
+    Found 8-bit register for signal <rf_filter_coeff163_b>.
+    Found 8-bit register for signal <rf_filter_coeff166_b>.
+    Found 8-bit register for signal <rf_filter_coeff167_b>.
+    Found 8-bit register for signal <rf_filter_coeff255_a>.
+    Found 8-bit register for signal <rf_filter_coeff256_a>.
+    Found 8-bit register for signal <rf_filter_coeff344_b>.
+    Found 8-bit register for signal <rf_filter_coeff345_b>.
+    Found 8-bit register for signal <rf_filter_coeff348_b>.
+    Found 8-bit register for signal <rf_filter_coeff349_b>.
+    Found 8-bit register for signal <rf_filter_coeff176_b>.
+    Found 8-bit register for signal <rf_filter_coeff177_b>.
+    Found 8-bit register for signal <rf_filter_coeff180_b>.
+    Found 8-bit register for signal <rf_filter_coeff331_b>.
+    Found 8-bit register for signal <rf_filter_coeff334_b>.
+    Found 8-bit register for signal <rf_filter_coeff335_b>.
+    Found 8-bit register for signal <rf_filter_coeff170_b>.
+    Found 8-bit register for signal <rf_filter_coeff171_b>.
+    Found 8-bit register for signal <rf_filter_coeff174_b>.
+    Found 8-bit register for signal <rf_filter_coeff337_b>.
+    Found 8-bit register for signal <rf_filter_coeff340_b>.
+    Found 8-bit register for signal <rf_filter_coeff341_b>.
+    Found 8-bit register for signal <rf_filter_coeff181_b>.
+    Found 8-bit register for signal <rf_filter_coeff184_b>.
+    Found 8-bit register for signal <rf_filter_coeff185_b>.
+    Found 8-bit register for signal <rf_filter_coeff326_b>.
+    Found 8-bit register for signal <rf_filter_coeff327_b>.
+    Found 8-bit register for signal <rf_filter_coeff330_b>.
+    Found 8-bit register for signal <rf_filter_coeff175_b>.
+    Found 8-bit register for signal <rf_filter_coeff178_b>.
+    Found 8-bit register for signal <rf_filter_coeff179_b>.
+    Found 8-bit register for signal <rf_filter_coeff332_b>.
+    Found 8-bit register for signal <rf_filter_coeff333_b>.
+    Found 8-bit register for signal <rf_filter_coeff336_b>.
+    Found 8-bit register for signal <rf_filter_coeff188_b>.
+    Found 8-bit register for signal <rf_filter_coeff189_b>.
+    Found 8-bit register for signal <rf_filter_coeff322_b>.
+    Found 8-bit register for signal <rf_filter_coeff323_b>.
+    Found 8-bit register for signal <rf_filter_coeff182_b>.
+    Found 8-bit register for signal <rf_filter_coeff183_b>.
+    Found 8-bit register for signal <rf_filter_coeff328_b>.
+    Found 8-bit register for signal <rf_filter_coeff329_b>.
+    Found 8-bit register for signal <rf_filter_coeff192_b>.
+    Found 8-bit register for signal <rf_filter_coeff193_b>.
+    Found 8-bit register for signal <rf_filter_coeff318_b>.
+    Found 8-bit register for signal <rf_filter_coeff319_b>.
+    Found 8-bit register for signal <rf_filter_coeff186_b>.
+    Found 8-bit register for signal <rf_filter_coeff187_b>.
+    Found 8-bit register for signal <rf_filter_coeff324_b>.
+    Found 8-bit register for signal <rf_filter_coeff325_b>.
+    Found 8-bit register for signal <rf_filter_coeff196_b>.
+    Found 8-bit register for signal <rf_filter_coeff197_b>.
+    Found 8-bit register for signal <rf_filter_coeff314_b>.
+    Found 8-bit register for signal <rf_filter_coeff315_b>.
+    Found 8-bit register for signal <rf_filter_coeff190_b>.
+    Found 8-bit register for signal <rf_filter_coeff191_b>.
+    Found 8-bit register for signal <rf_filter_coeff320_b>.
+    Found 8-bit register for signal <rf_filter_coeff321_b>.
+    Found 8-bit register for signal <rf_filter_coeff200_b>.
+    Found 8-bit register for signal <rf_filter_coeff311_b>.
+    Found 8-bit register for signal <rf_filter_coeff194_b>.
+    Found 8-bit register for signal <rf_filter_coeff195_b>.
+    Found 8-bit register for signal <rf_filter_coeff316_b>.
+    Found 8-bit register for signal <rf_filter_coeff317_b>.
+    Found 8-bit register for signal <rf_filter_coeff201_b>.
+    Found 8-bit register for signal <rf_filter_coeff310_b>.
+    Found 8-bit register for signal <rf_filter_coeff198_b>.
+    Found 8-bit register for signal <rf_filter_coeff199_b>.
+    Found 8-bit register for signal <rf_filter_coeff312_b>.
+    Found 8-bit register for signal <rf_filter_coeff313_b>.
+    Found 8-bit register for signal <rf_filter_coeff204_b>.
+    Found 8-bit register for signal <rf_filter_coeff205_b>.
+    Found 8-bit register for signal <rf_filter_coeff306_b>.
+    Found 8-bit register for signal <rf_filter_coeff307_b>.
+    Found 8-bit register for signal <rf_filter_coeff202_b>.
+    Found 8-bit register for signal <rf_filter_coeff203_b>.
+    Found 8-bit register for signal <rf_filter_coeff308_b>.
+    Found 8-bit register for signal <rf_filter_coeff309_b>.
+    Found 8-bit register for signal <rf_filter_coeff209_b>.
+    Found 8-bit register for signal <rf_filter_coeff302_b>.
+    Found 8-bit register for signal <rf_filter_coeff206_b>.
+    Found 8-bit register for signal <rf_filter_coeff207_b>.
+    Found 8-bit register for signal <rf_filter_coeff304_b>.
+    Found 8-bit register for signal <rf_filter_coeff305_b>.
+    Found 8-bit register for signal <rf_filter_coeff212_b>.
+    Found 8-bit register for signal <rf_filter_coeff299_b>.
+    Found 8-bit register for signal <rf_filter_coeff210_b>.
+    Found 8-bit register for signal <rf_filter_coeff301_b>.
+    Found 8-bit register for signal <rf_filter_coeff213_b>.
+    Found 8-bit register for signal <rf_filter_coeff298_b>.
+    Found 8-bit register for signal <rf_filter_coeff211_b>.
+    Found 8-bit register for signal <rf_filter_coeff300_b>.
+    Found 8-bit register for signal <rf_filter_coeff214_b>.
+    Found 8-bit register for signal <rf_filter_coeff297_b>.
+    Found 8-bit register for signal <rf_filter_coeff216_b>.
+    Found 8-bit register for signal <rf_filter_coeff217_b>.
+    Found 8-bit register for signal <rf_filter_coeff294_b>.
+    Found 8-bit register for signal <rf_filter_coeff295_b>.
+    Found 8-bit register for signal <rf_filter_coeff215_b>.
+    Found 8-bit register for signal <rf_filter_coeff296_b>.
+    Found 8-bit register for signal <rf_filter_coeff220_b>.
+    Found 8-bit register for signal <rf_filter_coeff291_b>.
+    Found 8-bit register for signal <rf_filter_coeff218_b>.
+    Found 8-bit register for signal <rf_filter_coeff293_b>.
+    Found 8-bit register for signal <rf_filter_coeff221_b>.
+    Found 8-bit register for signal <rf_filter_coeff290_b>.
+    Found 8-bit register for signal <rf_filter_coeff219_b>.
+    Found 8-bit register for signal <rf_filter_coeff292_b>.
+    Found 8-bit register for signal <rf_filter_coeff222_b>.
+    Found 8-bit register for signal <rf_filter_coeff289_b>.
+    Found 8-bit register for signal <rf_filter_coeff224_b>.
+    Found 8-bit register for signal <rf_filter_coeff287_b>.
+    Found 8-bit register for signal <rf_filter_coeff223_b>.
+    Found 8-bit register for signal <rf_filter_coeff288_b>.
+    Found 8-bit register for signal <rf_filter_coeff225_b>.
+    Found 8-bit register for signal <rf_filter_coeff286_b>.
+    Found 8-bit register for signal <rf_filter_coeff226_b>.
+    Found 8-bit register for signal <rf_filter_coeff285_b>.
+    Found 8-bit register for signal <rf_filter_coeff228_b>.
+    Found 8-bit register for signal <rf_filter_coeff283_b>.
+    Found 8-bit register for signal <rf_filter_coeff227_b>.
+    Found 8-bit register for signal <rf_filter_coeff284_b>.
+    Found 8-bit register for signal <rf_filter_coeff229_b>.
+    Found 8-bit register for signal <rf_filter_coeff282_b>.
+    Found 8-bit register for signal <rf_filter_coeff230_b>.
+    Found 8-bit register for signal <rf_filter_coeff281_b>.
+    Found 8-bit register for signal <rf_filter_coeff231_b>.
+    Found 8-bit register for signal <rf_filter_coeff280_b>.
+    Found 8-bit register for signal <rf_filter_coeff232_b>.
+    Found 8-bit register for signal <rf_filter_coeff279_b>.
+    Found 8-bit register for signal <rf_filter_coeff233_b>.
+    Found 8-bit register for signal <rf_filter_coeff278_b>.
+    Found 8-bit register for signal <rf_filter_coeff234_b>.
+    Found 8-bit register for signal <rf_filter_coeff277_b>.
+    Found 8-bit register for signal <rf_filter_coeff235_b>.
+    Found 8-bit register for signal <rf_filter_coeff276_b>.
+    Found 8-bit register for signal <rf_filter_coeff236_b>.
+    Found 8-bit register for signal <rf_filter_coeff275_b>.
+    Found 8-bit register for signal <rf_filter_coeff237_b>.
+    Found 8-bit register for signal <rf_filter_coeff274_b>.
+    Found 8-bit register for signal <rf_filter_coeff238_b>.
+    Found 8-bit register for signal <rf_filter_coeff255_b>.
+    Found 8-bit register for signal <rf_filter_coeff256_b>.
+    Found 8-bit register for signal <rf_filter_coeff273_b>.
+    Found 8-bit register for signal <rf_filter_coeff239_b>.
+    Found 8-bit register for signal <rf_filter_coeff272_b>.
+    Found 8-bit register for signal <rf_filter_coeff240_b>.
+    Found 8-bit register for signal <rf_filter_coeff271_b>.
+    Found 8-bit register for signal <rf_filter_coeff241_b>.
+    Found 8-bit register for signal <rf_filter_coeff270_b>.
+    Found 8-bit register for signal <rf_filter_coeff242_b>.
+    Found 8-bit register for signal <rf_filter_coeff269_b>.
+    Found 8-bit register for signal <rf_filter_coeff243_b>.
+    Found 8-bit register for signal <rf_filter_coeff268_b>.
+    Found 8-bit register for signal <rf_filter_coeff244_b>.
+    Found 8-bit register for signal <rf_filter_coeff267_b>.
+    Found 8-bit register for signal <rf_filter_coeff245_b>.
+    Found 8-bit register for signal <rf_filter_coeff266_b>.
+    Found 8-bit register for signal <rf_filter_coeff246_b>.
+    Found 8-bit register for signal <rf_filter_coeff265_b>.
+    Found 8-bit register for signal <rf_filter_coeff247_b>.
+    Found 8-bit register for signal <rf_filter_coeff264_b>.
+    Found 8-bit register for signal <rf_filter_coeff248_b>.
+    Found 8-bit register for signal <rf_filter_coeff263_b>.
+    Found 8-bit register for signal <rf_filter_coeff249_b>.
+    Found 8-bit register for signal <rf_filter_coeff262_b>.
+    Found 8-bit register for signal <rf_filter_coeff250_b>.
+    Found 8-bit register for signal <rf_filter_coeff261_b>.
+    Found 8-bit register for signal <rf_filter_coeff251_b>.
+    Found 8-bit register for signal <rf_filter_coeff260_b>.
+    Found 8-bit register for signal <rf_filter_coeff253_b>.
+    Found 8-bit register for signal <rf_filter_coeff258_b>.
+    Found 8-bit register for signal <rf_filter_coeff254_b>.
+    Found 8-bit register for signal <rf_filter_coeff257_b>.
+    Found 1-bit register for signal <rf_filter_clip_en>.
+    Found 1-bit register for signal <rf_i2si_en>.
+    Found 1-bit register for signal <rf_i2si_bist_en>.
+    Found 8-bit register for signal <rdata>.
+    Found 1-bit register for signal <rxfc>.
+    Found 8-bit 1045-to-1 multiplexer for signal <addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT> created at line 3179.
+    Summary:
+	inferred 8239 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <register> synthesized.
+
+Synthesizing Unit <trig_generator>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\trig_generator.v".
+    Found 1-bit register for signal <trig_i2so_fifo_underrun_clr>.
+    Found 1-bit register for signal <trig_filter_ovf_flag_clear>.
+    Found 1-bit register for signal <trig_i2si_fifo_overrun_clr>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <trig_generator> synthesized.
+
+Synthesizing Unit <i2c>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2c.v".
+    Summary:
+	no macro.
+Unit <i2c> synthesized.
+
+Synthesizing Unit <Deserializer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2c_deserializer.v".
+    Found 1-bit register for signal <stop_out>.
+    Found 1-bit register for signal <stop>.
+    Found 1-bit register for signal <i2c_scl>.
+    Found 1-bit register for signal <sda_p1>.
+    Found 1-bit register for signal <sda_p2>.
+    Found 1-bit register for signal <i2c_sda>.
+    Found 1-bit register for signal <Q_sda>.
+    Found 1-bit register for signal <Q_scl>.
+    Found 1-bit register for signal <sda_state>.
+    Found 1-bit register for signal <scl_state>.
+    Found 2-bit register for signal <deserial_state>.
+    Found 1-bit register for signal <got_slave_addr>.
+    Found 8-bit register for signal <incoming_slave_addr>.
+    Found 4-bit register for signal <bit_counter_slave_addr>.
+    Found 1-bit register for signal <slave_ack>.
+    Found 1-bit register for signal <i2c_RW>.
+    Found 1-bit register for signal <slave_addr_stop>.
+    Found 1-bit register for signal <i2c_ack>.
+    Found 4-bit register for signal <bit_counter_burst_addr>.
+    Found 1-bit register for signal <i2c_addr<10>>.
+    Found 1-bit register for signal <i2c_addr<9>>.
+    Found 1-bit register for signal <i2c_addr<8>>.
+    Found 1-bit register for signal <i2c_addr<7>>.
+    Found 1-bit register for signal <i2c_addr<6>>.
+    Found 1-bit register for signal <i2c_addr<5>>.
+    Found 1-bit register for signal <i2c_addr<4>>.
+    Found 1-bit register for signal <i2c_addr<3>>.
+    Found 1-bit register for signal <i2c_addr<2>>.
+    Found 1-bit register for signal <i2c_addr<1>>.
+    Found 1-bit register for signal <i2c_addr<0>>.
+    Found 1-bit register for signal <got_addr>.
+    Found 1-bit register for signal <got_addr2>.
+    Found 1-bit register for signal <addr_ack>.
+    Found 1-bit register for signal <addr_xfc>.
+    Found 1-bit register for signal <addr_ack2>.
+    Found 8-bit register for signal <serial_data>.
+    Found 4-bit register for signal <bit_counter_data>.
+    Found 1-bit register for signal <got_data>.
+    Found 1-bit register for signal <data_xfc>.
+    Found 1-bit register for signal <scl_p1>.
+    Found finite state machine <FSM_1> for signal <bit_counter_slave_addr>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 54                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 4                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <bit_counter_burst_addr>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 67                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 8                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_4> for signal <deserial_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_3> for signal <bit_counter_data>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 58                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_23_OUT> created at line 181.
+    Found 8-bit 8-to-1 multiplexer for signal <_n0416> created at line 464.
+    Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_31_o> created at line 243
+    Summary:
+	inferred  50 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  13 Multiplexer(s).
+	inferred   4 Finite State Machine(s).
+Unit <Deserializer> synthesized.
+
+Synthesizing Unit <Sequencer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2c_sequencer.v".
+    Found 11-bit register for signal <i2c_addr_out>.
+    Found 11-bit register for signal <addr_increment>.
+    Found 11-bit register for signal <i2c_addr_write>.
+    Found 8-bit register for signal <i2c_data_out>.
+    Found 1-bit register for signal <i2c_op>.
+    Found 1-bit register for signal <i2c_xfc>.
+    Found 1-bit register for signal <stop_read>.
+    Found 1-bit register for signal <Q_data>.
+    Found 1-bit register for signal <xfc_ready>.
+    Found 1-bit register for signal <Q_addr>.
+    Found 11-bit adder for signal <i2c_addr_write[10]_addr_increment[10]_add_1_OUT> created at line 95.
+    Found 11-bit adder for signal <addr_increment[10]_GND_33_o_add_2_OUT> created at line 108.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  47 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <Sequencer> synthesized.
+
+Synthesizing Unit <Serializer>.
+    Related source file is "C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\rtl\Main Project\i2c_serializer.v".
+    Found 1-bit register for signal <stop>.
+    Found 8-bit register for signal <data_read>.
+    Found 1-bit register for signal <serialize_data_ready>.
+    Found 1-bit register for signal <i2c_sda_out>.
+    Found 1-bit register for signal <serialize_done>.
+    Found 4-bit register for signal <serialize_bit_counter>.
+    Found 1-bit register for signal <first_data_bit_ready>.
+    Found 1-bit register for signal <serialize_ack_done>.
+    Found 1-bit register for signal <Q_scl>.
+    Found finite state machine <FSM_5> for signal <serialize_bit_counter>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 45                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 4                                              |
+    | Clock              | Clock (rising_edge)                            |
+    | Reset              | stop (positive)                                |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  15 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Serializer> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 8x32-bit dual-port RAM                                : 2
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 23
+ 11-bit adder                                          : 2
+ 16-bit adder                                          : 1
+ 3-bit adder                                           : 4
+ 4-bit addsub                                          : 2
+ 4-bit subtractor                                      : 1
+ 40-bit adder                                          : 2
+ 43-bit adder                                          : 2
+ 5-bit adder                                           : 3
+ 6-bit subtractor                                      : 2
+ 9-bit adder                                           : 3
+ 9-bit subtractor                                      : 1
+# Registers                                            : 1153
+ 1-bit register                                        : 81
+ 11-bit register                                       : 3
+ 16-bit register                                       : 7
+ 16384-bit register                                    : 1
+ 2-bit register                                        : 1
+ 24-bit register                                       : 2
+ 3-bit register                                        : 6
+ 32-bit register                                       : 4
+ 4-bit register                                        : 7
+ 40-bit register                                       : 2
+ 43-bit register                                       : 2
+ 5-bit register                                        : 1
+ 8-bit register                                        : 1032
+ 9-bit register                                        : 4
+# Comparators                                          : 6
+ 16-bit comparator lessequal                           : 1
+ 32-bit comparator greater                             : 4
+ 7-bit comparator equal                                : 1
+# Multiplexers                                         : 614
+ 1-bit 16-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 47
+ 11-bit 2-to-1 multiplexer                             : 5
+ 16-bit 2-to-1 multiplexer                             : 8
+ 16-bit 512-to-1 multiplexer                           : 1
+ 32-bit 2-to-1 multiplexer                             : 517
+ 32-bit 512-to-1 multiplexer                           : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+ 40-bit 2-to-1 multiplexer                             : 2
+ 43-bit 2-to-1 multiplexer                             : 2
+ 8-bit 1045-to-1 multiplexer                           : 1
+ 8-bit 2-to-1 multiplexer                              : 6
+ 8-bit 8-to-1 multiplexer                              : 1
+ 8-bit 9-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 19
+# Logic shifters                                       : 4
+ 43-bit shifter logical left                           : 2
+ 62-bit shifter logical right                          : 2
+# Tristates                                            : 1
+ 1-bit tristate buffer                                 : 1
+# FSMs                                                 : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <Sequencer>.
+The following registers are absorbed into counter <addr_increment>: 1 register on signal <addr_increment>.
+Unit <Sequencer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fifo>.
+The following registers are absorbed into counter <wr_ptr>: 1 register on signal <wr_ptr>.
+The following registers are absorbed into counter <rd_ptr>: 1 register on signal <rd_ptr>.
+The following registers are absorbed into counter <fifo_counter>: 1 register on signal <fifo_counter>.
+INFO:Xst:3217 - HDL ADVISOR - Register <fifo_out_data> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_buf_mem> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 32-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <wr_ptr>        |          |
+    |     diA            | connected to signal <_n0072>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 32-bit                     |          |
+    |     addrB          | connected to signal <rd_ptr>        |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <fifo> synthesized (advanced).
+
+Synthesizing (advanced) Unit <filter_accumulator>.
+The following registers are absorbed into accumulator <tmp>: 1 register on signal <tmp>.
+Unit <filter_accumulator> synthesized (advanced).
+
+Synthesizing (advanced) Unit <i2si_bist_gen>.
+The following registers are absorbed into counter <sck_count>: 1 register on signal <sck_count>.
+Unit <i2si_bist_gen> synthesized (advanced).
+
+Synthesizing (advanced) Unit <i2so_serializer>.
+The following registers are absorbed into counter <bit_count>: 1 register on signal <bit_count>.
+Unit <i2so_serializer> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 8x32-bit dual-port distributed RAM                    : 2
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 12
+ 11-bit adder                                          : 1
+ 16-bit adder                                          : 1
+ 43-bit adder                                          : 2
+ 5-bit adder                                           : 2
+ 6-bit subtractor                                      : 2
+ 9-bit adder                                           : 3
+ 9-bit subtractor                                      : 1
+# Counters                                             : 9
+ 11-bit up counter                                     : 1
+ 3-bit up counter                                      : 4
+ 4-bit down counter                                    : 1
+ 4-bit updown counter                                  : 2
+ 5-bit up counter                                      : 1
+# Accumulators                                         : 2
+ 40-bit up loadable accumulator                        : 2
+# Registers                                            : 25177
+ Flip-Flops                                            : 25177
+# Comparators                                          : 6
+ 16-bit comparator lessequal                           : 1
+ 32-bit comparator greater                             : 4
+ 7-bit comparator equal                                : 1
+# Multiplexers                                         : 16520
+ 1-bit 1045-to-1 multiplexer                           : 8
+ 1-bit 16-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 16431
+ 1-bit 512-to-1 multiplexer                            : 32
+ 11-bit 2-to-1 multiplexer                             : 4
+ 16-bit 2-to-1 multiplexer                             : 8
+ 16-bit 512-to-1 multiplexer                           : 1
+ 32-bit 2-to-1 multiplexer                             : 5
+ 43-bit 2-to-1 multiplexer                             : 2
+ 8-bit 2-to-1 multiplexer                              : 6
+ 8-bit 8-to-1 multiplexer                              : 1
+ 8-bit 9-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 19
+# Logic shifters                                       : 4
+ 43-bit shifter logical left                           : 2
+ 62-bit shifter logical right                          : 2
+# FSMs                                                 : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <I2C/i2c_top_deserializer/FSM_4> on signal <deserial_state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 11    | 01
+ 10    | 11
+ 01    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <I2C/i2c_top_deserializer/FSM_1> on signal <bit_counter_slave_addr[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <I2C/i2c_top_deserializer/FSM_2> on signal <bit_counter_burst_addr[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <I2C/i2c_top_deserializer/FSM_3> on signal <bit_counter_data[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 010
+ 0011  | 011
+ 0100  | 100
+ 0101  | 101
+ 0110  | 110
+ 0111  | 111
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <I2C/i2c_top_serializer/FSM_5> on signal <serialize_bit_counter[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Filter/TOP_FILTER_STM/FSM_0> on signal <filter_state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 00
+ 0010  | 01
+ 0100  | 10
+ 1000  | 11
+-------------------
+
+Optimizing unit <filter_mux> ...
+
+Optimizing unit <chip> ...
+
+Optimizing unit <Deserializer> ...
+
+Optimizing unit <Serializer> ...
+
+Optimizing unit <Sequencer> ...
+
+Optimizing unit <i2s_in> ...
+
+Optimizing unit <i2si_bist_gen> ...
+
+Optimizing unit <synchronizer> ...
+
+Optimizing unit <i2si_deserializer> ...
+
+Optimizing unit <fifo> ...
+
+Optimizing unit <i2so_serializer> ...
+
+Optimizing unit <filter_stm> ...
+
+Optimizing unit <filter_storage> ...
+
+Optimizing unit <filter_round_truncate> ...
+
+Optimizing unit <register> ...
+
+Optimizing unit <trig_generator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block chip, actual ratio is 66.
+
+Final Macro Processing ...
+
+Processing Unit <chip> :
+	Found 3-bit shift register for signal <I2C/i2c_top_deserializer/i2c_sda>.
+	Found 2-bit shift register for signal <I2C/i2c_top_deserializer/i2c_scl>.
+	Found 4-bit shift register for signal <I2S_Input/Synchronizer/sd_vec_3>.
+	Found 4-bit shift register for signal <I2S_Input/Synchronizer/ws_vec_3>.
+Unit <chip> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 25223
+ Flip-Flops                                            : 25223
+# Shift Registers                                      : 4
+ 2-bit shift register                                  : 1
+ 3-bit shift register                                  : 1
+ 4-bit shift register                                  : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : chip.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 30098
+#      GND                         : 1
+#      INV                         : 15
+#      LUT1                        : 52
+#      LUT2                        : 58
+#      LUT3                        : 16600
+#      LUT4                        : 165
+#      LUT5                        : 413
+#      LUT6                        : 12370
+#      MUXCY                       : 176
+#      MUXF7                       : 69
+#      MUXF8                       : 2
+#      VCC                         : 1
+#      XORCY                       : 176
+# FlipFlops/Latches                : 25232
+#      FD                          : 28
+#      FDC                         : 103
+#      FDCE                        : 21757
+#      FDE                         : 114
+#      FDP                         : 5
+#      FDPE                        : 3165
+#      FDR                         : 44
+#      FDRE                        : 16
+# RAMS                             : 64
+#      RAM32X1D                    : 64
+# Shift Registers                  : 4
+#      SRLC16E                     : 4
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 13
+#      IBUF                        : 9
+#      OBUF                        : 3
+#      OBUFT                       : 1
+# DSPs                             : 2
+#      DSP48E1                     : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:           25232  out of  126800    19%  
+ Number of Slice LUTs:                29805  out of  63400    47%  
+    Number used as Logic:             29673  out of  63400    46%  
+    Number used as Memory:              132  out of  19000     0%  
+       Number used as RAM:              128
+       Number used as SRL:                4
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  38108
+   Number with an unused Flip Flop:   12876  out of  38108    33%  
+   Number with an unused LUT:          8303  out of  38108    21%  
+   Number of fully used LUT-FF pairs: 16929  out of  38108    44%  
+   Number of unique control sets:      1058
+
+IO Utilization: 
+ Number of IOs:                          14
+ Number of bonded IOBs:                  14  out of    210     6%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+ Number of DSP48E1s:                      2  out of    240     0%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 25302 |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 6.678ns (Maximum Frequency: 149.757MHz)
+   Minimum input arrival time before clock: 4.714ns
+   Maximum output required time after clock: 1.436ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.678ns (frequency: 149.757MHz)
+  Total number of paths / destination ports: 418377 / 50823
+-------------------------------------------------------------------------
+Delay:               6.678ns (Levels of Logic = 41)
+  Source:            Filter/TOP_FILTER_STM/Mmult_accumulator_in_right (DSP)
+  Destination:       Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_39 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Filter/TOP_FILTER_STM/Mmult_accumulator_in_right to Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_39
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     DSP48E1:CLK->P0       1   4.009   0.421  Filter/TOP_FILTER_STM/Mmult_accumulator_in_right (Filter/accumulator_in_right<0>)
+     LUT3:I2->O            1   0.124   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_lut<0> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_lut<0>)
+     MUXCY:S->O            1   0.472   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<0> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<0>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<1> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<1>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<2> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<2>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<3> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<3>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<4> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<4>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<5> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<5>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<6> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<6>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<7> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<7>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<8> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<8>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<9> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<9>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<10> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<10>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<11> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<11>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<12> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<12>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<13> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<13>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<14> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<14>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<15> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<15>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<16> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<16>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<17> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<17>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<18> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<18>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<19> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<19>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<20> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<20>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<21> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<21>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<22> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<22>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<23> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<23>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<24> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<24>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<25> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<25>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<26> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<26>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<27> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<27>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<28> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<28>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<29> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<29>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<30> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<30>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<31> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<31>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<32> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<32>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<33> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<33>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<34> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<34>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<35> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<35>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<36> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<36>)
+     MUXCY:CI->O           1   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<37> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<37>)
+     MUXCY:CI->O           0   0.029   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<38> (Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_cy<38>)
+     XORCY:CI->O           1   0.510   0.000  Filter/TOP_FILTER_ACCUMULATOR_RIGHT/Maccum_tmp_xor<39> (Result<39>)
+     FDCE:D                    0.030          Filter/TOP_FILTER_ACCUMULATOR_RIGHT/tmp_39
+    ----------------------------------------
+    Total                      6.678ns (6.257ns logic, 0.421ns route)
+                                       (93.7% logic, 6.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 171 / 136
+-------------------------------------------------------------------------
+Offset:              4.714ns (Levels of Logic = 8)
+  Source:            rst_n (PAD)
+  Destination:       Register/Register/rdata_3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to Register/Register/rdata_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           140   0.001   0.712  rst_n_IBUF (rst_n_IBUF)
+     LUT2:I0->O            2   0.124   0.722  Register/Register/Mmux_rdata[7]_GND_24_o_mux_3094_OUT11 (Register/Register/rdata[7]_GND_24_o_mux_3094_OUT<0>)
+     LUT6:I3->O            1   0.124   0.000  Register/Register/mux_1916 (Register/Register/mux_1916)
+     MUXF7:I1->O           1   0.368   0.536  Register/Register/mux_18_f7 (Register/Register/mux_18_f7)
+     LUT5:I3->O            1   0.124   0.939  Register/Register/addr<7>12 (Register/Register/addr<7>15)
+     LUT6:I0->O            1   0.124   0.421  Register/Register/addr<7>13 (Register/Register/addr<7>11)
+     LUT5:I4->O            1   0.124   0.000  Register/Register/mux_4 (Register/Register/mux_4)
+     MUXF7:I0->O           1   0.365   0.000  Register/Register/mux_2_f7 (Register/Register/addr[10]_rf_filter_coeff511_b[7]_wide_mux_3095_OUT<0>)
+     FD:D                      0.030          Register/Register/rdata_0
+    ----------------------------------------
+    Total                      4.714ns (1.384ns logic, 3.330ns route)
+                                       (29.4% logic, 70.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              1.436ns (Levels of Logic = 2)
+  Source:            I2C/i2c_top_serializer/i2c_sda_out (FF)
+  Destination:       i2c_sda_od (PAD)
+  Source Clock:      clk rising
+
+  Data Path: I2C/i2c_top_serializer/i2c_sda_out to i2c_sda_od
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.478   0.413  I2C/i2c_top_serializer/i2c_sda_out (I2C/i2c_top_serializer/i2c_sda_out)
+     INV:I->O              1   0.146   0.399  i2c_sda_out_inv1_INV_0 (i2c_sda_out_inv)
+     OBUFT:T->O                0.000          i2c_sda_od_OBUFT (i2c_sda_od)
+    ----------------------------------------
+    Total                      1.436ns (0.624ns logic, 0.812ns route)
+                                       (43.5% logic, 56.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.678|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 321.00 secs
+Total CPU time to Xst completion: 321.35 secs
+ 
 --> 
 
-Total memory usage is 2531376 kilobytes
+Total memory usage is 3696488 kilobytes
 
-Number of errors   :    1 (   0 filtered)
-Number of warnings :    3 (   2 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   13 (  13 filtered)
+Number of infos    :    1 (   0 filtered)
 

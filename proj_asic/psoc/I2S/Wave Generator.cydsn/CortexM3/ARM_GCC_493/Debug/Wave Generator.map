@@ -555,7 +555,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x1290
+.text           0x00000000     0x12a0
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -578,155 +578,155 @@ END GROUP
  .text.DmaTxConfiguration
                 0x00000130       0xb0 .\CortexM3\ARM_GCC_493\Debug\main.o
                 0x00000130                DmaTxConfiguration
- .text.main     0x000001e0       0x90 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .text.main     0x000001e0       0x8c .\CortexM3\ARM_GCC_493\Debug\main.o
                 0x000001e0                main
  .text.IntDefaultHandler
-                0x00000270        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00000270                IntDefaultHandler
- .text.Start_c  0x00000274       0x50 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00000274                Start_c
+                0x0000026c        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x0000026c                IntDefaultHandler
+ .text.Start_c  0x00000270       0x50 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000270                Start_c
  .text.initialize_psoc
-                0x000002c4       0x78 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x000002c4                initialize_psoc
+                0x000002c0       0x78 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000002c0                initialize_psoc
  .text.CyClockStartupError
-                0x0000033c        0x4 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                0x00000338        0x4 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
  .text.cfg_write_bytes32
-                0x00000340       0x34 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                0x0000033c       0x34 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x00000374       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                0x00000370       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
  .text.CYMEMZERO
-                0x0000039c        0xc .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                0x00000398        0xc .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x000003a8       0xc0 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                0x000003a4       0xc0 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x00000468        0x8 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                0x00000464        0x8 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
  .text.cyfitter_cfg
-                0x00000470      0x134 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
-                0x00000470                cyfitter_cfg
+                0x0000046c      0x148 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                0x0000046c                cyfitter_cfg
  .text.I2S_Enable
-                0x000005a4       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
-                0x000005a4                I2S_Enable
+                0x000005b4       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+                0x000005b4                I2S_Enable
  .text.I2S_Init
-                0x000005cc       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
-                0x000005cc                I2S_Init
+                0x000005dc       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+                0x000005dc                I2S_Init
  .text.I2S_Start
-                0x000005f4       0x1c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
-                0x000005f4                I2S_Start
+                0x00000604       0x1c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+                0x00000604                I2S_Start
  .text.I2S_EnableTx
-                0x00000610       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
-                0x00000610                I2S_EnableTx
+                0x00000620       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+                0x00000620                I2S_EnableTx
  .text.I2S_EnableRx
-                0x00000638       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
-                0x00000638                I2S_EnableRx
- .text          0x00000660       0x20 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyBootAsmGnu.o)
-                0x00000660                CyDelayCycles
-                0x00000670                CyEnterCriticalSection
-                0x00000678                CyExitCriticalSection
+                0x00000648       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+                0x00000648                I2S_EnableRx
+ .text          0x00000670       0x20 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyBootAsmGnu.o)
+                0x00000670                CyDelayCycles
+                0x00000680                CyEnterCriticalSection
+                0x00000688                CyExitCriticalSection
  .text.CyDmacConfigure
-                0x00000680       0x34 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x00000680                CyDmacConfigure
+                0x00000690       0x34 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x00000690                CyDmacConfigure
  .text.CyDmaChEnable
-                0x000006b4       0x38 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x000006b4                CyDmaChEnable
+                0x000006c4       0x38 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x000006c4                CyDmaChEnable
  .text.CyDmaChPriority
-                0x000006ec       0x24 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x000006ec                CyDmaChPriority
+                0x000006fc       0x24 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x000006fc                CyDmaChPriority
  .text.CyDmaChSetExtendedAddress
-                0x00000710       0x34 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x00000710                CyDmaChSetExtendedAddress
+                0x00000720       0x34 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x00000720                CyDmaChSetExtendedAddress
  .text.CyDmaChSetInitialTd
-                0x00000744       0x18 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x00000744                CyDmaChSetInitialTd
+                0x00000754       0x18 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x00000754                CyDmaChSetInitialTd
  .text.CyDmaChSetConfiguration
-                0x0000075c       0x48 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x0000075c                CyDmaChSetConfiguration
+                0x0000076c       0x48 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x0000076c                CyDmaChSetConfiguration
  .text.CyDmaTdAllocate
-                0x000007a4       0x34 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x000007a4                CyDmaTdAllocate
+                0x000007b4       0x34 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x000007b4                CyDmaTdAllocate
  .text.CyDmaTdSetConfiguration
-                0x000007d8       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x000007d8                CyDmaTdSetConfiguration
+                0x000007e8       0x28 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x000007e8                CyDmaTdSetConfiguration
  .text.CyDmaTdSetAddress
-                0x00000800       0x1c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                0x00000800                CyDmaTdSetAddress
- .text.CyDelay  0x0000081c       0x2c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
-                0x0000081c                CyDelay
+                0x00000810       0x1c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                0x00000810                CyDmaTdSetAddress
+ .text.CyDelay  0x0000082c       0x2c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
+                0x0000082c                CyDelay
  .text.TxDMA_0_DmaInitialize
-                0x00000848       0x40 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
-                0x00000848                TxDMA_0_DmaInitialize
+                0x00000858       0x40 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
+                0x00000858                TxDMA_0_DmaInitialize
  .text.TxDMA_1_DmaInitialize
-                0x00000888       0x3c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
-                0x00000888                TxDMA_1_DmaInitialize
+                0x00000898       0x3c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
+                0x00000898                TxDMA_1_DmaInitialize
  .text.UART_Init
-                0x000008c4       0x18 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
-                0x000008c4                UART_Init
+                0x000008d4       0x18 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+                0x000008d4                UART_Init
  .text.UART_Enable
-                0x000008dc       0x24 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
-                0x000008dc                UART_Enable
+                0x000008ec       0x24 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+                0x000008ec                UART_Enable
  .text.UART_Start
-                0x00000900       0x1c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
-                0x00000900                UART_Start
+                0x00000910       0x1c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+                0x00000910                UART_Start
  .text.UART_PutChar
-                0x0000091c       0x18 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
-                0x0000091c                UART_PutChar
+                0x0000092c       0x18 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+                0x0000092c                UART_PutChar
  .text.UART_PutString
-                0x00000934       0x24 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
-                0x00000934                UART_PutString
+                0x00000944       0x24 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+                0x00000944                UART_PutString
  .text.UART_IntClock_Start
-                0x00000958       0x1c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
-                0x00000958                UART_IntClock_Start
+                0x00000968       0x1c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
+                0x00000968                UART_IntClock_Start
  .text.RxDMA_1_DmaInitialize
-                0x00000974       0x3c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
-                0x00000974                RxDMA_1_DmaInitialize
+                0x00000984       0x3c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
+                0x00000984                RxDMA_1_DmaInitialize
  .text.RxDMA_0_DmaInitialize
-                0x000009b0       0x3c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
-                0x000009b0                RxDMA_0_DmaInitialize
+                0x000009c0       0x3c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
+                0x000009c0                RxDMA_0_DmaInitialize
  .text.__libc_init_array
-                0x000009ec       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x000009ec                __libc_init_array
- .text.memcpy   0x00000a38       0x16 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
-                0x00000a38                memcpy
- .text.memset   0x00000a4e       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x00000a4e                memset
- *fill*         0x00000a5e        0x2 
- .text.sprintf  0x00000a60       0x48 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sprintf.o)
-                0x00000a60                siprintf
-                0x00000a60                sprintf
+                0x000009fc       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x000009fc                __libc_init_array
+ .text.memcpy   0x00000a48       0x16 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x00000a48                memcpy
+ .text.memset   0x00000a5e       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x00000a5e                memset
+ *fill*         0x00000a6e        0x2 
+ .text.sprintf  0x00000a70       0x48 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sprintf.o)
+                0x00000a70                siprintf
+                0x00000a70                sprintf
  .text.__ssputs_r
-                0x00000aa8       0xb2 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x00000aa8                __ssputs_r
- *fill*         0x00000b5a        0x2 
+                0x00000ab8       0xb2 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x00000ab8                __ssputs_r
+ *fill*         0x00000b6a        0x2 
  .text._svfprintf_r
-                0x00000b5c      0x1e4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x00000b5c                _svfiprintf_r
-                0x00000b5c                _svfprintf_r
+                0x00000b6c      0x1e4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x00000b6c                _svfiprintf_r
+                0x00000b6c                _svfprintf_r
  .text._printf_common
-                0x00000d40       0xea c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00000d40                _printf_common
- *fill*         0x00000e2a        0x2 
+                0x00000d50       0xea c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00000d50                _printf_common
+ *fill*         0x00000e3a        0x2 
  .text._printf_i
-                0x00000e2c      0x240 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00000e2c                _printf_i
- .text.memchr   0x0000106c       0x1c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr.o)
-                0x0000106c                memchr
- .text.memmove  0x00001088       0x36 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
-                0x00001088                memmove
- *fill*         0x000010be        0x2 
- .text._free_r  0x000010c0       0x88 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
-                0x000010c0                _free_r
+                0x00000e3c      0x240 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00000e3c                _printf_i
+ .text.memchr   0x0000107c       0x1c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr.o)
+                0x0000107c                memchr
+ .text.memmove  0x00001098       0x36 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
+                0x00001098                memmove
+ *fill*         0x000010ce        0x2 
+ .text._free_r  0x000010d0       0x88 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+                0x000010d0                _free_r
  .text._malloc_r
-                0x00001148       0xac c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x00001148                _malloc_r
+                0x00001158       0xac c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x00001158                _malloc_r
  .text._realloc_r
-                0x000011f4       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
-                0x000011f4                _realloc_r
- .text._sbrk_r  0x00001240       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
-                0x00001240                _sbrk_r
+                0x00001204       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
+                0x00001204                _realloc_r
+ .text._sbrk_r  0x00001250       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+                0x00001250                _sbrk_r
  .text._malloc_usable_size_r
-                0x00001260       0x14 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
-                0x00001260                _malloc_usable_size_r
- .text._sbrk    0x00001274       0x1c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a(sbrk.o)
-                0x00001274                _sbrk
+                0x00001270       0x14 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+                0x00001270                _malloc_usable_size_r
+ .text._sbrk    0x00001284       0x1c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a(sbrk.o)
+                0x00001284                _sbrk
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -739,83 +739,83 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00001290        0x0
+.v4_bx          0x000012a0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00001290        0x0
+.iplt           0x000012a0        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00001290        0x4
+.eh_frame       0x000012a0        0x4
  *(.eh_frame)
- .eh_frame      0x00001290        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .eh_frame      0x00001290        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
-                0x00001294                PROVIDE (__exidx_start, .)
+ .eh_frame      0x000012a0        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .eh_frame      0x000012a0        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+                0x000012a4                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00001294                __exidx_end = .
+                0x000012a4                __exidx_end = .
 
-.rodata         0x00001294       0xd4
+.rodata         0x000012a4       0xd4
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x00001294       0x10 .\CortexM3\ARM_GCC_493\Debug\main.o
- .rodata        0x000012a4       0x58 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                0x000012a4       0x10 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .rodata        0x000012b4       0x58 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
  .rodata.str1.1
-                0x000012fc        0x2 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x0000130c        0x2 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .rodata.str1.1
-                0x000012fe       0x11 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x0000130e       0x11 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
  .rodata.str1.1
-                0x0000130f       0x22 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00001334                . = ALIGN (0x4)
- *fill*         0x00001331        0x3 
+                0x0000131f       0x22 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00001344                . = ALIGN (0x4)
+ *fill*         0x00001341        0x3 
  *(.init)
- .init          0x00001334        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x00001334                _init
- .init          0x00001338        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x00001340                . = ALIGN (0x4)
-                0x00001340                __preinit_array_start = .
+ .init          0x00001344        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00001344                _init
+ .init          0x00001348        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00001350                . = ALIGN (0x4)
+                0x00001350                __preinit_array_start = .
  *(.preinit_array)
-                0x00001340                __preinit_array_end = .
-                0x00001340                . = ALIGN (0x4)
-                0x00001340                __init_array_start = .
+                0x00001350                __preinit_array_end = .
+                0x00001350                . = ALIGN (0x4)
+                0x00001350                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00001340        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .init_array    0x00001344        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00001348                __init_array_end = .
-                0x00001348                . = ALIGN (0x4)
- *(.fini)
- .fini          0x00001348        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x00001348                _fini
- .fini          0x0000134c        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x00001354                . = ALIGN (0x4)
-                0x00001354                __fini_array_start = .
- *(.fini_array)
- .fini_array    0x00001354        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- *(SORT(.fini_array.*))
-                0x00001358                __fini_array_end = .
+ .init_array    0x00001350        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .init_array    0x00001354        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00001358                __init_array_end = .
                 0x00001358                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00001358        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00001358                _fini
+ .fini          0x0000135c        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00001364                . = ALIGN (0x4)
+                0x00001364                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x00001364        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00001368                __fini_array_end = .
+                0x00001368                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00001358                . = ALIGN (0x4)
+                0x00001368                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00001358                . = ALIGN (0x4)
-                0x00001358                __cy_regions = .
-                0x00001358        0x4 LONG 0x1368 __cy_region_init_ram
-                0x0000135c        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x00001360        0x4 LONG 0xe8 __cy_region_init_size_ram
-                0x00001364        0x4 LONG 0x1048 __cy_region_zero_size_ram
-                0x00001368                __cy_regions_end = .
-                0x00001368                . = ALIGN (0x8)
-                0x00001368                _etext = .
+                0x00001368                . = ALIGN (0x4)
+                0x00001368                __cy_regions = .
+                0x00001368        0x4 LONG 0x1378 __cy_region_init_ram
+                0x0000136c        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x00001370        0x4 LONG 0xe8 __cy_region_init_size_ram
+                0x00001374        0x4 LONG 0x1048 __cy_region_zero_size_ram
+                0x00001378                __cy_regions_end = .
+                0x00001378                . = ALIGN (0x8)
+                0x00001378                _etext = .
 
 .ramvectors     0x1fff8000      0x100
                 0x1fff8000                __cy_region_start_ram = .
@@ -829,7 +829,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0xe8 load address 0x00001368
+.data           0x1fff8108       0xe8 load address 0x00001378
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
@@ -864,10 +864,10 @@ END GROUP
  *(.ram)
                 0x1fff81f0                _edata = .
 
-.igot.plt       0x1fff81f0        0x0 load address 0x00001450
+.igot.plt       0x1fff81f0        0x0 load address 0x00001460
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
-.bss            0x1fff81f0     0x1048 load address 0x00001450
+.bss            0x1fff81f0     0x1048 load address 0x00001460
                 0x1fff81f0                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -906,11 +906,11 @@ END GROUP
                 0x1fff9238                __end = .
                 0x1fff9238                PROVIDE (end, .)
                 0x1fff9238                PROVIDE (__bss_end__, .)
-                0x00001368                __cy_region_init_ram = LOADADDR (.data)
+                0x00001378                __cy_region_init_ram = LOADADDR (.data)
                 0x000000e8                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00001048                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff9238     0x1000 load address 0x00001450
+.heap           0x1fff9238     0x1000 load address 0x00001460
                 0x1fff9238                . = _end
                 0x1fffa238                . = (. + 0x1000)
  *fill*         0x1fff9238     0x1000 
@@ -928,9 +928,9 @@ END GROUP
 .cyloadablemeta
  *(.cyloadablemeta)
 
-.cyconfigecc    0x80000000      0x4a4
+.cyconfigecc    0x80000000      0x53c
  *(.cyconfigecc)
- .cyconfigecc   0x80000000      0x4a4 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .cyconfigecc   0x80000000      0x53c .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                 0x80000000                cy_meta_configecc
 
 .cycustnvl      0x90000000        0x4
@@ -959,7 +959,7 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00001450        0x0 load address 0x9050000c
+.rel.dyn        0x00001460        0x0 load address 0x9050000c
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .stab
@@ -1020,65 +1020,65 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x501b
+.debug_info     0x00000000     0x5036
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x737 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_info    0x00000737      0x13a .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_info    0x00000871      0x315 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_info    0x00000b86      0x5f8 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
- .debug_info    0x0000117e      0x2ed .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
- .debug_info    0x0000146b       0xb1 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyBootAsmGnu.o)
- .debug_info    0x0000151c      0x93e .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
- .debug_info    0x00001e5a      0xf64 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
- .debug_info    0x00002dbe      0xa14 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyPm.o)
- .debug_info    0x000037d2      0x1f6 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
- .debug_info    0x000039c8      0x1fa .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
- .debug_info    0x00003bc2      0x44f .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
- .debug_info    0x00004011      0x27f .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
- .debug_info    0x00004290      0x1fa .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
- .debug_info    0x0000448a      0x1fa .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
- .debug_info    0x00004684      0x566 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyFlash.o)
- .debug_info    0x00004bea      0x431 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CySpc.o)
+ .debug_info    0x00000737      0x13b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_info    0x00000872      0x315 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_info    0x00000b87      0x61d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+ .debug_info    0x000011a4      0x2ed .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+ .debug_info    0x00001491       0xa6 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyBootAsmGnu.o)
+ .debug_info    0x00001537      0x93e .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+ .debug_info    0x00001e75      0xf64 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
+ .debug_info    0x00002dd9      0xa14 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyPm.o)
+ .debug_info    0x000037ed      0x1f6 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
+ .debug_info    0x000039e3      0x1fa .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
+ .debug_info    0x00003bdd      0x44f .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+ .debug_info    0x0000402c      0x27f .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
+ .debug_info    0x000042ab      0x1fa .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
+ .debug_info    0x000044a5      0x1fa .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
+ .debug_info    0x0000469f      0x566 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyFlash.o)
+ .debug_info    0x00004c05      0x431 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x1705
+.debug_abbrev   0x00000000     0x1716
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x17e .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_abbrev  0x0000017e       0x66 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_abbrev  0x000001e4      0x199 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_abbrev  0x0000037d      0x212 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
- .debug_abbrev  0x0000058f       0xef .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
- .debug_abbrev  0x0000067e       0x14 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00000692      0x1bf .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
- .debug_abbrev  0x00000851      0x24e .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
- .debug_abbrev  0x00000a9f      0x1fa .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyPm.o)
- .debug_abbrev  0x00000c99       0xeb .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
- .debug_abbrev  0x00000d84       0xeb .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
- .debug_abbrev  0x00000e6f      0x1a2 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
- .debug_abbrev  0x00001011      0x139 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
- .debug_abbrev  0x0000114a       0xeb .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
- .debug_abbrev  0x00001235       0xeb .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
- .debug_abbrev  0x00001320      0x233 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyFlash.o)
- .debug_abbrev  0x00001553      0x1b2 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CySpc.o)
+ .debug_abbrev  0x0000017e       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_abbrev  0x000001f5      0x199 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_abbrev  0x0000038e      0x212 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+ .debug_abbrev  0x000005a0       0xef .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+ .debug_abbrev  0x0000068f       0x14 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x000006a3      0x1bf .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+ .debug_abbrev  0x00000862      0x24e .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
+ .debug_abbrev  0x00000ab0      0x1fa .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyPm.o)
+ .debug_abbrev  0x00000caa       0xeb .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
+ .debug_abbrev  0x00000d95       0xeb .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
+ .debug_abbrev  0x00000e80      0x1a2 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+ .debug_abbrev  0x00001022      0x139 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
+ .debug_abbrev  0x0000115b       0xeb .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
+ .debug_abbrev  0x00001246       0xeb .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
+ .debug_abbrev  0x00001331      0x233 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyFlash.o)
+ .debug_abbrev  0x00001564      0x1b2 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CySpc.o)
 
-.debug_line     0x00000000     0x1e77
+.debug_line     0x00000000     0x1e78
  *(.debug_line)
  .debug_line    0x00000000      0x26f .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_line    0x0000026f       0x53 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .debug_line    0x000002c2      0x1c4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_line    0x00000486      0x204 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
- .debug_line    0x0000068a      0x127 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
- .debug_line    0x000007b1       0x68 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyBootAsmGnu.o)
- .debug_line    0x00000819      0x2e5 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
- .debug_line    0x00000afe      0x6b9 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
- .debug_line    0x000011b7      0x354 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyPm.o)
- .debug_line    0x0000150b       0x9d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
- .debug_line    0x000015a8       0x9d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
- .debug_line    0x00001645      0x1f2 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
- .debug_line    0x00001837      0x195 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
- .debug_line    0x000019cc       0x9d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
- .debug_line    0x00001a69       0x9d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
- .debug_line    0x00001b06      0x1a9 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyFlash.o)
- .debug_line    0x00001caf      0x1c8 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CySpc.o)
+ .debug_line    0x00000486      0x205 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+ .debug_line    0x0000068b      0x127 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+ .debug_line    0x000007b2       0x68 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyBootAsmGnu.o)
+ .debug_line    0x0000081a      0x2e5 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+ .debug_line    0x00000aff      0x6b9 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
+ .debug_line    0x000011b8      0x354 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyPm.o)
+ .debug_line    0x0000150c       0x9d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
+ .debug_line    0x000015a9       0x9d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
+ .debug_line    0x00001646      0x1f2 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+ .debug_line    0x00001838      0x195 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
+ .debug_line    0x000019cd       0x9d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
+ .debug_line    0x00001a6a       0x9d .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
+ .debug_line    0x00001b07      0x1a9 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyFlash.o)
+ .debug_line    0x00001cb0      0x1c8 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CySpc.o)
 
 .debug_frame    0x00000000     0x163c
  *(.debug_frame)
@@ -1114,40 +1114,40 @@ END GROUP
  .debug_frame   0x000015c0       0x5c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
  .debug_frame   0x0000161c       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libnosys.a(sbrk.o)
 
-.debug_str      0x00000000     0x1aca
+.debug_str      0x00000000     0x1abf
  *(.debug_str)
- .debug_str     0x00000000      0x38a .\CortexM3\ARM_GCC_493\Debug\main.o
-                                0x3e5 (size before relaxing)
- .debug_str     0x0000038a       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
-                                0x20b (size before relaxing)
- .debug_str     0x00000401      0x13c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                                0x2fb (size before relaxing)
- .debug_str     0x0000053d      0x18b .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
-                                0x359 (size before relaxing)
- .debug_str     0x000006c8       0xc2 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
-                                0x27f (size before relaxing)
- .debug_str     0x0000078a      0x302 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
-                                0x55f (size before relaxing)
- .debug_str     0x00000a8c      0x62e .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
-                                0x88a (size before relaxing)
- .debug_str     0x000010ba      0x365 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyPm.o)
-                                0x72c (size before relaxing)
- .debug_str     0x0000141f       0x87 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
-                                0x292 (size before relaxing)
- .debug_str     0x000014a6       0x4c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
-                                0x292 (size before relaxing)
- .debug_str     0x000014f2      0x1a9 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
-                                0x3b3 (size before relaxing)
- .debug_str     0x0000169b      0x185 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
-                                0x357 (size before relaxing)
- .debug_str     0x00001820       0x4c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
-                                0x292 (size before relaxing)
- .debug_str     0x0000186c       0x4c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
-                                0x292 (size before relaxing)
- .debug_str     0x000018b8      0x171 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyFlash.o)
-                                0x397 (size before relaxing)
- .debug_str     0x00001a29       0xa1 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CySpc.o)
-                                0x315 (size before relaxing)
+ .debug_str     0x00000000      0x37f .\CortexM3\ARM_GCC_493\Debug\main.o
+                                0x3da (size before relaxing)
+ .debug_str     0x0000037f       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                                0x200 (size before relaxing)
+ .debug_str     0x000003f6      0x13c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                                0x2f0 (size before relaxing)
+ .debug_str     0x00000532      0x18b .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyfitter_cfg.o)
+                                0x34e (size before relaxing)
+ .debug_str     0x000006bd       0xc2 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(I2S.o)
+                                0x274 (size before relaxing)
+ .debug_str     0x0000077f      0x302 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyDmac.o)
+                                0x554 (size before relaxing)
+ .debug_str     0x00000a81      0x62e .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyLib.o)
+                                0x87f (size before relaxing)
+ .debug_str     0x000010af      0x365 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(cyPm.o)
+                                0x721 (size before relaxing)
+ .debug_str     0x00001414       0x87 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_0_dma.o)
+                                0x287 (size before relaxing)
+ .debug_str     0x0000149b       0x4c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(TxDMA_1_dma.o)
+                                0x287 (size before relaxing)
+ .debug_str     0x000014e7      0x1a9 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART.o)
+                                0x3a8 (size before relaxing)
+ .debug_str     0x00001690      0x185 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(UART_IntClock.o)
+                                0x34c (size before relaxing)
+ .debug_str     0x00001815       0x4c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_1_dma.o)
+                                0x287 (size before relaxing)
+ .debug_str     0x00001861       0x4c .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(RxDMA_0_dma.o)
+                                0x287 (size before relaxing)
+ .debug_str     0x000018ad      0x171 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CyFlash.o)
+                                0x38c (size before relaxing)
+ .debug_str     0x00001a1e       0xa1 .\CortexM3\ARM_GCC_493\Debug\Wave Generator.a(CySpc.o)
+                                0x30a (size before relaxing)
 
 .debug_loc      0x00000000     0x276b
  *(.debug_loc)

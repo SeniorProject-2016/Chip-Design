@@ -4,8 +4,8 @@
     <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <register name="TX_UART_TX_DATA" address="0x40006443" bitWidth="8" desc="TX Data Register" hidden="false" />
-    <register name="TX_UART_TX_STATUS" address="0x40006463" bitWidth="8" desc="TX status register" hidden="false">
+    <register name="TX_UART_TX_DATA" address="0x40006544" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="TX_UART_TX_STATUS" address="0x40006564" bitWidth="8" desc="TX status register" hidden="false">
       <field name="UART_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="UART_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="UART_TX_STS_FIFO_FULL" from="2" to="2" access="R" resetVal="" desc="" />
@@ -31,7 +31,7 @@
     <block name="VirtualMux_6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="bI2S" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <register name="TX_STATUS_0_REG" address="0x40006461" bitWidth="8" desc="" hidden="false">
+    <register name="TX_STATUS_0_REG" address="0x40006464" bitWidth="8" desc="" hidden="false">
       <field name="INT" from="7" to="7" access="R" resetVal="" desc="Interrupt bit" />
       <field name="CH1 F1" from="5" to="5" access="R" resetVal="" desc="Stereo channel 1 FIFO 1 state">
         <value name="FULL" value="0" desc="" />
@@ -58,7 +58,27 @@
         <value name="UNDERFLOW" value="1" desc="" />
       </field>
     </register>
-    <register name="RX_STATUS_0_REG" address="0x40006465" bitWidth="8" desc="" hidden="false">
+    <register name="CONTROL_REG" address="0x40006475" bitWidth="8" desc="" hidden="false">
+      <field name="RESOLUTION" from="4" to="3" access="RW" resetVal="" desc="Specifies data bits value. Applicable only if dynamic bit resolution is selected.">
+        <value name="8-BIT" value="00" desc="" />
+        <value name="16-BIT" value="01" desc="" />
+        <value name="24-BIT" value="10" desc="" />
+        <value name="32-BIT" value="11" desc="" />
+      </field>
+      <field name="ENBL" from="2" to="2" access="RW" resetVal="" desc="Starts the generation of the WS and SCK outputs.">
+        <value name="ENABLED" value="1" desc="" />
+        <value name="DISABLED" value="0" desc="" />
+      </field>
+      <field name="RX_ENBL" from="1" to="1" access="RW" resetVal="" desc="Enables Rx direction. Applicable only if Rx direction presents for the component.">
+        <value name="ENABLED" value="1" desc="" />
+        <value name="DISABLED" value="0" desc="" />
+      </field>
+      <field name="TX_ENBL" from="0" to="0" access="RW" resetVal="" desc="Enables Tx direction. Applicable only if Tx direction presents for the component.">
+        <value name="ENABLED" value="1" desc="" />
+        <value name="DISABLED" value="0" desc="" />
+      </field>
+    </register>
+    <register name="RX_STATUS_0_REG" address="0x40006566" bitWidth="8" desc="" hidden="false">
       <field name="INT" from="7" to="7" access="R" resetVal="" desc="Interrupt bit" />
       <field name="CH1 F1" from="5" to="5" access="R" resetVal="" desc="Stereo channel 1 FIFO 1 state">
         <value name="EMPTY" value="0" desc="" />
@@ -83,26 +103,6 @@
       <field name="CH0 OVRFL" from="0" to="0" access="R" resetVal="" desc="Stereo channel 0 FIFO overflow">
         <value name="NO_OVERFLOW" value="0" desc="" />
         <value name="OVERFLOW" value="1" desc="" />
-      </field>
-    </register>
-    <register name="CONTROL_REG" address="0x40006471" bitWidth="8" desc="" hidden="false">
-      <field name="RESOLUTION" from="4" to="3" access="RW" resetVal="" desc="Specifies data bits value. Applicable only if dynamic bit resolution is selected.">
-        <value name="8-BIT" value="00" desc="" />
-        <value name="16-BIT" value="01" desc="" />
-        <value name="24-BIT" value="10" desc="" />
-        <value name="32-BIT" value="11" desc="" />
-      </field>
-      <field name="ENBL" from="2" to="2" access="RW" resetVal="" desc="Starts the generation of the WS and SCK outputs.">
-        <value name="ENABLED" value="1" desc="" />
-        <value name="DISABLED" value="0" desc="" />
-      </field>
-      <field name="RX_ENBL" from="1" to="1" access="RW" resetVal="" desc="Enables Rx direction. Applicable only if Rx direction presents for the component.">
-        <value name="ENABLED" value="1" desc="" />
-        <value name="DISABLED" value="0" desc="" />
-      </field>
-      <field name="TX_ENBL" from="0" to="0" access="RW" resetVal="" desc="Enables Tx direction. Applicable only if Tx direction presents for the component.">
-        <value name="ENABLED" value="1" desc="" />
-        <value name="DISABLED" value="0" desc="" />
       </field>
     </register>
   </block>

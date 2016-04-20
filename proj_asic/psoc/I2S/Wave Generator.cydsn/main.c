@@ -64,7 +64,7 @@ int main()
 	
 	/* Initialize received data array */
 	for (i = 0; i < BUFFER_SIZE; i++)
-		ReceivedData[i] = 0;
+		ReceivedData[i] = i;
 
     /* Configure DMAs for each direction */ 
     DmaRxConfiguration();
@@ -72,8 +72,8 @@ int main()
 	
 	/* Enable I2S component */
     I2S_Start();
-	I2S_EnableRx();		/* Enable Rx direction */
     I2S_EnableTx();     /* Enable Tx direction */
+	I2S_EnableRx();		/* Enable Rx direction */
     	
 	CyDelay(3000);		/* Wait for data transmissions to complete */
 	/* There's probably a better way to do that than simply waiting... */

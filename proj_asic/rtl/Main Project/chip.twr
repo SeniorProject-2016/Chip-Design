@@ -3,9 +3,9 @@ Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -filter
-C:/Users/Zachary/Desktop/Main Project/iseconfig/filter.filter -intstyle ise -v
-3 -s 1 -n 3 -fastpaths -xml chip.twx chip.ncd -o chip.twr chip.pcf -ucf
-chip.ucf
+C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/iseconfig/filter.filter
+-intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml chip.twx chip.ncd -o chip.twr
+chip.pcf -ucf chip.ucf
 
 Design file:              chip.ncd
 Physical constraint file: chip.pcf
@@ -30,19 +30,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 422872 paths analyzed, 85756 endpoints analyzed, 0 failing endpoints
+ 419901 paths analyzed, 86078 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  18.243ns.
+ Minimum period is  17.686ns.
 --------------------------------------------------------------------------------
 
-Paths for end point Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16106 (SLICE_X79Y14.A1), 1 path
+Paths for end point Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13557 (SLICE_X73Y6.B1), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     1.757ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               I2S_Input/i2si_Fifo/fifo_out_data_10 (FF)
-  Destination:          Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16106 (FF)
+Slack (setup path):     2.314ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2S_Input/i2si_Fifo/fifo_out_data_21 (FF)
+  Destination:          Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13557 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.121ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.087ns (1.721 - 1.808)
+  Data Path Delay:      17.569ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.082ns (1.726 - 1.808)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -53,30 +53,30 @@ Slack (setup path):     1.757ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: I2S_Input/i2si_Fifo/fifo_out_data_10 to Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16106
+  Maximum Data Path at Slow Process Corner: I2S_Input/i2si_Fifo/fifo_out_data_21 to Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13557
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X30Y156.BMUX   Tshcko                0.655   I2S_Input/i2si_Fifo/fifo_out_data<0>
-                                                       I2S_Input/i2si_Fifo/fifo_out_data_10
-    SLICE_X79Y14.A1      net (fanout=512)     17.371   I2S_Input/i2si_Fifo/fifo_out_data<10>
-    SLICE_X79Y14.CLK     Tas                   0.095   Filter/TOP_FILTER_STM/filter_storage_x/ram_0<16112>
-                                                       Filter/TOP_FILTER_STM/filter_storage_x/mux257111
-                                                       Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16106
+    SLICE_X30Y156.BMUX   Tshcko                0.655   I2S_Input/i2si_Fifo/fifo_out_data<19>
+                                                       I2S_Input/i2si_Fifo/fifo_out_data_21
+    SLICE_X73Y6.B1       net (fanout=511)     16.821   I2S_Input/i2si_Fifo/fifo_out_data<21>
+    SLICE_X73Y6.CLK      Tas                   0.093   Filter/TOP_FILTER_STM/filter_storage_x/ram_0<13561>
+                                                       Filter/TOP_FILTER_STM/filter_storage_x/mux282911
+                                                       Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13557
     -------------------------------------------------  ---------------------------
-    Total                                     18.121ns (0.750ns logic, 17.371ns route)
-                                                       (4.1% logic, 95.9% route)
+    Total                                     17.569ns (0.748ns logic, 16.821ns route)
+                                                       (4.3% logic, 95.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16022 (SLICE_X78Y11.CE), 1 path
+Paths for end point Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13685 (SLICE_X72Y7.D2), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     1.912ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               Filter/TOP_FILTER_STM/arr_we_x (FF)
-  Destination:          Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16022 (FF)
+Slack (setup path):     2.361ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2S_Input/i2si_Fifo/fifo_out_data_21 (FF)
+  Destination:          Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13685 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.165ns (Levels of Logic = 0)
-  Clock Path Skew:      0.112ns (1.723 - 1.611)
+  Data Path Delay:      17.521ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.083ns (1.725 - 1.808)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -87,29 +87,30 @@ Slack (setup path):     1.912ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: Filter/TOP_FILTER_STM/arr_we_x to Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16022
+  Maximum Data Path at Slow Process Corner: I2S_Input/i2si_Fifo/fifo_out_data_21 to Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13685
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X36Y119.CQ     Tcko                  0.456   Filter/TOP_FILTER_STM/arr_we_x
-                                                       Filter/TOP_FILTER_STM/arr_we_x
-    SLICE_X78Y11.CE      net (fanout=2219)    17.540   Filter/TOP_FILTER_STM/arr_we_x
-    SLICE_X78Y11.CLK     Tceck                 0.169   Filter/TOP_FILTER_STM/filter_storage_x/ram_0<16029>
-                                                       Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16022
+    SLICE_X30Y156.BMUX   Tshcko                0.655   I2S_Input/i2si_Fifo/fifo_out_data<19>
+                                                       I2S_Input/i2si_Fifo/fifo_out_data_21
+    SLICE_X72Y7.D2       net (fanout=511)     16.774   I2S_Input/i2si_Fifo/fifo_out_data<21>
+    SLICE_X72Y7.CLK      Tas                   0.092   Filter/TOP_FILTER_STM/filter_storage_x/ram_0<13685>
+                                                       Filter/TOP_FILTER_STM/filter_storage_x/mux2701111
+                                                       Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13685
     -------------------------------------------------  ---------------------------
-    Total                                     18.165ns (0.625ns logic, 17.540ns route)
-                                                       (3.4% logic, 96.6% route)
+    Total                                     17.521ns (0.747ns logic, 16.774ns route)
+                                                       (4.3% logic, 95.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16023 (SLICE_X78Y11.CE), 1 path
+Paths for end point Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13461 (SLICE_X71Y4.B4), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     1.912ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               Filter/TOP_FILTER_STM/arr_we_x (FF)
-  Destination:          Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16023 (FF)
+Slack (setup path):     2.454ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2S_Input/i2si_Fifo/fifo_out_data_21 (FF)
+  Destination:          Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13461 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.165ns (Levels of Logic = 0)
-  Clock Path Skew:      0.112ns (1.723 - 1.611)
+  Data Path Delay:      17.379ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.132ns (1.676 - 1.808)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -120,102 +121,105 @@ Slack (setup path):     1.912ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: Filter/TOP_FILTER_STM/arr_we_x to Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16023
+  Maximum Data Path at Slow Process Corner: I2S_Input/i2si_Fifo/fifo_out_data_21 to Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13461
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X36Y119.CQ     Tcko                  0.456   Filter/TOP_FILTER_STM/arr_we_x
-                                                       Filter/TOP_FILTER_STM/arr_we_x
-    SLICE_X78Y11.CE      net (fanout=2219)    17.540   Filter/TOP_FILTER_STM/arr_we_x
-    SLICE_X78Y11.CLK     Tceck                 0.169   Filter/TOP_FILTER_STM/filter_storage_x/ram_0<16029>
-                                                       Filter/TOP_FILTER_STM/filter_storage_x/ram_0_16023
+    SLICE_X30Y156.BMUX   Tshcko                0.655   I2S_Input/i2si_Fifo/fifo_out_data<19>
+                                                       I2S_Input/i2si_Fifo/fifo_out_data_21
+    SLICE_X71Y4.B4       net (fanout=511)     16.631   I2S_Input/i2si_Fifo/fifo_out_data<21>
+    SLICE_X71Y4.CLK      Tas                   0.093   Filter/TOP_FILTER_STM/filter_storage_x/ram_0<13465>
+                                                       Filter/TOP_FILTER_STM/filter_storage_x/mux292511
+                                                       Filter/TOP_FILTER_STM/filter_storage_x/ram_0_13461
     -------------------------------------------------  ---------------------------
-    Total                                     18.165ns (0.625ns logic, 17.540ns route)
-                                                       (3.4% logic, 96.6% route)
+    Total                                     17.379ns (0.748ns logic, 16.631ns route)
+                                                       (4.3% logic, 95.7% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point I2S_Output/i2so_Fifo/Mram_buf_mem30/DP (SLICE_X54Y102.D1), 1 path
+Paths for end point I2C/i2c_top_deserializer/Q_sda (SLICE_X7Y153.A5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.011ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               I2S_Output/i2so_Fifo/wr_ptr_0 (FF)
-  Destination:          I2S_Output/i2so_Fifo/Mram_buf_mem30/DP (RAM)
+Slack (hold path):      0.002ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               I2C/i2c_top_deserializer/i2c_sda (FF)
+  Destination:          I2C/i2c_top_deserializer/Q_sda (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.275ns (Levels of Logic = 0)
-  Clock Path Skew:      0.264ns (0.828 - 0.564)
+  Data Path Delay:      0.354ns (Levels of Logic = 1)
+  Clock Path Skew:      0.352ns (0.901 - 0.549)
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: I2S_Output/i2so_Fifo/wr_ptr_0 to I2S_Output/i2so_Fifo/Mram_buf_mem30/DP
+  Minimum Data Path at Fast Process Corner: I2C/i2c_top_deserializer/i2c_sda to I2C/i2c_top_deserializer/Q_sda
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y98.AQ      Tcko                  0.141   I2S_Output/i2so_Fifo/wr_ptr<2>
-                                                       I2S_Output/i2so_Fifo/wr_ptr_0
-    SLICE_X54Y102.D1     net (fanout=18)       0.444   I2S_Output/i2so_Fifo/wr_ptr<0>
-    SLICE_X54Y102.CLK    Tah         (-Th)     0.310   I2S_Output/i2so_Fifo/fifo_out_data<27>
-                                                       I2S_Output/i2so_Fifo/Mram_buf_mem30/DP
+    SLICE_X2Y148.AQ      Tcko                  0.164   I2C/i2c_top_deserializer/i2c_sda
+                                                       I2C/i2c_top_deserializer/i2c_sda
+    SLICE_X7Y153.A5      net (fanout=4)        0.236   I2C/i2c_top_deserializer/i2c_sda
+    SLICE_X7Y153.CLK     Tah         (-Th)     0.046   I2C/i2c_top_deserializer/sda_state
+                                                       I2C/i2c_top_deserializer/Q_sda_rstpot1_INV_0
+                                                       I2C/i2c_top_deserializer/Q_sda
     -------------------------------------------------  ---------------------------
-    Total                                      0.275ns (-0.169ns logic, 0.444ns route)
-                                                       (-61.5% logic, 161.5% route)
+    Total                                      0.354ns (0.118ns logic, 0.236ns route)
+                                                       (33.3% logic, 66.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point I2S_Output/i2so_Fifo/Mram_buf_mem29/DP (SLICE_X54Y102.D1), 1 path
+Paths for end point I2C/i2c_top_deserializer/stop (SLICE_X6Y154.A5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.011ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               I2S_Output/i2so_Fifo/wr_ptr_0 (FF)
-  Destination:          I2S_Output/i2so_Fifo/Mram_buf_mem29/DP (RAM)
+Slack (hold path):      0.042ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               I2C/i2c_top_deserializer/i2c_sda (FF)
+  Destination:          I2C/i2c_top_deserializer/stop (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.275ns (Levels of Logic = 0)
-  Clock Path Skew:      0.264ns (0.828 - 0.564)
+  Data Path Delay:      0.394ns (Levels of Logic = 1)
+  Clock Path Skew:      0.352ns (0.901 - 0.549)
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: I2S_Output/i2so_Fifo/wr_ptr_0 to I2S_Output/i2so_Fifo/Mram_buf_mem29/DP
+  Minimum Data Path at Fast Process Corner: I2C/i2c_top_deserializer/i2c_sda to I2C/i2c_top_deserializer/stop
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y98.AQ      Tcko                  0.141   I2S_Output/i2so_Fifo/wr_ptr<2>
-                                                       I2S_Output/i2so_Fifo/wr_ptr_0
-    SLICE_X54Y102.D1     net (fanout=18)       0.444   I2S_Output/i2so_Fifo/wr_ptr<0>
-    SLICE_X54Y102.CLK    Tah         (-Th)     0.310   I2S_Output/i2so_Fifo/fifo_out_data<27>
-                                                       I2S_Output/i2so_Fifo/Mram_buf_mem29/DP
+    SLICE_X2Y148.AQ      Tcko                  0.164   I2C/i2c_top_deserializer/i2c_sda
+                                                       I2C/i2c_top_deserializer/i2c_sda
+    SLICE_X6Y154.A5      net (fanout=4)        0.305   I2C/i2c_top_deserializer/i2c_sda
+    SLICE_X6Y154.CLK     Tah         (-Th)     0.075   I2C/i2c_top_deserializer/stop
+                                                       I2C/i2c_top_deserializer/stop_rstpot
+                                                       I2C/i2c_top_deserializer/stop
     -------------------------------------------------  ---------------------------
-    Total                                      0.275ns (-0.169ns logic, 0.444ns route)
-                                                       (-61.5% logic, 161.5% route)
+    Total                                      0.394ns (0.089ns logic, 0.305ns route)
+                                                       (22.6% logic, 77.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point I2S_Output/i2so_Fifo/Mram_buf_mem3/DP (SLICE_X54Y102.D1), 1 path
+Paths for end point I2S_Output/i2so_Fifo/Mram_buf_mem2/DP (SLICE_X34Y100.D3), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.011ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               I2S_Output/i2so_Fifo/wr_ptr_0 (FF)
-  Destination:          I2S_Output/i2so_Fifo/Mram_buf_mem3/DP (RAM)
+Slack (hold path):      0.049ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               I2S_Output/i2so_Fifo/wr_ptr_2 (FF)
+  Destination:          I2S_Output/i2so_Fifo/Mram_buf_mem2/DP (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.275ns (Levels of Logic = 0)
-  Clock Path Skew:      0.264ns (0.828 - 0.564)
+  Data Path Delay:      0.312ns (Levels of Logic = 0)
+  Clock Path Skew:      0.263ns (0.835 - 0.572)
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: I2S_Output/i2so_Fifo/wr_ptr_0 to I2S_Output/i2so_Fifo/Mram_buf_mem3/DP
+  Minimum Data Path at Fast Process Corner: I2S_Output/i2so_Fifo/wr_ptr_2 to I2S_Output/i2so_Fifo/Mram_buf_mem2/DP
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y98.AQ      Tcko                  0.141   I2S_Output/i2so_Fifo/wr_ptr<2>
-                                                       I2S_Output/i2so_Fifo/wr_ptr_0
-    SLICE_X54Y102.D1     net (fanout=18)       0.444   I2S_Output/i2so_Fifo/wr_ptr<0>
-    SLICE_X54Y102.CLK    Tah         (-Th)     0.310   I2S_Output/i2so_Fifo/fifo_out_data<27>
-                                                       I2S_Output/i2so_Fifo/Mram_buf_mem3/DP
+    SLICE_X28Y99.BQ      Tcko                  0.141   I2S_Output/i2so_Fifo/wr_ptr<2>
+                                                       I2S_Output/i2so_Fifo/wr_ptr_2
+    SLICE_X34Y100.D3     net (fanout=17)       0.425   I2S_Output/i2so_Fifo/wr_ptr<2>
+    SLICE_X34Y100.CLK    Tah         (-Th)     0.254   I2S_Output/i2so_Fifo/fifo_out_data<16>
+                                                       I2S_Output/i2so_Fifo/Mram_buf_mem2/DP
     -------------------------------------------------  ---------------------------
-    Total                                      0.275ns (-0.169ns logic, 0.444ns route)
-                                                       (-61.5% logic, 161.5% route)
+    Total                                      0.312ns (-0.113ns logic, 0.425ns route)
+                                                       (-36.2% logic, 136.2% route)
 
 --------------------------------------------------------------------------------
 
@@ -225,27 +229,27 @@ Slack: 17.500ns (period - (min low pulse limit / (low pulse / period)))
   Period: 20.000ns
   Low pulse: 10.000ns
   Low pulse limit: 1.250ns (Tmpw)
-  Physical resource: I2S_Input/i2si_Fifo/fifo_out_data<16>/CLK
-  Logical resource: I2S_Input/i2si_Fifo/Mram_buf_mem2/DP/CLK
-  Location pin: SLICE_X12Y137.CLK
+  Physical resource: I2S_Output/i2so_Fifo/fifo_out_data<12>/CLK
+  Logical resource: I2S_Output/i2so_Fifo/Mram_buf_mem16/DP/CLK
+  Location pin: SLICE_X10Y96.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 17.500ns (period - (min high pulse limit / (high pulse / period)))
   Period: 20.000ns
   High pulse: 10.000ns
   High pulse limit: 1.250ns (Tmpw)
-  Physical resource: I2S_Input/i2si_Fifo/fifo_out_data<16>/CLK
-  Logical resource: I2S_Input/i2si_Fifo/Mram_buf_mem2/DP/CLK
-  Location pin: SLICE_X12Y137.CLK
+  Physical resource: I2S_Output/i2so_Fifo/fifo_out_data<12>/CLK
+  Logical resource: I2S_Output/i2so_Fifo/Mram_buf_mem16/DP/CLK
+  Location pin: SLICE_X10Y96.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 17.500ns (period - (min low pulse limit / (low pulse / period)))
   Period: 20.000ns
   Low pulse: 10.000ns
   Low pulse limit: 1.250ns (Tmpw)
-  Physical resource: I2S_Input/i2si_Fifo/fifo_out_data<16>/CLK
-  Logical resource: I2S_Input/i2si_Fifo/Mram_buf_mem18/DP/CLK
-  Location pin: SLICE_X12Y137.CLK
+  Physical resource: I2S_Output/i2so_Fifo/fifo_out_data<12>/CLK
+  Logical resource: I2S_Output/i2so_Fifo/Mram_buf_mem14/DP/CLK
+  Location pin: SLICE_X10Y96.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -262,7 +266,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   18.243|         |         |         |
+clk            |   17.686|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -271,23 +275,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 422872 paths, 0 nets, and 135614 connections
+Constraints cover 419901 paths, 0 nets, and 135439 connections
 
 Design statistics:
-   Minimum period:  18.243ns{1}   (Maximum frequency:  54.816MHz)
+   Minimum period:  17.686ns{1}   (Maximum frequency:  56.542MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Wed Apr 13 14:49:05 2016 
+Analysis completed Wed Apr 20 12:30:31 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 1196 MB
+Peak Memory Usage: 1193 MB
 
 
 

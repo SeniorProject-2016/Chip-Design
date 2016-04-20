@@ -1,6 +1,6 @@
 -- Project:   Wave Generator
--- Generated: 03/27/2016 13:04:46
--- PSoC Creator  3.3 CP1
+-- Generated: 04/20/2016 13:58:31
+-- PSoC Creator  3.3 SP1
 
 ENTITY \Wave Generator\ IS
     PORT(
@@ -11,8 +11,8 @@ ENTITY \Wave Generator\ IS
         TX(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 5e0;
-    ATTRIBUTE voltage_VDDD OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VUSB OF __DEFAULT__ : ENTITY IS 5e0;
+    ATTRIBUTE voltage_VDDD OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDIO0 OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDIO1 OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDIO2 OF __DEFAULT__ : ENTITY IS 5e0;
@@ -119,7 +119,7 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE lib_model OF SCK(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF SCK(0) : LABEL IS "P4[0]";
     ATTRIBUTE lib_model OF SDI(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF SDI(0) : LABEL IS "P4[7]";
+    ATTRIBUTE Location OF SDI(0) : LABEL IS "P3[0]";
     ATTRIBUTE lib_model OF WS(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF WS(0) : LABEL IS "P4[2]";
     ATTRIBUTE lib_model OF SDO(0) : LABEL IS "iocell4";
