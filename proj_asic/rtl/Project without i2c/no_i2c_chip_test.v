@@ -69,6 +69,8 @@ module no_i2c_chip_test;
     wire                            i2so_sck_transition;
     reg         [31:0]              word;
     integer                         data_out;
+    reg                             output_to_inp_txt = 1;
+    reg                             output_to_out_txt = 1;
     reg                             output_to_txt = 1;
     integer                         data_in;
     integer                         index3;                                                             // counter for outputing to text file of list of inputs
@@ -114,13 +116,13 @@ module no_i2c_chip_test;
             end
         end
         
-        for(index3 = 0; index3 < `N; index3 = index3 + 1)
-        begin
-            $fdisplay (data_in, "%h", {i2s_test_data [index3] [0], i2s_test_data [index3] [1]});
-        end
+        
+//        for(index3 = 0; index3 < `N; index3 = index3 + 1)
+//        begin
+//            $fdisplay (data_in, "%h", {i2s_test_data [index3] [0], i2s_test_data [index3] [1]});
+//        end
 
-		// Wait 100 ns for global reset to finish
-        #1 $fclose(data_in);
+//        #1 $fclose(data_in);
         
 		// Add stimulus here
 
@@ -278,6 +280,23 @@ module no_i2c_chip_test;
                 begin
                     $fdisplay (data_out, "%h", word);
                 end
+            end
+        end
+    end
+    
+    // Print input data to chip_test_i2s_bist_enable_input.txt                                                             
+    always @(posedge clk)                                                                               
+    begin
+        if(output_to_inp_txt)
+        begin
+            if(no_i2c_chip_test.uut.I2S_Input.bist_xfc)                                         
+            begin
+                $fdisplay(data_in, "%h", no_i2c_chip_test.uut.I2S_Input.bist_data); 
+            end
+            else if(no_i2c_chip_test.uut.I2S_Input.bist_data === 32'hxxxxxxxx)
+            begin
+                output_to_inp_txt = 0;
+                #1 $fclose(data_in);
             end
         end
     end
