@@ -5,13 +5,14 @@
  * UNPUBLISHED, LICENSED SOFTWARE.
  *
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * WHICH IS THE PROPERTY OF TCNJ.
  *
  * ========================================
 */
 
 #include <project.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void DmaRxConfiguration(void);
 void DmaTxConfiguration(void);
@@ -44,7 +45,14 @@ uint8_t TxDMA_1_TD[1];
 #define TRANSFER_COUNT 48
 
 /* Copy data that MATLAB produces in "data.txt" file */
-uint16_t signal[TRANSFER_COUNT] = 
+volatile uint16_t signal1[TRANSFER_COUNT] = 
+	{0x0, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 
+	0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 
+	0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0x0, 0x0, 0x0, 0x0, 0x0, 
+	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 
+	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
+
+volatile uint16_t signal2[TRANSFER_COUNT] = 
 	{0x0, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 
 	0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 
 	0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0x0, 0x0, 0x0, 0x0, 0x0, 
@@ -52,12 +60,14 @@ uint16_t signal[TRANSFER_COUNT] =
 	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
 
 #define BUFFER_SIZE 1024				/* number of samples to receive */
-uint16_t ReceivedData[BUFFER_SIZE];    	/* left IN buffer */
-uint16_t dummy[BUFFER_SIZE];			/* right IN buffer, ignored */
+volatile uint16_t * ReceivedData;    	/* left IN buffer */
+volatile uint16_t * dummy;			/* right IN buffer, ignored */
 
 int main()
 {
-	uint32_t i = 0;
+	uint16_t i = 0;
+	ReceivedData = malloc(BUFFER_SIZE*sizeof(uint16_t));
+	dummy = malloc(BUFFER_SIZE*sizeof(uint16_t));
 	
 	/* Enable global interrupts */
 	CyGlobalIntEnable;
@@ -71,9 +81,9 @@ int main()
     DmaTxConfiguration();
 	
 	/* Enable I2S component */
-    I2S_Start();
     I2S_EnableTx();     /* Enable Tx direction */
 	I2S_EnableRx();		/* Enable Rx direction */
+    I2S_Start();
     	
 	CyDelay(3000);		/* Wait for data transmissions to complete */
 	/* There's probably a better way to do that than simply waiting... */
@@ -145,8 +155,8 @@ void DmaTxConfiguration(void)
     CyDmaTdSetConfiguration(TxDMA_1_TD[0], 2*TRANSFER_COUNT, TxDMA_1_TD[0], TD_INC_SRC_ADR);
 	
 	/* From the ADC to the I2S */
-    CyDmaTdSetAddress(TxDMA_0_TD[0], LO16((uint32)signal), LO16((uint32)I2S_TX_CH0_F0_PTR));
-    CyDmaTdSetAddress(TxDMA_1_TD[0], LO16((uint32)signal), LO16((uint32)I2S_TX_CH0_F1_PTR));
+    CyDmaTdSetAddress(TxDMA_0_TD[0], LO16((uint32)signal1), LO16((uint32)I2S_TX_CH0_F0_PTR));
+    CyDmaTdSetAddress(TxDMA_1_TD[0], LO16((uint32)signal2), LO16((uint32)I2S_TX_CH0_F1_PTR));
 
 	/* Associate the TD with the channel */
     CyDmaChSetInitialTd(TxDMA_0_Chan, TxDMA_0_TD[0]);

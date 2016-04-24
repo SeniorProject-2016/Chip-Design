@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
   29:.\Generated_Source\PSoC5/UART.c **** #if (UART_TX_INTERRUPT_ENABLED && UART_TX_ENABLED)
   30:.\Generated_Source\PSoC5/UART.c ****     volatile uint8 UART_txBuffer[UART_TX_BUFFER_SIZE];
   31:.\Generated_Source\PSoC5/UART.c ****     volatile uint8 UART_txBufferRead = 0u;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/UART.c ****     uint8 UART_txBufferWrite = 0u;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
   86:.\Generated_Source\PSoC5/UART.c **** }
   87:.\Generated_Source\PSoC5/UART.c **** 
   88:.\Generated_Source\PSoC5/UART.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 3
 
 
   89:.\Generated_Source\PSoC5/UART.c **** /*******************************************************************************
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  138:.\Generated_Source\PSoC5/UART.c ****             UART_TXBITCLKGEN_CTR_REG = UART_BIT_CENTER;
   32              		.loc 1 138 0
   33 0000 0622     		movs	r2, #6
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 4
 
 
   34 0002 044B     		ldr	r3, .L2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  167:.\Generated_Source\PSoC5/UART.c **** * Summary:
  168:.\Generated_Source\PSoC5/UART.c **** *  Activates the hardware and begins component operation. It is not necessary
  169:.\Generated_Source\PSoC5/UART.c **** *  to call UART_Enable() because the UART_Start() API
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 5
 
 
  170:.\Generated_Source\PSoC5/UART.c **** *  calls this function, which is the preferred method to begin component
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  211:.\Generated_Source\PSoC5/UART.c ****         UART_TXSTATUS_ACTL_REG |= UART_INT_ENABLE;
   73              		.loc 1 211 0
   74 0008 054A     		ldr	r2, .L6
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 6
 
 
   75 000a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  115 0008 FFF7FEFF 		bl	UART_Init
  116              	.LVL5:
   82:.\Generated_Source\PSoC5/UART.c ****     }
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 7
 
 
  117              		.loc 1 82 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  149              		.loc 1 243 0
  150 0002 FFF7FEFF 		bl	CyEnterCriticalSection
  151              	.LVL7:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 8
 
 
  152 0006 0446     		mov	r4, r0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  172              		.cfi_endproc
  173              	.LFE3:
  174              		.size	UART_Stop, .-UART_Stop
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 9
 
 
  175              		.section	.text.UART_ReadControlRegister,"ax",%progbits
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  305:.\Generated_Source\PSoC5/UART.c **** /*******************************************************************************
  306:.\Generated_Source\PSoC5/UART.c **** * Function Name: UART_WriteControlRegister
  307:.\Generated_Source\PSoC5/UART.c **** ********************************************************************************
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 10
 
 
  308:.\Generated_Source\PSoC5/UART.c **** *
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  344:.\Generated_Source\PSoC5/UART.c ****     *      UART_RX_STS_FIFO_NOTEMPTY    Interrupt on byte received.
  345:.\Generated_Source\PSoC5/UART.c ****     *      UART_RX_STS_PAR_ERROR        Interrupt on parity error.
  346:.\Generated_Source\PSoC5/UART.c ****     *      UART_RX_STS_STOP_ERROR       Interrupt on stop error.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 11
 
 
  347:.\Generated_Source\PSoC5/UART.c ****     *      UART_RX_STS_BREAK            Interrupt on break.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  401:.\Generated_Source\PSoC5/UART.c ****         /* Protect variables that could change on interrupt */
  402:.\Generated_Source\PSoC5/UART.c ****         UART_DisableRxInt();
  403:.\Generated_Source\PSoC5/UART.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 12
 
 
  404:.\Generated_Source\PSoC5/UART.c ****         locRxBufferRead  = UART_rxBufferRead;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  458:.\Generated_Source\PSoC5/UART.c ****     ********************************************************************************
  459:.\Generated_Source\PSoC5/UART.c ****     *
  460:.\Generated_Source\PSoC5/UART.c ****     * Summary:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 13
 
 
  461:.\Generated_Source\PSoC5/UART.c ****     *  Returns the current state of the receiver status register and the software
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  515:.\Generated_Source\PSoC5/UART.c ****     * Return:
  516:.\Generated_Source\PSoC5/UART.c ****     *  Character read from UART RX buffer. ASCII characters from 1 to 255 are valid.
  517:.\Generated_Source\PSoC5/UART.c ****     *  A returned zero signifies an error condition or no data available.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 14
 
 
  518:.\Generated_Source\PSoC5/UART.c ****     *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  572:.\Generated_Source\PSoC5/UART.c ****                         UART_RXSTATUS_MASK_REG |= UART_RX_STS_FIFO_NOTEMPTY;
  573:.\Generated_Source\PSoC5/UART.c ****                     #endif /* end UART_HD_ENABLED */
  574:.\Generated_Source\PSoC5/UART.c ****                 #endif /* UART_RX_INTERRUPT_ENABLED and Hardware flow control*/
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 15
 
 
  575:.\Generated_Source\PSoC5/UART.c ****             }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  629:.\Generated_Source\PSoC5/UART.c ****     *
  630:.\Generated_Source\PSoC5/UART.c ****     * Reentrant:
  631:.\Generated_Source\PSoC5/UART.c ****     *  No.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 16
 
 
  632:.\Generated_Source\PSoC5/UART.c ****     *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  686:.\Generated_Source\PSoC5/UART.c ****         uint8 size;
  687:.\Generated_Source\PSoC5/UART.c **** 
  688:.\Generated_Source\PSoC5/UART.c ****     #if (UART_RX_INTERRUPT_ENABLED)
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 17
 
 
  689:.\Generated_Source\PSoC5/UART.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  743:.\Generated_Source\PSoC5/UART.c ****     *  UART_rxBufferOverflow - cleared to zero.
  744:.\Generated_Source\PSoC5/UART.c ****     *
  745:.\Generated_Source\PSoC5/UART.c ****     * Reentrant:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 18
 
 
  746:.\Generated_Source\PSoC5/UART.c ****     *  No.
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  800:.\Generated_Source\PSoC5/UART.c ****     *  UART__B_UART__AM_HW_DETECT_TO_BUFFER - Hardware Detect to Buffer
  801:.\Generated_Source\PSoC5/UART.c ****     *                                               address detection
  802:.\Generated_Source\PSoC5/UART.c ****     *  UART__B_UART__AM_NONE - No address detection
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 19
 
 
  803:.\Generated_Source\PSoC5/UART.c ****     *
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  857:.\Generated_Source\PSoC5/UART.c ****     void UART_SetRxAddress1(uint8 address) 
  858:.\Generated_Source\PSoC5/UART.c ****     {
  859:.\Generated_Source\PSoC5/UART.c ****         UART_RXADDRESS1_REG = address;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 20
 
 
  860:.\Generated_Source\PSoC5/UART.c ****     }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  224              		@ link register save eliminated.
  225              	.LVL13:
  910:.\Generated_Source\PSoC5/UART.c ****         UART_TXSTATUS_MASK_REG = intSrc;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 21
 
 
  226              		.loc 1 910 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  247              		@ args = 0, pretend = 0, frame = 0
  248              		@ frame_needed = 0, uses_anonymous_args = 0
  249              		@ link register save eliminated.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 22
 
 
  250              	.LVL14:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  271              		.thumb
  272              		.thumb_func
  273              		.type	UART_ReadTxStatus, %function
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 23
 
 
  274              	UART_ReadTxStatus:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  298              		.type	UART_PutChar, %function
  299              	UART_PutChar:
  300              	.LFB9:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 24
 
 
 1007:.\Generated_Source\PSoC5/UART.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1054:.\Generated_Source\PSoC5/UART.c ****         #if ((UART_TX_BUFFER_SIZE > UART_MAX_BYTE_VALUE) && (CY_PSOC3))
 1055:.\Generated_Source\PSoC5/UART.c ****             /* Disable TX interrupt to protect variables from modification */
 1056:.\Generated_Source\PSoC5/UART.c ****             UART_DisableTxInt();
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 25
 
 
 1057:.\Generated_Source\PSoC5/UART.c ****         #endif /* (UART_TX_BUFFER_SIZE > UART_MAX_BYTE_VALUE) && (CY_PSOC3) */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  311 0004 13F0040F 		tst	r3, #4
  312 0008 FAD1     		bne	.L30
 1108:.\Generated_Source\PSoC5/UART.c ****         {
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 26
 
 
 1109:.\Generated_Source\PSoC5/UART.c ****             /* Wait for room in the FIFO */
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1143:.\Generated_Source\PSoC5/UART.c ****     *
 1144:.\Generated_Source\PSoC5/UART.c ****     *******************************************************************************/
 1145:.\Generated_Source\PSoC5/UART.c ****     void UART_PutString(const char8 string[]) 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 27
 
 
 1146:.\Generated_Source\PSoC5/UART.c ****     {
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  375              	.L39:
  376 0020 00000000 		.word	.LANCHOR0
  377              		.cfi_endproc
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 28
 
 
  378              	.LFE10:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1196:.\Generated_Source\PSoC5/UART.c ****         /* If not Initialized then skip this function */
 1197:.\Generated_Source\PSoC5/UART.c ****         if(UART_initVar != 0u)
  393              		.loc 1 1197 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 29
 
 
  394 0000 084B     		ldr	r3, .L47
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  441              	.L47:
  442 0024 00000000 		.word	.LANCHOR0
  443              		.cfi_endproc
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 30
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 30
 
 
  444              	.LFE11:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1234:.\Generated_Source\PSoC5/UART.c ****         {
 1235:.\Generated_Source\PSoC5/UART.c ****             UART_PutChar(txDataByte);
  467              		.loc 1 1235 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 31
 
 
  468 0008 FFF7FEFF 		bl	UART_PutChar
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1263:.\Generated_Source\PSoC5/UART.c ****     *  UART_txBufferWrite - used to calculate left space.
 1264:.\Generated_Source\PSoC5/UART.c ****     *  UART_txBufferRead - used to calculate left space.
 1265:.\Generated_Source\PSoC5/UART.c ****     *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 32
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 32
 
 
 1266:.\Generated_Source\PSoC5/UART.c ****     * Reentrant:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1307:.\Generated_Source\PSoC5/UART.c ****         }
 1308:.\Generated_Source\PSoC5/UART.c ****         else if((size & UART_TX_STS_FIFO_EMPTY) != 0u)
  508              		.loc 1 1308 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 33
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 33
 
 
  509 000c 13F0020F 		tst	r3, #2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1332:.\Generated_Source\PSoC5/UART.c ****     *  None.
 1333:.\Generated_Source\PSoC5/UART.c ****     *
 1334:.\Generated_Source\PSoC5/UART.c ****     * Return:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 34
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 34
 
 
 1335:.\Generated_Source\PSoC5/UART.c ****     *  None.
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  565              	.L62:
  566 0020 94650040 		.word	1073767828
  567              		.cfi_endproc
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 35
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 35
 
 
  568              	.LFE14:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1407:.\Generated_Source\PSoC5/UART.c ****     *  No.
 1408:.\Generated_Source\PSoC5/UART.c ****     *
 1409:.\Generated_Source\PSoC5/UART.c ****     * Theory:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 36
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 36
 
 
 1410:.\Generated_Source\PSoC5/UART.c ****     *  SendBreak function initializes registers to send 13-bit break signal. It is
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1453:.\Generated_Source\PSoC5/UART.c ****                 (retMode == UART_SEND_WAIT_REINIT ) )
 1454:.\Generated_Source\PSoC5/UART.c ****             {
 1455:.\Generated_Source\PSoC5/UART.c ****                 /* CTRL_HD_SEND_BREAK - sends break bits in HD mode */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 37
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 37
 
 
 1456:.\Generated_Source\PSoC5/UART.c ****                 UART_WriteControlRegister(UART_ReadControlRegister() |
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  597 000e 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
  598 0010 0E4A     		ldr	r2, .L71
  599 0012 5170     		strb	r1, [r2, #1]
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 38
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 38
 
 
 1502:.\Generated_Source\PSoC5/UART.c ****                     UART_TXBITCLKTX_COMPLETE_REG = UART_TXBITCTR_BREAKBITS;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  630 0038 FAD0     		beq	.L69
  631              	.LVL45:
  632              	.L70:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 39
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 39
 
 
 1526:.\Generated_Source\PSoC5/UART.c ****             }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
 1547:.\Generated_Source\PSoC5/UART.c ****     }
 1548:.\Generated_Source\PSoC5/UART.c **** 
 1549:.\Generated_Source\PSoC5/UART.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 40
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 40
 
 
 1550:.\Generated_Source\PSoC5/UART.c ****     /*******************************************************************************
@@ -2398,40 +2398,40 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  695 0006 00000000 		.4byte	.Ldebug_abbrev0
  696 000a 04       		.byte	0x4
  697 000b 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 41
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 41
 
 
- 698 000c BB010000 		.4byte	.LASF46
+ 698 000c A2010000 		.4byte	.LASF46
  699 0010 01       		.byte	0x1
- 700 0011 35010000 		.4byte	.LASF47
- 701 0015 7A000000 		.4byte	.LASF48
+ 700 0011 1C010000 		.4byte	.LASF47
+ 701 0015 1D000000 		.4byte	.LASF48
  702 0019 00000000 		.4byte	.Ldebug_ranges0+0
  703 001d 00000000 		.4byte	0
  704 0021 00000000 		.4byte	.Ldebug_line0
  705 0025 02       		.uleb128 0x2
  706 0026 01       		.byte	0x1
  707 0027 06       		.byte	0x6
- 708 0028 88030000 		.4byte	.LASF0
+ 708 0028 84030000 		.4byte	.LASF0
  709 002c 02       		.uleb128 0x2
  710 002d 01       		.byte	0x1
  711 002e 08       		.byte	0x8
- 712 002f 89010000 		.4byte	.LASF1
+ 712 002f 70010000 		.4byte	.LASF1
  713 0033 02       		.uleb128 0x2
  714 0034 02       		.byte	0x2
  715 0035 05       		.byte	0x5
- 716 0036 48030000 		.4byte	.LASF2
+ 716 0036 2F030000 		.4byte	.LASF2
  717 003a 02       		.uleb128 0x2
  718 003b 02       		.byte	0x2
  719 003c 07       		.byte	0x7
- 720 003d 50000000 		.4byte	.LASF3
+ 720 003d 8D000000 		.4byte	.LASF3
  721 0041 02       		.uleb128 0x2
  722 0042 04       		.byte	0x4
  723 0043 05       		.byte	0x5
- 724 0044 73030000 		.4byte	.LASF4
+ 724 0044 6F030000 		.4byte	.LASF4
  725 0048 02       		.uleb128 0x2
  726 0049 04       		.byte	0x4
  727 004a 07       		.byte	0x7
- 728 004b 23010000 		.4byte	.LASF5
+ 728 004b 0A010000 		.4byte	.LASF5
  729 004f 02       		.uleb128 0x2
  730 0050 08       		.byte	0x8
  731 0051 05       		.byte	0x5
@@ -2439,7 +2439,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  733 0056 02       		.uleb128 0x2
  734 0057 08       		.byte	0x8
  735 0058 07       		.byte	0x7
- 736 0059 F1000000 		.4byte	.LASF7
+ 736 0059 D8000000 		.4byte	.LASF7
  737 005d 03       		.uleb128 0x3
  738 005e 04       		.byte	0x4
  739 005f 05       		.byte	0x5
@@ -2447,28 +2447,28 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  741 0064 02       		.uleb128 0x2
  742 0065 04       		.byte	0x4
  743 0066 07       		.byte	0x7
- 744 0067 60020000 		.4byte	.LASF8
+ 744 0067 47020000 		.4byte	.LASF8
  745 006b 04       		.uleb128 0x4
- 746 006c 65030000 		.4byte	.LASF9
+ 746 006c 4C030000 		.4byte	.LASF9
  747 0070 02       		.byte	0x2
  748 0071 5B       		.byte	0x5b
  749 0072 2C000000 		.4byte	0x2c
  750 0076 04       		.uleb128 0x4
- 751 0077 A5010000 		.4byte	.LASF10
+ 751 0077 8C010000 		.4byte	.LASF10
  752 007b 02       		.byte	0x2
  753 007c 5C       		.byte	0x5c
  754 007d 3A000000 		.4byte	0x3a
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 42
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 42
 
 
  755 0081 02       		.uleb128 0x2
  756 0082 04       		.byte	0x4
  757 0083 04       		.byte	0x4
- 758 0084 EB000000 		.4byte	.LASF11
+ 758 0084 D2000000 		.4byte	.LASF11
  759 0088 02       		.uleb128 0x2
  760 0089 08       		.byte	0x8
  761 008a 04       		.byte	0x4
- 762 008b 97010000 		.4byte	.LASF12
+ 762 008b 7E010000 		.4byte	.LASF12
  763 008f 04       		.uleb128 0x4
  764 0090 17000000 		.4byte	.LASF13
  765 0094 02       		.byte	0x2
@@ -2477,9 +2477,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  768 009a 02       		.uleb128 0x2
  769 009b 01       		.byte	0x1
  770 009c 08       		.byte	0x8
- 771 009d 2A030000 		.4byte	.LASF14
+ 771 009d 11030000 		.4byte	.LASF14
  772 00a1 04       		.uleb128 0x4
- 773 00a2 1E010000 		.4byte	.LASF15
+ 773 00a2 05010000 		.4byte	.LASF15
  774 00a6 02       		.byte	0x2
  775 00a7 F0       		.byte	0xf0
  776 00a8 AC000000 		.4byte	0xac
@@ -2488,9 +2488,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  779 00b1 02       		.uleb128 0x2
  780 00b2 04       		.byte	0x4
  781 00b3 07       		.byte	0x7
- 782 00b4 16030000 		.4byte	.LASF16
+ 782 00b4 FD020000 		.4byte	.LASF16
  783 00b8 06       		.uleb128 0x6
- 784 00b9 14010000 		.4byte	.LASF49
+ 784 00b9 FB000000 		.4byte	.LASF49
  785 00bd 01       		.byte	0x1
  786 00be 6A       		.byte	0x6a
  787 00bf 00000000 		.4byte	.LFB1
@@ -2498,7 +2498,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  789 00c7 01       		.uleb128 0x1
  790 00c8 9C       		.byte	0x9c
  791 00c9 07       		.uleb128 0x7
- 792 00ca 7C030000 		.4byte	.LASF17
+ 792 00ca 78030000 		.4byte	.LASF17
  793 00ce 01       		.byte	0x1
  794 00cf B7       		.byte	0xb7
  795 00d0 00000000 		.4byte	.LFB2
@@ -2507,7 +2507,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  798 00d9 9C       		.byte	0x9c
  799 00da 10010000 		.4byte	0x110
  800 00de 08       		.uleb128 0x8
- 801 00df 78010000 		.4byte	.LASF20
+ 801 00df 5F010000 		.4byte	.LASF20
  802 00e3 01       		.byte	0x1
  803 00e4 B9       		.byte	0xb9
  804 00e5 6B000000 		.4byte	0x6b
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  809 00f6 09       		.uleb128 0x9
  810 00f7 16000000 		.4byte	.LVL2
  811 00fb 2F040000 		.4byte	0x42f
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 43
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 43
 
 
  812 00ff 0A       		.uleb128 0xa
@@ -2533,7 +2533,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  821 010e 00       		.byte	0
  822 010f 00       		.byte	0
  823 0110 07       		.uleb128 0x7
- 824 0111 55010000 		.4byte	.LASF18
+ 824 0111 3C010000 		.4byte	.LASF18
  825 0115 01       		.byte	0x1
  826 0116 4C       		.byte	0x4c
  827 0117 00000000 		.4byte	.LFB0
@@ -2549,7 +2549,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  837 0133 C9000000 		.4byte	0xc9
  838 0137 00       		.byte	0
  839 0138 07       		.uleb128 0x7
- 840 0139 63000000 		.4byte	.LASF19
+ 840 0139 A0000000 		.4byte	.LASF19
  841 013d 01       		.byte	0x1
  842 013e F0       		.byte	0xf0
  843 013f 00000000 		.4byte	.LFB3
@@ -2558,7 +2558,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  846 0148 9C       		.byte	0x9c
  847 0149 7F010000 		.4byte	0x17f
  848 014d 08       		.uleb128 0x8
- 849 014e 78010000 		.4byte	.LASF20
+ 849 014e 5F010000 		.4byte	.LASF20
  850 0152 01       		.byte	0x1
  851 0153 F2       		.byte	0xf2
  852 0154 6B000000 		.4byte	0x6b
@@ -2578,13 +2578,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  866 017a 02       		.uleb128 0x2
  867 017b 74       		.byte	0x74
  868 017c 00       		.sleb128 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 44
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 44
 
 
  869 017d 00       		.byte	0
  870 017e 00       		.byte	0
  871 017f 0C       		.uleb128 0xc
- 872 0180 AF020000 		.4byte	.LASF27
+ 872 0180 96020000 		.4byte	.LASF27
  873 0184 01       		.byte	0x1
  874 0185 2701     		.2byte	0x127
  875 0187 6B000000 		.4byte	0x6b
@@ -2593,7 +2593,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  878 0193 01       		.uleb128 0x1
  879 0194 9C       		.byte	0x9c
  880 0195 0D       		.uleb128 0xd
- 881 0196 6D020000 		.4byte	.LASF21
+ 881 0196 54020000 		.4byte	.LASF21
  882 019a 01       		.byte	0x1
  883 019b 3F01     		.2byte	0x13f
  884 019d 00000000 		.4byte	.LFB5
@@ -2602,7 +2602,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  887 01a6 9C       		.byte	0x9c
  888 01a7 BA010000 		.4byte	0x1ba
  889 01ab 0E       		.uleb128 0xe
- 890 01ac 6B030000 		.4byte	.LASF23
+ 890 01ac 67030000 		.4byte	.LASF23
  891 01b0 01       		.byte	0x1
  892 01b1 3F01     		.2byte	0x13f
  893 01b3 6B000000 		.4byte	0x6b
@@ -2610,7 +2610,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  895 01b8 50       		.byte	0x50
  896 01b9 00       		.byte	0
  897 01ba 0D       		.uleb128 0xd
- 898 01bb DE020000 		.4byte	.LASF22
+ 898 01bb C5020000 		.4byte	.LASF22
  899 01bf 01       		.byte	0x1
  900 01c0 8C03     		.2byte	0x38c
  901 01c2 00000000 		.4byte	.LFB6
@@ -2619,7 +2619,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  904 01cb 9C       		.byte	0x9c
  905 01cc DF010000 		.4byte	0x1df
  906 01d0 0E       		.uleb128 0xe
- 907 01d1 9E010000 		.4byte	.LASF24
+ 907 01d1 85010000 		.4byte	.LASF24
  908 01d5 01       		.byte	0x1
  909 01d6 8C03     		.2byte	0x38c
  910 01d8 6B000000 		.4byte	0x6b
@@ -2627,7 +2627,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  912 01dd 50       		.byte	0x50
  913 01de 00       		.byte	0
  914 01df 0D       		.uleb128 0xd
- 915 01e0 2F030000 		.4byte	.LASF25
+ 915 01e0 16030000 		.4byte	.LASF25
  916 01e4 01       		.byte	0x1
  917 01e5 AE03     		.2byte	0x3ae
  918 01e7 00000000 		.4byte	.LFB7
@@ -2636,9 +2636,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  921 01f0 9C       		.byte	0x9c
  922 01f1 04020000 		.4byte	0x204
  923 01f5 0E       		.uleb128 0xe
- 924 01f6 1F030000 		.4byte	.LASF26
+ 924 01f6 06030000 		.4byte	.LASF26
  925 01fa 01       		.byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 45
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 45
 
 
  926 01fb AE03     		.2byte	0x3ae
@@ -2647,7 +2647,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  929 0202 50       		.byte	0x50
  930 0203 00       		.byte	0
  931 0204 0C       		.uleb128 0xc
- 932 0205 87020000 		.4byte	.LASF28
+ 932 0205 6E020000 		.4byte	.LASF28
  933 0209 01       		.byte	0x1
  934 020a EB03     		.2byte	0x3eb
  935 020c 6B000000 		.4byte	0x6b
@@ -2656,7 +2656,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  938 0218 01       		.uleb128 0x1
  939 0219 9C       		.byte	0x9c
  940 021a 0D       		.uleb128 0xd
- 941 021b F6020000 		.4byte	.LASF29
+ 941 021b DD020000 		.4byte	.LASF29
  942 021f 01       		.byte	0x1
  943 0220 1104     		.2byte	0x411
  944 0222 00000000 		.4byte	.LFB9
@@ -2665,7 +2665,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  947 022b 9C       		.byte	0x9c
  948 022c 3F020000 		.4byte	0x23f
  949 0230 0E       		.uleb128 0xe
- 950 0231 1F030000 		.4byte	.LASF26
+ 950 0231 06030000 		.4byte	.LASF26
  951 0235 01       		.byte	0x1
  952 0236 1104     		.2byte	0x411
  953 0238 6B000000 		.4byte	0x6b
@@ -2673,7 +2673,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  955 023d 50       		.byte	0x50
  956 023e 00       		.byte	0
  957 023f 0D       		.uleb128 0xd
- 958 0240 94030000 		.4byte	.LASF30
+ 958 0240 90030000 		.4byte	.LASF30
  959 0244 01       		.byte	0x1
  960 0245 7904     		.2byte	0x479
  961 0247 00000000 		.4byte	.LFB10
@@ -2682,13 +2682,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  964 0250 9C       		.byte	0x9c
  965 0251 7F020000 		.4byte	0x27f
  966 0255 0F       		.uleb128 0xf
- 967 0256 D0000000 		.4byte	.LASF31
+ 967 0256 B7000000 		.4byte	.LASF31
  968 025a 01       		.byte	0x1
  969 025b 7904     		.2byte	0x479
  970 025d 7F020000 		.4byte	0x27f
  971 0261 26000000 		.4byte	.LLST2
  972 0265 10       		.uleb128 0x10
- 973 0266 D5020000 		.4byte	.LASF32
+ 973 0266 BC020000 		.4byte	.LASF32
  974 026a 01       		.byte	0x1
  975 026b 7B04     		.2byte	0x47b
  976 026d 76000000 		.4byte	0x76
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  980 027a 1A020000 		.4byte	0x21a
  981 027e 00       		.byte	0
  982 027f 11       		.uleb128 0x11
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 46
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 46
 
 
  983 0280 04       		.byte	0x4
@@ -2706,7 +2706,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  985 0285 12       		.uleb128 0x12
  986 0286 8F000000 		.4byte	0x8f
  987 028a 0D       		.uleb128 0xd
- 988 028b 60010000 		.4byte	.LASF33
+ 988 028b 47010000 		.4byte	.LASF33
  989 028f 01       		.byte	0x1
  990 0290 A704     		.2byte	0x4a7
  991 0292 00000000 		.4byte	.LFB11
@@ -2715,19 +2715,19 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  994 029b 9C       		.byte	0x9c
  995 029c DA020000 		.4byte	0x2da
  996 02a0 0F       		.uleb128 0xf
- 997 02a1 D0000000 		.4byte	.LASF31
+ 997 02a1 B7000000 		.4byte	.LASF31
  998 02a5 01       		.byte	0x1
  999 02a6 A704     		.2byte	0x4a7
  1000 02a8 DA020000 		.4byte	0x2da
  1001 02ac A9000000 		.4byte	.LLST4
  1002 02b0 0F       		.uleb128 0xf
- 1003 02b1 6E010000 		.4byte	.LASF34
+ 1003 02b1 55010000 		.4byte	.LASF34
  1004 02b5 01       		.byte	0x1
  1005 02b6 A704     		.2byte	0x4a7
  1006 02b8 6B000000 		.4byte	0x6b
  1007 02bc EB000000 		.4byte	.LLST5
  1008 02c0 10       		.uleb128 0x10
- 1009 02c1 D5020000 		.4byte	.LASF32
+ 1009 02c1 BC020000 		.4byte	.LASF32
  1010 02c5 01       		.byte	0x1
  1011 02c6 AA04     		.2byte	0x4aa
  1012 02c8 6B000000 		.4byte	0x6b
@@ -2742,7 +2742,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1021 02e0 12       		.uleb128 0x12
  1022 02e1 6B000000 		.4byte	0x6b
  1023 02e5 0D       		.uleb128 0xd
- 1024 02e6 C8020000 		.4byte	.LASF35
+ 1024 02e6 AF020000 		.4byte	.LASF35
  1025 02ea 01       		.byte	0x1
  1026 02eb CE04     		.2byte	0x4ce
  1027 02ed 00000000 		.4byte	.LFB12
@@ -2751,14 +2751,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1030 02f6 9C       		.byte	0x9c
  1031 02f7 37030000 		.4byte	0x337
  1032 02fb 0F       		.uleb128 0xf
- 1033 02fc 1F030000 		.4byte	.LASF26
+ 1033 02fc 06030000 		.4byte	.LASF26
  1034 0300 01       		.byte	0x1
  1035 0301 CE04     		.2byte	0x4ce
  1036 0303 6B000000 		.4byte	0x6b
  1037 0307 66010000 		.4byte	.LLST7
  1038 030b 09       		.uleb128 0x9
  1039 030c 0C000000 		.4byte	.LVL34
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 47
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 47
 
 
  1040 0310 1A020000 		.4byte	0x21a
@@ -2783,7 +2783,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1059 0335 00       		.byte	0
  1060 0336 00       		.byte	0
  1061 0337 14       		.uleb128 0x14
- 1062 0338 1D000000 		.4byte	.LASF50
+ 1062 0338 52030000 		.4byte	.LASF50
  1063 033c 01       		.byte	0x1
  1064 033d F904     		.2byte	0x4f9
  1065 033f 6B000000 		.4byte	0x6b
@@ -2793,14 +2793,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1069 034c 9C       		.byte	0x9c
  1070 034d 62030000 		.4byte	0x362
  1071 0351 10       		.uleb128 0x10
- 1072 0352 A3030000 		.4byte	.LASF36
+ 1072 0352 9F030000 		.4byte	.LASF36
  1073 0356 01       		.byte	0x1
  1074 0357 FC04     		.2byte	0x4fc
  1075 0359 6B000000 		.4byte	0x6b
  1076 035d 87010000 		.4byte	.LLST8
  1077 0361 00       		.byte	0
  1078 0362 0D       		.uleb128 0xd
- 1079 0363 52030000 		.4byte	.LASF37
+ 1079 0363 39030000 		.4byte	.LASF37
  1080 0367 01       		.byte	0x1
  1081 0368 4A05     		.2byte	0x54a
  1082 036a 00000000 		.4byte	.LFB14
@@ -2809,7 +2809,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1085 0373 9C       		.byte	0x9c
  1086 0374 9B030000 		.4byte	0x39b
  1087 0378 10       		.uleb128 0x10
- 1088 0379 78010000 		.4byte	.LASF20
+ 1088 0379 5F010000 		.4byte	.LASF20
  1089 037d 01       		.byte	0x1
  1090 037e 4C05     		.2byte	0x54c
  1091 0380 6B000000 		.4byte	0x6b
@@ -2818,14 +2818,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1094 0389 06000000 		.4byte	.LVL39
  1095 038d 24040000 		.4byte	0x424
  1096 0391 09       		.uleb128 0x9
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 48
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 48
 
 
  1097 0392 1C000000 		.4byte	.LVL40
  1098 0396 36040000 		.4byte	0x436
  1099 039a 00       		.byte	0
  1100 039b 0D       		.uleb128 0xd
- 1101 039c AC010000 		.4byte	.LASF38
+ 1101 039c 93010000 		.4byte	.LASF38
  1102 03a0 01       		.byte	0x1
  1103 03a1 A005     		.2byte	0x5a0
  1104 03a3 00000000 		.4byte	.LFB15
@@ -2834,7 +2834,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1107 03ac 9C       		.byte	0x9c
  1108 03ad EE030000 		.4byte	0x3ee
  1109 03b1 0F       		.uleb128 0xf
- 1110 03b2 40030000 		.4byte	.LASF39
+ 1110 03b2 27030000 		.4byte	.LASF39
  1111 03b6 01       		.byte	0x1
  1112 03b7 A005     		.2byte	0x5a0
  1113 03b9 6B000000 		.4byte	0x6b
@@ -2843,7 +2843,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1116 03c2 06000000 		.4byte	.LBB2
  1117 03c6 52000000 		.4byte	.LBE2-.LBB2
  1118 03ca 10       		.uleb128 0x10
- 1119 03cb 32000000 		.4byte	.LASF40
+ 1119 03cb 6F000000 		.4byte	.LASF40
  1120 03cf 01       		.byte	0x1
  1121 03d0 A805     		.2byte	0x5a8
  1122 03d2 6B000000 		.4byte	0x6b
@@ -2859,7 +2859,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1132 03ec 00       		.byte	0
  1133 03ed 00       		.byte	0
  1134 03ee 0D       		.uleb128 0xd
- 1135 03ef 3A000000 		.4byte	.LASF42
+ 1135 03ef 77000000 		.4byte	.LASF42
  1136 03f3 01       		.byte	0x1
  1137 03f4 2406     		.2byte	0x624
  1138 03f6 00000000 		.4byte	.LFB16
@@ -2868,7 +2868,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1141 03ff 9C       		.byte	0x9c
  1142 0400 13040000 		.4byte	0x413
  1143 0404 0E       		.uleb128 0xe
- 1144 0405 08010000 		.4byte	.LASF43
+ 1144 0405 EF000000 		.4byte	.LASF43
  1145 0409 01       		.byte	0x1
  1146 040a 2406     		.2byte	0x624
  1147 040c 6B000000 		.4byte	0x6b
@@ -2876,9 +2876,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1149 0411 50       		.byte	0x50
  1150 0412 00       		.byte	0
  1151 0413 17       		.uleb128 0x17
- 1152 0414 6D000000 		.4byte	.LASF51
+ 1152 0414 AA000000 		.4byte	.LASF51
  1153 0418 01       		.byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 49
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 49
 
 
  1154 0419 1B       		.byte	0x1b
@@ -2887,16 +2887,16 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1157 041f 03       		.byte	0x3
  1158 0420 00000000 		.4byte	UART_initVar
  1159 0424 18       		.uleb128 0x18
- 1160 0425 49020000 		.4byte	.LASF52
+ 1160 0425 30020000 		.4byte	.LASF52
  1161 0429 04       		.byte	0x4
  1162 042a 7E       		.byte	0x7e
  1163 042b 6B000000 		.4byte	0x6b
  1164 042f 19       		.uleb128 0x19
- 1165 0430 D7000000 		.4byte	.LASF44
+ 1165 0430 BE000000 		.4byte	.LASF44
  1166 0434 03       		.byte	0x3
  1167 0435 27       		.byte	0x27
  1168 0436 1A       		.uleb128 0x1a
- 1169 0437 99020000 		.4byte	.LASF53
+ 1169 0437 80020000 		.4byte	.LASF53
  1170 043b 04       		.byte	0x4
  1171 043c 7F       		.byte	0x7f
  1172 043d 47040000 		.4byte	0x447
@@ -2904,7 +2904,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1174 0442 6B000000 		.4byte	0x6b
  1175 0446 00       		.byte	0
  1176 0447 19       		.uleb128 0x19
- 1177 0448 03030000 		.4byte	.LASF45
+ 1177 0448 EA020000 		.4byte	.LASF45
  1178 044c 03       		.byte	0x3
  1179 044d 28       		.byte	0x28
  1180 044e 00       		.byte	0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1208 0019 0B       		.uleb128 0xb
  1209 001a 03       		.uleb128 0x3
  1210 001b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 50
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 50
 
 
  1211 001c 00       		.byte	0
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1265 0053 00       		.byte	0
  1266 0054 00       		.byte	0
  1267 0055 07       		.uleb128 0x7
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 51
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 51
 
 
  1268 0056 2E       		.uleb128 0x2e
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1322 0091 13       		.uleb128 0x13
  1323 0092 00       		.byte	0
  1324 0093 00       		.byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 52
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 52
 
 
  1325 0094 0B       		.uleb128 0xb
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1379 00cf 19       		.uleb128 0x19
  1380 00d0 01       		.uleb128 0x1
  1381 00d1 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 53
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 53
 
 
  1382 00d2 00       		.byte	0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1436 0108 00       		.byte	0
  1437 0109 00       		.byte	0
  1438 010a 12       		.uleb128 0x12
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 54
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 54
 
 
  1439 010b 26       		.uleb128 0x26
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1493 0144 34       		.uleb128 0x34
  1494 0145 00       		.byte	0
  1495 0146 03       		.uleb128 0x3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 55
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 55
 
 
  1496 0147 0E       		.uleb128 0xe
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1550 017d 3A       		.uleb128 0x3a
  1551 017e 0B       		.uleb128 0xb
  1552 017f 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 56
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 56
 
 
  1553 0180 0B       		.uleb128 0xb
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1607 0030 50       		.byte	0x50
  1608 0031 0A000000 		.4byte	.LVL18
  1609 0035 14000000 		.4byte	.LVL22
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 57
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 57
 
 
  1610 0039 0100     		.2byte	0x1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1664 00c3 1C000000 		.4byte	.LVL31
  1665 00c7 0100     		.2byte	0x1
  1666 00c9 50       		.byte	0x50
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 58
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 58
 
 
  1667 00ca 1C000000 		.4byte	.LVL31
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1721 014f 0200     		.2byte	0x2
  1722 0151 30       		.byte	0x30
  1723 0152 9F       		.byte	0x9f
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 59
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 59
 
 
  1724 0153 1C000000 		.4byte	.LVL31
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1778 01dd 28000000 		.4byte	.LVL43
  1779 01e1 0100     		.2byte	0x1
  1780 01e3 53       		.byte	0x53
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 60
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 60
 
 
  1781 01e4 34000000 		.4byte	.LVL44
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1835 0008 00000000 		.4byte	.LFB2
  1836 000c 24000000 		.4byte	.LFE2
  1837 0010 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 61
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 61
 
 
  1838 0014 1C000000 		.4byte	.LFE0
@@ -3651,272 +3651,272 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 1
  1876              	.LASF13:
  1877 0017 63686172 		.ascii	"char8\000"
  1877      3800
- 1878              	.LASF50:
- 1879 001d 55415254 		.ascii	"UART_GetTxBufferSize\000"
- 1879      5F476574 
- 1879      54784275 
- 1879      66666572 
- 1879      53697A65 
- 1880              	.LASF40:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 62
+ 1878              	.LASF48:
+ 1879 001d 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Chip-Design\\pro"
+ 1879      73657273 
+ 1879      5C49616E 
+ 1879      5C446F63 
+ 1879      756D656E 
+ 1880 004a 6A5F6173 		.ascii	"j_asic\\psoc\\I2S\\Wave Generator.cydsn\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 62
 
 
- 1881 0032 746D7053 		.ascii	"tmpStat\000"
- 1881      74617400 
- 1882              	.LASF42:
- 1883 003a 55415254 		.ascii	"UART_SetTxAddressMode\000"
- 1883      5F536574 
- 1883      54784164 
- 1883      64726573 
- 1883      734D6F64 
- 1884              	.LASF3:
- 1885 0050 73686F72 		.ascii	"short unsigned int\000"
- 1885      7420756E 
- 1885      7369676E 
- 1885      65642069 
- 1885      6E7400
- 1886              	.LASF19:
- 1887 0063 55415254 		.ascii	"UART_Stop\000"
- 1887      5F53746F 
- 1887      7000
- 1888              	.LASF51:
- 1889 006d 55415254 		.ascii	"UART_initVar\000"
- 1889      5F696E69 
- 1889      74566172 
- 1889      00
- 1890              	.LASF48:
- 1891 007a 433A5C55 		.ascii	"C:\\Users\\Zachary\\Documents\\GitHub\\Chip-Design\\"
- 1891      73657273 
- 1891      5C5A6163 
- 1891      68617279 
- 1891      5C446F63 
- 1892 00a8 70726F6A 		.ascii	"proj_asic\\psoc\\I2S\\Wave Generator.cydsn\000"
- 1892      5F617369 
- 1892      635C7073 
- 1892      6F635C49 
- 1892      32535C57 
- 1893              	.LASF31:
- 1894 00d0 73747269 		.ascii	"string\000"
- 1894      6E6700
- 1895              	.LASF44:
- 1896 00d7 55415254 		.ascii	"UART_IntClock_Start\000"
- 1896      5F496E74 
- 1896      436C6F63 
- 1896      6B5F5374 
- 1896      61727400 
- 1897              	.LASF11:
- 1898 00eb 666C6F61 		.ascii	"float\000"
- 1898      7400
- 1899              	.LASF7:
- 1900 00f1 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1900      206C6F6E 
- 1900      6720756E 
- 1900      7369676E 
- 1900      65642069 
- 1901              	.LASF43:
- 1902 0108 61646472 		.ascii	"addressMode\000"
- 1902      6573734D 
- 1902      6F646500 
- 1903              	.LASF49:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 63
+ 1880      69635C70 
+ 1880      736F635C 
+ 1880      4932535C 
+ 1880      57617665 
+ 1881              	.LASF40:
+ 1882 006f 746D7053 		.ascii	"tmpStat\000"
+ 1882      74617400 
+ 1883              	.LASF42:
+ 1884 0077 55415254 		.ascii	"UART_SetTxAddressMode\000"
+ 1884      5F536574 
+ 1884      54784164 
+ 1884      64726573 
+ 1884      734D6F64 
+ 1885              	.LASF3:
+ 1886 008d 73686F72 		.ascii	"short unsigned int\000"
+ 1886      7420756E 
+ 1886      7369676E 
+ 1886      65642069 
+ 1886      6E7400
+ 1887              	.LASF19:
+ 1888 00a0 55415254 		.ascii	"UART_Stop\000"
+ 1888      5F53746F 
+ 1888      7000
+ 1889              	.LASF51:
+ 1890 00aa 55415254 		.ascii	"UART_initVar\000"
+ 1890      5F696E69 
+ 1890      74566172 
+ 1890      00
+ 1891              	.LASF31:
+ 1892 00b7 73747269 		.ascii	"string\000"
+ 1892      6E6700
+ 1893              	.LASF44:
+ 1894 00be 55415254 		.ascii	"UART_IntClock_Start\000"
+ 1894      5F496E74 
+ 1894      436C6F63 
+ 1894      6B5F5374 
+ 1894      61727400 
+ 1895              	.LASF11:
+ 1896 00d2 666C6F61 		.ascii	"float\000"
+ 1896      7400
+ 1897              	.LASF7:
+ 1898 00d8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1898      206C6F6E 
+ 1898      6720756E 
+ 1898      7369676E 
+ 1898      65642069 
+ 1899              	.LASF43:
+ 1900 00ef 61646472 		.ascii	"addressMode\000"
+ 1900      6573734D 
+ 1900      6F646500 
+ 1901              	.LASF49:
+ 1902 00fb 55415254 		.ascii	"UART_Init\000"
+ 1902      5F496E69 
+ 1902      7400
+ 1903              	.LASF15:
+ 1904 0105 72656738 		.ascii	"reg8\000"
+ 1904      00
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 63
 
 
- 1904 0114 55415254 		.ascii	"UART_Init\000"
- 1904      5F496E69 
- 1904      7400
- 1905              	.LASF15:
- 1906 011e 72656738 		.ascii	"reg8\000"
- 1906      00
- 1907              	.LASF5:
- 1908 0123 6C6F6E67 		.ascii	"long unsigned int\000"
- 1908      20756E73 
- 1908      69676E65 
- 1908      6420696E 
- 1908      7400
- 1909              	.LASF47:
- 1910 0135 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\UART.c\000"
- 1910      6E657261 
- 1910      7465645F 
- 1910      536F7572 
- 1910      63655C50 
- 1911              	.LASF18:
- 1912 0155 55415254 		.ascii	"UART_Start\000"
- 1912      5F537461 
- 1912      727400
- 1913              	.LASF33:
- 1914 0160 55415254 		.ascii	"UART_PutArray\000"
- 1914      5F507574 
- 1914      41727261 
- 1914      7900
- 1915              	.LASF34:
- 1916 016e 62797465 		.ascii	"byteCount\000"
- 1916      436F756E 
- 1916      7400
- 1917              	.LASF20:
- 1918 0178 656E6162 		.ascii	"enableInterrupts\000"
- 1918      6C65496E 
- 1918      74657272 
- 1918      75707473 
- 1918      00
- 1919              	.LASF1:
- 1920 0189 756E7369 		.ascii	"unsigned char\000"
- 1920      676E6564 
- 1920      20636861 
- 1920      7200
- 1921              	.LASF12:
- 1922 0197 646F7562 		.ascii	"double\000"
- 1922      6C6500
- 1923              	.LASF24:
- 1924 019e 696E7453 		.ascii	"intSrc\000"
- 1924      726300
- 1925              	.LASF10:
- 1926 01a5 75696E74 		.ascii	"uint16\000"
- 1926      313600
- 1927              	.LASF38:
- 1928 01ac 55415254 		.ascii	"UART_SendBreak\000"
- 1928      5F53656E 
- 1928      64427265 
- 1928      616B00
- 1929              	.LASF46:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 64
+ 1905              	.LASF5:
+ 1906 010a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1906      20756E73 
+ 1906      69676E65 
+ 1906      6420696E 
+ 1906      7400
+ 1907              	.LASF47:
+ 1908 011c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\UART.c\000"
+ 1908      6E657261 
+ 1908      7465645F 
+ 1908      536F7572 
+ 1908      63655C50 
+ 1909              	.LASF18:
+ 1910 013c 55415254 		.ascii	"UART_Start\000"
+ 1910      5F537461 
+ 1910      727400
+ 1911              	.LASF33:
+ 1912 0147 55415254 		.ascii	"UART_PutArray\000"
+ 1912      5F507574 
+ 1912      41727261 
+ 1912      7900
+ 1913              	.LASF34:
+ 1914 0155 62797465 		.ascii	"byteCount\000"
+ 1914      436F756E 
+ 1914      7400
+ 1915              	.LASF20:
+ 1916 015f 656E6162 		.ascii	"enableInterrupts\000"
+ 1916      6C65496E 
+ 1916      74657272 
+ 1916      75707473 
+ 1916      00
+ 1917              	.LASF1:
+ 1918 0170 756E7369 		.ascii	"unsigned char\000"
+ 1918      676E6564 
+ 1918      20636861 
+ 1918      7200
+ 1919              	.LASF12:
+ 1920 017e 646F7562 		.ascii	"double\000"
+ 1920      6C6500
+ 1921              	.LASF24:
+ 1922 0185 696E7453 		.ascii	"intSrc\000"
+ 1922      726300
+ 1923              	.LASF10:
+ 1924 018c 75696E74 		.ascii	"uint16\000"
+ 1924      313600
+ 1925              	.LASF38:
+ 1926 0193 55415254 		.ascii	"UART_SendBreak\000"
+ 1926      5F53656E 
+ 1926      64427265 
+ 1926      616B00
+ 1927              	.LASF46:
+ 1928 01a2 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1928      4320342E 
+ 1928      392E3320 
+ 1928      32303135 
+ 1928      30333033 
+ 1929 01d5 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 64
 
 
- 1930 01bb 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1930      4320342E 
- 1930      392E3320 
- 1930      32303135 
- 1930      30333033 
- 1931 01ee 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1931      20726576 
- 1931      6973696F 
- 1931      6E203232 
- 1931      31323230 
- 1932 0221 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1932      66756E63 
- 1932      74696F6E 
- 1932      2D736563 
- 1932      74696F6E 
- 1933              	.LASF52:
- 1934 0249 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 1934      74657243 
- 1934      72697469 
- 1934      63616C53 
- 1934      65637469 
- 1935              	.LASF8:
- 1936 0260 756E7369 		.ascii	"unsigned int\000"
- 1936      676E6564 
- 1936      20696E74 
- 1936      00
- 1937              	.LASF21:
- 1938 026d 55415254 		.ascii	"UART_WriteControlRegister\000"
- 1938      5F577269 
- 1938      7465436F 
- 1938      6E74726F 
- 1938      6C526567 
- 1939              	.LASF28:
- 1940 0287 55415254 		.ascii	"UART_ReadTxStatus\000"
- 1940      5F526561 
- 1940      64547853 
- 1940      74617475 
- 1940      7300
- 1941              	.LASF53:
- 1942 0299 43794578 		.ascii	"CyExitCriticalSection\000"
- 1942      69744372 
- 1942      69746963 
- 1942      616C5365 
- 1942      6374696F 
- 1943              	.LASF27:
- 1944 02af 55415254 		.ascii	"UART_ReadControlRegister\000"
- 1944      5F526561 
- 1944      64436F6E 
- 1944      74726F6C 
- 1944      52656769 
- 1945              	.LASF35:
- 1946 02c8 55415254 		.ascii	"UART_PutCRLF\000"
- 1946      5F507574 
- 1946      43524C46 
+ 1929      20726576 
+ 1929      6973696F 
+ 1929      6E203232 
+ 1929      31323230 
+ 1930 0208 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1930      66756E63 
+ 1930      74696F6E 
+ 1930      2D736563 
+ 1930      74696F6E 
+ 1931              	.LASF52:
+ 1932 0230 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1932      74657243 
+ 1932      72697469 
+ 1932      63616C53 
+ 1932      65637469 
+ 1933              	.LASF8:
+ 1934 0247 756E7369 		.ascii	"unsigned int\000"
+ 1934      676E6564 
+ 1934      20696E74 
+ 1934      00
+ 1935              	.LASF21:
+ 1936 0254 55415254 		.ascii	"UART_WriteControlRegister\000"
+ 1936      5F577269 
+ 1936      7465436F 
+ 1936      6E74726F 
+ 1936      6C526567 
+ 1937              	.LASF28:
+ 1938 026e 55415254 		.ascii	"UART_ReadTxStatus\000"
+ 1938      5F526561 
+ 1938      64547853 
+ 1938      74617475 
+ 1938      7300
+ 1939              	.LASF53:
+ 1940 0280 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1940      69744372 
+ 1940      69746963 
+ 1940      616C5365 
+ 1940      6374696F 
+ 1941              	.LASF27:
+ 1942 0296 55415254 		.ascii	"UART_ReadControlRegister\000"
+ 1942      5F526561 
+ 1942      64436F6E 
+ 1942      74726F6C 
+ 1942      52656769 
+ 1943              	.LASF35:
+ 1944 02af 55415254 		.ascii	"UART_PutCRLF\000"
+ 1944      5F507574 
+ 1944      43524C46 
+ 1944      00
+ 1945              	.LASF32:
+ 1946 02bc 62756649 		.ascii	"bufIndex\000"
+ 1946      6E646578 
  1946      00
- 1947              	.LASF32:
- 1948 02d5 62756649 		.ascii	"bufIndex\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 65
+ 1947              	.LASF22:
+ 1948 02c5 55415254 		.ascii	"UART_SetTxInterruptMode\000"
+ 1948      5F536574 
+ 1948      5478496E 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 65
 
 
- 1948      6E646578 
- 1948      00
- 1949              	.LASF22:
- 1950 02de 55415254 		.ascii	"UART_SetTxInterruptMode\000"
- 1950      5F536574 
- 1950      5478496E 
- 1950      74657272 
- 1950      7570744D 
- 1951              	.LASF29:
- 1952 02f6 55415254 		.ascii	"UART_PutChar\000"
- 1952      5F507574 
- 1952      43686172 
- 1952      00
- 1953              	.LASF45:
- 1954 0303 55415254 		.ascii	"UART_IntClock_Stop\000"
- 1954      5F496E74 
- 1954      436C6F63 
- 1954      6B5F5374 
- 1954      6F7000
- 1955              	.LASF16:
- 1956 0316 73697A65 		.ascii	"sizetype\000"
- 1956      74797065 
- 1956      00
- 1957              	.LASF26:
- 1958 031f 74784461 		.ascii	"txDataByte\000"
- 1958      74614279 
- 1958      746500
- 1959              	.LASF14:
- 1960 032a 63686172 		.ascii	"char\000"
+ 1948      74657272 
+ 1948      7570744D 
+ 1949              	.LASF29:
+ 1950 02dd 55415254 		.ascii	"UART_PutChar\000"
+ 1950      5F507574 
+ 1950      43686172 
+ 1950      00
+ 1951              	.LASF45:
+ 1952 02ea 55415254 		.ascii	"UART_IntClock_Stop\000"
+ 1952      5F496E74 
+ 1952      436C6F63 
+ 1952      6B5F5374 
+ 1952      6F7000
+ 1953              	.LASF16:
+ 1954 02fd 73697A65 		.ascii	"sizetype\000"
+ 1954      74797065 
+ 1954      00
+ 1955              	.LASF26:
+ 1956 0306 74784461 		.ascii	"txDataByte\000"
+ 1956      74614279 
+ 1956      746500
+ 1957              	.LASF14:
+ 1958 0311 63686172 		.ascii	"char\000"
+ 1958      00
+ 1959              	.LASF25:
+ 1960 0316 55415254 		.ascii	"UART_WriteTxData\000"
+ 1960      5F577269 
+ 1960      74655478 
+ 1960      44617461 
  1960      00
- 1961              	.LASF25:
- 1962 032f 55415254 		.ascii	"UART_WriteTxData\000"
- 1962      5F577269 
- 1962      74655478 
- 1962      44617461 
- 1962      00
- 1963              	.LASF39:
- 1964 0340 7265744D 		.ascii	"retMode\000"
- 1964      6F646500 
- 1965              	.LASF2:
- 1966 0348 73686F72 		.ascii	"short int\000"
- 1966      7420696E 
- 1966      7400
- 1967              	.LASF37:
- 1968 0352 55415254 		.ascii	"UART_ClearTxBuffer\000"
- 1968      5F436C65 
- 1968      61725478 
- 1968      42756666 
- 1968      657200
- 1969              	.LASF9:
- 1970 0365 75696E74 		.ascii	"uint8\000"
- 1970      3800
+ 1961              	.LASF39:
+ 1962 0327 7265744D 		.ascii	"retMode\000"
+ 1962      6F646500 
+ 1963              	.LASF2:
+ 1964 032f 73686F72 		.ascii	"short int\000"
+ 1964      7420696E 
+ 1964      7400
+ 1965              	.LASF37:
+ 1966 0339 55415254 		.ascii	"UART_ClearTxBuffer\000"
+ 1966      5F436C65 
+ 1966      61725478 
+ 1966      42756666 
+ 1966      657200
+ 1967              	.LASF9:
+ 1968 034c 75696E74 		.ascii	"uint8\000"
+ 1968      3800
+ 1969              	.LASF50:
+ 1970 0352 55415254 		.ascii	"UART_GetTxBufferSize\000"
+ 1970      5F476574 
+ 1970      54784275 
+ 1970      66666572 
+ 1970      53697A65 
  1971              	.LASF23:
- 1972 036b 636F6E74 		.ascii	"control\000"
+ 1972 0367 636F6E74 		.ascii	"control\000"
  1972      726F6C00 
  1973              	.LASF4:
- 1974 0373 6C6F6E67 		.ascii	"long int\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAi2cPe.s 			page 66
+ 1974 036f 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cce43Cb8.s 			page 66
 
 
  1974      20696E74 
  1974      00
  1975              	.LASF17:
- 1976 037c 55415254 		.ascii	"UART_Enable\000"
+ 1976 0378 55415254 		.ascii	"UART_Enable\000"
  1976      5F456E61 
  1976      626C6500 
  1977              	.LASF0:
- 1978 0388 7369676E 		.ascii	"signed char\000"
+ 1978 0384 7369676E 		.ascii	"signed char\000"
  1978      65642063 
  1978      68617200 
  1979              	.LASF30:
- 1980 0394 55415254 		.ascii	"UART_PutString\000"
+ 1980 0390 55415254 		.ascii	"UART_PutString\000"
  1980      5F507574 
  1980      53747269 
  1980      6E6700
  1981              	.LASF36:
- 1982 03a3 73697A65 		.ascii	"size\000"
+ 1982 039f 73697A65 		.ascii	"size\000"
  1982      00
  1983              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
