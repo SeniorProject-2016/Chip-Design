@@ -282,3 +282,9 @@ map -filter "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Pr
 par -filter "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/iseconfig/filter.filter" -w -intstyle ise -ol high -mt off chip_map.ncd chip.ncd chip.pcf 
 trce -filter {C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/iseconfig/filter.filter} -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml chip.twx chip.ncd -o chip.twr chip.pcf -ucf chip.ucf 
 bitgen -filter "iseconfig/filter.filter" -intstyle ise -f chip.ut chip.ncd 
+xst -intstyle ise -filter "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/iseconfig/filter.filter" -ifn "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/chip.xst" -ofn "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/chip.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -nt timestamp -uc chip.ucf -p xc7a100t-csg324-1 "chip.ngc" chip.ngd  
+map -filter "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/iseconfig/filter.filter" -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o chip_map.ncd chip.ngd chip.pcf 
+par -filter "C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/iseconfig/filter.filter" -w -intstyle ise -ol high -mt off chip_map.ncd chip.ncd chip.pcf 
+trce -filter {C:/Users/Zachary/Documents/GitHub/Chip-Design/proj_asic/rtl/Main Project/iseconfig/filter.filter} -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml chip.twx chip.ncd -o chip.twr chip.pcf -ucf chip.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f chip.ut chip.ncd 

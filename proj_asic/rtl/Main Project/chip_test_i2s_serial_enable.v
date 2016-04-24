@@ -34,7 +34,7 @@ module chip_test1;
 	wire                    i2so_sd;
     
     // I2C Outputs
-	wire                    i2c_sda_out;
+	wire                    i2c_sda_od;
     
     
     // General Internal Variables
@@ -91,7 +91,7 @@ module chip_test1;
 		.i2c_addr_bits(i2c_addr_bits), 
 		.i2c_scl(i2c_scl), 
 		.i2c_sda_in(i2c_sda_in), 
-		.i2c_sda_out(i2c_sda_out)
+		.i2c_sda_od(i2c_sda_od)
 	);
 
 	initial begin
@@ -297,10 +297,10 @@ module chip_test1;
             else if((i2c_count == 61) & (i2c_bit_count == 0))
             begin
                 i2c_bit_count <= 8;
-                //i2c_slave_acknowledgement <= i2c_sda_out;
+                //i2c_slave_acknowledgement <= i2c_sda_od;
             end
 
-            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_out == 1))	//i2c_slave_acknowledgement == 1
+            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_od == 1))	//i2c_slave_acknowledgement == 1
             begin
                 //i2c_slave_acknowledgement <= 0;
                 i2c_master_state <= 4'b0010;
@@ -326,10 +326,10 @@ module chip_test1;
             begin
                 i2c_bit_count <= 8;
 					 i2c_sda_in <= 1;
-                //i2c_slave_acknowledgement <= i2c_sda_out;
+                //i2c_slave_acknowledgement <= i2c_sda_od;
             end
 
-            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_out == 1))
+            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_od == 1))
             begin
                 //i2c_slave_acknowledgement <= 0;
                 i2c_master_state <= 4'b0011;
@@ -361,10 +361,10 @@ module chip_test1;
             begin
                 i2c_bit_count <= 8;
 					 i2c_sda_in <= 1;
-                //i2c_slave_acknowledgement <= i2c_sda_out;
+                //i2c_slave_acknowledgement <= i2c_sda_od;
             end
 
-            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_out == 1))
+            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_od == 1))
             begin
                 //i2c_slave_acknowledgement <= 0;
                 i2c_master_state <= 4'b0100;
@@ -390,10 +390,10 @@ module chip_test1;
             begin
                 i2c_bit_count <= 8;
 					 i2c_sda_in <= 1;
-                //i2c_slave_acknowledgement <= i2c_sda_out;
+                //i2c_slave_acknowledgement <= i2c_sda_od;
             end
 
-            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_out == 1))
+            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_od == 1))
             begin
                 //i2c_slave_acknowledgement <= 0;
                 i2c_data_byte <= i2c_data_byte + 1;
@@ -449,10 +449,10 @@ module chip_test1;
             else if((i2c_count == 61) & (i2c_bit_count == 0))
             begin
                 i2c_bit_count <= 8;
-                //i2c_slave_acknowledgement <= i2c_sda_out;
+                //i2c_slave_acknowledgement <= i2c_sda_od;
             end
 
-            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_out == 1))	//i2c_slave_acknowledgement == 1
+            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_od == 1))	//i2c_slave_acknowledgement == 1
             begin
                 //i2c_slave_acknowledgement <= 0;
                 i2c_master_state <= 4'b1010;
@@ -478,10 +478,10 @@ module chip_test1;
             begin
                 i2c_bit_count <= 8;
 					 i2c_sda_in <= 1;
-                //i2c_slave_acknowledgement <= i2c_sda_out;
+                //i2c_slave_acknowledgement <= i2c_sda_od;
             end
 
-            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_out == 1))
+            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_od == 1))
             begin
                 //i2c_slave_acknowledgement <= 0;
                 i2c_master_state <= 4'b1011;
@@ -513,10 +513,10 @@ module chip_test1;
             begin
                 i2c_bit_count <= 8;
 					 i2c_sda_in <= 1;
-                //i2c_slave_acknowledgement <= i2c_sda_out;
+                //i2c_slave_acknowledgement <= i2c_sda_od;
             end
 
-            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_out == 1))
+            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_od == 1))
             begin
                 //i2c_slave_acknowledgement <= 0;
                 i2c_master_state <= 4'b1100;
@@ -542,10 +542,10 @@ module chip_test1;
             begin
                 i2c_bit_count <= 8;
 					 i2c_sda_in <= 1;
-                //i2c_slave_acknowledgement <= i2c_sda_out;
+                //i2c_slave_acknowledgement <= i2c_sda_od;
             end
 
-            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_out == 1))
+            else if((i2c_count == 191) & (i2c_bit_count == 8) & (i2c_sda_od == 1))
             begin
                 //i2c_slave_acknowledgement <= 0;
                 i2c_data_byte <= i2c_data_byte + 1;
