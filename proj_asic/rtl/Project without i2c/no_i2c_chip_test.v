@@ -117,12 +117,12 @@ module no_i2c_chip_test;
         end
         
         
-//        for(index3 = 0; index3 < `N; index3 = index3 + 1)
-//        begin
-//            $fdisplay (data_in, "%h", {i2s_test_data [index3] [0], i2s_test_data [index3] [1]});
-//        end
+        for(index3 = 0; index3 < `N; index3 = index3 + 1)
+        begin
+            $fdisplay (data_in, "%h", {i2s_test_data [index3] [0], i2s_test_data [index3] [1]});
+        end
 
-//        #1 $fclose(data_in);
+        #1 $fclose(data_in);
         
 		// Add stimulus here
 
@@ -285,21 +285,21 @@ module no_i2c_chip_test;
     end
     
     // Print input data to chip_test_i2s_bist_enable_input.txt                                                             
-    always @(posedge clk)                                                                               
-    begin
-        if(output_to_inp_txt)
-        begin
-            if(no_i2c_chip_test.uut.I2S_Input.bist_xfc)                                         
-            begin
-                $fdisplay(data_in, "%h", no_i2c_chip_test.uut.I2S_Input.bist_data); 
-            end
-            else if(no_i2c_chip_test.uut.I2S_Input.bist_data === 32'hxxxxxxxx)
-            begin
-                output_to_inp_txt = 0;
-                #1 $fclose(data_in);
-            end
-        end
-    end
+//    always @(posedge clk)                                                                               
+//    begin
+//        if(output_to_inp_txt)
+//        begin
+//            if(no_i2c_chip_test.uut.I2S_Input.bist_xfc)                                         
+//            begin
+//                $fdisplay(data_in, "%h", no_i2c_chip_test.uut.I2S_Input.bist_data); 
+//            end
+//            else if(no_i2c_chip_test.uut.I2S_Input.bist_data === 32'hxxxxxxxx)
+//            begin
+//                output_to_inp_txt = 0;
+//                #1 $fclose(data_in);
+//            end
+//        end
+//    end
 
       
 endmodule

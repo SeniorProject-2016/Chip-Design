@@ -49,7 +49,7 @@ module register(rst_n, clk, addr, wdata, w_enable, wxfc, rxfc, ro_fifo_underrun,
         
         if (~rst_n)
         begin
-            rf_i2si_bist_en <= 1'h1;
+            rf_i2si_bist_en <= 1'h0;
             rf_filter_shift <= 3'b000;	// Nominal Shift Value is 12
             rf_filter_clip_en <= 1'h1;
             rf_i2si_en <= 1'h1;
