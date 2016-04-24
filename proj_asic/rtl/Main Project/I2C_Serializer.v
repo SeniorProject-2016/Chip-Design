@@ -11,7 +11,7 @@
 module Serializer(
 	input i2c_scl,
     output reg i2c_sda_out,
-	input i2c_ack, 
+	input i2c_ack,
     input Clock,
     input reset,
     input [7:0] i2c_rdata,
