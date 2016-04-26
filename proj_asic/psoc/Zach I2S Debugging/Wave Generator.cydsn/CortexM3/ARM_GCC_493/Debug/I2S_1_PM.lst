@@ -1,0 +1,833 @@
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"I2S_1_PM.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.I2S_1_SaveConfig,"ax",%progbits
+  19              		.align	2
+  20              		.global	I2S_1_SaveConfig
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	I2S_1_SaveConfig, %function
+  24              	I2S_1_SaveConfig:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\I2S_1_PM.c"
+   1:.\Generated_Source\PSoC5/I2S_1_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/I2S_1_PM.c **** * File Name: I2S_1_PM.c
+   3:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Version 2.70
+   4:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+   5:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Description:
+   6:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  This file contains the setup, control and status commands to support
+   7:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  component operations in low power mode.
+   8:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+   9:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Note:
+  10:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  11:.\Generated_Source\PSoC5/I2S_1_PM.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/I2S_1_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/I2S_1_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/I2S_1_PM.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/I2S_1_PM.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  18:.\Generated_Source\PSoC5/I2S_1_PM.c **** #include "I2S_1.h"
+  19:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  20:.\Generated_Source\PSoC5/I2S_1_PM.c **** static I2S_1_BACKUP_STRUCT  I2S_1_backup = {0u};
+  21:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  22:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  23:.\Generated_Source\PSoC5/I2S_1_PM.c **** /*******************************************************************************
+  24:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Function Name: I2S_1_SaveConfig
+  25:.\Generated_Source\PSoC5/I2S_1_PM.c **** ********************************************************************************
+  26:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  27:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Summary:
+  28:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  Empty function. Left to preserve backward compatibility.
+  29:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  30:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Parameters:
+  31:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  None.
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  33:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Return:
+  34:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  None.
+  35:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  36:.\Generated_Source\PSoC5/I2S_1_PM.c **** *******************************************************************************/
+  37:.\Generated_Source\PSoC5/I2S_1_PM.c **** void I2S_1_SaveConfig(void) 
+  38:.\Generated_Source\PSoC5/I2S_1_PM.c **** {
+  27              		.loc 1 38 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 7047     		bx	lr
+  33              		.cfi_endproc
+  34              	.LFE0:
+  35              		.size	I2S_1_SaveConfig, .-I2S_1_SaveConfig
+  36 0002 00BF     		.section	.text.I2S_1_RestoreConfig,"ax",%progbits
+  37              		.align	2
+  38              		.global	I2S_1_RestoreConfig
+  39              		.thumb
+  40              		.thumb_func
+  41              		.type	I2S_1_RestoreConfig, %function
+  42              	I2S_1_RestoreConfig:
+  43              	.LFB1:
+  39:.\Generated_Source\PSoC5/I2S_1_PM.c ****     /* Nothing to save. All registers are retention. */
+  40:.\Generated_Source\PSoC5/I2S_1_PM.c **** }
+  41:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  42:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  43:.\Generated_Source\PSoC5/I2S_1_PM.c **** /*******************************************************************************
+  44:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Function Name: I2S_1_RestoreConfig
+  45:.\Generated_Source\PSoC5/I2S_1_PM.c **** ********************************************************************************
+  46:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  47:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Summary:
+  48:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  Empty function. Left to preserve backward compatibility.
+  49:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  50:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Parameters:
+  51:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  None.
+  52:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  53:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Return:
+  54:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  None.
+  55:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  56:.\Generated_Source\PSoC5/I2S_1_PM.c **** *******************************************************************************/
+  57:.\Generated_Source\PSoC5/I2S_1_PM.c **** void I2S_1_RestoreConfig(void) 
+  58:.\Generated_Source\PSoC5/I2S_1_PM.c **** {
+  44              		.loc 1 58 0
+  45              		.cfi_startproc
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49 0000 7047     		bx	lr
+  50              		.cfi_endproc
+  51              	.LFE1:
+  52              		.size	I2S_1_RestoreConfig, .-I2S_1_RestoreConfig
+  53 0002 00BF     		.section	.text.I2S_1_Sleep,"ax",%progbits
+  54              		.align	2
+  55              		.global	I2S_1_Sleep
+  56              		.thumb
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 3
+
+
+  57              		.thumb_func
+  58              		.type	I2S_1_Sleep, %function
+  59              	I2S_1_Sleep:
+  60              	.LFB2:
+  59:.\Generated_Source\PSoC5/I2S_1_PM.c ****     /* Nothing to restore. All registers are retention. */
+  60:.\Generated_Source\PSoC5/I2S_1_PM.c **** }
+  61:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  62:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  63:.\Generated_Source\PSoC5/I2S_1_PM.c **** /*******************************************************************************
+  64:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Function Name: I2S_1_Sleep
+  65:.\Generated_Source\PSoC5/I2S_1_PM.c **** ********************************************************************************
+  66:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  67:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Summary:
+  68:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  Prepares I2S for entering sleep mode.
+  69:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  70:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Parameters:
+  71:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  None.
+  72:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  73:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Return:
+  74:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  None.
+  75:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  76:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Global Variables:
+  77:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  I2S_1_backup - used to store component state prior entering 
+  78:.\Generated_Source\PSoC5/I2S_1_PM.c **** *    sleep mode.
+  79:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  80:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Reentrant:
+  81:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  No.
+  82:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  83:.\Generated_Source\PSoC5/I2S_1_PM.c **** *******************************************************************************/
+  84:.\Generated_Source\PSoC5/I2S_1_PM.c **** void I2S_1_Sleep(void) 
+  85:.\Generated_Source\PSoC5/I2S_1_PM.c **** {
+  61              		.loc 1 85 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		.loc 1 85 0
+  66 0000 08B5     		push	{r3, lr}
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 3, -8
+  69              		.cfi_offset 14, -4
+  86:.\Generated_Source\PSoC5/I2S_1_PM.c ****     /* Get component state */
+  87:.\Generated_Source\PSoC5/I2S_1_PM.c ****     I2S_1_backup.enableState = I2S_1_CONTROL_REG;
+  70              		.loc 1 87 0
+  71 0002 034B     		ldr	r3, .L5
+  72 0004 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  73 0006 034B     		ldr	r3, .L5+4
+  74 0008 1A70     		strb	r2, [r3]
+  88:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  89:.\Generated_Source\PSoC5/I2S_1_PM.c ****     /* Stop component */
+  90:.\Generated_Source\PSoC5/I2S_1_PM.c ****     I2S_1_Stop();
+  75              		.loc 1 90 0
+  76 000a FFF7FEFF 		bl	I2S_1_Stop
+  77              	.LVL0:
+  78 000e 08BD     		pop	{r3, pc}
+  79              	.L6:
+  80              		.align	2
+  81              	.L5:
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 4
+
+
+  82 0010 74640040 		.word	1073767540
+  83 0014 00000000 		.word	.LANCHOR0
+  84              		.cfi_endproc
+  85              	.LFE2:
+  86              		.size	I2S_1_Sleep, .-I2S_1_Sleep
+  87              		.section	.text.I2S_1_Wakeup,"ax",%progbits
+  88              		.align	2
+  89              		.global	I2S_1_Wakeup
+  90              		.thumb
+  91              		.thumb_func
+  92              		.type	I2S_1_Wakeup, %function
+  93              	I2S_1_Wakeup:
+  94              	.LFB3:
+  91:.\Generated_Source\PSoC5/I2S_1_PM.c **** }
+  92:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  93:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+  94:.\Generated_Source\PSoC5/I2S_1_PM.c **** /*******************************************************************************
+  95:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Function Name: I2S_1_Wakeup
+  96:.\Generated_Source\PSoC5/I2S_1_PM.c **** ********************************************************************************
+  97:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+  98:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Summary:
+  99:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  Prepares I2S for exit from sleep mode.
+ 100:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+ 101:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Parameters:
+ 102:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  None.
+ 103:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+ 104:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Return:
+ 105:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  None.
+ 106:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+ 107:.\Generated_Source\PSoC5/I2S_1_PM.c **** * Global Variables:
+ 108:.\Generated_Source\PSoC5/I2S_1_PM.c **** *  I2S_1_backup - used to restore component state after exit from
+ 109:.\Generated_Source\PSoC5/I2S_1_PM.c **** *    sleep mode.
+ 110:.\Generated_Source\PSoC5/I2S_1_PM.c **** *
+ 111:.\Generated_Source\PSoC5/I2S_1_PM.c **** *******************************************************************************/
+ 112:.\Generated_Source\PSoC5/I2S_1_PM.c **** void I2S_1_Wakeup(void) 
+ 113:.\Generated_Source\PSoC5/I2S_1_PM.c **** {
+  95              		.loc 1 113 0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99 0000 08B5     		push	{r3, lr}
+ 100              		.cfi_def_cfa_offset 8
+ 101              		.cfi_offset 3, -8
+ 102              		.cfi_offset 14, -4
+ 114:.\Generated_Source\PSoC5/I2S_1_PM.c ****     #if (I2S_1_DYNAMIC_BIT_RESOLUTION)
+ 115:.\Generated_Source\PSoC5/I2S_1_PM.c ****         I2S_1_CONTROL_REG = I2S_1_backup.enableState & I2S_1_BIT_RESOLUTION_MODE_MASK;
+ 116:.\Generated_Source\PSoC5/I2S_1_PM.c ****     #endif /* I2S_1_DYNAMIC_BIT_RESOLUTION */
+ 117:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+ 118:.\Generated_Source\PSoC5/I2S_1_PM.c ****     if(0u != (I2S_1_backup.enableState & I2S_1_EN))
+ 103              		.loc 1 118 0
+ 104 0002 074B     		ldr	r3, .L10
+ 105 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 106 0006 13F0040F 		tst	r3, #4
+ 107 000a 08D0     		beq	.L7
+ 119:.\Generated_Source\PSoC5/I2S_1_PM.c ****     {
+ 120:.\Generated_Source\PSoC5/I2S_1_PM.c ****         /* Enable component's operation */
+ 121:.\Generated_Source\PSoC5/I2S_1_PM.c ****         I2S_1_Enable();
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 5
+
+
+ 108              		.loc 1 121 0
+ 109 000c FFF7FEFF 		bl	I2S_1_Enable
+ 110              	.LVL1:
+ 122:.\Generated_Source\PSoC5/I2S_1_PM.c **** 
+ 123:.\Generated_Source\PSoC5/I2S_1_PM.c ****         /* Enable Tx/Rx direction if they were enabled before sleep */
+ 124:.\Generated_Source\PSoC5/I2S_1_PM.c ****         #if(I2S_1_TX_DIRECTION_ENABLE)
+ 125:.\Generated_Source\PSoC5/I2S_1_PM.c ****             if(0u != (I2S_1_backup.enableState & I2S_1_TX_EN))
+ 126:.\Generated_Source\PSoC5/I2S_1_PM.c ****             {
+ 127:.\Generated_Source\PSoC5/I2S_1_PM.c ****                 I2S_1_EnableTx();
+ 128:.\Generated_Source\PSoC5/I2S_1_PM.c ****             }
+ 129:.\Generated_Source\PSoC5/I2S_1_PM.c ****         #endif /* (I2S_1_TX_DIRECTION_ENABLE) */
+ 130:.\Generated_Source\PSoC5/I2S_1_PM.c ****         
+ 131:.\Generated_Source\PSoC5/I2S_1_PM.c ****         #if(I2S_1_RX_DIRECTION_ENABLE)
+ 132:.\Generated_Source\PSoC5/I2S_1_PM.c ****             if(0u != (I2S_1_backup.enableState & I2S_1_RX_EN))
+ 111              		.loc 1 132 0
+ 112 0010 034B     		ldr	r3, .L10
+ 113 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 114 0014 13F0020F 		tst	r3, #2
+ 115 0018 01D0     		beq	.L7
+ 133:.\Generated_Source\PSoC5/I2S_1_PM.c ****             {
+ 134:.\Generated_Source\PSoC5/I2S_1_PM.c ****                 I2S_1_EnableRx();
+ 116              		.loc 1 134 0
+ 117 001a FFF7FEFF 		bl	I2S_1_EnableRx
+ 118              	.LVL2:
+ 119              	.L7:
+ 120 001e 08BD     		pop	{r3, pc}
+ 121              	.L11:
+ 122              		.align	2
+ 123              	.L10:
+ 124 0020 00000000 		.word	.LANCHOR0
+ 125              		.cfi_endproc
+ 126              	.LFE3:
+ 127              		.size	I2S_1_Wakeup, .-I2S_1_Wakeup
+ 128              		.bss
+ 129              		.align	2
+ 130              		.set	.LANCHOR0,. + 0
+ 131              		.type	I2S_1_backup, %object
+ 132              		.size	I2S_1_backup, 1
+ 133              	I2S_1_backup:
+ 134 0000 00       		.space	1
+ 135 0001 000000   		.text
+ 136              	.Letext0:
+ 137              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 138              		.file 3 ".\\Generated_Source\\PSoC5\\I2S_1.h"
+ 139              		.section	.debug_info,"",%progbits
+ 140              	.Ldebug_info0:
+ 141 0000 47010000 		.4byte	0x147
+ 142 0004 0400     		.2byte	0x4
+ 143 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 144 000a 04       		.byte	0x4
+ 145 000b 01       		.uleb128 0x1
+ 146 000c C0000000 		.4byte	.LASF22
+ 147 0010 01       		.byte	0x1
+ 148 0011 0D000000 		.4byte	.LASF23
+ 149 0015 6F000000 		.4byte	.LASF24
+ 150 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 151 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 6
+
+
+ 152 0021 00000000 		.4byte	.Ldebug_line0
+ 153 0025 02       		.uleb128 0x2
+ 154 0026 01       		.byte	0x1
+ 155 0027 06       		.byte	0x6
+ 156 0028 FE010000 		.4byte	.LASF0
+ 157 002c 02       		.uleb128 0x2
+ 158 002d 01       		.byte	0x1
+ 159 002e 08       		.byte	0x8
+ 160 002f 37000000 		.4byte	.LASF1
+ 161 0033 02       		.uleb128 0x2
+ 162 0034 02       		.byte	0x2
+ 163 0035 05       		.byte	0x5
+ 164 0036 D9010000 		.4byte	.LASF2
+ 165 003a 02       		.uleb128 0x2
+ 166 003b 02       		.byte	0x2
+ 167 003c 07       		.byte	0x7
+ 168 003d 5C000000 		.4byte	.LASF3
+ 169 0041 02       		.uleb128 0x2
+ 170 0042 04       		.byte	0x4
+ 171 0043 05       		.byte	0x5
+ 172 0044 E9010000 		.4byte	.LASF4
+ 173 0048 02       		.uleb128 0x2
+ 174 0049 04       		.byte	0x4
+ 175 004a 07       		.byte	0x7
+ 176 004b 4A000000 		.4byte	.LASF5
+ 177 004f 02       		.uleb128 0x2
+ 178 0050 08       		.byte	0x8
+ 179 0051 05       		.byte	0x5
+ 180 0052 A6010000 		.4byte	.LASF6
+ 181 0056 02       		.uleb128 0x2
+ 182 0057 08       		.byte	0x8
+ 183 0058 07       		.byte	0x7
+ 184 0059 5B010000 		.4byte	.LASF7
+ 185 005d 03       		.uleb128 0x3
+ 186 005e 04       		.byte	0x4
+ 187 005f 05       		.byte	0x5
+ 188 0060 696E7400 		.ascii	"int\000"
+ 189 0064 02       		.uleb128 0x2
+ 190 0065 04       		.byte	0x4
+ 191 0066 07       		.byte	0x7
+ 192 0067 4E010000 		.4byte	.LASF8
+ 193 006b 04       		.uleb128 0x4
+ 194 006c E3010000 		.4byte	.LASF12
+ 195 0070 02       		.byte	0x2
+ 196 0071 5B       		.byte	0x5b
+ 197 0072 2C000000 		.4byte	0x2c
+ 198 0076 02       		.uleb128 0x2
+ 199 0077 04       		.byte	0x4
+ 200 0078 04       		.byte	0x4
+ 201 0079 31000000 		.4byte	.LASF9
+ 202 007d 02       		.uleb128 0x2
+ 203 007e 08       		.byte	0x8
+ 204 007f 04       		.byte	0x4
+ 205 0080 A1000000 		.4byte	.LASF10
+ 206 0084 02       		.uleb128 0x2
+ 207 0085 01       		.byte	0x1
+ 208 0086 08       		.byte	0x8
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 7
+
+
+ 209 0087 B4010000 		.4byte	.LASF11
+ 210 008b 04       		.uleb128 0x4
+ 211 008c 45000000 		.4byte	.LASF13
+ 212 0090 02       		.byte	0x2
+ 213 0091 F0       		.byte	0xf0
+ 214 0092 96000000 		.4byte	0x96
+ 215 0096 05       		.uleb128 0x5
+ 216 0097 6B000000 		.4byte	0x6b
+ 217 009b 06       		.uleb128 0x6
+ 218 009c 01       		.byte	0x1
+ 219 009d 03       		.byte	0x3
+ 220 009e 1D       		.byte	0x1d
+ 221 009f B0000000 		.4byte	0xb0
+ 222 00a3 07       		.uleb128 0x7
+ 223 00a4 F2010000 		.4byte	.LASF25
+ 224 00a8 03       		.byte	0x3
+ 225 00a9 1F       		.byte	0x1f
+ 226 00aa 6B000000 		.4byte	0x6b
+ 227 00ae 00       		.byte	0
+ 228 00af 00       		.byte	0
+ 229 00b0 04       		.uleb128 0x4
+ 230 00b1 72010000 		.4byte	.LASF14
+ 231 00b5 03       		.byte	0x3
+ 232 00b6 21       		.byte	0x21
+ 233 00b7 9B000000 		.4byte	0x9b
+ 234 00bb 08       		.uleb128 0x8
+ 235 00bc 86010000 		.4byte	.LASF15
+ 236 00c0 01       		.byte	0x1
+ 237 00c1 25       		.byte	0x25
+ 238 00c2 00000000 		.4byte	.LFB0
+ 239 00c6 02000000 		.4byte	.LFE0-.LFB0
+ 240 00ca 01       		.uleb128 0x1
+ 241 00cb 9C       		.byte	0x9c
+ 242 00cc 08       		.uleb128 0x8
+ 243 00cd C5010000 		.4byte	.LASF16
+ 244 00d1 01       		.byte	0x1
+ 245 00d2 39       		.byte	0x39
+ 246 00d3 00000000 		.4byte	.LFB1
+ 247 00d7 02000000 		.4byte	.LFE1-.LFB1
+ 248 00db 01       		.uleb128 0x1
+ 249 00dc 9C       		.byte	0x9c
+ 250 00dd 09       		.uleb128 0x9
+ 251 00de B9010000 		.4byte	.LASF17
+ 252 00e2 01       		.byte	0x1
+ 253 00e3 54       		.byte	0x54
+ 254 00e4 00000000 		.4byte	.LFB2
+ 255 00e8 18000000 		.4byte	.LFE2-.LFB2
+ 256 00ec 01       		.uleb128 0x1
+ 257 00ed 9C       		.byte	0x9c
+ 258 00ee FC000000 		.4byte	0xfc
+ 259 00f2 0A       		.uleb128 0xa
+ 260 00f3 0E000000 		.4byte	.LVL0
+ 261 00f7 35010000 		.4byte	0x135
+ 262 00fb 00       		.byte	0
+ 263 00fc 09       		.uleb128 0x9
+ 264 00fd 0A020000 		.4byte	.LASF18
+ 265 0101 01       		.byte	0x1
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 8
+
+
+ 266 0102 70       		.byte	0x70
+ 267 0103 00000000 		.4byte	.LFB3
+ 268 0107 24000000 		.4byte	.LFE3-.LFB3
+ 269 010b 01       		.uleb128 0x1
+ 270 010c 9C       		.byte	0x9c
+ 271 010d 24010000 		.4byte	0x124
+ 272 0111 0A       		.uleb128 0xa
+ 273 0112 10000000 		.4byte	.LVL1
+ 274 0116 3C010000 		.4byte	0x13c
+ 275 011a 0A       		.uleb128 0xa
+ 276 011b 1E000000 		.4byte	.LVL2
+ 277 011f 43010000 		.4byte	0x143
+ 278 0123 00       		.byte	0
+ 279 0124 0B       		.uleb128 0xb
+ 280 0125 00000000 		.4byte	.LASF26
+ 281 0129 01       		.byte	0x1
+ 282 012a 14       		.byte	0x14
+ 283 012b B0000000 		.4byte	0xb0
+ 284 012f 05       		.uleb128 0x5
+ 285 0130 03       		.byte	0x3
+ 286 0131 00000000 		.4byte	I2S_1_backup
+ 287 0135 0C       		.uleb128 0xc
+ 288 0136 A8000000 		.4byte	.LASF19
+ 289 013a 03       		.byte	0x3
+ 290 013b 29       		.byte	0x29
+ 291 013c 0C       		.uleb128 0xc
+ 292 013d B3000000 		.4byte	.LASF20
+ 293 0141 03       		.byte	0x3
+ 294 0142 2B       		.byte	0x2b
+ 295 0143 0C       		.uleb128 0xc
+ 296 0144 97010000 		.4byte	.LASF21
+ 297 0148 03       		.byte	0x3
+ 298 0149 3A       		.byte	0x3a
+ 299 014a 00       		.byte	0
+ 300              		.section	.debug_abbrev,"",%progbits
+ 301              	.Ldebug_abbrev0:
+ 302 0000 01       		.uleb128 0x1
+ 303 0001 11       		.uleb128 0x11
+ 304 0002 01       		.byte	0x1
+ 305 0003 25       		.uleb128 0x25
+ 306 0004 0E       		.uleb128 0xe
+ 307 0005 13       		.uleb128 0x13
+ 308 0006 0B       		.uleb128 0xb
+ 309 0007 03       		.uleb128 0x3
+ 310 0008 0E       		.uleb128 0xe
+ 311 0009 1B       		.uleb128 0x1b
+ 312 000a 0E       		.uleb128 0xe
+ 313 000b 55       		.uleb128 0x55
+ 314 000c 17       		.uleb128 0x17
+ 315 000d 11       		.uleb128 0x11
+ 316 000e 01       		.uleb128 0x1
+ 317 000f 10       		.uleb128 0x10
+ 318 0010 17       		.uleb128 0x17
+ 319 0011 00       		.byte	0
+ 320 0012 00       		.byte	0
+ 321 0013 02       		.uleb128 0x2
+ 322 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 9
+
+
+ 323 0015 00       		.byte	0
+ 324 0016 0B       		.uleb128 0xb
+ 325 0017 0B       		.uleb128 0xb
+ 326 0018 3E       		.uleb128 0x3e
+ 327 0019 0B       		.uleb128 0xb
+ 328 001a 03       		.uleb128 0x3
+ 329 001b 0E       		.uleb128 0xe
+ 330 001c 00       		.byte	0
+ 331 001d 00       		.byte	0
+ 332 001e 03       		.uleb128 0x3
+ 333 001f 24       		.uleb128 0x24
+ 334 0020 00       		.byte	0
+ 335 0021 0B       		.uleb128 0xb
+ 336 0022 0B       		.uleb128 0xb
+ 337 0023 3E       		.uleb128 0x3e
+ 338 0024 0B       		.uleb128 0xb
+ 339 0025 03       		.uleb128 0x3
+ 340 0026 08       		.uleb128 0x8
+ 341 0027 00       		.byte	0
+ 342 0028 00       		.byte	0
+ 343 0029 04       		.uleb128 0x4
+ 344 002a 16       		.uleb128 0x16
+ 345 002b 00       		.byte	0
+ 346 002c 03       		.uleb128 0x3
+ 347 002d 0E       		.uleb128 0xe
+ 348 002e 3A       		.uleb128 0x3a
+ 349 002f 0B       		.uleb128 0xb
+ 350 0030 3B       		.uleb128 0x3b
+ 351 0031 0B       		.uleb128 0xb
+ 352 0032 49       		.uleb128 0x49
+ 353 0033 13       		.uleb128 0x13
+ 354 0034 00       		.byte	0
+ 355 0035 00       		.byte	0
+ 356 0036 05       		.uleb128 0x5
+ 357 0037 35       		.uleb128 0x35
+ 358 0038 00       		.byte	0
+ 359 0039 49       		.uleb128 0x49
+ 360 003a 13       		.uleb128 0x13
+ 361 003b 00       		.byte	0
+ 362 003c 00       		.byte	0
+ 363 003d 06       		.uleb128 0x6
+ 364 003e 13       		.uleb128 0x13
+ 365 003f 01       		.byte	0x1
+ 366 0040 0B       		.uleb128 0xb
+ 367 0041 0B       		.uleb128 0xb
+ 368 0042 3A       		.uleb128 0x3a
+ 369 0043 0B       		.uleb128 0xb
+ 370 0044 3B       		.uleb128 0x3b
+ 371 0045 0B       		.uleb128 0xb
+ 372 0046 01       		.uleb128 0x1
+ 373 0047 13       		.uleb128 0x13
+ 374 0048 00       		.byte	0
+ 375 0049 00       		.byte	0
+ 376 004a 07       		.uleb128 0x7
+ 377 004b 0D       		.uleb128 0xd
+ 378 004c 00       		.byte	0
+ 379 004d 03       		.uleb128 0x3
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 10
+
+
+ 380 004e 0E       		.uleb128 0xe
+ 381 004f 3A       		.uleb128 0x3a
+ 382 0050 0B       		.uleb128 0xb
+ 383 0051 3B       		.uleb128 0x3b
+ 384 0052 0B       		.uleb128 0xb
+ 385 0053 49       		.uleb128 0x49
+ 386 0054 13       		.uleb128 0x13
+ 387 0055 38       		.uleb128 0x38
+ 388 0056 0B       		.uleb128 0xb
+ 389 0057 00       		.byte	0
+ 390 0058 00       		.byte	0
+ 391 0059 08       		.uleb128 0x8
+ 392 005a 2E       		.uleb128 0x2e
+ 393 005b 00       		.byte	0
+ 394 005c 3F       		.uleb128 0x3f
+ 395 005d 19       		.uleb128 0x19
+ 396 005e 03       		.uleb128 0x3
+ 397 005f 0E       		.uleb128 0xe
+ 398 0060 3A       		.uleb128 0x3a
+ 399 0061 0B       		.uleb128 0xb
+ 400 0062 3B       		.uleb128 0x3b
+ 401 0063 0B       		.uleb128 0xb
+ 402 0064 27       		.uleb128 0x27
+ 403 0065 19       		.uleb128 0x19
+ 404 0066 11       		.uleb128 0x11
+ 405 0067 01       		.uleb128 0x1
+ 406 0068 12       		.uleb128 0x12
+ 407 0069 06       		.uleb128 0x6
+ 408 006a 40       		.uleb128 0x40
+ 409 006b 18       		.uleb128 0x18
+ 410 006c 9742     		.uleb128 0x2117
+ 411 006e 19       		.uleb128 0x19
+ 412 006f 00       		.byte	0
+ 413 0070 00       		.byte	0
+ 414 0071 09       		.uleb128 0x9
+ 415 0072 2E       		.uleb128 0x2e
+ 416 0073 01       		.byte	0x1
+ 417 0074 3F       		.uleb128 0x3f
+ 418 0075 19       		.uleb128 0x19
+ 419 0076 03       		.uleb128 0x3
+ 420 0077 0E       		.uleb128 0xe
+ 421 0078 3A       		.uleb128 0x3a
+ 422 0079 0B       		.uleb128 0xb
+ 423 007a 3B       		.uleb128 0x3b
+ 424 007b 0B       		.uleb128 0xb
+ 425 007c 27       		.uleb128 0x27
+ 426 007d 19       		.uleb128 0x19
+ 427 007e 11       		.uleb128 0x11
+ 428 007f 01       		.uleb128 0x1
+ 429 0080 12       		.uleb128 0x12
+ 430 0081 06       		.uleb128 0x6
+ 431 0082 40       		.uleb128 0x40
+ 432 0083 18       		.uleb128 0x18
+ 433 0084 9742     		.uleb128 0x2117
+ 434 0086 19       		.uleb128 0x19
+ 435 0087 01       		.uleb128 0x1
+ 436 0088 13       		.uleb128 0x13
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 11
+
+
+ 437 0089 00       		.byte	0
+ 438 008a 00       		.byte	0
+ 439 008b 0A       		.uleb128 0xa
+ 440 008c 898201   		.uleb128 0x4109
+ 441 008f 00       		.byte	0
+ 442 0090 11       		.uleb128 0x11
+ 443 0091 01       		.uleb128 0x1
+ 444 0092 31       		.uleb128 0x31
+ 445 0093 13       		.uleb128 0x13
+ 446 0094 00       		.byte	0
+ 447 0095 00       		.byte	0
+ 448 0096 0B       		.uleb128 0xb
+ 449 0097 34       		.uleb128 0x34
+ 450 0098 00       		.byte	0
+ 451 0099 03       		.uleb128 0x3
+ 452 009a 0E       		.uleb128 0xe
+ 453 009b 3A       		.uleb128 0x3a
+ 454 009c 0B       		.uleb128 0xb
+ 455 009d 3B       		.uleb128 0x3b
+ 456 009e 0B       		.uleb128 0xb
+ 457 009f 49       		.uleb128 0x49
+ 458 00a0 13       		.uleb128 0x13
+ 459 00a1 02       		.uleb128 0x2
+ 460 00a2 18       		.uleb128 0x18
+ 461 00a3 00       		.byte	0
+ 462 00a4 00       		.byte	0
+ 463 00a5 0C       		.uleb128 0xc
+ 464 00a6 2E       		.uleb128 0x2e
+ 465 00a7 00       		.byte	0
+ 466 00a8 3F       		.uleb128 0x3f
+ 467 00a9 19       		.uleb128 0x19
+ 468 00aa 03       		.uleb128 0x3
+ 469 00ab 0E       		.uleb128 0xe
+ 470 00ac 3A       		.uleb128 0x3a
+ 471 00ad 0B       		.uleb128 0xb
+ 472 00ae 3B       		.uleb128 0x3b
+ 473 00af 0B       		.uleb128 0xb
+ 474 00b0 27       		.uleb128 0x27
+ 475 00b1 19       		.uleb128 0x19
+ 476 00b2 3C       		.uleb128 0x3c
+ 477 00b3 19       		.uleb128 0x19
+ 478 00b4 00       		.byte	0
+ 479 00b5 00       		.byte	0
+ 480 00b6 00       		.byte	0
+ 481              		.section	.debug_aranges,"",%progbits
+ 482 0000 34000000 		.4byte	0x34
+ 483 0004 0200     		.2byte	0x2
+ 484 0006 00000000 		.4byte	.Ldebug_info0
+ 485 000a 04       		.byte	0x4
+ 486 000b 00       		.byte	0
+ 487 000c 0000     		.2byte	0
+ 488 000e 0000     		.2byte	0
+ 489 0010 00000000 		.4byte	.LFB0
+ 490 0014 02000000 		.4byte	.LFE0-.LFB0
+ 491 0018 00000000 		.4byte	.LFB1
+ 492 001c 02000000 		.4byte	.LFE1-.LFB1
+ 493 0020 00000000 		.4byte	.LFB2
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 12
+
+
+ 494 0024 18000000 		.4byte	.LFE2-.LFB2
+ 495 0028 00000000 		.4byte	.LFB3
+ 496 002c 24000000 		.4byte	.LFE3-.LFB3
+ 497 0030 00000000 		.4byte	0
+ 498 0034 00000000 		.4byte	0
+ 499              		.section	.debug_ranges,"",%progbits
+ 500              	.Ldebug_ranges0:
+ 501 0000 00000000 		.4byte	.LFB0
+ 502 0004 02000000 		.4byte	.LFE0
+ 503 0008 00000000 		.4byte	.LFB1
+ 504 000c 02000000 		.4byte	.LFE1
+ 505 0010 00000000 		.4byte	.LFB2
+ 506 0014 18000000 		.4byte	.LFE2
+ 507 0018 00000000 		.4byte	.LFB3
+ 508 001c 24000000 		.4byte	.LFE3
+ 509 0020 00000000 		.4byte	0
+ 510 0024 00000000 		.4byte	0
+ 511              		.section	.debug_line,"",%progbits
+ 512              	.Ldebug_line0:
+ 513 0000 9F000000 		.section	.debug_str,"MS",%progbits,1
+ 513      02005200 
+ 513      00000201 
+ 513      FB0E0D00 
+ 513      01010101 
+ 514              	.LASF26:
+ 515 0000 4932535F 		.ascii	"I2S_1_backup\000"
+ 515      315F6261 
+ 515      636B7570 
+ 515      00
+ 516              	.LASF23:
+ 517 000d 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\I2S_1_PM.c\000"
+ 517      6E657261 
+ 517      7465645F 
+ 517      536F7572 
+ 517      63655C50 
+ 518              	.LASF9:
+ 519 0031 666C6F61 		.ascii	"float\000"
+ 519      7400
+ 520              	.LASF1:
+ 521 0037 756E7369 		.ascii	"unsigned char\000"
+ 521      676E6564 
+ 521      20636861 
+ 521      7200
+ 522              	.LASF13:
+ 523 0045 72656738 		.ascii	"reg8\000"
+ 523      00
+ 524              	.LASF5:
+ 525 004a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 525      20756E73 
+ 525      69676E65 
+ 525      6420696E 
+ 525      7400
+ 526              	.LASF3:
+ 527 005c 73686F72 		.ascii	"short unsigned int\000"
+ 527      7420756E 
+ 527      7369676E 
+ 527      65642069 
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 13
+
+
+ 527      6E7400
+ 528              	.LASF24:
+ 529 006f 433A5C55 		.ascii	"C:\\Users\\Zachary\\Desktop\\I2S\\Wave Generator.cy"
+ 529      73657273 
+ 529      5C5A6163 
+ 529      68617279 
+ 529      5C446573 
+ 530 009d 64736E00 		.ascii	"dsn\000"
+ 531              	.LASF10:
+ 532 00a1 646F7562 		.ascii	"double\000"
+ 532      6C6500
+ 533              	.LASF19:
+ 534 00a8 4932535F 		.ascii	"I2S_1_Stop\000"
+ 534      315F5374 
+ 534      6F7000
+ 535              	.LASF20:
+ 536 00b3 4932535F 		.ascii	"I2S_1_Enable\000"
+ 536      315F456E 
+ 536      61626C65 
+ 536      00
+ 537              	.LASF22:
+ 538 00c0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 538      4320342E 
+ 538      392E3320 
+ 538      32303135 
+ 538      30333033 
+ 539 00f3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 539      20726576 
+ 539      6973696F 
+ 539      6E203232 
+ 539      31323230 
+ 540 0126 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 540      66756E63 
+ 540      74696F6E 
+ 540      2D736563 
+ 540      74696F6E 
+ 541              	.LASF8:
+ 542 014e 756E7369 		.ascii	"unsigned int\000"
+ 542      676E6564 
+ 542      20696E74 
+ 542      00
+ 543              	.LASF7:
+ 544 015b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 544      206C6F6E 
+ 544      6720756E 
+ 544      7369676E 
+ 544      65642069 
+ 545              	.LASF14:
+ 546 0172 4932535F 		.ascii	"I2S_1_BACKUP_STRUCT\000"
+ 546      315F4241 
+ 546      434B5550 
+ 546      5F535452 
+ 546      55435400 
+ 547              	.LASF15:
+ 548 0186 4932535F 		.ascii	"I2S_1_SaveConfig\000"
+ 548      315F5361 
+ 548      7665436F 
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccKjTquE.s 			page 14
+
+
+ 548      6E666967 
+ 548      00
+ 549              	.LASF21:
+ 550 0197 4932535F 		.ascii	"I2S_1_EnableRx\000"
+ 550      315F456E 
+ 550      61626C65 
+ 550      527800
+ 551              	.LASF6:
+ 552 01a6 6C6F6E67 		.ascii	"long long int\000"
+ 552      206C6F6E 
+ 552      6720696E 
+ 552      7400
+ 553              	.LASF11:
+ 554 01b4 63686172 		.ascii	"char\000"
+ 554      00
+ 555              	.LASF17:
+ 556 01b9 4932535F 		.ascii	"I2S_1_Sleep\000"
+ 556      315F536C 
+ 556      65657000 
+ 557              	.LASF16:
+ 558 01c5 4932535F 		.ascii	"I2S_1_RestoreConfig\000"
+ 558      315F5265 
+ 558      73746F72 
+ 558      65436F6E 
+ 558      66696700 
+ 559              	.LASF2:
+ 560 01d9 73686F72 		.ascii	"short int\000"
+ 560      7420696E 
+ 560      7400
+ 561              	.LASF12:
+ 562 01e3 75696E74 		.ascii	"uint8\000"
+ 562      3800
+ 563              	.LASF4:
+ 564 01e9 6C6F6E67 		.ascii	"long int\000"
+ 564      20696E74 
+ 564      00
+ 565              	.LASF25:
+ 566 01f2 656E6162 		.ascii	"enableState\000"
+ 566      6C655374 
+ 566      61746500 
+ 567              	.LASF0:
+ 568 01fe 7369676E 		.ascii	"signed char\000"
+ 568      65642063 
+ 568      68617200 
+ 569              	.LASF18:
+ 570 020a 4932535F 		.ascii	"I2S_1_Wakeup\000"
+ 570      315F5761 
+ 570      6B657570 
+ 570      00
+ 571              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
