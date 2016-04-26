@@ -114,6 +114,8 @@ int main()
 }
 
 /* Rx DMA Config */
+
+#if 0
 void DmaRxConfiguration(void)
 {
     /* Init DMA, 1 byte bursts, each burst requires a request */
@@ -126,8 +128,8 @@ void DmaRxConfiguration(void)
 	RxDMA_TD_1[0] = CyDmaTdAllocate();
 	
 	/* Configure this Td chain, get BUFFER_SIZE samples */
-    CyDmaTdSetConfiguration(RxDMA_TD_0[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_0__TD_TERMOUT_EN | CY_DMA_TD_SWAP_EN);
-	CyDmaTdSetConfiguration(RxDMA_TD_1[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_1__TD_TERMOUT_EN | CY_DMA_TD_SWAP_EN);
+    CyDmaTdSetConfiguration(RxDMA_TD_0[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_0__TD_TERMOUT_EN);
+	CyDmaTdSetConfiguration(RxDMA_TD_1[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_1__TD_TERMOUT_EN);
 
     /* From the I2S to the memory */
     CyDmaTdSetAddress(RxDMA_TD_0[0], LO16((uint32)I2S_1_RX_CH0_F0_PTR), LO16((uint32)ReceivedData));
@@ -141,6 +143,8 @@ void DmaRxConfiguration(void)
     CyDmaChEnable(RxDMA_Chan_0, 1);
 	CyDmaChEnable(RxDMA_Chan_1, 1);
 }
+#endif
+
 
 /* Tx DMA Config */
 void DmaTxConfiguration(void)

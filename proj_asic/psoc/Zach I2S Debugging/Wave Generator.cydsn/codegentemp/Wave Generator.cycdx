@@ -3,7 +3,7 @@
   <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="I2S_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="bI2S" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <register name="RX_STATUS_0_REG" address="0x40006464" bitWidth="8" desc="" hidden="false">
+    <register name="RX_STATUS_0_REG" address="0x40006462" bitWidth="8" desc="" hidden="false">
       <field name="INT" from="7" to="7" access="R" resetVal="" desc="Interrupt bit" />
       <field name="CH1 F1" from="5" to="5" access="R" resetVal="" desc="Stereo channel 1 FIFO 1 state">
         <value name="EMPTY" value="0" desc="" />
@@ -57,11 +57,16 @@
   <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="SCK_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="WS_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="WS" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SDO" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SCK" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="I2S_Clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="isr_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="UART" BASE="0x0" SIZE="0x0" desc="UART" visible="true" hidden="false">
     <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <register name="TX_UART_TX_DATA" address="0x40006445" bitWidth="8" desc="TX Data Register" hidden="false" />
+    <register name="TX_UART_TX_DATA" address="0x40006444" bitWidth="8" desc="TX Data Register" hidden="false" />
     <register name="TX_UART_TX_STATUS" address="0x40006465" bitWidth="8" desc="TX status register" hidden="false">
       <field name="UART_TX_STS_COMPLETE" from="0" to="0" access="R" resetVal="" desc="" />
       <field name="UART_TX_STS_FIFO_EMPTY" from="1" to="1" access="R" resetVal="" desc="" />
@@ -69,12 +74,6 @@
       <field name="UART_TX_STS_FIFO_NOT_FULL" from="3" to="3" access="R" resetVal="" desc="" />
     </register>
   </block>
-  <block name="WS" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="SDO" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="SCK" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="I2S_Clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="RxDMA_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="RxDMA_0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="I2S" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="VirtualMux_6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />

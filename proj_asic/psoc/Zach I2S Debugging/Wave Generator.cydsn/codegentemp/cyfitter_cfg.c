@@ -124,7 +124,7 @@ static void CyClockStartupError(uint8 errorCode)
 }
 #endif
 
-#define CY_CFG_BASE_ADDR_COUNT 17u
+#define CY_CFG_BASE_ADDR_COUNT 18u
 CYPACKED typedef struct
 {
 	uint8 offset;
@@ -132,16 +132,16 @@ CYPACKED typedef struct
 } CYPACKED_ATTR cy_cfg_addrvalue_t;
 
 #define cy_cfg_addr_table ((const uint32 CYFAR *)0x48000000u)
-#define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000044u)
+#define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000048u)
 
 /* UDB_1_5_1_CONFIG Address: CYDEV_UCFG_B0_P0_U1_BASE Size (bytes): 128 */
-#define BS_UDB_1_5_1_CONFIG_VAL ((const uint8 CYFAR *)0x4800040Cu)
+#define BS_UDB_1_5_1_CONFIG_VAL ((const uint8 CYFAR *)0x48000434u)
 
 /* IOPINS0_4 Address: CYREG_PRT4_DM0 Size (bytes): 8 */
-#define BS_IOPINS0_4_VAL ((const uint8 CYFAR *)0x4800048Cu)
+#define BS_IOPINS0_4_VAL ((const uint8 CYFAR *)0x480004B4u)
 
 /* IOPINS0_5 Address: CYREG_PRT5_DR Size (bytes): 10 */
-#define BS_IOPINS0_5_VAL ((const uint8 CYFAR *)0x48000494u)
+#define BS_IOPINS0_5_VAL ((const uint8 CYFAR *)0x480004BCu)
 
 
 /*******************************************************************************
@@ -390,8 +390,6 @@ void cyfitter_cfg(void)
 		/* Perform normal device configuration. Order is not critical for these items. */
 		CYMEMZERO((void CYFAR *)(CYREG_PHUB_CFGMEM0_CFG0), 4u);
 		CYMEMZERO((void CYFAR *)(CYREG_PHUB_CFGMEM1_CFG0), 4u);
-		CYMEMZERO((void CYFAR *)(CYREG_PHUB_CFGMEM2_CFG0), 4u);
-		CYMEMZERO((void CYFAR *)(CYREG_PHUB_CFGMEM3_CFG0), 4u);
 
 		/* Enable digital routing */
 		CY_SET_XTND_REG8((void CYFAR *)CYREG_BCTL0_BANK_CTL, CY_GET_XTND_REG8((void CYFAR *)CYREG_BCTL0_BANK_CTL) | 0x02u);

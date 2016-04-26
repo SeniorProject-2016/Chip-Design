@@ -1,5 +1,5 @@
 # Wave Generator
-# 2016-04-25 21:37:44Z
+# 2016-04-26 18:58:19Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -16,46 +16,45 @@ set_io "SCK_1(0)" iocell 4 3
 set_io "WS_1(0)" iocell 4 4
 set_io "SDI_1(0)" iocell 4 5
 set_location "\I2S:bI2S:tx_underflow_0\" 3 5 0 1
-set_location "Net_277" 3 3 1 3
+set_location "Net_277" 3 3 0 2
 set_location "\UART:BUART:counter_load_not\" 3 3 1 1
-set_location "\UART:BUART:tx_status_0\" 3 3 1 2
-set_location "\UART:BUART:tx_status_2\" 3 3 0 1
+set_location "\UART:BUART:tx_status_0\" 3 3 0 1
+set_location "\UART:BUART:tx_status_2\" 3 3 0 3
 set_location "\I2S_1:bI2S:rx_overflow_0\" 2 3 1 1
 set_location "\I2S:bI2S:CtlReg\" 3 5 6
 set_location "\I2S:bI2S:BitCounter\" 2 5 7
 set_location "\I2S:bI2S:Tx:STS[0]:Sts\" 3 5 4
 set_location "\I2S:bI2S:Tx:CH[0]:dpTx:u0\" 3 5 2
-set_location "TxDMA_0" drqcell -1 -1 2
-set_location "RxDMA_1" drqcell -1 -1 1
-set_location "RxDMA_0" drqcell -1 -1 0
-set_location "\UART:BUART:sTX:TxShifter:u0\" 3 3 2
-set_location "\UART:BUART:sTX:sCLOCK:TxBitClkGen\" 2 3 2
+set_location "TxDMA_0" drqcell -1 -1 0
+set_location "isr_1" interrupt -1 -1 0
+set_location "\UART:BUART:sTX:TxShifter:u0\" 2 3 2
+set_location "\UART:BUART:sTX:sCLOCK:TxBitClkGen\" 3 3 2
 set_location "\UART:BUART:sTX:TxSts\" 3 3 4
-set_location "TxDMA_1" drqcell -1 -1 3
+set_location "TxDMA_1" drqcell -1 -1 1
 set_location "\I2S_1:bI2S:CtlReg\" 2 3 6
-set_location "\I2S_1:bI2S:BitCounter\" 3 4 7
-set_location "\I2S_1:bI2S:Rx:STS[0]:Sts\" 2 3 4
+set_location "\I2S_1:bI2S:BitCounter\" 2 4 7
+set_location "\I2S_1:bI2S:Rx:STS[0]:Sts\" 3 4 4
 set_location "\I2S_1:bI2S:Rx:CH[0]:dpRx:u0\" 2 4 2
-set_location "\I2S:bI2S:reset\" 3 5 1 2
+set_location "\I2S:bI2S:reset\" 3 4 1 0
 set_location "Net_388" 3 5 0 3
 set_location "\I2S:bI2S:tx_underflow_sticky\" 3 5 1 1
 set_location "\I2S:bI2S:txenable\" 2 5 0 0
 set_location "\I2S:bI2S:tx_state_2\" 3 5 0 0
 set_location "\I2S:bI2S:tx_state_1\" 3 5 1 0
 set_location "\I2S:bI2S:tx_state_0\" 3 5 0 2
-set_location "Net_367_0" 3 4 1 0
-set_location "\UART:BUART:txn\" 3 3 0 0
-set_location "\UART:BUART:tx_state_1\" 2 3 0 3
-set_location "\UART:BUART:tx_state_0\" 3 3 1 0
-set_location "\UART:BUART:tx_state_2\" 2 3 0 0
-set_location "\UART:BUART:tx_bitclk\" 2 3 0 1
-set_location "\I2S_1:bI2S:reset\" 3 4 1 3
-set_location "Net_378" 3 4 1 2
+set_location "Net_367_0" 3 4 0 1
+set_location "\UART:BUART:txn\" 2 3 0 0
+set_location "\UART:BUART:tx_state_1\" 2 3 0 1
+set_location "\UART:BUART:tx_state_0\" 3 3 0 0
+set_location "\UART:BUART:tx_state_2\" 3 3 1 0
+set_location "\UART:BUART:tx_bitclk\" 3 3 1 2
+set_location "\I2S_1:bI2S:reset\" 3 4 0 3
+set_location "Net_378" 3 4 0 2
 set_location "\I2S_1:bI2S:rx_f0_load\" 2 4 0 2
 set_location "\I2S_1:bI2S:rx_state_2\" 2 4 0 0
 set_location "\I2S_1:bI2S:rx_state_1\" 2 4 0 1
 set_location "\I2S_1:bI2S:rx_state_0\" 2 4 1 1
 set_location "\I2S_1:bI2S:rx_f1_load\" 2 4 0 3
 set_location "\I2S_1:bI2S:rx_overflow_sticky\" 2 3 1 0
-set_location "\I2S_1:bI2S:rxenable\" 3 4 0 0
-set_location "\I2S_1:bI2S:rx_data_in_0\" 3 4 1 1
+set_location "\I2S_1:bI2S:rxenable\" 2 5 1 0
+set_location "\I2S_1:bI2S:rx_data_in_0\" 3 4 0 0

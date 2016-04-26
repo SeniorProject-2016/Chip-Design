@@ -2,7 +2,7 @@
 --	Conversion of Wave Generator.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Apr 25 17:37:42 2016
+--	Tue Apr 26 14:58:15 2016
 --
 
 USE cypress.cypress.all;
@@ -253,10 +253,7 @@ SIGNAL \I2S:clip_detect_1\ : bit;
 SIGNAL Net_255_0 : bit;
 SIGNAL \I2S:clip_detect_0\ : bit;
 SIGNAL Net_261 : bit;
-SIGNAL Net_372_0 : bit;
-SIGNAL Net_361 : bit;
-SIGNAL Net_373_0 : bit;
-SIGNAL Net_258 : bit;
+SIGNAL Net_397 : bit;
 SIGNAL \UART:Net_9\ : bit;
 SIGNAL \UART:Net_61\ : bit;
 SIGNAL \UART:BUART:clock_op\ : bit;
@@ -442,7 +439,6 @@ SIGNAL \I2S_1:bI2S:Rx:STS[0]:status_4\ : bit;
 SIGNAL \I2S_1:bI2S:Rx:STS[0]:status_3\ : bit;
 SIGNAL \I2S_1:bI2S:rx_int_out_0\ : bit;
 SIGNAL \I2S_1:bI2S:rx_int_reg\ : bit;
-SIGNAL Net_397 : bit;
 SIGNAL \I2S_1:bI2S:rx_f0_full_0\ : bit;
 SIGNAL \I2S_1:bI2S:rx_f1_full_0\ : bit;
 SIGNAL \I2S_1:rx_drq0_0\ : bit;
@@ -534,6 +530,7 @@ SIGNAL \I2S_1:rx_drq0_2\ : bit;
 SIGNAL \I2S_1:rx_dma0_1\ : bit;
 ATTRIBUTE port_state_att of \I2S_1:rx_dma0_1\:SIGNAL IS 2;
 SIGNAL \I2S_1:rx_drq0_1\ : bit;
+SIGNAL Net_372_0 : bit;
 SIGNAL \I2S_1:rx_dma1_4\ : bit;
 ATTRIBUTE port_state_att of \I2S_1:rx_dma1_4\:SIGNAL IS 2;
 SIGNAL \I2S_1:rx_drq1_4\ : bit;
@@ -546,6 +543,7 @@ SIGNAL \I2S_1:rx_drq1_2\ : bit;
 SIGNAL \I2S_1:rx_dma1_1\ : bit;
 ATTRIBUTE port_state_att of \I2S_1:rx_dma1_1\:SIGNAL IS 2;
 SIGNAL \I2S_1:rx_drq1_1\ : bit;
+SIGNAL Net_373_0 : bit;
 SIGNAL \I2S_1:tx_dma0_4\ : bit;
 ATTRIBUTE port_state_att of \I2S_1:tx_dma0_4\:SIGNAL IS 2;
 SIGNAL \I2S_1:tx_drq0_4\ : bit;
@@ -1114,18 +1112,9 @@ TxDMA_0:cy_dma_v1_0
 	PORT MAP(drq=>Net_374_0,
 		trq=>zero,
 		nrq=>Net_261);
-RxDMA_1:cy_dma_v1_0
-	GENERIC MAP(drq_type=>"01",
-		num_tds=>0)
-	PORT MAP(drq=>Net_372_0,
-		trq=>zero,
-		nrq=>Net_361);
-RxDMA_0:cy_dma_v1_0
-	GENERIC MAP(drq_type=>"01",
-		num_tds=>0)
-	PORT MAP(drq=>Net_373_0,
-		trq=>zero,
-		nrq=>Net_258);
+isr_1:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_397);
 \UART:IntClock\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
@@ -1434,8 +1423,8 @@ TxDMA_1:cy_dma_v1_0
 	PORT MAP(reset=>zero,
 		clock=>\I2S_1:bI2S:op_clk\,
 		status=>(zero, zero, zero, zero,
-			Net_373_0, Net_372_0, \I2S_1:bI2S:rx_overflow_0\),
-		interrupt=>\I2S_1:bI2S:rx_int_out_0\);
+			\I2S_1:bI2S:rx_f1_n_empty_0\, \I2S_1:bI2S:rx_f0_n_empty_0\, \I2S_1:bI2S:rx_overflow_0\),
+		interrupt=>Net_397);
 \I2S_1:bI2S:Rx:CH[0]:dpRx:u0\:cy_psoc3_dp
 	GENERIC MAP(cy_dpconfig=>"0000000000000000000000010100000000000001010000000000000101010000000000010100000000010000011100000001000001000000000000000000000011111111000000001111111111111111001000000000001000000101000000000000000000000100",
 		d0_init=>"00000000",
@@ -1479,9 +1468,9 @@ TxDMA_1:cy_dma_v1_0
 		co_msb=>open,
 		cmsb=>open,
 		so=>open,
-		f0_bus_stat=>Net_372_0,
+		f0_bus_stat=>\I2S_1:bI2S:rx_f0_n_empty_0\,
 		f0_blk_stat=>\I2S_1:bI2S:rx_f0_full_0\,
-		f1_bus_stat=>Net_373_0,
+		f1_bus_stat=>\I2S_1:bI2S:rx_f1_n_empty_0\,
 		f1_blk_stat=>\I2S_1:bI2S:rx_f1_full_0\,
 		ce0_reg=>open,
 		cl0_reg=>open,
@@ -1853,7 +1842,7 @@ Net_267:cy_dff
 		clk=>\I2S_1:bI2S:op_clk\,
 		q=>\I2S_1:bI2S:rxenable\);
 \I2S_1:bI2S:rx_int_reg\:cy_dff
-	PORT MAP(d=>\I2S_1:bI2S:rx_int_out_0\,
+	PORT MAP(d=>Net_397,
 		clk=>\I2S_1:bI2S:op_clk\,
 		q=>\I2S_1:bI2S:rx_int_reg\);
 \I2S_1:bI2S:rx_data_in_0\:cy_dff

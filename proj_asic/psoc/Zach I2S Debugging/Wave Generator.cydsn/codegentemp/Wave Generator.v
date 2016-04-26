@@ -1,6 +1,6 @@
 // ======================================================================
 // Wave Generator.v generated from TopDesign.cysch
-// 04/25/2016 at 17:37
+// 04/26/2016 at 14:58
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -356,7 +356,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\bI2S_v2_70\bI2S_v2_70.v"
 `endif
 
-// I2S_v2_70(ClipPresent=false, ClockSyncMode=true, CommonClipThresholds=false, DataBits=16, Direction=1, EnableClipDetect=false, EnableRxByteSwap=false, EnableTxByteSwap=false, InterruptSource=0, NegThresholds=-1, NumRxChannels=2, NumRxLines=1, NumTxChannels=0, NumTxLines=1, PosThresholds=0u, RxDataInterleaved=false, RxDataInterleaving=0, RxDMA_present=1, RxDmaPresent=true, RxInterruptSource=0, RxStsReg0Present=true, RxStsReg1Present=false, RxStsReg2Present=false, StaticBitResolution=true, TermVisibility_clip=false, TermVisibility_clock=true, TermVisibility_rx_dma0=true, TermVisibility_rx_dma1=true, TermVisibility_rx_interrupt=true, TermVisibility_sck=true, TermVisibility_sdi=true, TermVisibility_sdo=false, TermVisibility_tx_dma0=false, TermVisibility_tx_dma1=false, TermVisibility_tx_interrupt=false, TermVisibility_ws=true, TxDataInterleaved=true, TxDataInterleaving=1, TxDMA_present=1, TxDmaPresent=false, TxInterruptSource=0, TxStsReg0Present=false, TxStsReg1Present=false, TxStsReg2Present=false, WordSelect=32, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMPONENT_NAME=I2S_v2_70, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=I2S_1, CY_INSTANCE_SHORT_NAME=I2S_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=70, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 SP1, INSTANCE_NAME=I2S_1, )
+// I2S_v2_70(ClipPresent=false, ClockSyncMode=true, CommonClipThresholds=false, DataBits=16, Direction=1, EnableClipDetect=false, EnableRxByteSwap=false, EnableTxByteSwap=false, InterruptSource=48, NegThresholds=-1, NumRxChannels=2, NumRxLines=1, NumTxChannels=0, NumTxLines=1, PosThresholds=0u, RxDataInterleaved=false, RxDataInterleaving=0, RxDMA_present=1, RxDmaPresent=true, RxInterruptSource=6, RxStsReg0Present=true, RxStsReg1Present=false, RxStsReg2Present=false, StaticBitResolution=true, TermVisibility_clip=false, TermVisibility_clock=true, TermVisibility_rx_dma0=true, TermVisibility_rx_dma1=true, TermVisibility_rx_interrupt=true, TermVisibility_sck=true, TermVisibility_sdi=true, TermVisibility_sdo=false, TermVisibility_tx_dma0=false, TermVisibility_tx_dma1=false, TermVisibility_tx_interrupt=false, TermVisibility_ws=true, TxDataInterleaved=true, TxDataInterleaving=1, TxDMA_present=1, TxDmaPresent=false, TxInterruptSource=0, TxStsReg0Present=false, TxStsReg1Present=false, TxStsReg2Present=false, WordSelect=32, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMPONENT_NAME=I2S_v2_70, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=I2S_1, CY_INSTANCE_SHORT_NAME=I2S_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=70, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 SP1, INSTANCE_NAME=I2S_1, )
 module I2S_v2_70_2 (
     clock,
     sdi,
@@ -441,9 +441,10 @@ module top ;
 
           wire [0:0] Net_399;
           wire  Net_398;
-          wire  Net_397;
           wire [0:0] Net_396;
           wire [0:0] Net_395;
+          wire [0:0] Net_373;
+          wire [0:0] Net_372;
           wire [0:0] Net_392;
           wire  Net_310;
           wire  Net_309;
@@ -459,10 +460,6 @@ module top ;
           wire  Net_267;
           wire  Net_266;
           wire  Net_264;
-          wire  Net_258;
-          wire  Net_257;
-          wire  Net_361;
-          wire  Net_360;
           wire  Net_261;
           wire  Net_260;
           wire [0:0] Net_255;
@@ -472,17 +469,16 @@ module top ;
           wire [0:0] Net_368;
           wire [0:0] Net_247;
           wire  Net_246;
-          wire [0:0] Net_373;
-          wire  Net_378;
-          wire  Net_391;
-          wire  Net_376;
-          wire  Net_364;
-          wire [0:0] Net_374;
+          wire  Net_397;
           wire [0:0] Net_371;
-          wire [0:0] Net_372;
+          wire [0:0] Net_374;
           wire  Net_388;
           wire  Net_365;
           wire [0:0] Net_367;
+          wire  Net_378;
+          wire  Net_364;
+          wire  Net_391;
+          wire  Net_376;
           wire  Net_277;
 
 	wire [0:0] tmpOE__SCK_net;
@@ -740,21 +736,10 @@ module top ;
 
 
 
-	cy_dma_v1_0
-		#(.drq_type(2'b01))
-		RxDMA_1
-		 (.drq(Net_372[0:0]),
-		  .trq(1'b0),
-		  .nrq(Net_361));
-
-
-
-	cy_dma_v1_0
-		#(.drq_type(2'b01))
-		RxDMA_0
-		 (.drq(Net_373[0:0]),
-		  .trq(1'b0),
-		  .nrq(Net_258));
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		isr_1
+		 (.int_signal(Net_397));
 
 
     UART_v2_50_1 UART (

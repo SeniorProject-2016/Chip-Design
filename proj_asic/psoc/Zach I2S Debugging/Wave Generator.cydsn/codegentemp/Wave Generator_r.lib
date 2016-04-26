@@ -1794,48 +1794,6 @@ library (timing) {
             }
         }
     }
-    cell (drqcell2) {
-        pin (clock) {
-            direction : input;
-            clock : true;
-        }
-        pin (dmareq) {
-            direction : input;
-        }
-        pin (termin) {
-            direction : input;
-        }
-        pin (termout) {
-            direction : output;
-            timing () {
-                timing_type : rising_edge;
-                related_pin : "clock";
-                intrinsic_rise : 9.000;
-                intrinsic_fall : 9.000;
-            }
-        }
-    }
-    cell (drqcell3) {
-        pin (clock) {
-            direction : input;
-            clock : true;
-        }
-        pin (dmareq) {
-            direction : input;
-        }
-        pin (termin) {
-            direction : input;
-        }
-        pin (termout) {
-            direction : output;
-            timing () {
-                timing_type : rising_edge;
-                related_pin : "clock";
-                intrinsic_rise : 9.000;
-                intrinsic_fall : 9.000;
-            }
-        }
-    }
     cell (datapathcell2) {
         pin (clk_en) {
             direction : input;
@@ -2893,7 +2851,7 @@ library (timing) {
             }
         }
     }
-    cell (drqcell4) {
+    cell (drqcell2) {
         pin (clock) {
             direction : input;
             clock : true;

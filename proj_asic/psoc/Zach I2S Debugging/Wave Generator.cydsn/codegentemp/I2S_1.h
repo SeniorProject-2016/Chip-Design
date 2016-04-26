@@ -140,8 +140,8 @@ extern uint8 I2S_1_initVar;
 ***************************************/
 
 /* Default interrupt source */
-#define I2S_1_INT_SOURCE             (0u)
-#define I2S_1_RX_INT_SOURCE          (0u)
+#define I2S_1_INT_SOURCE             (48u)
+#define I2S_1_RX_INT_SOURCE          (6u)
 #define I2S_1_TX_INT_SOURCE          (0u)
 #define I2S_1_DATA_BITS              (16u)
 

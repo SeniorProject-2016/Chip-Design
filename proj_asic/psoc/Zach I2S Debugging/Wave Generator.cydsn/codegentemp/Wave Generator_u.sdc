@@ -1,3 +1,3 @@
-# Component constraints for C:\Users\Zachary\Desktop\I2S\Wave Generator.cydsn\TopDesign\TopDesign.cysch
-# Project: C:\Users\Zachary\Desktop\I2S\Wave Generator.cydsn\Wave Generator.cyprj
-# Date: Mon, 25 Apr 2016 21:37:40 GMT
+# Component constraints for C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\psoc\Zach I2S Debugging\Wave Generator.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\Zachary\Documents\GitHub\Chip-Design\proj_asic\psoc\Zach I2S Debugging\Wave Generator.cydsn\Wave Generator.cyprj
+# Date: Tue, 26 Apr 2016 18:58:10 GMT
