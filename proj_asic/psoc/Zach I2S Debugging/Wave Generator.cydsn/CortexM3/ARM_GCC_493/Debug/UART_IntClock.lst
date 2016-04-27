@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
   29:.\Generated_Source\PSoC5/UART_IntClock.c **** 
   30:.\Generated_Source\PSoC5/UART_IntClock.c **** /*******************************************************************************
   31:.\Generated_Source\PSoC5/UART_IntClock.c **** * Function Name: UART_IntClock_Start
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/UART_IntClock.c **** ********************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
   55:.\Generated_Source\PSoC5/UART_IntClock.c **** ********************************************************************************
   56:.\Generated_Source\PSoC5/UART_IntClock.c **** *
   57:.\Generated_Source\PSoC5/UART_IntClock.c **** * Summary:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 3
 
 
   58:.\Generated_Source\PSoC5/UART_IntClock.c **** *  Stops the clock and returns immediately. This API does not require the
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
   81:.\Generated_Source\PSoC5/UART_IntClock.c **** 
   82:.\Generated_Source\PSoC5/UART_IntClock.c **** /*******************************************************************************
   83:.\Generated_Source\PSoC5/UART_IntClock.c **** * Function Name: UART_IntClock_StopBlock
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 4
 
 
   84:.\Generated_Source\PSoC5/UART_IntClock.c **** ********************************************************************************
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  116:.\Generated_Source\PSoC5/UART_IntClock.c **** #endif /* UART_IntClock__CFG3 */
  117:.\Generated_Source\PSoC5/UART_IntClock.c **** 
  118:.\Generated_Source\PSoC5/UART_IntClock.c ****         /* Clear mask of bus clock. */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 5
 
 
  119:.\Generated_Source\PSoC5/UART_IntClock.c ****         CLK_DIST_BCFG2 &= (uint8)(~BCFG2_MASK);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  147              		.loc 1 136 0
  148 0056 8333     		adds	r3, r3, #131
  149 0058 1A80     		strh	r2, [r3]	@ movhi
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 6
 
 
  150              	.LVL1:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  161:.\Generated_Source\PSoC5/UART_IntClock.c ****         UART_IntClock_CLKSTBY &= (uint8)(~UART_IntClock_CLKSTBY_MASK);
  180              		.loc 1 161 0
  181 0002 064A     		ldr	r2, .L15
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 7
 
 
  182 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  190:.\Generated_Source\PSoC5/UART_IntClock.c **** *  None
  191:.\Generated_Source\PSoC5/UART_IntClock.c **** *
  192:.\Generated_Source\PSoC5/UART_IntClock.c **** *******************************************************************************/
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 8
 
 
  193:.\Generated_Source\PSoC5/UART_IntClock.c **** void UART_IntClock_SetDividerRegister(uint16 clkDivider, uint8 restart)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  247:.\Generated_Source\PSoC5/UART_IntClock.c ****                     CLK_DIST_LD = CYCLK_LD_DISABLE|CYCLK_LD_SYNC_EN|CYCLK_LD_LOAD;
  248:.\Generated_Source\PSoC5/UART_IntClock.c **** 
  249:.\Generated_Source\PSoC5/UART_IntClock.c ****                     /* Wait for clock to be disabled */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 9
 
 
  250:.\Generated_Source\PSoC5/UART_IntClock.c ****                     while ((CLK_DIST_LD & CYCLK_LD_LOAD) != 0u) { }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  299:.\Generated_Source\PSoC5/UART_IntClock.c ****     return CY_GET_REG16(UART_IntClock_DIV_PTR);
  213              		.loc 1 299 0
  214 0000 014B     		ldr	r3, .L18
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 10
 
 
  215 0002 1888     		ldrh	r0, [r3]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  235              		.cfi_startproc
  236              		@ args = 0, pretend = 0, frame = 0
  237              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 11
 
 
  238              		@ link register save eliminated.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  363:.\Generated_Source\PSoC5/UART_IntClock.c **** * Returns:
  364:.\Generated_Source\PSoC5/UART_IntClock.c **** *  None
  365:.\Generated_Source\PSoC5/UART_IntClock.c **** *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 12
 
 
  366:.\Generated_Source\PSoC5/UART_IntClock.c **** *******************************************************************************/
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  389:.\Generated_Source\PSoC5/UART_IntClock.c **** {
  294              		.loc 1 389 0
  295              		.cfi_startproc
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 13
 
 
  296              		@ args = 0, pretend = 0, frame = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  420:.\Generated_Source\PSoC5/UART_IntClock.c **** {
  421:.\Generated_Source\PSoC5/UART_IntClock.c ****     uint16 currDiv = UART_IntClock_GetDividerRegister();
  422:.\Generated_Source\PSoC5/UART_IntClock.c ****     uint8 oldSrc = UART_IntClock_GetSourceRegister();
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 14
 
 
  423:.\Generated_Source\PSoC5/UART_IntClock.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  329 0004 00F00700 		and	r0, r0, #7
  330 0008 7047     		bx	lr
  331              	.L31:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 15
 
 
  332 000a 00BF     		.align	2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  379 0020 00B1     		cbz	r0, .L35
  205:.\Generated_Source\PSoC5/UART_IntClock.c ****         {
  380              		.loc 1 205 0 discriminator 2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 16
 
 
  381 0022 84B9     		cbnz	r4, .L34
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  425 0058 0C39     		subs	r1, r1, #12
  426 005a 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  427 005c 03F07F03 		and	r3, r3, #127
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 17
 
 
  428 0060 0B70     		strb	r3, [r1]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  472 00a4 00E0     		b	.L41
  473              	.LVL19:
  474              	.L43:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 18
 
 
  475 00a6 0122     		movs	r2, #1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  524              	.LVL23:
  525 0000 38B5     		push	{r3, r4, r5, lr}
  526              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 19
 
 
  527              		.cfi_offset 3, -16
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  569 0034 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  438:.\Generated_Source\PSoC5/UART_IntClock.c ****             (UART_IntClock_MOD_SRC & (uint8)(~UART_IntClock_SRC_SEL_MSK)) | clkSource;
  570              		.loc 1 438 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 20
 
 
  571 0036 03F0F803 		and	r3, r3, #248
@@ -1180,48 +1180,48 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  604 0006 00000000 		.4byte	.Ldebug_abbrev0
  605 000a 04       		.byte	0x4
  606 000b 01       		.uleb128 0x1
- 607 000c BA010000 		.4byte	.LASF36
+ 607 000c DA010000 		.4byte	.LASF36
  608 0010 01       		.byte	0x1
- 609 0011 68020000 		.4byte	.LASF37
- 610 0015 63000000 		.4byte	.LASF38
+ 609 0011 88020000 		.4byte	.LASF37
+ 610 0015 FF000000 		.4byte	.LASF38
  611 0019 00000000 		.4byte	.Ldebug_ranges0+0
  612 001d 00000000 		.4byte	0
  613 0021 00000000 		.4byte	.Ldebug_line0
  614 0025 02       		.uleb128 0x2
  615 0026 01       		.byte	0x1
  616 0027 06       		.byte	0x6
- 617 0028 72010000 		.4byte	.LASF0
+ 617 0028 92010000 		.4byte	.LASF0
  618 002c 02       		.uleb128 0x2
  619 002d 01       		.byte	0x1
  620 002e 08       		.byte	0x8
- 621 002f 40010000 		.4byte	.LASF1
+ 621 002f 60010000 		.4byte	.LASF1
  622 0033 02       		.uleb128 0x2
  623 0034 02       		.byte	0x2
  624 0035 05       		.byte	0x5
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 21
 
 
  625 0036 2F000000 		.4byte	.LASF2
  626 003a 02       		.uleb128 0x2
  627 003b 02       		.byte	0x2
  628 003c 07       		.byte	0x7
- 629 003d A2010000 		.4byte	.LASF3
+ 629 003d C2010000 		.4byte	.LASF3
  630 0041 02       		.uleb128 0x2
  631 0042 04       		.byte	0x4
  632 0043 05       		.byte	0x5
- 633 0044 E7000000 		.4byte	.LASF4
+ 633 0044 A6000000 		.4byte	.LASF4
  634 0048 02       		.uleb128 0x2
  635 0049 04       		.byte	0x4
  636 004a 07       		.byte	0x7
- 637 004b A9020000 		.4byte	.LASF5
+ 637 004b C9020000 		.4byte	.LASF5
  638 004f 02       		.uleb128 0x2
  639 0050 08       		.byte	0x8
  640 0051 05       		.byte	0x5
- 641 0052 BB000000 		.4byte	.LASF6
+ 641 0052 7A000000 		.4byte	.LASF6
  642 0056 02       		.uleb128 0x2
  643 0057 08       		.byte	0x8
  644 0058 07       		.byte	0x7
- 645 0059 7E010000 		.4byte	.LASF7
+ 645 0059 9E010000 		.4byte	.LASF7
  646 005d 03       		.uleb128 0x3
  647 005e 04       		.byte	0x4
  648 005f 05       		.byte	0x5
@@ -1229,9 +1229,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  650 0064 02       		.uleb128 0x2
  651 0065 04       		.byte	0x4
  652 0066 07       		.byte	0x7
- 653 0067 95010000 		.4byte	.LASF8
+ 653 0067 B5010000 		.4byte	.LASF8
  654 006b 04       		.uleb128 0x4
- 655 006c A4000000 		.4byte	.LASF9
+ 655 006c 63000000 		.4byte	.LASF9
  656 0070 02       		.byte	0x2
  657 0071 5B       		.byte	0x5b
  658 0072 2C000000 		.4byte	0x2c
@@ -1243,22 +1243,22 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  664 0081 02       		.uleb128 0x2
  665 0082 04       		.byte	0x4
  666 0083 04       		.byte	0x4
- 667 0084 B5000000 		.4byte	.LASF11
+ 667 0084 74000000 		.4byte	.LASF11
  668 0088 02       		.uleb128 0x2
  669 0089 08       		.byte	0x8
  670 008a 04       		.byte	0x4
- 671 008b BB020000 		.4byte	.LASF12
+ 671 008b DB020000 		.4byte	.LASF12
  672 008f 02       		.uleb128 0x2
  673 0090 01       		.byte	0x1
  674 0091 08       		.byte	0x8
- 675 0092 B5010000 		.4byte	.LASF13
+ 675 0092 D5010000 		.4byte	.LASF13
  676 0096 04       		.uleb128 0x4
- 677 0097 A4020000 		.4byte	.LASF14
+ 677 0097 C4020000 		.4byte	.LASF14
  678 009b 02       		.byte	0x2
  679 009c F0       		.byte	0xf0
  680 009d A1000000 		.4byte	0xa1
  681 00a1 05       		.uleb128 0x5
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 22
 
 
  682 00a2 6B000000 		.4byte	0x6b
@@ -1278,7 +1278,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  696 00c5 01       		.uleb128 0x1
  697 00c6 9C       		.byte	0x9c
  698 00c7 06       		.uleb128 0x6
- 699 00c8 C2020000 		.4byte	.LASF17
+ 699 00c8 E2020000 		.4byte	.LASF17
  700 00cc 01       		.byte	0x1
  701 00cd 47       		.byte	0x47
  702 00ce 00000000 		.4byte	.LFB1
@@ -1286,7 +1286,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  704 00d6 01       		.uleb128 0x1
  705 00d7 9C       		.byte	0x9c
  706 00d8 07       		.uleb128 0x7
- 707 00d9 5A010000 		.4byte	.LASF18
+ 707 00d9 7A010000 		.4byte	.LASF18
  708 00dd 01       		.byte	0x1
  709 00de 64       		.byte	0x64
  710 00df 00000000 		.4byte	.LFB2
@@ -1298,7 +1298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  716 00ee 0A000000 		.4byte	.LBB2
  717 00f2 62000000 		.4byte	.LBE2-.LBB2
  718 00f6 09       		.uleb128 0x9
- 719 00f7 99020000 		.4byte	.LASF30
+ 719 00f7 B9020000 		.4byte	.LASF30
  720 00fb 01       		.byte	0x1
  721 00fc 69       		.byte	0x69
  722 00fd 76000000 		.4byte	0x76
@@ -1306,7 +1306,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  724 0105 00       		.byte	0
  725 0106 00       		.byte	0
  726 0107 07       		.uleb128 0x7
- 727 0108 DD020000 		.4byte	.LASF19
+ 727 0108 FD020000 		.4byte	.LASF19
  728 010c 01       		.byte	0x1
  729 010d 9D       		.byte	0x9d
  730 010e 00000000 		.4byte	.LFB3
@@ -1315,10 +1315,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  733 0117 9C       		.byte	0x9c
  734 0118 2A010000 		.4byte	0x12a
  735 011c 0A       		.uleb128 0xa
- 736 011d 1A010000 		.4byte	.LASF21
+ 736 011d D9000000 		.4byte	.LASF21
  737 0121 01       		.byte	0x1
  738 0122 9D       		.byte	0x9d
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 23
 
 
  739 0123 6B000000 		.4byte	0x6b
@@ -1335,7 +1335,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  750 013e 01       		.uleb128 0x1
  751 013f 9C       		.byte	0x9c
  752 0140 0C       		.uleb128 0xc
- 753 0141 F8020000 		.4byte	.LASF20
+ 753 0141 18030000 		.4byte	.LASF20
  754 0145 01       		.byte	0x1
  755 0146 4C01     		.2byte	0x14c
  756 0148 00000000 		.4byte	.LFB6
@@ -1344,14 +1344,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  759 0151 9C       		.byte	0x9c
  760 0152 67010000 		.4byte	0x167
  761 0156 0D       		.uleb128 0xd
- 762 0157 4E010000 		.4byte	.LASF22
+ 762 0157 6E010000 		.4byte	.LASF22
  763 015b 01       		.byte	0x1
  764 015c 4C01     		.2byte	0x14c
  765 015e 6B000000 		.4byte	0x6b
  766 0162 13000000 		.4byte	.LLST1
  767 0166 00       		.byte	0
  768 0167 0C       		.uleb128 0xc
- 769 0168 48020000 		.4byte	.LASF23
+ 769 0168 68020000 		.4byte	.LASF23
  770 016c 01       		.byte	0x1
  771 016d 6F01     		.2byte	0x16f
  772 016f 00000000 		.4byte	.LFB7
@@ -1360,14 +1360,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  775 0178 9C       		.byte	0x9c
  776 0179 8E010000 		.4byte	0x18e
  777 017d 0D       		.uleb128 0xd
- 778 017e 4E010000 		.4byte	.LASF22
+ 778 017e 6E010000 		.4byte	.LASF22
  779 0182 01       		.byte	0x1
  780 0183 6F01     		.2byte	0x16f
  781 0185 6B000000 		.4byte	0x6b
  782 0189 34000000 		.4byte	.LLST2
  783 018d 00       		.byte	0
  784 018e 0B       		.uleb128 0xb
- 785 018f C9000000 		.4byte	.LASF25
+ 785 018f 88000000 		.4byte	.LASF25
  786 0193 01       		.byte	0x1
  787 0194 8401     		.2byte	0x184
  788 0196 6B000000 		.4byte	0x6b
@@ -1376,9 +1376,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  791 01a2 01       		.uleb128 0x1
  792 01a3 9C       		.byte	0x9c
  793 01a4 0B       		.uleb128 0xb
- 794 01a5 FA000000 		.4byte	.LASF26
+ 794 01a5 B9000000 		.4byte	.LASF26
  795 01a9 01       		.byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 24
 
 
  796 01aa D001     		.2byte	0x1d0
@@ -1388,7 +1388,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  800 01b8 01       		.uleb128 0x1
  801 01b9 9C       		.byte	0x9c
  802 01ba 07       		.uleb128 0x7
- 803 01bb 16030000 		.4byte	.LASF27
+ 803 01bb 36030000 		.4byte	.LASF27
  804 01bf 01       		.byte	0x1
  805 01c0 C1       		.byte	0xc1
  806 01c1 00000000 		.4byte	.LFB4
@@ -1397,7 +1397,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  809 01ca 9C       		.byte	0x9c
  810 01cb 2B020000 		.4byte	0x22b
  811 01cf 0E       		.uleb128 0xe
- 812 01d0 AA000000 		.4byte	.LASF28
+ 812 01d0 69000000 		.4byte	.LASF28
  813 01d4 01       		.byte	0x1
  814 01d5 C1       		.byte	0xc1
  815 01d6 76000000 		.4byte	0x76
@@ -1409,19 +1409,19 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  821 01e5 6B000000 		.4byte	0x6b
  822 01e9 76000000 		.4byte	.LLST4
  823 01ed 09       		.uleb128 0x9
- 824 01ee D5020000 		.4byte	.LASF31
+ 824 01ee F5020000 		.4byte	.LASF31
  825 01f2 01       		.byte	0x1
  826 01f3 C4       		.byte	0xc4
  827 01f4 6B000000 		.4byte	0x6b
  828 01f8 97000000 		.4byte	.LLST5
  829 01fc 09       		.uleb128 0x9
- 830 01fd 91020000 		.4byte	.LASF32
+ 830 01fd B1020000 		.4byte	.LASF32
  831 0201 01       		.byte	0x1
  832 0202 C6       		.byte	0xc6
  833 0203 6B000000 		.4byte	0x6b
  834 0207 E1000000 		.4byte	.LLST6
  835 020b 0F       		.uleb128 0xf
- 836 020c 99020000 		.4byte	.LASF30
+ 836 020c B9020000 		.4byte	.LASF30
  837 0210 01       		.byte	0x1
  838 0211 C7       		.byte	0xc7
  839 0212 76000000 		.4byte	0x76
@@ -1435,10 +1435,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  847 0226 2A010000 		.4byte	0x12a
  848 022a 00       		.byte	0
  849 022b 11       		.uleb128 0x11
- 850 022c 20010000 		.4byte	.LASF39
+ 850 022c DF000000 		.4byte	.LASF39
  851 0230 01       		.byte	0x1
  852 0231 A301     		.2byte	0x1a3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 25
 
 
  853 0233 00000000 		.4byte	.LFB9
@@ -1446,7 +1446,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  855 023b 01       		.uleb128 0x1
  856 023c 9C       		.byte	0x9c
  857 023d 0D       		.uleb128 0xd
- 858 023e F0000000 		.4byte	.LASF33
+ 858 023e AF000000 		.4byte	.LASF33
  859 0242 01       		.byte	0x1
  860 0243 A301     		.2byte	0x1a3
  861 0245 6B000000 		.4byte	0x6b
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  907 0015 00       		.byte	0
  908 0016 0B       		.uleb128 0xb
  909 0017 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 26
 
 
  910 0018 3E       		.uleb128 0x3e
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  964 004e 40       		.uleb128 0x40
  965 004f 18       		.uleb128 0x18
  966 0050 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 27
 
 
  967 0052 19       		.uleb128 0x19
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  1021 0089 00       		.byte	0
  1022 008a 03       		.uleb128 0x3
  1023 008b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 28
 
 
  1024 008c 3A       		.uleb128 0x3a
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  1078 00c3 9742     		.uleb128 0x2117
  1079 00c5 19       		.uleb128 0x19
  1080 00c6 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 29
 
 
  1081 00c7 13       		.uleb128 0x13
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  1135 00ff 13       		.uleb128 0x13
  1136 0100 00       		.byte	0
  1137 0101 00       		.byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 30
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 30
 
 
  1138 0102 11       		.uleb128 0x11
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  1192              		.section	.debug_loc,"",%progbits
  1193              	.Ldebug_loc0:
  1194              	.LLST0:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 31
 
 
  1195 0000 2A000000 		.4byte	.LVL0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  1249 0085 DC000000 		.4byte	.LFE4
  1250 0089 0400     		.2byte	0x4
  1251 008b F3       		.byte	0xf3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 32
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 32
 
 
  1252 008c 01       		.uleb128 0x1
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  1306 0115 0A000000 		.4byte	.LVL25
  1307 0119 56000000 		.4byte	.LVL29
  1308 011d 0100     		.2byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 33
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 33
 
 
  1309 011f 55       		.byte	0x55
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  1363 0044 10000000 		.4byte	.LFE10
  1364 0048 00000000 		.4byte	.LFB4
  1365 004c DC000000 		.4byte	.LFE4
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 34
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 34
 
 
  1366 0050 00000000 		.4byte	.LFB9
@@ -2023,181 +2023,182 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 1
  1387              	.LASF35:
  1388 005c 6F6C6453 		.ascii	"oldSrc\000"
  1388      726300
- 1389              	.LASF38:
- 1390 0063 433A5C55 		.ascii	"C:\\Users\\Zachary\\Desktop\\Zach I2S Debugging\\Wa"
- 1390      73657273 
- 1390      5C5A6163 
- 1390      68617279 
- 1390      5C446573 
- 1391 0091 76652047 		.ascii	"ve Generator.cydsn\000"
- 1391      656E6572 
- 1391      61746F72 
- 1391      2E637964 
- 1391      736E00
- 1392              	.LASF9:
- 1393 00a4 75696E74 		.ascii	"uint8\000"
- 1393      3800
- 1394              	.LASF28:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 35
+ 1389              	.LASF9:
+ 1390 0063 75696E74 		.ascii	"uint8\000"
+ 1390      3800
+ 1391              	.LASF28:
+ 1392 0069 636C6B44 		.ascii	"clkDivider\000"
+ 1392      69766964 
+ 1392      657200
+ 1393              	.LASF11:
+ 1394 0074 666C6F61 		.ascii	"float\000"
+ 1394      7400
+ 1395              	.LASF6:
+ 1396 007a 6C6F6E67 		.ascii	"long long int\000"
+ 1396      206C6F6E 
+ 1396      6720696E 
+ 1396      7400
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 35
 
 
- 1395 00aa 636C6B44 		.ascii	"clkDivider\000"
- 1395      69766964 
- 1395      657200
- 1396              	.LASF11:
- 1397 00b5 666C6F61 		.ascii	"float\000"
- 1397      7400
- 1398              	.LASF6:
- 1399 00bb 6C6F6E67 		.ascii	"long long int\000"
- 1399      206C6F6E 
- 1399      6720696E 
- 1399      7400
- 1400              	.LASF25:
- 1401 00c9 55415254 		.ascii	"UART_IntClock_GetModeRegister\000"
- 1401      5F496E74 
- 1401      436C6F63 
- 1401      6B5F4765 
- 1401      744D6F64 
- 1402              	.LASF4:
- 1403 00e7 6C6F6E67 		.ascii	"long int\000"
- 1403      20696E74 
- 1403      00
- 1404              	.LASF33:
- 1405 00f0 636C6B53 		.ascii	"clkSource\000"
- 1405      6F757263 
- 1405      6500
- 1406              	.LASF26:
- 1407 00fa 55415254 		.ascii	"UART_IntClock_GetSourceRegister\000"
- 1407      5F496E74 
- 1407      436C6F63 
- 1407      6B5F4765 
- 1407      74536F75 
- 1408              	.LASF21:
- 1409 011a 73746174 		.ascii	"state\000"
- 1409      6500
- 1410              	.LASF39:
- 1411 0120 55415254 		.ascii	"UART_IntClock_SetSourceRegister\000"
- 1411      5F496E74 
- 1411      436C6F63 
- 1411      6B5F5365 
- 1411      74536F75 
- 1412              	.LASF1:
- 1413 0140 756E7369 		.ascii	"unsigned char\000"
- 1413      676E6564 
- 1413      20636861 
- 1413      7200
- 1414              	.LASF22:
- 1415 014e 6D6F6465 		.ascii	"modeBitMask\000"
- 1415      4269744D 
- 1415      61736B00 
- 1416              	.LASF18:
- 1417 015a 55415254 		.ascii	"UART_IntClock_StopBlock\000"
- 1417      5F496E74 
- 1417      436C6F63 
- 1417      6B5F5374 
- 1417      6F70426C 
- 1418              	.LASF0:
- 1419 0172 7369676E 		.ascii	"signed char\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 36
+ 1397              	.LASF25:
+ 1398 0088 55415254 		.ascii	"UART_IntClock_GetModeRegister\000"
+ 1398      5F496E74 
+ 1398      436C6F63 
+ 1398      6B5F4765 
+ 1398      744D6F64 
+ 1399              	.LASF4:
+ 1400 00a6 6C6F6E67 		.ascii	"long int\000"
+ 1400      20696E74 
+ 1400      00
+ 1401              	.LASF33:
+ 1402 00af 636C6B53 		.ascii	"clkSource\000"
+ 1402      6F757263 
+ 1402      6500
+ 1403              	.LASF26:
+ 1404 00b9 55415254 		.ascii	"UART_IntClock_GetSourceRegister\000"
+ 1404      5F496E74 
+ 1404      436C6F63 
+ 1404      6B5F4765 
+ 1404      74536F75 
+ 1405              	.LASF21:
+ 1406 00d9 73746174 		.ascii	"state\000"
+ 1406      6500
+ 1407              	.LASF39:
+ 1408 00df 55415254 		.ascii	"UART_IntClock_SetSourceRegister\000"
+ 1408      5F496E74 
+ 1408      436C6F63 
+ 1408      6B5F5365 
+ 1408      74536F75 
+ 1409              	.LASF38:
+ 1410 00ff 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Chip-Design\\pro"
+ 1410      73657273 
+ 1410      5C49616E 
+ 1410      5C446F63 
+ 1410      756D656E 
+ 1411 012c 6A5F6173 		.ascii	"j_asic\\psoc\\Zach I2S Debugging\\Wave Generator.cy"
+ 1411      69635C70 
+ 1411      736F635C 
+ 1411      5A616368 
+ 1411      20493253 
+ 1412 015c 64736E00 		.ascii	"dsn\000"
+ 1413              	.LASF1:
+ 1414 0160 756E7369 		.ascii	"unsigned char\000"
+ 1414      676E6564 
+ 1414      20636861 
+ 1414      7200
+ 1415              	.LASF22:
+ 1416 016e 6D6F6465 		.ascii	"modeBitMask\000"
+ 1416      4269744D 
+ 1416      61736B00 
+ 1417              	.LASF18:
+ 1418 017a 55415254 		.ascii	"UART_IntClock_StopBlock\000"
+ 1418      5F496E74 
+ 1418      436C6F63 
+ 1418      6B5F5374 
+ 1418      6F70426C 
+ 1419              	.LASF0:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 36
 
 
- 1419      65642063 
- 1419      68617200 
- 1420              	.LASF7:
- 1421 017e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1421      206C6F6E 
- 1421      6720756E 
- 1421      7369676E 
- 1421      65642069 
- 1422              	.LASF8:
- 1423 0195 756E7369 		.ascii	"unsigned int\000"
- 1423      676E6564 
- 1423      20696E74 
- 1423      00
- 1424              	.LASF3:
- 1425 01a2 73686F72 		.ascii	"short unsigned int\000"
- 1425      7420756E 
- 1425      7369676E 
- 1425      65642069 
- 1425      6E7400
- 1426              	.LASF13:
- 1427 01b5 63686172 		.ascii	"char\000"
- 1427      00
- 1428              	.LASF36:
- 1429 01ba 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1429      4320342E 
- 1429      392E3320 
- 1429      32303135 
- 1429      30333033 
- 1430 01ed 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1430      20726576 
- 1430      6973696F 
- 1430      6E203232 
- 1430      31323230 
- 1431 0220 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1431      66756E63 
- 1431      74696F6E 
- 1431      2D736563 
- 1431      74696F6E 
- 1432              	.LASF23:
- 1433 0248 55415254 		.ascii	"UART_IntClock_ClearModeRegister\000"
- 1433      5F496E74 
- 1433      436C6F63 
- 1433      6B5F436C 
- 1433      6561724D 
- 1434              	.LASF37:
- 1435 0268 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\UART_IntClock.c\000"
- 1435      6E657261 
- 1435      7465645F 
- 1435      536F7572 
- 1435      63655C50 
- 1436              	.LASF32:
- 1437 0291 63757272 		.ascii	"currSrc\000"
- 1437      53726300 
- 1438              	.LASF30:
- 1439 0299 6F6C6444 		.ascii	"oldDivider\000"
- 1439      69766964 
- 1439      657200
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc5faSBp.s 			page 37
+ 1420 0192 7369676E 		.ascii	"signed char\000"
+ 1420      65642063 
+ 1420      68617200 
+ 1421              	.LASF7:
+ 1422 019e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1422      206C6F6E 
+ 1422      6720756E 
+ 1422      7369676E 
+ 1422      65642069 
+ 1423              	.LASF8:
+ 1424 01b5 756E7369 		.ascii	"unsigned int\000"
+ 1424      676E6564 
+ 1424      20696E74 
+ 1424      00
+ 1425              	.LASF3:
+ 1426 01c2 73686F72 		.ascii	"short unsigned int\000"
+ 1426      7420756E 
+ 1426      7369676E 
+ 1426      65642069 
+ 1426      6E7400
+ 1427              	.LASF13:
+ 1428 01d5 63686172 		.ascii	"char\000"
+ 1428      00
+ 1429              	.LASF36:
+ 1430 01da 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1430      4320342E 
+ 1430      392E3320 
+ 1430      32303135 
+ 1430      30333033 
+ 1431 020d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1431      20726576 
+ 1431      6973696F 
+ 1431      6E203232 
+ 1431      31323230 
+ 1432 0240 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1432      66756E63 
+ 1432      74696F6E 
+ 1432      2D736563 
+ 1432      74696F6E 
+ 1433              	.LASF23:
+ 1434 0268 55415254 		.ascii	"UART_IntClock_ClearModeRegister\000"
+ 1434      5F496E74 
+ 1434      436C6F63 
+ 1434      6B5F436C 
+ 1434      6561724D 
+ 1435              	.LASF37:
+ 1436 0288 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\UART_IntClock.c\000"
+ 1436      6E657261 
+ 1436      7465645F 
+ 1436      536F7572 
+ 1436      63655C50 
+ 1437              	.LASF32:
+ 1438 02b1 63757272 		.ascii	"currSrc\000"
+ 1438      53726300 
+ 1439              	.LASF30:
+ 1440 02b9 6F6C6444 		.ascii	"oldDivider\000"
+ 1440      69766964 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\cc2WVUyd.s 			page 37
 
 
- 1440              	.LASF14:
- 1441 02a4 72656738 		.ascii	"reg8\000"
- 1441      00
- 1442              	.LASF5:
- 1443 02a9 6C6F6E67 		.ascii	"long unsigned int\000"
- 1443      20756E73 
- 1443      69676E65 
- 1443      6420696E 
- 1443      7400
- 1444              	.LASF12:
- 1445 02bb 646F7562 		.ascii	"double\000"
- 1445      6C6500
- 1446              	.LASF17:
- 1447 02c2 55415254 		.ascii	"UART_IntClock_Stop\000"
- 1447      5F496E74 
- 1447      436C6F63 
- 1447      6B5F5374 
- 1447      6F7000
- 1448              	.LASF31:
- 1449 02d5 656E6162 		.ascii	"enabled\000"
- 1449      6C656400 
- 1450              	.LASF19:
- 1451 02dd 55415254 		.ascii	"UART_IntClock_StandbyPower\000"
- 1451      5F496E74 
- 1451      436C6F63 
- 1451      6B5F5374 
- 1451      616E6462 
- 1452              	.LASF20:
- 1453 02f8 55415254 		.ascii	"UART_IntClock_SetModeRegister\000"
- 1453      5F496E74 
- 1453      436C6F63 
- 1453      6B5F5365 
- 1453      744D6F64 
- 1454              	.LASF27:
- 1455 0316 55415254 		.ascii	"UART_IntClock_SetDividerRegister\000"
- 1455      5F496E74 
- 1455      436C6F63 
- 1455      6B5F5365 
- 1455      74446976 
- 1456              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1440      657200
+ 1441              	.LASF14:
+ 1442 02c4 72656738 		.ascii	"reg8\000"
+ 1442      00
+ 1443              	.LASF5:
+ 1444 02c9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1444      20756E73 
+ 1444      69676E65 
+ 1444      6420696E 
+ 1444      7400
+ 1445              	.LASF12:
+ 1446 02db 646F7562 		.ascii	"double\000"
+ 1446      6C6500
+ 1447              	.LASF17:
+ 1448 02e2 55415254 		.ascii	"UART_IntClock_Stop\000"
+ 1448      5F496E74 
+ 1448      436C6F63 
+ 1448      6B5F5374 
+ 1448      6F7000
+ 1449              	.LASF31:
+ 1450 02f5 656E6162 		.ascii	"enabled\000"
+ 1450      6C656400 
+ 1451              	.LASF19:
+ 1452 02fd 55415254 		.ascii	"UART_IntClock_StandbyPower\000"
+ 1452      5F496E74 
+ 1452      436C6F63 
+ 1452      6B5F5374 
+ 1452      616E6462 
+ 1453              	.LASF20:
+ 1454 0318 55415254 		.ascii	"UART_IntClock_SetModeRegister\000"
+ 1454      5F496E74 
+ 1454      436C6F63 
+ 1454      6B5F5365 
+ 1454      744D6F64 
+ 1455              	.LASF27:
+ 1456 0336 55415254 		.ascii	"UART_IntClock_SetDividerRegister\000"
+ 1456      5F496E74 
+ 1456      436C6F63 
+ 1456      6B5F5365 
+ 1456      74446976 
+ 1457              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

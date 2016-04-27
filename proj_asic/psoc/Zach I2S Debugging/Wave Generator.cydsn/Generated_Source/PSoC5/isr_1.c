@@ -28,9 +28,11 @@
 ********************************************************************************/
 /* `#START isr_1_intc` */
     #include <I2S_1.h>
-//    #include <main.c>
-    uint16_t ReceivedData[1024];
-    int counter = 0;
+	#include <LCD.h>
+	extern int dataFlag;
+	extern uint16_t data;
+    extern int done;
+	int counter = 0;
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -168,10 +170,15 @@ CY_ISR(isr_1_Interrupt)
 
     /*  Place your Interrupt code here. */
     /* `#START isr_1_Interrupt` */
-    ReceivedData[counter] = counter;//*I2S_1_RX_CH0_F0_PTR;
-    counter++;
-    
-    
+	if (counter < 1024 && !dataFlag) {
+    	LCD_ClearDisplay();
+		LCD_PrintNumber(counter);		
+		data = counter;//*I2S_1_RX_CH0_F0_PTR;
+    	dataFlag = 1;
+		counter++;
+	}
+	else
+		done = 1;
     /* `#END` */
 }
 

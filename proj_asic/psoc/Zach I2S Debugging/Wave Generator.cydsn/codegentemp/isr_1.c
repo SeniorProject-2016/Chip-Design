@@ -27,7 +27,9 @@
 *  Place your includes, defines and code here 
 ********************************************************************************/
 /* `#START isr_1_intc` */
-
+    #include <I2S_1.h>
+    extern uint16_t ReceivedData[1024];
+    int counter = 0;
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -165,7 +167,10 @@ CY_ISR(isr_1_Interrupt)
 
     /*  Place your Interrupt code here. */
     /* `#START isr_1_Interrupt` */
-
+	if (counter < 1024) {
+    	ReceivedData[counter] = counter;//*I2S_1_RX_CH0_F0_PTR;
+    	counter++;
+	}
     /* `#END` */
 }
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
   30:.\Generated_Source\PSoC5/CyLib.c **** 
   31:.\Generated_Source\PSoC5/CyLib.c **** 
   32:.\Generated_Source\PSoC5/CyLib.c **** /* Variable Vdda */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 2
 
 
   33:.\Generated_Source\PSoC5/CyLib.c **** #if(CYDEV_VARIABLE_VDDA == 1)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
   87:.\Generated_Source\PSoC5/CyLib.c **** *
   88:.\Generated_Source\PSoC5/CyLib.c **** *******************************************************************************/
   89:.\Generated_Source\PSoC5/CyLib.c **** cystatus CyPLL_OUT_Start(uint8 wait) 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 3
 
 
   90:.\Generated_Source\PSoC5/CyLib.c **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  144:.\Generated_Source\PSoC5/CyLib.c **** *  Disables the PLL.
  145:.\Generated_Source\PSoC5/CyLib.c **** *
  146:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 4
 
 
  147:.\Generated_Source\PSoC5/CyLib.c **** *  None
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  201:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_PLL_P_REG = pDiv;
  202:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_PLL_Q_REG = ((uint8)(qDiv - 1u));
  203:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_PLL_CFG1_REG = (CY_CLK_PLL_CFG1_REG & CY_CLK_PLL_CURRENT_MASK) |
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 5
 
 
  204:.\Generated_Source\PSoC5/CyLib.c ****                                 ((uint8)(((uint8)(current - 1u)) << CY_CLK_PLL_CURRENT_POSITION));
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  258:.\Generated_Source\PSoC5/CyLib.c **** 
  259:.\Generated_Source\PSoC5/CyLib.c ****         default:
  260:.\Generated_Source\PSoC5/CyLib.c ****             CYASSERT(0u != 0u);
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 6
 
 
  261:.\Generated_Source\PSoC5/CyLib.c ****         break;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  315:.\Generated_Source\PSoC5/CyLib.c ****         while (0u == (CY_PM_FTW_INT & CyPmReadStatus(CY_PM_FTW_INT)))
  316:.\Generated_Source\PSoC5/CyLib.c ****         {
  317:.\Generated_Source\PSoC5/CyLib.c ****             /* Wait for interrupt status */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 7
 
 
  318:.\Generated_Source\PSoC5/CyLib.c ****         }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
   30              		@ link register save eliminated.
   31              	.LVL0:
  368:.\Generated_Source\PSoC5/CyLib.c ****     uint8 poweredOn = 0u;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 8
 
 
  369:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  378:.\Generated_Source\PSoC5/CyLib.c **** 
  379:.\Generated_Source\PSoC5/CyLib.c ****     return (poweredOn);
  380:.\Generated_Source\PSoC5/CyLib.c **** }
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 9
 
 
   72              		.loc 1 380 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  417:.\Generated_Source\PSoC5/CyLib.c ****     case CY_IMO_FREQ_12MHZ:
  418:.\Generated_Source\PSoC5/CyLib.c ****         CY_LIB_IMO_TR1_REG = CY_GET_XTND_REG8(CY_LIB_TRIM_IMO_12MHZ_PTR);
  419:.\Generated_Source\PSoC5/CyLib.c ****         break;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 10
 
 
  420:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  474:.\Generated_Source\PSoC5/CyLib.c **** *       CY_IMO_FREQ_USB   to set 24   MHz (Trimmed for USB operation)
  475:.\Generated_Source\PSoC5/CyLib.c **** *
  476:.\Generated_Source\PSoC5/CyLib.c **** * Return:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 11
 
 
  477:.\Generated_Source\PSoC5/CyLib.c **** *  None
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  531:.\Generated_Source\PSoC5/CyLib.c ****     case 5u:
  532:.\Generated_Source\PSoC5/CyLib.c ****         currentFreq = CY_IMO_FREQ_62MHZ;
  533:.\Generated_Source\PSoC5/CyLib.c ****         break;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 12
 
 
  534:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  588:.\Generated_Source\PSoC5/CyLib.c ****             CY_LIB_IMO_74MHZ_VALUE) & ((uint8)(~CY_LIB_IMO_USBCLK_ON_SET));
  589:.\Generated_Source\PSoC5/CyLib.c ****         break;
  590:.\Generated_Source\PSoC5/CyLib.c **** #endif  /* (CY_PSOC5) */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 13
 
 
  591:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  645:.\Generated_Source\PSoC5/CyLib.c **** *
  646:.\Generated_Source\PSoC5/CyLib.c **** *******************************************************************************/
  647:.\Generated_Source\PSoC5/CyLib.c **** void CyIMO_SetSource(uint8 source) 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 14
 
 
  648:.\Generated_Source\PSoC5/CyLib.c **** {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  702:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
  703:.\Generated_Source\PSoC5/CyLib.c **** *  None
  704:.\Generated_Source\PSoC5/CyLib.c **** *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 15
 
 
  705:.\Generated_Source\PSoC5/CyLib.c **** * Return:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  759:.\Generated_Source\PSoC5/CyLib.c **** *  uint8 divider:
  760:.\Generated_Source\PSoC5/CyLib.c **** *   The valid range is [0-255]. The clock will be divided by this value + 1.
  761:.\Generated_Source\PSoC5/CyLib.c **** *   For example to divide this parameter by two should be set to 1.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 16
 
 
  762:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  805:.\Generated_Source\PSoC5/CyLib.c ****     CY_LIB_CLKDIST_DMASK_REG  = CY_LIB_CLKDIST_DMASK_MASK;
  101              		.loc 1 805 0
  102 000a 0022     		movs	r2, #0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 17
 
 
  103 000c 0A4B     		ldr	r3, .L10+4
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  141              		.type	CyPLL_OUT_Stop, %function
  142              	CyPLL_OUT_Stop:
  143              	.LFB1:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 18
 
 
  154:.\Generated_Source\PSoC5/CyLib.c ****     CY_CLK_PLL_CFG0_REG &= ((uint8)(~CY_CLK_PLL_ENABLE));
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  193              		.section	.text.CyIMO_EnableDoubler,"ax",%progbits
  194              		.align	2
  195              		.global	CyIMO_EnableDoubler
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 19
 
 
  196              		.thumb
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  246              		.align	2
  247              		.global	CyMasterClk_SetSource
  248              		.thumb
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 20
 
 
  249              		.thumb_func
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  299              		.size	CyMasterClk_SetDivider, .-CyMasterClk_SetDivider
  300              		.section	.text.CyBusClk_SetDivider,"ax",%progbits
  301              		.align	2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 21
 
 
  302              		.global	CyBusClk_SetDivider
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  323 0008 0646     		mov	r6, r0
  324              	.LVL9:
  855:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 22
 
 
  856:.\Generated_Source\PSoC5/CyLib.c ****     /* Work around to set bus clock divider value */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  875:.\Generated_Source\PSoC5/CyLib.c ****             CyBusClk_Internal_SetDivider(divider);
  360              		.loc 1 875 0
  361 0036 2846     		mov	r0, r5
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 23
 
 
  362 0038 FFF7FEFF 		bl	CyBusClk_Internal_SetDivider
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  400              		.cfi_endproc
  401              	.LFE15:
  402              		.size	CyBusClk_SetDivider, .-CyBusClk_SetDivider
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 24
 
 
  403              		.section	.text.CyUsbClk_SetSource,"ax",%progbits
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  938:.\Generated_Source\PSoC5/CyLib.c **** *  source: One of the four available USB clock sources
  939:.\Generated_Source\PSoC5/CyLib.c **** *    CY_LIB_USB_CLK_IMO2X     - IMO 2x
  940:.\Generated_Source\PSoC5/CyLib.c **** *    CY_LIB_USB_CLK_IMO       - IMO
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 25
 
 
  941:.\Generated_Source\PSoC5/CyLib.c **** *    CY_LIB_USB_CLK_PLL       - PLL
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  965:.\Generated_Source\PSoC5/CyLib.c **** *
  966:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
  967:.\Generated_Source\PSoC5/CyLib.c **** *  None
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 26
 
 
  968:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  996:.\Generated_Source\PSoC5/CyLib.c **** *
  997:.\Generated_Source\PSoC5/CyLib.c **** * Side Effects:
  998:.\Generated_Source\PSoC5/CyLib.c **** *  PSoC5: Stopping the ILO 1 kHz could break the active WDT functionality.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 27
 
 
  999:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  496              		@ frame_needed = 0, uses_anonymous_args = 0
  497              		@ link register save eliminated.
 1024:.\Generated_Source\PSoC5/CyLib.c ****     CY_LIB_SLOWCLK_ILO_CR0_REG |= CY_LIB_SLOWCLK_ILO_CR0_EN_100KHZ;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 28
 
 
  498              		.loc 1 1024 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  532              	.L53:
  533 000c 00430040 		.word	1073758976
  534              		.cfi_endproc
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 29
 
 
  535              	.LFE20:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  582              		.loc 1 108 0
  583 0024 1820     		movs	r0, #24
  584              	.LVL29:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 30
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 30
 
 
  585 0026 FFF7FEFF 		bl	CyPmFtwSetInterval
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  629              	.L61:
   91:.\Generated_Source\PSoC5/CyLib.c **** 
  630              		.loc 1 91 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 31
 
 
  631 0062 0025     		movs	r5, #0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  679              		.cfi_offset 14, -4
  309:.\Generated_Source\PSoC5/CyLib.c ****         pmFtwCfg0Reg = CY_LIB_PM_TW_CFG0_REG;
  680              		.loc 1 309 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 32
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 32
 
 
  681 0018 0F4B     		ldr	r3, .L72+4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  727              		.cfi_restore 14
  728 0050 7047     		bx	lr
  729              	.L73:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 33
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 33
 
 
  730 0052 00BF     		.align	2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  760 000c 00430040 		.word	1073758976
  761              		.cfi_endproc
  762              	.LFE21:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 34
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 34
 
 
  763              		.size	CyILO_Enable33K, .-CyILO_Enable33K
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  794              		.thumb_func
  795              		.type	CyILO_SetSource, %function
  796              	CyILO_SetSource:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 35
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 35
 
 
  797              	.LFB23:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  825              	CyILO_SetPowerMode:
  826              	.LFB24:
 1117:.\Generated_Source\PSoC5/CyLib.c **** }
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 36
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 36
 
 
 1118:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  847 0012 03F0EF02 		and	r2, r3, #239
  848 0016 0249     		ldr	r1, .L84
  849 0018 0A70     		strb	r2, [r1]
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 37
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 37
 
 
  850              	.L83:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1186:.\Generated_Source\PSoC5/CyLib.c ****     /* Enable operation of 32K Crystal Oscillator */
 1187:.\Generated_Source\PSoC5/CyLib.c ****     CY_CLK_XTAL32_CR_REG |= CY_CLK_XTAL32_CR_EN;
 1188:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 38
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 38
 
 
 1189:.\Generated_Source\PSoC5/CyLib.c ****     for (i = 1000u; i > 0u; i--)
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  889              		.loc 1 1223 0
  890 001c 013A     		subs	r2, r2, #1
  891 001e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 39
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 39
 
 
  892 0020 03F0FC03 		and	r3, r3, #252
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1251:.\Generated_Source\PSoC5/CyLib.c **** }
  919              		.loc 1 1251 0
  920 0004 00F02000 		and	r0, r0, #32
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 40
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 40
 
 
  921 0008 7047     		bx	lr
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1290:.\Generated_Source\PSoC5/CyLib.c ****         /* High power mode */
 1291:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_XTAL32_TR_REG  = CY_CLK_XTAL32_TR_HIGH_POWER;
 1292:.\Generated_Source\PSoC5/CyLib.c ****         CyDelayUs(10u);
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 41
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 41
 
 
 1293:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_XTAL32_CFG_REG = (CY_CLK_XTAL32_CFG_REG & ((uint8)(~CY_CLK_XTAL32_CFG_LP_MASK))) |
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  944              		.cfi_offset 4, -20
  945              		.cfi_offset 5, -16
  946              		.cfi_offset 6, -12
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 42
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 42
 
 
  947              		.cfi_offset 7, -8
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  980 002a FFF7FEFF 		bl	CyPmFtwSetInterval
  981              	.LVL57:
 1361:.\Generated_Source\PSoC5/CyLib.c ****         status = CYRET_TIMEOUT;
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 43
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 43
 
 
 1362:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1012 0062 13F0800F 		tst	r3, #128
  1013 0066 0CD0     		beq	.L101
 1364:.\Generated_Source\PSoC5/CyLib.c ****         {
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 44
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 44
 
 
  1014              		.loc 1 1364 0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1051              	.L93:
 1398:.\Generated_Source\PSoC5/CyLib.c ****     }
 1399:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 45
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 45
 
 
 1400:.\Generated_Source\PSoC5/CyLib.c ****     return(status);
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1084 0004 03F0FE03 		and	r3, r3, #254
  1085 0008 1370     		strb	r3, [r2]
  1086 000a 7047     		bx	lr
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 46
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 46
 
 
  1087              	.L107:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1119              		.size	CyXTAL_EnableErrStatus, .-CyXTAL_EnableErrStatus
  1120              		.section	.text.CyXTAL_DisableErrStatus,"ax",%progbits
  1121              		.align	2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 47
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 47
 
 
  1122              		.global	CyXTAL_DisableErrStatus
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1466:.\Generated_Source\PSoC5/CyLib.c **** }
 1467:.\Generated_Source\PSoC5/CyLib.c **** 
 1468:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 48
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 48
 
 
 1469:.\Generated_Source\PSoC5/CyLib.c **** /*******************************************************************************
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1183              	CyXTAL_EnableFaultRecovery:
  1184              	.LFB34:
 1494:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 49
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 49
 
 
 1495:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1523:.\Generated_Source\PSoC5/CyLib.c **** * Summary:
 1524:.\Generated_Source\PSoC5/CyLib.c **** *  Disables the fault recovery circuit which will switch to the IMO in the case
 1525:.\Generated_Source\PSoC5/CyLib.c **** *  of a fault in the megahertz crystal circuit. This function is not available
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 50
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 50
 
 
 1526:.\Generated_Source\PSoC5/CyLib.c **** *  for PSoC5.
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1554:.\Generated_Source\PSoC5/CyLib.c **** *   The value is dependent on the frequency and quality of the crystal being used.
 1555:.\Generated_Source\PSoC5/CyLib.c **** *   Refer to the device TRM and datasheet for more information.
 1556:.\Generated_Source\PSoC5/CyLib.c **** *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 51
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 51
 
 
 1557:.\Generated_Source\PSoC5/CyLib.c **** * Return:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1581:.\Generated_Source\PSoC5/CyLib.c **** * Return:
 1582:.\Generated_Source\PSoC5/CyLib.c **** *  None
 1583:.\Generated_Source\PSoC5/CyLib.c **** *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 52
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 52
 
 
 1584:.\Generated_Source\PSoC5/CyLib.c **** *******************************************************************************/
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1608:.\Generated_Source\PSoC5/CyLib.c **** void CyXTAL_SetWdVoltage(uint8 setting) 
 1609:.\Generated_Source\PSoC5/CyLib.c **** {
  1297              		.loc 1 1609 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 53
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 53
 
 
  1298              		.cfi_startproc
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1330              		.loc 1 1630 0
  1331              		.cfi_startproc
  1332              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 54
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 54
 
 
  1333              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1375 0014 FFF7FEFF 		bl	CyHalt
  1376              	.LVL73:
  1377              	.L136:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 55
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 55
 
 
  196:.\Generated_Source\PSoC5/CyLib.c ****        (qDiv    <= CY_CLK_PLL_MAX_Q_VALUE  ) && (qDiv    >= CY_CLK_PLL_MIN_Q_VALUE  ) &&
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1421 0058 22420040 		.word	1073758754
  1422 005c 21420040 		.word	1073758753
  1423              		.cfi_endproc
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 56
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 56
 
 
  1424              	.LFE2:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1471 002e 10BD     		pop	{r4, pc}
  1472              	.L149:
  1473              		.align	2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 57
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 57
 
 
  1474              	.L148:
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1523              	.L153:
  410:.\Generated_Source\PSoC5/CyLib.c ****         break;
  1524              		.loc 1 410 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 58
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 58
 
 
  1525 0028 1F4B     		ldr	r3, .L164+4
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1569              		.loc 1 430 0
  1570 0064 164B     		ldr	r3, .L164+28
  1571 0066 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 59
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 59
 
 
  1572 0068 DBB2     		uxtb	r3, r3
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1619 00b8 0B010049 		.word	1224737035
  1620 00bc 89010049 		.word	1224737161
  1621 00c0 0C010049 		.word	1224737036
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 60
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 60
 
 
  1622 00c4 0D010049 		.word	1224737037
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1672 0024 0D       		.byte	(.L171-.L170)/2
  1673 0025 00       		.p2align 1
  1674              	.L169:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 61
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 61
 
 
  512:.\Generated_Source\PSoC5/CyLib.c ****         break;
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1720 0052 3B       		.byte	(.L184-.L177)/2
  1721 0053 00       		.p2align 1
  1722              	.L176:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 62
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 62
 
 
  556:.\Generated_Source\PSoC5/CyLib.c ****             CY_LIB_IMO_3MHZ_VALUE) & ((uint8)(~CY_LIB_IMO_USBCLK_ON_SET));
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  581:.\Generated_Source\PSoC5/CyLib.c ****             CY_LIB_IMO_62MHZ_VALUE) & ((uint8)(~CY_LIB_IMO_USBCLK_ON_SET));
  1767              		.loc 1 581 0
  1768 00a0 134A     		ldr	r2, .L191
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 63
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 63
 
 
  1769 00a2 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1813 00e6 02D9     		bls	.L166
  615:.\Generated_Source\PSoC5/CyLib.c ****     }
  1814              		.loc 1 615 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 64
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 64
 
 
  1815 00e8 3046     		mov	r0, r6
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  657:.\Generated_Source\PSoC5/CyLib.c ****         CY_LIB_FASTCLK_IMO_CR_REG |= CY_LIB_FASTCLK_IMO_IMO;
  1864              		.loc 1 657 0
  1865 0026 4FF04022 		mov	r2, #1073758208
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 65
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 65
 
 
  1866 002a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1649:.\Generated_Source\PSoC5/CyLib.c **** *
 1650:.\Generated_Source\PSoC5/CyLib.c **** * Summary:
 1651:.\Generated_Source\PSoC5/CyLib.c **** *  Forces a device software reset.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 66
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 66
 
 
 1652:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1680:.\Generated_Source\PSoC5/CyLib.c **** *  milliseconds: number of milliseconds to delay.
 1681:.\Generated_Source\PSoC5/CyLib.c **** *
 1682:.\Generated_Source\PSoC5/CyLib.c **** * Return:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 67
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 67
 
 
 1683:.\Generated_Source\PSoC5/CyLib.c **** *   None
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1969 0028 00000000 		.word	.LANCHOR0
  1970              		.cfi_endproc
  1971              	.LFE41:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 68
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 68
 
 
  1972              		.size	CyDelay, .-CyDelay
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  1988              		.cfi_offset 3, -8
  1989              		.cfi_offset 14, -4
 1737:.\Generated_Source\PSoC5/CyLib.c ****         CyDelayCycles((uint32)microseconds * cydelay_freq_mhz);
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 69
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 69
 
 
  1990              		.loc 1 1737 0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1281:.\Generated_Source\PSoC5/CyLib.c ****         CyDelayUs(10u);
  2040              		.loc 1 1281 0
  2041 001c 0122     		movs	r2, #1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 70
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 70
 
 
  2042 001e 03F28E33 		addw	r3, r3, #910
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1299:.\Generated_Source\PSoC5/CyLib.c **** 
  2088              		.loc 1 1299 0
  2089 006e 2046     		mov	r0, r4
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 71
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 71
 
 
  2090 0070 10BD     		pop	{r4, pc}
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2138              		.loc 1 1189 0
  2139 002a 4FF47A73 		mov	r3, #1000
  2140 002e ADF80630 		strh	r3, [sp, #6]	@ movhi
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 72
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 72
 
 
  2141 0032 11E0     		b	.L225
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2188              		.thumb_func
  2189              		.type	CyDelayFreq, %function
  2190              	CyDelayFreq:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 73
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 73
 
 
  2191              	.LFB43:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2214 0016 02F23F22 		addw	r2, r2, #575
  2215 001a 0A48     		ldr	r0, .L235+8
  2216              	.LVL123:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 74
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 74
 
 
  2217 001c A0FB0202 		umull	r0, r2, r0, r2
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1792:.\Generated_Source\PSoC5/CyLib.c **** *  WDT cannot be disabled after it is enabled, the WDT timeout period can be
 1793:.\Generated_Source\PSoC5/CyLib.c **** *  set to be greater than the sleep wakeup period, then feed the dog on each
 1794:.\Generated_Source\PSoC5/CyLib.c **** *  wakeup from Sleep.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 75
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 75
 
 
 1795:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2269 001e 1A70     		strb	r2, [r3]
 1828:.\Generated_Source\PSoC5/CyLib.c **** 
 1829:.\Generated_Source\PSoC5/CyLib.c ****     /* Setting low power mode */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 76
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 76
 
 
 1830:.\Generated_Source\PSoC5/CyLib.c ****     CY_WDT_CFG_REG = (((uint8)(lpMode << CY_WDT_CFG_LPMODE_SHIFT)) & CY_WDT_CFG_LPMODE_MASK) |
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1853:.\Generated_Source\PSoC5/CyLib.c **** {
  2300              		.loc 1 1853 0
  2301              		.cfi_startproc
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 77
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 77
 
 
  2302              		@ args = 0, pretend = 0, frame = 0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2328              		@ frame_needed = 0, uses_anonymous_args = 0
  2329              	.LVL127:
  2330 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 78
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 78
 
 
  2331              		.cfi_def_cfa_offset 8
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2368 0036 0A4A     		ldr	r2, .L247+4
  2369 0038 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  2370 003a 43F04003 		orr	r3, r3, #64
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 79
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 79
 
 
  2371 003e 1370     		strb	r3, [r2]
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1917:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
 1918:.\Generated_Source\PSoC5/CyLib.c **** *  reset: The option to reset the device at a specified Vdda threshold:
 1919:.\Generated_Source\PSoC5/CyLib.c **** *           0 - Device is not reset.
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 80
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 80
 
 
 1920:.\Generated_Source\PSoC5/CyLib.c **** *           1 - Device is reset.
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 1940:.\Generated_Source\PSoC5/CyLib.c ****     CyDelayUs(1u);
  2440              		.loc 1 1940 0
  2441 002e FFF7FEFF 		bl	CyDelayUs
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 81
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 81
 
 
  2442              	.LVL134:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2482              		.thumb
  2483              		.thumb_func
  2484              		.type	CyVdLvDigitDisable, %function
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 82
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 82
 
 
  2485              	CyVdLvDigitDisable:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2510              	.L258:
  2511              		.align	2
  2512              	.L257:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 83
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 83
 
 
  2513 0020 F5460040 		.word	1073759989
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2543 0014 034B     		ldr	r3, .L261+4
  2544 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  2545 0018 13F0070F 		tst	r3, #7
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 84
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 84
 
 
  2546 001c FAD1     		bne	.L260
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2576 0006 1C60     		str	r4, [r3]
 2032:.\Generated_Source\PSoC5/CyLib.c **** 
 2033:.\Generated_Source\PSoC5/CyLib.c ****     CY_VD_PRES_CONTROL_REG &= ((uint8)(~CY_VD_PRESA_EN));
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 85
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 85
 
 
  2577              		.loc 1 2033 0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 2046:.\Generated_Source\PSoC5/CyLib.c **** 
 2047:.\Generated_Source\PSoC5/CyLib.c **** /*******************************************************************************
 2048:.\Generated_Source\PSoC5/CyLib.c **** * Function Name: CyVdHvAnalogDisable
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 86
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 86
 
 
 2049:.\Generated_Source\PSoC5/CyLib.c **** ********************************************************************************
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 2077:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
 2078:.\Generated_Source\PSoC5/CyLib.c **** *  mask: Bits in the shadow register to clear.
 2079:.\Generated_Source\PSoC5/CyLib.c **** *   Define                  Definition
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 87
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 87
 
 
 2080:.\Generated_Source\PSoC5/CyLib.c **** *   CY_VD_LVID            Persistent status of digital LVI.
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 2101:.\Generated_Source\PSoC5/CyLib.c **** ********************************************************************************
 2102:.\Generated_Source\PSoC5/CyLib.c **** *
 2103:.\Generated_Source\PSoC5/CyLib.c **** * Summary:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 88
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 88
 
 
 2104:.\Generated_Source\PSoC5/CyLib.c **** *  Returns the real time voltage detection status.
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2708              		.section	.text.CyDisableInts,"ax",%progbits
  2709              		.align	2
  2710              		.global	CyDisableInts
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 89
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 89
 
 
  2711              		.thumb
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 2166:.\Generated_Source\PSoC5/CyLib.c ****     #else
 2167:.\Generated_Source\PSoC5/CyLib.c **** 
 2168:.\Generated_Source\PSoC5/CyLib.c ****         /* Get the current interrupt state. */
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 90
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 90
 
 
 2169:.\Generated_Source\PSoC5/CyLib.c ****         intState = CY_GET_REG32(CY_INT_CLEAR_PTR);
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 2194:.\Generated_Source\PSoC5/CyLib.c **** *
 2195:.\Generated_Source\PSoC5/CyLib.c **** *******************************************************************************/
 2196:.\Generated_Source\PSoC5/CyLib.c **** void CyEnableInts(uint32 mask) 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 91
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 91
 
 
 2197:.\Generated_Source\PSoC5/CyLib.c **** {
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2789              		.type	CyFlushCache, %function
  2790              	CyFlushCache:
  2791              	.LFB56:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 92
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 92
 
 
 2218:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2817              	@ 0 "" 2
 2247:.\Generated_Source\PSoC5/CyLib.c ****         CY_NOP;
  2818              		.loc 1 2247 0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 93
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 93
 
 
  2819              	@ 2247 ".\Generated_Source\PSoC5\CyLib.c" 1
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2864              	@ 2256 ".\Generated_Source\PSoC5\CyLib.c" 1
  2865 001e 00BF     		NOP
  2866              	
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 94
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 94
 
 
  2867              	@ 0 "" 2
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 2273:.\Generated_Source\PSoC5/CyLib.c ****         CY_NOP;
  2905              		.loc 1 2273 0
  2906              	@ 2273 ".\Generated_Source\PSoC5\CyLib.c" 1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 95
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 95
 
 
  2907 0038 00BF     		NOP
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  2952 004a 00BF     		NOP
  2953              	
  2954              	@ 0 "" 2
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 96
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 96
 
 
 2283:.\Generated_Source\PSoC5/CyLib.c ****         CY_NOP;
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 2302:.\Generated_Source\PSoC5/CyLib.c ****        address: Pointer to an interrupt service routine.
 2303:.\Generated_Source\PSoC5/CyLib.c ****     *
 2304:.\Generated_Source\PSoC5/CyLib.c ****     * Return:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 97
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 97
 
 
 2305:.\Generated_Source\PSoC5/CyLib.c ****     *   The old ISR vector at this location.
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3026 0022 00BF     		.align	2
  3027              	.L292:
  3028 0024 08ED00E0 		.word	-536810232
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 98
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 98
 
 
  3029              		.cfi_endproc
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3061              	.LVL161:
  3062 000e FFF7FEFF 		bl	CyHalt
  3063              	.LVL162:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 99
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 99
 
 
  3064              	.L295:
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3096              		.cfi_offset 14, -4
  3097 0002 0446     		mov	r4, r0
  3098 0004 0E46     		mov	r6, r1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 100
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 100
 
 
 2367:.\Generated_Source\PSoC5/CyLib.c ****         cyisraddress oldIsr;
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
 2383:.\Generated_Source\PSoC5/CyLib.c ****     * Function Name: CyIntGetVector
 2384:.\Generated_Source\PSoC5/CyLib.c ****     ********************************************************************************
 2385:.\Generated_Source\PSoC5/CyLib.c ****     *
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 101
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 101
 
 
 2386:.\Generated_Source\PSoC5/CyLib.c ****     * Summary:
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3174              	.LFE60:
  3175              		.size	CyIntGetVector, .-CyIntGetVector
  3176              		.section	.text.CyIntSetPriority,"ax",%progbits
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 102
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 102
 
 
  3177              		.align	2
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3210 0014 0020     		movs	r0, #0
  3211 0016 FFF7FEFF 		bl	CyHalt
  3212              	.LVL178:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 103
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 103
 
 
  3213              	.L311:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3244 0004 1F28     		cmp	r0, #31
  3245 0006 02D9     		bls	.L314
  3246              		.loc 1 2446 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 104
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 104
 
 
  3247 0008 0020     		movs	r0, #0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3278 0000 10B5     		push	{r4, lr}
  3279              		.cfi_def_cfa_offset 8
  3280              		.cfi_offset 4, -8
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 105
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 105
 
 
  3281              		.cfi_offset 14, -4
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3325              	cydelay_freq_mhz:
  3326 0008 18       		.byte	24
  3327 0009 000000   		.space	3
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 106
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 106
 
 
  3328              		.type	cydelay_freq_hz, %object
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3382 0051 05       		.byte	0x5
  3383 0052 7C010000 		.4byte	.LASF5
  3384 0056 03       		.uleb128 0x3
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 107
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 107
 
 
  3385 0057 04       		.byte	0x4
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3439 00c0 F0       		.byte	0xf0
  3440 00c1 C5000000 		.4byte	0xc5
  3441 00c5 07       		.uleb128 0x7
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 108
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 108
 
 
  3442 00c6 80000000 		.4byte	0x80
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3496 0149 58040000 		.4byte	.LASF21
  3497 014d 01       		.byte	0x1
  3498 014e 99       		.byte	0x99
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 109
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 109
 
 
  3499 014f 00000000 		.4byte	.LFB1
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3553 01cd 04080000 		.4byte	.LASF25
  3554 01d1 01       		.byte	0x1
  3555 01d2 0B03     		.2byte	0x30b
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 110
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 110
 
 
  3556 01d4 80000000 		.4byte	0x80
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3610 025a 13       		.uleb128 0x13
  3611 025b 01       		.uleb128 0x1
  3612 025c 50       		.byte	0x50
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 111
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 111
 
 
  3613 025d 02       		.uleb128 0x2
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3667 02be 01       		.uleb128 0x1
  3668 02bf 9C       		.byte	0x9c
  3669 02c0 D5020000 		.4byte	0x2d5
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 112
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 112
 
 
  3670 02c4 0C       		.uleb128 0xc
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3724 0341 F6000000 		.4byte	.LLST8
  3725 0345 17       		.uleb128 0x17
  3726 0346 28070000 		.4byte	.LASF40
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 113
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 113
 
 
  3727 034a 01       		.byte	0x1
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3781 03c3 37040000 		.4byte	0x437
  3782 03c7 0C       		.uleb128 0xc
  3783 03c8 71010000 		.4byte	.LASF39
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 114
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 114
 
 
  3784 03cc 01       		.byte	0x1
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3838 0449 0E       		.uleb128 0xe
  3839 044a 45050000 		.4byte	.LASF49
  3840 044e 01       		.byte	0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 115
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 115
 
 
  3841 044f 4104     		.2byte	0x441
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3895 04ce E0070000 		.4byte	.LASF64
  3896 04d2 01       		.byte	0x1
  3897 04d3 E004     		.2byte	0x4e0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 116
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 116
 
 
  3898 04d5 80000000 		.4byte	0x80
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  3952 0557 F7020000 		.4byte	.LLST22
  3953 055b 0A       		.uleb128 0xa
  3954 055c F8070000 		.4byte	.LASF60
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 117
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 117
 
 
  3955 0560 01       		.byte	0x1
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4009 05d6 01       		.byte	0x1
  4010 05d7 CE05     		.2byte	0x5ce
  4011 05d9 80000000 		.4byte	0x80
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 118
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 118
 
 
  4012 05dd 00000000 		.4byte	.LFB33
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4066 065e 01       		.byte	0x1
  4067 065f 4806     		.2byte	0x648
  4068 0661 00000000 		.4byte	.LFB38
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 119
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 119
 
 
  4069 0665 18000000 		.4byte	.LFE38-.LFB38
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4123 06e3 C2030000 		.4byte	.LLST29
  4124 06e7 12       		.uleb128 0x12
  4125 06e8 18000000 		.4byte	.LVL73
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 120
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 120
 
 
  4126 06ec 80060000 		.4byte	0x680
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4180 0752 EB000000 		.4byte	.LASF80
  4181 0756 01       		.byte	0x1
  4182 0757 8D01     		.2byte	0x18d
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 121
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 121
 
 
  4183 0759 00000000 		.4byte	.LFB7
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4237 07dc EF01     		.2byte	0x1ef
  4238 07de 80000000 		.4byte	0x80
  4239 07e2 8F040000 		.4byte	.LLST35
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 122
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 122
 
 
  4240 07e6 12       		.uleb128 0x12
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4294 0853 01       		.uleb128 0x1
  4295 0854 9C       		.byte	0x9c
  4296 0855 79080000 		.4byte	0x879
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 123
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 123
 
 
  4297 0859 0C       		.uleb128 0xc
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4351 08d6 F4080000 		.4byte	0x8f4
  4352 08da 0C       		.uleb128 0xc
  4353 08db 2A080000 		.4byte	.LASF91
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 124
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 124
 
 
  4354 08df 01       		.byte	0x1
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4408 095e 01       		.uleb128 0x1
  4409 095f 50       		.byte	0x50
  4410 0960 01       		.uleb128 0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 125
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 125
 
 
  4411 0961 3A       		.byte	0x3a
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4465 09ce 01       		.byte	0x1
  4466 09cf DD06     		.2byte	0x6dd
  4467 09d1 96000000 		.4byte	0x96
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 126
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 126
 
 
  4468 09d5 4F050000 		.4byte	.LLST41
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4522 0a5a 30000000 		.4byte	.LVL130
  4523 0a5e C4080000 		.4byte	0x8c4
  4524 0a62 13       		.uleb128 0x13
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 127
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 127
 
 
  4525 0a63 01       		.uleb128 0x1
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4579 0ad4 37080000 		.4byte	.LASF105
  4580 0ad8 01       		.byte	0x1
  4581 0ad9 ED07     		.2byte	0x7ed
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 128
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 128
 
 
  4582 0adb 00000000 		.4byte	.LFB50
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4636 0b55 18000000 		.4byte	.LFE53-.LFB53
  4637 0b59 01       		.uleb128 0x1
  4638 0b5a 9C       		.byte	0x9c
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 129
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 129
 
 
  4639 0b5b 920B0000 		.4byte	0xb92
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4693 0beb 18000000 		.4byte	.LFE55-.LFB55
  4694 0bef 01       		.uleb128 0x1
  4695 0bf0 9C       		.byte	0x9c
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 130
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 130
 
 
  4696 0bf1 280C0000 		.4byte	0xc28
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4750 0c80 01       		.byte	0x1
  4751 0c81 0409     		.2byte	0x904
  4752 0c83 80000000 		.4byte	0x80
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 131
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 131
 
 
  4753 0c87 0B070000 		.4byte	.LLST56
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4807 0d05 8C070000 		.4byte	.LLST60
  4808 0d09 14       		.uleb128 0x14
  4809 0d0a 12000000 		.4byte	.LVL162
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 132
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 132
 
 
  4810 0d0e 80060000 		.4byte	0x680
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4864 0d82 29050000 		.4byte	.LASF122
  4865 0d86 01       		.byte	0x1
  4866 0d87 5C09     		.2byte	0x95c
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 133
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 133
 
 
  4867 0d89 EA000000 		.4byte	0xea
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4921 0e0f 01       		.uleb128 0x1
  4922 0e10 50       		.byte	0x50
  4923 0e11 01       		.uleb128 0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 134
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 134
 
 
  4924 0e12 30       		.byte	0x30
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  4978 0e88 0C       		.uleb128 0xc
  4979 0e89 70030000 		.4byte	.LASF116
  4980 0e8d 01       		.byte	0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 135
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 135
 
 
  4981 0e8e A409     		.2byte	0x9a4
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5034 0eff 00000000 		.4byte	cydelay_freq_mhz
  5035 0f03 1E       		.uleb128 0x1e
  5036 0f04 0C070000 		.4byte	.LASF132
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 136
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 136
 
 
  5037 0f08 01       		.byte	0x1
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5091 0008 0E       		.uleb128 0xe
  5092 0009 1B       		.uleb128 0x1b
  5093 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 137
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 137
 
 
  5094 000b 55       		.uleb128 0x55
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5148 0041 0B       		.uleb128 0xb
  5149 0042 49       		.uleb128 0x49
  5150 0043 13       		.uleb128 0x13
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 138
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 138
 
 
  5151 0044 00       		.byte	0
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5205 007b 3B       		.uleb128 0x3b
  5206 007c 05       		.uleb128 0x5
  5207 007d 49       		.uleb128 0x49
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 139
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 139
 
 
  5208 007e 13       		.uleb128 0x13
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5262 00b5 27       		.uleb128 0x27
  5263 00b6 19       		.uleb128 0x19
  5264 00b7 11       		.uleb128 0x11
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 140
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 140
 
 
  5265 00b8 01       		.uleb128 0x1
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5319 00f1 13       		.uleb128 0x13
  5320 00f2 00       		.byte	0
  5321 00f3 00       		.byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 141
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 141
 
 
  5322 00f4 10       		.uleb128 0x10
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5376 0133 2E       		.uleb128 0x2e
  5377 0134 01       		.byte	0x1
  5378 0135 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 142
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 142
 
 
  5379 0136 19       		.uleb128 0x19
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5433 016d 2E       		.uleb128 0x2e
  5434 016e 01       		.byte	0x1
  5435 016f 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 143
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 143
 
 
  5436 0170 19       		.uleb128 0x19
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5490 01a7 01       		.uleb128 0x1
  5491 01a8 12       		.uleb128 0x12
  5492 01a9 06       		.uleb128 0x6
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 144
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 144
 
 
  5493 01aa 40       		.uleb128 0x40
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5547 01e2 05       		.uleb128 0x5
  5548 01e3 49       		.uleb128 0x49
  5549 01e4 13       		.uleb128 0x13
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 145
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 145
 
 
  5550 01e5 1C       		.uleb128 0x1c
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5604 021b 19       		.uleb128 0x19
  5605 021c 01       		.uleb128 0x1
  5606 021d 13       		.uleb128 0x13
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 146
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 146
 
 
  5607 021e 00       		.byte	0
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5661 000a 30       		.byte	0x30
  5662 000b 9F       		.byte	0x9f
  5663 000c 38000000 		.4byte	.LVL1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 147
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 147
 
 
  5664 0010 48000000 		.4byte	.LFE6
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5718              	.LLST5:
  5719 0095 0E000000 		.4byte	.LVL10
  5720 0099 16000000 		.4byte	.LVL11
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 148
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 148
 
 
  5721 009d 0500     		.2byte	0x5
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5775 011e 78000000 		.4byte	.LFE0
  5776 0122 0400     		.2byte	0x4
  5777 0124 F3       		.byte	0xf3
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 149
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 149
 
 
  5778 0125 01       		.uleb128 0x1
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5832 01ae 00000000 		.4byte	0
  5833 01b2 00000000 		.4byte	0
  5834              	.LLST13:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 150
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 150
 
 
  5835 01b6 00000000 		.4byte	.LVL37
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5889 0240 1E000000 		.4byte	.LVL50
  5890 0244 0100     		.2byte	0x1
  5891 0246 50       		.byte	0x50
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 151
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 151
 
 
  5892 0247 1E000000 		.4byte	.LVL50
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  5946 02c6 9A000000 		.4byte	.LVL62
  5947 02ca A0000000 		.4byte	.LVL63
  5948 02ce 0100     		.2byte	0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 152
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 152
 
 
  5949 02d0 57       		.byte	0x57
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6003 0357 00000000 		.4byte	0
  6004 035b 00000000 		.4byte	0
  6005              	.LLST26:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 153
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 153
 
 
  6006 035f 00000000 		.4byte	.LVL68
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6060 03df 00000000 		.4byte	0
  6061              	.LLST30:
  6062 03e3 00000000 		.4byte	.LVL75
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 154
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 154
 
 
  6063 03e7 10000000 		.4byte	.LVL76
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6117 046c 0200     		.2byte	0x2
  6118 046e 33       		.byte	0x33
  6119 046f 9F       		.byte	0x9f
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 155
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 155
 
 
  6120 0470 2E000000 		.4byte	.LVL88
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6174 04f9 9F       		.byte	0x9f
  6175 04fa 00000000 		.4byte	0
  6176 04fe 00000000 		.4byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 156
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 156
 
 
  6177              	.LLST39:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6231 0585 F3       		.byte	0xf3
  6232 0586 01       		.uleb128 0x1
  6233 0587 50       		.byte	0x50
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 157
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 157
 
 
  6234 0588 9F       		.byte	0x9f
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6288 060a 01       		.uleb128 0x1
  6289 060b 50       		.byte	0x50
  6290 060c 9F       		.byte	0x9f
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 158
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 158
 
 
  6291 060d 00000000 		.4byte	0
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6345 0697 1C000000 		.4byte	.LFE54
  6346 069b 0100     		.2byte	0x1
  6347 069d 50       		.byte	0x50
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 159
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 159
 
 
  6348 069e 00000000 		.4byte	0
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6402 0728 00000000 		.4byte	0
  6403              	.LLST57:
  6404 072c 00000000 		.4byte	.LVL153
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 160
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 160
 
 
  6405 0730 13000000 		.4byte	.LVL156-1
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6459 07b6 50       		.byte	0x50
  6460 07b7 9F       		.byte	0x9f
  6461 07b8 00000000 		.4byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 161
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 161
 
 
  6462 07bc 00000000 		.4byte	0
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6516 0846 0400     		.2byte	0x4
  6517 0848 F3       		.byte	0xf3
  6518 0849 01       		.uleb128 0x1
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 162
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 162
 
 
  6519 084a 50       		.byte	0x50
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6573 08c5 9F       		.byte	0x9f
  6574 08c6 00000000 		.4byte	0
  6575 08ca 00000000 		.4byte	0
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 163
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 163
 
 
  6576              		.section	.debug_aranges,"",%progbits
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6630 00c8 00000000 		.4byte	.LFB30
  6631 00cc 10000000 		.4byte	.LFE30-.LFB30
  6632 00d0 00000000 		.4byte	.LFB31
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 164
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 164
 
 
  6633 00d4 10000000 		.4byte	.LFE31-.LFB31
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6687 01ac 10000000 		.4byte	.LFE51-.LFB51
  6688 01b0 00000000 		.4byte	.LFB52
  6689 01b4 14000000 		.4byte	.LFE52-.LFB52
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 165
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 165
 
 
  6690 01b8 00000000 		.4byte	.LFB53
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6744 0070 00000000 		.4byte	.LFB0
  6745 0074 78000000 		.4byte	.LFE0
  6746 0078 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 166
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 166
 
 
  6747 007c 60000000 		.4byte	.LFE4
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6801 0154 70000000 		.4byte	.LFE25
  6802 0158 00000000 		.4byte	.LFB43
  6803 015c 4C000000 		.4byte	.LFE43
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 167
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 167
 
 
  6804 0160 00000000 		.4byte	.LFB44
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6851              	.LASF58:
  6852 000f 636F756E 		.ascii	"count\000"
  6852      7400
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 168
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 168
 
 
  6853              	.LASF12:
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6876 00bb 43795854 		.ascii	"CyXTAL_32KHZ_Stop\000"
  6876      414C5F33 
  6876      324B485A 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 169
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 169
 
 
  6876      5F53746F 
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6899              	.LASF35:
  6900 0163 4379494C 		.ascii	"CyILO_Start1K\000"
  6900      4F5F5374 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 170
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 170
 
 
  6900      61727431 
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6928 01f5 43794465 		.ascii	"CyDelayCycles\000"
  6928      6C617943 
  6928      79636C65 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 171
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 171
 
 
  6928      7300
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6951              	.LASF107:
  6952 0298 43795664 		.ascii	"CyVdStickyStatus\000"
  6952      53746963 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 172
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 172
 
 
  6952      6B795374 
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6972              	.LASF139:
  6973 0377 4379456E 		.ascii	"CyEnterCriticalSection\000"
  6973      74657243 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 173
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 173
 
 
  6973      72697469 
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  6994              	.LASF9:
  6995 042f 73697A65 		.ascii	"sizetype\000"
  6995      74797065 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 174
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 174
 
 
  6995      00
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  7019 04e3 666C6F61 		.ascii	"float\000"
  7019      7400
  7020              	.LASF92:
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 175
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 175
 
 
  7021 04e9 43795854 		.ascii	"CyXTAL_32KHZ_SetPowerMode\000"
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  7043      414C5F53 
  7043      65745764 
  7043      566F6C74 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 176
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 176
 
 
  7043      61676500 
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  7066              	.LASF45:
  7067 0640 706D4674 		.ascii	"pmFtwCfg2Reg\000"
  7067      77436667 
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 177
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 177
 
 
  7067      32526567 
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  7091      52656164 
  7091      53746174 
  7091      757300
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 178
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 178
 
 
  7092              	.LASF84:
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 1
  7113      7100
  7114              	.LASF64:
  7115 07e0 43795854 		.ascii	"CyXTAL_32KHZ_ReadStatus\000"
-ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccvGmdso.s 			page 179
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccAWx0Gv.s 			page 179
 
 
  7115      414C5F33 

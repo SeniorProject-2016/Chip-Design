@@ -27,6 +27,8 @@
 #include "RxDMA_0_dma.h"
 #include "UART.h"
 #include "TxDMA_1_dma.h"
+#include "I2S_1.h"
+#include "I2S_1_PVT.h"
 #include "UART_IntClock.h"
 #include "core_cm3_psoc5.h"
 #include "core_cm3.h"

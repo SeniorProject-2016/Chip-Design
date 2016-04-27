@@ -2,7 +2,7 @@
 --	Conversion of Wave Generator.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Apr 24 15:18:48 2016
+--	Sun Apr 24 17:38:04 2016
 --
 
 USE cypress.cypress.all;
@@ -22,7 +22,7 @@ SIGNAL one : bit;
 SIGNAL tmpINTERRUPT_0__SCK_net_0 : bit;
 SIGNAL Net_146 : bit;
 SIGNAL tmpOE__SDI_net_0 : bit;
-SIGNAL Net_247 : bit;
+SIGNAL Net_378 : bit;
 SIGNAL tmpIO_0__SDI_net_0 : bit;
 TERMINAL tmpSIOVREF__SDI_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__SDI_net_0 : bit;
@@ -167,85 +167,7 @@ SIGNAL \I2S:bI2S:Tx:CH[0]:dpTx:f1_bus_stat_reg\ : bit;
 ATTRIBUTE port_state_att of \I2S:bI2S:Tx:CH[0]:dpTx:f1_bus_stat_reg\:SIGNAL IS 2;
 SIGNAL \I2S:bI2S:Tx:CH[0]:dpTx:f1_blk_stat_reg\ : bit;
 ATTRIBUTE port_state_att of \I2S:bI2S:Tx:CH[0]:dpTx:f1_blk_stat_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:rx_f0_load\ : bit;
-SIGNAL \I2S:bI2S:rx_state_2\ : bit;
-SIGNAL \I2S:bI2S:rx_state_1\ : bit;
-SIGNAL \I2S:bI2S:rx_state_0\ : bit;
-SIGNAL \I2S:bI2S:rx_f1_load\ : bit;
-SIGNAL \I2S:bI2S:rx_overflow_sticky\ : bit;
-SIGNAL \I2S:bI2S:rx_overflow_0\ : bit;
-SIGNAL \I2S:bI2S:rxenable\ : bit;
-SIGNAL \I2S:bI2S:Rx:STS[0]:status_0\ : bit;
-SIGNAL \I2S:bI2S:Rx:STS[0]:status_1\ : bit;
-SIGNAL \I2S:bI2S:rx_f0_n_empty_0\ : bit;
-SIGNAL \I2S:bI2S:Rx:STS[0]:status_2\ : bit;
-SIGNAL \I2S:bI2S:rx_f1_n_empty_0\ : bit;
-SIGNAL \I2S:bI2S:Rx:STS[0]:status_5\ : bit;
-SIGNAL \I2S:bI2S:Rx:STS[0]:status_4\ : bit;
-SIGNAL \I2S:bI2S:Rx:STS[0]:status_3\ : bit;
-SIGNAL \I2S:bI2S:rx_int_out_0\ : bit;
-SIGNAL \I2S:bI2S:rx_int_reg\ : bit;
-SIGNAL Net_253 : bit;
-SIGNAL \I2S:bI2S:rx_f0_full_0\ : bit;
-SIGNAL \I2S:bI2S:rx_f1_full_0\ : bit;
-SIGNAL \I2S:rx_drq0_0\ : bit;
-SIGNAL \I2S:rx_drq1_0\ : bit;
-SIGNAL \I2S:bI2S:rx_data_in_0\ : bit;
 SIGNAL \I2S:Net_1_0\ : bit;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ce0\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ce0\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:pos_clip_cmp_0\ : bit;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:z0\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:z0\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ff0\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ff0\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ce1\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ce1\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:neg_clip_cmp_0\ : bit;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:z1\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:z1\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ff1\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ff1\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ov_msb\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ov_msb\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:co_msb\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:co_msb\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:cmsb\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:cmsb\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:so\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:so\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ce0_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ce0_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:cl0_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:cl0_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:z0_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:z0_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ff0_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ff0_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ce1_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ce1_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:cl1_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:cl1_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:z1_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:z1_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ff1_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ff1_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:ov_msb_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:ov_msb_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:co_msb_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:co_msb_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:cmsb_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:cmsb_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:so_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:so_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:f0_bus_stat_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:f0_bus_stat_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:f0_blk_stat_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:f0_blk_stat_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:f1_bus_stat_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:f1_bus_stat_reg\:SIGNAL IS 2;
-SIGNAL \I2S:bI2S:Rx:CH[0]:dpRx:f1_blk_stat_reg\ : bit;
-ATTRIBUTE port_state_att of \I2S:bI2S:Rx:CH[0]:dpRx:f1_blk_stat_reg\:SIGNAL IS 2;
 SIGNAL \I2S:rx_line_0\ : bit;
 SIGNAL \I2S:Net_1_1\ : bit;
 SIGNAL \I2S:rx_line_1\ : bit;
@@ -279,7 +201,8 @@ SIGNAL \I2S:rx_drq0_2\ : bit;
 SIGNAL \I2S:rx_dma0_1\ : bit;
 ATTRIBUTE port_state_att of \I2S:rx_dma0_1\:SIGNAL IS 2;
 SIGNAL \I2S:rx_drq0_1\ : bit;
-SIGNAL Net_256_0 : bit;
+SIGNAL Net_375_0 : bit;
+SIGNAL \I2S:rx_drq0_0\ : bit;
 SIGNAL \I2S:rx_dma1_4\ : bit;
 ATTRIBUTE port_state_att of \I2S:rx_dma1_4\:SIGNAL IS 2;
 SIGNAL \I2S:rx_drq1_4\ : bit;
@@ -292,7 +215,8 @@ SIGNAL \I2S:rx_drq1_2\ : bit;
 SIGNAL \I2S:rx_dma1_1\ : bit;
 ATTRIBUTE port_state_att of \I2S:rx_dma1_1\:SIGNAL IS 2;
 SIGNAL \I2S:rx_drq1_1\ : bit;
-SIGNAL Net_359_0 : bit;
+SIGNAL Net_376_0 : bit;
+SIGNAL \I2S:rx_drq1_0\ : bit;
 SIGNAL \I2S:tx_dma0_4\ : bit;
 ATTRIBUTE port_state_att of \I2S:tx_dma0_4\:SIGNAL IS 2;
 SIGNAL \I2S:tx_drq0_4\ : bit;
@@ -334,7 +258,9 @@ SIGNAL \I2S:clip_detect_1\ : bit;
 SIGNAL Net_255_0 : bit;
 SIGNAL \I2S:clip_detect_0\ : bit;
 SIGNAL Net_261 : bit;
+SIGNAL Net_391_0 : bit;
 SIGNAL Net_361 : bit;
+SIGNAL Net_389_0 : bit;
 SIGNAL Net_258 : bit;
 SIGNAL \UART:Net_9\ : bit;
 SIGNAL \UART:Net_61\ : bit;
@@ -451,6 +377,225 @@ SIGNAL tmpIO_0__TX_net_0 : bit;
 TERMINAL tmpSIOVREF__TX_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__TX_net_0 : bit;
 SIGNAL Net_310 : bit;
+SIGNAL \I2S_1:Net_2\ : bit;
+SIGNAL \I2S_1:bI2S:op_clk\ : bit;
+SIGNAL \I2S_1:bI2S:dyn_data_width_1\ : bit;
+SIGNAL \I2S_1:bI2S:ctrl_4\ : bit;
+SIGNAL \I2S_1:bI2S:dyn_data_width_0\ : bit;
+SIGNAL \I2S_1:bI2S:ctrl_3\ : bit;
+SIGNAL \I2S_1:bI2S:ctrl_7\ : bit;
+SIGNAL \I2S_1:bI2S:ctrl_6\ : bit;
+SIGNAL \I2S_1:bI2S:ctrl_5\ : bit;
+SIGNAL \I2S_1:bI2S:ctrl_2\ : bit;
+SIGNAL \I2S_1:bI2S:ctrl_1\ : bit;
+SIGNAL \I2S_1:bI2S:ctrl_0\ : bit;
+SIGNAL \I2S_1:bI2S:enable\ : bit;
+SIGNAL \I2S_1:bI2S:reset\ : bit;
+SIGNAL \I2S_1:bI2S:count_6\ : bit;
+SIGNAL \I2S_1:bI2S:count_5\ : bit;
+SIGNAL \I2S_1:bI2S:count_4\ : bit;
+SIGNAL \I2S_1:bI2S:count_3\ : bit;
+SIGNAL \I2S_1:bI2S:count_2\ : bit;
+SIGNAL \I2S_1:bI2S:count_1\ : bit;
+SIGNAL \I2S_1:bI2S:count_0\ : bit;
+SIGNAL \I2S_1:bI2S:channel\ : bit;
+SIGNAL Net_379 : bit;
+SIGNAL Net_380 : bit;
+SIGNAL \I2S_1:bI2S:tx_lch_active\ : bit;
+SIGNAL \I2S_1:bI2S:tx_rch_active\ : bit;
+SIGNAL \I2S_1:bI2S:tx_stereo_data\ : bit;
+SIGNAL \I2S_1:bI2S:rx_lch_active\ : bit;
+SIGNAL \I2S_1:bI2S:rx_rch_active\ : bit;
+SIGNAL \I2S_1:bI2S:rx_stereo_data\ : bit;
+SIGNAL \I2S_1:bI2S:data_width_8\ : bit;
+SIGNAL \I2S_1:bI2S:data_width_16\ : bit;
+SIGNAL \I2S_1:bI2S:data_width_24\ : bit;
+SIGNAL \I2S_1:bI2S:data_width_32\ : bit;
+SIGNAL \I2S_1:bI2S:tx_lch_load_3\ : bit;
+SIGNAL \I2S_1:bI2S:tx_lch_load_2\ : bit;
+SIGNAL \I2S_1:bI2S:tx_lch_load_1\ : bit;
+SIGNAL \I2S_1:bI2S:tx_lch_load_0\ : bit;
+SIGNAL \I2S_1:bI2S:tx_rch_load_3\ : bit;
+SIGNAL \I2S_1:bI2S:tx_rch_load_2\ : bit;
+SIGNAL \I2S_1:bI2S:tx_rch_load_1\ : bit;
+SIGNAL \I2S_1:bI2S:tx_rch_load_0\ : bit;
+SIGNAL \I2S_1:bI2S:rx_lch_load_3\ : bit;
+SIGNAL \I2S_1:bI2S:rx_lch_load_2\ : bit;
+SIGNAL \I2S_1:bI2S:rx_lch_load_1\ : bit;
+SIGNAL \I2S_1:bI2S:rx_lch_load_0\ : bit;
+SIGNAL \I2S_1:bI2S:rx_rch_load_3\ : bit;
+SIGNAL \I2S_1:bI2S:rx_rch_load_2\ : bit;
+SIGNAL \I2S_1:bI2S:rx_rch_load_1\ : bit;
+SIGNAL \I2S_1:bI2S:rx_rch_load_0\ : bit;
+SIGNAL \I2S_1:bI2S:data_trunc\ : bit;
+SIGNAL \I2S_1:bI2S:rx_f0_load\ : bit;
+SIGNAL \I2S_1:bI2S:rx_state_2\ : bit;
+SIGNAL \I2S_1:bI2S:rx_state_1\ : bit;
+SIGNAL \I2S_1:bI2S:rx_state_0\ : bit;
+SIGNAL \I2S_1:bI2S:rx_f1_load\ : bit;
+SIGNAL \I2S_1:bI2S:rx_overflow_sticky\ : bit;
+SIGNAL \I2S_1:bI2S:rx_overflow_0\ : bit;
+SIGNAL \I2S_1:bI2S:rxenable\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:STS[0]:status_0\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:STS[0]:status_1\ : bit;
+SIGNAL \I2S_1:bI2S:rx_f0_n_empty_0\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:STS[0]:status_2\ : bit;
+SIGNAL \I2S_1:bI2S:rx_f1_n_empty_0\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:STS[0]:status_5\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:STS[0]:status_4\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:STS[0]:status_3\ : bit;
+SIGNAL \I2S_1:bI2S:rx_int_out_0\ : bit;
+SIGNAL \I2S_1:bI2S:rx_int_reg\ : bit;
+SIGNAL Net_386 : bit;
+SIGNAL \I2S_1:bI2S:rx_f0_full_0\ : bit;
+SIGNAL \I2S_1:bI2S:rx_f1_full_0\ : bit;
+SIGNAL \I2S_1:rx_drq0_0\ : bit;
+SIGNAL \I2S_1:rx_drq1_0\ : bit;
+SIGNAL \I2S_1:bI2S:rx_data_in_0\ : bit;
+SIGNAL \I2S_1:Net_1_0\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ce0\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ce0\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:pos_clip_cmp_0\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:z0\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:z0\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ff0\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ff0\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ce1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ce1\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:neg_clip_cmp_0\ : bit;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:z1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:z1\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ff1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ff1\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ov_msb\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ov_msb\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:co_msb\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:co_msb\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:cmsb\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:cmsb\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:so\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:so\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ce0_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ce0_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:cl0_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:cl0_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:z0_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:z0_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ff0_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ff0_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ce1_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ce1_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:cl1_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:cl1_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:z1_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:z1_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ff1_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ff1_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:ov_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:ov_msb_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:co_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:co_msb_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:cmsb_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:cmsb_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:so_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:so_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:f0_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:f0_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:f0_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:f0_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:f1_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:f1_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:bI2S:Rx:CH[0]:dpRx:f1_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:bI2S:Rx:CH[0]:dpRx:f1_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_line_0\ : bit;
+SIGNAL \I2S_1:Net_1_1\ : bit;
+SIGNAL \I2S_1:rx_line_1\ : bit;
+SIGNAL \I2S_1:Net_1_2\ : bit;
+SIGNAL \I2S_1:rx_line_2\ : bit;
+SIGNAL \I2S_1:Net_1_3\ : bit;
+SIGNAL \I2S_1:rx_line_3\ : bit;
+SIGNAL \I2S_1:Net_1_4\ : bit;
+SIGNAL \I2S_1:rx_line_4\ : bit;
+SIGNAL \I2S_1:sdo_4\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:sdo_4\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_line_4\ : bit;
+SIGNAL \I2S_1:sdo_3\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:sdo_3\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_line_3\ : bit;
+SIGNAL \I2S_1:sdo_2\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:sdo_2\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_line_2\ : bit;
+SIGNAL \I2S_1:sdo_1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:sdo_1\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_line_1\ : bit;
+SIGNAL Net_381_0 : bit;
+SIGNAL \I2S_1:tx_line_0\ : bit;
+SIGNAL \I2S_1:rx_dma0_4\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:rx_dma0_4\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_drq0_4\ : bit;
+SIGNAL \I2S_1:rx_dma0_3\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:rx_dma0_3\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_drq0_3\ : bit;
+SIGNAL \I2S_1:rx_dma0_2\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:rx_dma0_2\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_drq0_2\ : bit;
+SIGNAL \I2S_1:rx_dma0_1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:rx_dma0_1\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_drq0_1\ : bit;
+SIGNAL \I2S_1:rx_dma1_4\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:rx_dma1_4\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_drq1_4\ : bit;
+SIGNAL \I2S_1:rx_dma1_3\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:rx_dma1_3\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_drq1_3\ : bit;
+SIGNAL \I2S_1:rx_dma1_2\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:rx_dma1_2\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_drq1_2\ : bit;
+SIGNAL \I2S_1:rx_dma1_1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:rx_dma1_1\:SIGNAL IS 2;
+SIGNAL \I2S_1:rx_drq1_1\ : bit;
+SIGNAL \I2S_1:tx_dma0_4\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:tx_dma0_4\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_drq0_4\ : bit;
+SIGNAL \I2S_1:tx_dma0_3\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:tx_dma0_3\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_drq0_3\ : bit;
+SIGNAL \I2S_1:tx_dma0_2\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:tx_dma0_2\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_drq0_2\ : bit;
+SIGNAL \I2S_1:tx_dma0_1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:tx_dma0_1\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_drq0_1\ : bit;
+SIGNAL Net_384_0 : bit;
+SIGNAL \I2S_1:tx_drq0_0\ : bit;
+SIGNAL \I2S_1:tx_dma1_4\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:tx_dma1_4\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_drq1_4\ : bit;
+SIGNAL \I2S_1:tx_dma1_3\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:tx_dma1_3\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_drq1_3\ : bit;
+SIGNAL \I2S_1:tx_dma1_2\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:tx_dma1_2\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_drq1_2\ : bit;
+SIGNAL \I2S_1:tx_dma1_1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:tx_dma1_1\:SIGNAL IS 2;
+SIGNAL \I2S_1:tx_drq1_1\ : bit;
+SIGNAL Net_385_0 : bit;
+SIGNAL \I2S_1:tx_drq1_0\ : bit;
+SIGNAL \I2S_1:clip_4\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:clip_4\:SIGNAL IS 2;
+SIGNAL \I2S_1:clip_detect_4\ : bit;
+SIGNAL \I2S_1:clip_3\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:clip_3\:SIGNAL IS 2;
+SIGNAL \I2S_1:clip_detect_3\ : bit;
+SIGNAL \I2S_1:clip_2\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:clip_2\:SIGNAL IS 2;
+SIGNAL \I2S_1:clip_detect_2\ : bit;
+SIGNAL \I2S_1:clip_1\ : bit;
+ATTRIBUTE port_state_att of \I2S_1:clip_1\:SIGNAL IS 2;
+SIGNAL \I2S_1:clip_detect_1\ : bit;
+SIGNAL Net_388_0 : bit;
+SIGNAL \I2S_1:clip_detect_0\ : bit;
 SIGNAL \I2S:bI2S:reset\\D\ : bit;
 SIGNAL \I2S:bI2S:channel\\D\ : bit;
 SIGNAL \I2S:bI2S:tx_underflow_sticky\\D\ : bit;
@@ -462,15 +607,6 @@ SIGNAL \I2S:bI2S:tx_state_1\\D\ : bit;
 SIGNAL \I2S:bI2S:tx_state_0\\D\ : bit;
 SIGNAL \I2S:bI2S:tx_int_reg\\D\ : bit;
 SIGNAL \I2S:tx_line_0\\D\ : bit;
-SIGNAL \I2S:bI2S:rx_f0_load\\D\ : bit;
-SIGNAL \I2S:bI2S:rx_state_2\\D\ : bit;
-SIGNAL \I2S:bI2S:rx_state_1\\D\ : bit;
-SIGNAL \I2S:bI2S:rx_state_0\\D\ : bit;
-SIGNAL \I2S:bI2S:rx_f1_load\\D\ : bit;
-SIGNAL \I2S:bI2S:rx_overflow_sticky\\D\ : bit;
-SIGNAL \I2S:bI2S:rxenable\\D\ : bit;
-SIGNAL \I2S:bI2S:rx_int_reg\\D\ : bit;
-SIGNAL \I2S:bI2S:rx_data_in_0\\D\ : bit;
 SIGNAL \UART:BUART:reset_reg\\D\ : bit;
 SIGNAL \UART:BUART:txn\\D\ : bit;
 SIGNAL \UART:BUART:tx_state_1\\D\ : bit;
@@ -481,6 +617,17 @@ SIGNAL \UART:BUART:tx_bitclk\\D\ : bit;
 SIGNAL \UART:BUART:tx_ctrl_mark_last\\D\ : bit;
 SIGNAL \UART:BUART:tx_mark\\D\ : bit;
 SIGNAL \UART:BUART:tx_parity_bit\\D\ : bit;
+SIGNAL \I2S_1:bI2S:reset\\D\ : bit;
+SIGNAL \I2S_1:bI2S:channel\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rx_f0_load\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rx_state_2\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rx_state_1\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rx_state_0\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rx_f1_load\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rx_overflow_sticky\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rxenable\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rx_int_reg\\D\ : bit;
+SIGNAL \I2S_1:bI2S:rx_data_in_0\\D\ : bit;
 BEGIN
 
 zero <=  ('0') ;
@@ -524,43 +671,6 @@ tmpOE__SCK_net_0 <=  ('1') ;
 
 \I2S:tx_line_0\\D\ <= ((Net_136 and \I2S:bI2S:tx_data_out_0\)
 	OR (not Net_136 and Net_138_0));
-
-\I2S:bI2S:rx_f0_load\\D\ <= ((not \I2S:bI2S:rx_state_1\ and \I2S:bI2S:rx_state_2\ and \I2S:bI2S:rx_state_0\)
-	OR (not \I2S:bI2S:rx_state_0\ and \I2S:bI2S:rx_state_1\));
-
-\I2S:bI2S:rx_f1_load\\D\ <= ((not \I2S:bI2S:rx_state_1\ and not \I2S:bI2S:rx_state_0\ and \I2S:bI2S:rx_state_2\));
-
-\I2S:bI2S:rx_overflow_sticky\\D\ <= ((\I2S:bI2S:ctrl_1\ and \I2S:bI2S:rx_f1_load\ and \I2S:bI2S:rx_f1_full_0\)
-	OR (\I2S:bI2S:ctrl_1\ and \I2S:bI2S:rx_f0_load\ and \I2S:bI2S:rx_f0_full_0\)
-	OR (\I2S:bI2S:ctrl_1\ and \I2S:bI2S:rx_overflow_sticky\));
-
-\I2S:bI2S:rxenable\\D\ <= ((not \I2S:bI2S:count_6\ and not \I2S:bI2S:count_1\ and not \I2S:bI2S:rx_overflow_sticky\ and \I2S:bI2S:ctrl_1\ and \I2S:bI2S:count_5\ and \I2S:bI2S:count_4\ and \I2S:bI2S:count_3\ and \I2S:bI2S:count_2\)
-	OR (not \I2S:bI2S:rx_overflow_sticky\ and \I2S:bI2S:ctrl_2\ and \I2S:bI2S:count_1\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:count_2\ and not \I2S:bI2S:rx_overflow_sticky\ and \I2S:bI2S:ctrl_2\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:count_3\ and not \I2S:bI2S:rx_overflow_sticky\ and \I2S:bI2S:ctrl_2\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:count_4\ and not \I2S:bI2S:rx_overflow_sticky\ and \I2S:bI2S:ctrl_2\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:count_5\ and not \I2S:bI2S:rx_overflow_sticky\ and \I2S:bI2S:ctrl_2\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:rx_overflow_sticky\ and \I2S:bI2S:ctrl_2\ and \I2S:bI2S:count_6\ and \I2S:bI2S:rxenable\));
-
-\I2S:bI2S:rx_state_2\\D\ <= ((not \I2S:bI2S:count_5\ and not \I2S:bI2S:count_4\ and not \I2S:bI2S:count_1\ and not \I2S:bI2S:rx_state_2\ and not \I2S:bI2S:rx_state_1\ and not \I2S:bI2S:rx_state_0\ and \I2S:bI2S:count_3\ and \I2S:bI2S:count_2\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:count_1\ and not \I2S:bI2S:rx_state_2\ and not \I2S:bI2S:rx_state_1\ and not \I2S:bI2S:rx_state_0\ and \I2S:bI2S:count_5\ and \I2S:bI2S:count_4\ and \I2S:bI2S:count_3\ and \I2S:bI2S:count_2\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:rx_state_1\ and \I2S:bI2S:rx_state_2\ and \I2S:bI2S:rx_state_0\ and \I2S:bI2S:rxenable\));
-
-\I2S:bI2S:rx_state_1\\D\ <= ((not \I2S:bI2S:count_4\ and not \I2S:bI2S:count_1\ and not \I2S:bI2S:rx_state_2\ and not \I2S:bI2S:rx_state_1\ and not \I2S:bI2S:rx_state_0\ and \I2S:bI2S:count_5\ and \I2S:bI2S:count_3\ and \I2S:bI2S:count_2\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:count_5\ and not \I2S:bI2S:count_1\ and not \I2S:bI2S:rx_state_2\ and not \I2S:bI2S:rx_state_1\ and not \I2S:bI2S:rx_state_0\ and \I2S:bI2S:count_4\ and \I2S:bI2S:count_3\ and \I2S:bI2S:count_2\ and \I2S:bI2S:rxenable\)
-	OR (not \I2S:bI2S:rx_state_1\ and \I2S:bI2S:rx_state_2\ and \I2S:bI2S:rx_state_0\ and \I2S:bI2S:rxenable\));
-
-\I2S:bI2S:rx_state_0\\D\ <= ((not \I2S:bI2S:rx_state_2\ and not \I2S:bI2S:rx_state_1\ and not \I2S:bI2S:rx_state_0\ and \I2S:bI2S:count_1\)
-	OR (not \I2S:bI2S:count_2\ and not \I2S:bI2S:rx_state_2\ and not \I2S:bI2S:rx_state_1\ and not \I2S:bI2S:rx_state_0\)
-	OR (not \I2S:bI2S:count_3\ and not \I2S:bI2S:rx_state_2\ and not \I2S:bI2S:rx_state_1\ and not \I2S:bI2S:rx_state_0\)
-	OR (not \I2S:bI2S:rx_state_0\ and \I2S:bI2S:rx_state_2\ and \I2S:bI2S:rx_state_1\)
-	OR not \I2S:bI2S:rxenable\);
-
-\I2S:bI2S:rx_overflow_0\ <= ((\I2S:bI2S:rx_f1_load\ and \I2S:bI2S:rx_f1_full_0\)
-	OR (\I2S:bI2S:rx_f0_load\ and \I2S:bI2S:rx_f0_full_0\));
-
-\I2S:bI2S:rx_data_in_0\\D\ <= ((not Net_136 and Net_247)
-	OR (Net_136 and \I2S:bI2S:rx_data_in_0\));
 
 Net_277 <= (not \UART:BUART:txn\);
 
@@ -606,6 +716,47 @@ Net_277 <= (not \UART:BUART:txn\);
 \UART:BUART:tx_parity_bit\\D\ <= ((not \UART:BUART:tx_state_0\ and \UART:BUART:txn\ and \UART:BUART:tx_parity_bit\)
 	OR (not \UART:BUART:tx_state_1\ and not \UART:BUART:tx_state_0\ and \UART:BUART:tx_parity_bit\)
 	OR \UART:BUART:tx_parity_bit\);
+
+\I2S_1:bI2S:reset\\D\ <= (not \I2S_1:bI2S:ctrl_2\);
+
+\I2S_1:bI2S:channel\\D\ <= ((not \I2S_1:bI2S:reset\ and not \I2S_1:bI2S:count_5\));
+
+\I2S_1:bI2S:rx_f0_load\\D\ <= ((not \I2S_1:bI2S:rx_state_1\ and \I2S_1:bI2S:rx_state_2\ and \I2S_1:bI2S:rx_state_0\)
+	OR (not \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:rx_state_1\));
+
+\I2S_1:bI2S:rx_f1_load\\D\ <= ((not \I2S_1:bI2S:rx_state_1\ and not \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:rx_state_2\));
+
+\I2S_1:bI2S:rx_overflow_sticky\\D\ <= ((\I2S_1:bI2S:ctrl_1\ and \I2S_1:bI2S:rx_f1_load\ and \I2S_1:bI2S:rx_f1_full_0\)
+	OR (\I2S_1:bI2S:ctrl_1\ and \I2S_1:bI2S:rx_f0_load\ and \I2S_1:bI2S:rx_f0_full_0\)
+	OR (\I2S_1:bI2S:ctrl_1\ and \I2S_1:bI2S:rx_overflow_sticky\));
+
+\I2S_1:bI2S:rxenable\\D\ <= ((not \I2S_1:bI2S:count_6\ and not \I2S_1:bI2S:count_1\ and not \I2S_1:bI2S:rx_overflow_sticky\ and \I2S_1:bI2S:ctrl_1\ and \I2S_1:bI2S:count_5\ and \I2S_1:bI2S:count_4\ and \I2S_1:bI2S:count_3\ and \I2S_1:bI2S:count_2\)
+	OR (not \I2S_1:bI2S:rx_overflow_sticky\ and \I2S_1:bI2S:ctrl_2\ and \I2S_1:bI2S:count_1\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:count_2\ and not \I2S_1:bI2S:rx_overflow_sticky\ and \I2S_1:bI2S:ctrl_2\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:count_3\ and not \I2S_1:bI2S:rx_overflow_sticky\ and \I2S_1:bI2S:ctrl_2\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:count_4\ and not \I2S_1:bI2S:rx_overflow_sticky\ and \I2S_1:bI2S:ctrl_2\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:count_5\ and not \I2S_1:bI2S:rx_overflow_sticky\ and \I2S_1:bI2S:ctrl_2\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:rx_overflow_sticky\ and \I2S_1:bI2S:ctrl_2\ and \I2S_1:bI2S:count_6\ and \I2S_1:bI2S:rxenable\));
+
+\I2S_1:bI2S:rx_state_2\\D\ <= ((not \I2S_1:bI2S:count_5\ and not \I2S_1:bI2S:count_4\ and not \I2S_1:bI2S:count_1\ and not \I2S_1:bI2S:rx_state_2\ and not \I2S_1:bI2S:rx_state_1\ and not \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:count_3\ and \I2S_1:bI2S:count_2\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:count_1\ and not \I2S_1:bI2S:rx_state_2\ and not \I2S_1:bI2S:rx_state_1\ and not \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:count_5\ and \I2S_1:bI2S:count_4\ and \I2S_1:bI2S:count_3\ and \I2S_1:bI2S:count_2\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:rx_state_1\ and \I2S_1:bI2S:rx_state_2\ and \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:rxenable\));
+
+\I2S_1:bI2S:rx_state_1\\D\ <= ((not \I2S_1:bI2S:count_4\ and not \I2S_1:bI2S:count_1\ and not \I2S_1:bI2S:rx_state_2\ and not \I2S_1:bI2S:rx_state_1\ and not \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:count_5\ and \I2S_1:bI2S:count_3\ and \I2S_1:bI2S:count_2\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:count_5\ and not \I2S_1:bI2S:count_1\ and not \I2S_1:bI2S:rx_state_2\ and not \I2S_1:bI2S:rx_state_1\ and not \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:count_4\ and \I2S_1:bI2S:count_3\ and \I2S_1:bI2S:count_2\ and \I2S_1:bI2S:rxenable\)
+	OR (not \I2S_1:bI2S:rx_state_1\ and \I2S_1:bI2S:rx_state_2\ and \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:rxenable\));
+
+\I2S_1:bI2S:rx_state_0\\D\ <= ((not \I2S_1:bI2S:rx_state_2\ and not \I2S_1:bI2S:rx_state_1\ and not \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:count_1\)
+	OR (not \I2S_1:bI2S:count_2\ and not \I2S_1:bI2S:rx_state_2\ and not \I2S_1:bI2S:rx_state_1\ and not \I2S_1:bI2S:rx_state_0\)
+	OR (not \I2S_1:bI2S:count_3\ and not \I2S_1:bI2S:rx_state_2\ and not \I2S_1:bI2S:rx_state_1\ and not \I2S_1:bI2S:rx_state_0\)
+	OR (not \I2S_1:bI2S:rx_state_0\ and \I2S_1:bI2S:rx_state_2\ and \I2S_1:bI2S:rx_state_1\)
+	OR not \I2S_1:bI2S:rxenable\);
+
+\I2S_1:bI2S:rx_overflow_0\ <= ((\I2S_1:bI2S:rx_f1_load\ and \I2S_1:bI2S:rx_f1_full_0\)
+	OR (\I2S_1:bI2S:rx_f0_load\ and \I2S_1:bI2S:rx_f0_full_0\));
+
+\I2S_1:bI2S:rx_data_in_0\\D\ <= ((not \I2S_1:bI2S:count_0\ and Net_378)
+	OR (\I2S_1:bI2S:count_0\ and \I2S_1:bI2S:rx_data_in_0\));
 
 SCK:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"c8e19693-67d9-4f29-a02f-cee5400c223a",
@@ -745,7 +896,7 @@ SDI:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(tmpOE__SCK_net_0),
 		y=>(zero),
-		fb=>Net_247,
+		fb=>Net_378,
 		analog=>(open),
 		io=>(tmpIO_0__SDI_net_0),
 		siovref=>(tmpSIOVREF__SDI_net_0),
@@ -1020,101 +1171,6 @@ SDO:cy_psoc3_pins_v1_10
 		pi=>(zero, zero, zero, zero,
 			zero, zero, zero, zero),
 		po=>open);
-\I2S:bI2S:Rx:STS[0]:Sts\:cy_psoc3_statusi
-	GENERIC MAP(cy_force_order=>'1',
-		cy_md_select=>"0000001",
-		cy_int_mask=>"0000000")
-	PORT MAP(reset=>zero,
-		clock=>\I2S:bI2S:op_clk\,
-		status=>(zero, zero, zero, zero,
-			Net_359_0, Net_256_0, \I2S:bI2S:rx_overflow_0\),
-		interrupt=>\I2S:bI2S:rx_int_out_0\);
-\I2S:bI2S:Rx:CH[0]:dpRx:u0\:cy_psoc3_dp
-	GENERIC MAP(cy_dpconfig=>"0000000000000000000000010100000000000001010000000000000101010000000000010100000000010000011100000001000001000000000000000000000011111111000000001111111111111111001000000000001000000101000000000000000000000100",
-		d0_init=>"00000000",
-		d1_init=>"00000000",
-		a0_init=>"00000000",
-		a1_init=>"00000000",
-		ce0_sync=>'1',
-		cl0_sync=>'1',
-		z0_sync=>'1',
-		ff0_sync=>'1',
-		ce1_sync=>'1',
-		cl1_sync=>'1',
-		z1_sync=>'1',
-		ff1_sync=>'1',
-		ov_msb_sync=>'1',
-		co_msb_sync=>'1',
-		cmsb_sync=>'1',
-		so_sync=>'1',
-		f0_bus_sync=>'1',
-		f0_blk_sync=>'1',
-		f1_bus_sync=>'1',
-		f1_blk_sync=>'1')
-	PORT MAP(reset=>zero,
-		clk=>\I2S:bI2S:op_clk\,
-		cs_addr=>(\I2S:bI2S:rx_state_2\, \I2S:bI2S:rx_state_1\, \I2S:bI2S:rx_state_0\),
-		route_si=>\I2S:bI2S:rx_data_in_0\,
-		route_ci=>zero,
-		f0_load=>\I2S:bI2S:rx_f0_load\,
-		f1_load=>\I2S:bI2S:rx_f1_load\,
-		d0_load=>zero,
-		d1_load=>zero,
-		ce0=>open,
-		cl0=>\I2S:bI2S:pos_clip_cmp_0\,
-		z0=>open,
-		ff0=>open,
-		ce1=>open,
-		cl1=>\I2S:bI2S:neg_clip_cmp_0\,
-		z1=>open,
-		ff1=>open,
-		ov_msb=>open,
-		co_msb=>open,
-		cmsb=>open,
-		so=>open,
-		f0_bus_stat=>Net_256_0,
-		f0_blk_stat=>\I2S:bI2S:rx_f0_full_0\,
-		f1_bus_stat=>Net_359_0,
-		f1_blk_stat=>\I2S:bI2S:rx_f1_full_0\,
-		ce0_reg=>open,
-		cl0_reg=>open,
-		z0_reg=>open,
-		ff0_reg=>open,
-		ce1_reg=>open,
-		cl1_reg=>open,
-		z1_reg=>open,
-		ff1_reg=>open,
-		ov_msb_reg=>open,
-		co_msb_reg=>open,
-		cmsb_reg=>open,
-		so_reg=>open,
-		f0_bus_stat_reg=>open,
-		f0_blk_stat_reg=>open,
-		f1_bus_stat_reg=>open,
-		f1_blk_stat_reg=>open,
-		ci=>zero,
-		co=>open,
-		sir=>zero,
-		sor=>open,
-		sil=>zero,
-		sol=>open,
-		msbi=>zero,
-		msbo=>open,
-		cei=>(zero, zero),
-		ceo=>open,
-		cli=>(zero, zero),
-		clo=>open,
-		zi=>(zero, zero),
-		zo=>open,
-		fi=>(zero, zero),
-		fo=>open,
-		capi=>(zero, zero),
-		capo=>open,
-		cfbi=>zero,
-		cfbo=>open,
-		pi=>(zero, zero, zero, zero,
-			zero, zero, zero, zero),
-		po=>open);
 TxDMA_0:cy_dma_v1_0
 	GENERIC MAP(drq_type=>"01",
 		num_tds=>0)
@@ -1124,13 +1180,13 @@ TxDMA_0:cy_dma_v1_0
 RxDMA_1:cy_dma_v1_0
 	GENERIC MAP(drq_type=>"01",
 		num_tds=>0)
-	PORT MAP(drq=>Net_359_0,
+	PORT MAP(drq=>Net_391_0,
 		trq=>zero,
 		nrq=>Net_361);
 RxDMA_0:cy_dma_v1_0
 	GENERIC MAP(drq_type=>"01",
 		num_tds=>0)
-	PORT MAP(drq=>Net_256_0,
+	PORT MAP(drq=>Net_389_0,
 		trq=>zero,
 		nrq=>Net_258);
 \UART:IntClock\:cy_clock_v1_0
@@ -1406,6 +1462,129 @@ TxDMA_1:cy_dma_v1_0
 	PORT MAP(drq=>Net_252_0,
 		trq=>zero,
 		nrq=>Net_310);
+\I2S_1:bI2S:ClkSync\:cy_psoc3_udb_clock_enable_v1_0
+	GENERIC MAP(sync_mode=>'1')
+	PORT MAP(clock_in=>Net_146,
+		enable=>tmpOE__SCK_net_0,
+		clock_out=>\I2S_1:bI2S:op_clk\);
+\I2S_1:bI2S:CtlReg\:cy_psoc3_control
+	GENERIC MAP(cy_init_value=>"00000000",
+		cy_force_order=>'1',
+		cy_ctrl_mode_1=>"00000000",
+		cy_ctrl_mode_0=>"00011111",
+		cy_ext_reset=>'0')
+	PORT MAP(reset=>zero,
+		clock=>\I2S_1:bI2S:op_clk\,
+		control=>(\I2S_1:bI2S:ctrl_7\, \I2S_1:bI2S:ctrl_6\, \I2S_1:bI2S:ctrl_5\, \I2S_1:bI2S:ctrl_4\,
+			\I2S_1:bI2S:ctrl_3\, \I2S_1:bI2S:ctrl_2\, \I2S_1:bI2S:ctrl_1\, \I2S_1:bI2S:ctrl_0\));
+\I2S_1:bI2S:BitCounter\:cy_psoc3_count7
+	GENERIC MAP(cy_period=>"0111111",
+		cy_init_value=>"0000000",
+		cy_route_ld=>'0',
+		cy_route_en=>'1',
+		cy_alt_mode=>'0')
+	PORT MAP(clock=>\I2S_1:bI2S:op_clk\,
+		reset=>zero,
+		load=>zero,
+		enable=>\I2S_1:bI2S:ctrl_2\,
+		count=>(\I2S_1:bI2S:count_6\, \I2S_1:bI2S:count_5\, \I2S_1:bI2S:count_4\, \I2S_1:bI2S:count_3\,
+			\I2S_1:bI2S:count_2\, \I2S_1:bI2S:count_1\, \I2S_1:bI2S:count_0\),
+		tc=>open);
+\I2S_1:bI2S:Rx:STS[0]:Sts\:cy_psoc3_statusi
+	GENERIC MAP(cy_force_order=>'1',
+		cy_md_select=>"0000001",
+		cy_int_mask=>"0000000")
+	PORT MAP(reset=>zero,
+		clock=>\I2S_1:bI2S:op_clk\,
+		status=>(zero, zero, zero, zero,
+			Net_391_0, Net_389_0, \I2S_1:bI2S:rx_overflow_0\),
+		interrupt=>\I2S_1:bI2S:rx_int_out_0\);
+\I2S_1:bI2S:Rx:CH[0]:dpRx:u0\:cy_psoc3_dp
+	GENERIC MAP(cy_dpconfig=>"0000000000000000000000010100000000000001010000000000000101010000000000010100000000010000011100000001000001000000000000000000000011111111000000001111111111111111001000000000001000000101000000000000000000000100",
+		d0_init=>"00000000",
+		d1_init=>"00000000",
+		a0_init=>"00000000",
+		a1_init=>"00000000",
+		ce0_sync=>'1',
+		cl0_sync=>'1',
+		z0_sync=>'1',
+		ff0_sync=>'1',
+		ce1_sync=>'1',
+		cl1_sync=>'1',
+		z1_sync=>'1',
+		ff1_sync=>'1',
+		ov_msb_sync=>'1',
+		co_msb_sync=>'1',
+		cmsb_sync=>'1',
+		so_sync=>'1',
+		f0_bus_sync=>'1',
+		f0_blk_sync=>'1',
+		f1_bus_sync=>'1',
+		f1_blk_sync=>'1')
+	PORT MAP(reset=>zero,
+		clk=>\I2S_1:bI2S:op_clk\,
+		cs_addr=>(\I2S_1:bI2S:rx_state_2\, \I2S_1:bI2S:rx_state_1\, \I2S_1:bI2S:rx_state_0\),
+		route_si=>\I2S_1:bI2S:rx_data_in_0\,
+		route_ci=>zero,
+		f0_load=>\I2S_1:bI2S:rx_f0_load\,
+		f1_load=>\I2S_1:bI2S:rx_f1_load\,
+		d0_load=>zero,
+		d1_load=>zero,
+		ce0=>open,
+		cl0=>\I2S_1:bI2S:pos_clip_cmp_0\,
+		z0=>open,
+		ff0=>open,
+		ce1=>open,
+		cl1=>\I2S_1:bI2S:neg_clip_cmp_0\,
+		z1=>open,
+		ff1=>open,
+		ov_msb=>open,
+		co_msb=>open,
+		cmsb=>open,
+		so=>open,
+		f0_bus_stat=>Net_389_0,
+		f0_blk_stat=>\I2S_1:bI2S:rx_f0_full_0\,
+		f1_bus_stat=>Net_391_0,
+		f1_blk_stat=>\I2S_1:bI2S:rx_f1_full_0\,
+		ce0_reg=>open,
+		cl0_reg=>open,
+		z0_reg=>open,
+		ff0_reg=>open,
+		ce1_reg=>open,
+		cl1_reg=>open,
+		z1_reg=>open,
+		ff1_reg=>open,
+		ov_msb_reg=>open,
+		co_msb_reg=>open,
+		cmsb_reg=>open,
+		so_reg=>open,
+		f0_bus_stat_reg=>open,
+		f0_blk_stat_reg=>open,
+		f1_bus_stat_reg=>open,
+		f1_blk_stat_reg=>open,
+		ci=>zero,
+		co=>open,
+		sir=>zero,
+		sor=>open,
+		sil=>zero,
+		sol=>open,
+		msbi=>zero,
+		msbo=>open,
+		cei=>(zero, zero),
+		ceo=>open,
+		cli=>(zero, zero),
+		clo=>open,
+		zi=>(zero, zero),
+		zo=>open,
+		fi=>(zero, zero),
+		fo=>open,
+		capi=>(zero, zero),
+		capo=>open,
+		cfbi=>zero,
+		cfbo=>open,
+		pi=>(zero, zero, zero, zero,
+			zero, zero, zero, zero),
+		po=>open);
 \I2S:bI2S:reset\:cy_dff
 	PORT MAP(d=>\I2S:bI2S:reset\\D\,
 		clk=>\I2S:bI2S:op_clk\,
@@ -1450,42 +1629,6 @@ TxDMA_1:cy_dma_v1_0
 	PORT MAP(d=>\I2S:tx_line_0\\D\,
 		clk=>\I2S:bI2S:op_clk\,
 		q=>Net_138_0);
-\I2S:bI2S:rx_f0_load\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rx_f0_load\\D\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rx_f0_load\);
-\I2S:bI2S:rx_state_2\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rx_state_2\\D\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rx_state_2\);
-\I2S:bI2S:rx_state_1\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rx_state_1\\D\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rx_state_1\);
-\I2S:bI2S:rx_state_0\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rx_state_0\\D\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rx_state_0\);
-\I2S:bI2S:rx_f1_load\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rx_f1_load\\D\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rx_f1_load\);
-\I2S:bI2S:rx_overflow_sticky\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rx_overflow_sticky\\D\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rx_overflow_sticky\);
-\I2S:bI2S:rxenable\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rxenable\\D\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rxenable\);
-\I2S:bI2S:rx_int_reg\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rx_int_out_0\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rx_int_reg\);
-\I2S:bI2S:rx_data_in_0\:cy_dff
-	PORT MAP(d=>\I2S:bI2S:rx_data_in_0\\D\,
-		clk=>\I2S:bI2S:op_clk\,
-		q=>\I2S:bI2S:rx_data_in_0\);
 \UART:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\UART:BUART:clock_op\,
@@ -1526,5 +1669,49 @@ Net_267:cy_dff
 	PORT MAP(d=>\UART:BUART:tx_parity_bit\\D\,
 		clk=>\UART:BUART:clock_op\,
 		q=>\UART:BUART:tx_parity_bit\);
+\I2S_1:bI2S:reset\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:reset\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:reset\);
+\I2S_1:bI2S:channel\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:channel\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:channel\);
+\I2S_1:bI2S:rx_f0_load\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rx_f0_load\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rx_f0_load\);
+\I2S_1:bI2S:rx_state_2\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rx_state_2\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rx_state_2\);
+\I2S_1:bI2S:rx_state_1\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rx_state_1\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rx_state_1\);
+\I2S_1:bI2S:rx_state_0\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rx_state_0\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rx_state_0\);
+\I2S_1:bI2S:rx_f1_load\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rx_f1_load\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rx_f1_load\);
+\I2S_1:bI2S:rx_overflow_sticky\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rx_overflow_sticky\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rx_overflow_sticky\);
+\I2S_1:bI2S:rxenable\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rxenable\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rxenable\);
+\I2S_1:bI2S:rx_int_reg\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rx_int_out_0\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rx_int_reg\);
+\I2S_1:bI2S:rx_data_in_0\:cy_dff
+	PORT MAP(d=>\I2S_1:bI2S:rx_data_in_0\\D\,
+		clk=>\I2S_1:bI2S:op_clk\,
+		q=>\I2S_1:bI2S:rx_data_in_0\);
 
 END R_T_L;

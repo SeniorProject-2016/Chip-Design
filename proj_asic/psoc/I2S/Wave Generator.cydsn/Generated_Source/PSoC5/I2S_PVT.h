@@ -26,7 +26,7 @@
 *   Conditional Compilation Parameters
 ***************************************/
 
-#define I2S_DIRECTION              (3u)
+#define I2S_DIRECTION              (2u)
 #define I2S_WORD_SELECT            (32u)
 #define I2S_DYNAMIC_BIT_RESOLUTION (0u == 1u)
 #define I2S_RX_DATA_INTERLEAVING   (0u)

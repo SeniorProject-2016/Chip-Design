@@ -1,6 +1,6 @@
 // ======================================================================
 // Wave Generator.v generated from TopDesign.cysch
-// 04/24/2016 at 15:18
+// 04/24/2016 at 17:38
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -111,7 +111,7 @@
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v"
 `endif
 
-// I2S_v2_60(ClipPresent=false, Clock_CheckTolerance=true, Clock_desired_freq=12, Clock_desired_freq_unit=6, Clock_divisor=1, Clock_FractDividerDenominator=0, Clock_FractDividerNumerator=0, Clock_FractDividerUsed=false, Clock_is_direct=false, Clock_is_divider=false, Clock_is_freq=true, Clock_minus_tolerance=5, Clock_ph_align_clock_id=, Clock_ph_align_clock_name=, Clock_plus_tolerance=5, Clock_source_clock_id=, Clock_source_clock_name=, CommonClipThresholds=false, DataBits=16, Direction=3, EnableClipDetect=false, EnableRxByteSwap=false, EnableTxByteSwap=false, InterruptSource=0, NegThresholds=-1, NumRxChannels=2, NumRxLines=1, NumTxChannels=2, NumTxLines=1, PosThresholds=0u, RxDataInterleaved=false, RxDataInterleaving=0, RxDMA_present=1, RxDmaPresent=true, RxInterruptSource=0, RxStsReg0Present=true, RxStsReg1Present=false, RxStsReg2Present=false, StaticBitResolution=true, TermMode_clip=0, TermMode_clock=0, TermMode_rx_dma0=0, TermMode_rx_dma1=0, TermMode_rx_interrupt=0, TermMode_sck=0, TermMode_sdi=0, TermMode_sdo=0, TermMode_tx_dma0=0, TermMode_tx_dma1=0, TermMode_tx_interrupt=0, TermMode_ws=0, TermVisibility_clip=false, TermVisibility_clock=true, TermVisibility_rx_dma0=true, TermVisibility_rx_dma1=true, TermVisibility_rx_interrupt=true, TermVisibility_sck=true, TermVisibility_sdi=true, TermVisibility_sdo=true, TermVisibility_tx_dma0=true, TermVisibility_tx_dma1=true, TermVisibility_tx_interrupt=true, TermVisibility_ws=true, TxDataInterleaved=false, TxDataInterleaving=0, TxDMA_present=1, TxDmaPresent=true, TxInterruptSource=0, TxStsReg0Present=true, TxStsReg1Present=false, TxStsReg2Present=false, WordSelect=32, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMPONENT_NAME=I2S_v2_60, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=I2S, CY_INSTANCE_SHORT_NAME=I2S, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=60, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 CP1, INSTANCE_NAME=I2S, )
+// I2S_v2_60(ClipPresent=false, Clock_CheckTolerance=true, Clock_desired_freq=12, Clock_desired_freq_unit=6, Clock_divisor=1, Clock_FractDividerDenominator=0, Clock_FractDividerNumerator=0, Clock_FractDividerUsed=false, Clock_is_direct=false, Clock_is_divider=false, Clock_is_freq=true, Clock_minus_tolerance=5, Clock_ph_align_clock_id=, Clock_ph_align_clock_name=, Clock_plus_tolerance=5, Clock_source_clock_id=, Clock_source_clock_name=, CommonClipThresholds=false, DataBits=16, Direction=2, EnableClipDetect=false, EnableRxByteSwap=false, EnableTxByteSwap=false, InterruptSource=0, NegThresholds=-1, NumRxChannels=2, NumRxLines=1, NumTxChannels=2, NumTxLines=1, PosThresholds=0u, RxDataInterleaved=false, RxDataInterleaving=0, RxDMA_present=1, RxDmaPresent=false, RxInterruptSource=0, RxStsReg0Present=false, RxStsReg1Present=false, RxStsReg2Present=false, StaticBitResolution=true, TermMode_clip=0, TermMode_clock=0, TermMode_rx_dma0=0, TermMode_rx_dma1=0, TermMode_rx_interrupt=0, TermMode_sck=0, TermMode_sdi=0, TermMode_sdo=0, TermMode_tx_dma0=0, TermMode_tx_dma1=0, TermMode_tx_interrupt=0, TermMode_ws=0, TermVisibility_clip=false, TermVisibility_clock=true, TermVisibility_rx_dma0=false, TermVisibility_rx_dma1=false, TermVisibility_rx_interrupt=false, TermVisibility_sck=true, TermVisibility_sdi=false, TermVisibility_sdo=true, TermVisibility_tx_dma0=true, TermVisibility_tx_dma1=true, TermVisibility_tx_interrupt=true, TermVisibility_ws=true, TxDataInterleaved=false, TxDataInterleaving=0, TxDMA_present=1, TxDmaPresent=true, TxInterruptSource=0, TxStsReg0Present=true, TxStsReg1Present=false, TxStsReg2Present=false, WordSelect=32, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMPONENT_NAME=I2S_v2_60, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=I2S, CY_INSTANCE_SHORT_NAME=I2S, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=60, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 CP1, INSTANCE_NAME=I2S, )
 module I2S_v2_60_0 (
     clock,
     sdi,
@@ -170,7 +170,7 @@ module I2S_v2_60_0 (
         .tx_dma1(tx_drq1[4:0]),
         .clip(clip_detect[4:0]));
     defparam bI2S.DataBits = 16;
-    defparam bI2S.Direction = 3;
+    defparam bI2S.Direction = 2;
     defparam bI2S.EnableClipDetect = 0;
     defparam bI2S.EnableRxByteSwap = 0;
     defparam bI2S.EnableTxByteSwap = 0;
@@ -343,9 +343,123 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v"
 `endif
 
+// I2S_v2_60(ClipPresent=false, Clock_CheckTolerance=true, Clock_desired_freq=12, Clock_desired_freq_unit=6, Clock_divisor=1, Clock_FractDividerDenominator=0, Clock_FractDividerNumerator=0, Clock_FractDividerUsed=false, Clock_is_direct=false, Clock_is_divider=false, Clock_is_freq=true, Clock_minus_tolerance=5, Clock_ph_align_clock_id=, Clock_ph_align_clock_name=, Clock_plus_tolerance=5, Clock_source_clock_id=, Clock_source_clock_name=, CommonClipThresholds=false, DataBits=16, Direction=1, EnableClipDetect=false, EnableRxByteSwap=false, EnableTxByteSwap=false, InterruptSource=0, NegThresholds=-1, NumRxChannels=2, NumRxLines=1, NumTxChannels=2, NumTxLines=1, PosThresholds=0u, RxDataInterleaved=false, RxDataInterleaving=0, RxDMA_present=1, RxDmaPresent=true, RxInterruptSource=0, RxStsReg0Present=true, RxStsReg1Present=false, RxStsReg2Present=false, StaticBitResolution=true, TermMode_clip=0, TermMode_clock=0, TermMode_rx_dma0=0, TermMode_rx_dma1=0, TermMode_rx_interrupt=0, TermMode_sck=0, TermMode_sdi=0, TermMode_sdo=0, TermMode_tx_dma0=0, TermMode_tx_dma1=0, TermMode_tx_interrupt=0, TermMode_ws=0, TermVisibility_clip=false, TermVisibility_clock=true, TermVisibility_rx_dma0=true, TermVisibility_rx_dma1=true, TermVisibility_rx_interrupt=true, TermVisibility_sck=true, TermVisibility_sdi=true, TermVisibility_sdo=false, TermVisibility_tx_dma0=false, TermVisibility_tx_dma1=false, TermVisibility_tx_interrupt=false, TermVisibility_ws=true, TxDataInterleaved=false, TxDataInterleaving=0, TxDMA_present=1, TxDmaPresent=false, TxInterruptSource=0, TxStsReg0Present=false, TxStsReg1Present=false, TxStsReg2Present=false, WordSelect=32, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMPONENT_NAME=I2S_v2_60, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=I2S_1, CY_INSTANCE_SHORT_NAME=I2S_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=60, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 CP1, INSTANCE_NAME=I2S_1, )
+module I2S_v2_60_2 (
+    clock,
+    sdi,
+    sck,
+    ws,
+    sdo,
+    tx_interrupt,
+    rx_dma0,
+    rx_dma1,
+    tx_dma0,
+    tx_dma1,
+    rx_interrupt,
+    clip);
+    input       clock;
+    input      [4:0] sdi;
+    output      sck;
+    output      ws;
+    output     [4:0] sdo;
+    output      tx_interrupt;
+    output     [4:0] rx_dma0;
+    output     [4:0] rx_dma1;
+    output     [4:0] tx_dma0;
+    output     [4:0] tx_dma1;
+    output      rx_interrupt;
+    output     [4:0] clip;
+
+
+          wire [4:0] tx_line;
+          wire [4:0] tx_drq1;
+          wire [4:0] rx_drq1;
+          wire [4:0] tx_drq0;
+          wire [4:0] rx_drq0;
+          wire  Net_190;
+          wire  Net_241;
+          wire [4:0] rx_line;
+          wire [4:0] clip_detect;
+          wire [4:0] Net_1;
+          wire  Net_235;
+          wire  Net_229;
+          wire  Net_2;
+          wire  Net_232;
+          wire  Net_223;
+          wire  Net_25;
+
+    bI2S_v2_60 bI2S (
+        .sdi(Net_1[4:0]),
+        .clock(Net_2),
+        .sdo(tx_line[4:0]),
+        .sck(sck),
+        .ws(ws),
+        .rx_interrupt(rx_interrupt),
+        .tx_interrupt(tx_interrupt),
+        .rx_dma0(rx_drq0[4:0]),
+        .tx_dma0(tx_drq0[4:0]),
+        .rx_dma1(rx_drq1[4:0]),
+        .tx_dma1(tx_drq1[4:0]),
+        .clip(clip_detect[4:0]));
+    defparam bI2S.DataBits = 16;
+    defparam bI2S.Direction = 1;
+    defparam bI2S.EnableClipDetect = 0;
+    defparam bI2S.EnableRxByteSwap = 0;
+    defparam bI2S.EnableTxByteSwap = 0;
+    defparam bI2S.NumRxChannels = 2;
+    defparam bI2S.NumTxChannels = 2;
+    defparam bI2S.RxDataInterleaving = 0;
+    defparam bI2S.StaticBitResolution = 1;
+    defparam bI2S.TxDataInterleaving = 0;
+    defparam bI2S.WordSelect = 32;
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_2 = clock;
+
+	// VirtualMux_2 (cy_virtualmux_v1_0)
+	assign Net_1[0] = rx_line[0];
+
+	// VirtualMux_3 (cy_virtualmux_v1_0)
+	assign Net_1[1] = rx_line[1];
+
+	// VirtualMux_4 (cy_virtualmux_v1_0)
+	assign Net_1[2] = rx_line[2];
+
+	// VirtualMux_5 (cy_virtualmux_v1_0)
+	assign Net_1[3] = rx_line[3];
+
+	// VirtualMux_6 (cy_virtualmux_v1_0)
+	assign Net_1[4] = rx_line[4];
+
+
+    assign rx_line[4:0] = sdi;
+
+    assign sdo = tx_line[4:0];
+
+    assign rx_dma0 = rx_drq0[4:0];
+
+    assign rx_dma1 = rx_drq1[4:0];
+
+    assign tx_dma0 = tx_drq0[4:0];
+
+    assign tx_dma1 = tx_drq1[4:0];
+
+    assign clip = clip_detect[4:0];
+
+
+endmodule
+
 // top
 module top ;
 
+          wire [0:0] Net_388;
+          wire  Net_387;
+          wire  Net_386;
+          wire [0:0] Net_385;
+          wire [0:0] Net_384;
+          wire [0:0] Net_381;
+          wire  Net_380;
+          wire  Net_379;
           wire  Net_310;
           wire  Net_309;
           wire  Net_276;
@@ -369,17 +483,20 @@ module top ;
           wire [0:0] Net_255;
           wire  Net_254;
           wire  Net_253;
+          wire [0:0] Net_376;
+          wire [0:0] Net_375;
+          wire [0:0] Net_374;
           wire [0:0] Net_138;
           wire  Net_248;
-          wire  Net_247;
-          wire  Net_246;
+          wire  Net_378;
+          wire  Net_392;
           wire  Net_136;
-          wire [0:0] Net_359;
-          wire [0:0] Net_252;
-          wire  Net_277;
           wire  Net_146;
+          wire [0:0] Net_252;
+          wire [0:0] Net_391;
+          wire [0:0] Net_389;
+          wire  Net_277;
           wire [0:0] Net_259;
-          wire [0:0] Net_256;
 
 	wire [0:0] tmpOE__SCK_net;
 	wire [0:0] tmpFB_0__SCK_net;
@@ -525,7 +642,7 @@ module top ;
 		SDI
 		 (.oe(tmpOE__SDI_net),
 		  .y({1'b0}),
-		  .fb({Net_247}),
+		  .fb({Net_378}),
 		  .io({tmpIO_0__SDI_net[0:0]}),
 		  .siovref(tmpSIOVREF__SDI_net),
 		  .interrupt({tmpINTERRUPT_0__SDI_net[0:0]}),
@@ -686,12 +803,12 @@ module top ;
 
     I2S_v2_60_0 I2S (
         .clock(Net_146),
-        .sdi(Net_247),
+        .sdi(5'b0),
         .sck(Net_136),
         .ws(Net_248),
         .sdo(Net_138[0:0]),
-        .rx_dma0(Net_256[0:0]),
-        .rx_dma1(Net_359[0:0]),
+        .rx_dma0(Net_375[0:0]),
+        .rx_dma1(Net_376[0:0]),
         .tx_dma0(Net_259[0:0]),
         .tx_dma1(Net_252[0:0]),
         .rx_interrupt(Net_253),
@@ -711,7 +828,7 @@ module top ;
 	cy_dma_v1_0
 		#(.drq_type(2'b01))
 		RxDMA_1
-		 (.drq(Net_359[0:0]),
+		 (.drq(Net_391[0:0]),
 		  .trq(1'b0),
 		  .nrq(Net_361));
 
@@ -720,7 +837,7 @@ module top ;
 	cy_dma_v1_0
 		#(.drq_type(2'b01))
 		RxDMA_0
-		 (.drq(Net_256[0:0]),
+		 (.drq(Net_389[0:0]),
 		  .trq(1'b0),
 		  .nrq(Net_258));
 
@@ -836,6 +953,20 @@ module top ;
 
     ZeroTerminal ZeroTerminal_1 (
         .z(Net_269));
+
+    I2S_v2_60_2 I2S_1 (
+        .clock(Net_146),
+        .sdi(Net_378),
+        .sck(Net_379),
+        .ws(Net_380),
+        .sdo(Net_381[0:0]),
+        .rx_dma0(Net_389[0:0]),
+        .rx_dma1(Net_391[0:0]),
+        .tx_dma0(Net_384[0:0]),
+        .tx_dma1(Net_385[0:0]),
+        .rx_interrupt(Net_386),
+        .tx_interrupt(Net_387),
+        .clip(Net_388[0:0]));
 
 
 

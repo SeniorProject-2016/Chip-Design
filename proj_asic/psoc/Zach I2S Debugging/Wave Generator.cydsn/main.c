@@ -60,14 +60,15 @@ volatile uint16_t signal1[TRANSFER_COUNT] =
 	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
 
 #define BUFFER_SIZE 1024				/* number of samples to receive */
-extern uint16_t ReceivedData[BUFFER_SIZE];    	/* left IN buffer */
+uint16_t ReceivedData[1024];    	/* left IN buffer */
+uint16_t data;
+int dataFlag = 0;
+int done = 0;
 //volatile uint16_t * dummy;			/* right IN buffer, ignored */
 
 int main()
 {
 	uint16_t i = 0;
-	//ReceivedData = malloc(BUFFER_SIZE*sizeof(uint16_t));
-	//dummy = malloc(BUFFER_SIZE*sizeof(uint16_t));
 	
 	/* Enable global interrupts */
 	CyGlobalIntEnable;
@@ -79,35 +80,61 @@ int main()
     /* Configure DMAs for each direction */ 
     // DmaRxConfiguration();
     DmaTxConfiguration();
+	LCD_Start();
 	
 	/* Enable I2S component */
     I2S_Start();
     I2S_1_Start();
 	I2S_1_EnableRx();		/* Enable Rx direction */
     I2S_EnableTx();     /* Enable Tx direction */
-    
-
-	CyDelay(3000);		/* Wait for data transmissions to complete */
-	/* There's probably a better way to do that than simply waiting... */
-		
-	UART_Start();     	/* Enabling the UART */
+    LCD_ClearDisplay();
+	LCD_PrintString("starting");
+	isr_1_Start();
+	int counter = 0;
+	while (!done) {
+		if (dataFlag) {
+			ReceivedData[counter] = data;
+			counter++;
+			dataFlag = 0;
+		}
+	}
+	isr_1_Stop();
 	
-	/* Send the data to computer through the UART component, serial to USB */
+	//CyDelay(3000);		/* Wait for data transmissions to complete */
+	/* There's probably a better way to do that than simply waiting... */
+	
 	for(i = 0; i < BUFFER_SIZE; i++)
 	{
-		// uint8_t part1 = (ReceivedData[i] >> 8) & 0x00ff;	/* get first byte */
-		// uint8_t part2 = (ReceivedData[i] >> 0) & 0x00ff;	/* get second byte */
-        uint8_t part1 = (ReceivedData[i] >> 8) & 0x00ff;	/* get first byte */
+		LCD_ClearDisplay();
+		uint8_t part1 = (ReceivedData[i] >> 8) & 0x00ff;	/* get first byte */
 		uint8_t part2 = (ReceivedData[i] >> 0) & 0x00ff;	/* get second byte */
 		char part1_string[5];
 		char part2_string[5];
 		sprintf(part1_string, "%02X", part1);
 		sprintf(part2_string, "%02X", part2);
-		UART_PutString(part1_string);						/* print first byte through UART */			
-		UART_PutString(", ");							
-		UART_PutString(part2_string);						/* print second byte through UART */
-		UART_PutString("\n\r");
+		LCD_PrintString(part1_string);						/* print first byte through UART */			
+		LCD_PrintString(", ");							
+		LCD_PrintString(part2_string);						/* print second byte through UART */
+		LCD_PrintString(", ");							
+		LCD_PrintNumber(i);
+		CyDelay(10);
 	}
+	//UART_Start();     	/* Enabling the UART */
+	
+	/* Send the data to computer through the UART component, serial to USB */
+//	for(i = 0; i < BUFFER_SIZE; i++)
+//	{
+//		uint8_t part1 = (ReceivedData[i] >> 8) & 0x00ff;	/* get first byte */
+//		uint8_t part2 = (ReceivedData[i] >> 0) & 0x00ff;	/* get second byte */
+//		char part1_string[5];
+//		char part2_string[5];
+//		sprintf(part1_string, "%02X", part1);
+//		sprintf(part2_string, "%02X", part2);
+//		UART_PutString(part1_string);						/* print first byte through UART */			
+//		UART_PutString(", ");							
+//		UART_PutString(part2_string);						/* print second byte through UART */
+//		UART_PutString("\n\r");
+//	}
 	
 	/* Wait forever */
 	for(;;);

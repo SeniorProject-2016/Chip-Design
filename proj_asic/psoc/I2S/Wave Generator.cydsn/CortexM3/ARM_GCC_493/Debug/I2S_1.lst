@@ -1,0 +1,1588 @@
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"I2S_1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.I2S_1_Enable,"ax",%progbits
+  19              		.align	2
+  20              		.global	I2S_1_Enable
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	I2S_1_Enable, %function
+  24              	I2S_1_Enable:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\I2S_1.c"
+   1:.\Generated_Source\PSoC5/I2S_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/I2S_1.c **** * File Name: I2S_1.c
+   3:.\Generated_Source\PSoC5/I2S_1.c **** * Version 2.60
+   4:.\Generated_Source\PSoC5/I2S_1.c **** *
+   5:.\Generated_Source\PSoC5/I2S_1.c **** * Description:
+   6:.\Generated_Source\PSoC5/I2S_1.c **** *  This file contains the setup, control and status commands for the I2S
+   7:.\Generated_Source\PSoC5/I2S_1.c **** *  component.
+   8:.\Generated_Source\PSoC5/I2S_1.c **** *
+   9:.\Generated_Source\PSoC5/I2S_1.c **** * Note:
+  10:.\Generated_Source\PSoC5/I2S_1.c **** *
+  11:.\Generated_Source\PSoC5/I2S_1.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/I2S_1.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/I2S_1.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/I2S_1.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/I2S_1.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/I2S_1.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/I2S_1.c **** 
+  18:.\Generated_Source\PSoC5/I2S_1.c **** #include "CyLib.h"
+  19:.\Generated_Source\PSoC5/I2S_1.c **** #include "I2S_1.h"
+  20:.\Generated_Source\PSoC5/I2S_1.c **** 
+  21:.\Generated_Source\PSoC5/I2S_1.c **** uint8 I2S_1_initVar = 0u;
+  22:.\Generated_Source\PSoC5/I2S_1.c **** 
+  23:.\Generated_Source\PSoC5/I2S_1.c **** 
+  24:.\Generated_Source\PSoC5/I2S_1.c **** /*******************************************************************************
+  25:.\Generated_Source\PSoC5/I2S_1.c **** * Function Name: I2S_1_Enable
+  26:.\Generated_Source\PSoC5/I2S_1.c **** ********************************************************************************
+  27:.\Generated_Source\PSoC5/I2S_1.c **** *
+  28:.\Generated_Source\PSoC5/I2S_1.c **** * Summary:
+  29:.\Generated_Source\PSoC5/I2S_1.c **** *  Enables I2S interface. Starts the generation of the sck and ws outputs.
+  30:.\Generated_Source\PSoC5/I2S_1.c **** *  The Tx and Rx directions remain disabled. It is not necessary to call
+  31:.\Generated_Source\PSoC5/I2S_1.c **** *  I2S_Enable() because the I2S_Start() routine calls this function, which is
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/I2S_1.c **** *  the preferred method to begin component operation.
+  33:.\Generated_Source\PSoC5/I2S_1.c **** *
+  34:.\Generated_Source\PSoC5/I2S_1.c **** * Parameters:
+  35:.\Generated_Source\PSoC5/I2S_1.c **** *  None.
+  36:.\Generated_Source\PSoC5/I2S_1.c **** *
+  37:.\Generated_Source\PSoC5/I2S_1.c **** * Return:
+  38:.\Generated_Source\PSoC5/I2S_1.c **** *  None.
+  39:.\Generated_Source\PSoC5/I2S_1.c **** *
+  40:.\Generated_Source\PSoC5/I2S_1.c **** *******************************************************************************/
+  41:.\Generated_Source\PSoC5/I2S_1.c **** void I2S_1_Enable(void) 
+  42:.\Generated_Source\PSoC5/I2S_1.c **** {
+  27              		.loc 1 42 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 08B5     		push	{r3, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 3, -8
+  34              		.cfi_offset 14, -4
+  43:.\Generated_Source\PSoC5/I2S_1.c ****     uint8 enableInterrupts;
+  44:.\Generated_Source\PSoC5/I2S_1.c **** 
+  45:.\Generated_Source\PSoC5/I2S_1.c ****     enableInterrupts = CyEnterCriticalSection();
+  35              		.loc 1 45 0
+  36 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  37              	.LVL0:
+  46:.\Generated_Source\PSoC5/I2S_1.c ****     I2S_1_AUX_CONTROL_REG |= I2S_1_CNT_START;
+  38              		.loc 1 46 0
+  39 0006 064A     		ldr	r2, .L3
+  40 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  41 000a 43F02003 		orr	r3, r3, #32
+  42 000e 1370     		strb	r3, [r2]
+  47:.\Generated_Source\PSoC5/I2S_1.c ****     CyExitCriticalSection(enableInterrupts);
+  43              		.loc 1 47 0
+  44 0010 FFF7FEFF 		bl	CyExitCriticalSection
+  45              	.LVL1:
+  48:.\Generated_Source\PSoC5/I2S_1.c **** 
+  49:.\Generated_Source\PSoC5/I2S_1.c ****     I2S_1_CONTROL_REG |= I2S_1_EN;
+  46              		.loc 1 49 0
+  47 0014 034A     		ldr	r2, .L3+4
+  48 0016 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  49 0018 43F00403 		orr	r3, r3, #4
+  50 001c 1370     		strb	r3, [r2]
+  51 001e 08BD     		pop	{r3, pc}
+  52              	.L4:
+  53              		.align	2
+  54              	.L3:
+  55 0020 96650040 		.word	1073767830
+  56 0024 75650040 		.word	1073767797
+  57              		.cfi_endproc
+  58              	.LFE0:
+  59              		.size	I2S_1_Enable, .-I2S_1_Enable
+  60              		.section	.text.I2S_1_Init,"ax",%progbits
+  61              		.align	2
+  62              		.global	I2S_1_Init
+  63              		.thumb
+  64              		.thumb_func
+  65              		.type	I2S_1_Init, %function
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 3
+
+
+  66              	I2S_1_Init:
+  67              	.LFB1:
+  50:.\Generated_Source\PSoC5/I2S_1.c **** }
+  51:.\Generated_Source\PSoC5/I2S_1.c **** 
+  52:.\Generated_Source\PSoC5/I2S_1.c **** 
+  53:.\Generated_Source\PSoC5/I2S_1.c **** /*******************************************************************************
+  54:.\Generated_Source\PSoC5/I2S_1.c **** * Function Name: I2S_1_Init
+  55:.\Generated_Source\PSoC5/I2S_1.c **** ********************************************************************************
+  56:.\Generated_Source\PSoC5/I2S_1.c **** *
+  57:.\Generated_Source\PSoC5/I2S_1.c **** * Summary:
+  58:.\Generated_Source\PSoC5/I2S_1.c **** *  Initializes or restores default I2S configuration provided with customizer.
+  59:.\Generated_Source\PSoC5/I2S_1.c **** *  It is not necessary to call I2S_Init() because the I2S_Start() routine calls
+  60:.\Generated_Source\PSoC5/I2S_1.c **** *  this function, which is the preferred method to begin component operation.
+  61:.\Generated_Source\PSoC5/I2S_1.c **** *
+  62:.\Generated_Source\PSoC5/I2S_1.c **** * Parameters:
+  63:.\Generated_Source\PSoC5/I2S_1.c **** *  None.
+  64:.\Generated_Source\PSoC5/I2S_1.c **** *
+  65:.\Generated_Source\PSoC5/I2S_1.c **** * Return:
+  66:.\Generated_Source\PSoC5/I2S_1.c **** *  None.
+  67:.\Generated_Source\PSoC5/I2S_1.c **** *
+  68:.\Generated_Source\PSoC5/I2S_1.c **** *******************************************************************************/
+  69:.\Generated_Source\PSoC5/I2S_1.c **** void I2S_1_Init(void) 
+  70:.\Generated_Source\PSoC5/I2S_1.c **** {
+  68              		.loc 1 70 0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72              		@ link register save eliminated.
+  71:.\Generated_Source\PSoC5/I2S_1.c ****     #if (I2S_1_CLIP_DETECT_ENABLE)
+  72:.\Generated_Source\PSoC5/I2S_1.c ****         static const uint8 CYCODE I2S_1_posThresholds[] = {0u};
+  73:.\Generated_Source\PSoC5/I2S_1.c ****         static const int8  CYCODE I2S_1_negThresholds[] = {-1};
+  74:.\Generated_Source\PSoC5/I2S_1.c ****     #endif /* I2S_1_CLIP_DETECT_ENABLE */
+  75:.\Generated_Source\PSoC5/I2S_1.c **** 
+  76:.\Generated_Source\PSoC5/I2S_1.c ****     #if (I2S_1_DYNAMIC_BIT_RESOLUTION)
+  77:.\Generated_Source\PSoC5/I2S_1.c ****         (void)I2S_1_SetDataBits(I2S_1_DATA_BITS);
+  78:.\Generated_Source\PSoC5/I2S_1.c ****     #endif /* I2S_1_DYNAMIC_BIT_RESOLUTION */
+  79:.\Generated_Source\PSoC5/I2S_1.c **** 
+  80:.\Generated_Source\PSoC5/I2S_1.c ****     /* Initialize Tx interrupt source selected in customizer */
+  81:.\Generated_Source\PSoC5/I2S_1.c ****     #if (I2S_1_TX_DIRECTION_ENABLE)
+  82:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_SET_TX_INT_MASK(CH0, I2S_1_TX_INT_SOURCE);
+  83:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_TX_STEREO_1_PRESENT)
+  84:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_TX_INT_MASK(CH1, I2S_1_TX_INT_SOURCE);
+  85:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STEREO_1_PRESENT */
+  86:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_TX_STEREO_2_PRESENT)
+  87:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_TX_INT_MASK(CH2, I2S_1_TX_INT_SOURCE);
+  88:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STEREO_2_PRESENT */
+  89:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_TX_STEREO_3_PRESENT)
+  90:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_TX_INT_MASK(CH3, I2S_1_TX_INT_SOURCE);
+  91:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STEREO_3_PRESENT */
+  92:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_TX_STEREO_4_PRESENT)
+  93:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_TX_INT_MASK(CH4, I2S_1_TX_INT_SOURCE);
+  94:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STEREO_4_PRESENT */
+  95:.\Generated_Source\PSoC5/I2S_1.c ****     #endif /* (I2S_1_TX_DIRECTION_ENABLE) */
+  96:.\Generated_Source\PSoC5/I2S_1.c ****     
+  97:.\Generated_Source\PSoC5/I2S_1.c ****     /* Initialize Rx interrupt source and clipping thresholds selected in customizer */
+  98:.\Generated_Source\PSoC5/I2S_1.c ****     #if (I2S_1_RX_DIRECTION_ENABLE)
+  99:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_SET_RX_INT_MASK(CH0, I2S_1_RX_INT_SOURCE);
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 4
+
+
+  73              		.loc 1 99 0
+  74 0000 044B     		ldr	r3, .L6
+  75 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  76 0004 02F0F802 		and	r2, r2, #248
+  77 0008 1A70     		strb	r2, [r3]
+  78 000a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  79 000c D2B2     		uxtb	r2, r2
+  80 000e 1A70     		strb	r2, [r3]
+  81 0010 7047     		bx	lr
+  82              	.L7:
+  83 0012 00BF     		.align	2
+  84              	.L6:
+  85 0014 85650040 		.word	1073767813
+  86              		.cfi_endproc
+  87              	.LFE1:
+  88              		.size	I2S_1_Init, .-I2S_1_Init
+  89              		.section	.text.I2S_1_Start,"ax",%progbits
+  90              		.align	2
+  91              		.global	I2S_1_Start
+  92              		.thumb
+  93              		.thumb_func
+  94              		.type	I2S_1_Start, %function
+  95              	I2S_1_Start:
+  96              	.LFB2:
+ 100:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_CLIP_DETECT_ENABLE)
+ 101:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_POS_THRESHOLD(CH0, I2S_1_posThresholds[I2S_1_STEREO_0]);
+ 102:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_NEG_THRESHOLD(CH0, I2S_1_negThresholds[I2S_1_STEREO_0]);
+ 103:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_CLIP_DETECT_ENABLE */
+ 104:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_RX_STEREO_1_PRESENT)
+ 105:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_RX_INT_MASK(CH1, I2S_1_RX_INT_SOURCE);
+ 106:.\Generated_Source\PSoC5/I2S_1.c ****             #if (I2S_1_CLIP_DETECT_ENABLE)
+ 107:.\Generated_Source\PSoC5/I2S_1.c ****                 I2S_1_SET_POS_THRESHOLD(CH1, I2S_1_posThresholds[I2S_1_STEREO_1]);
+ 108:.\Generated_Source\PSoC5/I2S_1.c ****                 I2S_1_SET_NEG_THRESHOLD(CH1, I2S_1_negThresholds[I2S_1_STEREO_1]);
+ 109:.\Generated_Source\PSoC5/I2S_1.c ****             #endif /* I2S_1_CLIP_DETECT_ENABLE */
+ 110:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STEREO_1_PRESENT */
+ 111:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_RX_STEREO_2_PRESENT)
+ 112:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_RX_INT_MASK(CH2, I2S_1_RX_INT_SOURCE);
+ 113:.\Generated_Source\PSoC5/I2S_1.c ****             #if (I2S_1_CLIP_DETECT_ENABLE)
+ 114:.\Generated_Source\PSoC5/I2S_1.c ****                 I2S_1_SET_POS_THRESHOLD(CH2, I2S_1_posThresholds[I2S_1_STEREO_2]);
+ 115:.\Generated_Source\PSoC5/I2S_1.c ****                 I2S_1_SET_NEG_THRESHOLD(CH2, I2S_1_negThresholds[I2S_1_STEREO_2]);
+ 116:.\Generated_Source\PSoC5/I2S_1.c ****             #endif /* I2S_1_CLIP_DETECT_ENABLE */
+ 117:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STEREO_2_PRESENT */
+ 118:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_RX_STEREO_3_PRESENT)
+ 119:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_RX_INT_MASK(CH3, I2S_1_RX_INT_SOURCE);
+ 120:.\Generated_Source\PSoC5/I2S_1.c ****             #if (I2S_1_CLIP_DETECT_ENABLE)
+ 121:.\Generated_Source\PSoC5/I2S_1.c ****                 I2S_1_SET_POS_THRESHOLD(CH3, I2S_1_posThresholds[I2S_1_STEREO_3]);
+ 122:.\Generated_Source\PSoC5/I2S_1.c ****                 I2S_1_SET_NEG_THRESHOLD(CH3, I2S_1_negThresholds[I2S_1_STEREO_3]);
+ 123:.\Generated_Source\PSoC5/I2S_1.c ****             #endif /* I2S_1_CLIP_DETECT_ENABLE */
+ 124:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STEREO_3_PRESENT */
+ 125:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_RX_STEREO_4_PRESENT)
+ 126:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_SET_RX_INT_MASK(CH4, I2S_1_RX_INT_SOURCE);
+ 127:.\Generated_Source\PSoC5/I2S_1.c ****             #if (I2S_1_CLIP_DETECT_ENABLE)
+ 128:.\Generated_Source\PSoC5/I2S_1.c ****                 I2S_1_SET_POS_THRESHOLD(CH4, I2S_1_posThresholds[I2S_1_STEREO_4]);
+ 129:.\Generated_Source\PSoC5/I2S_1.c ****                 I2S_1_SET_NEG_THRESHOLD(CH4, I2S_1_negThresholds[I2S_1_STEREO_4]);
+ 130:.\Generated_Source\PSoC5/I2S_1.c ****             #endif /* I2S_1_CLIP_DETECT_ENABLE */
+ 131:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STEREO_4_PRESENT */
+ 132:.\Generated_Source\PSoC5/I2S_1.c ****     #endif /* (I2S_1_RX_DIRECTION_ENABLE) */
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 5
+
+
+ 133:.\Generated_Source\PSoC5/I2S_1.c **** }
+ 134:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 135:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 136:.\Generated_Source\PSoC5/I2S_1.c **** /*******************************************************************************
+ 137:.\Generated_Source\PSoC5/I2S_1.c **** * Function Name: I2S_1_Start
+ 138:.\Generated_Source\PSoC5/I2S_1.c **** ********************************************************************************
+ 139:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 140:.\Generated_Source\PSoC5/I2S_1.c **** * Summary:
+ 141:.\Generated_Source\PSoC5/I2S_1.c **** *  Starts the I2S interface. Starts the generation of the sck and ws outputs.
+ 142:.\Generated_Source\PSoC5/I2S_1.c **** *  The Tx and Rx directions remain disabled.
+ 143:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 144:.\Generated_Source\PSoC5/I2S_1.c **** * Parameters:
+ 145:.\Generated_Source\PSoC5/I2S_1.c **** *  None.
+ 146:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 147:.\Generated_Source\PSoC5/I2S_1.c **** * Return:
+ 148:.\Generated_Source\PSoC5/I2S_1.c **** *  None.
+ 149:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 150:.\Generated_Source\PSoC5/I2S_1.c **** * Global Variables:
+ 151:.\Generated_Source\PSoC5/I2S_1.c **** *  I2S_1_initVar - used to check initial configuration, modified on
+ 152:.\Generated_Source\PSoC5/I2S_1.c **** *  first function call.
+ 153:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 154:.\Generated_Source\PSoC5/I2S_1.c **** * Reentrant:
+ 155:.\Generated_Source\PSoC5/I2S_1.c **** *  No.
+ 156:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 157:.\Generated_Source\PSoC5/I2S_1.c **** *******************************************************************************/
+ 158:.\Generated_Source\PSoC5/I2S_1.c **** void I2S_1_Start(void) 
+ 159:.\Generated_Source\PSoC5/I2S_1.c **** {
+  97              		.loc 1 159 0
+  98              		.cfi_startproc
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101 0000 08B5     		push	{r3, lr}
+ 102              		.cfi_def_cfa_offset 8
+ 103              		.cfi_offset 3, -8
+ 104              		.cfi_offset 14, -4
+ 160:.\Generated_Source\PSoC5/I2S_1.c ****     if(0u == I2S_1_initVar)
+ 105              		.loc 1 160 0
+ 106 0002 054B     		ldr	r3, .L11
+ 107 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 108 0006 23B9     		cbnz	r3, .L9
+ 161:.\Generated_Source\PSoC5/I2S_1.c ****     {
+ 162:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_Init();
+ 109              		.loc 1 162 0
+ 110 0008 FFF7FEFF 		bl	I2S_1_Init
+ 111              	.LVL2:
+ 163:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_initVar = 1u;
+ 112              		.loc 1 163 0
+ 113 000c 0122     		movs	r2, #1
+ 114 000e 024B     		ldr	r3, .L11
+ 115 0010 1A70     		strb	r2, [r3]
+ 116              	.L9:
+ 164:.\Generated_Source\PSoC5/I2S_1.c ****     }
+ 165:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 166:.\Generated_Source\PSoC5/I2S_1.c ****     I2S_1_Enable();
+ 117              		.loc 1 166 0
+ 118 0012 FFF7FEFF 		bl	I2S_1_Enable
+ 119              	.LVL3:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 6
+
+
+ 120 0016 08BD     		pop	{r3, pc}
+ 121              	.L12:
+ 122              		.align	2
+ 123              	.L11:
+ 124 0018 00000000 		.word	.LANCHOR0
+ 125              		.cfi_endproc
+ 126              	.LFE2:
+ 127              		.size	I2S_1_Start, .-I2S_1_Start
+ 128              		.section	.text.I2S_1_EnableRx,"ax",%progbits
+ 129              		.align	2
+ 130              		.global	I2S_1_EnableRx
+ 131              		.thumb
+ 132              		.thumb_func
+ 133              		.type	I2S_1_EnableRx, %function
+ 134              	I2S_1_EnableRx:
+ 135              	.LFB4:
+ 167:.\Generated_Source\PSoC5/I2S_1.c **** }
+ 168:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 169:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 170:.\Generated_Source\PSoC5/I2S_1.c **** /*******************************************************************************
+ 171:.\Generated_Source\PSoC5/I2S_1.c **** * Function Name: I2S_1_Stop
+ 172:.\Generated_Source\PSoC5/I2S_1.c **** ********************************************************************************
+ 173:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 174:.\Generated_Source\PSoC5/I2S_1.c **** * Summary:
+ 175:.\Generated_Source\PSoC5/I2S_1.c **** *  Disables the I2S interface. The sck and ws outputs are set to 0. The Tx and
+ 176:.\Generated_Source\PSoC5/I2S_1.c **** *  Rx directions are disabled and their FIFOs are cleared.
+ 177:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 178:.\Generated_Source\PSoC5/I2S_1.c **** * Parameters:
+ 179:.\Generated_Source\PSoC5/I2S_1.c **** *  None.
+ 180:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 181:.\Generated_Source\PSoC5/I2S_1.c **** * Return:
+ 182:.\Generated_Source\PSoC5/I2S_1.c **** *  None.
+ 183:.\Generated_Source\PSoC5/I2S_1.c **** *
+ 184:.\Generated_Source\PSoC5/I2S_1.c **** *******************************************************************************/
+ 185:.\Generated_Source\PSoC5/I2S_1.c **** void I2S_1_Stop(void) 
+ 186:.\Generated_Source\PSoC5/I2S_1.c **** {
+ 187:.\Generated_Source\PSoC5/I2S_1.c ****     uint8 enableInterrupts;
+ 188:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 189:.\Generated_Source\PSoC5/I2S_1.c ****     I2S_1_CONTROL_REG &= (uint8)~I2S_1_EN;
+ 190:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 191:.\Generated_Source\PSoC5/I2S_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 192:.\Generated_Source\PSoC5/I2S_1.c ****     I2S_1_AUX_CONTROL_REG &= (uint8)~I2S_1_CNT_START;
+ 193:.\Generated_Source\PSoC5/I2S_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 194:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 195:.\Generated_Source\PSoC5/I2S_1.c ****     /* Clear counter value to force reload when component is enabled */
+ 196:.\Generated_Source\PSoC5/I2S_1.c ****     I2S_1_CNT_COUNT_REG = 0u;
+ 197:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 198:.\Generated_Source\PSoC5/I2S_1.c ****     #if (I2S_1_TX_DIRECTION_ENABLE)
+ 199:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_DisableTx();
+ 200:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_ClearTxFIFO();
+ 201:.\Generated_Source\PSoC5/I2S_1.c ****     #endif /* (I2S_1_TX_DIRECTION_ENABLE) */
+ 202:.\Generated_Source\PSoC5/I2S_1.c ****     
+ 203:.\Generated_Source\PSoC5/I2S_1.c ****     #if (I2S_1_RX_DIRECTION_ENABLE)
+ 204:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_DisableRx();
+ 205:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_ClearRxFIFO();
+ 206:.\Generated_Source\PSoC5/I2S_1.c ****     #endif /* (I2S_1_RX_DIRECTION_ENABLE) */
+ 207:.\Generated_Source\PSoC5/I2S_1.c **** }
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 7
+
+
+ 208:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 209:.\Generated_Source\PSoC5/I2S_1.c **** #if (I2S_1_DYNAMIC_BIT_RESOLUTION)
+ 210:.\Generated_Source\PSoC5/I2S_1.c ****     /*******************************************************************************
+ 211:.\Generated_Source\PSoC5/I2S_1.c ****     * Function Name: I2S_1_SetDataBits
+ 212:.\Generated_Source\PSoC5/I2S_1.c ****     ********************************************************************************
+ 213:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 214:.\Generated_Source\PSoC5/I2S_1.c ****     * Summary:
+ 215:.\Generated_Source\PSoC5/I2S_1.c ****     *  Sets the number of data bits for each sample. The component must be stopped
+ 216:.\Generated_Source\PSoC5/I2S_1.c ****     *  before calling this API.
+ 217:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 218:.\Generated_Source\PSoC5/I2S_1.c ****     * Parameters:
+ 219:.\Generated_Source\PSoC5/I2S_1.c ****     *  dataBits: the number of data bits for each sample. Valid values - 8/16/24/32.
+ 220:.\Generated_Source\PSoC5/I2S_1.c ****     *  If Tx or Rx byte swapping is enabled, valid values are 16 and 24.
+ 221:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 222:.\Generated_Source\PSoC5/I2S_1.c ****     * Return:
+ 223:.\Generated_Source\PSoC5/I2S_1.c ****     *  CYRET_SUCCESS  : Operation is successful
+ 224:.\Generated_Source\PSoC5/I2S_1.c ****     *  CYRET_BAD_PARAM: Invalid parameter value
+ 225:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 226:.\Generated_Source\PSoC5/I2S_1.c ****     * Side effects:
+ 227:.\Generated_Source\PSoC5/I2S_1.c ****     *  Calling this API while the component is operating may cause unexpected
+ 228:.\Generated_Source\PSoC5/I2S_1.c ****     *  behavior.
+ 229:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 230:.\Generated_Source\PSoC5/I2S_1.c ****     *******************************************************************************/
+ 231:.\Generated_Source\PSoC5/I2S_1.c ****     cystatus I2S_1_SetDataBits(uint8 dataBits)   
+ 232:.\Generated_Source\PSoC5/I2S_1.c ****     {
+ 233:.\Generated_Source\PSoC5/I2S_1.c ****         cystatus status;
+ 234:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 235:.\Generated_Source\PSoC5/I2S_1.c ****         CYASSERT((dataBits >= I2S_1_MIN_DATA_BITS) && (dataBits <= I2S_1_MAX_DATA_BITS));
+ 236:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 237:.\Generated_Source\PSoC5/I2S_1.c ****         status = CYRET_SUCCESS;
+ 238:.\Generated_Source\PSoC5/I2S_1.c ****         /* The component must be stopped prior calling this API. Therefore
+ 239:.\Generated_Source\PSoC5/I2S_1.c ****         * all the control bits except the bits modified are zeros.
+ 240:.\Generated_Source\PSoC5/I2S_1.c ****         */
+ 241:.\Generated_Source\PSoC5/I2S_1.c ****         switch(dataBits)
+ 242:.\Generated_Source\PSoC5/I2S_1.c ****         {
+ 243:.\Generated_Source\PSoC5/I2S_1.c ****         case I2S_1_8BIT_DATA:
+ 244:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CONTROL_REG = I2S_1_8BIT_MODE;
+ 245:.\Generated_Source\PSoC5/I2S_1.c ****             break;
+ 246:.\Generated_Source\PSoC5/I2S_1.c ****         case I2S_1_16BIT_DATA:
+ 247:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CONTROL_REG = I2S_1_16BIT_MODE;
+ 248:.\Generated_Source\PSoC5/I2S_1.c ****             break;
+ 249:.\Generated_Source\PSoC5/I2S_1.c ****         case I2S_1_24BIT_DATA:
+ 250:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CONTROL_REG = I2S_1_24BIT_MODE;
+ 251:.\Generated_Source\PSoC5/I2S_1.c ****             break;
+ 252:.\Generated_Source\PSoC5/I2S_1.c ****         case I2S_1_32BIT_DATA:
+ 253:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CONTROL_REG = I2S_1_32BIT_MODE;
+ 254:.\Generated_Source\PSoC5/I2S_1.c ****             break;
+ 255:.\Generated_Source\PSoC5/I2S_1.c ****         default: status = CYRET_BAD_PARAM;
+ 256:.\Generated_Source\PSoC5/I2S_1.c ****             break;
+ 257:.\Generated_Source\PSoC5/I2S_1.c ****         }
+ 258:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 259:.\Generated_Source\PSoC5/I2S_1.c ****         return (status);
+ 260:.\Generated_Source\PSoC5/I2S_1.c ****     }
+ 261:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 262:.\Generated_Source\PSoC5/I2S_1.c **** #endif /* I2S_1_DYNAMIC_BIT_RESOLUTION */
+ 263:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 264:.\Generated_Source\PSoC5/I2S_1.c **** #if(I2S_1_TX_DIRECTION_ENABLE)
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 8
+
+
+ 265:.\Generated_Source\PSoC5/I2S_1.c ****     /*******************************************************************************
+ 266:.\Generated_Source\PSoC5/I2S_1.c ****     * Function Name: I2S_1_EnableTx
+ 267:.\Generated_Source\PSoC5/I2S_1.c ****     ********************************************************************************
+ 268:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 269:.\Generated_Source\PSoC5/I2S_1.c ****     * Summary:
+ 270:.\Generated_Source\PSoC5/I2S_1.c ****     *  Enables the Tx direction of the I2S interface.  At the next word
+ 271:.\Generated_Source\PSoC5/I2S_1.c ****     *  select falling edge transmission will begin.
+ 272:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 273:.\Generated_Source\PSoC5/I2S_1.c ****     * Parameters:
+ 274:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 275:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 276:.\Generated_Source\PSoC5/I2S_1.c ****     * Return:
+ 277:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 278:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 279:.\Generated_Source\PSoC5/I2S_1.c ****     *******************************************************************************/
+ 280:.\Generated_Source\PSoC5/I2S_1.c ****     void I2S_1_EnableTx(void) 
+ 281:.\Generated_Source\PSoC5/I2S_1.c ****     {
+ 282:.\Generated_Source\PSoC5/I2S_1.c ****         uint8 enableInterrupts;
+ 283:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 284:.\Generated_Source\PSoC5/I2S_1.c ****         enableInterrupts = CyEnterCriticalSection();
+ 285:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_TX_STS0_1_ACTL_REG |= I2S_1_INT_EN;
+ 286:.\Generated_Source\PSoC5/I2S_1.c ****         #ifdef I2S_1_TX_STS2_3_ACTL_REG
+ 287:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_TX_STS2_3_ACTL_REG |= I2S_1_INT_EN;
+ 288:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STS2_3_ACTL_REG */
+ 289:.\Generated_Source\PSoC5/I2S_1.c ****         #ifdef I2S_1_TX_STS4_ACTL_REG
+ 290:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_TX_STS4_ACTL_REG |= I2S_1_INT_EN;
+ 291:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STS4_ACTL_REG */
+ 292:.\Generated_Source\PSoC5/I2S_1.c ****         CyExitCriticalSection(enableInterrupts);
+ 293:.\Generated_Source\PSoC5/I2S_1.c ****         
+ 294:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_CONTROL_REG |= I2S_1_TX_EN;
+ 295:.\Generated_Source\PSoC5/I2S_1.c ****     }
+ 296:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 297:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 298:.\Generated_Source\PSoC5/I2S_1.c ****     /*******************************************************************************
+ 299:.\Generated_Source\PSoC5/I2S_1.c ****     * Function Name: I2S_1_DisableTx
+ 300:.\Generated_Source\PSoC5/I2S_1.c ****     ********************************************************************************
+ 301:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 302:.\Generated_Source\PSoC5/I2S_1.c ****     * Summary:
+ 303:.\Generated_Source\PSoC5/I2S_1.c ****     *  Disables the Tx direction of the I2S interface.  At the next word
+ 304:.\Generated_Source\PSoC5/I2S_1.c ****     *  select falling edge transmission of data will stop and a constant 0 value
+ 305:.\Generated_Source\PSoC5/I2S_1.c ****     *  will be transmitted.
+ 306:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 307:.\Generated_Source\PSoC5/I2S_1.c ****     * Parameters:
+ 308:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 309:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 310:.\Generated_Source\PSoC5/I2S_1.c ****     * Return:
+ 311:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 312:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 313:.\Generated_Source\PSoC5/I2S_1.c ****     *******************************************************************************/
+ 314:.\Generated_Source\PSoC5/I2S_1.c ****     void I2S_1_DisableTx(void) 
+ 315:.\Generated_Source\PSoC5/I2S_1.c ****     {
+ 316:.\Generated_Source\PSoC5/I2S_1.c ****         uint8 enableInterrupts;
+ 317:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 318:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_CONTROL_REG &= (uint8)~I2S_1_TX_EN;
+ 319:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 320:.\Generated_Source\PSoC5/I2S_1.c ****         enableInterrupts = CyEnterCriticalSection();
+ 321:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_TX_STS0_1_ACTL_REG &= (uint8)~I2S_1_INT_EN;
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 9
+
+
+ 322:.\Generated_Source\PSoC5/I2S_1.c ****         #ifdef I2S_1_TX_STS2_3_ACTL_REG
+ 323:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_TX_STS2_3_ACTL_REG &= (uint8)~I2S_1_INT_EN;
+ 324:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STS2_3_ACTL_REG */
+ 325:.\Generated_Source\PSoC5/I2S_1.c ****         #ifdef I2S_1_TX_STS4_ACTL_REG
+ 326:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_TX_STS4_ACTL_REG &= (uint8)~I2S_1_INT_EN;
+ 327:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STS4_ACTL_REG */
+ 328:.\Generated_Source\PSoC5/I2S_1.c ****         CyExitCriticalSection(enableInterrupts);
+ 329:.\Generated_Source\PSoC5/I2S_1.c ****     }
+ 330:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 331:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 332:.\Generated_Source\PSoC5/I2S_1.c ****     /*******************************************************************************
+ 333:.\Generated_Source\PSoC5/I2S_1.c ****     * Function Name: I2S_1_ClearTxFIFO
+ 334:.\Generated_Source\PSoC5/I2S_1.c ****     ********************************************************************************
+ 335:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 336:.\Generated_Source\PSoC5/I2S_1.c ****     * Summary:
+ 337:.\Generated_Source\PSoC5/I2S_1.c ****     *  Clears out the FIFOs for all Tx channels. Any data present in the FIFO will
+ 338:.\Generated_Source\PSoC5/I2S_1.c ****     *  not be sent. This call should be made only when the Tx direction is disabled.
+ 339:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 340:.\Generated_Source\PSoC5/I2S_1.c ****     * Parameters:
+ 341:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 342:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 343:.\Generated_Source\PSoC5/I2S_1.c ****     * Return:
+ 344:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 345:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 346:.\Generated_Source\PSoC5/I2S_1.c ****     *******************************************************************************/
+ 347:.\Generated_Source\PSoC5/I2S_1.c ****     void I2S_1_ClearTxFIFO(void) 
+ 348:.\Generated_Source\PSoC5/I2S_1.c ****     {
+ 349:.\Generated_Source\PSoC5/I2S_1.c ****         uint8 enableInterrupts;
+ 350:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 351:.\Generated_Source\PSoC5/I2S_1.c ****         enableInterrupts = CyEnterCriticalSection();
+ 352:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_CLEAR_TX_FIFO(CH0);
+ 353:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_TX_STEREO_1_PRESENT)
+ 354:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CLEAR_TX_FIFO(CH1);
+ 355:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STEREO_1_PRESENT */
+ 356:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_TX_STEREO_2_PRESENT)
+ 357:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CLEAR_TX_FIFO(CH2);
+ 358:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STEREO_2_PRESENT */
+ 359:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_TX_STEREO_3_PRESENT)
+ 360:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CLEAR_TX_FIFO(CH3);
+ 361:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STEREO_3_PRESENT */
+ 362:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_TX_STEREO_4_PRESENT)
+ 363:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CLEAR_TX_FIFO(CH4);
+ 364:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_TX_STEREO_4_PRESENT */
+ 365:.\Generated_Source\PSoC5/I2S_1.c ****         CyExitCriticalSection(enableInterrupts);
+ 366:.\Generated_Source\PSoC5/I2S_1.c ****     }
+ 367:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 368:.\Generated_Source\PSoC5/I2S_1.c **** #endif /* (I2S_1_TX_DIRECTION_ENABLE) */
+ 369:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 370:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 371:.\Generated_Source\PSoC5/I2S_1.c **** #if(I2S_1_RX_DIRECTION_ENABLE)
+ 372:.\Generated_Source\PSoC5/I2S_1.c ****     /*******************************************************************************
+ 373:.\Generated_Source\PSoC5/I2S_1.c ****     * Function Name: I2S_1_EnableRx
+ 374:.\Generated_Source\PSoC5/I2S_1.c ****     ********************************************************************************
+ 375:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 376:.\Generated_Source\PSoC5/I2S_1.c ****     * Summary:
+ 377:.\Generated_Source\PSoC5/I2S_1.c ****     *  Enables the Rx direction of the I2S interface.  At the next word
+ 378:.\Generated_Source\PSoC5/I2S_1.c ****     *  select falling edge reception of data will begin.
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 10
+
+
+ 379:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 380:.\Generated_Source\PSoC5/I2S_1.c ****     * Parameters:
+ 381:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 382:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 383:.\Generated_Source\PSoC5/I2S_1.c ****     * Return:
+ 384:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 385:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 386:.\Generated_Source\PSoC5/I2S_1.c ****     *******************************************************************************/
+ 387:.\Generated_Source\PSoC5/I2S_1.c ****     void I2S_1_EnableRx(void) 
+ 388:.\Generated_Source\PSoC5/I2S_1.c ****     {
+ 136              		.loc 1 388 0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 08B5     		push	{r3, lr}
+ 141              		.cfi_def_cfa_offset 8
+ 142              		.cfi_offset 3, -8
+ 143              		.cfi_offset 14, -4
+ 389:.\Generated_Source\PSoC5/I2S_1.c ****         uint8 enableInterrupts;
+ 390:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 391:.\Generated_Source\PSoC5/I2S_1.c ****         enableInterrupts = CyEnterCriticalSection();
+ 144              		.loc 1 391 0
+ 145 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 146              	.LVL4:
+ 392:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_RX_STS0_1_ACTL_REG |= I2S_1_INT_EN;
+ 147              		.loc 1 392 0
+ 148 0006 064A     		ldr	r2, .L15
+ 149 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 150 000a 43F01003 		orr	r3, r3, #16
+ 151 000e 1370     		strb	r3, [r2]
+ 393:.\Generated_Source\PSoC5/I2S_1.c ****         #ifdef I2S_1_RX_STS2_3_ACTL_REG
+ 394:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_RX_STS2_3_ACTL_REG |= I2S_1_INT_EN;
+ 395:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STS2_3_ACTL_REG */
+ 396:.\Generated_Source\PSoC5/I2S_1.c ****         #ifdef I2S_1_RX_STS4_ACTL_REG
+ 397:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_RX_STS4_ACTL_REG |= I2S_1_INT_EN;
+ 398:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STS4_ACTL_REG */
+ 399:.\Generated_Source\PSoC5/I2S_1.c ****         CyExitCriticalSection(enableInterrupts);
+ 152              		.loc 1 399 0
+ 153 0010 FFF7FEFF 		bl	CyExitCriticalSection
+ 154              	.LVL5:
+ 400:.\Generated_Source\PSoC5/I2S_1.c ****         
+ 401:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_CONTROL_REG |= I2S_1_RX_EN;
+ 155              		.loc 1 401 0
+ 156 0014 034A     		ldr	r2, .L15+4
+ 157 0016 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 158 0018 43F00203 		orr	r3, r3, #2
+ 159 001c 1370     		strb	r3, [r2]
+ 160 001e 08BD     		pop	{r3, pc}
+ 161              	.L16:
+ 162              		.align	2
+ 163              	.L15:
+ 164 0020 95650040 		.word	1073767829
+ 165 0024 75650040 		.word	1073767797
+ 166              		.cfi_endproc
+ 167              	.LFE4:
+ 168              		.size	I2S_1_EnableRx, .-I2S_1_EnableRx
+ 169              		.section	.text.I2S_1_DisableRx,"ax",%progbits
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 11
+
+
+ 170              		.align	2
+ 171              		.global	I2S_1_DisableRx
+ 172              		.thumb
+ 173              		.thumb_func
+ 174              		.type	I2S_1_DisableRx, %function
+ 175              	I2S_1_DisableRx:
+ 176              	.LFB5:
+ 402:.\Generated_Source\PSoC5/I2S_1.c ****     }
+ 403:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 404:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 405:.\Generated_Source\PSoC5/I2S_1.c ****     /*******************************************************************************
+ 406:.\Generated_Source\PSoC5/I2S_1.c ****     * Function Name: I2S_1_DisableRx
+ 407:.\Generated_Source\PSoC5/I2S_1.c ****     ********************************************************************************
+ 408:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 409:.\Generated_Source\PSoC5/I2S_1.c ****     * Summary:
+ 410:.\Generated_Source\PSoC5/I2S_1.c ****     *  Disables the Rx direction of the I2S interface.
+ 411:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 412:.\Generated_Source\PSoC5/I2S_1.c ****     * Parameters:
+ 413:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 414:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 415:.\Generated_Source\PSoC5/I2S_1.c ****     * Return:
+ 416:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 417:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 418:.\Generated_Source\PSoC5/I2S_1.c ****     *******************************************************************************/
+ 419:.\Generated_Source\PSoC5/I2S_1.c ****     void I2S_1_DisableRx(void) 
+ 420:.\Generated_Source\PSoC5/I2S_1.c ****     {
+ 177              		.loc 1 420 0
+ 178              		.cfi_startproc
+ 179              		@ args = 0, pretend = 0, frame = 0
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181 0000 08B5     		push	{r3, lr}
+ 182              		.cfi_def_cfa_offset 8
+ 183              		.cfi_offset 3, -8
+ 184              		.cfi_offset 14, -4
+ 421:.\Generated_Source\PSoC5/I2S_1.c ****         uint8 enableInterrupts;
+ 422:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 423:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_CONTROL_REG &= (uint8)~I2S_1_RX_EN;
+ 185              		.loc 1 423 0
+ 186 0002 074A     		ldr	r2, .L19
+ 187 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 188 0006 03F0FD03 		and	r3, r3, #253
+ 189 000a 1370     		strb	r3, [r2]
+ 424:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 425:.\Generated_Source\PSoC5/I2S_1.c ****         enableInterrupts = CyEnterCriticalSection();
+ 190              		.loc 1 425 0
+ 191 000c FFF7FEFF 		bl	CyEnterCriticalSection
+ 192              	.LVL6:
+ 426:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_RX_STS0_1_ACTL_REG &= (uint8)~I2S_1_INT_EN;
+ 193              		.loc 1 426 0
+ 194 0010 044A     		ldr	r2, .L19+4
+ 195 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 196 0014 03F0EF03 		and	r3, r3, #239
+ 197 0018 1370     		strb	r3, [r2]
+ 427:.\Generated_Source\PSoC5/I2S_1.c ****         #ifdef I2S_1_RX_STS2_3_ACTL_REG
+ 428:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_RX_STS2_3_ACTL_REG &= (uint8)~I2S_1_INT_EN;
+ 429:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STS2_3_ACTL_REG */
+ 430:.\Generated_Source\PSoC5/I2S_1.c ****         #ifdef I2S_1_RX_STS4_ACTL_REG
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 12
+
+
+ 431:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_RX_STS4_ACTL_REG &= (uint8)~I2S_1_INT_EN;
+ 432:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STS4_ACTL_REG */
+ 433:.\Generated_Source\PSoC5/I2S_1.c ****         CyExitCriticalSection(enableInterrupts);
+ 198              		.loc 1 433 0
+ 199 001a FFF7FEFF 		bl	CyExitCriticalSection
+ 200              	.LVL7:
+ 201 001e 08BD     		pop	{r3, pc}
+ 202              	.L20:
+ 203              		.align	2
+ 204              	.L19:
+ 205 0020 75650040 		.word	1073767797
+ 206 0024 95650040 		.word	1073767829
+ 207              		.cfi_endproc
+ 208              	.LFE5:
+ 209              		.size	I2S_1_DisableRx, .-I2S_1_DisableRx
+ 210              		.section	.text.I2S_1_ClearRxFIFO,"ax",%progbits
+ 211              		.align	2
+ 212              		.global	I2S_1_ClearRxFIFO
+ 213              		.thumb
+ 214              		.thumb_func
+ 215              		.type	I2S_1_ClearRxFIFO, %function
+ 216              	I2S_1_ClearRxFIFO:
+ 217              	.LFB6:
+ 434:.\Generated_Source\PSoC5/I2S_1.c ****     }
+ 435:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 436:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 437:.\Generated_Source\PSoC5/I2S_1.c ****     /*******************************************************************************
+ 438:.\Generated_Source\PSoC5/I2S_1.c ****     * Function Name: I2S_1_ClearRxFIFO
+ 439:.\Generated_Source\PSoC5/I2S_1.c ****     ********************************************************************************
+ 440:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 441:.\Generated_Source\PSoC5/I2S_1.c ****     * Summary:
+ 442:.\Generated_Source\PSoC5/I2S_1.c ****     *  Clears out the Rx FIFO.  Any data present in the FIFO will be lost.
+ 443:.\Generated_Source\PSoC5/I2S_1.c ****     *  This call should be made only when the Rx direction is disabled.
+ 444:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 445:.\Generated_Source\PSoC5/I2S_1.c ****     * Parameters:
+ 446:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 447:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 448:.\Generated_Source\PSoC5/I2S_1.c ****     * Return:
+ 449:.\Generated_Source\PSoC5/I2S_1.c ****     *  None.
+ 450:.\Generated_Source\PSoC5/I2S_1.c ****     *
+ 451:.\Generated_Source\PSoC5/I2S_1.c ****     *******************************************************************************/
+ 452:.\Generated_Source\PSoC5/I2S_1.c ****     void I2S_1_ClearRxFIFO(void) 
+ 453:.\Generated_Source\PSoC5/I2S_1.c ****     {
+ 218              		.loc 1 453 0
+ 219              		.cfi_startproc
+ 220              		@ args = 0, pretend = 0, frame = 0
+ 221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 222 0000 08B5     		push	{r3, lr}
+ 223              		.cfi_def_cfa_offset 8
+ 224              		.cfi_offset 3, -8
+ 225              		.cfi_offset 14, -4
+ 454:.\Generated_Source\PSoC5/I2S_1.c ****         uint8 enableInterrupts;
+ 455:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 456:.\Generated_Source\PSoC5/I2S_1.c ****         enableInterrupts = CyEnterCriticalSection();
+ 226              		.loc 1 456 0
+ 227 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 228              	.LVL8:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 13
+
+
+ 457:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_CLEAR_RX_FIFO(CH0);
+ 229              		.loc 1 457 0
+ 230 0006 064B     		ldr	r3, .L23
+ 231 0008 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 232 000a 42F00302 		orr	r2, r2, #3
+ 233 000e 1A70     		strb	r2, [r3]
+ 234 0010 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 235 0012 02F0FC02 		and	r2, r2, #252
+ 236 0016 1A70     		strb	r2, [r3]
+ 458:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_RX_STEREO_1_PRESENT)
+ 459:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CLEAR_RX_FIFO(CH1);
+ 460:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STEREO_1_PRESENT */
+ 461:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_RX_STEREO_2_PRESENT)
+ 462:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CLEAR_RX_FIFO(CH2);
+ 463:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STEREO_2_PRESENT */
+ 464:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_RX_STEREO_3_PRESENT)
+ 465:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CLEAR_RX_FIFO(CH3);
+ 466:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STEREO_3_PRESENT */
+ 467:.\Generated_Source\PSoC5/I2S_1.c ****         #if (I2S_1_RX_STEREO_4_PRESENT)
+ 468:.\Generated_Source\PSoC5/I2S_1.c ****             I2S_1_CLEAR_RX_FIFO(CH4);
+ 469:.\Generated_Source\PSoC5/I2S_1.c ****         #endif /* I2S_1_RX_STEREO_4_PRESENT */
+ 470:.\Generated_Source\PSoC5/I2S_1.c ****         CyExitCriticalSection(enableInterrupts);
+ 237              		.loc 1 470 0
+ 238 0018 FFF7FEFF 		bl	CyExitCriticalSection
+ 239              	.LVL9:
+ 240 001c 08BD     		pop	{r3, pc}
+ 241              	.L24:
+ 242 001e 00BF     		.align	2
+ 243              	.L23:
+ 244 0020 96650040 		.word	1073767830
+ 245              		.cfi_endproc
+ 246              	.LFE6:
+ 247              		.size	I2S_1_ClearRxFIFO, .-I2S_1_ClearRxFIFO
+ 248              		.section	.text.I2S_1_Stop,"ax",%progbits
+ 249              		.align	2
+ 250              		.global	I2S_1_Stop
+ 251              		.thumb
+ 252              		.thumb_func
+ 253              		.type	I2S_1_Stop, %function
+ 254              	I2S_1_Stop:
+ 255              	.LFB3:
+ 186:.\Generated_Source\PSoC5/I2S_1.c ****     uint8 enableInterrupts;
+ 256              		.loc 1 186 0
+ 257              		.cfi_startproc
+ 258              		@ args = 0, pretend = 0, frame = 0
+ 259              		@ frame_needed = 0, uses_anonymous_args = 0
+ 260 0000 08B5     		push	{r3, lr}
+ 261              		.cfi_def_cfa_offset 8
+ 262              		.cfi_offset 3, -8
+ 263              		.cfi_offset 14, -4
+ 189:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 264              		.loc 1 189 0
+ 265 0002 0B4A     		ldr	r2, .L27
+ 266 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 267 0006 03F0FB03 		and	r3, r3, #251
+ 268 000a 1370     		strb	r3, [r2]
+ 191:.\Generated_Source\PSoC5/I2S_1.c ****     I2S_1_AUX_CONTROL_REG &= (uint8)~I2S_1_CNT_START;
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 14
+
+
+ 269              		.loc 1 191 0
+ 270 000c FFF7FEFF 		bl	CyEnterCriticalSection
+ 271              	.LVL10:
+ 192:.\Generated_Source\PSoC5/I2S_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 272              		.loc 1 192 0
+ 273 0010 084A     		ldr	r2, .L27+4
+ 274 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 275 0014 03F0DF03 		and	r3, r3, #223
+ 276 0018 1370     		strb	r3, [r2]
+ 193:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 277              		.loc 1 193 0
+ 278 001a FFF7FEFF 		bl	CyExitCriticalSection
+ 279              	.LVL11:
+ 196:.\Generated_Source\PSoC5/I2S_1.c **** 
+ 280              		.loc 1 196 0
+ 281 001e 0022     		movs	r2, #0
+ 282 0020 054B     		ldr	r3, .L27+8
+ 283 0022 1A70     		strb	r2, [r3]
+ 204:.\Generated_Source\PSoC5/I2S_1.c ****         I2S_1_ClearRxFIFO();
+ 284              		.loc 1 204 0
+ 285 0024 FFF7FEFF 		bl	I2S_1_DisableRx
+ 286              	.LVL12:
+ 205:.\Generated_Source\PSoC5/I2S_1.c ****     #endif /* (I2S_1_RX_DIRECTION_ENABLE) */
+ 287              		.loc 1 205 0
+ 288 0028 FFF7FEFF 		bl	I2S_1_ClearRxFIFO
+ 289              	.LVL13:
+ 290 002c 08BD     		pop	{r3, pc}
+ 291              	.L28:
+ 292 002e 00BF     		.align	2
+ 293              	.L27:
+ 294 0030 75650040 		.word	1073767797
+ 295 0034 96650040 		.word	1073767830
+ 296 0038 76650040 		.word	1073767798
+ 297              		.cfi_endproc
+ 298              	.LFE3:
+ 299              		.size	I2S_1_Stop, .-I2S_1_Stop
+ 300              		.global	I2S_1_initVar
+ 301              		.bss
+ 302              		.set	.LANCHOR0,. + 0
+ 303              		.type	I2S_1_initVar, %object
+ 304              		.size	I2S_1_initVar, 1
+ 305              	I2S_1_initVar:
+ 306 0000 00       		.space	1
+ 307              		.text
+ 308              	.Letext0:
+ 309              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 310              		.file 3 ".\\Generated_Source\\PSoC5\\CyLib.h"
+ 311              		.section	.debug_info,"",%progbits
+ 312              	.Ldebug_info0:
+ 313 0000 2C020000 		.4byte	0x22c
+ 314 0004 0400     		.2byte	0x4
+ 315 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 316 000a 04       		.byte	0x4
+ 317 000b 01       		.uleb128 0x1
+ 318 000c AD000000 		.4byte	.LASF22
+ 319 0010 01       		.byte	0x1
+ 320 0011 1B000000 		.4byte	.LASF23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 15
+
+
+ 321 0015 B6010000 		.4byte	.LASF24
+ 322 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 323 001d 00000000 		.4byte	0
+ 324 0021 00000000 		.4byte	.Ldebug_line0
+ 325 0025 02       		.uleb128 0x2
+ 326 0026 04       		.byte	0x4
+ 327 0027 05       		.byte	0x5
+ 328 0028 696E7400 		.ascii	"int\000"
+ 329 002c 03       		.uleb128 0x3
+ 330 002d 04       		.byte	0x4
+ 331 002e 07       		.byte	0x7
+ 332 002f 0E000000 		.4byte	.LASF0
+ 333 0033 03       		.uleb128 0x3
+ 334 0034 01       		.byte	0x1
+ 335 0035 06       		.byte	0x6
+ 336 0036 AA010000 		.4byte	.LASF1
+ 337 003a 03       		.uleb128 0x3
+ 338 003b 01       		.byte	0x1
+ 339 003c 08       		.byte	0x8
+ 340 003d 55010000 		.4byte	.LASF2
+ 341 0041 03       		.uleb128 0x3
+ 342 0042 02       		.byte	0x2
+ 343 0043 05       		.byte	0x5
+ 344 0044 34020000 		.4byte	.LASF3
+ 345 0048 03       		.uleb128 0x3
+ 346 0049 02       		.byte	0x2
+ 347 004a 07       		.byte	0x7
+ 348 004b 97010000 		.4byte	.LASF4
+ 349 004f 03       		.uleb128 0x3
+ 350 0050 04       		.byte	0x4
+ 351 0051 05       		.byte	0x5
+ 352 0052 68010000 		.4byte	.LASF5
+ 353 0056 03       		.uleb128 0x3
+ 354 0057 04       		.byte	0x4
+ 355 0058 07       		.byte	0x7
+ 356 0059 65000000 		.4byte	.LASF6
+ 357 005d 03       		.uleb128 0x3
+ 358 005e 08       		.byte	0x8
+ 359 005f 05       		.byte	0x5
+ 360 0060 00000000 		.4byte	.LASF7
+ 361 0064 03       		.uleb128 0x3
+ 362 0065 08       		.byte	0x8
+ 363 0066 07       		.byte	0x7
+ 364 0067 77000000 		.4byte	.LASF8
+ 365 006b 03       		.uleb128 0x3
+ 366 006c 04       		.byte	0x4
+ 367 006d 07       		.byte	0x7
+ 368 006e 43020000 		.4byte	.LASF9
+ 369 0072 03       		.uleb128 0x3
+ 370 0073 01       		.byte	0x1
+ 371 0074 08       		.byte	0x8
+ 372 0075 63010000 		.4byte	.LASF10
+ 373 0079 04       		.uleb128 0x4
+ 374 007a 5F000000 		.4byte	.LASF13
+ 375 007e 02       		.byte	0x2
+ 376 007f 5B       		.byte	0x5b
+ 377 0080 3A000000 		.4byte	0x3a
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 16
+
+
+ 378 0084 03       		.uleb128 0x3
+ 379 0085 04       		.byte	0x4
+ 380 0086 04       		.byte	0x4
+ 381 0087 2E020000 		.4byte	.LASF11
+ 382 008b 03       		.uleb128 0x3
+ 383 008c 08       		.byte	0x8
+ 384 008d 04       		.byte	0x4
+ 385 008e 71010000 		.4byte	.LASF12
+ 386 0092 04       		.uleb128 0x4
+ 387 0093 3E020000 		.4byte	.LASF14
+ 388 0097 02       		.byte	0x2
+ 389 0098 F0       		.byte	0xf0
+ 390 0099 9D000000 		.4byte	0x9d
+ 391 009d 05       		.uleb128 0x5
+ 392 009e 79000000 		.4byte	0x79
+ 393 00a2 06       		.uleb128 0x6
+ 394 00a3 8A010000 		.4byte	.LASF15
+ 395 00a7 01       		.byte	0x1
+ 396 00a8 29       		.byte	0x29
+ 397 00a9 00000000 		.4byte	.LFB0
+ 398 00ad 28000000 		.4byte	.LFE0-.LFB0
+ 399 00b1 01       		.uleb128 0x1
+ 400 00b2 9C       		.byte	0x9c
+ 401 00b3 D9000000 		.4byte	0xd9
+ 402 00b7 07       		.uleb128 0x7
+ 403 00b8 8E000000 		.4byte	.LASF18
+ 404 00bc 01       		.byte	0x1
+ 405 00bd 2B       		.byte	0x2b
+ 406 00be 79000000 		.4byte	0x79
+ 407 00c2 00000000 		.4byte	.LLST0
+ 408 00c6 08       		.uleb128 0x8
+ 409 00c7 06000000 		.4byte	.LVL0
+ 410 00cb 17020000 		.4byte	0x217
+ 411 00cf 08       		.uleb128 0x8
+ 412 00d0 14000000 		.4byte	.LVL1
+ 413 00d4 22020000 		.4byte	0x222
+ 414 00d8 00       		.byte	0
+ 415 00d9 09       		.uleb128 0x9
+ 416 00da 4C020000 		.4byte	.LASF25
+ 417 00de 01       		.byte	0x1
+ 418 00df 45       		.byte	0x45
+ 419 00e0 00000000 		.4byte	.LFB1
+ 420 00e4 18000000 		.4byte	.LFE1-.LFB1
+ 421 00e8 01       		.uleb128 0x1
+ 422 00e9 9C       		.byte	0x9c
+ 423 00ea 06       		.uleb128 0x6
+ 424 00eb 53000000 		.4byte	.LASF16
+ 425 00ef 01       		.byte	0x1
+ 426 00f0 9E       		.byte	0x9e
+ 427 00f1 00000000 		.4byte	.LFB2
+ 428 00f5 1C000000 		.4byte	.LFE2-.LFB2
+ 429 00f9 01       		.uleb128 0x1
+ 430 00fa 9C       		.byte	0x9c
+ 431 00fb 12010000 		.4byte	0x112
+ 432 00ff 08       		.uleb128 0x8
+ 433 0100 0C000000 		.4byte	.LVL2
+ 434 0104 D9000000 		.4byte	0xd9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 17
+
+
+ 435 0108 08       		.uleb128 0x8
+ 436 0109 16000000 		.4byte	.LVL3
+ 437 010d A2000000 		.4byte	0xa2
+ 438 0111 00       		.byte	0
+ 439 0112 0A       		.uleb128 0xa
+ 440 0113 3B010000 		.4byte	.LASF17
+ 441 0117 01       		.byte	0x1
+ 442 0118 8301     		.2byte	0x183
+ 443 011a 00000000 		.4byte	.LFB4
+ 444 011e 28000000 		.4byte	.LFE4-.LFB4
+ 445 0122 01       		.uleb128 0x1
+ 446 0123 9C       		.byte	0x9c
+ 447 0124 4B010000 		.4byte	0x14b
+ 448 0128 0B       		.uleb128 0xb
+ 449 0129 8E000000 		.4byte	.LASF18
+ 450 012d 01       		.byte	0x1
+ 451 012e 8501     		.2byte	0x185
+ 452 0130 79000000 		.4byte	0x79
+ 453 0134 13000000 		.4byte	.LLST1
+ 454 0138 08       		.uleb128 0x8
+ 455 0139 06000000 		.4byte	.LVL4
+ 456 013d 17020000 		.4byte	0x217
+ 457 0141 08       		.uleb128 0x8
+ 458 0142 14000000 		.4byte	.LVL5
+ 459 0146 22020000 		.4byte	0x222
+ 460 014a 00       		.byte	0
+ 461 014b 0A       		.uleb128 0xa
+ 462 014c 1E020000 		.4byte	.LASF19
+ 463 0150 01       		.byte	0x1
+ 464 0151 A301     		.2byte	0x1a3
+ 465 0153 00000000 		.4byte	.LFB5
+ 466 0157 28000000 		.4byte	.LFE5-.LFB5
+ 467 015b 01       		.uleb128 0x1
+ 468 015c 9C       		.byte	0x9c
+ 469 015d 84010000 		.4byte	0x184
+ 470 0161 0B       		.uleb128 0xb
+ 471 0162 8E000000 		.4byte	.LASF18
+ 472 0166 01       		.byte	0x1
+ 473 0167 A501     		.2byte	0x1a5
+ 474 0169 79000000 		.4byte	0x79
+ 475 016d 26000000 		.4byte	.LLST2
+ 476 0171 08       		.uleb128 0x8
+ 477 0172 10000000 		.4byte	.LVL6
+ 478 0176 17020000 		.4byte	0x217
+ 479 017a 08       		.uleb128 0x8
+ 480 017b 1E000000 		.4byte	.LVL7
+ 481 017f 22020000 		.4byte	0x222
+ 482 0183 00       		.byte	0
+ 483 0184 0A       		.uleb128 0xa
+ 484 0185 78010000 		.4byte	.LASF20
+ 485 0189 01       		.byte	0x1
+ 486 018a C401     		.2byte	0x1c4
+ 487 018c 00000000 		.4byte	.LFB6
+ 488 0190 24000000 		.4byte	.LFE6-.LFB6
+ 489 0194 01       		.uleb128 0x1
+ 490 0195 9C       		.byte	0x9c
+ 491 0196 BD010000 		.4byte	0x1bd
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 18
+
+
+ 492 019a 0B       		.uleb128 0xb
+ 493 019b 8E000000 		.4byte	.LASF18
+ 494 019f 01       		.byte	0x1
+ 495 01a0 C601     		.2byte	0x1c6
+ 496 01a2 79000000 		.4byte	0x79
+ 497 01a6 39000000 		.4byte	.LLST3
+ 498 01aa 08       		.uleb128 0x8
+ 499 01ab 06000000 		.4byte	.LVL8
+ 500 01af 17020000 		.4byte	0x217
+ 501 01b3 08       		.uleb128 0x8
+ 502 01b4 1C000000 		.4byte	.LVL9
+ 503 01b8 22020000 		.4byte	0x222
+ 504 01bc 00       		.byte	0
+ 505 01bd 06       		.uleb128 0x6
+ 506 01be 4A010000 		.4byte	.LASF21
+ 507 01c2 01       		.byte	0x1
+ 508 01c3 B9       		.byte	0xb9
+ 509 01c4 00000000 		.4byte	.LFB3
+ 510 01c8 3C000000 		.4byte	.LFE3-.LFB3
+ 511 01cc 01       		.uleb128 0x1
+ 512 01cd 9C       		.byte	0x9c
+ 513 01ce 06020000 		.4byte	0x206
+ 514 01d2 07       		.uleb128 0x7
+ 515 01d3 8E000000 		.4byte	.LASF18
+ 516 01d7 01       		.byte	0x1
+ 517 01d8 BB       		.byte	0xbb
+ 518 01d9 79000000 		.4byte	0x79
+ 519 01dd 4C000000 		.4byte	.LLST4
+ 520 01e1 08       		.uleb128 0x8
+ 521 01e2 10000000 		.4byte	.LVL10
+ 522 01e6 17020000 		.4byte	0x217
+ 523 01ea 08       		.uleb128 0x8
+ 524 01eb 1E000000 		.4byte	.LVL11
+ 525 01ef 22020000 		.4byte	0x222
+ 526 01f3 08       		.uleb128 0x8
+ 527 01f4 28000000 		.4byte	.LVL12
+ 528 01f8 4B010000 		.4byte	0x14b
+ 529 01fc 08       		.uleb128 0x8
+ 530 01fd 2C000000 		.4byte	.LVL13
+ 531 0201 84010000 		.4byte	0x184
+ 532 0205 00       		.byte	0
+ 533 0206 0C       		.uleb128 0xc
+ 534 0207 9F000000 		.4byte	.LASF26
+ 535 020b 01       		.byte	0x1
+ 536 020c 15       		.byte	0x15
+ 537 020d 79000000 		.4byte	0x79
+ 538 0211 05       		.uleb128 0x5
+ 539 0212 03       		.byte	0x3
+ 540 0213 00000000 		.4byte	I2S_1_initVar
+ 541 0217 0D       		.uleb128 0xd
+ 542 0218 3C000000 		.4byte	.LASF27
+ 543 021c 03       		.byte	0x3
+ 544 021d 7E       		.byte	0x7e
+ 545 021e 79000000 		.4byte	0x79
+ 546 0222 0E       		.uleb128 0xe
+ 547 0223 08020000 		.4byte	.LASF28
+ 548 0227 03       		.byte	0x3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 19
+
+
+ 549 0228 7F       		.byte	0x7f
+ 550 0229 0F       		.uleb128 0xf
+ 551 022a 79000000 		.4byte	0x79
+ 552 022e 00       		.byte	0
+ 553 022f 00       		.byte	0
+ 554              		.section	.debug_abbrev,"",%progbits
+ 555              	.Ldebug_abbrev0:
+ 556 0000 01       		.uleb128 0x1
+ 557 0001 11       		.uleb128 0x11
+ 558 0002 01       		.byte	0x1
+ 559 0003 25       		.uleb128 0x25
+ 560 0004 0E       		.uleb128 0xe
+ 561 0005 13       		.uleb128 0x13
+ 562 0006 0B       		.uleb128 0xb
+ 563 0007 03       		.uleb128 0x3
+ 564 0008 0E       		.uleb128 0xe
+ 565 0009 1B       		.uleb128 0x1b
+ 566 000a 0E       		.uleb128 0xe
+ 567 000b 55       		.uleb128 0x55
+ 568 000c 17       		.uleb128 0x17
+ 569 000d 11       		.uleb128 0x11
+ 570 000e 01       		.uleb128 0x1
+ 571 000f 10       		.uleb128 0x10
+ 572 0010 17       		.uleb128 0x17
+ 573 0011 00       		.byte	0
+ 574 0012 00       		.byte	0
+ 575 0013 02       		.uleb128 0x2
+ 576 0014 24       		.uleb128 0x24
+ 577 0015 00       		.byte	0
+ 578 0016 0B       		.uleb128 0xb
+ 579 0017 0B       		.uleb128 0xb
+ 580 0018 3E       		.uleb128 0x3e
+ 581 0019 0B       		.uleb128 0xb
+ 582 001a 03       		.uleb128 0x3
+ 583 001b 08       		.uleb128 0x8
+ 584 001c 00       		.byte	0
+ 585 001d 00       		.byte	0
+ 586 001e 03       		.uleb128 0x3
+ 587 001f 24       		.uleb128 0x24
+ 588 0020 00       		.byte	0
+ 589 0021 0B       		.uleb128 0xb
+ 590 0022 0B       		.uleb128 0xb
+ 591 0023 3E       		.uleb128 0x3e
+ 592 0024 0B       		.uleb128 0xb
+ 593 0025 03       		.uleb128 0x3
+ 594 0026 0E       		.uleb128 0xe
+ 595 0027 00       		.byte	0
+ 596 0028 00       		.byte	0
+ 597 0029 04       		.uleb128 0x4
+ 598 002a 16       		.uleb128 0x16
+ 599 002b 00       		.byte	0
+ 600 002c 03       		.uleb128 0x3
+ 601 002d 0E       		.uleb128 0xe
+ 602 002e 3A       		.uleb128 0x3a
+ 603 002f 0B       		.uleb128 0xb
+ 604 0030 3B       		.uleb128 0x3b
+ 605 0031 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 20
+
+
+ 606 0032 49       		.uleb128 0x49
+ 607 0033 13       		.uleb128 0x13
+ 608 0034 00       		.byte	0
+ 609 0035 00       		.byte	0
+ 610 0036 05       		.uleb128 0x5
+ 611 0037 35       		.uleb128 0x35
+ 612 0038 00       		.byte	0
+ 613 0039 49       		.uleb128 0x49
+ 614 003a 13       		.uleb128 0x13
+ 615 003b 00       		.byte	0
+ 616 003c 00       		.byte	0
+ 617 003d 06       		.uleb128 0x6
+ 618 003e 2E       		.uleb128 0x2e
+ 619 003f 01       		.byte	0x1
+ 620 0040 3F       		.uleb128 0x3f
+ 621 0041 19       		.uleb128 0x19
+ 622 0042 03       		.uleb128 0x3
+ 623 0043 0E       		.uleb128 0xe
+ 624 0044 3A       		.uleb128 0x3a
+ 625 0045 0B       		.uleb128 0xb
+ 626 0046 3B       		.uleb128 0x3b
+ 627 0047 0B       		.uleb128 0xb
+ 628 0048 27       		.uleb128 0x27
+ 629 0049 19       		.uleb128 0x19
+ 630 004a 11       		.uleb128 0x11
+ 631 004b 01       		.uleb128 0x1
+ 632 004c 12       		.uleb128 0x12
+ 633 004d 06       		.uleb128 0x6
+ 634 004e 40       		.uleb128 0x40
+ 635 004f 18       		.uleb128 0x18
+ 636 0050 9742     		.uleb128 0x2117
+ 637 0052 19       		.uleb128 0x19
+ 638 0053 01       		.uleb128 0x1
+ 639 0054 13       		.uleb128 0x13
+ 640 0055 00       		.byte	0
+ 641 0056 00       		.byte	0
+ 642 0057 07       		.uleb128 0x7
+ 643 0058 34       		.uleb128 0x34
+ 644 0059 00       		.byte	0
+ 645 005a 03       		.uleb128 0x3
+ 646 005b 0E       		.uleb128 0xe
+ 647 005c 3A       		.uleb128 0x3a
+ 648 005d 0B       		.uleb128 0xb
+ 649 005e 3B       		.uleb128 0x3b
+ 650 005f 0B       		.uleb128 0xb
+ 651 0060 49       		.uleb128 0x49
+ 652 0061 13       		.uleb128 0x13
+ 653 0062 02       		.uleb128 0x2
+ 654 0063 17       		.uleb128 0x17
+ 655 0064 00       		.byte	0
+ 656 0065 00       		.byte	0
+ 657 0066 08       		.uleb128 0x8
+ 658 0067 898201   		.uleb128 0x4109
+ 659 006a 00       		.byte	0
+ 660 006b 11       		.uleb128 0x11
+ 661 006c 01       		.uleb128 0x1
+ 662 006d 31       		.uleb128 0x31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 21
+
+
+ 663 006e 13       		.uleb128 0x13
+ 664 006f 00       		.byte	0
+ 665 0070 00       		.byte	0
+ 666 0071 09       		.uleb128 0x9
+ 667 0072 2E       		.uleb128 0x2e
+ 668 0073 00       		.byte	0
+ 669 0074 3F       		.uleb128 0x3f
+ 670 0075 19       		.uleb128 0x19
+ 671 0076 03       		.uleb128 0x3
+ 672 0077 0E       		.uleb128 0xe
+ 673 0078 3A       		.uleb128 0x3a
+ 674 0079 0B       		.uleb128 0xb
+ 675 007a 3B       		.uleb128 0x3b
+ 676 007b 0B       		.uleb128 0xb
+ 677 007c 27       		.uleb128 0x27
+ 678 007d 19       		.uleb128 0x19
+ 679 007e 11       		.uleb128 0x11
+ 680 007f 01       		.uleb128 0x1
+ 681 0080 12       		.uleb128 0x12
+ 682 0081 06       		.uleb128 0x6
+ 683 0082 40       		.uleb128 0x40
+ 684 0083 18       		.uleb128 0x18
+ 685 0084 9742     		.uleb128 0x2117
+ 686 0086 19       		.uleb128 0x19
+ 687 0087 00       		.byte	0
+ 688 0088 00       		.byte	0
+ 689 0089 0A       		.uleb128 0xa
+ 690 008a 2E       		.uleb128 0x2e
+ 691 008b 01       		.byte	0x1
+ 692 008c 3F       		.uleb128 0x3f
+ 693 008d 19       		.uleb128 0x19
+ 694 008e 03       		.uleb128 0x3
+ 695 008f 0E       		.uleb128 0xe
+ 696 0090 3A       		.uleb128 0x3a
+ 697 0091 0B       		.uleb128 0xb
+ 698 0092 3B       		.uleb128 0x3b
+ 699 0093 05       		.uleb128 0x5
+ 700 0094 27       		.uleb128 0x27
+ 701 0095 19       		.uleb128 0x19
+ 702 0096 11       		.uleb128 0x11
+ 703 0097 01       		.uleb128 0x1
+ 704 0098 12       		.uleb128 0x12
+ 705 0099 06       		.uleb128 0x6
+ 706 009a 40       		.uleb128 0x40
+ 707 009b 18       		.uleb128 0x18
+ 708 009c 9742     		.uleb128 0x2117
+ 709 009e 19       		.uleb128 0x19
+ 710 009f 01       		.uleb128 0x1
+ 711 00a0 13       		.uleb128 0x13
+ 712 00a1 00       		.byte	0
+ 713 00a2 00       		.byte	0
+ 714 00a3 0B       		.uleb128 0xb
+ 715 00a4 34       		.uleb128 0x34
+ 716 00a5 00       		.byte	0
+ 717 00a6 03       		.uleb128 0x3
+ 718 00a7 0E       		.uleb128 0xe
+ 719 00a8 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 22
+
+
+ 720 00a9 0B       		.uleb128 0xb
+ 721 00aa 3B       		.uleb128 0x3b
+ 722 00ab 05       		.uleb128 0x5
+ 723 00ac 49       		.uleb128 0x49
+ 724 00ad 13       		.uleb128 0x13
+ 725 00ae 02       		.uleb128 0x2
+ 726 00af 17       		.uleb128 0x17
+ 727 00b0 00       		.byte	0
+ 728 00b1 00       		.byte	0
+ 729 00b2 0C       		.uleb128 0xc
+ 730 00b3 34       		.uleb128 0x34
+ 731 00b4 00       		.byte	0
+ 732 00b5 03       		.uleb128 0x3
+ 733 00b6 0E       		.uleb128 0xe
+ 734 00b7 3A       		.uleb128 0x3a
+ 735 00b8 0B       		.uleb128 0xb
+ 736 00b9 3B       		.uleb128 0x3b
+ 737 00ba 0B       		.uleb128 0xb
+ 738 00bb 49       		.uleb128 0x49
+ 739 00bc 13       		.uleb128 0x13
+ 740 00bd 3F       		.uleb128 0x3f
+ 741 00be 19       		.uleb128 0x19
+ 742 00bf 02       		.uleb128 0x2
+ 743 00c0 18       		.uleb128 0x18
+ 744 00c1 00       		.byte	0
+ 745 00c2 00       		.byte	0
+ 746 00c3 0D       		.uleb128 0xd
+ 747 00c4 2E       		.uleb128 0x2e
+ 748 00c5 00       		.byte	0
+ 749 00c6 3F       		.uleb128 0x3f
+ 750 00c7 19       		.uleb128 0x19
+ 751 00c8 03       		.uleb128 0x3
+ 752 00c9 0E       		.uleb128 0xe
+ 753 00ca 3A       		.uleb128 0x3a
+ 754 00cb 0B       		.uleb128 0xb
+ 755 00cc 3B       		.uleb128 0x3b
+ 756 00cd 0B       		.uleb128 0xb
+ 757 00ce 27       		.uleb128 0x27
+ 758 00cf 19       		.uleb128 0x19
+ 759 00d0 49       		.uleb128 0x49
+ 760 00d1 13       		.uleb128 0x13
+ 761 00d2 3C       		.uleb128 0x3c
+ 762 00d3 19       		.uleb128 0x19
+ 763 00d4 00       		.byte	0
+ 764 00d5 00       		.byte	0
+ 765 00d6 0E       		.uleb128 0xe
+ 766 00d7 2E       		.uleb128 0x2e
+ 767 00d8 01       		.byte	0x1
+ 768 00d9 3F       		.uleb128 0x3f
+ 769 00da 19       		.uleb128 0x19
+ 770 00db 03       		.uleb128 0x3
+ 771 00dc 0E       		.uleb128 0xe
+ 772 00dd 3A       		.uleb128 0x3a
+ 773 00de 0B       		.uleb128 0xb
+ 774 00df 3B       		.uleb128 0x3b
+ 775 00e0 0B       		.uleb128 0xb
+ 776 00e1 27       		.uleb128 0x27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 23
+
+
+ 777 00e2 19       		.uleb128 0x19
+ 778 00e3 3C       		.uleb128 0x3c
+ 779 00e4 19       		.uleb128 0x19
+ 780 00e5 00       		.byte	0
+ 781 00e6 00       		.byte	0
+ 782 00e7 0F       		.uleb128 0xf
+ 783 00e8 05       		.uleb128 0x5
+ 784 00e9 00       		.byte	0
+ 785 00ea 49       		.uleb128 0x49
+ 786 00eb 13       		.uleb128 0x13
+ 787 00ec 00       		.byte	0
+ 788 00ed 00       		.byte	0
+ 789 00ee 00       		.byte	0
+ 790              		.section	.debug_loc,"",%progbits
+ 791              	.Ldebug_loc0:
+ 792              	.LLST0:
+ 793 0000 06000000 		.4byte	.LVL0
+ 794 0004 13000000 		.4byte	.LVL1-1
+ 795 0008 0100     		.2byte	0x1
+ 796 000a 50       		.byte	0x50
+ 797 000b 00000000 		.4byte	0
+ 798 000f 00000000 		.4byte	0
+ 799              	.LLST1:
+ 800 0013 06000000 		.4byte	.LVL4
+ 801 0017 13000000 		.4byte	.LVL5-1
+ 802 001b 0100     		.2byte	0x1
+ 803 001d 50       		.byte	0x50
+ 804 001e 00000000 		.4byte	0
+ 805 0022 00000000 		.4byte	0
+ 806              	.LLST2:
+ 807 0026 10000000 		.4byte	.LVL6
+ 808 002a 1D000000 		.4byte	.LVL7-1
+ 809 002e 0100     		.2byte	0x1
+ 810 0030 50       		.byte	0x50
+ 811 0031 00000000 		.4byte	0
+ 812 0035 00000000 		.4byte	0
+ 813              	.LLST3:
+ 814 0039 06000000 		.4byte	.LVL8
+ 815 003d 1B000000 		.4byte	.LVL9-1
+ 816 0041 0100     		.2byte	0x1
+ 817 0043 50       		.byte	0x50
+ 818 0044 00000000 		.4byte	0
+ 819 0048 00000000 		.4byte	0
+ 820              	.LLST4:
+ 821 004c 10000000 		.4byte	.LVL10
+ 822 0050 1D000000 		.4byte	.LVL11-1
+ 823 0054 0100     		.2byte	0x1
+ 824 0056 50       		.byte	0x50
+ 825 0057 00000000 		.4byte	0
+ 826 005b 00000000 		.4byte	0
+ 827              		.section	.debug_aranges,"",%progbits
+ 828 0000 4C000000 		.4byte	0x4c
+ 829 0004 0200     		.2byte	0x2
+ 830 0006 00000000 		.4byte	.Ldebug_info0
+ 831 000a 04       		.byte	0x4
+ 832 000b 00       		.byte	0
+ 833 000c 0000     		.2byte	0
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 24
+
+
+ 834 000e 0000     		.2byte	0
+ 835 0010 00000000 		.4byte	.LFB0
+ 836 0014 28000000 		.4byte	.LFE0-.LFB0
+ 837 0018 00000000 		.4byte	.LFB1
+ 838 001c 18000000 		.4byte	.LFE1-.LFB1
+ 839 0020 00000000 		.4byte	.LFB2
+ 840 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 841 0028 00000000 		.4byte	.LFB4
+ 842 002c 28000000 		.4byte	.LFE4-.LFB4
+ 843 0030 00000000 		.4byte	.LFB5
+ 844 0034 28000000 		.4byte	.LFE5-.LFB5
+ 845 0038 00000000 		.4byte	.LFB6
+ 846 003c 24000000 		.4byte	.LFE6-.LFB6
+ 847 0040 00000000 		.4byte	.LFB3
+ 848 0044 3C000000 		.4byte	.LFE3-.LFB3
+ 849 0048 00000000 		.4byte	0
+ 850 004c 00000000 		.4byte	0
+ 851              		.section	.debug_ranges,"",%progbits
+ 852              	.Ldebug_ranges0:
+ 853 0000 00000000 		.4byte	.LFB0
+ 854 0004 28000000 		.4byte	.LFE0
+ 855 0008 00000000 		.4byte	.LFB1
+ 856 000c 18000000 		.4byte	.LFE1
+ 857 0010 00000000 		.4byte	.LFB2
+ 858 0014 1C000000 		.4byte	.LFE2
+ 859 0018 00000000 		.4byte	.LFB4
+ 860 001c 28000000 		.4byte	.LFE4
+ 861 0020 00000000 		.4byte	.LFB5
+ 862 0024 28000000 		.4byte	.LFE5
+ 863 0028 00000000 		.4byte	.LFB6
+ 864 002c 24000000 		.4byte	.LFE6
+ 865 0030 00000000 		.4byte	.LFB3
+ 866 0034 3C000000 		.4byte	.LFE3
+ 867 0038 00000000 		.4byte	0
+ 868 003c 00000000 		.4byte	0
+ 869              		.section	.debug_line,"",%progbits
+ 870              	.Ldebug_line0:
+ 871 0000 E3000000 		.section	.debug_str,"MS",%progbits,1
+ 871      02004F00 
+ 871      00000201 
+ 871      FB0E0D00 
+ 871      01010101 
+ 872              	.LASF7:
+ 873 0000 6C6F6E67 		.ascii	"long long int\000"
+ 873      206C6F6E 
+ 873      6720696E 
+ 873      7400
+ 874              	.LASF0:
+ 875 000e 756E7369 		.ascii	"unsigned int\000"
+ 875      676E6564 
+ 875      20696E74 
+ 875      00
+ 876              	.LASF23:
+ 877 001b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\I2S_1.c\000"
+ 877      6E657261 
+ 877      7465645F 
+ 877      536F7572 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 25
+
+
+ 877      63655C50 
+ 878              	.LASF27:
+ 879 003c 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 879      74657243 
+ 879      72697469 
+ 879      63616C53 
+ 879      65637469 
+ 880              	.LASF16:
+ 881 0053 4932535F 		.ascii	"I2S_1_Start\000"
+ 881      315F5374 
+ 881      61727400 
+ 882              	.LASF13:
+ 883 005f 75696E74 		.ascii	"uint8\000"
+ 883      3800
+ 884              	.LASF6:
+ 885 0065 6C6F6E67 		.ascii	"long unsigned int\000"
+ 885      20756E73 
+ 885      69676E65 
+ 885      6420696E 
+ 885      7400
+ 886              	.LASF8:
+ 887 0077 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 887      206C6F6E 
+ 887      6720756E 
+ 887      7369676E 
+ 887      65642069 
+ 888              	.LASF18:
+ 889 008e 656E6162 		.ascii	"enableInterrupts\000"
+ 889      6C65496E 
+ 889      74657272 
+ 889      75707473 
+ 889      00
+ 890              	.LASF26:
+ 891 009f 4932535F 		.ascii	"I2S_1_initVar\000"
+ 891      315F696E 
+ 891      69745661 
+ 891      7200
+ 892              	.LASF22:
+ 893 00ad 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 893      4320342E 
+ 893      392E3320 
+ 893      32303135 
+ 893      30333033 
+ 894 00e0 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 894      20726576 
+ 894      6973696F 
+ 894      6E203232 
+ 894      31323230 
+ 895 0113 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 895      66756E63 
+ 895      74696F6E 
+ 895      2D736563 
+ 895      74696F6E 
+ 896              	.LASF17:
+ 897 013b 4932535F 		.ascii	"I2S_1_EnableRx\000"
+ 897      315F456E 
+ 897      61626C65 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 26
+
+
+ 897      527800
+ 898              	.LASF21:
+ 899 014a 4932535F 		.ascii	"I2S_1_Stop\000"
+ 899      315F5374 
+ 899      6F7000
+ 900              	.LASF2:
+ 901 0155 756E7369 		.ascii	"unsigned char\000"
+ 901      676E6564 
+ 901      20636861 
+ 901      7200
+ 902              	.LASF10:
+ 903 0163 63686172 		.ascii	"char\000"
+ 903      00
+ 904              	.LASF5:
+ 905 0168 6C6F6E67 		.ascii	"long int\000"
+ 905      20696E74 
+ 905      00
+ 906              	.LASF12:
+ 907 0171 646F7562 		.ascii	"double\000"
+ 907      6C6500
+ 908              	.LASF20:
+ 909 0178 4932535F 		.ascii	"I2S_1_ClearRxFIFO\000"
+ 909      315F436C 
+ 909      65617252 
+ 909      78464946 
+ 909      4F00
+ 910              	.LASF15:
+ 911 018a 4932535F 		.ascii	"I2S_1_Enable\000"
+ 911      315F456E 
+ 911      61626C65 
+ 911      00
+ 912              	.LASF4:
+ 913 0197 73686F72 		.ascii	"short unsigned int\000"
+ 913      7420756E 
+ 913      7369676E 
+ 913      65642069 
+ 913      6E7400
+ 914              	.LASF1:
+ 915 01aa 7369676E 		.ascii	"signed char\000"
+ 915      65642063 
+ 915      68617200 
+ 916              	.LASF24:
+ 917 01b6 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Chip-Design\\pro"
+ 917      73657273 
+ 917      5C49616E 
+ 917      5C446F63 
+ 917      756D656E 
+ 918 01e3 6A5F6173 		.ascii	"j_asic\\psoc\\I2S\\Wave Generator.cydsn\000"
+ 918      69635C70 
+ 918      736F635C 
+ 918      4932535C 
+ 918      57617665 
+ 919              	.LASF28:
+ 920 0208 43794578 		.ascii	"CyExitCriticalSection\000"
+ 920      69744372 
+ 920      69746963 
+ 920      616C5365 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccDHrq1A.s 			page 27
+
+
+ 920      6374696F 
+ 921              	.LASF19:
+ 922 021e 4932535F 		.ascii	"I2S_1_DisableRx\000"
+ 922      315F4469 
+ 922      7361626C 
+ 922      65527800 
+ 923              	.LASF11:
+ 924 022e 666C6F61 		.ascii	"float\000"
+ 924      7400
+ 925              	.LASF3:
+ 926 0234 73686F72 		.ascii	"short int\000"
+ 926      7420696E 
+ 926      7400
+ 927              	.LASF14:
+ 928 023e 72656738 		.ascii	"reg8\000"
+ 928      00
+ 929              	.LASF9:
+ 930 0243 73697A65 		.ascii	"sizetype\000"
+ 930      74797065 
+ 930      00
+ 931              	.LASF25:
+ 932 024c 4932535F 		.ascii	"I2S_1_Init\000"
+ 932      315F496E 
+ 932      697400
+ 933              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

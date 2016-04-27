@@ -1,7 +1,7 @@
 /*******************************************************************************
 * File Name: project.h
 * 
-* PSoC Creator  3.3 SP1
+* PSoC Creator  3.3 CP2
 *
 * Description:
 * It contains references to all generated header files and should not be modified.
@@ -28,7 +28,12 @@
 #include "TxDMA_1_dma.h"
 #include "I2S_1.h"
 #include "I2S_1_PVT.h"
+#include "Pin_1_aliases.h"
+#include "Pin_1.h"
+#include "LCD.h"
 #include "UART_IntClock.h"
+#include "LCD_LCDPort_aliases.h"
+#include "LCD_LCDPort.h"
 #include "core_cm3_psoc5.h"
 #include "core_cm3.h"
 #include "CyDmac.h"

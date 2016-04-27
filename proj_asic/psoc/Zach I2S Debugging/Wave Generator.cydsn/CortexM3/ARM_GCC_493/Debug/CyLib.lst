@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
   30:.\Generated_Source\PSoC5/CyLib.c **** 
   31:.\Generated_Source\PSoC5/CyLib.c **** 
   32:.\Generated_Source\PSoC5/CyLib.c **** /* Variable Vdda */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 2
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 2
 
 
   33:.\Generated_Source\PSoC5/CyLib.c **** #if(CYDEV_VARIABLE_VDDA == 1)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
   87:.\Generated_Source\PSoC5/CyLib.c **** *
   88:.\Generated_Source\PSoC5/CyLib.c **** *******************************************************************************/
   89:.\Generated_Source\PSoC5/CyLib.c **** cystatus CyPLL_OUT_Start(uint8 wait) 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 3
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 3
 
 
   90:.\Generated_Source\PSoC5/CyLib.c **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  144:.\Generated_Source\PSoC5/CyLib.c **** *  Disables the PLL.
  145:.\Generated_Source\PSoC5/CyLib.c **** *
  146:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 4
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 4
 
 
  147:.\Generated_Source\PSoC5/CyLib.c **** *  None
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  201:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_PLL_P_REG = pDiv;
  202:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_PLL_Q_REG = ((uint8)(qDiv - 1u));
  203:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_PLL_CFG1_REG = (CY_CLK_PLL_CFG1_REG & CY_CLK_PLL_CURRENT_MASK) |
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 5
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 5
 
 
  204:.\Generated_Source\PSoC5/CyLib.c ****                                 ((uint8)(((uint8)(current - 1u)) << CY_CLK_PLL_CURRENT_POSITION));
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  258:.\Generated_Source\PSoC5/CyLib.c **** 
  259:.\Generated_Source\PSoC5/CyLib.c ****         default:
  260:.\Generated_Source\PSoC5/CyLib.c ****             CYASSERT(0u != 0u);
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 6
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 6
 
 
  261:.\Generated_Source\PSoC5/CyLib.c ****         break;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  315:.\Generated_Source\PSoC5/CyLib.c ****         while (0u == (CY_PM_FTW_INT & CyPmReadStatus(CY_PM_FTW_INT)))
  316:.\Generated_Source\PSoC5/CyLib.c ****         {
  317:.\Generated_Source\PSoC5/CyLib.c ****             /* Wait for interrupt status */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 7
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 7
 
 
  318:.\Generated_Source\PSoC5/CyLib.c ****         }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
   30              		@ link register save eliminated.
   31              	.LVL0:
  368:.\Generated_Source\PSoC5/CyLib.c ****     uint8 poweredOn = 0u;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 8
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 8
 
 
  369:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  378:.\Generated_Source\PSoC5/CyLib.c **** 
  379:.\Generated_Source\PSoC5/CyLib.c ****     return (poweredOn);
  380:.\Generated_Source\PSoC5/CyLib.c **** }
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 9
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 9
 
 
   72              		.loc 1 380 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  417:.\Generated_Source\PSoC5/CyLib.c ****     case CY_IMO_FREQ_12MHZ:
  418:.\Generated_Source\PSoC5/CyLib.c ****         CY_LIB_IMO_TR1_REG = CY_GET_XTND_REG8(CY_LIB_TRIM_IMO_12MHZ_PTR);
  419:.\Generated_Source\PSoC5/CyLib.c ****         break;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 10
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 10
 
 
  420:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  474:.\Generated_Source\PSoC5/CyLib.c **** *       CY_IMO_FREQ_USB   to set 24   MHz (Trimmed for USB operation)
  475:.\Generated_Source\PSoC5/CyLib.c **** *
  476:.\Generated_Source\PSoC5/CyLib.c **** * Return:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 11
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 11
 
 
  477:.\Generated_Source\PSoC5/CyLib.c **** *  None
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  531:.\Generated_Source\PSoC5/CyLib.c ****     case 5u:
  532:.\Generated_Source\PSoC5/CyLib.c ****         currentFreq = CY_IMO_FREQ_62MHZ;
  533:.\Generated_Source\PSoC5/CyLib.c ****         break;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 12
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 12
 
 
  534:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  588:.\Generated_Source\PSoC5/CyLib.c ****             CY_LIB_IMO_74MHZ_VALUE) & ((uint8)(~CY_LIB_IMO_USBCLK_ON_SET));
  589:.\Generated_Source\PSoC5/CyLib.c ****         break;
  590:.\Generated_Source\PSoC5/CyLib.c **** #endif  /* (CY_PSOC5) */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 13
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 13
 
 
  591:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  645:.\Generated_Source\PSoC5/CyLib.c **** *
  646:.\Generated_Source\PSoC5/CyLib.c **** *******************************************************************************/
  647:.\Generated_Source\PSoC5/CyLib.c **** void CyIMO_SetSource(uint8 source) 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 14
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 14
 
 
  648:.\Generated_Source\PSoC5/CyLib.c **** {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  702:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
  703:.\Generated_Source\PSoC5/CyLib.c **** *  None
  704:.\Generated_Source\PSoC5/CyLib.c **** *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 15
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 15
 
 
  705:.\Generated_Source\PSoC5/CyLib.c **** * Return:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  759:.\Generated_Source\PSoC5/CyLib.c **** *  uint8 divider:
  760:.\Generated_Source\PSoC5/CyLib.c **** *   The valid range is [0-255]. The clock will be divided by this value + 1.
  761:.\Generated_Source\PSoC5/CyLib.c **** *   For example to divide this parameter by two should be set to 1.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 16
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 16
 
 
  762:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  805:.\Generated_Source\PSoC5/CyLib.c ****     CY_LIB_CLKDIST_DMASK_REG  = CY_LIB_CLKDIST_DMASK_MASK;
  101              		.loc 1 805 0
  102 000a 0022     		movs	r2, #0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 17
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 17
 
 
  103 000c 0A4B     		ldr	r3, .L10+4
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  141              		.type	CyPLL_OUT_Stop, %function
  142              	CyPLL_OUT_Stop:
  143              	.LFB1:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 18
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 18
 
 
  154:.\Generated_Source\PSoC5/CyLib.c ****     CY_CLK_PLL_CFG0_REG &= ((uint8)(~CY_CLK_PLL_ENABLE));
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  193              		.section	.text.CyIMO_EnableDoubler,"ax",%progbits
  194              		.align	2
  195              		.global	CyIMO_EnableDoubler
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 19
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 19
 
 
  196              		.thumb
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  246              		.align	2
  247              		.global	CyMasterClk_SetSource
  248              		.thumb
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 20
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 20
 
 
  249              		.thumb_func
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  299              		.size	CyMasterClk_SetDivider, .-CyMasterClk_SetDivider
  300              		.section	.text.CyBusClk_SetDivider,"ax",%progbits
  301              		.align	2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 21
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 21
 
 
  302              		.global	CyBusClk_SetDivider
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  323 0008 0646     		mov	r6, r0
  324              	.LVL9:
  855:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 22
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 22
 
 
  856:.\Generated_Source\PSoC5/CyLib.c ****     /* Work around to set bus clock divider value */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  875:.\Generated_Source\PSoC5/CyLib.c ****             CyBusClk_Internal_SetDivider(divider);
  360              		.loc 1 875 0
  361 0036 2846     		mov	r0, r5
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 23
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 23
 
 
  362 0038 FFF7FEFF 		bl	CyBusClk_Internal_SetDivider
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  400              		.cfi_endproc
  401              	.LFE15:
  402              		.size	CyBusClk_SetDivider, .-CyBusClk_SetDivider
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 24
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 24
 
 
  403              		.section	.text.CyUsbClk_SetSource,"ax",%progbits
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  938:.\Generated_Source\PSoC5/CyLib.c **** *  source: One of the four available USB clock sources
  939:.\Generated_Source\PSoC5/CyLib.c **** *    CY_LIB_USB_CLK_IMO2X     - IMO 2x
  940:.\Generated_Source\PSoC5/CyLib.c **** *    CY_LIB_USB_CLK_IMO       - IMO
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 25
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 25
 
 
  941:.\Generated_Source\PSoC5/CyLib.c **** *    CY_LIB_USB_CLK_PLL       - PLL
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  965:.\Generated_Source\PSoC5/CyLib.c **** *
  966:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
  967:.\Generated_Source\PSoC5/CyLib.c **** *  None
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 26
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 26
 
 
  968:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  996:.\Generated_Source\PSoC5/CyLib.c **** *
  997:.\Generated_Source\PSoC5/CyLib.c **** * Side Effects:
  998:.\Generated_Source\PSoC5/CyLib.c **** *  PSoC5: Stopping the ILO 1 kHz could break the active WDT functionality.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 27
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 27
 
 
  999:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  496              		@ frame_needed = 0, uses_anonymous_args = 0
  497              		@ link register save eliminated.
 1024:.\Generated_Source\PSoC5/CyLib.c ****     CY_LIB_SLOWCLK_ILO_CR0_REG |= CY_LIB_SLOWCLK_ILO_CR0_EN_100KHZ;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 28
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 28
 
 
  498              		.loc 1 1024 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  532              	.L53:
  533 000c 00430040 		.word	1073758976
  534              		.cfi_endproc
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 29
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 29
 
 
  535              	.LFE20:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  582              		.loc 1 108 0
  583 0024 1820     		movs	r0, #24
  584              	.LVL29:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 30
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 30
 
 
  585 0026 FFF7FEFF 		bl	CyPmFtwSetInterval
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  629              	.L61:
   91:.\Generated_Source\PSoC5/CyLib.c **** 
  630              		.loc 1 91 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 31
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 31
 
 
  631 0062 0025     		movs	r5, #0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  679              		.cfi_offset 14, -4
  309:.\Generated_Source\PSoC5/CyLib.c ****         pmFtwCfg0Reg = CY_LIB_PM_TW_CFG0_REG;
  680              		.loc 1 309 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 32
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 32
 
 
  681 0018 0F4B     		ldr	r3, .L72+4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  727              		.cfi_restore 14
  728 0050 7047     		bx	lr
  729              	.L73:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 33
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 33
 
 
  730 0052 00BF     		.align	2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  760 000c 00430040 		.word	1073758976
  761              		.cfi_endproc
  762              	.LFE21:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 34
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 34
 
 
  763              		.size	CyILO_Enable33K, .-CyILO_Enable33K
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  794              		.thumb_func
  795              		.type	CyILO_SetSource, %function
  796              	CyILO_SetSource:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 35
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 35
 
 
  797              	.LFB23:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  825              	CyILO_SetPowerMode:
  826              	.LFB24:
 1117:.\Generated_Source\PSoC5/CyLib.c **** }
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 36
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 36
 
 
 1118:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  847 0012 03F0EF02 		and	r2, r3, #239
  848 0016 0249     		ldr	r1, .L84
  849 0018 0A70     		strb	r2, [r1]
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 37
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 37
 
 
  850              	.L83:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1186:.\Generated_Source\PSoC5/CyLib.c ****     /* Enable operation of 32K Crystal Oscillator */
 1187:.\Generated_Source\PSoC5/CyLib.c ****     CY_CLK_XTAL32_CR_REG |= CY_CLK_XTAL32_CR_EN;
 1188:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 38
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 38
 
 
 1189:.\Generated_Source\PSoC5/CyLib.c ****     for (i = 1000u; i > 0u; i--)
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  889              		.loc 1 1223 0
  890 001c 013A     		subs	r2, r2, #1
  891 001e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 39
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 39
 
 
  892 0020 03F0FC03 		and	r3, r3, #252
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1251:.\Generated_Source\PSoC5/CyLib.c **** }
  919              		.loc 1 1251 0
  920 0004 00F02000 		and	r0, r0, #32
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 40
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 40
 
 
  921 0008 7047     		bx	lr
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1290:.\Generated_Source\PSoC5/CyLib.c ****         /* High power mode */
 1291:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_XTAL32_TR_REG  = CY_CLK_XTAL32_TR_HIGH_POWER;
 1292:.\Generated_Source\PSoC5/CyLib.c ****         CyDelayUs(10u);
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 41
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 41
 
 
 1293:.\Generated_Source\PSoC5/CyLib.c ****         CY_CLK_XTAL32_CFG_REG = (CY_CLK_XTAL32_CFG_REG & ((uint8)(~CY_CLK_XTAL32_CFG_LP_MASK))) |
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  944              		.cfi_offset 4, -20
  945              		.cfi_offset 5, -16
  946              		.cfi_offset 6, -12
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 42
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 42
 
 
  947              		.cfi_offset 7, -8
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  980 002a FFF7FEFF 		bl	CyPmFtwSetInterval
  981              	.LVL57:
 1361:.\Generated_Source\PSoC5/CyLib.c ****         status = CYRET_TIMEOUT;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 43
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 43
 
 
 1362:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1012 0062 13F0800F 		tst	r3, #128
  1013 0066 0CD0     		beq	.L101
 1364:.\Generated_Source\PSoC5/CyLib.c ****         {
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 44
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 44
 
 
  1014              		.loc 1 1364 0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1051              	.L93:
 1398:.\Generated_Source\PSoC5/CyLib.c ****     }
 1399:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 45
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 45
 
 
 1400:.\Generated_Source\PSoC5/CyLib.c ****     return(status);
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1084 0004 03F0FE03 		and	r3, r3, #254
  1085 0008 1370     		strb	r3, [r2]
  1086 000a 7047     		bx	lr
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 46
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 46
 
 
  1087              	.L107:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1119              		.size	CyXTAL_EnableErrStatus, .-CyXTAL_EnableErrStatus
  1120              		.section	.text.CyXTAL_DisableErrStatus,"ax",%progbits
  1121              		.align	2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 47
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 47
 
 
  1122              		.global	CyXTAL_DisableErrStatus
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1466:.\Generated_Source\PSoC5/CyLib.c **** }
 1467:.\Generated_Source\PSoC5/CyLib.c **** 
 1468:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 48
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 48
 
 
 1469:.\Generated_Source\PSoC5/CyLib.c **** /*******************************************************************************
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1183              	CyXTAL_EnableFaultRecovery:
  1184              	.LFB34:
 1494:.\Generated_Source\PSoC5/CyLib.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 49
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 49
 
 
 1495:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1523:.\Generated_Source\PSoC5/CyLib.c **** * Summary:
 1524:.\Generated_Source\PSoC5/CyLib.c **** *  Disables the fault recovery circuit which will switch to the IMO in the case
 1525:.\Generated_Source\PSoC5/CyLib.c **** *  of a fault in the megahertz crystal circuit. This function is not available
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 50
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 50
 
 
 1526:.\Generated_Source\PSoC5/CyLib.c **** *  for PSoC5.
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1554:.\Generated_Source\PSoC5/CyLib.c **** *   The value is dependent on the frequency and quality of the crystal being used.
 1555:.\Generated_Source\PSoC5/CyLib.c **** *   Refer to the device TRM and datasheet for more information.
 1556:.\Generated_Source\PSoC5/CyLib.c **** *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 51
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 51
 
 
 1557:.\Generated_Source\PSoC5/CyLib.c **** * Return:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1581:.\Generated_Source\PSoC5/CyLib.c **** * Return:
 1582:.\Generated_Source\PSoC5/CyLib.c **** *  None
 1583:.\Generated_Source\PSoC5/CyLib.c **** *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 52
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 52
 
 
 1584:.\Generated_Source\PSoC5/CyLib.c **** *******************************************************************************/
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1608:.\Generated_Source\PSoC5/CyLib.c **** void CyXTAL_SetWdVoltage(uint8 setting) 
 1609:.\Generated_Source\PSoC5/CyLib.c **** {
  1297              		.loc 1 1609 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 53
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 53
 
 
  1298              		.cfi_startproc
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1330              		.loc 1 1630 0
  1331              		.cfi_startproc
  1332              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 54
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 54
 
 
  1333              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1375 0014 FFF7FEFF 		bl	CyHalt
  1376              	.LVL73:
  1377              	.L136:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 55
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 55
 
 
  196:.\Generated_Source\PSoC5/CyLib.c ****        (qDiv    <= CY_CLK_PLL_MAX_Q_VALUE  ) && (qDiv    >= CY_CLK_PLL_MIN_Q_VALUE  ) &&
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1421 0058 22420040 		.word	1073758754
  1422 005c 21420040 		.word	1073758753
  1423              		.cfi_endproc
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 56
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 56
 
 
  1424              	.LFE2:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1471 002e 10BD     		pop	{r4, pc}
  1472              	.L149:
  1473              		.align	2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 57
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 57
 
 
  1474              	.L148:
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1523              	.L153:
  410:.\Generated_Source\PSoC5/CyLib.c ****         break;
  1524              		.loc 1 410 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 58
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 58
 
 
  1525 0028 1F4B     		ldr	r3, .L164+4
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1569              		.loc 1 430 0
  1570 0064 164B     		ldr	r3, .L164+28
  1571 0066 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 59
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 59
 
 
  1572 0068 DBB2     		uxtb	r3, r3
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1619 00b8 0B010049 		.word	1224737035
  1620 00bc 89010049 		.word	1224737161
  1621 00c0 0C010049 		.word	1224737036
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 60
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 60
 
 
  1622 00c4 0D010049 		.word	1224737037
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1672 0024 0D       		.byte	(.L171-.L170)/2
  1673 0025 00       		.p2align 1
  1674              	.L169:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 61
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 61
 
 
  512:.\Generated_Source\PSoC5/CyLib.c ****         break;
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1720 0052 3B       		.byte	(.L184-.L177)/2
  1721 0053 00       		.p2align 1
  1722              	.L176:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 62
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 62
 
 
  556:.\Generated_Source\PSoC5/CyLib.c ****             CY_LIB_IMO_3MHZ_VALUE) & ((uint8)(~CY_LIB_IMO_USBCLK_ON_SET));
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  581:.\Generated_Source\PSoC5/CyLib.c ****             CY_LIB_IMO_62MHZ_VALUE) & ((uint8)(~CY_LIB_IMO_USBCLK_ON_SET));
  1767              		.loc 1 581 0
  1768 00a0 134A     		ldr	r2, .L191
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 63
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 63
 
 
  1769 00a2 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1813 00e6 02D9     		bls	.L166
  615:.\Generated_Source\PSoC5/CyLib.c ****     }
  1814              		.loc 1 615 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 64
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 64
 
 
  1815 00e8 3046     		mov	r0, r6
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  657:.\Generated_Source\PSoC5/CyLib.c ****         CY_LIB_FASTCLK_IMO_CR_REG |= CY_LIB_FASTCLK_IMO_IMO;
  1864              		.loc 1 657 0
  1865 0026 4FF04022 		mov	r2, #1073758208
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 65
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 65
 
 
  1866 002a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1649:.\Generated_Source\PSoC5/CyLib.c **** *
 1650:.\Generated_Source\PSoC5/CyLib.c **** * Summary:
 1651:.\Generated_Source\PSoC5/CyLib.c **** *  Forces a device software reset.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 66
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 66
 
 
 1652:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1680:.\Generated_Source\PSoC5/CyLib.c **** *  milliseconds: number of milliseconds to delay.
 1681:.\Generated_Source\PSoC5/CyLib.c **** *
 1682:.\Generated_Source\PSoC5/CyLib.c **** * Return:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 67
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 67
 
 
 1683:.\Generated_Source\PSoC5/CyLib.c **** *   None
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1969 0028 00000000 		.word	.LANCHOR0
  1970              		.cfi_endproc
  1971              	.LFE41:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 68
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 68
 
 
  1972              		.size	CyDelay, .-CyDelay
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  1988              		.cfi_offset 3, -8
  1989              		.cfi_offset 14, -4
 1737:.\Generated_Source\PSoC5/CyLib.c ****         CyDelayCycles((uint32)microseconds * cydelay_freq_mhz);
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 69
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 69
 
 
  1990              		.loc 1 1737 0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1281:.\Generated_Source\PSoC5/CyLib.c ****         CyDelayUs(10u);
  2040              		.loc 1 1281 0
  2041 001c 0122     		movs	r2, #1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 70
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 70
 
 
  2042 001e 03F28E33 		addw	r3, r3, #910
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1299:.\Generated_Source\PSoC5/CyLib.c **** 
  2088              		.loc 1 1299 0
  2089 006e 2046     		mov	r0, r4
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 71
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 71
 
 
  2090 0070 10BD     		pop	{r4, pc}
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2138              		.loc 1 1189 0
  2139 002a 4FF47A73 		mov	r3, #1000
  2140 002e ADF80630 		strh	r3, [sp, #6]	@ movhi
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 72
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 72
 
 
  2141 0032 11E0     		b	.L225
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2188              		.thumb_func
  2189              		.type	CyDelayFreq, %function
  2190              	CyDelayFreq:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 73
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 73
 
 
  2191              	.LFB43:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2214 0016 02F23F22 		addw	r2, r2, #575
  2215 001a 0A48     		ldr	r0, .L235+8
  2216              	.LVL123:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 74
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 74
 
 
  2217 001c A0FB0202 		umull	r0, r2, r0, r2
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1792:.\Generated_Source\PSoC5/CyLib.c **** *  WDT cannot be disabled after it is enabled, the WDT timeout period can be
 1793:.\Generated_Source\PSoC5/CyLib.c **** *  set to be greater than the sleep wakeup period, then feed the dog on each
 1794:.\Generated_Source\PSoC5/CyLib.c **** *  wakeup from Sleep.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 75
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 75
 
 
 1795:.\Generated_Source\PSoC5/CyLib.c **** *
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2269 001e 1A70     		strb	r2, [r3]
 1828:.\Generated_Source\PSoC5/CyLib.c **** 
 1829:.\Generated_Source\PSoC5/CyLib.c ****     /* Setting low power mode */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 76
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 76
 
 
 1830:.\Generated_Source\PSoC5/CyLib.c ****     CY_WDT_CFG_REG = (((uint8)(lpMode << CY_WDT_CFG_LPMODE_SHIFT)) & CY_WDT_CFG_LPMODE_MASK) |
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1853:.\Generated_Source\PSoC5/CyLib.c **** {
  2300              		.loc 1 1853 0
  2301              		.cfi_startproc
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 77
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 77
 
 
  2302              		@ args = 0, pretend = 0, frame = 0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2328              		@ frame_needed = 0, uses_anonymous_args = 0
  2329              	.LVL127:
  2330 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 78
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 78
 
 
  2331              		.cfi_def_cfa_offset 8
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2368 0036 0A4A     		ldr	r2, .L247+4
  2369 0038 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  2370 003a 43F04003 		orr	r3, r3, #64
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 79
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 79
 
 
  2371 003e 1370     		strb	r3, [r2]
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1917:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
 1918:.\Generated_Source\PSoC5/CyLib.c **** *  reset: The option to reset the device at a specified Vdda threshold:
 1919:.\Generated_Source\PSoC5/CyLib.c **** *           0 - Device is not reset.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 80
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 80
 
 
 1920:.\Generated_Source\PSoC5/CyLib.c **** *           1 - Device is reset.
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 1940:.\Generated_Source\PSoC5/CyLib.c ****     CyDelayUs(1u);
  2440              		.loc 1 1940 0
  2441 002e FFF7FEFF 		bl	CyDelayUs
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 81
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 81
 
 
  2442              	.LVL134:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2482              		.thumb
  2483              		.thumb_func
  2484              		.type	CyVdLvDigitDisable, %function
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 82
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 82
 
 
  2485              	CyVdLvDigitDisable:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2510              	.L258:
  2511              		.align	2
  2512              	.L257:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 83
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 83
 
 
  2513 0020 F5460040 		.word	1073759989
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2543 0014 034B     		ldr	r3, .L261+4
  2544 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  2545 0018 13F0070F 		tst	r3, #7
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 84
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 84
 
 
  2546 001c FAD1     		bne	.L260
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2576 0006 1C60     		str	r4, [r3]
 2032:.\Generated_Source\PSoC5/CyLib.c **** 
 2033:.\Generated_Source\PSoC5/CyLib.c ****     CY_VD_PRES_CONTROL_REG &= ((uint8)(~CY_VD_PRESA_EN));
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 85
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 85
 
 
  2577              		.loc 1 2033 0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 2046:.\Generated_Source\PSoC5/CyLib.c **** 
 2047:.\Generated_Source\PSoC5/CyLib.c **** /*******************************************************************************
 2048:.\Generated_Source\PSoC5/CyLib.c **** * Function Name: CyVdHvAnalogDisable
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 86
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 86
 
 
 2049:.\Generated_Source\PSoC5/CyLib.c **** ********************************************************************************
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 2077:.\Generated_Source\PSoC5/CyLib.c **** * Parameters:
 2078:.\Generated_Source\PSoC5/CyLib.c **** *  mask: Bits in the shadow register to clear.
 2079:.\Generated_Source\PSoC5/CyLib.c **** *   Define                  Definition
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 87
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 87
 
 
 2080:.\Generated_Source\PSoC5/CyLib.c **** *   CY_VD_LVID            Persistent status of digital LVI.
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 2101:.\Generated_Source\PSoC5/CyLib.c **** ********************************************************************************
 2102:.\Generated_Source\PSoC5/CyLib.c **** *
 2103:.\Generated_Source\PSoC5/CyLib.c **** * Summary:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 88
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 88
 
 
 2104:.\Generated_Source\PSoC5/CyLib.c **** *  Returns the real time voltage detection status.
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2708              		.section	.text.CyDisableInts,"ax",%progbits
  2709              		.align	2
  2710              		.global	CyDisableInts
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 89
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 89
 
 
  2711              		.thumb
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 2166:.\Generated_Source\PSoC5/CyLib.c ****     #else
 2167:.\Generated_Source\PSoC5/CyLib.c **** 
 2168:.\Generated_Source\PSoC5/CyLib.c ****         /* Get the current interrupt state. */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 90
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 90
 
 
 2169:.\Generated_Source\PSoC5/CyLib.c ****         intState = CY_GET_REG32(CY_INT_CLEAR_PTR);
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 2194:.\Generated_Source\PSoC5/CyLib.c **** *
 2195:.\Generated_Source\PSoC5/CyLib.c **** *******************************************************************************/
 2196:.\Generated_Source\PSoC5/CyLib.c **** void CyEnableInts(uint32 mask) 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 91
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 91
 
 
 2197:.\Generated_Source\PSoC5/CyLib.c **** {
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2789              		.type	CyFlushCache, %function
  2790              	CyFlushCache:
  2791              	.LFB56:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 92
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 92
 
 
 2218:.\Generated_Source\PSoC5/CyLib.c **** 
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2817              	@ 0 "" 2
 2247:.\Generated_Source\PSoC5/CyLib.c ****         CY_NOP;
  2818              		.loc 1 2247 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 93
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 93
 
 
  2819              	@ 2247 ".\Generated_Source\PSoC5\CyLib.c" 1
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2864              	@ 2256 ".\Generated_Source\PSoC5\CyLib.c" 1
  2865 001e 00BF     		NOP
  2866              	
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 94
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 94
 
 
  2867              	@ 0 "" 2
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 2273:.\Generated_Source\PSoC5/CyLib.c ****         CY_NOP;
  2905              		.loc 1 2273 0
  2906              	@ 2273 ".\Generated_Source\PSoC5\CyLib.c" 1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 95
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 95
 
 
  2907 0038 00BF     		NOP
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  2952 004a 00BF     		NOP
  2953              	
  2954              	@ 0 "" 2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 96
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 96
 
 
 2283:.\Generated_Source\PSoC5/CyLib.c ****         CY_NOP;
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 2302:.\Generated_Source\PSoC5/CyLib.c ****        address: Pointer to an interrupt service routine.
 2303:.\Generated_Source\PSoC5/CyLib.c ****     *
 2304:.\Generated_Source\PSoC5/CyLib.c ****     * Return:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 97
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 97
 
 
 2305:.\Generated_Source\PSoC5/CyLib.c ****     *   The old ISR vector at this location.
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3026 0022 00BF     		.align	2
  3027              	.L292:
  3028 0024 08ED00E0 		.word	-536810232
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 98
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 98
 
 
  3029              		.cfi_endproc
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3061              	.LVL161:
  3062 000e FFF7FEFF 		bl	CyHalt
  3063              	.LVL162:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 99
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 99
 
 
  3064              	.L295:
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3096              		.cfi_offset 14, -4
  3097 0002 0446     		mov	r4, r0
  3098 0004 0E46     		mov	r6, r1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 100
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 100
 
 
 2367:.\Generated_Source\PSoC5/CyLib.c ****         cyisraddress oldIsr;
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
 2383:.\Generated_Source\PSoC5/CyLib.c ****     * Function Name: CyIntGetVector
 2384:.\Generated_Source\PSoC5/CyLib.c ****     ********************************************************************************
 2385:.\Generated_Source\PSoC5/CyLib.c ****     *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 101
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 101
 
 
 2386:.\Generated_Source\PSoC5/CyLib.c ****     * Summary:
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3174              	.LFE60:
  3175              		.size	CyIntGetVector, .-CyIntGetVector
  3176              		.section	.text.CyIntSetPriority,"ax",%progbits
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 102
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 102
 
 
  3177              		.align	2
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3210 0014 0020     		movs	r0, #0
  3211 0016 FFF7FEFF 		bl	CyHalt
  3212              	.LVL178:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 103
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 103
 
 
  3213              	.L311:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3244 0004 1F28     		cmp	r0, #31
  3245 0006 02D9     		bls	.L314
  3246              		.loc 1 2446 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 104
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 104
 
 
  3247 0008 0020     		movs	r0, #0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3278 0000 10B5     		push	{r4, lr}
  3279              		.cfi_def_cfa_offset 8
  3280              		.cfi_offset 4, -8
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 105
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 105
 
 
  3281              		.cfi_offset 14, -4
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3325              	cydelay_freq_mhz:
  3326 0008 18       		.byte	24
  3327 0009 000000   		.space	3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 106
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 106
 
 
  3328              		.type	cydelay_freq_hz, %object
@@ -6322,10 +6322,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3346 0006 00000000 		.4byte	.Ldebug_abbrev0
  3347 000a 04       		.byte	0x4
  3348 000b 01       		.uleb128 0x1
- 3349 000c 1E070000 		.4byte	.LASF135
+ 3349 000c 3E070000 		.4byte	.LASF135
  3350 0010 01       		.byte	0x1
- 3351 0011 92040000 		.4byte	.LASF136
- 3352 0015 1F020000 		.4byte	.LASF137
+ 3351 0011 51040000 		.4byte	.LASF136
+ 3352 0015 A4050000 		.4byte	.LASF137
  3353 0019 00000000 		.4byte	.Ldebug_ranges0+0
  3354 001d 00000000 		.4byte	0
  3355 0021 00000000 		.4byte	.Ldebug_line0
@@ -6336,7 +6336,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3360 002c 03       		.uleb128 0x3
  3361 002d 04       		.byte	0x4
  3362 002e 07       		.byte	0x7
- 3363 002f 60020000 		.4byte	.LASF0
+ 3363 002f 1F020000 		.4byte	.LASF0
  3364 0033 03       		.uleb128 0x3
  3365 0034 01       		.byte	0x1
  3366 0035 06       		.byte	0x6
@@ -6344,26 +6344,26 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3368 003a 03       		.uleb128 0x3
  3369 003b 01       		.byte	0x1
  3370 003c 08       		.byte	0x8
- 3371 003d 8C050000 		.4byte	.LASF2
+ 3371 003d 4B050000 		.4byte	.LASF2
  3372 0041 03       		.uleb128 0x3
  3373 0042 02       		.byte	0x2
  3374 0043 05       		.byte	0x5
- 3375 0044 A8050000 		.4byte	.LASF3
+ 3375 0044 67050000 		.4byte	.LASF3
  3376 0048 03       		.uleb128 0x3
  3377 0049 02       		.byte	0x2
  3378 004a 07       		.byte	0x7
- 3379 004b 08030000 		.4byte	.LASF4
+ 3379 004b C7020000 		.4byte	.LASF4
  3380 004f 03       		.uleb128 0x3
  3381 0050 04       		.byte	0x4
  3382 0051 05       		.byte	0x5
  3383 0052 6A010000 		.4byte	.LASF5
  3384 0056 03       		.uleb128 0x3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 107
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 107
 
 
  3385 0057 04       		.byte	0x4
  3386 0058 07       		.byte	0x7
- 3387 0059 9A020000 		.4byte	.LASF6
+ 3387 0059 59020000 		.4byte	.LASF6
  3388 005d 03       		.uleb128 0x3
  3389 005e 08       		.byte	0x8
  3390 005f 05       		.byte	0x5
@@ -6375,7 +6375,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3396 006b 03       		.uleb128 0x3
  3397 006c 04       		.byte	0x4
  3398 006d 07       		.byte	0x7
- 3399 006e 1E040000 		.4byte	.LASF9
+ 3399 006e DD030000 		.4byte	.LASF9
  3400 0072 04       		.uleb128 0x4
  3401 0073 04       		.byte	0x4
  3402 0074 78000000 		.4byte	0x78
@@ -6383,7 +6383,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3404 0079 03       		.uleb128 0x3
  3405 007a 01       		.byte	0x1
  3406 007b 08       		.byte	0x8
- 3407 007c 4C060000 		.4byte	.LASF10
+ 3407 007c 6C060000 		.4byte	.LASF10
  3408 0080 06       		.uleb128 0x6
  3409 0081 8D010000 		.4byte	.LASF11
  3410 0085 02       		.byte	0x2
@@ -6402,23 +6402,23 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3423 00a1 03       		.uleb128 0x3
  3424 00a2 04       		.byte	0x4
  3425 00a3 04       		.byte	0x4
- 3426 00a4 D2040000 		.4byte	.LASF14
+ 3426 00a4 91040000 		.4byte	.LASF14
  3427 00a8 03       		.uleb128 0x3
  3428 00a9 08       		.byte	0x8
  3429 00aa 04       		.byte	0x4
  3430 00ab AD010000 		.4byte	.LASF15
  3431 00af 06       		.uleb128 0x6
- 3432 00b0 FB070000 		.4byte	.LASF16
+ 3432 00b0 1B080000 		.4byte	.LASF16
  3433 00b4 02       		.byte	0x2
  3434 00b5 E8       		.byte	0xe8
  3435 00b6 56000000 		.4byte	0x56
  3436 00ba 06       		.uleb128 0x6
- 3437 00bb 62050000 		.4byte	.LASF17
+ 3437 00bb 21050000 		.4byte	.LASF17
  3438 00bf 02       		.byte	0x2
  3439 00c0 F0       		.byte	0xf0
  3440 00c1 C5000000 		.4byte	0xc5
  3441 00c5 07       		.uleb128 0x7
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 108
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 108
 
 
  3442 00c6 80000000 		.4byte	0x80
@@ -6430,19 +6430,19 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3448 00d5 07       		.uleb128 0x7
  3449 00d6 8B000000 		.4byte	0x8b
  3450 00da 06       		.uleb128 0x6
- 3451 00db EE030000 		.4byte	.LASF19
+ 3451 00db AD030000 		.4byte	.LASF19
  3452 00df 02       		.byte	0x2
  3453 00e0 F2       		.byte	0xf2
  3454 00e1 E5000000 		.4byte	0xe5
  3455 00e5 07       		.uleb128 0x7
  3456 00e6 96000000 		.4byte	0x96
  3457 00ea 08       		.uleb128 0x8
- 3458 00eb 56060000 		.4byte	.LASF20
+ 3458 00eb 76060000 		.4byte	.LASF20
  3459 00ef 02       		.byte	0x2
  3460 00f0 0201     		.2byte	0x102
  3461 00f2 72000000 		.4byte	0x72
  3462 00f6 09       		.uleb128 0x9
- 3463 00f7 87020000 		.4byte	.LASF138
+ 3463 00f7 46020000 		.4byte	.LASF138
  3464 00fb 01       		.byte	0x1
  3465 00fc 6E01     		.2byte	0x16e
  3466 00fe 80000000 		.4byte	0x80
@@ -6452,14 +6452,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3470 010b 9C       		.byte	0x9c
  3471 010c 21010000 		.4byte	0x121
  3472 0110 0A       		.uleb128 0xa
- 3473 0111 EE050000 		.4byte	.LASF30
+ 3473 0111 0E060000 		.4byte	.LASF30
  3474 0115 01       		.byte	0x1
  3475 0116 7001     		.2byte	0x170
  3476 0118 80000000 		.4byte	0x80
  3477 011c 00000000 		.4byte	.LLST0
  3478 0120 00       		.byte	0
  3479 0121 0B       		.uleb128 0xb
- 3480 0122 B2030000 		.4byte	.LASF79
+ 3480 0122 71030000 		.4byte	.LASF79
  3481 0126 01       		.byte	0x1
  3482 0127 2103     		.2byte	0x321
  3483 0129 00000000 		.4byte	.LFB14
@@ -6468,17 +6468,17 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3486 0132 9C       		.byte	0x9c
  3487 0133 48010000 		.4byte	0x148
  3488 0137 0C       		.uleb128 0xc
- 3489 0138 F3070000 		.4byte	.LASF25
+ 3489 0138 13080000 		.4byte	.LASF25
  3490 013c 01       		.byte	0x1
  3491 013d 2103     		.2byte	0x321
  3492 013f 8B000000 		.4byte	0x8b
  3493 0143 1F000000 		.4byte	.LLST1
  3494 0147 00       		.byte	0
  3495 0148 0D       		.uleb128 0xd
- 3496 0149 47040000 		.4byte	.LASF21
+ 3496 0149 06040000 		.4byte	.LASF21
  3497 014d 01       		.byte	0x1
  3498 014e 99       		.byte	0x99
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 109
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 109
 
 
  3499 014f 00000000 		.4byte	.LFB1
@@ -6486,7 +6486,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3501 0157 01       		.uleb128 0x1
  3502 0158 9C       		.byte	0x9c
  3503 0159 0E       		.uleb128 0xe
- 3504 015a FD020000 		.4byte	.LASF22
+ 3504 015a BC020000 		.4byte	.LASF22
  3505 015e 01       		.byte	0x1
  3506 015f 5901     		.2byte	0x159
  3507 0161 00000000 		.4byte	.LFB5
@@ -6502,7 +6502,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3517 017b 01       		.uleb128 0x1
  3518 017c 9C       		.byte	0x9c
  3519 017d 0E       		.uleb128 0xe
- 3520 017e 63060000 		.4byte	.LASF24
+ 3520 017e 83060000 		.4byte	.LASF24
  3521 0182 01       		.byte	0x1
  3522 0183 C502     		.2byte	0x2c5
  3523 0185 00000000 		.4byte	.LFB11
@@ -6510,7 +6510,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3525 018d 01       		.uleb128 0x1
  3526 018e 9C       		.byte	0x9c
  3527 018f 0F       		.uleb128 0xf
- 3528 0190 49030000 		.4byte	.LASF27
+ 3528 0190 08030000 		.4byte	.LASF27
  3529 0194 01       		.byte	0x1
  3530 0195 E802     		.2byte	0x2e8
  3531 0197 00000000 		.4byte	.LFB12
@@ -6519,14 +6519,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3534 01a0 9C       		.byte	0x9c
  3535 01a1 B6010000 		.4byte	0x1b6
  3536 01a5 0C       		.uleb128 0xc
- 3537 01a6 17040000 		.4byte	.LASF26
+ 3537 01a6 D6030000 		.4byte	.LASF26
  3538 01aa 01       		.byte	0x1
  3539 01ab E802     		.2byte	0x2e8
  3540 01ad 80000000 		.4byte	0x80
  3541 01b1 40000000 		.4byte	.LLST2
  3542 01b5 00       		.byte	0
  3543 01b6 0F       		.uleb128 0xf
- 3544 01b7 B3040000 		.4byte	.LASF28
+ 3544 01b7 72040000 		.4byte	.LASF28
  3545 01bb 01       		.byte	0x1
  3546 01bc 0B03     		.2byte	0x30b
  3547 01be 00000000 		.4byte	.LFB13
@@ -6535,10 +6535,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3550 01c7 9C       		.byte	0x9c
  3551 01c8 DB010000 		.4byte	0x1db
  3552 01cc 10       		.uleb128 0x10
- 3553 01cd F3070000 		.4byte	.LASF25
+ 3553 01cd 13080000 		.4byte	.LASF25
  3554 01d1 01       		.byte	0x1
  3555 01d2 0B03     		.2byte	0x30b
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 110
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 110
 
 
  3556 01d4 80000000 		.4byte	0x80
@@ -6546,7 +6546,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3558 01d9 50       		.byte	0x50
  3559 01da 00       		.byte	0
  3560 01db 0F       		.uleb128 0xf
- 3561 01dc E7060000 		.4byte	.LASF29
+ 3561 01dc 07070000 		.4byte	.LASF29
  3562 01e0 01       		.byte	0x1
  3563 01e1 5003     		.2byte	0x350
  3564 01e3 00000000 		.4byte	.LFB15
@@ -6555,19 +6555,19 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3567 01ec 9C       		.byte	0x9c
  3568 01ed AE020000 		.4byte	0x2ae
  3569 01f1 0C       		.uleb128 0xc
- 3570 01f2 F3070000 		.4byte	.LASF25
+ 3570 01f2 13080000 		.4byte	.LASF25
  3571 01f6 01       		.byte	0x1
  3572 01f7 5003     		.2byte	0x350
  3573 01f9 8B000000 		.4byte	0x8b
  3574 01fd 61000000 		.4byte	.LLST3
  3575 0201 0A       		.uleb128 0xa
- 3576 0202 55050000 		.4byte	.LASF31
+ 3576 0202 14050000 		.4byte	.LASF31
  3577 0206 01       		.byte	0x1
  3578 0207 5203     		.2byte	0x352
  3579 0209 80000000 		.4byte	0x80
  3580 020d 82000000 		.4byte	.LLST4
  3581 0211 0A       		.uleb128 0xa
- 3582 0212 7D020000 		.4byte	.LASF32
+ 3582 0212 3C020000 		.4byte	.LASF32
  3583 0216 01       		.byte	0x1
  3584 0217 5303     		.2byte	0x353
  3585 0219 8B000000 		.4byte	0x8b
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3610 025a 13       		.uleb128 0x13
  3611 025b 01       		.uleb128 0x1
  3612 025c 50       		.byte	0x50
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 111
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 111
 
 
  3613 025d 02       		.uleb128 0x2
@@ -6650,7 +6650,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3659 02ac 00       		.byte	0
  3660 02ad 00       		.byte	0
  3661 02ae 0F       		.uleb128 0xf
- 3662 02af B1060000 		.4byte	.LASF34
+ 3662 02af D1060000 		.4byte	.LASF34
  3663 02b3 01       		.byte	0x1
  3664 02b4 B403     		.2byte	0x3b4
  3665 02b6 00000000 		.4byte	.LFB16
@@ -6658,11 +6658,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3667 02be 01       		.uleb128 0x1
  3668 02bf 9C       		.byte	0x9c
  3669 02c0 D5020000 		.4byte	0x2d5
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 112
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 112
 
 
  3670 02c4 0C       		.uleb128 0xc
- 3671 02c5 17040000 		.4byte	.LASF26
+ 3671 02c5 D6030000 		.4byte	.LASF26
  3672 02c9 01       		.byte	0x1
  3673 02ca B403     		.2byte	0x3b4
  3674 02cc 80000000 		.4byte	0x80
@@ -6685,7 +6685,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3691 02f7 01       		.uleb128 0x1
  3692 02f8 9C       		.byte	0x9c
  3693 02f9 0E       		.uleb128 0xe
- 3694 02fa 69040000 		.4byte	.LASF37
+ 3694 02fa 28040000 		.4byte	.LASF37
  3695 02fe 01       		.byte	0x1
  3696 02ff FE03     		.2byte	0x3fe
  3697 0301 00000000 		.4byte	.LFB19
@@ -6717,8 +6717,8 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3723 033d 80000000 		.4byte	0x80
  3724 0341 F6000000 		.4byte	.LLST8
  3725 0345 17       		.uleb128 0x17
- 3726 0346 17070000 		.4byte	.LASF40
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 113
+ 3726 0346 37070000 		.4byte	.LASF40
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 113
 
 
  3727 034a 01       		.byte	0x1
@@ -6726,7 +6726,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3729 034c AF000000 		.4byte	0xaf
  3730 0350 30010000 		.4byte	.LLST9
  3731 0354 17       		.uleb128 0x17
- 3732 0355 B2050000 		.4byte	.LASF41
+ 3732 0355 71050000 		.4byte	.LASF41
  3733 0359 01       		.byte	0x1
  3734 035a 5D       		.byte	0x5d
  3735 035b 80000000 		.4byte	0x80
@@ -6738,7 +6738,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3741 036a 80000000 		.4byte	0x80
  3742 036e 90010000 		.4byte	.LLST11
  3743 0372 17       		.uleb128 0x17
- 3744 0373 9A050000 		.4byte	.LASF43
+ 3744 0373 59050000 		.4byte	.LASF43
  3745 0377 01       		.byte	0x1
  3746 0378 5F       		.byte	0x5f
  3747 0379 80000000 		.4byte	0x80
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3781 03c3 37040000 		.4byte	0x437
  3782 03c7 0C       		.uleb128 0xc
  3783 03c8 5F010000 		.4byte	.LASF39
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 114
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 114
 
 
  3784 03cc 01       		.byte	0x1
@@ -6786,13 +6786,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3786 03cf 80000000 		.4byte	0x80
  3787 03d3 B6010000 		.4byte	.LLST13
  3788 03d7 0A       		.uleb128 0xa
- 3789 03d8 2F060000 		.4byte	.LASF45
+ 3789 03d8 4F060000 		.4byte	.LASF45
  3790 03dc 01       		.byte	0x1
  3791 03dd 2A01     		.2byte	0x12a
  3792 03df 80000000 		.4byte	0x80
  3793 03e3 E2010000 		.4byte	.LLST14
  3794 03e7 0A       		.uleb128 0xa
- 3795 03e8 0C080000 		.4byte	.LASF46
+ 3795 03e8 2C080000 		.4byte	.LASF46
  3796 03ec 01       		.byte	0x1
  3797 03ed 2B01     		.2byte	0x12b
  3798 03ef 80000000 		.4byte	0x80
@@ -6828,7 +6828,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3828 0432 0B030000 		.4byte	0x30b
  3829 0436 00       		.byte	0
  3830 0437 0E       		.uleb128 0xe
- 3831 0438 08050000 		.4byte	.LASF48
+ 3831 0438 C7040000 		.4byte	.LASF48
  3832 043c 01       		.byte	0x1
  3833 043d 2904     		.2byte	0x429
  3834 043f 00000000 		.4byte	.LFB21
@@ -6836,9 +6836,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3836 0447 01       		.uleb128 0x1
  3837 0448 9C       		.byte	0x9c
  3838 0449 0E       		.uleb128 0xe
- 3839 044a 34050000 		.4byte	.LASF49
+ 3839 044a F3040000 		.4byte	.LASF49
  3840 044e 01       		.byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 115
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 115
 
 
  3841 044f 4104     		.2byte	0x441
@@ -6847,7 +6847,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3844 0459 01       		.uleb128 0x1
  3845 045a 9C       		.byte	0x9c
  3846 045b 0F       		.uleb128 0xf
- 3847 045c AC070000 		.4byte	.LASF50
+ 3847 045c CC070000 		.4byte	.LASF50
  3848 0460 01       		.byte	0x1
  3849 0461 5904     		.2byte	0x459
  3850 0463 00000000 		.4byte	.LFB23
@@ -6856,14 +6856,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3853 046c 9C       		.byte	0x9c
  3854 046d 82040000 		.4byte	0x482
  3855 0471 0C       		.uleb128 0xc
- 3856 0472 17040000 		.4byte	.LASF26
+ 3856 0472 D6030000 		.4byte	.LASF26
  3857 0476 01       		.byte	0x1
  3858 0477 5904     		.2byte	0x459
  3859 0479 80000000 		.4byte	0x80
  3860 047d 1B020000 		.4byte	.LLST17
  3861 0481 00       		.byte	0
  3862 0482 18       		.uleb128 0x18
- 3863 0483 EA020000 		.4byte	.LASF52
+ 3863 0483 A9020000 		.4byte	.LASF52
  3864 0487 01       		.byte	0x1
  3865 0488 7104     		.2byte	0x471
  3866 048a 80000000 		.4byte	0x80
@@ -6873,7 +6873,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3870 0497 9C       		.byte	0x9c
  3871 0498 BB040000 		.4byte	0x4bb
  3872 049c 0C       		.uleb128 0xc
- 3873 049d 51060000 		.4byte	.LASF53
+ 3873 049d 71060000 		.4byte	.LASF53
  3874 04a1 01       		.byte	0x1
  3875 04a2 7104     		.2byte	0x471
  3876 04a4 80000000 		.4byte	0x80
@@ -6887,7 +6887,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3884 04b9 53       		.byte	0x53
  3885 04ba 00       		.byte	0
  3886 04bb 0E       		.uleb128 0xe
- 3887 04bc D8020000 		.4byte	.LASF55
+ 3887 04bc 97020000 		.4byte	.LASF55
  3888 04c0 01       		.byte	0x1
  3889 04c1 C104     		.2byte	0x4c1
  3890 04c3 00000000 		.4byte	.LFB26
@@ -6895,10 +6895,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3892 04cb 01       		.uleb128 0x1
  3893 04cc 9C       		.byte	0x9c
  3894 04cd 1A       		.uleb128 0x1a
- 3895 04ce CF070000 		.4byte	.LASF64
+ 3895 04ce EF070000 		.4byte	.LASF64
  3896 04d2 01       		.byte	0x1
  3897 04d3 E004     		.2byte	0x4e0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 116
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 116
 
 
  3898 04d5 80000000 		.4byte	0x80
@@ -6907,7 +6907,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3901 04e1 01       		.uleb128 0x1
  3902 04e2 9C       		.byte	0x9c
  3903 04e3 18       		.uleb128 0x18
- 3904 04e4 E1030000 		.4byte	.LASF56
+ 3904 04e4 A0030000 		.4byte	.LASF56
  3905 04e8 01       		.byte	0x1
  3906 04e9 3A05     		.2byte	0x53a
  3907 04eb AF000000 		.4byte	0xaf
@@ -6923,13 +6923,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3917 0505 80000000 		.4byte	0x80
  3918 0509 5D020000 		.4byte	.LLST19
  3919 050d 0A       		.uleb128 0xa
- 3920 050e 17070000 		.4byte	.LASF40
+ 3920 050e 37070000 		.4byte	.LASF40
  3921 0512 01       		.byte	0x1
  3922 0513 3C05     		.2byte	0x53c
  3923 0515 AF000000 		.4byte	0xaf
  3924 0519 97020000 		.4byte	.LLST20
  3925 051d 19       		.uleb128 0x19
- 3926 051e AC020000 		.4byte	.LASF57
+ 3926 051e 6B020000 		.4byte	.LASF57
  3927 0522 01       		.byte	0x1
  3928 0523 3D05     		.2byte	0x53d
  3929 0525 C5000000 		.4byte	0xc5
@@ -6945,7 +6945,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3939 0539 91       		.byte	0x91
  3940 053a 66       		.sleb128 -26
  3941 053b 0A       		.uleb128 0xa
- 3942 053c B2050000 		.4byte	.LASF41
+ 3942 053c 71050000 		.4byte	.LASF41
  3943 0540 01       		.byte	0x1
  3944 0541 3F05     		.2byte	0x53f
  3945 0543 80000000 		.4byte	0x80
@@ -6957,8 +6957,8 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3951 0553 80000000 		.4byte	0x80
  3952 0557 F7020000 		.4byte	.LLST22
  3953 055b 0A       		.uleb128 0xa
- 3954 055c E7070000 		.4byte	.LASF60
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 117
+ 3954 055c 07080000 		.4byte	.LASF60
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 117
 
 
  3955 0560 01       		.byte	0x1
@@ -6990,7 +6990,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3981 0596 0B030000 		.4byte	0x30b
  3982 059a 00       		.byte	0
  3983 059b 0E       		.uleb128 0xe
- 3984 059c 4B080000 		.4byte	.LASF61
+ 3984 059c 6B080000 		.4byte	.LASF61
  3985 05a0 01       		.byte	0x1
  3986 05a1 8A05     		.2byte	0x58a
  3987 05a3 00000000 		.4byte	.LFB30
@@ -6998,7 +6998,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  3989 05ab 01       		.uleb128 0x1
  3990 05ac 9C       		.byte	0x9c
  3991 05ad 0E       		.uleb128 0xe
- 3992 05ae C1050000 		.4byte	.LASF62
+ 3992 05ae 80050000 		.4byte	.LASF62
  3993 05b2 01       		.byte	0x1
  3994 05b3 A005     		.2byte	0x5a0
  3995 05b5 00000000 		.4byte	.LFB31
@@ -7014,11 +7014,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4005 05cf 01       		.uleb128 0x1
  4006 05d0 9C       		.byte	0x9c
  4007 05d1 1A       		.uleb128 0x1a
- 4008 05d2 F4030000 		.4byte	.LASF65
+ 4008 05d2 B3030000 		.4byte	.LASF65
  4009 05d6 01       		.byte	0x1
  4010 05d7 CE05     		.2byte	0x5ce
  4011 05d9 80000000 		.4byte	0x80
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 118
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 118
 
 
  4012 05dd 00000000 		.4byte	.LFB33
@@ -7026,7 +7026,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4014 05e5 01       		.uleb128 0x1
  4015 05e6 9C       		.byte	0x9c
  4016 05e7 0E       		.uleb128 0xe
- 4017 05e8 86030000 		.4byte	.LASF66
+ 4017 05e8 45030000 		.4byte	.LASF66
  4018 05ec 01       		.byte	0x1
  4019 05ed E905     		.2byte	0x5e9
  4020 05ef 00000000 		.4byte	.LFB34
@@ -7034,7 +7034,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4022 05f7 01       		.uleb128 0x1
  4023 05f8 9C       		.byte	0x9c
  4024 05f9 0E       		.uleb128 0xe
- 4025 05fa F8050000 		.4byte	.LASF67
+ 4025 05fa 18060000 		.4byte	.LASF67
  4026 05fe 01       		.byte	0x1
  4027 05ff FF05     		.2byte	0x5ff
  4028 0601 00000000 		.4byte	.LFB35
@@ -7042,7 +7042,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4030 0609 01       		.uleb128 0x1
  4031 060a 9C       		.byte	0x9c
  4032 060b 0F       		.uleb128 0xf
- 4033 060c 27040000 		.4byte	.LASF68
+ 4033 060c E6030000 		.4byte	.LASF68
  4034 0610 01       		.byte	0x1
  4035 0611 1906     		.2byte	0x619
  4036 0613 00000000 		.4byte	.LFB36
@@ -7051,14 +7051,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4039 061c 9C       		.byte	0x9c
  4040 061d 32060000 		.4byte	0x632
  4041 0621 0C       		.uleb128 0xc
- 4042 0622 04080000 		.4byte	.LASF69
+ 4042 0622 24080000 		.4byte	.LASF69
  4043 0626 01       		.byte	0x1
  4044 0627 1906     		.2byte	0x619
  4045 0629 80000000 		.4byte	0x80
  4046 062d 1D030000 		.4byte	.LLST24
  4047 0631 00       		.byte	0
  4048 0632 0F       		.uleb128 0xf
- 4049 0633 1B060000 		.4byte	.LASF70
+ 4049 0633 3B060000 		.4byte	.LASF70
  4050 0637 01       		.byte	0x1
  4051 0638 3106     		.2byte	0x631
  4052 063a 00000000 		.4byte	.LFB37
@@ -7067,18 +7067,18 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4055 0643 9C       		.byte	0x9c
  4056 0644 59060000 		.4byte	0x659
  4057 0648 0C       		.uleb128 0xc
- 4058 0649 04080000 		.4byte	.LASF69
+ 4058 0649 24080000 		.4byte	.LASF69
  4059 064d 01       		.byte	0x1
  4060 064e 3106     		.2byte	0x631
  4061 0650 80000000 		.4byte	0x80
  4062 0654 3E030000 		.4byte	.LLST25
  4063 0658 00       		.byte	0
  4064 0659 0F       		.uleb128 0xf
- 4065 065a 78050000 		.4byte	.LASF71
+ 4065 065a 37050000 		.4byte	.LASF71
  4066 065e 01       		.byte	0x1
  4067 065f 4806     		.2byte	0x648
  4068 0661 00000000 		.4byte	.LFB38
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 119
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 119
 
 
  4069 0665 18000000 		.4byte	.LFE38-.LFB38
@@ -7086,14 +7086,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4071 066a 9C       		.byte	0x9c
  4072 066b 80060000 		.4byte	0x680
  4073 066f 0C       		.uleb128 0xc
- 4074 0670 04080000 		.4byte	.LASF69
+ 4074 0670 24080000 		.4byte	.LASF69
  4075 0674 01       		.byte	0x1
  4076 0675 4806     		.2byte	0x648
  4077 0677 80000000 		.4byte	0x80
  4078 067b 5F030000 		.4byte	.LLST26
  4079 067f 00       		.byte	0
  4080 0680 0F       		.uleb128 0xf
- 4081 0681 71050000 		.4byte	.LASF72
+ 4081 0681 30050000 		.4byte	.LASF72
  4082 0685 01       		.byte	0x1
  4083 0686 5D06     		.2byte	0x65d
  4084 0688 00000000 		.4byte	.LFB39
@@ -7102,7 +7102,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4087 0691 9C       		.byte	0x9c
  4088 0692 A5060000 		.4byte	0x6a5
  4089 0696 10       		.uleb128 0x10
- 4090 0697 14060000 		.4byte	.LASF73
+ 4090 0697 34060000 		.4byte	.LASF73
  4091 069b 01       		.byte	0x1
  4092 069c 5D06     		.2byte	0x65d
  4093 069e 80000000 		.4byte	0x80
@@ -7119,26 +7119,26 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4104 06b5 9C       		.byte	0x9c
  4105 06b6 0A070000 		.4byte	0x70a
  4106 06ba 16       		.uleb128 0x16
- 4107 06bb BC070000 		.4byte	.LASF75
+ 4107 06bb DC070000 		.4byte	.LASF75
  4108 06bf 01       		.byte	0x1
  4109 06c0 BF       		.byte	0xbf
  4110 06c1 80000000 		.4byte	0x80
  4111 06c5 80030000 		.4byte	.LLST27
  4112 06c9 16       		.uleb128 0x16
- 4113 06ca 9F060000 		.4byte	.LASF76
+ 4113 06ca BF060000 		.4byte	.LASF76
  4114 06ce 01       		.byte	0x1
  4115 06cf BF       		.byte	0xbf
  4116 06d0 80000000 		.4byte	0x80
  4117 06d4 A1030000 		.4byte	.LLST28
  4118 06d8 16       		.uleb128 0x16
- 4119 06d9 CA040000 		.4byte	.LASF77
+ 4119 06d9 89040000 		.4byte	.LASF77
  4120 06dd 01       		.byte	0x1
  4121 06de BF       		.byte	0xbf
  4122 06df 80000000 		.4byte	0x80
  4123 06e3 C2030000 		.4byte	.LLST29
  4124 06e7 12       		.uleb128 0x12
  4125 06e8 18000000 		.4byte	.LVL73
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 120
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 120
 
 
  4126 06ec 80060000 		.4byte	0x680
@@ -7169,7 +7169,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4151 071a 9C       		.byte	0x9c
  4152 071b 51070000 		.4byte	0x751
  4153 071f 16       		.uleb128 0x16
- 4154 0720 17040000 		.4byte	.LASF26
+ 4154 0720 D6030000 		.4byte	.LASF26
  4155 0724 01       		.byte	0x1
  4156 0725 F6       		.byte	0xf6
  4157 0726 80000000 		.4byte	0x80
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4180 0752 D9000000 		.4byte	.LASF80
  4181 0756 01       		.byte	0x1
  4182 0757 8D01     		.2byte	0x18d
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 121
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 121
 
 
  4183 0759 00000000 		.4byte	.LFB7
@@ -7213,7 +7213,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4192 076f 80000000 		.4byte	0x80
  4193 0773 04040000 		.4byte	.LLST31
  4194 0777 0A       		.uleb128 0xa
- 4195 0778 79040000 		.4byte	.LASF82
+ 4195 0778 38040000 		.4byte	.LASF82
  4196 077c 01       		.byte	0x1
  4197 077d 8F01     		.2byte	0x18f
  4198 077f 80000000 		.4byte	0x80
@@ -7232,7 +7232,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4211 079e 00       		.byte	0
  4212 079f 00       		.byte	0
  4213 07a0 0F       		.uleb128 0xf
- 4214 07a1 C1070000 		.4byte	.LASF83
+ 4214 07a1 E1070000 		.4byte	.LASF83
  4215 07a5 01       		.byte	0x1
  4216 07a6 EC01     		.2byte	0x1ec
  4217 07a8 00000000 		.4byte	.LFB8
@@ -7247,18 +7247,18 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4226 07be 80000000 		.4byte	0x80
  4227 07c2 38040000 		.4byte	.LLST33
  4228 07c6 0A       		.uleb128 0xa
- 4229 07c7 D3060000 		.4byte	.LASF84
+ 4229 07c7 F3060000 		.4byte	.LASF84
  4230 07cb 01       		.byte	0x1
  4231 07cc EE01     		.2byte	0x1ee
  4232 07ce 80000000 		.4byte	0x80
  4233 07d2 59040000 		.4byte	.LLST34
  4234 07d6 0A       		.uleb128 0xa
- 4235 07d7 3C060000 		.4byte	.LASF85
+ 4235 07d7 5C060000 		.4byte	.LASF85
  4236 07db 01       		.byte	0x1
  4237 07dc EF01     		.2byte	0x1ef
  4238 07de 80000000 		.4byte	0x80
  4239 07e2 8F040000 		.4byte	.LLST35
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 122
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 122
 
 
  4240 07e6 12       		.uleb128 0x12
@@ -7310,7 +7310,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4286 0841 00       		.byte	0
  4287 0842 00       		.byte	0
  4288 0843 0F       		.uleb128 0xf
- 4289 0844 6D020000 		.4byte	.LASF86
+ 4289 0844 2C020000 		.4byte	.LASF86
  4290 0848 01       		.byte	0x1
  4291 0849 8702     		.2byte	0x287
  4292 084b 00000000 		.4byte	.LFB9
@@ -7318,11 +7318,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4294 0853 01       		.uleb128 0x1
  4295 0854 9C       		.byte	0x9c
  4296 0855 79080000 		.4byte	0x879
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 123
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 123
 
 
  4297 0859 0C       		.uleb128 0xc
- 4298 085a 17040000 		.4byte	.LASF26
+ 4298 085a D6030000 		.4byte	.LASF26
  4299 085e 01       		.byte	0x1
  4300 085f 8702     		.2byte	0x287
  4301 0861 80000000 		.4byte	0x80
@@ -7346,7 +7346,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4319 0889 01       		.uleb128 0x1
  4320 088a 9C       		.byte	0x9c
  4321 088b 0F       		.uleb128 0xf
- 4322 088c DF060000 		.4byte	.LASF88
+ 4322 088c FF060000 		.4byte	.LASF88
  4323 0890 01       		.byte	0x1
  4324 0891 9606     		.2byte	0x696
  4325 0893 00000000 		.4byte	.LFB41
@@ -7355,7 +7355,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4328 089c 9C       		.byte	0x9c
  4329 089d C4080000 		.4byte	0x8c4
  4330 08a1 0C       		.uleb128 0xc
- 4331 08a2 27050000 		.4byte	.LASF89
+ 4331 08a2 E6040000 		.4byte	.LASF89
  4332 08a6 01       		.byte	0x1
  4333 08a7 9606     		.2byte	0x696
  4334 08a9 96000000 		.4byte	0x96
@@ -7377,8 +7377,8 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4350 08d5 9C       		.byte	0x9c
  4351 08d6 F4080000 		.4byte	0x8f4
  4352 08da 0C       		.uleb128 0xc
- 4353 08db 19080000 		.4byte	.LASF91
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 124
+ 4353 08db 39080000 		.4byte	.LASF91
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 124
 
 
  4354 08df 01       		.byte	0x1
@@ -7390,7 +7390,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4360 08ef 560F0000 		.4byte	0xf56
  4361 08f3 00       		.byte	0
  4362 08f4 18       		.uleb128 0x18
- 4363 08f5 D8040000 		.4byte	.LASF92
+ 4363 08f5 97040000 		.4byte	.LASF92
  4364 08f9 01       		.byte	0x1
  4365 08fa F804     		.2byte	0x4f8
  4366 08fc 80000000 		.4byte	0x80
@@ -7400,7 +7400,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4370 0909 9C       		.byte	0x9c
  4371 090a 64090000 		.4byte	0x964
  4372 090e 0C       		.uleb128 0xc
- 4373 090f 51060000 		.4byte	.LASF53
+ 4373 090f 71060000 		.4byte	.LASF53
  4374 0913 01       		.byte	0x1
  4375 0914 F804     		.2byte	0x4f8
  4376 0916 80000000 		.4byte	0x80
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4408 095e 01       		.uleb128 0x1
  4409 095f 50       		.byte	0x50
  4410 0960 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 125
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 125
 
 
  4411 0961 3A       		.byte	0x3a
@@ -7498,13 +7498,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4465 09ce 01       		.byte	0x1
  4466 09cf DD06     		.2byte	0x6dd
  4467 09d1 96000000 		.4byte	0x96
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 126
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 126
 
 
  4468 09d5 4F050000 		.4byte	.LLST41
  4469 09d9 00       		.byte	0
  4470 09da 0F       		.uleb128 0xf
- 4471 09db 1B030000 		.4byte	.LASF95
+ 4471 09db DA020000 		.4byte	.LASF95
  4472 09df 01       		.byte	0x1
  4473 09e0 1C07     		.2byte	0x71c
  4474 09e2 00000000 		.4byte	.LFB44
@@ -7513,13 +7513,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4477 09eb 9C       		.byte	0x9c
  4478 09ec 110A0000 		.4byte	0xa11
  4479 09f0 0C       		.uleb128 0xc
- 4480 09f1 39040000 		.4byte	.LASF96
+ 4480 09f1 F8030000 		.4byte	.LASF96
  4481 09f5 01       		.byte	0x1
  4482 09f6 1C07     		.2byte	0x71c
  4483 09f8 80000000 		.4byte	0x80
  4484 09fc 70050000 		.4byte	.LLST42
  4485 0a00 0C       		.uleb128 0xc
- 4486 0a01 45060000 		.4byte	.LASF97
+ 4486 0a01 65060000 		.4byte	.LASF97
  4487 0a05 01       		.byte	0x1
  4488 0a06 1C07     		.2byte	0x71c
  4489 0a08 80000000 		.4byte	0x80
@@ -7534,7 +7534,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4498 0a21 01       		.uleb128 0x1
  4499 0a22 9C       		.byte	0x9c
  4500 0a23 0F       		.uleb128 0xf
- 4501 0a24 39080000 		.4byte	.LASF99
+ 4501 0a24 59080000 		.4byte	.LASF99
  4502 0a28 01       		.byte	0x1
  4503 0a29 5807     		.2byte	0x758
  4504 0a2b 00000000 		.4byte	.LFB46
@@ -7549,7 +7549,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4513 0a41 80000000 		.4byte	0x80
  4514 0a45 B2050000 		.4byte	.LLST44
  4515 0a49 0C       		.uleb128 0xc
- 4516 0a4a 67050000 		.4byte	.LASF101
+ 4516 0a4a 26050000 		.4byte	.LASF101
  4517 0a4e 01       		.byte	0x1
  4518 0a4f 5807     		.2byte	0x758
  4519 0a51 80000000 		.4byte	0x80
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4522 0a5a 30000000 		.4byte	.LVL130
  4523 0a5e C4080000 		.4byte	0x8c4
  4524 0a62 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 127
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 127
 
 
  4525 0a63 01       		.uleb128 0x1
@@ -7568,7 +7568,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4529 0a67 00       		.byte	0
  4530 0a68 00       		.byte	0
  4531 0a69 0F       		.uleb128 0xf
- 4532 0a6a B4020000 		.4byte	.LASF102
+ 4532 0a6a 73020000 		.4byte	.LASF102
  4533 0a6e 01       		.byte	0x1
  4534 0a6f 8A07     		.2byte	0x78a
  4535 0a71 00000000 		.4byte	.LFB47
@@ -7583,7 +7583,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4544 0a87 80000000 		.4byte	0x80
  4545 0a8b F4050000 		.4byte	.LLST46
  4546 0a8f 0C       		.uleb128 0xc
- 4547 0a90 67050000 		.4byte	.LASF101
+ 4547 0a90 26050000 		.4byte	.LASF101
  4548 0a94 01       		.byte	0x1
  4549 0a95 8A07     		.2byte	0x78a
  4550 0a97 80000000 		.4byte	0x80
@@ -7599,7 +7599,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4560 0aad 00       		.byte	0
  4561 0aae 00       		.byte	0
  4562 0aaf 0E       		.uleb128 0xe
- 4563 0ab0 78060000 		.4byte	.LASF103
+ 4563 0ab0 98060000 		.4byte	.LASF103
  4564 0ab4 01       		.byte	0x1
  4565 0ab5 B507     		.2byte	0x7b5
  4566 0ab7 00000000 		.4byte	.LFB48
@@ -7607,7 +7607,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4568 0abf 01       		.uleb128 0x1
  4569 0ac0 9C       		.byte	0x9c
  4570 0ac1 0E       		.uleb128 0xe
- 4571 0ac2 8B060000 		.4byte	.LASF104
+ 4571 0ac2 AB060000 		.4byte	.LASF104
  4572 0ac6 01       		.byte	0x1
  4573 0ac7 D107     		.2byte	0x7d1
  4574 0ac9 00000000 		.4byte	.LFB49
@@ -7615,10 +7615,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4576 0ad1 01       		.uleb128 0x1
  4577 0ad2 9C       		.byte	0x9c
  4578 0ad3 0F       		.uleb128 0xf
- 4579 0ad4 26080000 		.4byte	.LASF105
+ 4579 0ad4 46080000 		.4byte	.LASF105
  4580 0ad8 01       		.byte	0x1
  4581 0ad9 ED07     		.2byte	0x7ed
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 128
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 128
 
 
  4582 0adb 00000000 		.4byte	.LFB50
@@ -7638,7 +7638,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4596 0af8 00       		.byte	0
  4597 0af9 00       		.byte	0
  4598 0afa 0E       		.uleb128 0xe
- 4599 0afb 35030000 		.4byte	.LASF106
+ 4599 0afb F4020000 		.4byte	.LASF106
  4600 0aff 01       		.byte	0x1
  4601 0b00 0E08     		.2byte	0x80e
  4602 0b02 00000000 		.4byte	.LFB51
@@ -7646,7 +7646,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4604 0b0a 01       		.uleb128 0x1
  4605 0b0b 9C       		.byte	0x9c
  4606 0b0c 18       		.uleb128 0x18
- 4607 0b0d C7020000 		.4byte	.LASF107
+ 4607 0b0d 86020000 		.4byte	.LASF107
  4608 0b11 01       		.byte	0x1
  4609 0b12 2808     		.2byte	0x828
  4610 0b14 80000000 		.4byte	0x80
@@ -7662,7 +7662,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4620 0b2e 80000000 		.4byte	0x80
  4621 0b32 36060000 		.4byte	.LLST48
  4622 0b36 19       		.uleb128 0x19
- 4623 0b37 17070000 		.4byte	.LASF40
+ 4623 0b37 37070000 		.4byte	.LASF40
  4624 0b3b 01       		.byte	0x1
  4625 0b3c 2A08     		.2byte	0x82a
  4626 0b3e 80000000 		.4byte	0x80
@@ -7670,7 +7670,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4628 0b43 51       		.byte	0x51
  4629 0b44 00       		.byte	0
  4630 0b45 18       		.uleb128 0x18
- 4631 0b46 56040000 		.4byte	.LASF109
+ 4631 0b46 15040000 		.4byte	.LASF109
  4632 0b4a 01       		.byte	0x1
  4633 0b4b 4508     		.2byte	0x845
  4634 0b4d 80000000 		.4byte	0x80
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4636 0b55 18000000 		.4byte	.LFE53-.LFB53
  4637 0b59 01       		.uleb128 0x1
  4638 0b5a 9C       		.byte	0x9c
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 129
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 129
 
 
  4639 0b5b 920B0000 		.4byte	0xb92
@@ -7689,7 +7689,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4644 0b67 80000000 		.4byte	0x80
  4645 0b6b 57060000 		.4byte	.LLST49
  4646 0b6f 0A       		.uleb128 0xa
- 4647 0b70 0A070000 		.4byte	.LASF110
+ 4647 0b70 2A070000 		.4byte	.LASF110
  4648 0b74 01       		.byte	0x1
  4649 0b75 4808     		.2byte	0x848
  4650 0b77 80000000 		.4byte	0x80
@@ -7731,14 +7731,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4686 0bda 1F0F0000 		.4byte	0xf1f
  4687 0bde 00       		.byte	0
  4688 0bdf 0F       		.uleb128 0xf
- 4689 0be0 A4060000 		.4byte	.LASF113
+ 4689 0be0 C4060000 		.4byte	.LASF113
  4690 0be4 01       		.byte	0x1
  4691 0be5 9408     		.2byte	0x894
  4692 0be7 00000000 		.4byte	.LFB55
  4693 0beb 18000000 		.4byte	.LFE55-.LFB55
  4694 0bef 01       		.uleb128 0x1
  4695 0bf0 9C       		.byte	0x9c
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 130
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 130
 
 
  4696 0bf1 280C0000 		.4byte	0xc28
@@ -7762,7 +7762,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4714 0c23 1F0F0000 		.4byte	0xf1f
  4715 0c27 00       		.byte	0
  4716 0c28 0F       		.uleb128 0xf
- 4717 0c29 D8050000 		.4byte	.LASF114
+ 4717 0c29 97050000 		.4byte	.LASF114
  4718 0c2d 01       		.byte	0x1
  4719 0c2e BC08     		.2byte	0x8bc
  4720 0c30 00000000 		.4byte	.LFB56
@@ -7784,7 +7784,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4736 0c5c 1F0F0000 		.4byte	0xf1f
  4737 0c60 00       		.byte	0
  4738 0c61 18       		.uleb128 0x18
- 4739 0c62 CF030000 		.4byte	.LASF115
+ 4739 0c62 8E030000 		.4byte	.LASF115
  4740 0c66 01       		.byte	0x1
  4741 0c67 0409     		.2byte	0x904
  4742 0c69 EA000000 		.4byte	0xea
@@ -7794,16 +7794,16 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4746 0c76 9C       		.byte	0x9c
  4747 0c77 C90C0000 		.4byte	0xcc9
  4748 0c7b 0C       		.uleb128 0xc
- 4749 0c7c 5F030000 		.4byte	.LASF116
+ 4749 0c7c 1E030000 		.4byte	.LASF116
  4750 0c80 01       		.byte	0x1
  4751 0c81 0409     		.2byte	0x904
  4752 0c83 80000000 		.4byte	0x80
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 131
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 131
 
 
  4753 0c87 0B070000 		.4byte	.LLST56
  4754 0c8b 0C       		.uleb128 0xc
- 4755 0c8c 3F040000 		.4byte	.LASF117
+ 4755 0c8c FE030000 		.4byte	.LASF117
  4756 0c90 01       		.byte	0x1
  4757 0c91 0409     		.2byte	0x904
  4758 0c93 EA000000 		.4byte	0xea
@@ -7845,7 +7845,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4794 0ce4 9C       		.byte	0x9c
  4795 0ce5 190D0000 		.4byte	0xd19
  4796 0ce9 0C       		.uleb128 0xc
- 4797 0cea 5F030000 		.4byte	.LASF116
+ 4797 0cea 1E030000 		.4byte	.LASF116
  4798 0cee 01       		.byte	0x1
  4799 0cef 2509     		.2byte	0x925
  4800 0cf1 80000000 		.4byte	0x80
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4807 0d05 8C070000 		.4byte	.LLST60
  4808 0d09 14       		.uleb128 0x14
  4809 0d0a 12000000 		.4byte	.LVL162
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 132
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 132
 
 
  4810 0d0e 80060000 		.4byte	0x680
@@ -7870,7 +7870,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4816 0d17 00       		.byte	0
  4817 0d18 00       		.byte	0
  4818 0d19 18       		.uleb128 0x18
- 4819 0d1a 26030000 		.4byte	.LASF121
+ 4819 0d1a E5020000 		.4byte	.LASF121
  4820 0d1e 01       		.byte	0x1
  4821 0d1f 3D09     		.2byte	0x93d
  4822 0d21 EA000000 		.4byte	0xea
@@ -7880,13 +7880,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4826 0d2e 9C       		.byte	0x9c
  4827 0d2f 810D0000 		.4byte	0xd81
  4828 0d33 0C       		.uleb128 0xc
- 4829 0d34 5F030000 		.4byte	.LASF116
+ 4829 0d34 1E030000 		.4byte	.LASF116
  4830 0d38 01       		.byte	0x1
  4831 0d39 3D09     		.2byte	0x93d
  4832 0d3b 80000000 		.4byte	0x80
  4833 0d3f 9F070000 		.4byte	.LLST61
  4834 0d43 0C       		.uleb128 0xc
- 4835 0d44 3F040000 		.4byte	.LASF117
+ 4835 0d44 FE030000 		.4byte	.LASF117
  4836 0d48 01       		.byte	0x1
  4837 0d49 3D09     		.2byte	0x93d
  4838 0d4b EA000000 		.4byte	0xea
@@ -7915,10 +7915,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4861 0d7f 00       		.byte	0
  4862 0d80 00       		.byte	0
  4863 0d81 18       		.uleb128 0x18
- 4864 0d82 18050000 		.4byte	.LASF122
+ 4864 0d82 D7040000 		.4byte	.LASF122
  4865 0d86 01       		.byte	0x1
  4866 0d87 5C09     		.2byte	0x95c
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 133
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 133
 
 
  4867 0d89 EA000000 		.4byte	0xea
@@ -7928,7 +7928,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4871 0d96 9C       		.byte	0x9c
  4872 0d97 CB0D0000 		.4byte	0xdcb
  4873 0d9b 0C       		.uleb128 0xc
- 4874 0d9c 5F030000 		.4byte	.LASF116
+ 4874 0d9c 1E030000 		.4byte	.LASF116
  4875 0da0 01       		.byte	0x1
  4876 0da1 5C09     		.2byte	0x95c
  4877 0da3 80000000 		.4byte	0x80
@@ -7950,7 +7950,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4893 0dc9 00       		.byte	0
  4894 0dca 00       		.byte	0
  4895 0dcb 0F       		.uleb128 0xf
- 4896 0dcc A1030000 		.4byte	.LASF123
+ 4896 0dcc 60030000 		.4byte	.LASF123
  4897 0dd0 01       		.byte	0x1
  4898 0dd1 7409     		.2byte	0x974
  4899 0dd3 00000000 		.4byte	.LFB61
@@ -7959,13 +7959,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4902 0ddc 9C       		.byte	0x9c
  4903 0ddd 240E0000 		.4byte	0xe24
  4904 0de1 0C       		.uleb128 0xc
- 4905 0de2 5F030000 		.4byte	.LASF116
+ 4905 0de2 1E030000 		.4byte	.LASF116
  4906 0de6 01       		.byte	0x1
  4907 0de7 7409     		.2byte	0x974
  4908 0de9 80000000 		.4byte	0x80
  4909 0ded 33080000 		.4byte	.LLST66
  4910 0df1 0C       		.uleb128 0xc
- 4911 0df2 7D030000 		.4byte	.LASF124
+ 4911 0df2 3C030000 		.4byte	.LASF124
  4912 0df6 01       		.byte	0x1
  4913 0df7 7409     		.2byte	0x974
  4914 0df9 80000000 		.4byte	0x80
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4921 0e0f 01       		.uleb128 0x1
  4922 0e10 50       		.byte	0x50
  4923 0e11 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 134
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 134
 
 
  4924 0e12 30       		.byte	0x30
@@ -8004,13 +8004,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4944 0e39 9C       		.byte	0x9c
  4945 0e3a 6E0E0000 		.4byte	0xe6e
  4946 0e3e 0C       		.uleb128 0xc
- 4947 0e3f 5F030000 		.4byte	.LASF116
+ 4947 0e3f 1E030000 		.4byte	.LASF116
  4948 0e43 01       		.byte	0x1
  4949 0e44 8A09     		.2byte	0x98a
  4950 0e46 80000000 		.4byte	0x80
  4951 0e4a 75080000 		.4byte	.LLST68
  4952 0e4e 0A       		.uleb128 0xa
- 4953 0e4f 7D030000 		.4byte	.LASF124
+ 4953 0e4f 3C030000 		.4byte	.LASF124
  4954 0e53 01       		.byte	0x1
  4955 0e54 8C09     		.2byte	0x98c
  4956 0e56 80000000 		.4byte	0x80
@@ -8036,16 +8036,16 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  4976 0e83 9C       		.byte	0x9c
  4977 0e84 B90E0000 		.4byte	0xeb9
  4978 0e88 0C       		.uleb128 0xc
- 4979 0e89 5F030000 		.4byte	.LASF116
+ 4979 0e89 1E030000 		.4byte	.LASF116
  4980 0e8d 01       		.byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 135
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 135
 
 
  4981 0e8e A409     		.2byte	0x9a4
  4982 0e90 80000000 		.4byte	0x80
  4983 0e94 AD080000 		.4byte	.LLST70
  4984 0e98 1D       		.uleb128 0x1d
- 4985 0e99 E5050000 		.4byte	.LASF127
+ 4985 0e99 05060000 		.4byte	.LASF127
  4986 0e9d 01       		.byte	0x1
  4987 0e9e A609     		.2byte	0x9a6
  4988 0ea0 B90E0000 		.4byte	0xeb9
@@ -8065,7 +8065,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5001 0eba 04       		.byte	0x4
  5002 0ebb DA000000 		.4byte	0xda
  5003 0ebf 1E       		.uleb128 0x1e
- 5004 0ec0 84040000 		.4byte	.LASF128
+ 5004 0ec0 43040000 		.4byte	.LASF128
  5005 0ec4 01       		.byte	0x1
  5006 0ec5 1D       		.byte	0x1d
  5007 0ec6 80000000 		.4byte	0x80
@@ -8073,7 +8073,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5009 0ecb 03       		.byte	0x3
  5010 0ecc 00000000 		.4byte	CyResetStatus
  5011 0ed0 1E       		.uleb128 0x1e
- 5012 0ed1 45050000 		.4byte	.LASF129
+ 5012 0ed1 04050000 		.4byte	.LASF129
  5013 0ed5 01       		.byte	0x1
  5014 0ed6 29       		.byte	0x29
  5015 0ed7 96000000 		.4byte	0x96
@@ -8081,7 +8081,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5017 0edc 03       		.byte	0x3
  5018 0edd 00000000 		.4byte	cydelay_freq_hz
  5019 0ee1 1E       		.uleb128 0x1e
- 5020 0ee2 06040000 		.4byte	.LASF130
+ 5020 0ee2 C5030000 		.4byte	.LASF130
  5021 0ee6 01       		.byte	0x1
  5022 0ee7 2A       		.byte	0x2a
  5023 0ee8 96000000 		.4byte	0x96
@@ -8097,8 +8097,8 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5033 0efe 03       		.byte	0x3
  5034 0eff 00000000 		.4byte	cydelay_freq_mhz
  5035 0f03 1E       		.uleb128 0x1e
- 5036 0f04 FB060000 		.4byte	.LASF132
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 136
+ 5036 0f04 1B070000 		.4byte	.LASF132
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 136
 
 
  5037 0f08 01       		.byte	0x1
@@ -8108,12 +8108,12 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5041 0f0f 03       		.byte	0x3
  5042 0f10 00000000 		.4byte	cydelay_32k_ms
  5043 0f14 1F       		.uleb128 0x1f
- 5044 0f15 66030000 		.4byte	.LASF139
+ 5044 0f15 25030000 		.4byte	.LASF139
  5045 0f19 03       		.byte	0x3
  5046 0f1a 7E       		.byte	0x7e
  5047 0f1b 80000000 		.4byte	0x80
  5048 0f1f 20       		.uleb128 0x20
- 5049 0f20 F2040000 		.4byte	.LASF133
+ 5049 0f20 B1040000 		.4byte	.LASF133
  5050 0f24 03       		.byte	0x3
  5051 0f25 7F       		.byte	0x7f
  5052 0f26 300F0000 		.4byte	0xf30
@@ -8121,7 +8121,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5054 0f2b 80000000 		.4byte	0x80
  5055 0f2f 00       		.byte	0
  5056 0f30 20       		.uleb128 0x20
- 5057 0f31 57080000 		.4byte	.LASF134
+ 5057 0f31 77080000 		.4byte	.LASF134
  5058 0f35 04       		.byte	0x4
  5059 0f36 2A       		.byte	0x2a
  5060 0f37 410F0000 		.4byte	0xf41
@@ -8129,7 +8129,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5062 0f3c 80000000 		.4byte	0x80
  5063 0f40 00       		.byte	0
  5064 0f41 22       		.uleb128 0x22
- 5065 0f42 C4060000 		.4byte	.LASF140
+ 5065 0f42 E4060000 		.4byte	.LASF140
  5066 0f46 04       		.byte	0x4
  5067 0f47 26       		.byte	0x26
  5068 0f48 80000000 		.4byte	0x80
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5091 0008 0E       		.uleb128 0xe
  5092 0009 1B       		.uleb128 0x1b
  5093 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 137
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 137
 
 
  5094 000b 55       		.uleb128 0x55
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5148 0041 0B       		.uleb128 0xb
  5149 0042 49       		.uleb128 0x49
  5150 0043 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 138
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 138
 
 
  5151 0044 00       		.byte	0
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5205 007b 3B       		.uleb128 0x3b
  5206 007c 05       		.uleb128 0x5
  5207 007d 49       		.uleb128 0x49
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 139
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 139
 
 
  5208 007e 13       		.uleb128 0x13
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5262 00b5 27       		.uleb128 0x27
  5263 00b6 19       		.uleb128 0x19
  5264 00b7 11       		.uleb128 0x11
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 140
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 140
 
 
  5265 00b8 01       		.uleb128 0x1
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5319 00f1 13       		.uleb128 0x13
  5320 00f2 00       		.byte	0
  5321 00f3 00       		.byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 141
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 141
 
 
  5322 00f4 10       		.uleb128 0x10
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5376 0133 2E       		.uleb128 0x2e
  5377 0134 01       		.byte	0x1
  5378 0135 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 142
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 142
 
 
  5379 0136 19       		.uleb128 0x19
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5433 016d 2E       		.uleb128 0x2e
  5434 016e 01       		.byte	0x1
  5435 016f 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 143
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 143
 
 
  5436 0170 19       		.uleb128 0x19
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5490 01a7 01       		.uleb128 0x1
  5491 01a8 12       		.uleb128 0x12
  5492 01a9 06       		.uleb128 0x6
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 144
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 144
 
 
  5493 01aa 40       		.uleb128 0x40
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5547 01e2 05       		.uleb128 0x5
  5548 01e3 49       		.uleb128 0x49
  5549 01e4 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 145
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 145
 
 
  5550 01e5 1C       		.uleb128 0x1c
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5604 021b 19       		.uleb128 0x19
  5605 021c 01       		.uleb128 0x1
  5606 021d 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 146
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 146
 
 
  5607 021e 00       		.byte	0
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5661 000a 30       		.byte	0x30
  5662 000b 9F       		.byte	0x9f
  5663 000c 38000000 		.4byte	.LVL1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 147
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 147
 
 
  5664 0010 48000000 		.4byte	.LFE6
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5718              	.LLST5:
  5719 0095 0E000000 		.4byte	.LVL10
  5720 0099 16000000 		.4byte	.LVL11
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 148
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 148
 
 
  5721 009d 0500     		.2byte	0x5
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5775 011e 78000000 		.4byte	.LFE0
  5776 0122 0400     		.2byte	0x4
  5777 0124 F3       		.byte	0xf3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 149
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 149
 
 
  5778 0125 01       		.uleb128 0x1
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5832 01ae 00000000 		.4byte	0
  5833 01b2 00000000 		.4byte	0
  5834              	.LLST13:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 150
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 150
 
 
  5835 01b6 00000000 		.4byte	.LVL37
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5889 0240 1E000000 		.4byte	.LVL50
  5890 0244 0100     		.2byte	0x1
  5891 0246 50       		.byte	0x50
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 151
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 151
 
 
  5892 0247 1E000000 		.4byte	.LVL50
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  5946 02c6 9A000000 		.4byte	.LVL62
  5947 02ca A0000000 		.4byte	.LVL63
  5948 02ce 0100     		.2byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 152
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 152
 
 
  5949 02d0 57       		.byte	0x57
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6003 0357 00000000 		.4byte	0
  6004 035b 00000000 		.4byte	0
  6005              	.LLST26:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 153
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 153
 
 
  6006 035f 00000000 		.4byte	.LVL68
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6060 03df 00000000 		.4byte	0
  6061              	.LLST30:
  6062 03e3 00000000 		.4byte	.LVL75
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 154
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 154
 
 
  6063 03e7 10000000 		.4byte	.LVL76
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6117 046c 0200     		.2byte	0x2
  6118 046e 33       		.byte	0x33
  6119 046f 9F       		.byte	0x9f
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 155
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 155
 
 
  6120 0470 2E000000 		.4byte	.LVL88
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6174 04f9 9F       		.byte	0x9f
  6175 04fa 00000000 		.4byte	0
  6176 04fe 00000000 		.4byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 156
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 156
 
 
  6177              	.LLST39:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6231 0585 F3       		.byte	0xf3
  6232 0586 01       		.uleb128 0x1
  6233 0587 50       		.byte	0x50
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 157
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 157
 
 
  6234 0588 9F       		.byte	0x9f
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6288 060a 01       		.uleb128 0x1
  6289 060b 50       		.byte	0x50
  6290 060c 9F       		.byte	0x9f
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 158
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 158
 
 
  6291 060d 00000000 		.4byte	0
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6345 0697 1C000000 		.4byte	.LFE54
  6346 069b 0100     		.2byte	0x1
  6347 069d 50       		.byte	0x50
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 159
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 159
 
 
  6348 069e 00000000 		.4byte	0
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6402 0728 00000000 		.4byte	0
  6403              	.LLST57:
  6404 072c 00000000 		.4byte	.LVL153
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 160
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 160
 
 
  6405 0730 13000000 		.4byte	.LVL156-1
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6459 07b6 50       		.byte	0x50
  6460 07b7 9F       		.byte	0x9f
  6461 07b8 00000000 		.4byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 161
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 161
 
 
  6462 07bc 00000000 		.4byte	0
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6516 0846 0400     		.2byte	0x4
  6517 0848 F3       		.byte	0xf3
  6518 0849 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 162
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 162
 
 
  6519 084a 50       		.byte	0x50
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6573 08c5 9F       		.byte	0x9f
  6574 08c6 00000000 		.4byte	0
  6575 08ca 00000000 		.4byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 163
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 163
 
 
  6576              		.section	.debug_aranges,"",%progbits
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6630 00c8 00000000 		.4byte	.LFB30
  6631 00cc 10000000 		.4byte	.LFE30-.LFB30
  6632 00d0 00000000 		.4byte	.LFB31
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 164
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 164
 
 
  6633 00d4 10000000 		.4byte	.LFE31-.LFB31
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6687 01ac 10000000 		.4byte	.LFE51-.LFB51
  6688 01b0 00000000 		.4byte	.LFB52
  6689 01b4 14000000 		.4byte	.LFE52-.LFB52
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 165
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 165
 
 
  6690 01b8 00000000 		.4byte	.LFB53
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6744 0070 00000000 		.4byte	.LFB0
  6745 0074 78000000 		.4byte	.LFE0
  6746 0078 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 166
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 166
 
 
  6747 007c 60000000 		.4byte	.LFE4
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6801 0154 70000000 		.4byte	.LFE25
  6802 0158 00000000 		.4byte	.LFB43
  6803 015c 4C000000 		.4byte	.LFE43
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 167
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 167
 
 
  6804 0160 00000000 		.4byte	.LFB44
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6851              	.LASF58:
  6852 000f 636F756E 		.ascii	"count\000"
  6852      7400
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 168
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 168
 
 
  6853              	.LASF12:
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6876 00bb 706D5477 		.ascii	"pmTwCfg0State\000"
  6876      43666730 
  6876      53746174 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 169
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 169
 
 
  6876      6500
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6900 015f 77616974 		.ascii	"wait\000"
  6900      00
  6901              	.LASF54:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 170
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 170
 
 
  6902 0164 73746174 		.ascii	"state\000"
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6928      00
  6929              	.LASF100:
  6930 01f6 72657365 		.ascii	"reset\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 171
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 171
 
 
  6930      7400
@@ -10214,521 +10214,522 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 1
  6934      53797356 
  6934      6563746F 
  6934      7200
- 6935              	.LASF137:
- 6936 021f 433A5C55 		.ascii	"C:\\Users\\Zachary\\Desktop\\Zach I2S Debugging\\Wa"
- 6936      73657273 
- 6936      5C5A6163 
- 6936      68617279 
- 6936      5C446573 
- 6937 024d 76652047 		.ascii	"ve Generator.cydsn\000"
- 6937      656E6572 
- 6937      61746F72 
- 6937      2E637964 
- 6937      736E00
- 6938              	.LASF0:
- 6939 0260 756E7369 		.ascii	"unsigned int\000"
- 6939      676E6564 
- 6939      20696E74 
- 6939      00
- 6940              	.LASF86:
- 6941 026d 4379494D 		.ascii	"CyIMO_SetSource\000"
- 6941      4F5F5365 
- 6941      74536F75 
- 6941      72636500 
- 6942              	.LASF32:
- 6943 027d 62757343 		.ascii	"busClkDiv\000"
- 6943      6C6B4469 
- 6943      7600
- 6944              	.LASF138:
- 6945 0287 43795553 		.ascii	"CyUSB_PowerOnCheck\000"
- 6945      425F506F 
- 6945      7765724F 
- 6945      6E436865 
- 6945      636B00
- 6946              	.LASF6:
- 6947 029a 6C6F6E67 		.ascii	"long unsigned int\000"
- 6947      20756E73 
- 6947      69676E65 
- 6947      6420696E 
- 6947      7400
- 6948              	.LASF57:
- 6949 02ac 74696D65 		.ascii	"timeout\000"
- 6949      6F757400 
- 6950              	.LASF102:
- 6951 02b4 43795664 		.ascii	"CyVdLvAnalogEnable\000"
- 6951      4C76416E 
- 6951      616C6F67 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 172
+ 6935              	.LASF0:
+ 6936 021f 756E7369 		.ascii	"unsigned int\000"
+ 6936      676E6564 
+ 6936      20696E74 
+ 6936      00
+ 6937              	.LASF86:
+ 6938 022c 4379494D 		.ascii	"CyIMO_SetSource\000"
+ 6938      4F5F5365 
+ 6938      74536F75 
+ 6938      72636500 
+ 6939              	.LASF32:
+ 6940 023c 62757343 		.ascii	"busClkDiv\000"
+ 6940      6C6B4469 
+ 6940      7600
+ 6941              	.LASF138:
+ 6942 0246 43795553 		.ascii	"CyUSB_PowerOnCheck\000"
+ 6942      425F506F 
+ 6942      7765724F 
+ 6942      6E436865 
+ 6942      636B00
+ 6943              	.LASF6:
+ 6944 0259 6C6F6E67 		.ascii	"long unsigned int\000"
+ 6944      20756E73 
+ 6944      69676E65 
+ 6944      6420696E 
+ 6944      7400
+ 6945              	.LASF57:
+ 6946 026b 74696D65 		.ascii	"timeout\000"
+ 6946      6F757400 
+ 6947              	.LASF102:
+ 6948 0273 43795664 		.ascii	"CyVdLvAnalogEnable\000"
+ 6948      4C76416E 
+ 6948      616C6F67 
+ 6948      456E6162 
+ 6948      6C6500
+ 6949              	.LASF107:
+ 6950 0286 43795664 		.ascii	"CyVdStickyStatus\000"
+ 6950      53746963 
+ 6950      6B795374 
+ 6950      61747573 
+ 6950      00
+ 6951              	.LASF55:
+ 6952 0297 43795854 		.ascii	"CyXTAL_32KHZ_Stop\000"
+ 6952      414C5F33 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 172
 
 
- 6951      456E6162 
- 6951      6C6500
- 6952              	.LASF107:
- 6953 02c7 43795664 		.ascii	"CyVdStickyStatus\000"
- 6953      53746963 
- 6953      6B795374 
- 6953      61747573 
- 6953      00
- 6954              	.LASF55:
- 6955 02d8 43795854 		.ascii	"CyXTAL_32KHZ_Stop\000"
- 6955      414C5F33 
- 6955      324B485A 
- 6955      5F53746F 
- 6955      7000
- 6956              	.LASF52:
- 6957 02ea 4379494C 		.ascii	"CyILO_SetPowerMode\000"
- 6957      4F5F5365 
- 6957      74506F77 
- 6957      65724D6F 
- 6957      646500
- 6958              	.LASF22:
- 6959 02fd 4379494D 		.ascii	"CyIMO_Stop\000"
- 6959      4F5F5374 
- 6959      6F7000
- 6960              	.LASF4:
- 6961 0308 73686F72 		.ascii	"short unsigned int\000"
- 6961      7420756E 
- 6961      7369676E 
- 6961      65642069 
- 6961      6E7400
- 6962              	.LASF95:
- 6963 031b 43795764 		.ascii	"CyWdtStart\000"
- 6963      74537461 
- 6963      727400
- 6964              	.LASF121:
- 6965 0326 4379496E 		.ascii	"CyIntSetVector\000"
- 6965      74536574 
- 6965      56656374 
- 6965      6F7200
- 6966              	.LASF106:
- 6967 0335 43795664 		.ascii	"CyVdHvAnalogDisable\000"
- 6967      4876416E 
- 6967      616C6F67 
- 6967      44697361 
- 6967      626C6500 
- 6968              	.LASF27:
- 6969 0349 43794D61 		.ascii	"CyMasterClk_SetSource\000"
- 6969      73746572 
- 6969      436C6B5F 
- 6969      53657453 
- 6969      6F757263 
- 6970              	.LASF116:
- 6971 035f 6E756D62 		.ascii	"number\000"
- 6971      657200
- 6972              	.LASF139:
- 6973 0366 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 6973      74657243 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 173
+ 6952      324B485A 
+ 6952      5F53746F 
+ 6952      7000
+ 6953              	.LASF52:
+ 6954 02a9 4379494C 		.ascii	"CyILO_SetPowerMode\000"
+ 6954      4F5F5365 
+ 6954      74506F77 
+ 6954      65724D6F 
+ 6954      646500
+ 6955              	.LASF22:
+ 6956 02bc 4379494D 		.ascii	"CyIMO_Stop\000"
+ 6956      4F5F5374 
+ 6956      6F7000
+ 6957              	.LASF4:
+ 6958 02c7 73686F72 		.ascii	"short unsigned int\000"
+ 6958      7420756E 
+ 6958      7369676E 
+ 6958      65642069 
+ 6958      6E7400
+ 6959              	.LASF95:
+ 6960 02da 43795764 		.ascii	"CyWdtStart\000"
+ 6960      74537461 
+ 6960      727400
+ 6961              	.LASF121:
+ 6962 02e5 4379496E 		.ascii	"CyIntSetVector\000"
+ 6962      74536574 
+ 6962      56656374 
+ 6962      6F7200
+ 6963              	.LASF106:
+ 6964 02f4 43795664 		.ascii	"CyVdHvAnalogDisable\000"
+ 6964      4876416E 
+ 6964      616C6F67 
+ 6964      44697361 
+ 6964      626C6500 
+ 6965              	.LASF27:
+ 6966 0308 43794D61 		.ascii	"CyMasterClk_SetSource\000"
+ 6966      73746572 
+ 6966      436C6B5F 
+ 6966      53657453 
+ 6966      6F757263 
+ 6967              	.LASF116:
+ 6968 031e 6E756D62 		.ascii	"number\000"
+ 6968      657200
+ 6969              	.LASF139:
+ 6970 0325 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 6970      74657243 
+ 6970      72697469 
+ 6970      63616C53 
+ 6970      65637469 
+ 6971              	.LASF124:
+ 6972 033c 7072696F 		.ascii	"priority\000"
+ 6972      72697479 
+ 6972      00
+ 6973              	.LASF66:
+ 6974 0345 43795854 		.ascii	"CyXTAL_EnableFaultRecovery\000"
+ 6974      414C5F45 
+ 6974      6E61626C 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 173
 
 
- 6973      72697469 
- 6973      63616C53 
- 6973      65637469 
- 6974              	.LASF124:
- 6975 037d 7072696F 		.ascii	"priority\000"
- 6975      72697479 
- 6975      00
- 6976              	.LASF66:
- 6977 0386 43795854 		.ascii	"CyXTAL_EnableFaultRecovery\000"
- 6977      414C5F45 
- 6977      6E61626C 
- 6977      65466175 
- 6977      6C745265 
- 6978              	.LASF123:
- 6979 03a1 4379496E 		.ascii	"CyIntSetPriority\000"
- 6979      74536574 
- 6979      5072696F 
- 6979      72697479 
- 6979      00
- 6980              	.LASF79:
- 6981 03b2 43794275 		.ascii	"CyBusClk_Internal_SetDivider\000"
- 6981      73436C6B 
- 6981      5F496E74 
- 6981      65726E61 
- 6981      6C5F5365 
- 6982              	.LASF115:
- 6983 03cf 4379496E 		.ascii	"CyIntSetSysVector\000"
- 6983      74536574 
- 6983      53797356 
- 6983      6563746F 
- 6983      7200
- 6984              	.LASF56:
- 6985 03e1 43795854 		.ascii	"CyXTAL_Start\000"
- 6985      414C5F53 
- 6985      74617274 
- 6985      00
- 6986              	.LASF19:
- 6987 03ee 72656733 		.ascii	"reg32\000"
- 6987      3200
- 6988              	.LASF65:
- 6989 03f4 43795854 		.ascii	"CyXTAL_ReadStatus\000"
- 6989      414C5F52 
- 6989      65616453 
- 6989      74617475 
- 6989      7300
- 6990              	.LASF130:
- 6991 0406 63796465 		.ascii	"cydelay_freq_khz\000"
- 6991      6C61795F 
- 6991      66726571 
- 6991      5F6B687A 
- 6991      00
- 6992              	.LASF26:
- 6993 0417 736F7572 		.ascii	"source\000"
- 6993      636500
- 6994              	.LASF9:
- 6995 041e 73697A65 		.ascii	"sizetype\000"
- 6995      74797065 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 174
+ 6974      65466175 
+ 6974      6C745265 
+ 6975              	.LASF123:
+ 6976 0360 4379496E 		.ascii	"CyIntSetPriority\000"
+ 6976      74536574 
+ 6976      5072696F 
+ 6976      72697479 
+ 6976      00
+ 6977              	.LASF79:
+ 6978 0371 43794275 		.ascii	"CyBusClk_Internal_SetDivider\000"
+ 6978      73436C6B 
+ 6978      5F496E74 
+ 6978      65726E61 
+ 6978      6C5F5365 
+ 6979              	.LASF115:
+ 6980 038e 4379496E 		.ascii	"CyIntSetSysVector\000"
+ 6980      74536574 
+ 6980      53797356 
+ 6980      6563746F 
+ 6980      7200
+ 6981              	.LASF56:
+ 6982 03a0 43795854 		.ascii	"CyXTAL_Start\000"
+ 6982      414C5F53 
+ 6982      74617274 
+ 6982      00
+ 6983              	.LASF19:
+ 6984 03ad 72656733 		.ascii	"reg32\000"
+ 6984      3200
+ 6985              	.LASF65:
+ 6986 03b3 43795854 		.ascii	"CyXTAL_ReadStatus\000"
+ 6986      414C5F52 
+ 6986      65616453 
+ 6986      74617475 
+ 6986      7300
+ 6987              	.LASF130:
+ 6988 03c5 63796465 		.ascii	"cydelay_freq_khz\000"
+ 6988      6C61795F 
+ 6988      66726571 
+ 6988      5F6B687A 
+ 6988      00
+ 6989              	.LASF26:
+ 6990 03d6 736F7572 		.ascii	"source\000"
+ 6990      636500
+ 6991              	.LASF9:
+ 6992 03dd 73697A65 		.ascii	"sizetype\000"
+ 6992      74797065 
+ 6992      00
+ 6993              	.LASF68:
+ 6994 03e6 43795854 		.ascii	"CyXTAL_SetStartup\000"
+ 6994      414C5F53 
+ 6994      65745374 
+ 6994      61727475 
+ 6994      7000
+ 6995              	.LASF96:
+ 6996 03f8 7469636B 		.ascii	"ticks\000"
+ 6996      7300
+ 6997              	.LASF117:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 174
 
 
- 6995      00
- 6996              	.LASF68:
- 6997 0427 43795854 		.ascii	"CyXTAL_SetStartup\000"
- 6997      414C5F53 
- 6997      65745374 
- 6997      61727475 
- 6997      7000
- 6998              	.LASF96:
- 6999 0439 7469636B 		.ascii	"ticks\000"
- 6999      7300
- 7000              	.LASF117:
- 7001 043f 61646472 		.ascii	"address\000"
- 7001      65737300 
- 7002              	.LASF21:
- 7003 0447 4379504C 		.ascii	"CyPLL_OUT_Stop\000"
- 7003      4C5F4F55 
- 7003      545F5374 
- 7003      6F7000
- 7004              	.LASF109:
- 7005 0456 43795664 		.ascii	"CyVdRealTimeStatus\000"
- 7005      5265616C 
- 7005      54696D65 
- 7005      53746174 
- 7005      757300
- 7006              	.LASF37:
- 7007 0469 4379494C 		.ascii	"CyILO_Start100K\000"
- 7007      4F5F5374 
- 7007      61727431 
- 7007      30304B00 
- 7008              	.LASF82:
- 7009 0479 75736250 		.ascii	"usbPowerOn\000"
- 7009      6F776572 
- 7009      4F6E00
- 7010              	.LASF128:
- 7011 0484 43795265 		.ascii	"CyResetStatus\000"
- 7011      73657453 
- 7011      74617475 
- 7011      7300
- 7012              	.LASF136:
- 7013 0492 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CyLib.c\000"
- 7013      6E657261 
- 7013      7465645F 
- 7013      536F7572 
- 7013      63655C50 
- 7014              	.LASF28:
- 7015 04b3 43794D61 		.ascii	"CyMasterClk_SetDivider\000"
- 7015      73746572 
- 7015      436C6B5F 
- 7015      53657444 
- 7015      69766964 
- 7016              	.LASF77:
- 7017 04ca 63757272 		.ascii	"current\000"
- 7017      656E7400 
- 7018              	.LASF14:
- 7019 04d2 666C6F61 		.ascii	"float\000"
- 7019      7400
- 7020              	.LASF92:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 175
+ 6998 03fe 61646472 		.ascii	"address\000"
+ 6998      65737300 
+ 6999              	.LASF21:
+ 7000 0406 4379504C 		.ascii	"CyPLL_OUT_Stop\000"
+ 7000      4C5F4F55 
+ 7000      545F5374 
+ 7000      6F7000
+ 7001              	.LASF109:
+ 7002 0415 43795664 		.ascii	"CyVdRealTimeStatus\000"
+ 7002      5265616C 
+ 7002      54696D65 
+ 7002      53746174 
+ 7002      757300
+ 7003              	.LASF37:
+ 7004 0428 4379494C 		.ascii	"CyILO_Start100K\000"
+ 7004      4F5F5374 
+ 7004      61727431 
+ 7004      30304B00 
+ 7005              	.LASF82:
+ 7006 0438 75736250 		.ascii	"usbPowerOn\000"
+ 7006      6F776572 
+ 7006      4F6E00
+ 7007              	.LASF128:
+ 7008 0443 43795265 		.ascii	"CyResetStatus\000"
+ 7008      73657453 
+ 7008      74617475 
+ 7008      7300
+ 7009              	.LASF136:
+ 7010 0451 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CyLib.c\000"
+ 7010      6E657261 
+ 7010      7465645F 
+ 7010      536F7572 
+ 7010      63655C50 
+ 7011              	.LASF28:
+ 7012 0472 43794D61 		.ascii	"CyMasterClk_SetDivider\000"
+ 7012      73746572 
+ 7012      436C6B5F 
+ 7012      53657444 
+ 7012      69766964 
+ 7013              	.LASF77:
+ 7014 0489 63757272 		.ascii	"current\000"
+ 7014      656E7400 
+ 7015              	.LASF14:
+ 7016 0491 666C6F61 		.ascii	"float\000"
+ 7016      7400
+ 7017              	.LASF92:
+ 7018 0497 43795854 		.ascii	"CyXTAL_32KHZ_SetPowerMode\000"
+ 7018      414C5F33 
+ 7018      324B485A 
+ 7018      5F536574 
+ 7018      506F7765 
+ 7019              	.LASF133:
+ 7020 04b1 43794578 		.ascii	"CyExitCriticalSection\000"
+ 7020      69744372 
+ 7020      69746963 
+ 7020      616C5365 
+ 7020      6374696F 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 175
 
 
- 7021 04d8 43795854 		.ascii	"CyXTAL_32KHZ_SetPowerMode\000"
- 7021      414C5F33 
- 7021      324B485A 
- 7021      5F536574 
- 7021      506F7765 
- 7022              	.LASF133:
- 7023 04f2 43794578 		.ascii	"CyExitCriticalSection\000"
- 7023      69744372 
- 7023      69746963 
- 7023      616C5365 
- 7023      6374696F 
- 7024              	.LASF48:
- 7025 0508 4379494C 		.ascii	"CyILO_Enable33K\000"
- 7025      4F5F456E 
- 7025      61626C65 
- 7025      33334B00 
- 7026              	.LASF122:
- 7027 0518 4379496E 		.ascii	"CyIntGetVector\000"
- 7027      74476574 
- 7027      56656374 
- 7027      6F7200
- 7028              	.LASF89:
- 7029 0527 6D696C6C 		.ascii	"milliseconds\000"
- 7029      69736563 
- 7029      6F6E6473 
- 7029      00
- 7030              	.LASF49:
- 7031 0534 4379494C 		.ascii	"CyILO_Disable33K\000"
- 7031      4F5F4469 
- 7031      7361626C 
- 7031      6533334B 
- 7031      00
- 7032              	.LASF129:
- 7033 0545 63796465 		.ascii	"cydelay_freq_hz\000"
- 7033      6C61795F 
- 7033      66726571 
- 7033      5F687A00 
- 7034              	.LASF31:
- 7035 0555 6D617374 		.ascii	"masterClkDiv\000"
- 7035      6572436C 
- 7035      6B446976 
- 7035      00
- 7036              	.LASF17:
- 7037 0562 72656738 		.ascii	"reg8\000"
- 7037      00
- 7038              	.LASF101:
- 7039 0567 74687265 		.ascii	"threshold\000"
- 7039      73686F6C 
- 7039      6400
- 7040              	.LASF72:
- 7041 0571 43794861 		.ascii	"CyHalt\000"
- 7041      6C7400
- 7042              	.LASF71:
- 7043 0578 43795854 		.ascii	"CyXTAL_SetWdVoltage\000"
- 7043      414C5F53 
- 7043      65745764 
- 7043      566F6C74 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 176
+ 7021              	.LASF48:
+ 7022 04c7 4379494C 		.ascii	"CyILO_Enable33K\000"
+ 7022      4F5F456E 
+ 7022      61626C65 
+ 7022      33334B00 
+ 7023              	.LASF122:
+ 7024 04d7 4379496E 		.ascii	"CyIntGetVector\000"
+ 7024      74476574 
+ 7024      56656374 
+ 7024      6F7200
+ 7025              	.LASF89:
+ 7026 04e6 6D696C6C 		.ascii	"milliseconds\000"
+ 7026      69736563 
+ 7026      6F6E6473 
+ 7026      00
+ 7027              	.LASF49:
+ 7028 04f3 4379494C 		.ascii	"CyILO_Disable33K\000"
+ 7028      4F5F4469 
+ 7028      7361626C 
+ 7028      6533334B 
+ 7028      00
+ 7029              	.LASF129:
+ 7030 0504 63796465 		.ascii	"cydelay_freq_hz\000"
+ 7030      6C61795F 
+ 7030      66726571 
+ 7030      5F687A00 
+ 7031              	.LASF31:
+ 7032 0514 6D617374 		.ascii	"masterClkDiv\000"
+ 7032      6572436C 
+ 7032      6B446976 
+ 7032      00
+ 7033              	.LASF17:
+ 7034 0521 72656738 		.ascii	"reg8\000"
+ 7034      00
+ 7035              	.LASF101:
+ 7036 0526 74687265 		.ascii	"threshold\000"
+ 7036      73686F6C 
+ 7036      6400
+ 7037              	.LASF72:
+ 7038 0530 43794861 		.ascii	"CyHalt\000"
+ 7038      6C7400
+ 7039              	.LASF71:
+ 7040 0537 43795854 		.ascii	"CyXTAL_SetWdVoltage\000"
+ 7040      414C5F53 
+ 7040      65745764 
+ 7040      566F6C74 
+ 7040      61676500 
+ 7041              	.LASF2:
+ 7042 054b 756E7369 		.ascii	"unsigned char\000"
+ 7042      676E6564 
+ 7042      20636861 
+ 7042      7200
+ 7043              	.LASF43:
+ 7044 0559 706D5477 		.ascii	"pmTwCfg2State\000"
+ 7044      43666732 
+ 7044      53746174 
+ 7044      6500
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 176
 
 
- 7043      61676500 
- 7044              	.LASF2:
- 7045 058c 756E7369 		.ascii	"unsigned char\000"
- 7045      676E6564 
- 7045      20636861 
- 7045      7200
- 7046              	.LASF43:
- 7047 059a 706D5477 		.ascii	"pmTwCfg2State\000"
- 7047      43666732 
- 7047      53746174 
- 7047      6500
- 7048              	.LASF3:
- 7049 05a8 73686F72 		.ascii	"short int\000"
- 7049      7420696E 
- 7049      7400
- 7050              	.LASF41:
- 7051 05b2 696C6F45 		.ascii	"iloEnableState\000"
- 7051      6E61626C 
- 7051      65537461 
- 7051      746500
- 7052              	.LASF62:
- 7053 05c1 43795854 		.ascii	"CyXTAL_EnableErrStatus\000"
- 7053      414C5F45 
- 7053      6E61626C 
- 7053      65457272 
- 7053      53746174 
- 7054              	.LASF114:
- 7055 05d8 4379466C 		.ascii	"CyFlushCache\000"
- 7055      75736843 
- 7055      61636865 
- 7055      00
- 7056              	.LASF127:
- 7057 05e5 73746174 		.ascii	"stateReg\000"
- 7057      65526567 
- 7057      00
- 7058              	.LASF30:
- 7059 05ee 706F7765 		.ascii	"poweredOn\000"
- 7059      7265644F 
- 7059      6E00
- 7060              	.LASF67:
- 7061 05f8 43795854 		.ascii	"CyXTAL_DisableFaultRecovery\000"
- 7061      414C5F44 
- 7061      69736162 
- 7061      6C654661 
- 7061      756C7452 
- 7062              	.LASF73:
- 7063 0614 72656173 		.ascii	"reason\000"
- 7063      6F6E00
- 7064              	.LASF70:
- 7065 061b 43795854 		.ascii	"CyXTAL_SetFbVoltage\000"
- 7065      414C5F53 
- 7065      65744662 
- 7065      566F6C74 
- 7065      61676500 
- 7066              	.LASF45:
- 7067 062f 706D4674 		.ascii	"pmFtwCfg2Reg\000"
- 7067      77436667 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 177
+ 7045              	.LASF3:
+ 7046 0567 73686F72 		.ascii	"short int\000"
+ 7046      7420696E 
+ 7046      7400
+ 7047              	.LASF41:
+ 7048 0571 696C6F45 		.ascii	"iloEnableState\000"
+ 7048      6E61626C 
+ 7048      65537461 
+ 7048      746500
+ 7049              	.LASF62:
+ 7050 0580 43795854 		.ascii	"CyXTAL_EnableErrStatus\000"
+ 7050      414C5F45 
+ 7050      6E61626C 
+ 7050      65457272 
+ 7050      53746174 
+ 7051              	.LASF114:
+ 7052 0597 4379466C 		.ascii	"CyFlushCache\000"
+ 7052      75736843 
+ 7052      61636865 
+ 7052      00
+ 7053              	.LASF137:
+ 7054 05a4 433A5C55 		.ascii	"C:\\Users\\Ian\\Documents\\Junior\\Chip-Design\\pro"
+ 7054      73657273 
+ 7054      5C49616E 
+ 7054      5C446F63 
+ 7054      756D656E 
+ 7055 05d1 6A5F6173 		.ascii	"j_asic\\psoc\\Zach I2S Debugging\\Wave Generator.cy"
+ 7055      69635C70 
+ 7055      736F635C 
+ 7055      5A616368 
+ 7055      20493253 
+ 7056 0601 64736E00 		.ascii	"dsn\000"
+ 7057              	.LASF127:
+ 7058 0605 73746174 		.ascii	"stateReg\000"
+ 7058      65526567 
+ 7058      00
+ 7059              	.LASF30:
+ 7060 060e 706F7765 		.ascii	"poweredOn\000"
+ 7060      7265644F 
+ 7060      6E00
+ 7061              	.LASF67:
+ 7062 0618 43795854 		.ascii	"CyXTAL_DisableFaultRecovery\000"
+ 7062      414C5F44 
+ 7062      69736162 
+ 7062      6C654661 
+ 7062      756C7452 
+ 7063              	.LASF73:
+ 7064 0634 72656173 		.ascii	"reason\000"
+ 7064      6F6E00
+ 7065              	.LASF70:
+ 7066 063b 43795854 		.ascii	"CyXTAL_SetFbVoltage\000"
+ 7066      414C5F53 
+ 7066      65744662 
+ 7066      566F6C74 
+ 7066      61676500 
+ 7067              	.LASF45:
+ 7068 064f 706D4674 		.ascii	"pmFtwCfg2Reg\000"
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 177
 
 
- 7067      32526567 
- 7067      00
- 7068              	.LASF85:
- 7069 063c 6E657874 		.ascii	"nextFreq\000"
- 7069      46726571 
- 7069      00
- 7070              	.LASF97:
- 7071 0645 6C704D6F 		.ascii	"lpMode\000"
- 7071      646500
- 7072              	.LASF10:
- 7073 064c 63686172 		.ascii	"char\000"
- 7073      00
- 7074              	.LASF53:
- 7075 0651 6D6F6465 		.ascii	"mode\000"
- 7075      00
- 7076              	.LASF20:
- 7077 0656 63796973 		.ascii	"cyisraddress\000"
- 7077      72616464 
- 7077      72657373 
- 7077      00
- 7078              	.LASF24:
- 7079 0663 4379494D 		.ascii	"CyIMO_DisableDoubler\000"
- 7079      4F5F4469 
- 7079      7361626C 
- 7079      65446F75 
- 7079      626C6572 
- 7080              	.LASF103:
- 7081 0678 43795664 		.ascii	"CyVdLvDigitDisable\000"
- 7081      4C764469 
- 7081      67697444 
- 7081      69736162 
- 7081      6C6500
- 7082              	.LASF104:
- 7083 068b 43795664 		.ascii	"CyVdLvAnalogDisable\000"
- 7083      4C76416E 
- 7083      616C6F67 
- 7083      44697361 
- 7083      626C6500 
- 7084              	.LASF76:
- 7085 069f 71446976 		.ascii	"qDiv\000"
- 7085      00
- 7086              	.LASF113:
- 7087 06a4 4379456E 		.ascii	"CyEnableInts\000"
- 7087      61626C65 
- 7087      496E7473 
- 7087      00
- 7088              	.LASF34:
- 7089 06b1 43795573 		.ascii	"CyUsbClk_SetSource\000"
- 7089      62436C6B 
- 7089      5F536574 
- 7089      536F7572 
- 7089      636500
- 7090              	.LASF140:
- 7091 06c4 4379506D 		.ascii	"CyPmReadStatus\000"
- 7091      52656164 
- 7091      53746174 
- 7091      757300
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 178
+ 7068      77436667 
+ 7068      32526567 
+ 7068      00
+ 7069              	.LASF85:
+ 7070 065c 6E657874 		.ascii	"nextFreq\000"
+ 7070      46726571 
+ 7070      00
+ 7071              	.LASF97:
+ 7072 0665 6C704D6F 		.ascii	"lpMode\000"
+ 7072      646500
+ 7073              	.LASF10:
+ 7074 066c 63686172 		.ascii	"char\000"
+ 7074      00
+ 7075              	.LASF53:
+ 7076 0671 6D6F6465 		.ascii	"mode\000"
+ 7076      00
+ 7077              	.LASF20:
+ 7078 0676 63796973 		.ascii	"cyisraddress\000"
+ 7078      72616464 
+ 7078      72657373 
+ 7078      00
+ 7079              	.LASF24:
+ 7080 0683 4379494D 		.ascii	"CyIMO_DisableDoubler\000"
+ 7080      4F5F4469 
+ 7080      7361626C 
+ 7080      65446F75 
+ 7080      626C6572 
+ 7081              	.LASF103:
+ 7082 0698 43795664 		.ascii	"CyVdLvDigitDisable\000"
+ 7082      4C764469 
+ 7082      67697444 
+ 7082      69736162 
+ 7082      6C6500
+ 7083              	.LASF104:
+ 7084 06ab 43795664 		.ascii	"CyVdLvAnalogDisable\000"
+ 7084      4C76416E 
+ 7084      616C6F67 
+ 7084      44697361 
+ 7084      626C6500 
+ 7085              	.LASF76:
+ 7086 06bf 71446976 		.ascii	"qDiv\000"
+ 7086      00
+ 7087              	.LASF113:
+ 7088 06c4 4379456E 		.ascii	"CyEnableInts\000"
+ 7088      61626C65 
+ 7088      496E7473 
+ 7088      00
+ 7089              	.LASF34:
+ 7090 06d1 43795573 		.ascii	"CyUsbClk_SetSource\000"
+ 7090      62436C6B 
+ 7090      5F536574 
+ 7090      536F7572 
+ 7090      636500
+ 7091              	.LASF140:
+ 7092 06e4 4379506D 		.ascii	"CyPmReadStatus\000"
+ 7092      52656164 
+ 7092      53746174 
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 178
 
 
- 7092              	.LASF84:
- 7093 06d3 63757272 		.ascii	"currentFreq\000"
- 7093      656E7446 
- 7093      72657100 
- 7094              	.LASF88:
- 7095 06df 43794465 		.ascii	"CyDelay\000"
- 7095      6C617900 
- 7096              	.LASF29:
- 7097 06e7 43794275 		.ascii	"CyBusClk_SetDivider\000"
- 7097      73436C6B 
- 7097      5F536574 
- 7097      44697669 
- 7097      64657200 
- 7098              	.LASF132:
- 7099 06fb 63796465 		.ascii	"cydelay_32k_ms\000"
- 7099      6C61795F 
- 7099      33326B5F 
- 7099      6D7300
- 7100              	.LASF110:
- 7101 070a 7664466C 		.ascii	"vdFlagsState\000"
- 7101      61677353 
- 7101      74617465 
- 7101      00
- 7102              	.LASF40:
- 7103 0717 73746174 		.ascii	"status\000"
- 7103      757300
- 7104              	.LASF135:
- 7105 071e 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 7105      4320342E 
- 7105      392E3320 
- 7105      32303135 
- 7105      30333033 
- 7106 0751 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 7106      20726576 
- 7106      6973696F 
- 7106      6E203232 
- 7106      31323230 
- 7107 0784 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 7107      66756E63 
- 7107      74696F6E 
- 7107      2D736563 
- 7107      74696F6E 
- 7108              	.LASF50:
- 7109 07ac 4379494C 		.ascii	"CyILO_SetSource\000"
- 7109      4F5F5365 
- 7109      74536F75 
- 7109      72636500 
- 7110              	.LASF75:
- 7111 07bc 70446976 		.ascii	"pDiv\000"
- 7111      00
- 7112              	.LASF83:
- 7113 07c1 4379494D 		.ascii	"CyIMO_SetFreq\000"
- 7113      4F5F5365 
- 7113      74467265 
- 7113      7100
- 7114              	.LASF64:
- 7115 07cf 43795854 		.ascii	"CyXTAL_32KHZ_ReadStatus\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccAeIOBy.s 			page 179
+ 7092      757300
+ 7093              	.LASF84:
+ 7094 06f3 63757272 		.ascii	"currentFreq\000"
+ 7094      656E7446 
+ 7094      72657100 
+ 7095              	.LASF88:
+ 7096 06ff 43794465 		.ascii	"CyDelay\000"
+ 7096      6C617900 
+ 7097              	.LASF29:
+ 7098 0707 43794275 		.ascii	"CyBusClk_SetDivider\000"
+ 7098      73436C6B 
+ 7098      5F536574 
+ 7098      44697669 
+ 7098      64657200 
+ 7099              	.LASF132:
+ 7100 071b 63796465 		.ascii	"cydelay_32k_ms\000"
+ 7100      6C61795F 
+ 7100      33326B5F 
+ 7100      6D7300
+ 7101              	.LASF110:
+ 7102 072a 7664466C 		.ascii	"vdFlagsState\000"
+ 7102      61677353 
+ 7102      74617465 
+ 7102      00
+ 7103              	.LASF40:
+ 7104 0737 73746174 		.ascii	"status\000"
+ 7104      757300
+ 7105              	.LASF135:
+ 7106 073e 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 7106      4320342E 
+ 7106      392E3320 
+ 7106      32303135 
+ 7106      30333033 
+ 7107 0771 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 7107      20726576 
+ 7107      6973696F 
+ 7107      6E203232 
+ 7107      31323230 
+ 7108 07a4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 7108      66756E63 
+ 7108      74696F6E 
+ 7108      2D736563 
+ 7108      74696F6E 
+ 7109              	.LASF50:
+ 7110 07cc 4379494C 		.ascii	"CyILO_SetSource\000"
+ 7110      4F5F5365 
+ 7110      74536F75 
+ 7110      72636500 
+ 7111              	.LASF75:
+ 7112 07dc 70446976 		.ascii	"pDiv\000"
+ 7112      00
+ 7113              	.LASF83:
+ 7114 07e1 4379494D 		.ascii	"CyIMO_SetFreq\000"
+ 7114      4F5F5365 
+ 7114      74467265 
+ 7114      7100
+ 7115              	.LASF64:
+ARM GAS  C:\Users\Ian\AppData\Local\Temp\ccZ2ezSp.s 			page 179
 
 
- 7115      414C5F33 
- 7115      324B485A 
- 7115      5F526561 
- 7115      64537461 
- 7116              	.LASF60:
- 7117 07e7 706D5477 		.ascii	"pmTwCfg2Tmp\000"
- 7117      43666732 
- 7117      546D7000 
- 7118              	.LASF25:
- 7119 07f3 64697669 		.ascii	"divider\000"
- 7119      64657200 
- 7120              	.LASF16:
- 7121 07fb 63797374 		.ascii	"cystatus\000"
- 7121      61747573 
- 7121      00
- 7122              	.LASF69:
- 7123 0804 73657474 		.ascii	"setting\000"
- 7123      696E6700 
- 7124              	.LASF46:
- 7125 080c 706D4674 		.ascii	"pmFtwCfg0Reg\000"
- 7125      77436667 
- 7125      30526567 
- 7125      00
- 7126              	.LASF91:
- 7127 0819 6D696372 		.ascii	"microseconds\000"
- 7127      6F736563 
- 7127      6F6E6473 
- 7127      00
- 7128              	.LASF105:
- 7129 0826 43795664 		.ascii	"CyVdHvAnalogEnable\000"
- 7129      4876416E 
- 7129      616C6F67 
- 7129      456E6162 
- 7129      6C6500
- 7130              	.LASF99:
- 7131 0839 43795664 		.ascii	"CyVdLvDigitEnable\000"
- 7131      4C764469 
- 7131      67697445 
- 7131      6E61626C 
- 7131      6500
- 7132              	.LASF61:
- 7133 084b 43795854 		.ascii	"CyXTAL_Stop\000"
- 7133      414C5F53 
- 7133      746F7000 
- 7134              	.LASF134:
- 7135 0857 4379506D 		.ascii	"CyPmFtwSetInterval\000"
- 7135      46747753 
- 7135      6574496E 
- 7135      74657276 
- 7135      616C00
- 7136              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 7116 07ef 43795854 		.ascii	"CyXTAL_32KHZ_ReadStatus\000"
+ 7116      414C5F33 
+ 7116      324B485A 
+ 7116      5F526561 
+ 7116      64537461 
+ 7117              	.LASF60:
+ 7118 0807 706D5477 		.ascii	"pmTwCfg2Tmp\000"
+ 7118      43666732 
+ 7118      546D7000 
+ 7119              	.LASF25:
+ 7120 0813 64697669 		.ascii	"divider\000"
+ 7120      64657200 
+ 7121              	.LASF16:
+ 7122 081b 63797374 		.ascii	"cystatus\000"
+ 7122      61747573 
+ 7122      00
+ 7123              	.LASF69:
+ 7124 0824 73657474 		.ascii	"setting\000"
+ 7124      696E6700 
+ 7125              	.LASF46:
+ 7126 082c 706D4674 		.ascii	"pmFtwCfg0Reg\000"
+ 7126      77436667 
+ 7126      30526567 
+ 7126      00
+ 7127              	.LASF91:
+ 7128 0839 6D696372 		.ascii	"microseconds\000"
+ 7128      6F736563 
+ 7128      6F6E6473 
+ 7128      00
+ 7129              	.LASF105:
+ 7130 0846 43795664 		.ascii	"CyVdHvAnalogEnable\000"
+ 7130      4876416E 
+ 7130      616C6F67 
+ 7130      456E6162 
+ 7130      6C6500
+ 7131              	.LASF99:
+ 7132 0859 43795664 		.ascii	"CyVdLvDigitEnable\000"
+ 7132      4C764469 
+ 7132      67697445 
+ 7132      6E61626C 
+ 7132      6500
+ 7133              	.LASF61:
+ 7134 086b 43795854 		.ascii	"CyXTAL_Stop\000"
+ 7134      414C5F53 
+ 7134      746F7000 
+ 7135              	.LASF134:
+ 7136 0877 4379506D 		.ascii	"CyPmFtwSetInterval\000"
+ 7136      46747753 
+ 7136      6574496E 
+ 7136      74657276 
+ 7136      616C00
+ 7137              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

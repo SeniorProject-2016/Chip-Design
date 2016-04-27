@@ -1,6 +1,6 @@
 -- Project:   Wave Generator
--- Generated: 04/27/2016 12:29:50
--- PSoC Creator  3.3 SP1
+-- Generated: 04/27/2016 17:21:38
+-- PSoC Creator  3.3 CP2
 
 ENTITY \Wave Generator\ IS
     PORT(
@@ -10,7 +10,15 @@ ENTITY \Wave Generator\ IS
         TX(0)_PAD : OUT std_ulogic;
         SCK_1(0)_PAD : OUT std_ulogic;
         WS_1(0)_PAD : OUT std_ulogic;
-        SDI_1(0)_PAD : IN std_ulogic);
+        SDI_1(0)_PAD : IN std_ulogic;
+        Pin_1(0)_PAD : OUT std_ulogic;
+        \LCD:LCDPort(0)_PAD\ : OUT std_ulogic;
+        \LCD:LCDPort(1)_PAD\ : OUT std_ulogic;
+        \LCD:LCDPort(2)_PAD\ : OUT std_ulogic;
+        \LCD:LCDPort(3)_PAD\ : OUT std_ulogic;
+        \LCD:LCDPort(4)_PAD\ : OUT std_ulogic;
+        \LCD:LCDPort(5)_PAD\ : OUT std_ulogic;
+        \LCD:LCDPort(6)_PAD\ : OUT std_ulogic);
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VUSB OF __DEFAULT__ : ENTITY IS 5e0;
@@ -34,22 +42,23 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL ClockBlock_PLL_OUT : bit;
     SIGNAL ClockBlock_XTAL : bit;
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
-    SIGNAL Net_261 : bit;
     SIGNAL Net_277 : bit;
-    SIGNAL Net_310 : bit;
-    SIGNAL Net_364 : bit;
-    ATTRIBUTE udbclken_assigned OF Net_364 : SIGNAL IS "True";
-    ATTRIBUTE global_signal OF Net_364 : SIGNAL IS true;
-    SIGNAL Net_364_local : bit;
-    SIGNAL Net_365 : bit;
-    SIGNAL Net_367_0 : bit;
-    SIGNAL Net_371_0 : bit;
-    SIGNAL Net_374_0 : bit;
-    SIGNAL Net_376 : bit;
     SIGNAL Net_378 : bit;
-    SIGNAL Net_388 : bit;
     SIGNAL Net_391 : bit;
-    SIGNAL Net_397 : bit;
+    SIGNAL Net_407_0 : bit;
+    SIGNAL Net_408 : bit;
+    SIGNAL Net_409 : bit;
+    SIGNAL Net_412 : bit;
+    SIGNAL Net_420 : bit;
+    SIGNAL Net_422 : bit;
+    SIGNAL Net_439_0 : bit;
+    SIGNAL Net_440 : bit;
+    ATTRIBUTE udbclken_assigned OF Net_440 : SIGNAL IS "True";
+    ATTRIBUTE global_signal OF Net_440 : SIGNAL IS true;
+    SIGNAL Net_440_local : bit;
+    SIGNAL Net_442_0 : bit;
+    SIGNAL Net_444 : bit;
+    SIGNAL Pin_1(0)__PA : bit;
     SIGNAL SCK(0)__PA : bit;
     SIGNAL SCK_1(0)__PA : bit;
     SIGNAL SDI_1(0)__PA : bit;
@@ -110,6 +119,13 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     SIGNAL \I2S_1:bI2S:rx_state_1\ : bit;
     SIGNAL \I2S_1:bI2S:rx_state_2\ : bit;
     SIGNAL \I2S_1:bI2S:rxenable\ : bit;
+    SIGNAL \\\LCD:LCDPort(0)\\__PA\ : bit;
+    SIGNAL \\\LCD:LCDPort(1)\\__PA\ : bit;
+    SIGNAL \\\LCD:LCDPort(2)\\__PA\ : bit;
+    SIGNAL \\\LCD:LCDPort(3)\\__PA\ : bit;
+    SIGNAL \\\LCD:LCDPort(4)\\__PA\ : bit;
+    SIGNAL \\\LCD:LCDPort(5)\\__PA\ : bit;
+    SIGNAL \\\LCD:LCDPort(6)\\__PA\ : bit;
     SIGNAL \UART:BUART:counter_load_not\ : bit;
     SIGNAL \UART:BUART:tx_bitclk\ : bit;
     SIGNAL \UART:BUART:tx_bitclk_enable_pre\ : bit;
@@ -149,6 +165,22 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE Location OF WS_1(0) : LABEL IS "P4[4]";
     ATTRIBUTE lib_model OF SDI_1(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF SDI_1(0) : LABEL IS "P4[5]";
+    ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell8";
+    ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P1[6]";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(0)\ : LABEL IS "iocell9";
+    ATTRIBUTE Location OF \LCD:LCDPort(0)\ : LABEL IS "P2[0]";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(1)\ : LABEL IS "iocell10";
+    ATTRIBUTE Location OF \LCD:LCDPort(1)\ : LABEL IS "P2[1]";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(2)\ : LABEL IS "iocell11";
+    ATTRIBUTE Location OF \LCD:LCDPort(2)\ : LABEL IS "P2[2]";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(3)\ : LABEL IS "iocell12";
+    ATTRIBUTE Location OF \LCD:LCDPort(3)\ : LABEL IS "P2[3]";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(4)\ : LABEL IS "iocell13";
+    ATTRIBUTE Location OF \LCD:LCDPort(4)\ : LABEL IS "P2[4]";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(5)\ : LABEL IS "iocell14";
+    ATTRIBUTE Location OF \LCD:LCDPort(5)\ : LABEL IS "P2[5]";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(6)\ : LABEL IS "iocell15";
+    ATTRIBUTE Location OF \LCD:LCDPort(6)\ : LABEL IS "P2[6]";
     ATTRIBUTE lib_model OF \I2S:bI2S:tx_underflow_0\ : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Net_277 : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF \UART:BUART:counter_load_not\ : LABEL IS "macrocell3";
@@ -167,13 +199,13 @@ ARCHITECTURE __DEFAULT__ OF \Wave Generator\ IS
     ATTRIBUTE lib_model OF \I2S_1:bI2S:Rx:STS[0]:Sts\ : LABEL IS "statusicell3";
     ATTRIBUTE lib_model OF \I2S_1:bI2S:Rx:CH[0]:dpRx:u0\ : LABEL IS "datapathcell4";
     ATTRIBUTE lib_model OF \I2S:bI2S:reset\ : LABEL IS "macrocell7";
-    ATTRIBUTE lib_model OF Net_388 : LABEL IS "macrocell8";
+    ATTRIBUTE lib_model OF Net_409 : LABEL IS "macrocell8";
     ATTRIBUTE lib_model OF \I2S:bI2S:tx_underflow_sticky\ : LABEL IS "macrocell9";
     ATTRIBUTE lib_model OF \I2S:bI2S:txenable\ : LABEL IS "macrocell10";
     ATTRIBUTE lib_model OF \I2S:bI2S:tx_state_2\ : LABEL IS "macrocell11";
     ATTRIBUTE lib_model OF \I2S:bI2S:tx_state_1\ : LABEL IS "macrocell12";
     ATTRIBUTE lib_model OF \I2S:bI2S:tx_state_0\ : LABEL IS "macrocell13";
-    ATTRIBUTE lib_model OF Net_367_0 : LABEL IS "macrocell14";
+    ATTRIBUTE lib_model OF Net_407_0 : LABEL IS "macrocell14";
     ATTRIBUTE lib_model OF \UART:BUART:txn\ : LABEL IS "macrocell15";
     ATTRIBUTE lib_model OF \UART:BUART:tx_state_1\ : LABEL IS "macrocell16";
     ATTRIBUTE lib_model OF \UART:BUART:tx_state_0\ : LABEL IS "macrocell17";
@@ -537,8 +569,8 @@ BEGIN
             clk_bus => ClockBlock_BUS_CLK_local,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => Net_364,
-            dclk_0 => Net_364_local,
+            dclk_glb_0 => Net_440,
+            dclk_0 => Net_440_local,
             dclk_glb_1 => \UART:Net_9\,
             dclk_1 => \UART:Net_9_local\);
 
@@ -624,7 +656,7 @@ BEGIN
         PORT MAP(
             pa_out => SCK(0)__PA,
             oe => open,
-            pin_input => Net_365,
+            pin_input => Net_408,
             pad_out => SCK(0)_PAD,
             pad_in => SCK(0)_PAD,
             in_clock => open,
@@ -716,7 +748,7 @@ BEGIN
         PORT MAP(
             pa_out => WS(0)__PA,
             oe => open,
-            pin_input => Net_388,
+            pin_input => Net_409,
             pad_out => WS(0)_PAD,
             pad_in => WS(0)_PAD,
             in_clock => open,
@@ -808,7 +840,7 @@ BEGIN
         PORT MAP(
             pa_out => SDO(0)__PA,
             oe => open,
-            pin_input => Net_367_0,
+            pin_input => Net_407_0,
             pad_out => SDO(0)_PAD,
             pad_in => SDO(0)_PAD,
             in_clock => open,
@@ -1176,8 +1208,304 @@ BEGIN
         PORT MAP(
             pa_out => SDI_1(0)__PA,
             oe => open,
-            fb => Net_376,
+            fb => Net_412,
             pad_in => SDI_1(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    Pin_1:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "1",
+            id => "e851a3b9-efb8-48be-bbb8-b303b216c393",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "1",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    Pin_1(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "Pin_1",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => Pin_1(0)__PA,
+            oe => open,
+            pin_input => Net_444,
+            pad_out => Pin_1(0)_PAD,
+            pad_in => Pin_1(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \LCD:LCDPort\:logicalport
+        GENERIC MAP(
+            drive_mode => "110110110110110110110",
+            ibuf_enabled => "1111111",
+            id => "ba702ec7-d55d-4586-8e14-aca6a8179e2e/ed092b9b-d398-4703-be89-cebf998501f6",
+            init_dr_st => "0000000",
+            input_buffer_sel => "00000000000000",
+            input_clk_en => 0,
+            input_sync => "1111111",
+            input_sync_mode => "0000000",
+            intr_mode => "00000000000000",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => ",,,,,,",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0000000",
+            oe_reset => 0,
+            oe_sync => "0000000",
+            output_clk_en => 0,
+            output_clock_mode => "0000000",
+            output_conn => "0000000",
+            output_mode => "0000000",
+            output_reset => 0,
+            output_sync => "0000000",
+            ovt_hyst_trim => "0000000",
+            ovt_needed => "0000000",
+            ovt_slew_control => "00000000000000",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => ",,,,,,",
+            pin_mode => "OOOOOOO",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1111111",
+            sio_ibuf => "00000000",
+            sio_info => "00000000000000",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0000000",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0000000",
+            vtrip => "10101010101010",
+            width => 7,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    \LCD:LCDPort(0)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\LCD:LCDPort\",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\LCD:LCDPort(0)\\__PA\,
+            oe => open,
+            pad_in => \LCD:LCDPort(0)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \LCD:LCDPort(1)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\LCD:LCDPort\",
+            logicalport_pin_id => 1,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\LCD:LCDPort(1)\\__PA\,
+            oe => open,
+            pad_in => \LCD:LCDPort(1)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \LCD:LCDPort(2)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\LCD:LCDPort\",
+            logicalport_pin_id => 2,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\LCD:LCDPort(2)\\__PA\,
+            oe => open,
+            pad_in => \LCD:LCDPort(2)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \LCD:LCDPort(3)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\LCD:LCDPort\",
+            logicalport_pin_id => 3,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\LCD:LCDPort(3)\\__PA\,
+            oe => open,
+            pad_in => \LCD:LCDPort(3)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \LCD:LCDPort(4)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\LCD:LCDPort\",
+            logicalport_pin_id => 4,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\LCD:LCDPort(4)\\__PA\,
+            oe => open,
+            pad_in => \LCD:LCDPort(4)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \LCD:LCDPort(5)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\LCD:LCDPort\",
+            logicalport_pin_id => 5,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\LCD:LCDPort(5)\\__PA\,
+            oe => open,
+            pad_in => \LCD:LCDPort(5)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \LCD:LCDPort(6)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\LCD:LCDPort\",
+            logicalport_pin_id => 6,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\LCD:LCDPort(6)\\__PA\,
+            oe => open,
+            pad_in => \LCD:LCDPort(6)_PAD\,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -1257,7 +1585,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_364,
+            clock => Net_440,
             control_7 => \I2S:bI2S:ctrl_7\,
             control_6 => \I2S:bI2S:ctrl_6\,
             control_5 => \I2S:bI2S:ctrl_5\,
@@ -1278,7 +1606,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_364,
+            clock => Net_440,
             load => open,
             enable => \I2S:bI2S:ctrl_2\,
             count_6 => \I2S:bI2S:count_6\,
@@ -1287,7 +1615,7 @@ BEGIN
             count_3 => \I2S:bI2S:count_3\,
             count_2 => \I2S:bI2S:count_2\,
             count_1 => \I2S:bI2S:count_1\,
-            count_0 => Net_365);
+            count_0 => Net_408);
 
     \I2S:bI2S:Tx:STS[0]:Sts\:statusicell
         GENERIC MAP(
@@ -1297,13 +1625,13 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_364,
+            clock => Net_440,
             status_6 => open,
             status_5 => open,
             status_4 => open,
             status_3 => open,
-            status_2 => Net_371_0,
-            status_1 => Net_374_0,
+            status_2 => Net_439_0,
+            status_1 => Net_442_0,
             status_0 => \I2S:bI2S:tx_underflow_0\,
             interrupt => \I2S:bI2S:tx_int_out_0\);
 
@@ -1335,15 +1663,15 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_364,
+            clock => Net_440,
             cs_addr_2 => \I2S:bI2S:tx_state_2\,
             cs_addr_1 => \I2S:bI2S:tx_state_1\,
             cs_addr_0 => \I2S:bI2S:tx_state_0\,
             d0_load => open,
             so_comb => \I2S:bI2S:tx_data_out_0\,
-            f0_bus_stat_comb => Net_374_0,
+            f0_bus_stat_comb => Net_442_0,
             f0_blk_stat_comb => \I2S:bI2S:tx_f0_empty_0\,
-            f1_bus_stat_comb => Net_371_0,
+            f1_bus_stat_comb => Net_439_0,
             f1_blk_stat_comb => \I2S:bI2S:tx_f1_empty_0\,
             busclk => ClockBlock_BUS_CLK);
 
@@ -1352,16 +1680,16 @@ BEGIN
             drq_type => "01",
             num_tds => 0)
         PORT MAP(
-            dmareq => Net_374_0,
+            dmareq => Net_442_0,
             termin => '0',
-            termout => Net_261,
+            termout => Net_422,
             clock => ClockBlock_BUS_CLK);
 
     isr_1:interrupt
         GENERIC MAP(
-            int_type => "10")
+            int_type => "01")
         PORT MAP(
-            interrupt => Net_397,
+            interrupt => Net_444,
             clock => ClockBlock_BUS_CLK);
 
     \UART:BUART:sTX:TxShifter:u0\:datapathcell
@@ -1460,9 +1788,9 @@ BEGIN
             drq_type => "01",
             num_tds => 0)
         PORT MAP(
-            dmareq => Net_371_0,
+            dmareq => Net_439_0,
             termin => '0',
-            termout => Net_310,
+            termout => Net_420,
             clock => ClockBlock_BUS_CLK);
 
     \I2S_1:bI2S:CtlReg\:controlcell
@@ -1475,7 +1803,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_364,
+            clock => Net_440,
             control_7 => \I2S_1:bI2S:ctrl_reg_out_7\,
             control_6 => \I2S_1:bI2S:ctrl_reg_out_6\,
             control_5 => \I2S_1:bI2S:ctrl_reg_out_5\,
@@ -1496,7 +1824,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_364,
+            clock => Net_440,
             load => open,
             enable => \I2S_1:bI2S:ctrl_reg_out_2\,
             count_6 => \I2S_1:bI2S:count_6\,
@@ -1515,7 +1843,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_364,
+            clock => Net_440,
             status_6 => open,
             status_5 => open,
             status_4 => open,
@@ -1523,7 +1851,7 @@ BEGIN
             status_2 => \I2S_1:bI2S:rx_f1_n_empty_0\,
             status_1 => \I2S_1:bI2S:rx_f0_n_empty_0\,
             status_0 => \I2S_1:bI2S:rx_overflow_0\,
-            interrupt => Net_397);
+            interrupt => Net_444);
 
     \I2S_1:bI2S:Rx:CH[0]:dpRx:u0\:datapathcell
         GENERIC MAP(
@@ -1553,7 +1881,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_364,
+            clock => Net_440,
             cs_addr_2 => \I2S_1:bI2S:rx_state_2\,
             cs_addr_1 => \I2S_1:bI2S:rx_state_1\,
             cs_addr_0 => \I2S_1:bI2S:rx_state_0\,
@@ -1573,17 +1901,17 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S:bI2S:reset\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S:bI2S:ctrl_2\);
 
-    Net_388:macrocell
+    Net_409:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0 * !main_1)",
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_388,
-            clock_0 => Net_364,
+            q => Net_409,
+            clock_0 => Net_440,
             main_0 => \I2S:bI2S:reset\,
             main_1 => \I2S:bI2S:count_5\);
 
@@ -1594,7 +1922,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S:bI2S:tx_underflow_sticky\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S:bI2S:ctrl_0\,
             main_1 => \I2S:bI2S:tx_underflow_sticky\,
             main_2 => \I2S:bI2S:tx_state_2\,
@@ -1610,8 +1938,8 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S:bI2S:txenable\,
-            clock_0 => Net_364,
-            main_0 => Net_365,
+            clock_0 => Net_440,
+            main_0 => Net_408,
             main_1 => \I2S:bI2S:ctrl_2\,
             main_2 => \I2S:bI2S:ctrl_0\,
             main_3 => \I2S:bI2S:count_6\,
@@ -1630,7 +1958,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S:bI2S:tx_state_2\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S:bI2S:count_5\,
             main_1 => \I2S:bI2S:count_3\,
             main_2 => \I2S:bI2S:count_2\,
@@ -1647,7 +1975,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S:bI2S:tx_state_1\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S:bI2S:count_3\,
             main_1 => \I2S:bI2S:count_2\,
             main_2 => \I2S:bI2S:count_1\,
@@ -1663,7 +1991,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S:bI2S:tx_state_0\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S:bI2S:count_5\,
             main_1 => \I2S:bI2S:count_3\,
             main_2 => \I2S:bI2S:count_2\,
@@ -1673,16 +2001,16 @@ BEGIN
             main_6 => \I2S:bI2S:tx_state_1\,
             main_7 => \I2S:bI2S:tx_state_0\);
 
-    Net_367_0:macrocell
+    Net_407_0:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0 * main_1) + (main_0 * main_2)",
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_367_0,
-            clock_0 => Net_364,
-            main_0 => Net_365,
-            main_1 => Net_367_0,
+            q => Net_407_0,
+            clock_0 => Net_440,
+            main_0 => Net_408,
+            main_1 => Net_407_0,
             main_2 => \I2S:bI2S:tx_data_out_0\);
 
     \UART:BUART:txn\:macrocell
@@ -1766,7 +2094,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:reset\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:ctrl_reg_out_2\);
 
     Net_378:macrocell
@@ -1776,7 +2104,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_378,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:reset\,
             main_1 => \I2S_1:bI2S:count_5\);
 
@@ -1787,7 +2115,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:rx_f0_load\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:rx_state_2\,
             main_1 => \I2S_1:bI2S:rx_state_1\,
             main_2 => \I2S_1:bI2S:rx_state_0\);
@@ -1799,7 +2127,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:rx_state_2\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:count_5\,
             main_1 => \I2S_1:bI2S:count_4\,
             main_2 => \I2S_1:bI2S:count_3\,
@@ -1817,7 +2145,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:rx_state_1\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:count_5\,
             main_1 => \I2S_1:bI2S:count_4\,
             main_2 => \I2S_1:bI2S:count_3\,
@@ -1835,7 +2163,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:rx_state_0\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:count_3\,
             main_1 => \I2S_1:bI2S:count_2\,
             main_2 => \I2S_1:bI2S:count_1\,
@@ -1851,7 +2179,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:rx_f1_load\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:rx_state_2\,
             main_1 => \I2S_1:bI2S:rx_state_1\,
             main_2 => \I2S_1:bI2S:rx_state_0\);
@@ -1863,7 +2191,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:rx_overflow_sticky\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:ctrl_reg_out_1\,
             main_1 => \I2S_1:bI2S:rx_f0_load\,
             main_2 => \I2S_1:bI2S:rx_f1_load\,
@@ -1878,7 +2206,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:rxenable\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => \I2S_1:bI2S:ctrl_reg_out_2\,
             main_1 => \I2S_1:bI2S:ctrl_reg_out_1\,
             main_2 => \I2S_1:bI2S:count_6\,
@@ -1898,9 +2226,9 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \I2S_1:bI2S:rx_data_in_0\,
-            clock_0 => Net_364,
+            clock_0 => Net_440,
             main_0 => Net_391,
             main_1 => \I2S_1:bI2S:rx_data_in_0\,
-            main_2 => Net_376);
+            main_2 => Net_412);
 
 END __DEFAULT__;

@@ -82,8 +82,9 @@ int main()
 	
 	/* Enable I2S component */
     I2S_EnableTx();     /* Enable Tx direction */
-	I2S_EnableRx();		/* Enable Rx direction */
+	I2S_1_EnableRx();		/* Enable Rx direction */
     I2S_Start();
+    I2S_1_Start();
     	
 	CyDelay(3000);		/* Wait for data transmissions to complete */
 	/* There's probably a better way to do that than simply waiting... */
@@ -126,8 +127,8 @@ void DmaRxConfiguration(void)
 	CyDmaTdSetConfiguration(RxDMA_TD_1[0], 2*BUFFER_SIZE, DMA_DISABLE_TD, TD_INC_DST_ADR | RxDMA_1__TD_TERMOUT_EN | CY_DMA_TD_SWAP_EN);
 
     /* From the I2S to the memory */
-    CyDmaTdSetAddress(RxDMA_TD_0[0], LO16((uint32)I2S_RX_CH0_F0_PTR), LO16((uint32)ReceivedData));
-	CyDmaTdSetAddress(RxDMA_TD_1[0], LO16((uint32)I2S_RX_CH0_F1_PTR), LO16((uint32)dummy));
+    CyDmaTdSetAddress(RxDMA_TD_0[0], LO16((uint32)I2S_1_RX_CH0_F0_PTR), LO16((uint32)ReceivedData));
+	CyDmaTdSetAddress(RxDMA_TD_1[0], LO16((uint32)I2S_1_RX_CH0_F1_PTR), LO16((uint32)dummy));
 	
     /* Associate the TD with the channel */
     CyDmaChSetInitialTd(RxDMA_Chan_0, RxDMA_TD_0[0]);
