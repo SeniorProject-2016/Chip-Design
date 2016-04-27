@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
   29:.\Generated_Source\PSoC5/I2S.c **** *  Enables I2S interface. Starts the generation of the sck and ws outputs.
   30:.\Generated_Source\PSoC5/I2S.c **** *  The Tx and Rx directions remain disabled. It is not necessary to call
   31:.\Generated_Source\PSoC5/I2S.c **** *  I2S_Enable() because the I2S_Start() routine calls this function, which is
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 2
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/I2S.c **** *  the preferred method to begin component operation.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
   63              		.thumb
   64              		.thumb_func
   65              		.type	I2S_Init, %function
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 3
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 3
 
 
   66              	I2S_Init:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
   87              	.LFE1:
   88              		.size	I2S_Init, .-I2S_Init
   89              		.section	.text.I2S_Start,"ax",%progbits
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 4
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 4
 
 
   90              		.align	2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  130:.\Generated_Source\PSoC5/I2S.c ****             #endif /* I2S_CLIP_DETECT_ENABLE */
  131:.\Generated_Source\PSoC5/I2S.c ****         #endif /* I2S_RX_STEREO_4_PRESENT */
  132:.\Generated_Source\PSoC5/I2S.c ****     #endif /* (I2S_RX_DIRECTION_ENABLE) */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 5
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 5
 
 
  133:.\Generated_Source\PSoC5/I2S.c **** }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  117              		.loc 1 166 0
  118 0012 FFF7FEFF 		bl	I2S_Enable
  119              	.LVL3:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 6
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 6
 
 
  120 0016 08BD     		pop	{r3, pc}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  205:.\Generated_Source\PSoC5/I2S.c ****         I2S_ClearRxFIFO();
  206:.\Generated_Source\PSoC5/I2S.c ****     #endif /* (I2S_RX_DIRECTION_ENABLE) */
  207:.\Generated_Source\PSoC5/I2S.c **** }
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 7
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 7
 
 
  208:.\Generated_Source\PSoC5/I2S.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  262:.\Generated_Source\PSoC5/I2S.c **** #endif /* I2S_DYNAMIC_BIT_RESOLUTION */
  263:.\Generated_Source\PSoC5/I2S.c **** 
  264:.\Generated_Source\PSoC5/I2S.c **** #if(I2S_TX_DIRECTION_ENABLE)
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 8
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 8
 
 
  265:.\Generated_Source\PSoC5/I2S.c ****     /*******************************************************************************
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  160 001e 08BD     		pop	{r3, pc}
  161              	.L16:
  162              		.align	2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 9
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 9
 
 
  163              	.L15:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  191 000c FFF7FEFF 		bl	CyEnterCriticalSection
  192              	.LVL6:
  321:.\Generated_Source\PSoC5/I2S.c ****         I2S_TX_STS0_1_ACTL_REG &= (uint8)~I2S_INT_EN;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 10
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 10
 
 
  193              		.loc 1 321 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  220              		@ args = 0, pretend = 0, frame = 0
  221              		@ frame_needed = 0, uses_anonymous_args = 0
  222 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 11
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 11
 
 
  223              		.cfi_def_cfa_offset 8
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  259              		@ frame_needed = 0, uses_anonymous_args = 0
  260 0000 08B5     		push	{r3, lr}
  261              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 12
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 12
 
 
  262              		.cfi_offset 3, -8
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  309              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
  310              		.file 3 ".\\Generated_Source\\PSoC5\\CyLib.h"
  311              		.section	.debug_info,"",%progbits
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 13
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 13
 
 
  312              	.Ldebug_info0:
@@ -727,10 +727,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  315 0006 00000000 		.4byte	.Ldebug_abbrev0
  316 000a 04       		.byte	0x4
  317 000b 01       		.uleb128 0x1
- 318 000c A8000000 		.4byte	.LASF22
+ 318 000c E9000000 		.4byte	.LASF22
  319 0010 01       		.byte	0x1
- 320 0011 40000000 		.4byte	.LASF23
- 321 0015 36010000 		.4byte	.LASF24
+ 320 0011 81000000 		.4byte	.LASF23
+ 321 0015 0E000000 		.4byte	.LASF24
  322 0019 00000000 		.4byte	.Ldebug_ranges0+0
  323 001d 00000000 		.4byte	0
  324 0021 00000000 		.4byte	.Ldebug_line0
@@ -741,31 +741,31 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  329 002c 03       		.uleb128 0x3
  330 002d 04       		.byte	0x4
  331 002e 07       		.byte	0x7
- 332 002f 0E000000 		.4byte	.LASF0
+ 332 002f 4F000000 		.4byte	.LASF0
  333 0033 03       		.uleb128 0x3
  334 0034 01       		.byte	0x1
  335 0035 06       		.byte	0x6
- 336 0036 DC010000 		.4byte	.LASF1
+ 336 0036 B8010000 		.4byte	.LASF1
  337 003a 03       		.uleb128 0x3
  338 003b 01       		.byte	0x1
  339 003c 08       		.byte	0x8
- 340 003d 9B010000 		.4byte	.LASF2
+ 340 003d 77010000 		.4byte	.LASF2
  341 0041 03       		.uleb128 0x3
  342 0042 02       		.byte	0x2
  343 0043 05       		.byte	0x5
- 344 0044 24020000 		.4byte	.LASF3
+ 344 0044 00020000 		.4byte	.LASF3
  345 0048 03       		.uleb128 0x3
  346 0049 02       		.byte	0x2
  347 004a 07       		.byte	0x7
- 348 004b C9010000 		.4byte	.LASF4
+ 348 004b A5010000 		.4byte	.LASF4
  349 004f 03       		.uleb128 0x3
  350 0050 04       		.byte	0x4
  351 0051 05       		.byte	0x5
- 352 0052 B9010000 		.4byte	.LASF5
+ 352 0052 95010000 		.4byte	.LASF5
  353 0056 03       		.uleb128 0x3
  354 0057 04       		.byte	0x4
  355 0058 07       		.byte	0x7
- 356 0059 65000000 		.4byte	.LASF6
+ 356 0059 A6000000 		.4byte	.LASF6
  357 005d 03       		.uleb128 0x3
  358 005e 08       		.byte	0x8
  359 005f 05       		.byte	0x5
@@ -773,40 +773,40 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  361 0064 03       		.uleb128 0x3
  362 0065 08       		.byte	0x8
  363 0066 07       		.byte	0x7
- 364 0067 77000000 		.4byte	.LASF8
+ 364 0067 B8000000 		.4byte	.LASF8
  365 006b 03       		.uleb128 0x3
  366 006c 04       		.byte	0x4
  367 006d 07       		.byte	0x7
- 368 006e 4F020000 		.4byte	.LASF9
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 14
+ 368 006e 2B020000 		.4byte	.LASF9
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 14
 
 
  369 0072 03       		.uleb128 0x3
  370 0073 01       		.byte	0x1
  371 0074 08       		.byte	0x8
- 372 0075 A9010000 		.4byte	.LASF10
+ 372 0075 85010000 		.4byte	.LASF10
  373 0079 04       		.uleb128 0x4
- 374 007a 5F000000 		.4byte	.LASF13
+ 374 007a A0000000 		.4byte	.LASF13
  375 007e 02       		.byte	0x2
  376 007f 5B       		.byte	0x5b
  377 0080 3A000000 		.4byte	0x3a
  378 0084 03       		.uleb128 0x3
  379 0085 04       		.byte	0x4
  380 0086 04       		.byte	0x4
- 381 0087 15020000 		.4byte	.LASF11
+ 381 0087 F1010000 		.4byte	.LASF11
  382 008b 03       		.uleb128 0x3
  383 008c 08       		.byte	0x8
  384 008d 04       		.byte	0x4
- 385 008e C2010000 		.4byte	.LASF12
+ 385 008e 9E010000 		.4byte	.LASF12
  386 0092 04       		.uleb128 0x4
- 387 0093 2E020000 		.4byte	.LASF14
+ 387 0093 0A020000 		.4byte	.LASF14
  388 0097 02       		.byte	0x2
  389 0098 F0       		.byte	0xf0
  390 0099 9D000000 		.4byte	0x9d
  391 009d 05       		.uleb128 0x5
  392 009e 79000000 		.4byte	0x79
  393 00a2 06       		.uleb128 0x6
- 394 00a3 AE010000 		.4byte	.LASF15
+ 394 00a3 8A010000 		.4byte	.LASF15
  395 00a7 01       		.byte	0x1
  396 00a8 29       		.byte	0x29
  397 00a9 00000000 		.4byte	.LFB0
@@ -815,7 +815,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  400 00b2 9C       		.byte	0x9c
  401 00b3 D9000000 		.4byte	0xd9
  402 00b7 07       		.uleb128 0x7
- 403 00b8 8E000000 		.4byte	.LASF18
+ 403 00b8 CF000000 		.4byte	.LASF18
  404 00bc 01       		.byte	0x1
  405 00bd 2B       		.byte	0x2b
  406 00be 79000000 		.4byte	0x79
@@ -828,7 +828,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  413 00d4 22020000 		.4byte	0x222
  414 00d8 00       		.byte	0
  415 00d9 09       		.uleb128 0x9
- 416 00da 1B020000 		.4byte	.LASF25
+ 416 00da F7010000 		.4byte	.LASF25
  417 00de 01       		.byte	0x1
  418 00df 45       		.byte	0x45
  419 00e0 00000000 		.4byte	.LFB1
@@ -836,9 +836,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  421 00e8 01       		.uleb128 0x1
  422 00e9 9C       		.byte	0x9c
  423 00ea 06       		.uleb128 0x6
- 424 00eb F5010000 		.4byte	.LASF16
+ 424 00eb D1010000 		.4byte	.LASF16
  425 00ef 01       		.byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 15
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 15
 
 
  426 00f0 9E       		.byte	0x9e
@@ -855,7 +855,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  437 010d A2000000 		.4byte	0xa2
  438 0111 00       		.byte	0
  439 0112 0A       		.uleb128 0xa
- 440 0113 E8010000 		.4byte	.LASF17
+ 440 0113 C4010000 		.4byte	.LASF17
  441 0117 01       		.byte	0x1
  442 0118 1801     		.2byte	0x118
  443 011a 00000000 		.4byte	.LFB4
@@ -864,7 +864,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  446 0123 9C       		.byte	0x9c
  447 0124 4B010000 		.4byte	0x14b
  448 0128 0B       		.uleb128 0xb
- 449 0129 8E000000 		.4byte	.LASF18
+ 449 0129 CF000000 		.4byte	.LASF18
  450 012d 01       		.byte	0x1
  451 012e 1A01     		.2byte	0x11a
  452 0130 79000000 		.4byte	0x79
@@ -877,7 +877,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  459 0146 22020000 		.4byte	0x222
  460 014a 00       		.byte	0
  461 014b 0A       		.uleb128 0xa
- 462 014c 1B000000 		.4byte	.LASF19
+ 462 014c 5C000000 		.4byte	.LASF19
  463 0150 01       		.byte	0x1
  464 0151 3A01     		.2byte	0x13a
  465 0153 00000000 		.4byte	.LFB5
@@ -886,7 +886,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  468 015c 9C       		.byte	0x9c
  469 015d 84010000 		.4byte	0x184
  470 0161 0B       		.uleb128 0xb
- 471 0162 8E000000 		.4byte	.LASF18
+ 471 0162 CF000000 		.4byte	.LASF18
  472 0166 01       		.byte	0x1
  473 0167 3C01     		.2byte	0x13c
  474 0169 79000000 		.4byte	0x79
@@ -898,11 +898,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  480 017b 1E000000 		.4byte	.LVL7
  481 017f 22020000 		.4byte	0x222
  482 0183 00       		.byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 16
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 16
 
 
  483 0184 0A       		.uleb128 0xa
- 484 0185 3F020000 		.4byte	.LASF20
+ 484 0185 1B020000 		.4byte	.LASF20
  485 0189 01       		.byte	0x1
  486 018a 5B01     		.2byte	0x15b
  487 018c 00000000 		.4byte	.LFB6
@@ -911,7 +911,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  490 0195 9C       		.byte	0x9c
  491 0196 BD010000 		.4byte	0x1bd
  492 019a 0B       		.uleb128 0xb
- 493 019b 8E000000 		.4byte	.LASF18
+ 493 019b CF000000 		.4byte	.LASF18
  494 019f 01       		.byte	0x1
  495 01a0 5D01     		.2byte	0x15d
  496 01a2 79000000 		.4byte	0x79
@@ -924,7 +924,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  503 01b8 22020000 		.4byte	0x222
  504 01bc 00       		.byte	0
  505 01bd 06       		.uleb128 0x6
- 506 01be 9F000000 		.4byte	.LASF21
+ 506 01be E0000000 		.4byte	.LASF21
  507 01c2 01       		.byte	0x1
  508 01c3 B9       		.byte	0xb9
  509 01c4 00000000 		.4byte	.LFB3
@@ -933,7 +933,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  512 01cd 9C       		.byte	0x9c
  513 01ce 06020000 		.4byte	0x206
  514 01d2 07       		.uleb128 0x7
- 515 01d3 8E000000 		.4byte	.LASF18
+ 515 01d3 CF000000 		.4byte	.LASF18
  516 01d7 01       		.byte	0x1
  517 01d8 BB       		.byte	0xbb
  518 01d9 79000000 		.4byte	0x79
@@ -952,23 +952,23 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  531 0201 84010000 		.4byte	0x184
  532 0205 00       		.byte	0
  533 0206 0C       		.uleb128 0xc
- 534 0207 33020000 		.4byte	.LASF26
+ 534 0207 0F020000 		.4byte	.LASF26
  535 020b 01       		.byte	0x1
  536 020c 15       		.byte	0x15
  537 020d 79000000 		.4byte	0x79
  538 0211 05       		.uleb128 0x5
  539 0212 03       		.byte	0x3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 17
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 17
 
 
  540 0213 00000000 		.4byte	I2S_initVar
  541 0217 0D       		.uleb128 0xd
- 542 0218 29000000 		.4byte	.LASF27
+ 542 0218 6A000000 		.4byte	.LASF27
  543 021c 03       		.byte	0x3
  544 021d 7E       		.byte	0x7e
  545 021e 79000000 		.4byte	0x79
  546 0222 0E       		.uleb128 0xe
- 547 0223 FF010000 		.4byte	.LASF28
+ 547 0223 DB010000 		.4byte	.LASF28
  548 0227 03       		.byte	0x3
  549 0228 7F       		.byte	0x7f
  550 0229 0F       		.uleb128 0xf
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  594 0026 0E       		.uleb128 0xe
  595 0027 00       		.byte	0
  596 0028 00       		.byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 18
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 18
 
 
  597 0029 04       		.uleb128 0x4
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  651 0060 49       		.uleb128 0x49
  652 0061 13       		.uleb128 0x13
  653 0062 02       		.uleb128 0x2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 19
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 19
 
 
  654 0063 17       		.uleb128 0x17
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  708 009c 9742     		.uleb128 0x2117
  709 009e 19       		.uleb128 0x19
  710 009f 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 20
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 20
 
 
  711 00a0 13       		.uleb128 0x13
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  765 00d6 0E       		.uleb128 0xe
  766 00d7 2E       		.uleb128 0x2e
  767 00d8 01       		.byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 21
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 21
 
 
  768 00d9 3F       		.uleb128 0x3f
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  822 0050 1D000000 		.4byte	.LVL11-1
  823 0054 0100     		.2byte	0x1
  824 0056 50       		.byte	0x50
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 22
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 22
 
 
  825 0057 00000000 		.4byte	0
@@ -1317,160 +1317,158 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 1
  873      206C6F6E 
  873      6720696E 
  873      7400
- 874              	.LASF0:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 23
+ 874              	.LASF24:
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 23
 
 
- 875 000e 756E7369 		.ascii	"unsigned int\000"
- 875      676E6564 
- 875      20696E74 
- 875      00
- 876              	.LASF19:
- 877 001b 4932535F 		.ascii	"I2S_DisableTx\000"
- 877      44697361 
- 877      626C6554 
- 877      7800
- 878              	.LASF27:
- 879 0029 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 879      74657243 
- 879      72697469 
- 879      63616C53 
- 879      65637469 
- 880              	.LASF23:
- 881 0040 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\I2S.c\000"
- 881      6E657261 
- 881      7465645F 
- 881      536F7572 
- 881      63655C50 
- 882              	.LASF13:
- 883 005f 75696E74 		.ascii	"uint8\000"
- 883      3800
- 884              	.LASF6:
- 885 0065 6C6F6E67 		.ascii	"long unsigned int\000"
- 885      20756E73 
- 885      69676E65 
- 885      6420696E 
- 885      7400
- 886              	.LASF8:
- 887 0077 6C6F6E67 		.ascii	"long long unsigned int\000"
- 887      206C6F6E 
- 887      6720756E 
- 887      7369676E 
- 887      65642069 
- 888              	.LASF18:
- 889 008e 656E6162 		.ascii	"enableInterrupts\000"
- 889      6C65496E 
- 889      74657272 
- 889      75707473 
- 889      00
- 890              	.LASF21:
- 891 009f 4932535F 		.ascii	"I2S_Stop\000"
- 891      53746F70 
- 891      00
- 892              	.LASF22:
- 893 00a8 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 893      4320342E 
- 893      392E3320 
- 893      32303135 
- 893      30333033 
- 894 00db 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 894      20726576 
- 894      6973696F 
- 894      6E203232 
- 894      31323230 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 24
+ 875 000e 433A5C55 		.ascii	"C:\\Users\\Zachary\\Desktop\\Zach I2S Debugging\\Wa"
+ 875      73657273 
+ 875      5C5A6163 
+ 875      68617279 
+ 875      5C446573 
+ 876 003c 76652047 		.ascii	"ve Generator.cydsn\000"
+ 876      656E6572 
+ 876      61746F72 
+ 876      2E637964 
+ 876      736E00
+ 877              	.LASF0:
+ 878 004f 756E7369 		.ascii	"unsigned int\000"
+ 878      676E6564 
+ 878      20696E74 
+ 878      00
+ 879              	.LASF19:
+ 880 005c 4932535F 		.ascii	"I2S_DisableTx\000"
+ 880      44697361 
+ 880      626C6554 
+ 880      7800
+ 881              	.LASF27:
+ 882 006a 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 882      74657243 
+ 882      72697469 
+ 882      63616C53 
+ 882      65637469 
+ 883              	.LASF23:
+ 884 0081 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\I2S.c\000"
+ 884      6E657261 
+ 884      7465645F 
+ 884      536F7572 
+ 884      63655C50 
+ 885              	.LASF13:
+ 886 00a0 75696E74 		.ascii	"uint8\000"
+ 886      3800
+ 887              	.LASF6:
+ 888 00a6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 888      20756E73 
+ 888      69676E65 
+ 888      6420696E 
+ 888      7400
+ 889              	.LASF8:
+ 890 00b8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 890      206C6F6E 
+ 890      6720756E 
+ 890      7369676E 
+ 890      65642069 
+ 891              	.LASF18:
+ 892 00cf 656E6162 		.ascii	"enableInterrupts\000"
+ 892      6C65496E 
+ 892      74657272 
+ 892      75707473 
+ 892      00
+ 893              	.LASF21:
+ 894 00e0 4932535F 		.ascii	"I2S_Stop\000"
+ 894      53746F70 
+ 894      00
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 24
 
 
- 895 010e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 895      66756E63 
- 895      74696F6E 
- 895      2D736563 
- 895      74696F6E 
- 896              	.LASF24:
- 897 0136 433A5C55 		.ascii	"C:\\Users\\Zachary\\Documents\\GitHub\\Chip-Design\\"
- 897      73657273 
- 897      5C5A6163 
- 897      68617279 
- 897      5C446F63 
- 898 0164 70726F6A 		.ascii	"proj_asic\\psoc\\Zach I2S Debugging\\Wave Generator"
- 898      5F617369 
- 898      635C7073 
- 898      6F635C5A 
- 898      61636820 
- 899 0194 2E637964 		.ascii	".cydsn\000"
- 899      736E00
- 900              	.LASF2:
- 901 019b 756E7369 		.ascii	"unsigned char\000"
- 901      676E6564 
- 901      20636861 
- 901      7200
- 902              	.LASF10:
- 903 01a9 63686172 		.ascii	"char\000"
- 903      00
- 904              	.LASF15:
- 905 01ae 4932535F 		.ascii	"I2S_Enable\000"
- 905      456E6162 
- 905      6C6500
- 906              	.LASF5:
- 907 01b9 6C6F6E67 		.ascii	"long int\000"
- 907      20696E74 
- 907      00
- 908              	.LASF12:
- 909 01c2 646F7562 		.ascii	"double\000"
- 909      6C6500
- 910              	.LASF4:
- 911 01c9 73686F72 		.ascii	"short unsigned int\000"
- 911      7420756E 
- 911      7369676E 
- 911      65642069 
- 911      6E7400
- 912              	.LASF1:
- 913 01dc 7369676E 		.ascii	"signed char\000"
- 913      65642063 
- 913      68617200 
- 914              	.LASF17:
- 915 01e8 4932535F 		.ascii	"I2S_EnableTx\000"
- 915      456E6162 
- 915      6C655478 
- 915      00
- 916              	.LASF16:
- 917 01f5 4932535F 		.ascii	"I2S_Start\000"
- 917      53746172 
- 917      7400
- 918              	.LASF28:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cc8dU3Lg.s 			page 25
+ 895              	.LASF22:
+ 896 00e9 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 896      4320342E 
+ 896      392E3320 
+ 896      32303135 
+ 896      30333033 
+ 897 011c 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 897      20726576 
+ 897      6973696F 
+ 897      6E203232 
+ 897      31323230 
+ 898 014f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 898      66756E63 
+ 898      74696F6E 
+ 898      2D736563 
+ 898      74696F6E 
+ 899              	.LASF2:
+ 900 0177 756E7369 		.ascii	"unsigned char\000"
+ 900      676E6564 
+ 900      20636861 
+ 900      7200
+ 901              	.LASF10:
+ 902 0185 63686172 		.ascii	"char\000"
+ 902      00
+ 903              	.LASF15:
+ 904 018a 4932535F 		.ascii	"I2S_Enable\000"
+ 904      456E6162 
+ 904      6C6500
+ 905              	.LASF5:
+ 906 0195 6C6F6E67 		.ascii	"long int\000"
+ 906      20696E74 
+ 906      00
+ 907              	.LASF12:
+ 908 019e 646F7562 		.ascii	"double\000"
+ 908      6C6500
+ 909              	.LASF4:
+ 910 01a5 73686F72 		.ascii	"short unsigned int\000"
+ 910      7420756E 
+ 910      7369676E 
+ 910      65642069 
+ 910      6E7400
+ 911              	.LASF1:
+ 912 01b8 7369676E 		.ascii	"signed char\000"
+ 912      65642063 
+ 912      68617200 
+ 913              	.LASF17:
+ 914 01c4 4932535F 		.ascii	"I2S_EnableTx\000"
+ 914      456E6162 
+ 914      6C655478 
+ 914      00
+ 915              	.LASF16:
+ 916 01d1 4932535F 		.ascii	"I2S_Start\000"
+ 916      53746172 
+ 916      7400
+ 917              	.LASF28:
+ 918 01db 43794578 		.ascii	"CyExitCriticalSection\000"
+ 918      69744372 
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cchgDqTa.s 			page 25
 
 
- 919 01ff 43794578 		.ascii	"CyExitCriticalSection\000"
- 919      69744372 
- 919      69746963 
- 919      616C5365 
- 919      6374696F 
- 920              	.LASF11:
- 921 0215 666C6F61 		.ascii	"float\000"
- 921      7400
- 922              	.LASF25:
- 923 021b 4932535F 		.ascii	"I2S_Init\000"
- 923      496E6974 
- 923      00
- 924              	.LASF3:
- 925 0224 73686F72 		.ascii	"short int\000"
- 925      7420696E 
- 925      7400
- 926              	.LASF14:
- 927 022e 72656738 		.ascii	"reg8\000"
- 927      00
- 928              	.LASF26:
- 929 0233 4932535F 		.ascii	"I2S_initVar\000"
- 929      696E6974 
- 929      56617200 
- 930              	.LASF20:
- 931 023f 4932535F 		.ascii	"I2S_ClearTxFIFO\000"
- 931      436C6561 
- 931      72547846 
- 931      49464F00 
- 932              	.LASF9:
- 933 024f 73697A65 		.ascii	"sizetype\000"
- 933      74797065 
- 933      00
- 934              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 918      69746963 
+ 918      616C5365 
+ 918      6374696F 
+ 919              	.LASF11:
+ 920 01f1 666C6F61 		.ascii	"float\000"
+ 920      7400
+ 921              	.LASF25:
+ 922 01f7 4932535F 		.ascii	"I2S_Init\000"
+ 922      496E6974 
+ 922      00
+ 923              	.LASF3:
+ 924 0200 73686F72 		.ascii	"short int\000"
+ 924      7420696E 
+ 924      7400
+ 925              	.LASF14:
+ 926 020a 72656738 		.ascii	"reg8\000"
+ 926      00
+ 927              	.LASF26:
+ 928 020f 4932535F 		.ascii	"I2S_initVar\000"
+ 928      696E6974 
+ 928      56617200 
+ 929              	.LASF20:
+ 930 021b 4932535F 		.ascii	"I2S_ClearTxFIFO\000"
+ 930      436C6561 
+ 930      72547846 
+ 930      49464F00 
+ 931              	.LASF9:
+ 932 022b 73697A65 		.ascii	"sizetype\000"
+ 932      74797065 
+ 932      00
+ 933              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

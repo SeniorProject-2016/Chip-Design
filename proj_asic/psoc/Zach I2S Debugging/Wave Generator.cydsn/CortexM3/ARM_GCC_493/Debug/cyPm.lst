@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
   30:.\Generated_Source\PSoC5/cyPm.c **** 
   31:.\Generated_Source\PSoC5/cyPm.c **** static CY_PM_BACKUP_STRUCT          cyPmBackup;
   32:.\Generated_Source\PSoC5/cyPm.c **** static CY_PM_CLOCK_BACKUP_STRUCT    cyPmClockBackup;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 2
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 2
 
 
   33:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
   87:.\Generated_Source\PSoC5/cyPm.c **** 
   88:.\Generated_Source\PSoC5/cyPm.c ****     /* Save current flash wait cycles and set the maximum value */
   89:.\Generated_Source\PSoC5/cyPm.c ****     cyPmClockBackup.flashWaitCycles = CY_PM_CACHE_CR_CYCLES_MASK & CY_PM_CACHE_CR_REG;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 3
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 3
 
 
   90:.\Generated_Source\PSoC5/cyPm.c ****     CyFlash_SetWaitCycles(CY_PM_MAX_FLASH_WAIT_CYCLES);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  144:.\Generated_Source\PSoC5/cyPm.c ****         cyPmClockBackup.pllEnableState = CY_PM_DISABLED;
  145:.\Generated_Source\PSoC5/cyPm.c ****     }
  146:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 4
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 4
 
 
  147:.\Generated_Source\PSoC5/cyPm.c ****     /* IMO - set appropriate frequency for LPM */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  201:.\Generated_Source\PSoC5/cyPm.c ****     /* Master clock - save divider and set it to divide-by-one (if no yet) */
  202:.\Generated_Source\PSoC5/cyPm.c ****     cyPmClockBackup.clkSyncDiv = CY_PM_CLKDIST_MSTR0_REG;
  203:.\Generated_Source\PSoC5/cyPm.c ****     if(CY_PM_DIV_BY_ONE != cyPmClockBackup.clkSyncDiv)
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 5
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 5
 
 
  204:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  258:.\Generated_Source\PSoC5/cyPm.c **** *
  259:.\Generated_Source\PSoC5/cyPm.c **** * Summary:
  260:.\Generated_Source\PSoC5/cyPm.c **** *  Restores any state that was preserved by the last call to CyPmSaveClocks().
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 6
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 6
 
 
  261:.\Generated_Source\PSoC5/cyPm.c **** *  The Flash wait state setting is also restored.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  315:.\Generated_Source\PSoC5/cyPm.c ****         (void) CyXTAL_Start(CY_PM_XTAL_MHZ_NO_WAIT);
  316:.\Generated_Source\PSoC5/cyPm.c **** 
  317:.\Generated_Source\PSoC5/cyPm.c ****         /* Read XERR bit to clear it */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 7
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 7
 
 
  318:.\Generated_Source\PSoC5/cyPm.c ****         (void) CY_PM_FASTCLK_XMHZ_CSR_REG;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  372:.\Generated_Source\PSoC5/cyPm.c ****     else
  373:.\Generated_Source\PSoC5/cyPm.c ****     {
  374:.\Generated_Source\PSoC5/cyPm.c ****         /* Restore IMO frequency */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 8
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 8
 
 
  375:.\Generated_Source\PSoC5/cyPm.c ****         CyIMO_SetFreq(cyPmImoFreqMhz2Reg[cyPmClockBackup.imoFreq]);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  429:.\Generated_Source\PSoC5/cyPm.c **** 
  430:.\Generated_Source\PSoC5/cyPm.c ****         /* It should take 250 us lock: 251-80 = 171 */
  431:.\Generated_Source\PSoC5/cyPm.c ****         for(i = 171u; i > 0u; i--)
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 9
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 9
 
 
  432:.\Generated_Source\PSoC5/cyPm.c ****         {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  486:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_CACHE_CR_REG = ((CY_PM_CACHE_CR_REG & ((uint8)(~CY_PM_CACHE_CR_CYCLES_MASK))) |
  487:.\Generated_Source\PSoC5/cyPm.c ****                            cyPmClockBackup.flashWaitCycles);
  488:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 10
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 10
 
 
  489:.\Generated_Source\PSoC5/cyPm.c ****     /* Digital and analog clocks - restore state */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  543:.\Generated_Source\PSoC5/cyPm.c **** *  Sleep Timer component and one second interval should be configured with the
  544:.\Generated_Source\PSoC5/cyPm.c **** *  RTC component.
  545:.\Generated_Source\PSoC5/cyPm.c **** *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 11
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 11
 
 
  546:.\Generated_Source\PSoC5/cyPm.c **** *  The wakeup behavior depends on the wakeupSource parameter in the following
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  600:.\Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_PICU              PICU
  601:.\Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_I2C               I2C
  602:.\Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_BOOSTCONVERTER    Boost Converter
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 12
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 12
 
 
  603:.\Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_FTW               Fast Timewheel*
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  657:.\Generated_Source\PSoC5/cyPm.c **** 
  658:.\Generated_Source\PSoC5/cyPm.c ****             /* Include associated timer to wakeupSource */
  659:.\Generated_Source\PSoC5/cyPm.c ****             wakeupSource |= PM_ALT_ACT_SRC_FTW;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 13
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 13
 
 
  660:.\Generated_Source\PSoC5/cyPm.c ****         }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  714:.\Generated_Source\PSoC5/cyPm.c **** 
  715:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore wake up configuration */
  716:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG0_REG = cyPmBackup.wakeupCfg0;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 14
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 14
 
 
  717:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG1_REG = cyPmBackup.wakeupCfg1;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  771:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_TIME_CTW_2MS            CTW: 2 ms
  772:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_TIME_CTW_4MS            CTW: 4 ms
  773:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_TIME_CTW_8MS            CTW: 8 ms
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 15
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 15
 
 
  774:.\Generated_Source\PSoC5/cyPm.c **** *  PM_SLEEP_TIME_CTW_16MS           CTW: 16 ms
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  828:.\Generated_Source\PSoC5/cyPm.c **** *  delay is measured using rising edges of the 1 kHz ILO.
  829:.\Generated_Source\PSoC5/cyPm.c **** *
  830:.\Generated_Source\PSoC5/cyPm.c **** *  For PSoC 3 silicon hardware buzz should be disabled before entering a sleep
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 16
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 16
 
 
  831:.\Generated_Source\PSoC5/cyPm.c **** *  power mode. It is disabled by PSoC Creator during startup.
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  885:.\Generated_Source\PSoC5/cyPm.c ****             /* Hardware buzz expected to be disabled in Sleep mode */
  886:.\Generated_Source\PSoC5/cyPm.c ****             CYASSERT(0u == (CY_PM_PWRSYS_WAKE_TR2_REG & CY_PM_PWRSYS_WAKE_TR2_EN_BUZZ));
  887:.\Generated_Source\PSoC5/cyPm.c ****         }
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 17
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 17
 
 
  888:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  942:.\Generated_Source\PSoC5/cyPm.c ****         {
  943:.\Generated_Source\PSoC5/cyPm.c ****             /* Save current and set new configuration of CTW */
  944:.\Generated_Source\PSoC5/cyPm.c ****             CyPmCtwSetInterval((uint8)(wakeupTime - 1u));
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 18
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 18
 
 
  945:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  999:.\Generated_Source\PSoC5/cyPm.c ****         cyPmBackup.imoActFreq = CY_PM_FASTCLK_IMO_CR_REG & CY_PM_FASTCLK_IMO_CR_FREQ_MASK;
 1000:.\Generated_Source\PSoC5/cyPm.c **** 
 1001:.\Generated_Source\PSoC5/cyPm.c ****         /* Set IMO frequency to 12 MHz */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 19
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 19
 
 
 1002:.\Generated_Source\PSoC5/cyPm.c ****         CY_PM_FASTCLK_IMO_CR_REG &= ((uint8) (~CY_PM_FASTCLK_IMO_CR_FREQ_MASK));
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1056:.\Generated_Source\PSoC5/cyPm.c ****     #endif /* (CY_PSOC3) */
 1057:.\Generated_Source\PSoC5/cyPm.c **** 
 1058:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 20
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 20
 
 
 1059:.\Generated_Source\PSoC5/cyPm.c ****     /* Restore current wake up configuration */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1113:.\Generated_Source\PSoC5/cyPm.c **** {
 1114:.\Generated_Source\PSoC5/cyPm.c ****     uint8 interruptState;
 1115:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 21
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 21
 
 
 1116:.\Generated_Source\PSoC5/cyPm.c ****     /* Save current global interrupt enable and disable it */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1170:.\Generated_Source\PSoC5/cyPm.c ****     }
 1171:.\Generated_Source\PSoC5/cyPm.c **** 
 1172:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 22
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 22
 
 
 1173:.\Generated_Source\PSoC5/cyPm.c ****     /* Switch to Hibernate Mode */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1227:.\Generated_Source\PSoC5/cyPm.c **** *
 1228:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
 1229:.\Generated_Source\PSoC5/cyPm.c **** *  mask: Bits in the shadow register to clear.
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 23
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 23
 
 
 1230:.\Generated_Source\PSoC5/cyPm.c **** *
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1284:.\Generated_Source\PSoC5/cyPm.c **** static void CyPmHibSaveSet(void) 
 1285:.\Generated_Source\PSoC5/cyPm.c **** {
 1286:.\Generated_Source\PSoC5/cyPm.c ****     /* I2C backup reg must be off when the sleep regulator is unavailable */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 24
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 24
 
 
 1287:.\Generated_Source\PSoC5/cyPm.c ****     if(0u != (CY_PM_PWRSYS_CR1_REG & CY_PM_PWRSYS_CR1_I2CREG_BACKUP))
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1341:.\Generated_Source\PSoC5/cyPm.c ****     CyPmHibSlpSaveSet();
 1342:.\Generated_Source\PSoC5/cyPm.c **** 
 1343:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 25
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 25
 
 
 1344:.\Generated_Source\PSoC5/cyPm.c ****     /***************************************************************************
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1398:.\Generated_Source\PSoC5/cyPm.c **** 
 1399:.\Generated_Source\PSoC5/cyPm.c **** 
 1400:.\Generated_Source\PSoC5/cyPm.c ****     if(CY_PM_DISABLED == cyPmBackup.slpTrBypass)
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 26
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 26
 
 
 1401:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1455:.\Generated_Source\PSoC5/cyPm.c ****     else
 1456:.\Generated_Source\PSoC5/cyPm.c ****     {
 1457:.\Generated_Source\PSoC5/cyPm.c ****         /* Set CTW interval if needed */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 27
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 27
 
 
 1458:.\Generated_Source\PSoC5/cyPm.c ****         if(CY_PM_TW_CFG1_REG != ctwInterval)
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1512:.\Generated_Source\PSoC5/cyPm.c **** *  - Sets a new FTW interval.
 1513:.\Generated_Source\PSoC5/cyPm.c **** *
 1514:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 28
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 28
 
 
 1515:.\Generated_Source\PSoC5/cyPm.c **** *  ftwInterval - FTW counter interval.
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1569:.\Generated_Source\PSoC5/cyPm.c **** *  - Saves the boost reference selection and sets it to internal
 1570:.\Generated_Source\PSoC5/cyPm.c **** *
 1571:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 29
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 29
 
 
 1572:.\Generated_Source\PSoC5/cyPm.c **** *  None
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
   62              		.loc 1 1589 0
   63 002c 514A     		ldr	r2, .L5+16
   64 002e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 30
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 30
 
 
   65 0030 9A73     		strb	r2, [r3, #14]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  106              		.loc 1 1602 0
  107 006e 4C4A     		ldr	r2, .L5+60
  108 0070 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 31
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 31
 
 
  109 0072 5A76     		strb	r2, [r3, #25]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  151 00c8 3C4A     		ldr	r2, .L5+88
  152 00ca 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
  153 00cc 83F82420 		strb	r2, [r3, #36]
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 32
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 32
 
 
 1615:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  192              		.loc 1 1630 0
  193 0106 0232     		adds	r2, r2, #2
  194 0108 1370     		strb	r3, [r2]
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 33
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 33
 
 
 1631:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1653:.\Generated_Source\PSoC5/cyPm.c ****         /* Disable SWV before entering low power mode */
 1654:.\Generated_Source\PSoC5/cyPm.c ****         if(0u != (CY_PM_MLOGIC_DBG_REG & CY_PM_MLOGIC_DBG_SWV_CLK_EN))
 1655:.\Generated_Source\PSoC5/cyPm.c ****         {
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 34
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 34
 
 
 1656:.\Generated_Source\PSoC5/cyPm.c ****             /* Save SWV clock enabled state */
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  247 015e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
  248              	.L6:
  249 0162 00BF     		.align	2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 35
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 35
 
 
  250              	.L5:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1703:.\Generated_Source\PSoC5/cyPm.c **** *  - Restores the  boost reference selection
 1704:.\Generated_Source\PSoC5/cyPm.c **** *
 1705:.\Generated_Source\PSoC5/cyPm.c **** * Parameters:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 36
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 36
 
 
 1706:.\Generated_Source\PSoC5/cyPm.c **** *  None
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  327 002e 0632     		adds	r2, r2, #6
  328 0030 1170     		strb	r1, [r2]
 1724:.\Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC1_SW2 , cyPmBackup.scctData[8u] );
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 37
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 37
 
 
  329              		.loc 1 1724 0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  372 0072 1170     		strb	r1, [r2]
 1736:.\Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC2_SW8 , cyPmBackup.scctData[19u]);
  373              		.loc 1 1736 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 38
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 38
 
 
  374 0074 197F     		ldrb	r1, [r3, #28]	@ zero_extendqisi2
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1756:.\Generated_Source\PSoC5/cyPm.c **** 
 1757:.\Generated_Source\PSoC5/cyPm.c ****             /* Enable SWV clocks */
 1758:.\Generated_Source\PSoC5/cyPm.c ****             CY_PM_MLOGIC_DBG_REG |= CY_PM_MLOGIC_DBG_SWV_CLK_EN;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 39
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 39
 
 
 1759:.\Generated_Source\PSoC5/cyPm.c ****         }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1786:.\Generated_Source\PSoC5/cyPm.c **** *  No
 1787:.\Generated_Source\PSoC5/cyPm.c **** *
 1788:.\Generated_Source\PSoC5/cyPm.c **** *******************************************************************************/
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 40
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 40
 
 
 1789:.\Generated_Source\PSoC5/cyPm.c **** static void CyPmHviLviSaveDisable(void) 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  473 0036 83F82520 		strb	r2, [r3, #37]
  474              	.L13:
 1805:.\Generated_Source\PSoC5/cyPm.c ****     }
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 41
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 41
 
 
 1806:.\Generated_Source\PSoC5/cyPm.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  510 0076 06D0     		beq	.L16
 1824:.\Generated_Source\PSoC5/cyPm.c ****     {
 1825:.\Generated_Source\PSoC5/cyPm.c ****         cyPmBackup.hviaEn = CY_PM_ENABLED;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 42
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 42
 
 
  511              		.loc 1 1825 0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  557 000e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  558 0010 03F0FB03 		and	r3, r3, #251
  559 0014 1370     		strb	r3, [r2]
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 43
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 43
 
 
  560              	.L22:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  602 0054 FFF7FEFF 		bl	CyPmHviLviSaveDisable
  603              	.LVL4:
 1341:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 44
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 44
 
 
  604              		.loc 1 1341 0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1843:.\Generated_Source\PSoC5/cyPm.c **** *  None
 1844:.\Generated_Source\PSoC5/cyPm.c **** *
 1845:.\Generated_Source\PSoC5/cyPm.c **** * Return:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 45
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 45
 
 
 1846:.\Generated_Source\PSoC5/cyPm.c **** *  None
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  676 0034 93F82930 		ldrb	r3, [r3, #41]	@ zero_extendqisi2
  677 0038 012B     		cmp	r3, #1
  678 003a 01D1     		bne	.L28
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 46
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 46
 
 
 1866:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  725 001c 01D1     		bne	.L37
 1393:.\Generated_Source\PSoC5/cyPm.c ****     }
  726              		.loc 1 1393 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 47
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 47
 
 
  727 001e FFF7FEFF 		bl	CyILO_Start100K
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  775              		@ frame_needed = 0, uses_anonymous_args = 0
  776 0000 10B5     		push	{r4, lr}
  777              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 48
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 48
 
 
  778              		.cfi_offset 4, -8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  822 005a 84F83920 		strb	r2, [r4, #57]
  823 005e 03E0     		b	.L44
  824              	.L43:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 49
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 49
 
 
  105:.\Generated_Source\PSoC5/cyPm.c ****     }
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  869 00a6 02E0     		b	.L45
  870              	.L67:
  129:.\Generated_Source\PSoC5/cyPm.c ****             break;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 50
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 50
 
 
  871              		.loc 1 129 0 discriminator 1
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  916              	.LVL21:
  165:.\Generated_Source\PSoC5/cyPm.c ****     }
  917              		.loc 1 165 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 51
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 51
 
 
  918 00f4 0620     		movs	r0, #6
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  963 0144 03F0CF03 		and	r3, r3, #207
  964 0148 1370     		strb	r3, [r2]
  965              	.L57:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 52
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 52
 
 
  196:.\Generated_Source\PSoC5/cyPm.c ****     {
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  219:.\Generated_Source\PSoC5/cyPm.c ****     }    /* Do nothing if saved and actual values are equal */
  1010              		.loc 1 219 0
  1011 018e 0020     		movs	r0, #0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 53
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 53
 
 
  1012 0190 FFF7FEFF 		bl	CyBusClk_SetDivider
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1058              	.L70:
  1059 01e2 00BF     		.align	2
  1060              	.L69:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 54
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 54
 
 
  1061 01e4 A1430040 		.word	1073759137
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1111 0024 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  1112 0026 03F00703 		and	r3, r3, #7
  1113 002a 7C4A     		ldr	r2, .L93
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 55
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 55
 
 
  1114 002c D05C     		ldrb	r0, [r2, r3]	@ zero_extendqisi2
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1159              		.loc 1 321 0 discriminator 2
  1160 007c 013C     		subs	r4, r4, #1
  1161              	.LVL36:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 56
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 56
 
 
  1162 007e A4B2     		uxth	r4, r4
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1208 00ca 1344     		add	r3, r3, r2
  1209 00cc 13F8083C 		ldrb	r3, [r3, #-8]	@ zero_extendqisi2
  366:.\Generated_Source\PSoC5/cyPm.c ****         (CY_IMO_FREQ_24MHZ == cyPmImoFreqMhz2Reg[cyPmClockBackup.imoFreq]))
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 57
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 57
 
 
  1210              		.loc 1 366 0 discriminator 1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1255              		.loc 1 392 0
  1256 0122 0020     		movs	r0, #0
  1257 0124 FFF7FEFF 		bl	CyIMO_Start
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 58
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 58
 
 
  1258              	.LVL44:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1303 0178 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  1304              	.LVL49:
  431:.\Generated_Source\PSoC5/cyPm.c ****         {
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 59
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 59
 
 
  1305              		.loc 1 431 0
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1350              		.loc 1 463 0
  1351 01ba FFF7FEFF 		bl	CyMasterClk_SetDivider
  1352              	.LVL55:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 60
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 60
 
 
  1353              	.L89:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1396 01fa 094B     		ldr	r3, .L93+4
  1397 01fc 93F83510 		ldrb	r1, [r3, #53]	@ zero_extendqisi2
  486:.\Generated_Source\PSoC5/cyPm.c ****                            cyPmClockBackup.flashWaitCycles);
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 61
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 61
 
 
  1398              		.loc 1 486 0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1448              		.cfi_offset 3, -16
  1449              		.cfi_offset 4, -12
  1450              		.cfi_offset 5, -8
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 62
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 62
 
 
  1451              		.cfi_offset 14, -4
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1494              	
  1495              	@ 0 "" 2
  708:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 63
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 63
 
 
  1496              		.loc 1 708 0
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1545              		.cfi_offset 6, -8
  1546              		.cfi_offset 14, -4
  1547 0002 0646     		mov	r6, r0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 64
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 64
 
 
  1548 0004 0C46     		mov	r4, r1
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  970:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG1_REG = (((uint8) wakeupSource) & CY_PM_WAKEUP_SRC_CMPS_MASK);
  1592              		.loc 1 970 0
  1593 0042 0132     		adds	r2, r2, #1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 65
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 65
 
 
  1594 0044 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1638 0098 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
 1012:.\Generated_Source\PSoC5/cyPm.c ****     CY_NOP;
  1639              		.loc 1 1012 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 66
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 66
 
 
  1640              	@ 1012 ".\Generated_Source\PSoC5\cyPm.c" 1
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1684 00ce 9A79     		ldrb	r2, [r3, #6]	@ zero_extendqisi2
  1685 00d0 074B     		ldr	r3, .L109+20
  1686 00d2 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 67
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 67
 
 
 1065:.\Generated_Source\PSoC5/cyPm.c **** }
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1735              		.loc 1 1140 0
  1736 001c FFF7FEFF 		bl	CyPmHibSaveSet
  1737              	.LVL76:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 68
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 68
 
 
 1144:.\Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG0_REG = CY_PM_WAKEUP_PICU;
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1781 005c 0023     		movs	r3, #0
  1782 005e 81F82D30 		strb	r3, [r1, #45]
 1166:.\Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 69
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 69
 
 
  1783              		.loc 1 1166 0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1193:.\Generated_Source\PSoC5/cyPm.c ****                                     cyPmBackup.imoActFreq;
  1828              		.loc 1 1193 0
  1829 00a0 03F0F803 		and	r3, r3, #248
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 70
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 70
 
 
  1830 00a4 1343     		orrs	r3, r3, r2
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1878              	.LVL81:
  1879 0000 38B5     		push	{r3, r4, r5, lr}
  1880              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 71
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 71
 
 
  1881              		.cfi_offset 3, -16
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1929              		.cfi_offset 3, -16
  1930              		.cfi_offset 4, -12
  1931              		.cfi_offset 5, -8
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 72
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 72
 
 
  1932              		.cfi_offset 14, -4
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  1976 0048 024A     		ldr	r2, .L131
  1977 004a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  1978 004c 43F00403 		orr	r3, r3, #4
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 73
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 73
 
 
  1979 0050 1370     		strb	r3, [r2]
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2028 0024 08430040 		.word	1073758984
  2029 0028 82430040 		.word	1073759106
  2030              		.cfi_endproc
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 74
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 74
 
 
  2031              	.LFE9:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
 1541:.\Generated_Source\PSoC5/cyPm.c ****         }   /* Required interval is already set */
  2078              		.loc 1 1541 0
  2079 0030 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 75
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 75
 
 
  2080 0032 42F00102 		orr	r2, r2, #1
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2131 000f 00       		.bss
  2132              		.align	2
  2133              		.set	.LANCHOR0,. + 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 76
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 76
 
 
  2134              		.type	cyPmBackup, %object
@@ -4535,48 +4535,48 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2157 0006 00000000 		.4byte	.Ldebug_abbrev0
  2158 000a 04       		.byte	0x4
  2159 000b 01       		.uleb128 0x1
- 2160 000c DE050000 		.4byte	.LASF113
+ 2160 000c BA050000 		.4byte	.LASF113
  2161 0010 01       		.byte	0x1
- 2162 0011 BB010000 		.4byte	.LASF114
- 2163 0015 5F050000 		.4byte	.LASF115
+ 2162 0011 AE010000 		.4byte	.LASF114
+ 2163 0015 04020000 		.4byte	.LASF115
  2164 0019 00000000 		.4byte	.Ldebug_ranges0+0
  2165 001d 00000000 		.4byte	0
  2166 0021 00000000 		.4byte	.Ldebug_line0
  2167 0025 02       		.uleb128 0x2
  2168 0026 01       		.byte	0x1
  2169 0027 06       		.byte	0x6
- 2170 0028 40010000 		.4byte	.LASF0
+ 2170 0028 33010000 		.4byte	.LASF0
  2171 002c 02       		.uleb128 0x2
  2172 002d 01       		.byte	0x1
  2173 002e 08       		.byte	0x8
- 2174 002f 59040000 		.4byte	.LASF1
+ 2174 002f 8D040000 		.4byte	.LASF1
  2175 0033 02       		.uleb128 0x2
  2176 0034 02       		.byte	0x2
  2177 0035 05       		.byte	0x5
- 2178 0036 92040000 		.4byte	.LASF2
+ 2178 0036 C6040000 		.4byte	.LASF2
  2179 003a 02       		.uleb128 0x2
  2180 003b 02       		.byte	0x2
  2181 003c 07       		.byte	0x7
- 2182 003d CE020000 		.4byte	.LASF3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 77
+ 2182 003d 02030000 		.4byte	.LASF3
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 77
 
 
  2183 0041 02       		.uleb128 0x2
  2184 0042 04       		.byte	0x4
  2185 0043 05       		.byte	0x5
- 2186 0044 79010000 		.4byte	.LASF4
+ 2186 0044 6C010000 		.4byte	.LASF4
  2187 0048 02       		.uleb128 0x2
  2188 0049 04       		.byte	0x4
  2189 004a 07       		.byte	0x7
- 2190 004b 3F020000 		.4byte	.LASF5
+ 2190 004b 73020000 		.4byte	.LASF5
  2191 004f 02       		.uleb128 0x2
  2192 0050 08       		.byte	0x8
  2193 0051 05       		.byte	0x5
- 2194 0052 32010000 		.4byte	.LASF6
+ 2194 0052 25010000 		.4byte	.LASF6
  2195 0056 02       		.uleb128 0x2
  2196 0057 08       		.byte	0x8
  2197 0058 07       		.byte	0x7
- 2198 0059 AF000000 		.4byte	.LASF7
+ 2198 0059 A2000000 		.4byte	.LASF7
  2199 005d 03       		.uleb128 0x3
  2200 005e 04       		.byte	0x4
  2201 005f 05       		.byte	0x5
@@ -4584,9 +4584,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2203 0064 02       		.uleb128 0x2
  2204 0065 04       		.byte	0x4
  2205 0066 07       		.byte	0x7
- 2206 0067 11020000 		.4byte	.LASF8
+ 2206 0067 45020000 		.4byte	.LASF8
  2207 006b 04       		.uleb128 0x4
- 2208 006c 94010000 		.4byte	.LASF9
+ 2208 006c 87010000 		.4byte	.LASF9
  2209 0070 02       		.byte	0x2
  2210 0071 5B       		.byte	0x5b
  2211 0072 2C000000 		.4byte	0x2c
@@ -4596,32 +4596,32 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2215 007c 5C       		.byte	0x5c
  2216 007d 3A000000 		.4byte	0x3a
  2217 0081 04       		.uleb128 0x4
- 2218 0082 DB010000 		.4byte	.LASF11
+ 2218 0082 CE010000 		.4byte	.LASF11
  2219 0086 02       		.byte	0x2
  2220 0087 5D       		.byte	0x5d
  2221 0088 48000000 		.4byte	0x48
  2222 008c 02       		.uleb128 0x2
  2223 008d 04       		.byte	0x4
  2224 008e 04       		.byte	0x4
- 2225 008f FA030000 		.4byte	.LASF12
+ 2225 008f 2E040000 		.4byte	.LASF12
  2226 0093 02       		.uleb128 0x2
  2227 0094 08       		.byte	0x8
  2228 0095 04       		.byte	0x4
- 2229 0096 B4010000 		.4byte	.LASF13
+ 2229 0096 A7010000 		.4byte	.LASF13
  2230 009a 02       		.uleb128 0x2
  2231 009b 01       		.byte	0x1
  2232 009c 08       		.byte	0x8
- 2233 009d BC040000 		.4byte	.LASF14
+ 2233 009d F0040000 		.4byte	.LASF14
  2234 00a1 04       		.uleb128 0x4
- 2235 00a2 C2060000 		.4byte	.LASF15
+ 2235 00a2 9E060000 		.4byte	.LASF15
  2236 00a6 02       		.byte	0x2
  2237 00a7 E8       		.byte	0xe8
  2238 00a8 48000000 		.4byte	0x48
  2239 00ac 04       		.uleb128 0x4
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 78
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 78
 
 
- 2240 00ad 41040000 		.4byte	.LASF16
+ 2240 00ad 75040000 		.4byte	.LASF16
  2241 00b1 02       		.byte	0x2
  2242 00b2 F0       		.byte	0xf0
  2243 00b3 B7000000 		.4byte	0xb7
@@ -4630,115 +4630,115 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2246 00bc 02       		.uleb128 0x2
  2247 00bd 04       		.byte	0x4
  2248 00be 07       		.byte	0x7
- 2249 00bf 83030000 		.4byte	.LASF17
+ 2249 00bf B7030000 		.4byte	.LASF17
  2250 00c3 06       		.uleb128 0x6
- 2251 00c4 58020000 		.4byte	.LASF34
+ 2251 00c4 8C020000 		.4byte	.LASF34
  2252 00c8 12       		.byte	0x12
  2253 00c9 03       		.byte	0x3
  2254 00ca F1       		.byte	0xf1
  2255 00cb 87010000 		.4byte	0x187
  2256 00cf 07       		.uleb128 0x7
- 2257 00d0 9F030000 		.4byte	.LASF18
+ 2257 00d0 D3030000 		.4byte	.LASF18
  2258 00d4 03       		.byte	0x3
  2259 00d5 F4       		.byte	0xf4
  2260 00d6 6B000000 		.4byte	0x6b
  2261 00da 00       		.byte	0
  2262 00db 07       		.uleb128 0x7
- 2263 00dc A6030000 		.4byte	.LASF19
+ 2263 00dc DA030000 		.4byte	.LASF19
  2264 00e0 03       		.byte	0x3
  2265 00e1 F5       		.byte	0xf5
  2266 00e2 6B000000 		.4byte	0x6b
  2267 00e6 01       		.byte	0x1
  2268 00e7 07       		.uleb128 0x7
- 2269 00e8 5E000000 		.4byte	.LASF20
+ 2269 00e8 51000000 		.4byte	.LASF20
  2270 00ec 03       		.byte	0x3
  2271 00ed F6       		.byte	0xf6
  2272 00ee 6B000000 		.4byte	0x6b
  2273 00f2 02       		.byte	0x2
  2274 00f3 07       		.uleb128 0x7
- 2275 00f4 37020000 		.4byte	.LASF21
+ 2275 00f4 6B020000 		.4byte	.LASF21
  2276 00f8 03       		.byte	0x3
  2277 00f9 F7       		.byte	0xf7
  2278 00fa 6B000000 		.4byte	0x6b
  2279 00fe 03       		.byte	0x3
  2280 00ff 07       		.uleb128 0x7
- 2281 0100 EF000000 		.4byte	.LASF22
+ 2281 0100 E2000000 		.4byte	.LASF22
  2282 0104 03       		.byte	0x3
  2283 0105 F8       		.byte	0xf8
  2284 0106 6B000000 		.4byte	0x6b
  2285 010a 04       		.byte	0x4
  2286 010b 07       		.uleb128 0x7
- 2287 010c CB060000 		.4byte	.LASF23
+ 2287 010c A7060000 		.4byte	.LASF23
  2288 0110 03       		.byte	0x3
  2289 0111 F9       		.byte	0xf9
  2290 0112 6B000000 		.4byte	0x6b
  2291 0116 05       		.byte	0x5
  2292 0117 07       		.uleb128 0x7
- 2293 0118 16070000 		.4byte	.LASF24
+ 2293 0118 F2060000 		.4byte	.LASF24
  2294 011c 03       		.byte	0x3
  2295 011d FA       		.byte	0xfa
  2296 011e 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 79
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 79
 
 
  2297 0122 06       		.byte	0x6
  2298 0123 07       		.uleb128 0x7
- 2299 0124 F0030000 		.4byte	.LASF25
+ 2299 0124 24040000 		.4byte	.LASF25
  2300 0128 03       		.byte	0x3
  2301 0129 FB       		.byte	0xfb
  2302 012a 6B000000 		.4byte	0x6b
  2303 012e 07       		.byte	0x7
  2304 012f 07       		.uleb128 0x7
- 2305 0130 51030000 		.4byte	.LASF26
+ 2305 0130 85030000 		.4byte	.LASF26
  2306 0134 03       		.byte	0x3
  2307 0135 FC       		.byte	0xfc
  2308 0136 6B000000 		.4byte	0x6b
  2309 013a 08       		.byte	0x8
  2310 013b 07       		.uleb128 0x7
- 2311 013c 73010000 		.4byte	.LASF27
+ 2311 013c 66010000 		.4byte	.LASF27
  2312 0140 03       		.byte	0x3
  2313 0141 FD       		.byte	0xfd
  2314 0142 6B000000 		.4byte	0x6b
  2315 0146 09       		.byte	0x9
  2316 0147 07       		.uleb128 0x7
- 2317 0148 92000000 		.4byte	.LASF28
+ 2317 0148 85000000 		.4byte	.LASF28
  2318 014c 03       		.byte	0x3
  2319 014d FE       		.byte	0xfe
  2320 014e 6B000000 		.4byte	0x6b
  2321 0152 0A       		.byte	0xa
  2322 0153 07       		.uleb128 0x7
- 2323 0154 4C010000 		.4byte	.LASF29
+ 2323 0154 3F010000 		.4byte	.LASF29
  2324 0158 03       		.byte	0x3
  2325 0159 FF       		.byte	0xff
  2326 015a 76000000 		.4byte	0x76
  2327 015e 0C       		.byte	0xc
  2328 015f 08       		.uleb128 0x8
- 2329 0160 77040000 		.4byte	.LASF30
+ 2329 0160 AB040000 		.4byte	.LASF30
  2330 0164 03       		.byte	0x3
  2331 0165 0001     		.2byte	0x100
  2332 0167 6B000000 		.4byte	0x6b
  2333 016b 0E       		.byte	0xe
  2334 016c 08       		.uleb128 0x8
- 2335 016d E2010000 		.4byte	.LASF31
+ 2335 016d D5010000 		.4byte	.LASF31
  2336 0171 03       		.byte	0x3
  2337 0172 0101     		.2byte	0x101
  2338 0174 6B000000 		.4byte	0x6b
  2339 0178 0F       		.byte	0xf
  2340 0179 08       		.uleb128 0x8
- 2341 017a 51000000 		.4byte	.LASF32
+ 2341 017a 93050000 		.4byte	.LASF32
  2342 017e 03       		.byte	0x3
  2343 017f 0201     		.2byte	0x102
  2344 0181 6B000000 		.4byte	0x6b
  2345 0185 10       		.byte	0x10
  2346 0186 00       		.byte	0
  2347 0187 09       		.uleb128 0x9
- 2348 0188 B4020000 		.4byte	.LASF33
+ 2348 0188 E8020000 		.4byte	.LASF33
  2349 018c 03       		.byte	0x3
  2350 018d 0401     		.2byte	0x104
  2351 018f C3000000 		.4byte	0xc3
  2352 0193 0A       		.uleb128 0xa
- 2353 0194 85020000 		.4byte	.LASF35
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 80
+ 2353 0194 B9020000 		.4byte	.LASF35
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 80
 
 
  2354 0198 2F       		.byte	0x2f
@@ -4746,43 +4746,43 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2356 019a 0701     		.2byte	0x107
  2357 019c A5020000 		.4byte	0x2a5
  2358 01a0 08       		.uleb128 0x8
- 2359 01a1 25010000 		.4byte	.LASF36
+ 2359 01a1 18010000 		.4byte	.LASF36
  2360 01a5 03       		.byte	0x3
  2361 01a6 0901     		.2byte	0x109
  2362 01a8 6B000000 		.4byte	0x6b
  2363 01ac 00       		.byte	0
  2364 01ad 08       		.uleb128 0x8
- 2365 01ae 86040000 		.4byte	.LASF37
+ 2365 01ae BA040000 		.4byte	.LASF37
  2366 01b2 03       		.byte	0x3
  2367 01b3 0A01     		.2byte	0x10a
  2368 01b5 6B000000 		.4byte	0x6b
  2369 01b9 01       		.byte	0x1
  2370 01ba 08       		.uleb128 0x8
- 2371 01bb AE040000 		.4byte	.LASF38
+ 2371 01bb E2040000 		.4byte	.LASF38
  2372 01bf 03       		.byte	0x3
  2373 01c0 0B01     		.2byte	0x10b
  2374 01c2 6B000000 		.4byte	0x6b
  2375 01c6 02       		.byte	0x2
  2376 01c7 08       		.uleb128 0x8
- 2377 01c8 77030000 		.4byte	.LASF39
+ 2377 01c8 AB030000 		.4byte	.LASF39
  2378 01cc 03       		.byte	0x3
  2379 01cd 0D01     		.2byte	0x10d
  2380 01cf 6B000000 		.4byte	0x6b
  2381 01d3 03       		.byte	0x3
  2382 01d4 08       		.uleb128 0x8
- 2383 01d5 17030000 		.4byte	.LASF40
+ 2383 01d5 4B030000 		.4byte	.LASF40
  2384 01d9 03       		.byte	0x3
  2385 01da 1701     		.2byte	0x117
  2386 01dc 6B000000 		.4byte	0x6b
  2387 01e0 04       		.byte	0x4
  2388 01e1 08       		.uleb128 0x8
- 2389 01e2 22030000 		.4byte	.LASF41
+ 2389 01e2 56030000 		.4byte	.LASF41
  2390 01e6 03       		.byte	0x3
  2391 01e7 1801     		.2byte	0x118
  2392 01e9 6B000000 		.4byte	0x6b
  2393 01ed 05       		.byte	0x5
  2394 01ee 08       		.uleb128 0x8
- 2395 01ef 2D030000 		.4byte	.LASF42
+ 2395 01ef 61030000 		.4byte	.LASF42
  2396 01f3 03       		.byte	0x3
  2397 01f4 1901     		.2byte	0x119
  2398 01f6 6B000000 		.4byte	0x6b
@@ -4798,67 +4798,67 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2408 020d 03       		.byte	0x3
  2409 020e 1C01     		.2byte	0x11c
  2410 0210 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 81
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 81
 
 
  2411 0214 08       		.byte	0x8
  2412 0215 08       		.uleb128 0x8
- 2413 0216 1E020000 		.4byte	.LASF45
+ 2413 0216 52020000 		.4byte	.LASF45
  2414 021a 03       		.byte	0x3
  2415 021b 1E01     		.2byte	0x11e
  2416 021d A5020000 		.4byte	0x2a5
  2417 0221 09       		.byte	0x9
  2418 0222 08       		.uleb128 0x8
- 2419 0223 51020000 		.4byte	.LASF46
+ 2419 0223 85020000 		.4byte	.LASF46
  2420 0227 03       		.byte	0x3
  2421 0228 2101     		.2byte	0x121
  2422 022a 6B000000 		.4byte	0x6b
  2423 022e 25       		.byte	0x25
  2424 022f 08       		.uleb128 0x8
- 2425 0230 0D070000 		.4byte	.LASF47
+ 2425 0230 E9060000 		.4byte	.LASF47
  2426 0234 03       		.byte	0x3
  2427 0235 2201     		.2byte	0x122
  2428 0237 6B000000 		.4byte	0x6b
  2429 023b 26       		.byte	0x26
  2430 023c 08       		.uleb128 0x8
- 2431 023d 6C060000 		.4byte	.LASF48
+ 2431 023d 48060000 		.4byte	.LASF48
  2432 0241 03       		.byte	0x3
  2433 0242 2301     		.2byte	0x123
  2434 0244 6B000000 		.4byte	0x6b
  2435 0248 27       		.byte	0x27
  2436 0249 08       		.uleb128 0x8
- 2437 024a E6000000 		.4byte	.LASF49
+ 2437 024a D9000000 		.4byte	.LASF49
  2438 024e 03       		.byte	0x3
  2439 024f 2401     		.2byte	0x124
  2440 0251 6B000000 		.4byte	0x6b
  2441 0255 28       		.byte	0x28
  2442 0256 08       		.uleb128 0x8
- 2443 0257 0C010000 		.4byte	.LASF50
+ 2443 0257 FF000000 		.4byte	.LASF50
  2444 025b 03       		.byte	0x3
  2445 025c 2501     		.2byte	0x125
  2446 025e 6B000000 		.4byte	0x6b
  2447 0262 29       		.byte	0x29
  2448 0263 08       		.uleb128 0x8
- 2449 0264 20040000 		.4byte	.LASF51
+ 2449 0264 54040000 		.4byte	.LASF51
  2450 0268 03       		.byte	0x3
  2451 0269 2601     		.2byte	0x126
  2452 026b 6B000000 		.4byte	0x6b
  2453 026f 2A       		.byte	0x2a
  2454 0270 08       		.uleb128 0x8
- 2455 0271 DB060000 		.4byte	.LASF52
+ 2455 0271 B7060000 		.4byte	.LASF52
  2456 0275 03       		.byte	0x3
  2457 0276 2701     		.2byte	0x127
  2458 0278 6B000000 		.4byte	0x6b
  2459 027c 2B       		.byte	0x2b
  2460 027d 08       		.uleb128 0x8
- 2461 027e 06020000 		.4byte	.LASF53
+ 2461 027e F9010000 		.4byte	.LASF53
  2462 0282 03       		.byte	0x3
  2463 0283 2901     		.2byte	0x129
  2464 0285 6B000000 		.4byte	0x6b
  2465 0289 2C       		.byte	0x2c
  2466 028a 08       		.uleb128 0x8
- 2467 028b E9040000 		.4byte	.LASF54
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 82
+ 2467 028b 1D050000 		.4byte	.LASF54
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 82
 
 
  2468 028f 03       		.byte	0x3
@@ -4866,7 +4866,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2470 0292 6B000000 		.4byte	0x6b
  2471 0296 2D       		.byte	0x2d
  2472 0297 08       		.uleb128 0x8
- 2473 0298 45030000 		.4byte	.LASF55
+ 2473 0298 79030000 		.4byte	.LASF55
  2474 029c 03       		.byte	0x3
  2475 029d 2C01     		.2byte	0x12c
  2476 029f 6B000000 		.4byte	0x6b
@@ -4880,12 +4880,12 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2484 02b3 1B       		.byte	0x1b
  2485 02b4 00       		.byte	0
  2486 02b5 09       		.uleb128 0x9
- 2487 02b6 6B000000 		.4byte	.LASF56
+ 2487 02b6 5E000000 		.4byte	.LASF56
  2488 02ba 03       		.byte	0x3
  2489 02bb 2E01     		.2byte	0x12e
  2490 02bd 93010000 		.4byte	0x193
  2491 02c1 0D       		.uleb128 0xd
- 2492 02c2 9C040000 		.4byte	.LASF57
+ 2492 02c2 D0040000 		.4byte	.LASF57
  2493 02c6 01       		.byte	0x1
  2494 02c7 2D06     		.2byte	0x62d
  2495 02c9 00000000 		.4byte	.LFB11
@@ -4901,7 +4901,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2505 02e3 01       		.uleb128 0x1
  2506 02e4 9C       		.byte	0x9c
  2507 02e5 0E       		.uleb128 0xe
- 2508 02e6 C6000000 		.4byte	.LASF59
+ 2508 02e6 B9000000 		.4byte	.LASF59
  2509 02ea 01       		.byte	0x1
  2510 02eb FD06     		.2byte	0x6fd
  2511 02ed 00000000 		.4byte	.LFB13
@@ -4918,12 +4918,12 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2522 030d 0F       		.uleb128 0xf
  2523 030e 84000000 		.4byte	.LVL2
  2524 0312 9C080000 		.4byte	0x89c
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 83
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 83
 
 
  2525 0316 00       		.byte	0
  2526 0317 0E       		.uleb128 0xe
- 2527 0318 95060000 		.4byte	.LASF60
+ 2527 0318 71060000 		.4byte	.LASF60
  2528 031c 01       		.byte	0x1
  2529 031d 0405     		.2byte	0x504
  2530 031f 00000000 		.4byte	.LFB6
@@ -4949,7 +4949,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2550 034e C1020000 		.4byte	0x2c1
  2551 0352 00       		.byte	0
  2552 0353 0E       		.uleb128 0xe
- 2553 0354 82010000 		.4byte	.LASF61
+ 2553 0354 75010000 		.4byte	.LASF61
  2554 0358 01       		.byte	0x1
  2555 0359 3C07     		.2byte	0x73c
  2556 035b 00000000 		.4byte	.LFB14
@@ -4968,7 +4968,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2569 0380 E4080000 		.4byte	0x8e4
  2570 0384 00       		.byte	0
  2571 0385 0E       		.uleb128 0xe
- 2572 0386 F2010000 		.4byte	.LASF62
+ 2572 0386 E5010000 		.4byte	.LASF62
  2573 038a 01       		.byte	0x1
  2574 038b 5E05     		.2byte	0x55e
  2575 038d 00000000 		.4byte	.LFB7
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2579 0397 C9030000 		.4byte	0x3c9
  2580 039b 0F       		.uleb128 0xf
  2581 039c 06000000 		.4byte	.LVL9
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 84
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 84
 
 
  2582 03a0 53030000 		.4byte	0x353
@@ -4996,7 +4996,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2594 03c4 A3080000 		.4byte	0x8a3
  2595 03c8 00       		.byte	0
  2596 03c9 12       		.uleb128 0x12
- 2597 03ca 5B030000 		.4byte	.LASF63
+ 2597 03ca 8F030000 		.4byte	.LASF63
  2598 03ce 01       		.byte	0x1
  2599 03cf 50       		.byte	0x50
  2600 03d0 00000000 		.4byte	.LFB0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2636 0418 10       		.uleb128 0x10
  2637 0419 A6000000 		.4byte	.LVL17
  2638 041d 0A090000 		.4byte	0x90a
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 85
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 85
 
 
  2639 0421 2B040000 		.4byte	0x42b
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2693 048d 11       		.uleb128 0x11
  2694 048e 01       		.uleb128 0x1
  2695 048f 50       		.byte	0x50
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 86
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 86
 
 
  2696 0490 01       		.uleb128 0x1
@@ -5145,7 +5145,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2737 04e3 A0090000 		.4byte	0x9a0
  2738 04e7 00       		.byte	0
  2739 04e8 13       		.uleb128 0x13
- 2740 04e9 9D000000 		.4byte	.LASF64
+ 2740 04e9 90000000 		.4byte	.LASF64
  2741 04ed 01       		.byte	0x1
  2742 04ee 1A01     		.2byte	0x11a
  2743 04f0 00000000 		.4byte	.LFB1
@@ -5154,11 +5154,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2746 04f9 9C       		.byte	0x9c
  2747 04fa 23060000 		.4byte	0x623
  2748 04fe 14       		.uleb128 0x14
- 2749 04ff D7050000 		.4byte	.LASF65
+ 2749 04ff B3050000 		.4byte	.LASF65
  2750 0503 01       		.byte	0x1
  2751 0504 1C01     		.2byte	0x11c
  2752 0506 A1000000 		.4byte	0xa1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 87
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 87
 
 
  2753 050a 10       		.byte	0x10
@@ -5169,13 +5169,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2758 0511 76000000 		.4byte	0x76
  2759 0515 00000000 		.4byte	.LLST0
  2760 0519 16       		.uleb128 0x16
- 2761 051a 38030000 		.4byte	.LASF66
+ 2761 051a 6C030000 		.4byte	.LASF66
  2762 051e 01       		.byte	0x1
  2763 051f 1E01     		.2byte	0x11e
  2764 0521 76000000 		.4byte	0x76
  2765 0525 4D000000 		.4byte	.LLST1
  2766 0529 17       		.uleb128 0x17
- 2767 052a 8C030000 		.4byte	.LASF67
+ 2767 052a C0030000 		.4byte	.LASF67
  2768 052e 01       		.byte	0x1
  2769 052f 2201     		.2byte	0x122
  2770 0531 33060000 		.4byte	0x633
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2807 0583 10       		.uleb128 0x10
  2808 0584 DA000000 		.4byte	.LVL42
  2809 0588 33090000 		.4byte	0x933
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 88
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 88
 
 
  2810 058c 96050000 		.4byte	0x596
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2864 05fb 01       		.uleb128 0x1
  2865 05fc 31       		.byte	0x31
  2866 05fd 00       		.byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 89
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 89
 
 
  2867 05fe 0F       		.uleb128 0xf
@@ -5304,7 +5304,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2887 0633 18       		.uleb128 0x18
  2888 0634 23060000 		.4byte	0x623
  2889 0638 13       		.uleb128 0x13
- 2890 0639 28040000 		.4byte	.LASF68
+ 2890 0639 5C040000 		.4byte	.LASF68
  2891 063d 01       		.byte	0x1
  2892 063e 7C02     		.2byte	0x27c
  2893 0640 00000000 		.4byte	.LFB2
@@ -5313,13 +5313,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2896 0649 9C       		.byte	0x9c
  2897 064a 7E060000 		.4byte	0x67e
  2898 064e 19       		.uleb128 0x19
- 2899 064f A4060000 		.4byte	.LASF69
+ 2899 064f 80060000 		.4byte	.LASF69
  2900 0653 01       		.byte	0x1
  2901 0654 7C02     		.2byte	0x27c
  2902 0656 76000000 		.4byte	0x76
  2903 065a 6F000000 		.4byte	.LLST2
  2904 065e 19       		.uleb128 0x19
- 2905 065f BD030000 		.4byte	.LASF70
+ 2905 065f F1030000 		.4byte	.LASF70
  2906 0663 01       		.byte	0x1
  2907 0664 7C02     		.2byte	0x27c
  2908 0666 76000000 		.4byte	0x76
@@ -5335,10 +5335,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2918 067c 00       		.byte	0
  2919 067d 00       		.byte	0
  2920 067e 13       		.uleb128 0x13
- 2921 067f 16040000 		.4byte	.LASF71
+ 2921 067f 4A040000 		.4byte	.LASF71
  2922 0683 01       		.byte	0x1
  2923 0684 4803     		.2byte	0x348
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 90
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 90
 
 
  2924 0686 00000000 		.4byte	.LFB3
@@ -5347,19 +5347,19 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2927 068f 9C       		.byte	0x9c
  2928 0690 0C070000 		.4byte	0x70c
  2929 0694 19       		.uleb128 0x19
- 2930 0695 A4060000 		.4byte	.LASF69
+ 2930 0695 80060000 		.4byte	.LASF69
  2931 0699 01       		.byte	0x1
  2932 069a 4803     		.2byte	0x348
  2933 069c 6B000000 		.4byte	0x6b
  2934 06a0 B1000000 		.4byte	.LLST4
  2935 06a4 19       		.uleb128 0x19
- 2936 06a5 BD030000 		.4byte	.LASF70
+ 2936 06a5 F1030000 		.4byte	.LASF70
  2937 06a9 01       		.byte	0x1
  2938 06aa 4803     		.2byte	0x348
  2939 06ac 76000000 		.4byte	0x76
  2940 06b0 D2000000 		.4byte	.LLST5
  2941 06b4 16       		.uleb128 0x16
- 2942 06b5 56010000 		.4byte	.LASF72
+ 2942 06b5 49010000 		.4byte	.LASF72
  2943 06b9 01       		.byte	0x1
  2944 06ba 4A03     		.2byte	0x34a
  2945 06bc 6B000000 		.4byte	0x6b
@@ -5398,10 +5398,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2978 070a 00       		.byte	0
  2979 070b 00       		.byte	0
  2980 070c 13       		.uleb128 0x13
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 91
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 91
 
 
- 2981 070d F9040000 		.4byte	.LASF73
+ 2981 070d 2D050000 		.4byte	.LASF73
  2982 0711 01       		.byte	0x1
  2983 0712 5804     		.2byte	0x458
  2984 0714 00000000 		.4byte	.LFB4
@@ -5410,7 +5410,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  2987 071d 9C       		.byte	0x9c
  2988 071e 67070000 		.4byte	0x767
  2989 0722 16       		.uleb128 0x16
- 2990 0723 56010000 		.4byte	.LASF72
+ 2990 0723 49010000 		.4byte	.LASF72
  2991 0727 01       		.byte	0x1
  2992 0728 5A04     		.2byte	0x45a
  2993 072a 6B000000 		.4byte	0x6b
@@ -5439,7 +5439,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3016 0765 00       		.byte	0
  3017 0766 00       		.byte	0
  3018 0767 1B       		.uleb128 0x1b
- 3019 0768 3C050000 		.4byte	.LASF116
+ 3019 0768 70050000 		.4byte	.LASF116
  3020 076c 01       		.byte	0x1
  3021 076d D804     		.2byte	0x4d8
  3022 076f 6B000000 		.4byte	0x6b
@@ -5449,16 +5449,16 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3026 077c 9C       		.byte	0x9c
  3027 077d D6070000 		.4byte	0x7d6
  3028 0781 19       		.uleb128 0x19
- 3029 0782 01020000 		.4byte	.LASF74
+ 3029 0782 F4010000 		.4byte	.LASF74
  3030 0786 01       		.byte	0x1
  3031 0787 D804     		.2byte	0x4d8
  3032 0789 6B000000 		.4byte	0x6b
  3033 078d 2F010000 		.4byte	.LLST8
  3034 0791 17       		.uleb128 0x17
- 3035 0792 20070000 		.4byte	.LASF75
+ 3035 0792 FC060000 		.4byte	.LASF75
  3036 0796 01       		.byte	0x1
  3037 0797 DA04     		.2byte	0x4da
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 92
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 92
 
 
  3038 0799 6B000000 		.4byte	0x6b
@@ -5466,13 +5466,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3040 079e 03       		.byte	0x3
  3041 079f 42000000 		.4byte	interruptStatus.4805
  3042 07a3 16       		.uleb128 0x16
- 3043 07a4 56010000 		.4byte	.LASF72
+ 3043 07a4 49010000 		.4byte	.LASF72
  3044 07a8 01       		.byte	0x1
  3045 07a9 DB04     		.2byte	0x4db
  3046 07ab 6B000000 		.4byte	0x6b
  3047 07af 50010000 		.4byte	.LLST9
  3048 07b3 16       		.uleb128 0x16
- 3049 07b4 DC000000 		.4byte	.LASF76
+ 3049 07b4 CF000000 		.4byte	.LASF76
  3050 07b8 01       		.byte	0x1
  3051 07b9 DC04     		.2byte	0x4dc
  3052 07bb 6B000000 		.4byte	0x6b
@@ -5485,7 +5485,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3059 07d1 FB090000 		.4byte	0x9fb
  3060 07d5 00       		.byte	0
  3061 07d6 13       		.uleb128 0x13
- 3062 07d7 C4050000 		.4byte	.LASF77
+ 3062 07d7 A0050000 		.4byte	.LASF77
  3063 07db 01       		.byte	0x1
  3064 07dc 9B05     		.2byte	0x59b
  3065 07de 00000000 		.4byte	.LFB8
@@ -5494,7 +5494,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3068 07e7 9C       		.byte	0x9c
  3069 07e8 06080000 		.4byte	0x806
  3070 07ec 19       		.uleb128 0x19
- 3071 07ed E1020000 		.4byte	.LASF78
+ 3071 07ed 15030000 		.4byte	.LASF78
  3072 07f1 01       		.byte	0x1
  3073 07f2 9B05     		.2byte	0x59b
  3074 07f4 6B000000 		.4byte	0x6b
@@ -5504,7 +5504,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3078 0801 EB080000 		.4byte	0x8eb
  3079 0805 00       		.byte	0
  3080 0806 13       		.uleb128 0x13
- 3081 0807 4D040000 		.4byte	.LASF79
+ 3081 0807 81040000 		.4byte	.LASF79
  3082 080b 01       		.byte	0x1
  3083 080c CF05     		.2byte	0x5cf
  3084 080e 00000000 		.4byte	.LFB9
@@ -5517,8 +5517,8 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3091 0821 0C0A0000 		.4byte	0xa0c
  3092 0825 00       		.byte	0
  3093 0826 13       		.uleb128 0x13
- 3094 0827 F9000000 		.4byte	.LASF80
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 93
+ 3094 0827 EC000000 		.4byte	.LASF80
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 93
 
 
  3095 082b 01       		.byte	0x1
@@ -5529,7 +5529,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3100 0837 9C       		.byte	0x9c
  3101 0838 56080000 		.4byte	0x856
  3102 083c 19       		.uleb128 0x19
- 3103 083d 1D050000 		.4byte	.LASF81
+ 3103 083d 51050000 		.4byte	.LASF81
  3104 0841 01       		.byte	0x1
  3105 0842 F405     		.2byte	0x5f4
  3106 0844 6B000000 		.4byte	0x6b
@@ -5539,7 +5539,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3110 0851 F2080000 		.4byte	0x8f2
  3111 0855 00       		.byte	0
  3112 0856 1C       		.uleb128 0x1c
- 3113 0857 02070000 		.4byte	.LASF82
+ 3113 0857 DE060000 		.4byte	.LASF82
  3114 085b 01       		.byte	0x1
  3115 085c 1F       		.byte	0x1f
  3116 085d B5020000 		.4byte	0x2b5
@@ -5547,7 +5547,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3118 0862 03       		.byte	0x3
  3119 0863 00000000 		.4byte	cyPmBackup
  3120 0867 1C       		.uleb128 0x1c
- 3121 0868 67040000 		.4byte	.LASF83
+ 3121 0868 9B040000 		.4byte	.LASF83
  3122 086c 01       		.byte	0x1
  3123 086d 20       		.byte	0x20
  3124 086e 87010000 		.4byte	0x187
@@ -5555,7 +5555,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3126 0873 03       		.byte	0x3
  3127 0874 30000000 		.4byte	cyPmClockBackup
  3128 0878 1C       		.uleb128 0x1c
- 3129 0879 29050000 		.4byte	.LASF84
+ 3129 0879 5D050000 		.4byte	.LASF84
  3130 087d 01       		.byte	0x1
  3131 087e 23       		.byte	0x23
  3132 087f 89080000 		.4byte	0x889
@@ -5565,7 +5565,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3136 0889 18       		.uleb128 0x18
  3137 088a 23060000 		.4byte	0x623
  3138 088e 1D       		.uleb128 0x1d
- 3139 088f D6040000 		.4byte	.LASF85
+ 3139 088f 0A050000 		.4byte	.LASF85
  3140 0893 04       		.byte	0x4
  3141 0894 9D       		.byte	0x9d
  3142 0895 1D       		.uleb128 0x1d
@@ -5573,12 +5573,12 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3144 089a 04       		.byte	0x4
  3145 089b 9E       		.byte	0x9e
  3146 089c 1D       		.uleb128 0x1d
- 3147 089d ED020000 		.4byte	.LASF87
+ 3147 089d 21030000 		.4byte	.LASF87
  3148 08a1 04       		.byte	0x4
  3149 08a2 A0       		.byte	0xa0
  3150 08a3 1E       		.uleb128 0x1e
- 3151 08a4 96020000 		.4byte	.LASF106
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 94
+ 3151 08a4 CA020000 		.4byte	.LASF106
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 94
 
 
  3152 08a8 04       		.byte	0x4
@@ -5589,7 +5589,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3157 08b3 6B000000 		.4byte	0x6b
  3158 08b7 00       		.byte	0
  3159 08b8 20       		.uleb128 0x20
- 3160 08b9 13010000 		.4byte	.LASF88
+ 3160 08b9 06010000 		.4byte	.LASF88
  3161 08bd 04       		.byte	0x4
  3162 08be 9B       		.byte	0x9b
  3163 08bf CE080000 		.4byte	0x8ce
@@ -5599,7 +5599,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3167 08c9 6B000000 		.4byte	0x6b
  3168 08cd 00       		.byte	0
  3169 08ce 20       		.uleb128 0x20
- 3170 08cf AF060000 		.4byte	.LASF89
+ 3170 08cf 8B060000 		.4byte	.LASF89
  3171 08d3 04       		.byte	0x4
  3172 08d4 9C       		.byte	0x9c
  3173 08d5 E4080000 		.4byte	0x8e4
@@ -5609,19 +5609,19 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3177 08df 6B000000 		.4byte	0x6b
  3178 08e3 00       		.byte	0
  3179 08e4 1D       		.uleb128 0x1d
- 3180 08e5 E3060000 		.4byte	.LASF90
+ 3180 08e5 BF060000 		.4byte	.LASF90
  3181 08e9 04       		.byte	0x4
  3182 08ea 9F       		.byte	0x9f
  3183 08eb 1D       		.uleb128 0x1d
- 3184 08ec 65010000 		.4byte	.LASF91
+ 3184 08ec 58010000 		.4byte	.LASF91
  3185 08f0 04       		.byte	0x4
  3186 08f1 58       		.byte	0x58
  3187 08f2 1D       		.uleb128 0x1d
- 3188 08f3 AD030000 		.4byte	.LASF92
+ 3188 08f3 E1030000 		.4byte	.LASF92
  3189 08f7 04       		.byte	0x4
  3190 08f8 5A       		.byte	0x5a
  3191 08f9 20       		.uleb128 0x20
- 3192 08fa 07050000 		.4byte	.LASF93
+ 3192 08fa 3B050000 		.4byte	.LASF93
  3193 08fe 05       		.byte	0x5
  3194 08ff 4B       		.byte	0x4b
  3195 0900 0A090000 		.4byte	0x90a
@@ -5629,7 +5629,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3197 0905 6B000000 		.4byte	0x6b
  3198 0909 00       		.byte	0
  3199 090a 20       		.uleb128 0x20
- 3200 090b 01030000 		.4byte	.LASF94
+ 3200 090b 35030000 		.4byte	.LASF94
  3201 090f 04       		.byte	0x4
  3202 0910 4E       		.byte	0x4e
  3203 0911 1B090000 		.4byte	0x91b
@@ -5637,8 +5637,8 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3205 0916 6B000000 		.4byte	0x6b
  3206 091a 00       		.byte	0
  3207 091b 20       		.uleb128 0x20
- 3208 091c 46040000 		.4byte	.LASF95
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 95
+ 3208 091c 7A040000 		.4byte	.LASF95
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 95
 
 
  3209 0920 04       		.byte	0x4
@@ -5648,11 +5648,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3213 0927 6B000000 		.4byte	0x6b
  3214 092b 00       		.byte	0
  3215 092c 1D       		.uleb128 0x1d
- 3216 092d CA030000 		.4byte	.LASF96
+ 3216 092d FE030000 		.4byte	.LASF96
  3217 0931 04       		.byte	0x4
  3218 0932 43       		.byte	0x43
  3219 0933 20       		.uleb128 0x20
- 3220 0934 73060000 		.4byte	.LASF97
+ 3220 0934 4F060000 		.4byte	.LASF97
  3221 0938 04       		.byte	0x4
  3222 0939 49       		.byte	0x49
  3223 093a 44090000 		.4byte	0x944
@@ -5668,7 +5668,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3233 0950 6B000000 		.4byte	0x6b
  3234 0954 00       		.byte	0
  3235 0955 20       		.uleb128 0x20
- 3236 0956 AA010000 		.4byte	.LASF99
+ 3236 0956 9D010000 		.4byte	.LASF99
  3237 095a 04       		.byte	0x4
  3238 095b 78       		.byte	0x78
  3239 095c 66090000 		.4byte	0x966
@@ -5676,7 +5676,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3241 0961 76000000 		.4byte	0x76
  3242 0965 00       		.byte	0
  3243 0966 20       		.uleb128 0x20
- 3244 0967 27020000 		.4byte	.LASF100
+ 3244 0967 5B020000 		.4byte	.LASF100
  3245 096b 04       		.byte	0x4
  3246 096c 4A       		.byte	0x4a
  3247 096d 77090000 		.4byte	0x977
@@ -5684,11 +5684,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3249 0972 6B000000 		.4byte	0x6b
  3250 0976 00       		.byte	0
  3251 0977 1D       		.uleb128 0x1d
- 3252 0978 C1040000 		.4byte	.LASF101
+ 3252 0978 F5040000 		.4byte	.LASF101
  3253 097c 04       		.byte	0x4
  3254 097d 4C       		.byte	0x4c
  3255 097e 20       		.uleb128 0x20
- 3256 097f D9030000 		.4byte	.LASF102
+ 3256 097f 0D040000 		.4byte	.LASF102
  3257 0983 04       		.byte	0x4
  3258 0984 4F       		.byte	0x4f
  3259 0985 8F090000 		.4byte	0x98f
@@ -5696,9 +5696,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3261 098a 6B000000 		.4byte	0x6b
  3262 098e 00       		.byte	0
  3263 098f 20       		.uleb128 0x20
- 3264 0990 4B050000 		.4byte	.LASF103
+ 3264 0990 7F050000 		.4byte	.LASF103
  3265 0994 04       		.byte	0x4
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 96
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 96
 
 
  3266 0995 50       		.byte	0x50
@@ -5707,11 +5707,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3269 099b 76000000 		.4byte	0x76
  3270 099f 00       		.byte	0
  3271 09a0 1D       		.uleb128 0x1d
- 3272 09a1 F6060000 		.4byte	.LASF104
+ 3272 09a1 D2060000 		.4byte	.LASF104
  3273 09a5 04       		.byte	0x4
  3274 09a6 67       		.byte	0x67
  3275 09a7 20       		.uleb128 0x20
- 3276 09a8 33040000 		.4byte	.LASF105
+ 3276 09a8 67040000 		.4byte	.LASF105
  3277 09ac 04       		.byte	0x4
  3278 09ad 7A       		.byte	0x7a
  3279 09ae B8090000 		.4byte	0x9b8
@@ -5719,7 +5719,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3281 09b3 81000000 		.4byte	0x81
  3282 09b7 00       		.byte	0
  3283 09b8 1E       		.uleb128 0x1e
- 3284 09b9 6A030000 		.4byte	.LASF107
+ 3284 09b9 9E030000 		.4byte	.LASF107
  3285 09bd 04       		.byte	0x4
  3286 09be 66       		.byte	0x66
  3287 09bf A1000000 		.4byte	0xa1
@@ -5728,11 +5728,11 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3290 09c8 6B000000 		.4byte	0x6b
  3291 09cc 00       		.byte	0
  3292 09cd 1D       		.uleb128 0x1d
- 3293 09ce 81060000 		.4byte	.LASF108
+ 3293 09ce 5D060000 		.4byte	.LASF108
  3294 09d2 04       		.byte	0x4
  3295 09d3 4B       		.byte	0x4b
  3296 09d4 1E       		.uleb128 0x1e
- 3297 09d5 9A010000 		.4byte	.LASF109
+ 3297 09d5 8D010000 		.4byte	.LASF109
  3298 09d9 04       		.byte	0x4
  3299 09da 42       		.byte	0x42
  3300 09db A1000000 		.4byte	0xa1
@@ -5741,16 +5741,16 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3303 09e4 6B000000 		.4byte	0x6b
  3304 09e8 00       		.byte	0
  3305 09e9 1D       		.uleb128 0x1d
- 3306 09ea A9020000 		.4byte	.LASF110
+ 3306 09ea DD020000 		.4byte	.LASF110
  3307 09ee 04       		.byte	0x4
  3308 09ef 48       		.byte	0x48
  3309 09f0 21       		.uleb128 0x21
- 3310 09f1 6E020000 		.4byte	.LASF117
+ 3310 09f1 A2020000 		.4byte	.LASF117
  3311 09f5 04       		.byte	0x4
  3312 09f6 7E       		.byte	0x7e
  3313 09f7 6B000000 		.4byte	0x6b
  3314 09fb 20       		.uleb128 0x20
- 3315 09fc 00040000 		.4byte	.LASF111
+ 3315 09fc 34040000 		.4byte	.LASF111
  3316 0a00 04       		.byte	0x4
  3317 0a01 7F       		.byte	0x7f
  3318 0a02 0C0A0000 		.4byte	0xa0c
@@ -5758,10 +5758,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3320 0a07 6B000000 		.4byte	0x6b
  3321 0a0b 00       		.byte	0
  3322 0a0c 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 97
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 97
 
 
- 3323 0a0d 7F000000 		.4byte	.LASF112
+ 3323 0a0d 72000000 		.4byte	.LASF112
  3324 0a11 04       		.byte	0x4
  3325 0a12 63       		.byte	0x63
  3326 0a13 00       		.byte	0
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3377 0030 3B       		.uleb128 0x3b
  3378 0031 0B       		.uleb128 0xb
  3379 0032 49       		.uleb128 0x49
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 98
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 98
 
 
  3380 0033 13       		.uleb128 0x13
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3434 0069 00       		.byte	0
  3435 006a 09       		.uleb128 0x9
  3436 006b 16       		.uleb128 0x16
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 99
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 99
 
 
  3437 006c 00       		.byte	0
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3491 00a2 19       		.uleb128 0x19
  3492 00a3 11       		.uleb128 0x11
  3493 00a4 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 100
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 100
 
 
  3494 00a5 12       		.uleb128 0x12
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3548 00e3 02       		.uleb128 0x2
  3549 00e4 18       		.uleb128 0x18
  3550 00e5 9142     		.uleb128 0x2111
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 101
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 101
 
 
  3551 00e7 18       		.uleb128 0x18
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3605 011f 34       		.uleb128 0x34
  3606 0120 00       		.byte	0
  3607 0121 03       		.uleb128 0x3
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 102
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 102
 
 
  3608 0122 0E       		.uleb128 0xe
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3662 0158 00       		.byte	0
  3663 0159 00       		.byte	0
  3664 015a 18       		.uleb128 0x18
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 103
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 103
 
 
  3665 015b 26       		.uleb128 0x26
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3719 0194 13       		.uleb128 0x13
  3720 0195 00       		.byte	0
  3721 0196 00       		.byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 104
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 104
 
 
  3722 0197 1C       		.uleb128 0x1c
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3776 01cd 05       		.uleb128 0x5
  3777 01ce 00       		.byte	0
  3778 01cf 49       		.uleb128 0x49
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 105
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 105
 
 
  3779 01d0 13       		.uleb128 0x13
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3833 0017 80000000 		.4byte	.LVL37
  3834 001b 84000000 		.4byte	.LVL38
  3835 001f 0100     		.2byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 106
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 106
 
 
  3836 0021 54       		.byte	0x54
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3890 00a5 F3       		.byte	0xf3
  3891 00a6 01       		.uleb128 0x1
  3892 00a7 51       		.byte	0x51
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 107
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 107
 
 
  3893 00a8 9F       		.byte	0x9f
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  3947 012f 00000000 		.4byte	.LVL81
  3948 0133 07000000 		.4byte	.LVL82-1
  3949 0137 0100     		.2byte	0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 108
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 108
 
 
  3950 0139 50       		.byte	0x50
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  4004 01bb 00000000 		.4byte	0
  4005 01bf 00000000 		.4byte	0
  4006              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 109
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 109
 
 
  4007 0000 8C000000 		.4byte	0x8c
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  4061 0034 18020000 		.4byte	.LFE0
  4062 0038 00000000 		.4byte	.LFB1
  4063 003c 4C020000 		.4byte	.LFE1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 110
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 110
 
 
  4064 0040 00000000 		.4byte	.LFB2
@@ -6591,576 +6591,574 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 1
  4094 0045 77616B65 		.ascii	"wakeupTrim1\000"
  4094      75705472 
  4094      696D3100 
- 4095              	.LASF32:
- 4096 0051 636C6B44 		.ascii	"clkDistDelay\000"
- 4096      69737444 
- 4096      656C6179 
+ 4095              	.LASF20:
+ 4096 0051 6D617374 		.ascii	"masterClkSrc\000"
+ 4096      6572436C 
+ 4096      6B537263 
  4096      00
- 4097              	.LASF20:
- 4098 005e 6D617374 		.ascii	"masterClkSrc\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 111
+ 4097              	.LASF56:
+ 4098 005e 43595F50 		.ascii	"CY_PM_BACKUP_STRUCT\000"
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 111
 
 
- 4098      6572436C 
- 4098      6B537263 
- 4098      00
- 4099              	.LASF56:
- 4100 006b 43595F50 		.ascii	"CY_PM_BACKUP_STRUCT\000"
- 4100      4D5F4241 
- 4100      434B5550 
- 4100      5F535452 
- 4100      55435400 
- 4101              	.LASF112:
- 4102 007f 43795854 		.ascii	"CyXTAL_32KHZ_Start\000"
- 4102      414C5F33 
- 4102      324B485A 
- 4102      5F537461 
- 4102      727400
- 4103              	.LASF28:
- 4104 0092 636C6B53 		.ascii	"clkSyncDiv\000"
- 4104      796E6344 
- 4104      697600
- 4105              	.LASF64:
- 4106 009d 4379506D 		.ascii	"CyPmRestoreClocks\000"
- 4106      52657374 
- 4106      6F726543 
- 4106      6C6F636B 
- 4106      7300
- 4107              	.LASF7:
- 4108 00af 6C6F6E67 		.ascii	"long long unsigned int\000"
- 4108      206C6F6E 
- 4108      6720756E 
- 4108      7369676E 
- 4108      65642069 
- 4109              	.LASF59:
- 4110 00c6 4379506D 		.ascii	"CyPmHviLviSaveDisable\000"
- 4110      4876694C 
- 4110      76695361 
- 4110      76654469 
- 4110      7361626C 
- 4111              	.LASF76:
- 4112 00dc 746D7053 		.ascii	"tmpStatus\000"
- 4112      74617475 
- 4112      7300
- 4113              	.LASF49:
- 4114 00e6 6C766961 		.ascii	"lviaTrip\000"
- 4114      54726970 
- 4114      00
- 4115              	.LASF22:
- 4116 00ef 696D6F55 		.ascii	"imoUsbClk\000"
- 4116      7362436C 
- 4116      6B00
- 4117              	.LASF80:
- 4118 00f9 4379506D 		.ascii	"CyPmFtwSetInterval\000"
- 4118      46747753 
- 4118      6574496E 
- 4118      74657276 
- 4118      616C00
- 4119              	.LASF50:
- 4120 010c 68766961 		.ascii	"hviaEn\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 112
+ 4098      4D5F4241 
+ 4098      434B5550 
+ 4098      5F535452 
+ 4098      55435400 
+ 4099              	.LASF112:
+ 4100 0072 43795854 		.ascii	"CyXTAL_32KHZ_Start\000"
+ 4100      414C5F33 
+ 4100      324B485A 
+ 4100      5F537461 
+ 4100      727400
+ 4101              	.LASF28:
+ 4102 0085 636C6B53 		.ascii	"clkSyncDiv\000"
+ 4102      796E6344 
+ 4102      697600
+ 4103              	.LASF64:
+ 4104 0090 4379506D 		.ascii	"CyPmRestoreClocks\000"
+ 4104      52657374 
+ 4104      6F726543 
+ 4104      6C6F636B 
+ 4104      7300
+ 4105              	.LASF7:
+ 4106 00a2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4106      206C6F6E 
+ 4106      6720756E 
+ 4106      7369676E 
+ 4106      65642069 
+ 4107              	.LASF59:
+ 4108 00b9 4379506D 		.ascii	"CyPmHviLviSaveDisable\000"
+ 4108      4876694C 
+ 4108      76695361 
+ 4108      76654469 
+ 4108      7361626C 
+ 4109              	.LASF76:
+ 4110 00cf 746D7053 		.ascii	"tmpStatus\000"
+ 4110      74617475 
+ 4110      7300
+ 4111              	.LASF49:
+ 4112 00d9 6C766961 		.ascii	"lviaTrip\000"
+ 4112      54726970 
+ 4112      00
+ 4113              	.LASF22:
+ 4114 00e2 696D6F55 		.ascii	"imoUsbClk\000"
+ 4114      7362436C 
+ 4114      6B00
+ 4115              	.LASF80:
+ 4116 00ec 4379506D 		.ascii	"CyPmFtwSetInterval\000"
+ 4116      46747753 
+ 4116      6574496E 
+ 4116      74657276 
+ 4116      616C00
+ 4117              	.LASF50:
+ 4118 00ff 68766961 		.ascii	"hviaEn\000"
+ 4118      456E00
+ 4119              	.LASF88:
+ 4120 0106 43795664 		.ascii	"CyVdLvDigitEnable\000"
+ 4120      4C764469 
+ 4120      67697445 
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 112
 
 
- 4120      456E00
- 4121              	.LASF88:
- 4122 0113 43795664 		.ascii	"CyVdLvDigitEnable\000"
- 4122      4C764469 
- 4122      67697445 
- 4122      6E61626C 
- 4122      6500
- 4123              	.LASF36:
- 4124 0125 696C6F50 		.ascii	"iloPowerMode\000"
- 4124      6F776572 
- 4124      4D6F6465 
- 4124      00
- 4125              	.LASF6:
- 4126 0132 6C6F6E67 		.ascii	"long long int\000"
- 4126      206C6F6E 
- 4126      6720696E 
- 4126      7400
- 4127              	.LASF0:
- 4128 0140 7369676E 		.ascii	"signed char\000"
- 4128      65642063 
- 4128      68617200 
- 4129              	.LASF29:
- 4130 014c 636C6B42 		.ascii	"clkBusDiv\000"
- 4130      75734469 
- 4130      7600
- 4131              	.LASF72:
- 4132 0156 696E7465 		.ascii	"interruptState\000"
- 4132      72727570 
- 4132      74537461 
- 4132      746500
- 4133              	.LASF91:
- 4134 0165 4379494C 		.ascii	"CyILO_Start1K\000"
- 4134      4F5F5374 
- 4134      61727431 
- 4134      4B00
- 4135              	.LASF27:
- 4136 0173 696D6F32 		.ascii	"imo2x\000"
- 4136      7800
- 4137              	.LASF4:
- 4138 0179 6C6F6E67 		.ascii	"long int\000"
- 4138      20696E74 
- 4138      00
- 4139              	.LASF61:
- 4140 0182 4379506D 		.ascii	"CyPmHviLviRestore\000"
- 4140      4876694C 
- 4140      76695265 
- 4140      73746F72 
- 4140      6500
- 4141              	.LASF9:
- 4142 0194 75696E74 		.ascii	"uint8\000"
- 4142      3800
- 4143              	.LASF109:
- 4144 019a 4379504C 		.ascii	"CyPLL_OUT_Start\000"
- 4144      4C5F4F55 
- 4144      545F5374 
- 4144      61727400 
- 4145              	.LASF99:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 113
+ 4120      6E61626C 
+ 4120      6500
+ 4121              	.LASF36:
+ 4122 0118 696C6F50 		.ascii	"iloPowerMode\000"
+ 4122      6F776572 
+ 4122      4D6F6465 
+ 4122      00
+ 4123              	.LASF6:
+ 4124 0125 6C6F6E67 		.ascii	"long long int\000"
+ 4124      206C6F6E 
+ 4124      6720696E 
+ 4124      7400
+ 4125              	.LASF0:
+ 4126 0133 7369676E 		.ascii	"signed char\000"
+ 4126      65642063 
+ 4126      68617200 
+ 4127              	.LASF29:
+ 4128 013f 636C6B42 		.ascii	"clkBusDiv\000"
+ 4128      75734469 
+ 4128      7600
+ 4129              	.LASF72:
+ 4130 0149 696E7465 		.ascii	"interruptState\000"
+ 4130      72727570 
+ 4130      74537461 
+ 4130      746500
+ 4131              	.LASF91:
+ 4132 0158 4379494C 		.ascii	"CyILO_Start1K\000"
+ 4132      4F5F5374 
+ 4132      61727431 
+ 4132      4B00
+ 4133              	.LASF27:
+ 4134 0166 696D6F32 		.ascii	"imo2x\000"
+ 4134      7800
+ 4135              	.LASF4:
+ 4136 016c 6C6F6E67 		.ascii	"long int\000"
+ 4136      20696E74 
+ 4136      00
+ 4137              	.LASF61:
+ 4138 0175 4379506D 		.ascii	"CyPmHviLviRestore\000"
+ 4138      4876694C 
+ 4138      76695265 
+ 4138      73746F72 
+ 4138      6500
+ 4139              	.LASF9:
+ 4140 0187 75696E74 		.ascii	"uint8\000"
+ 4140      3800
+ 4141              	.LASF109:
+ 4142 018d 4379504C 		.ascii	"CyPLL_OUT_Start\000"
+ 4142      4C5F4F55 
+ 4142      545F5374 
+ 4142      61727400 
+ 4143              	.LASF99:
+ 4144 019d 43794465 		.ascii	"CyDelayUs\000"
+ 4144      6C617955 
+ 4144      7300
+ 4145              	.LASF13:
+ 4146 01a7 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 113
 
 
- 4146 01aa 43794465 		.ascii	"CyDelayUs\000"
- 4146      6C617955 
- 4146      7300
- 4147              	.LASF13:
- 4148 01b4 646F7562 		.ascii	"double\000"
- 4148      6C6500
- 4149              	.LASF114:
- 4150 01bb 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cyPm.c\000"
- 4150      6E657261 
- 4150      7465645F 
- 4150      536F7572 
- 4150      63655C50 
- 4151              	.LASF11:
- 4152 01db 75696E74 		.ascii	"uint32\000"
- 4152      333200
- 4153              	.LASF31:
- 4154 01e2 786D687A 		.ascii	"xmhzEnableState\000"
- 4154      456E6162 
- 4154      6C655374 
- 4154      61746500 
- 4155              	.LASF62:
- 4156 01f2 4379506D 		.ascii	"CyPmHibRestore\000"
- 4156      48696252 
- 4156      6573746F 
- 4156      726500
- 4157              	.LASF74:
- 4158 0201 6D61736B 		.ascii	"mask\000"
- 4158      00
- 4159              	.LASF53:
- 4160 0206 696D6F41 		.ascii	"imoActFreq\000"
- 4160      63744672 
- 4160      657100
- 4161              	.LASF8:
- 4162 0211 756E7369 		.ascii	"unsigned int\000"
- 4162      676E6564 
- 4162      20696E74 
- 4162      00
- 4163              	.LASF45:
- 4164 021e 73636374 		.ascii	"scctData\000"
- 4164      44617461 
- 4164      00
- 4165              	.LASF100:
- 4166 0227 4379494D 		.ascii	"CyIMO_SetSource\000"
- 4166      4F5F5365 
- 4166      74536F75 
- 4166      72636500 
- 4167              	.LASF21:
- 4168 0237 696D6F46 		.ascii	"imoFreq\000"
- 4168      72657100 
- 4169              	.LASF5:
- 4170 023f 6C6F6E67 		.ascii	"long unsigned int\000"
- 4170      20756E73 
- 4170      69676E65 
- 4170      6420696E 
- 4170      7400
- 4171              	.LASF46:
- 4172 0251 6C766964 		.ascii	"lvidEn\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 114
+ 4146      6C6500
+ 4147              	.LASF114:
+ 4148 01ae 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cyPm.c\000"
+ 4148      6E657261 
+ 4148      7465645F 
+ 4148      536F7572 
+ 4148      63655C50 
+ 4149              	.LASF11:
+ 4150 01ce 75696E74 		.ascii	"uint32\000"
+ 4150      333200
+ 4151              	.LASF31:
+ 4152 01d5 786D687A 		.ascii	"xmhzEnableState\000"
+ 4152      456E6162 
+ 4152      6C655374 
+ 4152      61746500 
+ 4153              	.LASF62:
+ 4154 01e5 4379506D 		.ascii	"CyPmHibRestore\000"
+ 4154      48696252 
+ 4154      6573746F 
+ 4154      726500
+ 4155              	.LASF74:
+ 4156 01f4 6D61736B 		.ascii	"mask\000"
+ 4156      00
+ 4157              	.LASF53:
+ 4158 01f9 696D6F41 		.ascii	"imoActFreq\000"
+ 4158      63744672 
+ 4158      657100
+ 4159              	.LASF115:
+ 4160 0204 433A5C55 		.ascii	"C:\\Users\\Zachary\\Desktop\\Zach I2S Debugging\\Wa"
+ 4160      73657273 
+ 4160      5C5A6163 
+ 4160      68617279 
+ 4160      5C446573 
+ 4161 0232 76652047 		.ascii	"ve Generator.cydsn\000"
+ 4161      656E6572 
+ 4161      61746F72 
+ 4161      2E637964 
+ 4161      736E00
+ 4162              	.LASF8:
+ 4163 0245 756E7369 		.ascii	"unsigned int\000"
+ 4163      676E6564 
+ 4163      20696E74 
+ 4163      00
+ 4164              	.LASF45:
+ 4165 0252 73636374 		.ascii	"scctData\000"
+ 4165      44617461 
+ 4165      00
+ 4166              	.LASF100:
+ 4167 025b 4379494D 		.ascii	"CyIMO_SetSource\000"
+ 4167      4F5F5365 
+ 4167      74536F75 
+ 4167      72636500 
+ 4168              	.LASF21:
+ 4169 026b 696D6F46 		.ascii	"imoFreq\000"
+ 4169      72657100 
+ 4170              	.LASF5:
+ 4171 0273 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 114
 
 
- 4172      456E00
- 4173              	.LASF34:
- 4174 0258 6379506D 		.ascii	"cyPmClockBackupStruct\000"
- 4174      436C6F63 
- 4174      6B426163 
- 4174      6B757053 
- 4174      74727563 
- 4175              	.LASF117:
- 4176 026e 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 4176      74657243 
- 4176      72697469 
- 4176      63616C53 
- 4176      65637469 
- 4177              	.LASF35:
- 4178 0285 6379506D 		.ascii	"cyPmBackupStruct\000"
- 4178      4261636B 
- 4178      75705374 
- 4178      72756374 
- 4178      00
- 4179              	.LASF106:
- 4180 0296 4379494C 		.ascii	"CyILO_SetPowerMode\000"
- 4180      4F5F5365 
- 4180      74506F77 
- 4180      65724D6F 
- 4180      646500
- 4181              	.LASF110:
- 4182 02a9 4379494D 		.ascii	"CyIMO_Stop\000"
- 4182      4F5F5374 
- 4182      6F7000
- 4183              	.LASF33:
- 4184 02b4 43595F50 		.ascii	"CY_PM_CLOCK_BACKUP_STRUCT\000"
- 4184      4D5F434C 
- 4184      4F434B5F 
- 4184      4241434B 
- 4184      55505F53 
- 4185              	.LASF3:
- 4186 02ce 73686F72 		.ascii	"short unsigned int\000"
- 4186      7420756E 
- 4186      7369676E 
- 4186      65642069 
- 4186      6E7400
- 4187              	.LASF78:
- 4188 02e1 63747749 		.ascii	"ctwInterval\000"
- 4188      6E746572 
- 4188      76616C00 
- 4189              	.LASF87:
- 4190 02ed 43795664 		.ascii	"CyVdHvAnalogDisable\000"
- 4190      4876416E 
- 4190      616C6F67 
- 4190      44697361 
- 4190      626C6500 
- 4191              	.LASF94:
- 4192 0301 43794D61 		.ascii	"CyMasterClk_SetSource\000"
- 4192      73746572 
- 4192      436C6B5F 
- 4192      53657453 
- 4192      6F757263 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 115
+ 4171      20756E73 
+ 4171      69676E65 
+ 4171      6420696E 
+ 4171      7400
+ 4172              	.LASF46:
+ 4173 0285 6C766964 		.ascii	"lvidEn\000"
+ 4173      456E00
+ 4174              	.LASF34:
+ 4175 028c 6379506D 		.ascii	"cyPmClockBackupStruct\000"
+ 4175      436C6F63 
+ 4175      6B426163 
+ 4175      6B757053 
+ 4175      74727563 
+ 4176              	.LASF117:
+ 4177 02a2 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 4177      74657243 
+ 4177      72697469 
+ 4177      63616C53 
+ 4177      65637469 
+ 4178              	.LASF35:
+ 4179 02b9 6379506D 		.ascii	"cyPmBackupStruct\000"
+ 4179      4261636B 
+ 4179      75705374 
+ 4179      72756374 
+ 4179      00
+ 4180              	.LASF106:
+ 4181 02ca 4379494C 		.ascii	"CyILO_SetPowerMode\000"
+ 4181      4F5F5365 
+ 4181      74506F77 
+ 4181      65724D6F 
+ 4181      646500
+ 4182              	.LASF110:
+ 4183 02dd 4379494D 		.ascii	"CyIMO_Stop\000"
+ 4183      4F5F5374 
+ 4183      6F7000
+ 4184              	.LASF33:
+ 4185 02e8 43595F50 		.ascii	"CY_PM_CLOCK_BACKUP_STRUCT\000"
+ 4185      4D5F434C 
+ 4185      4F434B5F 
+ 4185      4241434B 
+ 4185      55505F53 
+ 4186              	.LASF3:
+ 4187 0302 73686F72 		.ascii	"short unsigned int\000"
+ 4187      7420756E 
+ 4187      7369676E 
+ 4187      65642069 
+ 4187      6E7400
+ 4188              	.LASF78:
+ 4189 0315 63747749 		.ascii	"ctwInterval\000"
+ 4189      6E746572 
+ 4189      76616C00 
+ 4190              	.LASF87:
+ 4191 0321 43795664 		.ascii	"CyVdHvAnalogDisable\000"
+ 4191      4876416E 
+ 4191      616C6F67 
+ 4191      44697361 
+ 4191      626C6500 
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 115
 
 
- 4193              	.LASF40:
- 4194 0317 77616B65 		.ascii	"wakeupCfg0\000"
- 4194      75704366 
- 4194      673000
- 4195              	.LASF41:
- 4196 0322 77616B65 		.ascii	"wakeupCfg1\000"
- 4196      75704366 
- 4196      673100
- 4197              	.LASF42:
- 4198 032d 77616B65 		.ascii	"wakeupCfg2\000"
- 4198      75704366 
- 4198      673200
- 4199              	.LASF66:
- 4200 0338 636C6B42 		.ascii	"clkBusDivTmp\000"
- 4200      75734469 
- 4200      76546D70 
- 4200      00
- 4201              	.LASF55:
- 4202 0345 626F6F73 		.ascii	"boostRefExt\000"
- 4202      74526566 
- 4202      45787400 
- 4203              	.LASF26:
- 4204 0351 636C6B49 		.ascii	"clkImoSrc\000"
- 4204      6D6F5372 
- 4204      6300
- 4205              	.LASF63:
- 4206 035b 4379506D 		.ascii	"CyPmSaveClocks\000"
- 4206      53617665 
- 4206      436C6F63 
- 4206      6B7300
- 4207              	.LASF107:
- 4208 036a 43795854 		.ascii	"CyXTAL_Start\000"
- 4208      414C5F53 
- 4208      74617274 
- 4208      00
- 4209              	.LASF39:
- 4210 0377 736C7054 		.ascii	"slpTrBypass\000"
- 4210      72427970 
- 4210      61737300 
- 4211              	.LASF17:
- 4212 0383 73697A65 		.ascii	"sizetype\000"
- 4212      74797065 
- 4212      00
- 4213              	.LASF67:
- 4214 038c 6379506D 		.ascii	"cyPmImoFreqMhz2Reg\000"
- 4214      496D6F46 
- 4214      7265714D 
- 4214      687A3252 
- 4214      656700
- 4215              	.LASF18:
- 4216 039f 656E436C 		.ascii	"enClkA\000"
- 4216      6B4100
- 4217              	.LASF19:
- 4218 03a6 656E436C 		.ascii	"enClkD\000"
- 4218      6B4400
- 4219              	.LASF92:
- 4220 03ad 4379494C 		.ascii	"CyILO_Start100K\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 116
+ 4192              	.LASF94:
+ 4193 0335 43794D61 		.ascii	"CyMasterClk_SetSource\000"
+ 4193      73746572 
+ 4193      436C6B5F 
+ 4193      53657453 
+ 4193      6F757263 
+ 4194              	.LASF40:
+ 4195 034b 77616B65 		.ascii	"wakeupCfg0\000"
+ 4195      75704366 
+ 4195      673000
+ 4196              	.LASF41:
+ 4197 0356 77616B65 		.ascii	"wakeupCfg1\000"
+ 4197      75704366 
+ 4197      673100
+ 4198              	.LASF42:
+ 4199 0361 77616B65 		.ascii	"wakeupCfg2\000"
+ 4199      75704366 
+ 4199      673200
+ 4200              	.LASF66:
+ 4201 036c 636C6B42 		.ascii	"clkBusDivTmp\000"
+ 4201      75734469 
+ 4201      76546D70 
+ 4201      00
+ 4202              	.LASF55:
+ 4203 0379 626F6F73 		.ascii	"boostRefExt\000"
+ 4203      74526566 
+ 4203      45787400 
+ 4204              	.LASF26:
+ 4205 0385 636C6B49 		.ascii	"clkImoSrc\000"
+ 4205      6D6F5372 
+ 4205      6300
+ 4206              	.LASF63:
+ 4207 038f 4379506D 		.ascii	"CyPmSaveClocks\000"
+ 4207      53617665 
+ 4207      436C6F63 
+ 4207      6B7300
+ 4208              	.LASF107:
+ 4209 039e 43795854 		.ascii	"CyXTAL_Start\000"
+ 4209      414C5F53 
+ 4209      74617274 
+ 4209      00
+ 4210              	.LASF39:
+ 4211 03ab 736C7054 		.ascii	"slpTrBypass\000"
+ 4211      72427970 
+ 4211      61737300 
+ 4212              	.LASF17:
+ 4213 03b7 73697A65 		.ascii	"sizetype\000"
+ 4213      74797065 
+ 4213      00
+ 4214              	.LASF67:
+ 4215 03c0 6379506D 		.ascii	"cyPmImoFreqMhz2Reg\000"
+ 4215      496D6F46 
+ 4215      7265714D 
+ 4215      687A3252 
+ 4215      656700
+ 4216              	.LASF18:
+ 4217 03d3 656E436C 		.ascii	"enClkA\000"
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 116
 
 
- 4220      4F5F5374 
- 4220      61727431 
- 4220      30304B00 
- 4221              	.LASF70:
- 4222 03bd 77616B65 		.ascii	"wakeupSource\000"
- 4222      7570536F 
- 4222      75726365 
- 4222      00
- 4223              	.LASF96:
- 4224 03ca 4379504C 		.ascii	"CyPLL_OUT_Stop\000"
- 4224      4C5F4F55 
- 4224      545F5374 
- 4224      6F7000
- 4225              	.LASF102:
- 4226 03d9 43794D61 		.ascii	"CyMasterClk_SetDivider\000"
- 4226      73746572 
- 4226      436C6B5F 
- 4226      53657444 
- 4226      69766964 
- 4227              	.LASF25:
- 4228 03f0 696D6F43 		.ascii	"imoClkSrc\000"
- 4228      6C6B5372 
- 4228      6300
- 4229              	.LASF12:
- 4230 03fa 666C6F61 		.ascii	"float\000"
- 4230      7400
- 4231              	.LASF111:
- 4232 0400 43794578 		.ascii	"CyExitCriticalSection\000"
- 4232      69744372 
- 4232      69746963 
- 4232      616C5365 
- 4232      6374696F 
- 4233              	.LASF71:
- 4234 0416 4379506D 		.ascii	"CyPmSleep\000"
- 4234      536C6565 
- 4234      7000
- 4235              	.LASF51:
- 4236 0420 6C766964 		.ascii	"lvidRst\000"
- 4236      52737400 
- 4237              	.LASF68:
- 4238 0428 4379506D 		.ascii	"CyPmAltAct\000"
- 4238      416C7441 
- 4238      637400
- 4239              	.LASF105:
- 4240 0433 43794465 		.ascii	"CyDelayCycles\000"
- 4240      6C617943 
- 4240      79636C65 
- 4240      7300
- 4241              	.LASF16:
- 4242 0441 72656738 		.ascii	"reg8\000"
- 4242      00
- 4243              	.LASF95:
- 4244 0446 43794861 		.ascii	"CyHalt\000"
- 4244      6C7400
- 4245              	.LASF79:
- 4246 044d 4379506D 		.ascii	"CyPmOppsSet\000"
- 4246      4F707073 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 117
+ 4217      6B4100
+ 4218              	.LASF19:
+ 4219 03da 656E436C 		.ascii	"enClkD\000"
+ 4219      6B4400
+ 4220              	.LASF92:
+ 4221 03e1 4379494C 		.ascii	"CyILO_Start100K\000"
+ 4221      4F5F5374 
+ 4221      61727431 
+ 4221      30304B00 
+ 4222              	.LASF70:
+ 4223 03f1 77616B65 		.ascii	"wakeupSource\000"
+ 4223      7570536F 
+ 4223      75726365 
+ 4223      00
+ 4224              	.LASF96:
+ 4225 03fe 4379504C 		.ascii	"CyPLL_OUT_Stop\000"
+ 4225      4C5F4F55 
+ 4225      545F5374 
+ 4225      6F7000
+ 4226              	.LASF102:
+ 4227 040d 43794D61 		.ascii	"CyMasterClk_SetDivider\000"
+ 4227      73746572 
+ 4227      436C6B5F 
+ 4227      53657444 
+ 4227      69766964 
+ 4228              	.LASF25:
+ 4229 0424 696D6F43 		.ascii	"imoClkSrc\000"
+ 4229      6C6B5372 
+ 4229      6300
+ 4230              	.LASF12:
+ 4231 042e 666C6F61 		.ascii	"float\000"
+ 4231      7400
+ 4232              	.LASF111:
+ 4233 0434 43794578 		.ascii	"CyExitCriticalSection\000"
+ 4233      69744372 
+ 4233      69746963 
+ 4233      616C5365 
+ 4233      6374696F 
+ 4234              	.LASF71:
+ 4235 044a 4379506D 		.ascii	"CyPmSleep\000"
+ 4235      536C6565 
+ 4235      7000
+ 4236              	.LASF51:
+ 4237 0454 6C766964 		.ascii	"lvidRst\000"
+ 4237      52737400 
+ 4238              	.LASF68:
+ 4239 045c 4379506D 		.ascii	"CyPmAltAct\000"
+ 4239      416C7441 
+ 4239      637400
+ 4240              	.LASF105:
+ 4241 0467 43794465 		.ascii	"CyDelayCycles\000"
+ 4241      6C617943 
+ 4241      79636C65 
+ 4241      7300
+ 4242              	.LASF16:
+ 4243 0475 72656738 		.ascii	"reg8\000"
+ 4243      00
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 117
 
 
- 4246      53657400 
- 4247              	.LASF1:
- 4248 0459 756E7369 		.ascii	"unsigned char\000"
- 4248      676E6564 
- 4248      20636861 
- 4248      7200
- 4249              	.LASF83:
- 4250 0467 6379506D 		.ascii	"cyPmClockBackup\000"
- 4250      436C6F63 
- 4250      6B426163 
- 4250      6B757000 
- 4251              	.LASF30:
- 4252 0477 706C6C45 		.ascii	"pllEnableState\000"
- 4252      6E61626C 
- 4252      65537461 
- 4252      746500
- 4253              	.LASF37:
- 4254 0486 696C6F31 		.ascii	"ilo1kEnable\000"
- 4254      6B456E61 
- 4254      626C6500 
- 4255              	.LASF2:
- 4256 0492 73686F72 		.ascii	"short int\000"
- 4256      7420696E 
- 4256      7400
- 4257              	.LASF57:
- 4258 049c 4379506D 		.ascii	"CyPmHibSlpSaveSet\000"
- 4258      48696253 
- 4258      6C705361 
- 4258      76655365 
- 4258      7400
- 4259              	.LASF38:
- 4260 04ae 696C6F31 		.ascii	"ilo100kEnable\000"
- 4260      30306B45 
- 4260      6E61626C 
- 4260      6500
- 4261              	.LASF14:
- 4262 04bc 63686172 		.ascii	"char\000"
- 4262      00
- 4263              	.LASF101:
- 4264 04c1 4379494D 		.ascii	"CyIMO_DisableDoubler\000"
- 4264      4F5F4469 
- 4264      7361626C 
- 4264      65446F75 
- 4264      626C6572 
- 4265              	.LASF85:
- 4266 04d6 43795664 		.ascii	"CyVdLvDigitDisable\000"
- 4266      4C764469 
- 4266      67697444 
- 4266      69736162 
- 4266      6C6500
- 4267              	.LASF54:
- 4268 04e9 696D6F41 		.ascii	"imoActFreq12Mhz\000"
- 4268      63744672 
- 4268      65713132 
- 4268      4D687A00 
- 4269              	.LASF73:
- 4270 04f9 4379506D 		.ascii	"CyPmHibernate\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 118
+ 4244              	.LASF95:
+ 4245 047a 43794861 		.ascii	"CyHalt\000"
+ 4245      6C7400
+ 4246              	.LASF79:
+ 4247 0481 4379506D 		.ascii	"CyPmOppsSet\000"
+ 4247      4F707073 
+ 4247      53657400 
+ 4248              	.LASF1:
+ 4249 048d 756E7369 		.ascii	"unsigned char\000"
+ 4249      676E6564 
+ 4249      20636861 
+ 4249      7200
+ 4250              	.LASF83:
+ 4251 049b 6379506D 		.ascii	"cyPmClockBackup\000"
+ 4251      436C6F63 
+ 4251      6B426163 
+ 4251      6B757000 
+ 4252              	.LASF30:
+ 4253 04ab 706C6C45 		.ascii	"pllEnableState\000"
+ 4253      6E61626C 
+ 4253      65537461 
+ 4253      746500
+ 4254              	.LASF37:
+ 4255 04ba 696C6F31 		.ascii	"ilo1kEnable\000"
+ 4255      6B456E61 
+ 4255      626C6500 
+ 4256              	.LASF2:
+ 4257 04c6 73686F72 		.ascii	"short int\000"
+ 4257      7420696E 
+ 4257      7400
+ 4258              	.LASF57:
+ 4259 04d0 4379506D 		.ascii	"CyPmHibSlpSaveSet\000"
+ 4259      48696253 
+ 4259      6C705361 
+ 4259      76655365 
+ 4259      7400
+ 4260              	.LASF38:
+ 4261 04e2 696C6F31 		.ascii	"ilo100kEnable\000"
+ 4261      30306B45 
+ 4261      6E61626C 
+ 4261      6500
+ 4262              	.LASF14:
+ 4263 04f0 63686172 		.ascii	"char\000"
+ 4263      00
+ 4264              	.LASF101:
+ 4265 04f5 4379494D 		.ascii	"CyIMO_DisableDoubler\000"
+ 4265      4F5F4469 
+ 4265      7361626C 
+ 4265      65446F75 
+ 4265      626C6572 
+ 4266              	.LASF85:
+ 4267 050a 43795664 		.ascii	"CyVdLvDigitDisable\000"
+ 4267      4C764469 
+ 4267      67697444 
+ 4267      69736162 
+ 4267      6C6500
+ 4268              	.LASF54:
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 118
 
 
- 4270      48696265 
- 4270      726E6174 
- 4270      6500
- 4271              	.LASF93:
- 4272 0507 4379466C 		.ascii	"CyFlash_SetWaitCycles\000"
- 4272      6173685F 
- 4272      53657457 
- 4272      61697443 
- 4272      79636C65 
- 4273              	.LASF81:
- 4274 051d 66747749 		.ascii	"ftwInterval\000"
- 4274      6E746572 
- 4274      76616C00 
- 4275              	.LASF84:
- 4276 0529 6379506D 		.ascii	"cyPmImoFreqReg2Mhz\000"
- 4276      496D6F46 
- 4276      72657152 
- 4276      6567324D 
- 4276      687A00
- 4277              	.LASF116:
- 4278 053c 4379506D 		.ascii	"CyPmReadStatus\000"
- 4278      52656164 
- 4278      53746174 
- 4278      757300
- 4279              	.LASF103:
- 4280 054b 43794275 		.ascii	"CyBusClk_SetDivider\000"
- 4280      73436C6B 
- 4280      5F536574 
- 4280      44697669 
- 4280      64657200 
- 4281              	.LASF115:
- 4282 055f 433A5C55 		.ascii	"C:\\Users\\Zachary\\Documents\\GitHub\\Chip-Design\\"
- 4282      73657273 
- 4282      5C5A6163 
- 4282      68617279 
- 4282      5C446F63 
- 4283 058d 70726F6A 		.ascii	"proj_asic\\psoc\\Zach I2S Debugging\\Wave Generator"
- 4283      5F617369 
- 4283      635C7073 
- 4283      6F635C5A 
- 4283      61636820 
- 4284 05bd 2E637964 		.ascii	".cydsn\000"
- 4284      736E00
- 4285              	.LASF77:
- 4286 05c4 4379506D 		.ascii	"CyPmCtwSetInterval\000"
- 4286      43747753 
- 4286      6574496E 
- 4286      74657276 
- 4286      616C00
- 4287              	.LASF65:
- 4288 05d7 73746174 		.ascii	"status\000"
- 4288      757300
- 4289              	.LASF113:
- 4290 05de 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 4290      4320342E 
- 4290      392E3320 
- 4290      32303135 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 119
+ 4269 051d 696D6F41 		.ascii	"imoActFreq12Mhz\000"
+ 4269      63744672 
+ 4269      65713132 
+ 4269      4D687A00 
+ 4270              	.LASF73:
+ 4271 052d 4379506D 		.ascii	"CyPmHibernate\000"
+ 4271      48696265 
+ 4271      726E6174 
+ 4271      6500
+ 4272              	.LASF93:
+ 4273 053b 4379466C 		.ascii	"CyFlash_SetWaitCycles\000"
+ 4273      6173685F 
+ 4273      53657457 
+ 4273      61697443 
+ 4273      79636C65 
+ 4274              	.LASF81:
+ 4275 0551 66747749 		.ascii	"ftwInterval\000"
+ 4275      6E746572 
+ 4275      76616C00 
+ 4276              	.LASF84:
+ 4277 055d 6379506D 		.ascii	"cyPmImoFreqReg2Mhz\000"
+ 4277      496D6F46 
+ 4277      72657152 
+ 4277      6567324D 
+ 4277      687A00
+ 4278              	.LASF116:
+ 4279 0570 4379506D 		.ascii	"CyPmReadStatus\000"
+ 4279      52656164 
+ 4279      53746174 
+ 4279      757300
+ 4280              	.LASF103:
+ 4281 057f 43794275 		.ascii	"CyBusClk_SetDivider\000"
+ 4281      73436C6B 
+ 4281      5F536574 
+ 4281      44697669 
+ 4281      64657200 
+ 4282              	.LASF32:
+ 4283 0593 636C6B44 		.ascii	"clkDistDelay\000"
+ 4283      69737444 
+ 4283      656C6179 
+ 4283      00
+ 4284              	.LASF77:
+ 4285 05a0 4379506D 		.ascii	"CyPmCtwSetInterval\000"
+ 4285      43747753 
+ 4285      6574496E 
+ 4285      74657276 
+ 4285      616C00
+ 4286              	.LASF65:
+ 4287 05b3 73746174 		.ascii	"status\000"
+ 4287      757300
+ 4288              	.LASF113:
+ 4289 05ba 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 4289      4320342E 
+ 4289      392E3320 
+ 4289      32303135 
+ 4289      30333033 
+ 4290 05ed 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 119
 
 
- 4290      30333033 
- 4291 0611 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 4291      20726576 
- 4291      6973696F 
- 4291      6E203232 
- 4291      31323230 
- 4292 0644 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 4292      66756E63 
- 4292      74696F6E 
- 4292      2D736563 
- 4292      74696F6E 
- 4293              	.LASF48:
- 4294 066c 6C766961 		.ascii	"lviaEn\000"
- 4294      456E00
- 4295              	.LASF97:
- 4296 0673 4379494D 		.ascii	"CyIMO_SetFreq\000"
- 4296      4F5F5365 
- 4296      74467265 
- 4296      7100
- 4297              	.LASF108:
- 4298 0681 4379494D 		.ascii	"CyIMO_EnableDoubler\000"
- 4298      4F5F456E 
- 4298      61626C65 
- 4298      446F7562 
- 4298      6C657200 
- 4299              	.LASF60:
- 4300 0695 4379506D 		.ascii	"CyPmHibSaveSet\000"
- 4300      48696253 
- 4300      61766553 
- 4300      657400
- 4301              	.LASF69:
- 4302 06a4 77616B65 		.ascii	"wakeupTime\000"
- 4302      75705469 
- 4302      6D6500
- 4303              	.LASF89:
- 4304 06af 43795664 		.ascii	"CyVdLvAnalogEnable\000"
- 4304      4C76416E 
- 4304      616C6F67 
- 4304      456E6162 
- 4304      6C6500
- 4305              	.LASF15:
- 4306 06c2 63797374 		.ascii	"cystatus\000"
- 4306      61747573 
- 4306      00
- 4307              	.LASF23:
- 4308 06cb 666C6173 		.ascii	"flashWaitCycles\000"
- 4308      68576169 
- 4308      74437963 
- 4308      6C657300 
- 4309              	.LASF52:
- 4310 06db 6C766961 		.ascii	"lviaRst\000"
- 4310      52737400 
- 4311              	.LASF90:
- 4312 06e3 43795664 		.ascii	"CyVdHvAnalogEnable\000"
- 4312      4876416E 
- 4312      616C6F67 
- 4312      456E6162 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccbKPw4n.s 			page 120
+ 4290      20726576 
+ 4290      6973696F 
+ 4290      6E203232 
+ 4290      31323230 
+ 4291 0620 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 4291      66756E63 
+ 4291      74696F6E 
+ 4291      2D736563 
+ 4291      74696F6E 
+ 4292              	.LASF48:
+ 4293 0648 6C766961 		.ascii	"lviaEn\000"
+ 4293      456E00
+ 4294              	.LASF97:
+ 4295 064f 4379494D 		.ascii	"CyIMO_SetFreq\000"
+ 4295      4F5F5365 
+ 4295      74467265 
+ 4295      7100
+ 4296              	.LASF108:
+ 4297 065d 4379494D 		.ascii	"CyIMO_EnableDoubler\000"
+ 4297      4F5F456E 
+ 4297      61626C65 
+ 4297      446F7562 
+ 4297      6C657200 
+ 4298              	.LASF60:
+ 4299 0671 4379506D 		.ascii	"CyPmHibSaveSet\000"
+ 4299      48696253 
+ 4299      61766553 
+ 4299      657400
+ 4300              	.LASF69:
+ 4301 0680 77616B65 		.ascii	"wakeupTime\000"
+ 4301      75705469 
+ 4301      6D6500
+ 4302              	.LASF89:
+ 4303 068b 43795664 		.ascii	"CyVdLvAnalogEnable\000"
+ 4303      4C76416E 
+ 4303      616C6F67 
+ 4303      456E6162 
+ 4303      6C6500
+ 4304              	.LASF15:
+ 4305 069e 63797374 		.ascii	"cystatus\000"
+ 4305      61747573 
+ 4305      00
+ 4306              	.LASF23:
+ 4307 06a7 666C6173 		.ascii	"flashWaitCycles\000"
+ 4307      68576169 
+ 4307      74437963 
+ 4307      6C657300 
+ 4308              	.LASF52:
+ 4309 06b7 6C766961 		.ascii	"lviaRst\000"
+ 4309      52737400 
+ 4310              	.LASF90:
+ 4311 06bf 43795664 		.ascii	"CyVdHvAnalogEnable\000"
+ 4311      4876416E 
+ 4311      616C6F67 
+ 4311      456E6162 
+ 4311      6C6500
+ 4312              	.LASF104:
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\cclkoHEy.s 			page 120
 
 
- 4312      6C6500
- 4313              	.LASF104:
- 4314 06f6 43795854 		.ascii	"CyXTAL_Stop\000"
- 4314      414C5F53 
- 4314      746F7000 
- 4315              	.LASF82:
- 4316 0702 6379506D 		.ascii	"cyPmBackup\000"
- 4316      4261636B 
- 4316      757000
- 4317              	.LASF47:
- 4318 070d 6C766964 		.ascii	"lvidTrip\000"
- 4318      54726970 
- 4318      00
- 4319              	.LASF24:
- 4320 0716 696D6F45 		.ascii	"imoEnable\000"
- 4320      6E61626C 
- 4320      6500
- 4321              	.LASF75:
- 4322 0720 696E7465 		.ascii	"interruptStatus\000"
- 4322      72727570 
- 4322      74537461 
- 4322      74757300 
- 4323              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 4313 06d2 43795854 		.ascii	"CyXTAL_Stop\000"
+ 4313      414C5F53 
+ 4313      746F7000 
+ 4314              	.LASF82:
+ 4315 06de 6379506D 		.ascii	"cyPmBackup\000"
+ 4315      4261636B 
+ 4315      757000
+ 4316              	.LASF47:
+ 4317 06e9 6C766964 		.ascii	"lvidTrip\000"
+ 4317      54726970 
+ 4317      00
+ 4318              	.LASF24:
+ 4319 06f2 696D6F45 		.ascii	"imoEnable\000"
+ 4319      6E61626C 
+ 4319      6500
+ 4320              	.LASF75:
+ 4321 06fc 696E7465 		.ascii	"interruptStatus\000"
+ 4321      72727570 
+ 4321      74537461 
+ 4321      74757300 
+ 4322              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

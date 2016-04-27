@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
   29:.\Generated_Source\PSoC5/CySpc.c **** #define CY_SPC_CMD_WR_USER_NVL              (0x06u)
   30:.\Generated_Source\PSoC5/CySpc.c **** #define CY_SPC_CMD_PRG_ROW                  (0x07u)
   31:.\Generated_Source\PSoC5/CySpc.c **** #define CY_SPC_CMD_ER_SECTOR                (0x08u)
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 2
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/CySpc.c **** #define CY_SPC_CMD_ER_ALL                   (0x09u)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
   33              		.cfi_offset 3, -8
   34              		.cfi_offset 14, -4
   80:.\Generated_Source\PSoC5/CySpc.c ****     /* Save current global interrupt enable and disable it */
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 3
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 3
 
 
   81:.\Generated_Source\PSoC5/CySpc.c ****     uint8 interruptState = CyEnterCriticalSection();
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  103:.\Generated_Source\PSoC5/CySpc.c **** *******************************************************************************/
  104:.\Generated_Source\PSoC5/CySpc.c **** void CySpcStop(void) 
  105:.\Generated_Source\PSoC5/CySpc.c **** {
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 4
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 4
 
 
   67              		.loc 1 105 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  120:.\Generated_Source\PSoC5/CySpc.c **** * Summary:
  121:.\Generated_Source\PSoC5/CySpc.c **** *  Reads data from the SPC.
  122:.\Generated_Source\PSoC5/CySpc.c **** *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 5
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 5
 
 
  123:.\Generated_Source\PSoC5/CySpc.c **** * Parameters:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  137 001a 054B     		ldr	r3, .L14+4
  138 001c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  139 001e 3355     		strb	r3, [r6, r4]
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 6
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 6
 
 
  139:.\Generated_Source\PSoC5/CySpc.c ****     {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  169:.\Generated_Source\PSoC5/CySpc.c **** *   Number bytes to load.
  170:.\Generated_Source\PSoC5/CySpc.c **** *
  171:.\Generated_Source\PSoC5/CySpc.c **** * Return:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 7
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 7
 
 
  172:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_STARTED
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  201 001e B625     		movs	r5, #182
  202 0020 2570     		strb	r5, [r4]
  194:.\Generated_Source\PSoC5/CySpc.c ****             CY_SPC_CPU_DATA_REG = CY_SPC_KEY_TWO(CY_SPC_CMD_LD_MULTI_BYTE);
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 8
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 8
 
 
  203              		.loc 1 194 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  244              	.LVL19:
  245              	.L20:
  204:.\Generated_Source\PSoC5/CySpc.c ****                 {
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 9
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 9
 
 
  246              		.loc 1 204 0 is_stmt 0 discriminator 1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  278              		.cfi_restore 4
  279              		.cfi_def_cfa_offset 0
  280 006e 7047     		bx	lr
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 10
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 10
 
 
  281              	.L28:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  258:.\Generated_Source\PSoC5/CySpc.c ****     /* Make sure the SPC is ready to accept command */
  259:.\Generated_Source\PSoC5/CySpc.c ****     if(CY_SPC_IDLE)
  303              		.loc 1 259 0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 11
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 11
 
 
  304 0000 124B     		ldr	r3, .L36
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  343 0034 9BB2     		uxth	r3, r3
  344              	.LVL32:
  345              	.L31:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 12
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 12
 
 
  270:.\Generated_Source\PSoC5/CySpc.c ****             {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  383              		.align	2
  384              		.global	CySpcWriteRow
  385              		.thumb
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 13
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 13
 
 
  386              		.thumb_func
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  404 0006 14F0020F 		tst	r4, #2
  405 000a 15D0     		beq	.L40
  323:.\Generated_Source\PSoC5/CySpc.c ****     {
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 14
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 14
 
 
  324:.\Generated_Source\PSoC5/CySpc.c ****         CY_SPC_CPU_DATA_REG = CY_SPC_KEY_ONE;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  341:.\Generated_Source\PSoC5/CySpc.c ****     }
  342:.\Generated_Source\PSoC5/CySpc.c ****     else
  343:.\Generated_Source\PSoC5/CySpc.c ****     {
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 15
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 15
 
 
  344:.\Generated_Source\PSoC5/CySpc.c ****         status = CYRET_LOCKED;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  365:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_STARTED
  366:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_CANCELED
  367:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_LOCKED
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 16
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 16
 
 
  368:.\Generated_Source\PSoC5/CySpc.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  509              	.LVL48:
  510              	.L47:
  386:.\Generated_Source\PSoC5/CySpc.c ****         }
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 17
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 17
 
 
  387:.\Generated_Source\PSoC5/CySpc.c ****         else
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  413:.\Generated_Source\PSoC5/CySpc.c **** *   Number of ADC ACLK cycles. A valid 14 bit value is accepted, higher 2 bits
  414:.\Generated_Source\PSoC5/CySpc.c **** *   of 16 bit values are ignored.
  415:.\Generated_Source\PSoC5/CySpc.c **** *
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 18
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 18
 
 
  416:.\Generated_Source\PSoC5/CySpc.c **** * uint8 clkDivSelect:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  567              		.loc 1 427 0
  568 0026 0720     		movs	r0, #7
  569              	.LVL53:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 19
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 19
 
 
  570 0028 7047     		bx	lr
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  463:.\Generated_Source\PSoC5/CySpc.c **** *  Note
  464:.\Generated_Source\PSoC5/CySpc.c **** *
  465:.\Generated_Source\PSoC5/CySpc.c **** * Return:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 20
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 20
 
 
  466:.\Generated_Source\PSoC5/CySpc.c **** *  CYRET_SUCCESS - if the resource was free.
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  489:.\Generated_Source\PSoC5/CySpc.c **** 
  490:.\Generated_Source\PSoC5/CySpc.c ****                 /* At least 2 NOP instructions are recommended */
  491:.\Generated_Source\PSoC5/CySpc.c ****                 CY_NOP;
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 21
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 21
 
 
  631              		.loc 1 491 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  668              		.loc 1 505 0
  669 0040 2046     		mov	r0, r4
  670 0042 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 22
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 22
 
 
  671              	.LVL65:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  700 0006 0A4B     		ldr	r3, .L67
  701 0008 0022     		movs	r2, #0
  702 000a 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 23
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 23
 
 
  531:.\Generated_Source\PSoC5/CySpc.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  737              	.L68:
  738 002e 00BF     		.align	2
  739              	.L67:
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 24
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 24
 
 
  740 0030 00000000 		.word	.LANCHOR0
@@ -1410,48 +1410,48 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  766 0006 00000000 		.4byte	.Ldebug_abbrev0
  767 000a 04       		.byte	0x4
  768 000b 01       		.uleb128 0x1
- 769 000c 84010000 		.4byte	.LASF40
+ 769 000c 29010000 		.4byte	.LASF40
  770 0010 01       		.byte	0x1
- 771 0011 AA000000 		.4byte	.LASF41
- 772 0015 3B000000 		.4byte	.LASF42
+ 771 0011 45000000 		.4byte	.LASF41
+ 772 0015 58020000 		.4byte	.LASF42
  773 0019 00000000 		.4byte	.Ldebug_ranges0+0
  774 001d 00000000 		.4byte	0
  775 0021 00000000 		.4byte	.Ldebug_line0
  776 0025 02       		.uleb128 0x2
  777 0026 01       		.byte	0x1
  778 0027 06       		.byte	0x6
- 779 0028 02030000 		.4byte	.LASF0
+ 779 0028 DE020000 		.4byte	.LASF0
  780 002c 02       		.uleb128 0x2
  781 002d 01       		.byte	0x1
  782 002e 08       		.byte	0x8
- 783 002f 4A010000 		.4byte	.LASF1
+ 783 002f E5000000 		.4byte	.LASF1
  784 0033 02       		.uleb128 0x2
  785 0034 02       		.byte	0x2
  786 0035 05       		.byte	0x5
- 787 0036 B3020000 		.4byte	.LASF2
+ 787 0036 FA000000 		.4byte	.LASF2
  788 003a 02       		.uleb128 0x2
  789 003b 02       		.byte	0x2
  790 003c 07       		.byte	0x7
- 791 003d CB000000 		.4byte	.LASF3
+ 791 003d 66000000 		.4byte	.LASF3
  792 0041 02       		.uleb128 0x2
  793 0042 04       		.byte	0x4
  794 0043 05       		.byte	0x5
- 795 0044 E7020000 		.4byte	.LASF4
+ 795 0044 C3020000 		.4byte	.LASF4
  796 0048 02       		.uleb128 0x2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 25
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 25
 
 
  797 0049 04       		.byte	0x4
  798 004a 07       		.byte	0x7
- 799 004b 12010000 		.4byte	.LASF5
+ 799 004b AD000000 		.4byte	.LASF5
  800 004f 02       		.uleb128 0x2
  801 0050 08       		.byte	0x8
  802 0051 05       		.byte	0x5
- 803 0052 96020000 		.4byte	.LASF6
+ 803 0052 3B020000 		.4byte	.LASF6
  804 0056 02       		.uleb128 0x2
  805 0057 08       		.byte	0x8
  806 0058 07       		.byte	0x7
- 807 0059 3E020000 		.4byte	.LASF7
+ 807 0059 E3010000 		.4byte	.LASF7
  808 005d 03       		.uleb128 0x3
  809 005e 04       		.byte	0x4
  810 005f 05       		.byte	0x5
@@ -1459,51 +1459,51 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  812 0064 02       		.uleb128 0x2
  813 0065 04       		.byte	0x4
  814 0066 07       		.byte	0x7
- 815 0067 29020000 		.4byte	.LASF8
+ 815 0067 CE010000 		.4byte	.LASF8
  816 006b 04       		.uleb128 0x4
- 817 006c 24010000 		.4byte	.LASF9
+ 817 006c BF000000 		.4byte	.LASF9
  818 0070 02       		.byte	0x2
  819 0071 5B       		.byte	0x5b
  820 0072 2C000000 		.4byte	0x2c
  821 0076 04       		.uleb128 0x4
- 822 0077 6C010000 		.4byte	.LASF10
+ 822 0077 11010000 		.4byte	.LASF10
  823 007b 02       		.byte	0x2
  824 007c 5C       		.byte	0x5c
  825 007d 3A000000 		.4byte	0x3a
  826 0081 04       		.uleb128 0x4
- 827 0082 7D010000 		.4byte	.LASF11
+ 827 0082 22010000 		.4byte	.LASF11
  828 0086 02       		.byte	0x2
  829 0087 5D       		.byte	0x5d
  830 0088 48000000 		.4byte	0x48
  831 008c 02       		.uleb128 0x2
  832 008d 04       		.byte	0x4
  833 008e 04       		.byte	0x4
- 834 008f F3000000 		.4byte	.LASF12
+ 834 008f 8E000000 		.4byte	.LASF12
  835 0093 02       		.uleb128 0x2
  836 0094 08       		.byte	0x8
  837 0095 04       		.byte	0x4
- 838 0096 58010000 		.4byte	.LASF13
+ 838 0096 F3000000 		.4byte	.LASF13
  839 009a 02       		.uleb128 0x2
  840 009b 01       		.byte	0x1
  841 009c 08       		.byte	0x8
- 842 009d AE020000 		.4byte	.LASF14
+ 842 009d 53020000 		.4byte	.LASF14
  843 00a1 04       		.uleb128 0x4
- 844 00a2 21000000 		.4byte	.LASF15
+ 844 00a2 13000000 		.4byte	.LASF15
  845 00a6 02       		.byte	0x2
  846 00a7 E8       		.byte	0xe8
  847 00a8 48000000 		.4byte	0x48
  848 00ac 04       		.uleb128 0x4
- 849 00ad FE000000 		.4byte	.LASF16
+ 849 00ad 99000000 		.4byte	.LASF16
  850 00b1 02       		.byte	0x2
  851 00b2 F0       		.byte	0xf0
  852 00b3 B7000000 		.4byte	0xb7
  853 00b7 05       		.uleb128 0x5
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 26
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 26
 
 
  854 00b8 6B000000 		.4byte	0x6b
  855 00bc 04       		.uleb128 0x4
- 856 00bd 2A000000 		.4byte	.LASF17
+ 856 00bd 1C000000 		.4byte	.LASF17
  857 00c1 02       		.byte	0x2
  858 00c2 F2       		.byte	0xf2
  859 00c3 C7000000 		.4byte	0xc7
@@ -1512,9 +1512,9 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  862 00cc 02       		.uleb128 0x2
  863 00cd 04       		.byte	0x4
  864 00ce 07       		.byte	0x7
- 865 00cf 70020000 		.4byte	.LASF18
+ 865 00cf 15020000 		.4byte	.LASF18
  866 00d3 06       		.uleb128 0x6
- 867 00d4 30000000 		.4byte	.LASF19
+ 867 00d4 22000000 		.4byte	.LASF19
  868 00d8 01       		.byte	0x1
  869 00d9 4E       		.byte	0x4e
  870 00da 00000000 		.4byte	.LFB0
@@ -1523,7 +1523,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  873 00e3 9C       		.byte	0x9c
  874 00e4 0A010000 		.4byte	0x10a
  875 00e8 07       		.uleb128 0x7
- 876 00e9 03010000 		.4byte	.LASF21
+ 876 00e9 9E000000 		.4byte	.LASF21
  877 00ed 01       		.byte	0x1
  878 00ee 51       		.byte	0x51
  879 00ef 6B000000 		.4byte	0x6b
@@ -1536,7 +1536,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  886 0105 12040000 		.4byte	0x412
  887 0109 00       		.byte	0
  888 010a 06       		.uleb128 0x6
- 889 010b A0000000 		.4byte	.LASF20
+ 889 010b 3B000000 		.4byte	.LASF20
  890 010f 01       		.byte	0x1
  891 0110 68       		.byte	0x68
  892 0111 00000000 		.4byte	.LFB1
@@ -1545,7 +1545,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  895 011a 9C       		.byte	0x9c
  896 011b 41010000 		.4byte	0x141
  897 011f 07       		.uleb128 0x7
- 898 0120 03010000 		.4byte	.LASF21
+ 898 0120 9E000000 		.4byte	.LASF21
  899 0124 01       		.byte	0x1
  900 0125 6B       		.byte	0x6b
  901 0126 6B000000 		.4byte	0x6b
@@ -1558,10 +1558,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  908 013c 12040000 		.4byte	0x412
  909 0140 00       		.byte	0
  910 0141 09       		.uleb128 0x9
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 27
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 27
 
 
- 911 0142 DE000000 		.4byte	.LASF24
+ 911 0142 79000000 		.4byte	.LASF24
  912 0146 01       		.byte	0x1
  913 0147 87       		.byte	0x87
  914 0148 6B000000 		.4byte	0x6b
@@ -1571,13 +1571,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  918 0155 9C       		.byte	0x9c
  919 0156 95010000 		.4byte	0x195
  920 015a 0A       		.uleb128 0xa
- 921 015b BD020000 		.4byte	.LASF22
+ 921 015b 99020000 		.4byte	.LASF22
  922 015f 01       		.byte	0x1
  923 0160 87       		.byte	0x87
  924 0161 95010000 		.4byte	0x195
  925 0165 26000000 		.4byte	.LLST2
  926 0169 0A       		.uleb128 0xa
- 927 016a F9000000 		.4byte	.LASF23
+ 927 016a 94000000 		.4byte	.LASF23
  928 016e 01       		.byte	0x1
  929 016f 87       		.byte	0x87
  930 0170 6B000000 		.4byte	0x6b
@@ -1612,36 +1612,36 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  959 01af 9C       		.byte	0x9c
  960 01b0 09020000 		.4byte	0x209
  961 01b4 0A       		.uleb128 0xa
- 962 01b5 44010000 		.4byte	.LASF26
+ 962 01b5 DF000000 		.4byte	.LASF26
  963 01b9 01       		.byte	0x1
  964 01ba B2       		.byte	0xb2
  965 01bb 6B000000 		.4byte	0x6b
  966 01bf 9D000000 		.4byte	.LLST5
  967 01c3 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 28
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 28
 
 
- 968 01c4 36020000 		.4byte	.LASF27
+ 968 01c4 DB010000 		.4byte	.LASF27
  969 01c8 01       		.byte	0x1
  970 01c9 B2       		.byte	0xb2
  971 01ca 76000000 		.4byte	0x76
  972 01ce 2E010000 		.4byte	.LLST6
  973 01d2 0F       		.uleb128 0xf
- 974 01d3 BD020000 		.4byte	.LASF22
+ 974 01d3 99020000 		.4byte	.LASF22
  975 01d7 01       		.byte	0x1
  976 01d8 B2       		.byte	0xb2
  977 01d9 09020000 		.4byte	0x209
  978 01dd 01       		.uleb128 0x1
  979 01de 52       		.byte	0x52
  980 01df 0F       		.uleb128 0xf
- 981 01e0 F9000000 		.4byte	.LASF23
+ 981 01e0 94000000 		.4byte	.LASF23
  982 01e4 01       		.byte	0x1
  983 01e5 B2       		.byte	0xb2
  984 01e6 6B000000 		.4byte	0x6b
  985 01ea 01       		.uleb128 0x1
  986 01eb 53       		.byte	0x53
  987 01ec 07       		.uleb128 0x7
- 988 01ed EC000000 		.4byte	.LASF28
+ 988 01ed 87000000 		.4byte	.LASF28
  989 01f1 01       		.byte	0x1
  990 01f2 B5       		.byte	0xb5
  991 01f3 A1000000 		.4byte	0xa1
@@ -1659,7 +1659,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1003 020f 10       		.uleb128 0x10
  1004 0210 6B000000 		.4byte	0x6b
  1005 0214 09       		.uleb128 0x9
- 1006 0215 63020000 		.4byte	.LASF29
+ 1006 0215 08020000 		.4byte	.LASF29
  1007 0219 01       		.byte	0x1
  1008 021a FD       		.byte	0xfd
  1009 021b A1000000 		.4byte	0xa1
@@ -1669,30 +1669,30 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1013 0228 9C       		.byte	0x9c
  1014 0229 74020000 		.4byte	0x274
  1015 022d 0A       		.uleb128 0xa
- 1016 022e 44010000 		.4byte	.LASF26
+ 1016 022e DF000000 		.4byte	.LASF26
  1017 0232 01       		.byte	0x1
  1018 0233 FD       		.byte	0xfd
  1019 0234 6B000000 		.4byte	0x6b
  1020 0238 B1010000 		.4byte	.LLST9
  1021 023c 0F       		.uleb128 0xf
- 1022 023d BD020000 		.4byte	.LASF22
+ 1022 023d 99020000 		.4byte	.LASF22
  1023 0241 01       		.byte	0x1
  1024 0242 FD       		.byte	0xfd
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 29
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 29
 
 
  1025 0243 09020000 		.4byte	0x209
  1026 0247 01       		.uleb128 0x1
  1027 0248 51       		.byte	0x51
  1028 0249 0F       		.uleb128 0xf
- 1029 024a F9000000 		.4byte	.LASF23
+ 1029 024a 94000000 		.4byte	.LASF23
  1030 024e 01       		.byte	0x1
  1031 024f FD       		.byte	0xfd
  1032 0250 76000000 		.4byte	0x76
  1033 0254 01       		.uleb128 0x1
  1034 0255 52       		.byte	0x52
  1035 0256 07       		.uleb128 0x7
- 1036 0257 EC000000 		.4byte	.LASF28
+ 1036 0257 87000000 		.4byte	.LASF28
  1037 025b 01       		.byte	0x1
  1038 025c FF       		.byte	0xff
  1039 025d A1000000 		.4byte	0xa1
@@ -1705,7 +1705,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1046 026f 3A020000 		.4byte	.LLST11
  1047 0273 00       		.byte	0
  1048 0274 12       		.uleb128 0x12
- 1049 0275 13000000 		.4byte	.LASF30
+ 1049 0275 2D000000 		.4byte	.LASF30
  1050 0279 01       		.byte	0x1
  1051 027a 3C01     		.2byte	0x13c
  1052 027c A1000000 		.4byte	0xa1
@@ -1715,43 +1715,43 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1056 0289 9C       		.byte	0x9c
  1057 028a DB020000 		.4byte	0x2db
  1058 028e 13       		.uleb128 0x13
- 1059 028f 44010000 		.4byte	.LASF26
+ 1059 028f DF000000 		.4byte	.LASF26
  1060 0293 01       		.byte	0x1
  1061 0294 3C01     		.2byte	0x13c
  1062 0296 6B000000 		.4byte	0x6b
  1063 029a 64020000 		.4byte	.LLST12
  1064 029e 13       		.uleb128 0x13
- 1065 029f 36020000 		.4byte	.LASF27
+ 1065 029f DB010000 		.4byte	.LASF27
  1066 02a3 01       		.byte	0x1
  1067 02a4 3C01     		.2byte	0x13c
  1068 02a6 76000000 		.4byte	0x76
  1069 02aa C3020000 		.4byte	.LLST13
  1070 02ae 14       		.uleb128 0x14
- 1071 02af 37010000 		.4byte	.LASF31
+ 1071 02af D2000000 		.4byte	.LASF31
  1072 02b3 01       		.byte	0x1
  1073 02b4 3C01     		.2byte	0x13c
  1074 02b6 6B000000 		.4byte	0x6b
  1075 02ba 01       		.uleb128 0x1
  1076 02bb 52       		.byte	0x52
  1077 02bc 14       		.uleb128 0x14
- 1078 02bd 55020000 		.4byte	.LASF32
+ 1078 02bd FA010000 		.4byte	.LASF32
  1079 02c1 01       		.byte	0x1
  1080 02c2 3C01     		.2byte	0x13c
  1081 02c4 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 30
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 30
 
 
  1082 02c8 01       		.uleb128 0x1
  1083 02c9 53       		.byte	0x53
  1084 02ca 15       		.uleb128 0x15
- 1085 02cb EC000000 		.4byte	.LASF28
+ 1085 02cb 87000000 		.4byte	.LASF28
  1086 02cf 01       		.byte	0x1
  1087 02d0 3F01     		.2byte	0x13f
  1088 02d2 A1000000 		.4byte	0xa1
  1089 02d6 FD020000 		.4byte	.LLST14
  1090 02da 00       		.byte	0
  1091 02db 12       		.uleb128 0x12
- 1092 02dc 85020000 		.4byte	.LASF33
+ 1092 02dc 2A020000 		.4byte	.LASF33
  1093 02e0 01       		.byte	0x1
  1094 02e1 7201     		.2byte	0x172
  1095 02e3 A1000000 		.4byte	0xa1
@@ -1761,27 +1761,27 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1099 02f0 9C       		.byte	0x9c
  1100 02f1 24030000 		.4byte	0x324
  1101 02f5 13       		.uleb128 0x13
- 1102 02f6 44010000 		.4byte	.LASF26
+ 1102 02f6 DF000000 		.4byte	.LASF26
  1103 02fa 01       		.byte	0x1
  1104 02fb 7201     		.2byte	0x172
  1105 02fd 6B000000 		.4byte	0x6b
  1106 0301 1C030000 		.4byte	.LLST15
  1107 0305 14       		.uleb128 0x14
- 1108 0306 C4020000 		.4byte	.LASF34
+ 1108 0306 A0020000 		.4byte	.LASF34
  1109 030a 01       		.byte	0x1
  1110 030b 7201     		.2byte	0x172
  1111 030d 6B000000 		.4byte	0x6b
  1112 0311 01       		.uleb128 0x1
  1113 0312 51       		.byte	0x51
  1114 0313 15       		.uleb128 0x15
- 1115 0314 EC000000 		.4byte	.LASF28
+ 1115 0314 87000000 		.4byte	.LASF28
  1116 0318 01       		.byte	0x1
  1117 0319 7401     		.2byte	0x174
  1118 031b A1000000 		.4byte	0xa1
  1119 031f 6F030000 		.4byte	.LLST16
  1120 0323 00       		.byte	0
  1121 0324 12       		.uleb128 0x12
- 1122 0325 5F010000 		.4byte	.LASF35
+ 1122 0325 04010000 		.4byte	.LASF35
  1123 0329 01       		.byte	0x1
  1124 032a A901     		.2byte	0x1a9
  1125 032c A1000000 		.4byte	0xa1
@@ -1791,14 +1791,14 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1129 0339 9C       		.byte	0x9c
  1130 033a 5F030000 		.4byte	0x35f
  1131 033e 13       		.uleb128 0x13
- 1132 033f 0E030000 		.4byte	.LASF36
+ 1132 033f EA020000 		.4byte	.LASF36
  1133 0343 01       		.byte	0x1
  1134 0344 A901     		.2byte	0x1a9
  1135 0346 6B000000 		.4byte	0x6b
  1136 034a 8E030000 		.4byte	.LLST17
  1137 034e 15       		.uleb128 0x15
- 1138 034f EC000000 		.4byte	.LASF28
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 31
+ 1138 034f 87000000 		.4byte	.LASF28
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 31
 
 
  1139 0353 01       		.byte	0x1
@@ -1807,7 +1807,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1142 035a DF030000 		.4byte	.LLST18
  1143 035e 00       		.byte	0
  1144 035f 12       		.uleb128 0x12
- 1145 0360 73010000 		.4byte	.LASF37
+ 1145 0360 18010000 		.4byte	.LASF37
  1146 0364 01       		.byte	0x1
  1147 0365 D601     		.2byte	0x1d6
  1148 0367 A1000000 		.4byte	0xa1
@@ -1817,13 +1817,13 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1152 0374 9C       		.byte	0x9c
  1153 0375 AC030000 		.4byte	0x3ac
  1154 0379 15       		.uleb128 0x15
- 1155 037a EC000000 		.4byte	.LASF28
+ 1155 037a 87000000 		.4byte	.LASF28
  1156 037e 01       		.byte	0x1
  1157 037f D801     		.2byte	0x1d8
  1158 0381 A1000000 		.4byte	0xa1
  1159 0385 FE030000 		.4byte	.LLST19
  1160 0389 15       		.uleb128 0x15
- 1161 038a 03010000 		.4byte	.LASF21
+ 1161 038a 9E000000 		.4byte	.LASF21
  1162 038e 01       		.byte	0x1
  1163 038f D901     		.2byte	0x1d9
  1164 0391 6B000000 		.4byte	0x6b
@@ -1836,7 +1836,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1171 03a7 12040000 		.4byte	0x412
  1172 03ab 00       		.byte	0
  1173 03ac 16       		.uleb128 0x16
- 1174 03ad 79020000 		.4byte	.LASF38
+ 1174 03ad 1E020000 		.4byte	.LASF38
  1175 03b1 01       		.byte	0x1
  1176 03b2 0A02     		.2byte	0x20a
  1177 03b4 00000000 		.4byte	.LFB9
@@ -1845,7 +1845,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1180 03bd 9C       		.byte	0x9c
  1181 03be E5030000 		.4byte	0x3e5
  1182 03c2 15       		.uleb128 0x15
- 1183 03c3 03010000 		.4byte	.LASF21
+ 1183 03c3 9E000000 		.4byte	.LASF21
  1184 03c7 01       		.byte	0x1
  1185 03c8 0C02     		.2byte	0x20c
  1186 03ca 6B000000 		.4byte	0x6b
@@ -1858,10 +1858,10 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1193 03e0 12040000 		.4byte	0x412
  1194 03e4 00       		.byte	0
  1195 03e5 17       		.uleb128 0x17
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 32
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 32
 
 
- 1196 03e6 F0020000 		.4byte	.LASF39
+ 1196 03e6 CC020000 		.4byte	.LASF39
  1197 03ea 01       		.byte	0x1
  1198 03eb 3C       		.byte	0x3c
  1199 03ec 81000000 		.4byte	0x81
@@ -1869,7 +1869,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1201 03f1 03       		.byte	0x3
  1202 03f2 04000000 		.4byte	spcWaitPipeBypass
  1203 03f6 18       		.uleb128 0x18
- 1204 03f7 2A010000 		.4byte	.LASF43
+ 1204 03f7 C5000000 		.4byte	.LASF43
  1205 03fb 01       		.byte	0x1
  1206 03fc 30       		.byte	0x30
  1207 03fd 6B000000 		.4byte	0x6b
@@ -1877,12 +1877,12 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1209 0402 03       		.byte	0x3
  1210 0403 00000000 		.4byte	SpcLockState
  1211 0407 19       		.uleb128 0x19
- 1212 0408 12020000 		.4byte	.LASF44
+ 1212 0408 B7010000 		.4byte	.LASF44
  1213 040c 03       		.byte	0x3
  1214 040d 7E       		.byte	0x7e
  1215 040e 6B000000 		.4byte	0x6b
  1216 0412 1A       		.uleb128 0x1a
- 1217 0413 D1020000 		.4byte	.LASF45
+ 1217 0413 AD020000 		.4byte	.LASF45
  1218 0417 03       		.byte	0x3
  1219 0418 7F       		.byte	0x7f
  1220 0419 23040000 		.4byte	0x423
@@ -1890,7 +1890,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1222 041e 6B000000 		.4byte	0x6b
  1223 0422 00       		.byte	0
  1224 0423 1C       		.uleb128 0x1c
- 1225 0424 A4020000 		.4byte	.LASF46
+ 1225 0424 49020000 		.4byte	.LASF46
  1226 0428 03       		.byte	0x3
  1227 0429 78       		.byte	0x78
  1228 042a 1B       		.uleb128 0x1b
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1250 0010 17       		.uleb128 0x17
  1251 0011 00       		.byte	0
  1252 0012 00       		.byte	0
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 33
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 33
 
 
  1253 0013 02       		.uleb128 0x2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1307 0049 19       		.uleb128 0x19
  1308 004a 11       		.uleb128 0x11
  1309 004b 01       		.uleb128 0x1
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 34
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 34
 
 
  1310 004c 12       		.uleb128 0x12
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1364 0085 18       		.uleb128 0x18
  1365 0086 9742     		.uleb128 0x2117
  1366 0088 19       		.uleb128 0x19
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 35
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 35
 
 
  1367 0089 01       		.uleb128 0x1
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1421 00c4 00       		.byte	0
  1422 00c5 0B       		.uleb128 0xb
  1423 00c6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 36
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 36
 
 
  1424 00c7 49       		.uleb128 0x49
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1478 00fd 49       		.uleb128 0x49
  1479 00fe 13       		.uleb128 0x13
  1480 00ff 11       		.uleb128 0x11
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 37
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 37
 
 
  1481 0100 01       		.uleb128 0x1
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1535 0137 00       		.byte	0
  1536 0138 00       		.byte	0
  1537 0139 16       		.uleb128 0x16
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 38
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 38
 
 
  1538 013a 2E       		.uleb128 0x2e
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1592 0171 00       		.byte	0
  1593 0172 00       		.byte	0
  1594 0173 19       		.uleb128 0x19
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 39
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 39
 
 
  1595 0174 2E       		.uleb128 0x2e
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1649 01aa 0B       		.uleb128 0xb
  1650 01ab 27       		.uleb128 0x27
  1651 01ac 19       		.uleb128 0x19
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 40
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 40
 
 
  1652 01ad 3C       		.uleb128 0x3c
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1706 0073 06000000 		.4byte	.LVL5
  1707 0077 0A000000 		.4byte	.LVL6
  1708 007b 0200     		.2byte	0x2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 41
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 41
 
 
  1709 007d 30       		.byte	0x30
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1763 00fe 50       		.byte	0x50
  1764 00ff 68000000 		.4byte	.LVL25
  1765 0103 6A000000 		.4byte	.LVL26
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 42
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 42
 
 
  1766 0107 0400     		.2byte	0x4
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1820 0183 00000000 		.4byte	0
  1821              	.LLST8:
  1822 0187 48000000 		.4byte	.LVL16
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 43
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 43
 
 
  1823 018b 4C000000 		.4byte	.LVL17
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1877 020e 37       		.byte	0x37
  1878 020f 9F       		.byte	0x9f
  1879 0210 40000000 		.4byte	.LVL34
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 44
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 44
 
 
  1880 0214 42000000 		.4byte	.LVL35
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1934 029e F3       		.byte	0xf3
  1935 029f 01       		.uleb128 0x1
  1936 02a0 50       		.byte	0x50
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 45
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 45
 
 
  1937 02a1 9F       		.byte	0x9f
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  1991 0324 0100     		.2byte	0x1
  1992 0326 50       		.byte	0x50
  1993 0327 2A000000 		.4byte	.LVL47
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 46
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 46
 
 
  1994 032b 2C000000 		.4byte	.LVL48
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  2048 03ad 0100     		.2byte	0x1
  2049 03af 50       		.byte	0x50
  2050 03b0 2C000000 		.4byte	.LVL55
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 47
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 47
 
 
  2051 03b4 2E000000 		.4byte	.LVL56
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  2105 0436 0100     		.2byte	0x1
  2106 0438 54       		.byte	0x54
  2107 0439 44000000 		.4byte	.LVL65
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 48
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 48
 
 
  2108 043d 4C000000 		.4byte	.LFE8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  2162 000c 24000000 		.4byte	.LFE1
  2163 0010 00000000 		.4byte	.LFB2
  2164 0014 34000000 		.4byte	.LFE2
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 49
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 49
 
 
  2165 0018 00000000 		.4byte	.LFB3
@@ -2910,236 +2910,234 @@ ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 1
  2185      644D756C 
  2185      74694279 
  2185      746500
- 2186              	.LASF30:
- 2187 0013 43795370 		.ascii	"CySpcWriteRow\000"
- 2187      63577269 
- 2187      7465526F 
- 2187      7700
- 2188              	.LASF15:
- 2189 0021 63797374 		.ascii	"cystatus\000"
- 2189      61747573 
- 2189      00
- 2190              	.LASF17:
- 2191 002a 72656733 		.ascii	"reg32\000"
- 2191      3200
- 2192              	.LASF19:
- 2193 0030 43795370 		.ascii	"CySpcStart\000"
- 2193      63537461 
- 2193      727400
- 2194              	.LASF42:
- 2195 003b 433A5C55 		.ascii	"C:\\Users\\Zachary\\Documents\\GitHub\\Chip-Design\\"
- 2195      73657273 
- 2195      5C5A6163 
- 2195      68617279 
- 2195      5C446F63 
- 2196 0069 70726F6A 		.ascii	"proj_asic\\psoc\\Zach I2S Debugging\\Wave Generator"
- 2196      5F617369 
- 2196      635C7073 
- 2196      6F635C5A 
- 2196      61636820 
- 2197 0099 2E637964 		.ascii	".cydsn\000"
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 50
+ 2186              	.LASF15:
+ 2187 0013 63797374 		.ascii	"cystatus\000"
+ 2187      61747573 
+ 2187      00
+ 2188              	.LASF17:
+ 2189 001c 72656733 		.ascii	"reg32\000"
+ 2189      3200
+ 2190              	.LASF19:
+ 2191 0022 43795370 		.ascii	"CySpcStart\000"
+ 2191      63537461 
+ 2191      727400
+ 2192              	.LASF30:
+ 2193 002d 43795370 		.ascii	"CySpcWriteRow\000"
+ 2193      63577269 
+ 2193      7465526F 
+ 2193      7700
+ 2194              	.LASF20:
+ 2195 003b 43795370 		.ascii	"CySpcStop\000"
+ 2195      6353746F 
+ 2195      7000
+ 2196              	.LASF41:
+ 2197 0045 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CySpc.c\000"
+ 2197      6E657261 
+ 2197      7465645F 
+ 2197      536F7572 
+ 2197      63655C50 
+ 2198              	.LASF3:
+ 2199 0066 73686F72 		.ascii	"short unsigned int\000"
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 50
 
 
- 2197      736E00
- 2198              	.LASF20:
- 2199 00a0 43795370 		.ascii	"CySpcStop\000"
- 2199      6353746F 
- 2199      7000
- 2200              	.LASF41:
- 2201 00aa 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CySpc.c\000"
- 2201      6E657261 
- 2201      7465645F 
- 2201      536F7572 
- 2201      63655C50 
- 2202              	.LASF3:
- 2203 00cb 73686F72 		.ascii	"short unsigned int\000"
- 2203      7420756E 
- 2203      7369676E 
- 2203      65642069 
- 2203      6E7400
- 2204              	.LASF24:
- 2205 00de 43795370 		.ascii	"CySpcReadData\000"
- 2205      63526561 
- 2205      64446174 
- 2205      6100
- 2206              	.LASF28:
- 2207 00ec 73746174 		.ascii	"status\000"
- 2207      757300
- 2208              	.LASF12:
- 2209 00f3 666C6F61 		.ascii	"float\000"
- 2209      7400
- 2210              	.LASF23:
- 2211 00f9 73697A65 		.ascii	"size\000"
- 2211      00
- 2212              	.LASF16:
- 2213 00fe 72656738 		.ascii	"reg8\000"
- 2213      00
- 2214              	.LASF21:
- 2215 0103 696E7465 		.ascii	"interruptState\000"
- 2215      72727570 
- 2215      74537461 
- 2215      746500
- 2216              	.LASF5:
- 2217 0112 6C6F6E67 		.ascii	"long unsigned int\000"
- 2217      20756E73 
- 2217      69676E65 
- 2217      6420696E 
- 2217      7400
- 2218              	.LASF9:
- 2219 0124 75696E74 		.ascii	"uint8\000"
- 2219      3800
- 2220              	.LASF43:
- 2221 012a 5370634C 		.ascii	"SpcLockState\000"
- 2221      6F636B53 
- 2221      74617465 
- 2221      00
- 2222              	.LASF31:
- 2223 0137 74656D70 		.ascii	"tempPolarity\000"
- 2223      506F6C61 
- 2223      72697479 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 51
+ 2199      7420756E 
+ 2199      7369676E 
+ 2199      65642069 
+ 2199      6E7400
+ 2200              	.LASF24:
+ 2201 0079 43795370 		.ascii	"CySpcReadData\000"
+ 2201      63526561 
+ 2201      64446174 
+ 2201      6100
+ 2202              	.LASF28:
+ 2203 0087 73746174 		.ascii	"status\000"
+ 2203      757300
+ 2204              	.LASF12:
+ 2205 008e 666C6F61 		.ascii	"float\000"
+ 2205      7400
+ 2206              	.LASF23:
+ 2207 0094 73697A65 		.ascii	"size\000"
+ 2207      00
+ 2208              	.LASF16:
+ 2209 0099 72656738 		.ascii	"reg8\000"
+ 2209      00
+ 2210              	.LASF21:
+ 2211 009e 696E7465 		.ascii	"interruptState\000"
+ 2211      72727570 
+ 2211      74537461 
+ 2211      746500
+ 2212              	.LASF5:
+ 2213 00ad 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2213      20756E73 
+ 2213      69676E65 
+ 2213      6420696E 
+ 2213      7400
+ 2214              	.LASF9:
+ 2215 00bf 75696E74 		.ascii	"uint8\000"
+ 2215      3800
+ 2216              	.LASF43:
+ 2217 00c5 5370634C 		.ascii	"SpcLockState\000"
+ 2217      6F636B53 
+ 2217      74617465 
+ 2217      00
+ 2218              	.LASF31:
+ 2219 00d2 74656D70 		.ascii	"tempPolarity\000"
+ 2219      506F6C61 
+ 2219      72697479 
+ 2219      00
+ 2220              	.LASF26:
+ 2221 00df 61727261 		.ascii	"array\000"
+ 2221      7900
+ 2222              	.LASF1:
+ 2223 00e5 756E7369 		.ascii	"unsigned char\000"
+ 2223      676E6564 
+ 2223      20636861 
+ 2223      7200
+ 2224              	.LASF13:
+ 2225 00f3 646F7562 		.ascii	"double\000"
+ 2225      6C6500
+ 2226              	.LASF2:
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 51
 
 
- 2223      00
- 2224              	.LASF26:
- 2225 0144 61727261 		.ascii	"array\000"
- 2225      7900
- 2226              	.LASF1:
- 2227 014a 756E7369 		.ascii	"unsigned char\000"
- 2227      676E6564 
- 2227      20636861 
- 2227      7200
- 2228              	.LASF13:
- 2229 0158 646F7562 		.ascii	"double\000"
- 2229      6C6500
- 2230              	.LASF35:
- 2231 015f 43795370 		.ascii	"CySpcGetTemp\000"
- 2231      63476574 
- 2231      54656D70 
- 2231      00
- 2232              	.LASF10:
- 2233 016c 75696E74 		.ascii	"uint16\000"
- 2233      313600
- 2234              	.LASF37:
- 2235 0173 43795370 		.ascii	"CySpcLock\000"
- 2235      634C6F63 
- 2235      6B00
- 2236              	.LASF11:
- 2237 017d 75696E74 		.ascii	"uint32\000"
- 2237      333200
- 2238              	.LASF40:
- 2239 0184 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 2239      4320342E 
- 2239      392E3320 
- 2239      32303135 
- 2239      30333033 
- 2240 01b7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 2240      20726576 
- 2240      6973696F 
- 2240      6E203232 
- 2240      31323230 
- 2241 01ea 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2241      66756E63 
- 2241      74696F6E 
- 2241      2D736563 
- 2241      74696F6E 
- 2242              	.LASF44:
- 2243 0212 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 2243      74657243 
- 2243      72697469 
- 2243      63616C53 
- 2243      65637469 
- 2244              	.LASF8:
- 2245 0229 756E7369 		.ascii	"unsigned int\000"
- 2245      676E6564 
- 2245      20696E74 
- 2245      00
- 2246              	.LASF27:
- 2247 0236 61646472 		.ascii	"address\000"
- 2247      65737300 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 52
+ 2227 00fa 73686F72 		.ascii	"short int\000"
+ 2227      7420696E 
+ 2227      7400
+ 2228              	.LASF35:
+ 2229 0104 43795370 		.ascii	"CySpcGetTemp\000"
+ 2229      63476574 
+ 2229      54656D70 
+ 2229      00
+ 2230              	.LASF10:
+ 2231 0111 75696E74 		.ascii	"uint16\000"
+ 2231      313600
+ 2232              	.LASF37:
+ 2233 0118 43795370 		.ascii	"CySpcLock\000"
+ 2233      634C6F63 
+ 2233      6B00
+ 2234              	.LASF11:
+ 2235 0122 75696E74 		.ascii	"uint32\000"
+ 2235      333200
+ 2236              	.LASF40:
+ 2237 0129 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2237      4320342E 
+ 2237      392E3320 
+ 2237      32303135 
+ 2237      30333033 
+ 2238 015c 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 2238      20726576 
+ 2238      6973696F 
+ 2238      6E203232 
+ 2238      31323230 
+ 2239 018f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2239      66756E63 
+ 2239      74696F6E 
+ 2239      2D736563 
+ 2239      74696F6E 
+ 2240              	.LASF44:
+ 2241 01b7 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 2241      74657243 
+ 2241      72697469 
+ 2241      63616C53 
+ 2241      65637469 
+ 2242              	.LASF8:
+ 2243 01ce 756E7369 		.ascii	"unsigned int\000"
+ 2243      676E6564 
+ 2243      20696E74 
+ 2243      00
+ 2244              	.LASF27:
+ 2245 01db 61646472 		.ascii	"address\000"
+ 2245      65737300 
+ 2246              	.LASF7:
+ 2247 01e3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2247      206C6F6E 
+ 2247      6720756E 
+ 2247      7369676E 
+ 2247      65642069 
+ 2248              	.LASF32:
+ 2249 01fa 74656D70 		.ascii	"tempMagnitude\000"
+ 2249      4D61676E 
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 52
 
 
- 2248              	.LASF7:
- 2249 023e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2249      206C6F6E 
- 2249      6720756E 
- 2249      7369676E 
- 2249      65642069 
- 2250              	.LASF32:
- 2251 0255 74656D70 		.ascii	"tempMagnitude\000"
- 2251      4D61676E 
- 2251      69747564 
- 2251      6500
- 2252              	.LASF29:
- 2253 0263 43795370 		.ascii	"CySpcLoadRow\000"
- 2253      634C6F61 
- 2253      64526F77 
+ 2249      69747564 
+ 2249      6500
+ 2250              	.LASF29:
+ 2251 0208 43795370 		.ascii	"CySpcLoadRow\000"
+ 2251      634C6F61 
+ 2251      64526F77 
+ 2251      00
+ 2252              	.LASF18:
+ 2253 0215 73697A65 		.ascii	"sizetype\000"
+ 2253      74797065 
  2253      00
- 2254              	.LASF18:
- 2255 0270 73697A65 		.ascii	"sizetype\000"
- 2255      74797065 
- 2255      00
- 2256              	.LASF38:
- 2257 0279 43795370 		.ascii	"CySpcUnlock\000"
- 2257      63556E6C 
- 2257      6F636B00 
- 2258              	.LASF33:
- 2259 0285 43795370 		.ascii	"CySpcEraseSector\000"
- 2259      63457261 
- 2259      73655365 
- 2259      63746F72 
- 2259      00
- 2260              	.LASF6:
- 2261 0296 6C6F6E67 		.ascii	"long long int\000"
- 2261      206C6F6E 
- 2261      6720696E 
- 2261      7400
- 2262              	.LASF46:
- 2263 02a4 43794465 		.ascii	"CyDelayUs\000"
- 2263      6C617955 
- 2263      7300
- 2264              	.LASF14:
- 2265 02ae 63686172 		.ascii	"char\000"
- 2265      00
- 2266              	.LASF2:
- 2267 02b3 73686F72 		.ascii	"short int\000"
- 2267      7420696E 
- 2267      7400
- 2268              	.LASF22:
- 2269 02bd 62756666 		.ascii	"buffer\000"
- 2269      657200
- 2270              	.LASF34:
- 2271 02c4 73656374 		.ascii	"sectorNumber\000"
- 2271      6F724E75 
- 2271      6D626572 
- 2271      00
- 2272              	.LASF45:
- 2273 02d1 43794578 		.ascii	"CyExitCriticalSection\000"
- 2273      69744372 
-ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccQEXeWv.s 			page 53
+ 2254              	.LASF38:
+ 2255 021e 43795370 		.ascii	"CySpcUnlock\000"
+ 2255      63556E6C 
+ 2255      6F636B00 
+ 2256              	.LASF33:
+ 2257 022a 43795370 		.ascii	"CySpcEraseSector\000"
+ 2257      63457261 
+ 2257      73655365 
+ 2257      63746F72 
+ 2257      00
+ 2258              	.LASF6:
+ 2259 023b 6C6F6E67 		.ascii	"long long int\000"
+ 2259      206C6F6E 
+ 2259      6720696E 
+ 2259      7400
+ 2260              	.LASF46:
+ 2261 0249 43794465 		.ascii	"CyDelayUs\000"
+ 2261      6C617955 
+ 2261      7300
+ 2262              	.LASF14:
+ 2263 0253 63686172 		.ascii	"char\000"
+ 2263      00
+ 2264              	.LASF42:
+ 2265 0258 433A5C55 		.ascii	"C:\\Users\\Zachary\\Desktop\\Zach I2S Debugging\\Wa"
+ 2265      73657273 
+ 2265      5C5A6163 
+ 2265      68617279 
+ 2265      5C446573 
+ 2266 0286 76652047 		.ascii	"ve Generator.cydsn\000"
+ 2266      656E6572 
+ 2266      61746F72 
+ 2266      2E637964 
+ 2266      736E00
+ 2267              	.LASF22:
+ 2268 0299 62756666 		.ascii	"buffer\000"
+ 2268      657200
+ 2269              	.LASF34:
+ 2270 02a0 73656374 		.ascii	"sectorNumber\000"
+ 2270      6F724E75 
+ 2270      6D626572 
+ 2270      00
+ 2271              	.LASF45:
+ 2272 02ad 43794578 		.ascii	"CyExitCriticalSection\000"
+ 2272      69744372 
+ 2272      69746963 
+ 2272      616C5365 
+ARM GAS  C:\Users\Zachary\AppData\Local\Temp\ccotmuXS.s 			page 53
 
 
- 2273      69746963 
- 2273      616C5365 
- 2273      6374696F 
- 2274              	.LASF4:
- 2275 02e7 6C6F6E67 		.ascii	"long int\000"
- 2275      20696E74 
- 2275      00
- 2276              	.LASF39:
- 2277 02f0 73706357 		.ascii	"spcWaitPipeBypass\000"
- 2277      61697450 
- 2277      69706542 
- 2277      79706173 
- 2277      7300
- 2278              	.LASF0:
- 2279 0302 7369676E 		.ascii	"signed char\000"
- 2279      65642063 
- 2279      68617200 
- 2280              	.LASF36:
- 2281 030e 6E756D53 		.ascii	"numSamples\000"
- 2281      616D706C 
- 2281      657300
- 2282              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 2272      6374696F 
+ 2273              	.LASF4:
+ 2274 02c3 6C6F6E67 		.ascii	"long int\000"
+ 2274      20696E74 
+ 2274      00
+ 2275              	.LASF39:
+ 2276 02cc 73706357 		.ascii	"spcWaitPipeBypass\000"
+ 2276      61697450 
+ 2276      69706542 
+ 2276      79706173 
+ 2276      7300
+ 2277              	.LASF0:
+ 2278 02de 7369676E 		.ascii	"signed char\000"
+ 2278      65642063 
+ 2278      68617200 
+ 2279              	.LASF36:
+ 2280 02ea 6E756D53 		.ascii	"numSamples\000"
+ 2280      616D706C 
+ 2280      657300
+ 2281              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

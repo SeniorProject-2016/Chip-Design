@@ -53,31 +53,31 @@ volatile uint16_t signal2[TRANSFER_COUNT] =
 	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
 
 volatile uint16_t signal1[TRANSFER_COUNT] = 
-{	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 
-	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 
-	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 
+	{0x0, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 
+	0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 
+	0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0x0, 0x0, 0x0, 0x0, 0x0, 
 	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 
 	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
 
 #define BUFFER_SIZE 1024				/* number of samples to receive */
-volatile uint16_t * ReceivedData;    	/* left IN buffer */
-volatile uint16_t * dummy;			/* right IN buffer, ignored */
+extern uint16_t ReceivedData[BUFFER_SIZE];    	/* left IN buffer */
+//volatile uint16_t * dummy;			/* right IN buffer, ignored */
 
 int main()
 {
 	uint16_t i = 0;
-	ReceivedData = malloc(BUFFER_SIZE*sizeof(uint16_t));
-	dummy = malloc(BUFFER_SIZE*sizeof(uint16_t));
+	//ReceivedData = malloc(BUFFER_SIZE*sizeof(uint16_t));
+	//dummy = malloc(BUFFER_SIZE*sizeof(uint16_t));
 	
 	/* Enable global interrupts */
 	CyGlobalIntEnable;
 	
 	/* Initialize received data array */
 	for (i = 0; i < BUFFER_SIZE; i++)
-		ReceivedData[i] = i;
+		ReceivedData[i] = 0;
 
     /* Configure DMAs for each direction */ 
-    DmaRxConfiguration();
+    // DmaRxConfiguration();
     DmaTxConfiguration();
 	
 	/* Enable I2S component */
@@ -97,8 +97,8 @@ int main()
 	{
 		// uint8_t part1 = (ReceivedData[i] >> 8) & 0x00ff;	/* get first byte */
 		// uint8_t part2 = (ReceivedData[i] >> 0) & 0x00ff;	/* get second byte */
-        uint8_t part1 = (dummy[i] >> 8) & 0x00ff;	/* get first byte */
-		uint8_t part2 = (dummy[i] >> 0) & 0x00ff;	/* get second byte */
+        uint8_t part1 = (ReceivedData[i] >> 8) & 0x00ff;	/* get first byte */
+		uint8_t part2 = (ReceivedData[i] >> 0) & 0x00ff;	/* get second byte */
 		char part1_string[5];
 		char part2_string[5];
 		sprintf(part1_string, "%02X", part1);
