@@ -1,16 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Module Name:   chip_test1_reg_address_h400_write.v
+// Module Name:   chip_test_i2s_serial_enable.v
 // Create Date:   2/17/2016
-// Last Edit:     3/20/16
+// Last Edit:     5/8/16
 // Author:        Kevin Cao, Whitley Forman
 //
-// Description:   Modified i2c functionality to be MSB on master and load reg h400 address for bist or i2s select.
-//                i2s not working in this version.
+// Description:   Testing pass through of data. Input is a square wave. Input data should match output data in produced text files
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 1ps
-`define N 100 // number of test elements
+`define N 10000 // number of test elements
 
 module chip_test1;
 
@@ -52,7 +51,7 @@ module chip_test1;
     parameter                       i2s_cyc_per_half_sck = 33;                                          // about (100 MHz / 1.536 MHz)/2
     parameter                       i2s_bit_tc =  15;                                                   // number of bits in a word
     integer                         index1;                                                             // counter for instantiating i2s_test_data
-    integer                         index2;                                                             // counter for instantiating i2s_test_data
+    integer                         index2 = 0;                                                             // counter for instantiating i2s_test_data
 
     
     // I2C Internal Variables
@@ -109,9 +108,7 @@ module chip_test1;
         data_in = $fopen("chip_test_i2s_serial_enable_input.txt");                                                  // Open chip_test_i2s_serial_enable_input.txt
         data_out = $fopen("chip_test_i2s_serial_enable_output.txt");                                                // Open chip_test_i2s_serial_enable_output.txt
 
-        
-        
-        // Instantiate I2S Test Data: Method 1
+        // Instantiate I2S Test Data: Method 1; Irrelevant in testing the BIST
         for(index1 = 0; index1 < `N; index1 = index1 + 1)
         begin
             for(index2 = 0; index2 < 2; index2 = index2 + 1)
@@ -119,37 +116,13 @@ module chip_test1;
                 i2s_test_data [index1] [index2] = $random;
             end
         end
+
         
         for(index3 = 0; index3 < `N; index3 = index3 + 1)
         begin
             $fdisplay (data_in, "%h", {i2s_test_data [index3] [0], i2s_test_data [index3] [1]});
         end
-        /*
-        // Instantiate I2S Test Data
-        
-        i2s_test_data [ 0] [0] = 16'hAAAA;                                                                                   
-        i2s_test_data [ 0] [1] = 16'hFFFF;                                                                                           
-        i2s_test_data [ 1] [0] = 16'hAAAA;                                                                           
-        i2s_test_data [ 1] [1] = 16'hCCCC;                                                                                                       
-        i2s_test_data [ 2] [0] = 16'hCDD7;                                                                                                   
-        i2s_test_data [ 2] [1] = 16'hBABA;                                                                                                   
-        i2s_test_data [ 3] [0] = 16'h4444;                                                                                   
-        i2s_test_data [ 3] [1] = 16'hAAAA;                                                                               
-        i2s_test_data [ 4] [0] = 16'h7398;                                                                                           
-        i2s_test_data [ 4] [1] = 16'hFFDD;                                                                               
-        i2s_test_data [ 5] [0] = 16'h1111;                                                                           
-        i2s_test_data [ 5] [1] = 16'h5982;                                                                               
-        i2s_test_data [ 6] [0] = 16'hFFFF;                                                                       
-        i2s_test_data [ 6] [1] = 16'hFFFF;                                                                               
-        i2s_test_data [ 7] [0] = 16'h1478;                                                                               
-        i2s_test_data [ 7] [1] = 16'hA3B9;                                                                                                   
-        i2s_test_data [ 8] [0] = 16'h0000;                                                                                   
-        i2s_test_data [ 8] [1] = 16'h0000;                                                                                   
-        i2s_test_data [ 9] [0] = 16'h99C5;                                                                           
-        i2s_test_data [ 9] [1] = 16'h7435;                                                                                               
-        i2s_test_data [10] [0] = 16'h69D9;                                                              
-        i2s_test_data [10] [1] = 16'hABCD;
-        */
+
         
         
         // Instantiate I2C Test Data
