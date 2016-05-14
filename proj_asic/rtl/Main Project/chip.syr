@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: chip.prj
 
@@ -1569,7 +1569,7 @@ Synthesizing Unit <Deserializer>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 8-bit 9-to-1 multiplexer for signal <bit_counter_slave_addr[3]_incoming_slave_addr[7]_wide_mux_23_OUT> created at line 181.
-    Found 8-bit 8-to-1 multiplexer for signal <_n0416> created at line 464.
+    Found 8-bit 8-to-1 multiplexer for signal <_n0417> created at line 464.
     Found 7-bit comparator equal for signal <incoming_slave_addr[7]_slave_addr[6]_equal_31_o> created at line 243
     Summary:
 	inferred  50 D-type flip-flop(s).
@@ -1968,8 +1968,9 @@ Primitive and Black Box Usage:
 #      FDE                         : 114
 #      FDP                         : 5
 #      FDPE                        : 33
-#      FDR                         : 44
+#      FDR                         : 43
 #      FDRE                        : 16
+#      FDS                         : 1
 # RAMS                             : 64
 #      RAM32X1D                    : 64
 # Shift Registers                  : 4
@@ -2155,7 +2156,7 @@ Offset:              1.436ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              3   0.478   0.413  I2C/i2c_top_serializer/i2c_sda_out (I2C/i2c_top_serializer/i2c_sda_out)
+     FDS:C->Q              3   0.478   0.413  I2C/i2c_top_serializer/i2c_sda_out (I2C/i2c_top_serializer/i2c_sda_out)
      INV:I->O              1   0.146   0.399  i2c_sda_out_inv1_INV_0 (i2c_sda_out_inv)
      OBUFT:T->O                0.000          i2c_sda_od_OBUFT (i2c_sda_od)
     ----------------------------------------
@@ -2178,12 +2179,12 @@ clk            |    6.678|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 337.00 secs
-Total CPU time to Xst completion: 336.37 secs
+Total REAL time to Xst completion: 339.00 secs
+Total CPU time to Xst completion: 338.85 secs
  
 --> 
 
-Total memory usage is 3700572 kilobytes
+Total memory usage is 3716444 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   13 (  13 filtered)
