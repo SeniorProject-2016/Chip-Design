@@ -84,7 +84,7 @@ module Serializer(
     begin
         if(stop)
         begin
-        i2c_sda_out <=0;
+        i2c_sda_out <=1;
         serialize_done <= 0;
         serialize_bit_counter <= 8'b00000000;
         first_data_bit_ready <= 0;
@@ -94,7 +94,7 @@ module Serializer(
         //Serialize General i2c ACK for address match, data
         else if(i2c_ack_state) 
         begin
-        i2c_sda_out <= i2c_ack_state;
+        i2c_sda_out <= !i2c_ack_state;
         serialize_ack_done <= 1;
         end
         
@@ -102,7 +102,7 @@ module Serializer(
         begin
         //serialize_done <= 1;
         serialize_ack_done <= 0;
-        i2c_sda_out <= i2c_ack;
+        i2c_sda_out <= !i2c_ack;
         first_data_bit_ready <= 1;
         end
         

@@ -46,7 +46,7 @@ module filter_round_truncate(clk, rst_n, acc_in, rf_sat, rf_shift, trig_filter_o
     assign sign_bit = acc_in[39];
     assign ext_acc_in = {{3{sign_bit}}, acc_in};
 
-    always@(posedge clk or negedge !rst_n)
+    always@(posedge clk or negedge rst_n)
     begin 
         if(!rst_n)
         begin

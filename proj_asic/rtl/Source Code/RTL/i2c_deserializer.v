@@ -243,7 +243,7 @@ module Deserializer(
         else if ((deserial_state == 2'b00) & i2c_scl_neg_pulse & got_slave_addr & (incoming_slave_addr [7:1] == slave_addr [6:0]) & !addr_xfc)
         begin
         slave_ack <= 1;
-        i2c_RW <= incoming_slave_addr [0];
+        i2c_RW <= !incoming_slave_addr [0]; //code written in reverse by accident, so invert RW bit
         end
         
         //if incoming slave adrres bad, stop sequence
