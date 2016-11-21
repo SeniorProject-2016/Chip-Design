@@ -38,7 +38,9 @@ module chip(clk, rst_n,                                        // General
     //---------------------------------------------------------------------------  
     //---------------------------------------------------------------------------  
     
-    assign i2c_sda_od = i2c_sda_out ? 0:1'bZ;
+    wire i2c_sda_out;
+    
+    assign i2c_sda_od = i2c_sda_out ? 1'bZ : 0;
     
     // BLOCK CONNECTIONS
     //---------------------------------------------------------------------------  
@@ -2230,17 +2232,17 @@ module chip(clk, rst_n,                                        // General
     
     i2c I2C(
         .i2c_addr_bits              (i2c_addr_bits),                // input: 3 LSB I2C address select
-        .i2c_sda_in                 (i2c_sda_in),                   // input: serial data input
-        .i2c_scl                    (i2c_scl),                      // input: serial clock
+        .i2c_sda_raw                (i2c_sda_in),                   // input: serial data input
+        .i2c_scl_raw                (i2c_scl),                      // input: serial clock
         .i2c_op                     (i2c_op),                       // output: 1- write, 0- read
         .i2c_xfc_write              (i2c_xfc_write),                // output: write data transfer complete
-        .i2c_wraddr                 (i2c_wraddr),                   // output: write address
+        .i2c_addr                   (i2c_wraddr),                   // output: write address
         .i2c_wdata                  (i2c_wdata),                    // output: data to be written for a write op
         .i2c_rdata                  (i2c_rdata),                    // input: read return data
         .i2c_xfc_read               (i2c_xfc_read),                 // input: read data transfer complete
         .i2c_sda_out                (i2c_sda_out),                  // output: serial data output
         .clk                        (clk),                          // input: master clock
-        .reset                      (rst_n)                         // input: reset not
+        .rst_n                      (rst_n)                         // input: reset not
     );
   
     //---------------------------------------------------------------------------  
